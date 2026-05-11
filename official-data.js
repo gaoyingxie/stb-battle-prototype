@@ -1,0 +1,17581 @@
+window.STZB_OFFICIAL_DATA = {
+  "source": {
+    "heroes": "https://g0.gph.netease.com/ngsocial/community/stzb/cfg/hero_extra.json?gameid=g10",
+    "skills": "https://stzb.163.com/json/jineng_list.json",
+    "details": "https://stzb.163.com/herolist/{id}.html",
+    "note": "网易官网公开资料；页面提示官网数据仅供参考，以游戏内设定为准。"
+  },
+  "generatedAt": "2026-05-10T11:33:23.114Z",
+  "heroes": [
+    {
+      "id": "official-hero-100352",
+      "officialId": 100352,
+      "iconId": 100352,
+      "portrait": "assets/portraits/100352.jpg",
+      "name": "梁兴",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200696",
+      "dismantle": "official-skill-迫近",
+      "dismantles": [
+        "official-skill-迫近"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 72,
+        "strategy": 18,
+        "defense": 78,
+        "speed": 84
+      },
+      "desc": "【史】关中将领，拥兵割据一方。后梁兴联合马超、韩遂、侯选、程银、李堪、张横、成宜、马玩、杨秋共十部势力起兵反抗曹操。梁兴率步骑五千人夜袭曹军先头部队徐晃，被击退。马超、韩遂联军失败后，梁兴逃到蓝田，劫掠周围郡县。夏侯渊、徐晃进攻蓝田征讨梁兴，梁兴战败被诛。\n【演】韩遂手下八部兵马将领之一，同马超、韩遂一起起兵反抗曹操。后马超中曹操离间之计，与韩遂火并，梁兴等五将步战围攻马超，不能取胜。结果梁兴被马超所斩。"
+    },
+    {
+      "id": "official-hero-100354",
+      "officialId": 100354,
+      "iconId": 100354,
+      "portrait": "assets/portraits/100354.jpg",
+      "name": "司马徽",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200678",
+      "dismantle": "official-skill-雀伏",
+      "dismantles": [
+        "official-skill-雀伏"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 10,
+        "strategy": 92,
+        "defense": 36,
+        "speed": 29
+      },
+      "desc": "【史】东汉末年名士，精通道学、奇门、兵法、经学。有“水镜先生”之称。司马徽为人清雅，学识广博，有知人之明，并向刘备推荐了诸葛亮、庞统等人，受到世人的敬重。\n【演】刘备马跃檀溪后，偶然相遇司马徽。司马徽向刘备举荐诸葛亮和庞统，并称诸葛亮为“卧龙”，庞统为“凤雏”，刘备随后夜宿庄院。次日，司马徽自称“山野闲散之人”，谢绝了刘备请求他出山辅佐的好意。不久，赵云率军寻找到庄前，刘备便随赵云离开。其后，刘备准备拜访诸葛亮，司马徽想要探访徐庶，但徐庶已经中曹操的计策前往许昌，刘备向司马徽提起徐庶举荐诸葛亮的事情，司马徽再次力荐诸葛亮。"
+    },
+    {
+      "id": "official-hero-100355",
+      "officialId": 100355,
+      "iconId": 100355,
+      "portrait": "assets/portraits/100355.jpg",
+      "name": "蔡夫人",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200682",
+      "dismantle": "official-skill-伐谋",
+      "dismantles": [
+        "official-skill-伐谋"
+      ],
+      "cost": 1.5,
+      "distance": 2,
+      "stats": {
+        "attack": 24,
+        "strategy": 83,
+        "defense": 30,
+        "speed": 29
+      },
+      "desc": "【史】荆州牧刘表的后妻，荆襄一带的豪族蔡氏家族的一员。她是诸葛亮之妻黄月英的姨母，以侄女妻表次子刘琮，因爱之，常毁刘琦而誉刘琮于表。表死，与蔡瑁等共排表长子刘琦，奉刘琮为嗣，寻降曹操。\n【演】在《三国演义》中，蔡夫人为荆州刺史刘表后妻、刘琮生母、蔡瑁之姐。心肠恶毒，因先主劝刘表立长子琦为嗣，深恨之，数次欲加害于琦。后表亡，借兄瑁之力，立子琮为主。操军到襄阳，蔡氏随子琮举州请降。操命琮为青州刺史，上任途中，命于禁将其母子二人灭口。"
+    },
+    {
+      "id": "official-hero-100358",
+      "officialId": 100358,
+      "iconId": 100358,
+      "portrait": "assets/portraits/100358.jpg",
+      "name": "张姬",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200094",
+      "dismantle": "official-skill-钝兵挫锐",
+      "dismantles": [
+        "official-skill-钝兵挫锐"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 94,
+        "strategy": 42,
+        "defense": 81,
+        "speed": 53
+      },
+      "desc": "【史】张皇后，张飞次女，刘禅之妻。其姊敬哀皇后死后，于238年正月立为皇后。蜀汉灭亡后，随刘禅到洛阳。"
+    },
+    {
+      "id": "official-hero-100359",
+      "officialId": 100359,
+      "iconId": 100359,
+      "portrait": "assets/portraits/100359.jpg",
+      "name": "袁姬",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200775",
+      "dismantle": "official-skill-疏数",
+      "dismantles": [
+        "official-skill-疏数"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 65,
+        "strategy": 82,
+        "defense": 50,
+        "speed": 57
+      },
+      "desc": "【史】汉末军阀袁术之女，吴大帝孙权的妃子。袁术败亡后不久为孙吴皇族所得，入吴王宫拜为夫人。以节操品行著称。\n【演】在《三国演义》中，袁术死后，其侄袁胤带着袁术灵柩和他的妻子孩子逃奔庐江，但他们都被徐璆所害，并从他们手里夺得传国玉玺献给曹操。"
+    },
+    {
+      "id": "official-hero-100372",
+      "officialId": 100372,
+      "iconId": 100372,
+      "portrait": "assets/portraits/100372.jpg",
+      "name": "妲己",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200790",
+      "dismantle": "official-skill-擅兵不寡",
+      "dismantles": [
+        "official-skill-擅兵不寡"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 70,
+        "strategy": 87,
+        "defense": 76,
+        "speed": 56
+      },
+      "desc": "中国古代四大妖姬之一。殷朝末期祸乱纣王的妖姬，是难得一见的绝世美女。纣王沉迷于妲己的美色，荒理朝政，对她言听计从，到了“妲己之所誉贵之，妲己之所憎诛之”的地步，使商朝灭亡，最后被周武王所诛。"
+    },
+    {
+      "id": "official-hero-100374",
+      "officialId": 100374,
+      "iconId": 100374,
+      "portrait": "assets/portraits/100374.jpg",
+      "name": "妺喜",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200936",
+      "dismantle": "official-skill-道行险阻",
+      "dismantles": [
+        "official-skill-道行险阻"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 60,
+        "strategy": 80,
+        "defense": 65,
+        "speed": 90
+      },
+      "desc": "【史】夏朝最后一位君主夏桀的王后。夏桀在位时，发动大军攻打有施氏，有施兵败求和，并得到妺喜。夏桀得到妺喜后，更加荒淫无度。妺喜有三个癖好：一是笑看人们在规模大到可以划船的酒池里饮酒；二是笑听撕裂绢帛的声音；三是喜欢穿戴男人的官帽。"
+    },
+    {
+      "id": "official-hero-100376",
+      "officialId": 100376,
+      "iconId": 100376,
+      "portrait": "assets/portraits/100376.jpg",
+      "name": "褒姒",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200887",
+      "dismantle": "official-skill-美人计",
+      "dismantles": [
+        "official-skill-美人计"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 62,
+        "strategy": 76,
+        "defense": 58,
+        "speed": 80
+      },
+      "desc": "【史】中国古代四大妖姬之一，周幽王攻打褒国，褒国兵败，献出褒姒乞降。周幽王爱之如掌上明珠，之后更是废黜申后，而立褒姒为王后；褒姒冷艳少笑，周幽王为博其一笑，烽火戏诸侯。最终西周灭亡，褒姒亦遭劫掳，从此下落不明。"
+    },
+    {
+      "id": "official-hero-100377",
+      "officialId": 100377,
+      "iconId": 100377,
+      "portrait": "assets/portraits/100377.jpg",
+      "name": "骊姬",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200851",
+      "dismantle": "official-skill-擅兵不寡",
+      "dismantles": [
+        "official-skill-擅兵不寡"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 84,
+        "strategy": 55,
+        "defense": 83,
+        "speed": 62
+      },
+      "desc": "【史】春秋时代骊戎国君的女儿，有姿色，攻心计。被晋献公虏入晋国，成为晋献公的妃子。她使计离间了献公与申生、重耳、夷吾父子兄弟之间的感情，并设计害死了太子申生，制造了\"骊姬倾晋\"的事件。"
+    },
+    {
+      "id": "official-hero-100378",
+      "officialId": 100378,
+      "iconId": 100378,
+      "portrait": "assets/portraits/100378.jpg",
+      "name": "伏寿",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200604",
+      "dismantle": "official-skill-破魂",
+      "dismantles": [
+        "official-skill-破魂"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 76,
+        "strategy": 71,
+        "defense": 50,
+        "speed": 42
+      },
+      "desc": "【史】汉献帝皇后，徐州琅邪郡东武县（今山东诸城）人，西汉大司徒伏湛八世孙，父亲是学者伏完，母为阳安长公主刘华。作为皇后二十年，于建安十九年被曹操幽闭而死。\n【演】在《三国演义》中，伏寿的生平与正史大体相当，不过在小说里，伏寿并非病死，而是与伏完一起谋划除掉曹操，但遭曹操发现而被族灭。有诗叹曰：“曹瞒凶残世所无，伏完忠义欲何如。可怜帝后分离处，不及民间妇与夫！”"
+    },
+    {
+      "id": "official-hero-100379",
+      "officialId": 100379,
+      "iconId": 100379,
+      "portrait": "assets/portraits/100379.jpg",
+      "name": "杜氏",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200605",
+      "dismantle": "official-skill-穷追猛打",
+      "dismantles": [
+        "official-skill-穷追猛打"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 32,
+        "strategy": 61,
+        "defense": 78,
+        "speed": 27
+      },
+      "desc": "【史】初为吕布麾下秦宜禄之妻，生子秦朗。吕布被围时，关羽曾向曹操讨要杜氏，曹操不允，后曹操自纳之，又生曹林、曹衮、金乡公主。"
+    },
+    {
+      "id": "official-hero-100398",
+      "officialId": 100398,
+      "iconId": 100398,
+      "portrait": "assets/portraits/100398.jpg",
+      "name": "关兴＆张苞",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200606",
+      "dismantle": "official-skill-增援",
+      "dismantles": [
+        "official-skill-增援"
+      ],
+      "cost": 4,
+      "distance": 1,
+      "stats": {
+        "attack": 86,
+        "strategy": 57,
+        "defense": 77,
+        "speed": 25
+      },
+      "desc": "【史】关兴为关羽次子，蜀汉后期重要将领，在诸葛亮第六次北伐之前病逝。张苞为张飞长子，早夭。\n【演】在《三国演义》中，关兴和张苞是关系很好的结拜兄弟，两人并称“小关张”。在蜀军中的表现相当活跃。"
+    },
+    {
+      "id": "official-hero-100414",
+      "officialId": 100414,
+      "iconId": 100414,
+      "portrait": "assets/portraits/100414.jpg",
+      "name": "少帝",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200185",
+      "dismantle": "official-skill-援军之策",
+      "dismantles": [
+        "official-skill-援军之策",
+        "official-skill-奇袭"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 44,
+        "strategy": 56,
+        "defense": 60,
+        "speed": 39
+      },
+      "desc": "【史】刘辩，灵帝驾崩后继位为帝。由于年幼，实权掌握在其母亲何太后和母舅大将军何进手中。少帝在位时期，东汉政权已经名存实亡，他即位后不久即遭遇以何进为首的外戚集团和以十常侍为首的内廷宦官集团这两大敌对政治集团的火并，被迫出宫，回宫后又受制于以“勤王”为名进京的凉州军阀董卓，终于被废为弘农王，成为东汉唯一被废黜的皇帝，其同父异母弟陈留王刘协继位为帝，是为汉献帝。被废黜一年之后，刘辩在董卓胁迫下自尽，时年仅十五岁。\n【演】在《三国演义》中，其生平与正史基本一致。不过小说中刘辩被废之后因作“怨望之诗”而被董卓抓住把柄，与母亲何太后、妻唐姬同日在永安宫被李儒所害，何太后被李儒推下楼跌死，刘辩被灌毒酒而死，唐姬被绞死。但历史上则是被迫迁于永安宫的何太后先被毒死，未作诗而被置于阁上的刘辩被迫服毒酒而死，唐姬则活到了李傕之乱以后。"
+    },
+    {
+      "id": "official-hero-100420",
+      "officialId": 100420,
+      "iconId": 100420,
+      "portrait": "assets/portraits/100420.jpg",
+      "name": "夏侯渊",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200699",
+      "dismantle": "official-skill-鹤翼",
+      "dismantles": [
+        "official-skill-鹤翼"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 88,
+        "strategy": 54,
+        "defense": 92,
+        "speed": 91
+      },
+      "desc": "【史】东汉末年名将，擅长千里奔袭作战，官至征西将军，封博昌亭侯。初期随曹操征伐，官渡之战为曹操督运粮草，又督诸将先后平定昌豨、徐和、雷绪、商曜等叛乱。后率军驻凉州，逐马超、破韩遂、灭宋建、横扫羌、氐，虎步关右。张鲁降曹操后夏侯渊留守汉中，与刘备相拒逾年，于定军山被刘备部将黄忠所袭，战死，谥曰愍侯。\n【演】在《三国演义》中，夏侯渊是夏侯婴之后、大将军惇族弟。自曹操陈留起兵起，便跟随征伐，历任陈留、颍川太守。官渡之战后，夏侯渊负责粮草补给，保证了曹操平定北方。而后夏侯渊又率兵四处征讨叛乱，破昌豨、徐和、雷绪、商曜等，战功卓著。而后夏侯渊督张郃、徐晃等留守汉中，与前来取汉中的刘备大军交战，为刘备将黄忠所袭，不幸战死。谥曰愍侯。魏齐王正始四年从祀曹操庙庭。"
+    },
+    {
+      "id": "official-hero-100421",
+      "officialId": 100421,
+      "iconId": 100421,
+      "portrait": "assets/portraits/100421.jpg",
+      "name": "徐晃",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200628",
+      "dismantle": "official-skill-车悬",
+      "dismantles": [
+        "official-skill-车悬"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 93,
+        "strategy": 64,
+        "defense": 84,
+        "speed": 75
+      },
+      "desc": "【史】三国时期曹魏名将。本为杨奉帐下骑都尉，杨奉被曹操击败后转投曹操，在曹操手下多立功勋，参与官渡、赤壁、关中征伐、汉中征伐等几次重大战役。樊城之战中徐晃作为曹仁的援军击败关羽，因于此役中治军严整而被曹操称赞“有周亚夫之风”。曹丕称帝后，徐晃被加为右将军，于公元227年病逝，谥曰壮侯。\n【演】在《三国演义》中，徐晃的生平与正史大体相当。"
+    },
+    {
+      "id": "official-hero-100424",
+      "officialId": 100424,
+      "iconId": 100424,
+      "portrait": "assets/portraits/100424.jpg",
+      "name": "小乔＆大乔",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200652",
+      "dismantle": "official-skill-道行险阻",
+      "dismantles": [
+        "official-skill-道行险阻"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 88,
+        "defense": 50,
+        "speed": 31
+      },
+      "desc": "【史】小乔、大乔分别为周瑜、孙策之妾。两人并称为“江东二乔”，是三国时期世人皆知的绝色美女，均受到世人的追捧。\n【演】在《三国演义》中，诸葛亮谎称曹操南下的目的之一就是小乔与大乔，以此激怒周瑜同意联刘抗曹。"
+    },
+    {
+      "id": "official-hero-100426",
+      "officialId": 100426,
+      "iconId": 100426,
+      "portrait": "assets/portraits/100426.jpg",
+      "name": "凌统",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200629",
+      "dismantle": "official-skill-措手不及",
+      "dismantles": [
+        "official-skill-措手不及"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 41,
+        "defense": 85,
+        "speed": 49
+      },
+      "desc": "【史】吴国名将。凌操之子，少有名盛，为人有国士之风，多次战役中表现出色，官至偏将军。被陈寿盛赞为“江表之虎臣”。\n【演】在《三国演义》中，凌统因父亲凌操被甘宁所害而一直仇视甘宁，但在濡须口与乐进交战时得甘宁所救，从此便尽释前嫌，与甘宁结为生死之交。其他事迹与正史大致相同。"
+    },
+    {
+      "id": "official-hero-100430",
+      "officialId": 100430,
+      "iconId": 100430,
+      "portrait": "assets/portraits/100430.jpg",
+      "name": "张宝",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200050",
+      "dismantle": "official-skill-楚歌四起",
+      "dismantles": [
+        "official-skill-楚歌四起"
+      ],
+      "cost": 2,
+      "distance": 4,
+      "stats": {
+        "attack": 77,
+        "strategy": 88,
+        "defense": 87,
+        "speed": 50
+      },
+      "desc": "【史】张角之弟，张梁之兄，中平元年（184）二月，同兄弟一起发动黄巾起义，号地公将军。同年十一月于下曲阳（今河北晋州）遭到左中郎将皇甫嵩、钜鹿太守郭典的围攻，兵败被斩。\n【演】在《三国演义》中，张宝同兄弟一起发动黄巾起义，于阳城与朱儁军对抗。后刘备兄弟率军前来，帮助朱儁与张宝交战，张宝使用妖术，一度获胜，但不久就被破解，张宝被刘备射伤，逃入阳城坚守。朱儁等加紧围攻，张宝的部下严政斩了张宝，献首投降。"
+    },
+    {
+      "id": "official-hero-100435",
+      "officialId": 100435,
+      "iconId": 100435,
+      "portrait": "assets/portraits/100435.jpg",
+      "name": "夏侯渊",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200655",
+      "dismantle": "official-skill-先驱突击",
+      "dismantles": [
+        "official-skill-先驱突击"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 91,
+        "strategy": 66,
+        "defense": 90,
+        "speed": 100
+      },
+      "desc": "【史】东汉末年名将，擅长千里奔袭作战，官至征西将军，封博昌亭侯。初期随曹操征伐，官渡之战为曹操督运粮草，又督诸将先后平定昌豨、徐和、雷绪、商曜等叛乱。后率军驻凉州，逐马超、破韩遂、灭宋建、横扫羌、氐，虎步关右。张鲁降曹操后夏侯渊留守汉中，与刘备相拒逾年，于定军山被刘备部将黄忠所袭，战死，谥曰愍侯。\n【演】在《三国演义》中，夏侯渊是夏侯婴之后、大将军惇族弟。自曹操陈留起兵起，便跟随征伐，历任陈留、颍川太守。官渡之战后，夏侯渊负责粮草补给，保证了曹操平定北方。而后夏侯渊又率兵四处征讨叛乱，破昌豨、徐和、雷绪、商曜等，战功卓著。而后夏侯渊督张郃、徐晃等留守汉中，与前来取汉中的刘备大军交战，为刘备将黄忠所袭，不幸战死。谥曰愍侯。魏齐王正始四年从祀曹操庙庭。"
+    },
+    {
+      "id": "official-hero-100439",
+      "officialId": 100439,
+      "iconId": 100439,
+      "portrait": "assets/portraits/100439.jpg",
+      "name": "黄盖",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200616",
+      "dismantle": "official-skill-斩铁",
+      "dismantles": [
+        "official-skill-斩铁"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 84,
+        "strategy": 68,
+        "defense": 87,
+        "speed": 29
+      },
+      "desc": "【史】孙吴名将。历仕孙坚、孙策、孙权三任君主。为人严肃，善于训练士卒，每每征讨，他的部队皆勇猛善战。赤壁之战时，黄盖前往曹营诈降，并趁机以火攻大破曹操的军队，是赤壁之战主要功臣之一。\n【演】在《三国演义》中，黄盖以铁鞭为兵器。曹操军来犯之际，黄盖向周瑜提议火攻破敌，周瑜要他行苦肉计，黄盖一口答应。黄盖故意提出投降曹操，周瑜假意下令斩首，后改为杖打五十，打得皮开肉绽。黄盖向曹操献降书，曹操起初识破诈降，但有两细作回报黄盖遭刑的事，曹操才相信。但苦肉计并无正史记载，赤壁之战时候黄盖只是“建策火攻”而已。"
+    },
+    {
+      "id": "official-hero-100442",
+      "officialId": 100442,
+      "iconId": 100442,
+      "portrait": "assets/portraits/100442.jpg",
+      "name": "黄忠",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200680",
+      "dismantle": "official-skill-一夫当关",
+      "dismantles": [
+        "official-skill-一夫当关"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 94,
+        "strategy": 56,
+        "defense": 99,
+        "speed": 42
+      },
+      "desc": "【史】本为刘表部下，后归刘备，并助刘备攻益州刘璋。在定军山一战中阵斩曹操部下名将夏侯渊。黄忠在后世多以勇猛的老将形象出现于各类文学艺术作品中。\n【演】在《三国演义》中，刘备称汉中王后将其封为五虎上将之一。初为刘表部下，后事韩玄；虽年近六旬，却有万夫不当之勇。关羽攻长沙时，关羽用拖刀计将黄忠击败，但不忍害之。次日，黄忠计诱关羽，为报关羽之恩，用弓箭只射关羽盔缨，但韩玄却因此怀疑黄忠有二心，想将黄忠斩首，但遭魏延劫场，韩玄被诛，黄忠与魏延一同降蜀。\n黄忠入蜀后，战功赫赫。先与严颜败张郃，后更于定军山亲斩夏侯渊。刘备称帝后伐吴，黄忠不顾年迈，请令担任先锋，为吴将马忠偷袭射中，回营后不治而亡。"
+    },
+    {
+      "id": "official-hero-100443",
+      "officialId": 100443,
+      "iconId": 100443,
+      "portrait": "assets/portraits/100443.jpg",
+      "name": "陈宫",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200805",
+      "dismantle": "official-skill-利兵谋胜",
+      "dismantles": [
+        "official-skill-利兵谋胜"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 60,
+        "strategy": 95,
+        "defense": 82,
+        "speed": 60
+      },
+      "desc": "【史】为人性格刚直烈壮，少与海内知名之士皆相连结。初随曹操，后因曹操谋害边让而与曹操反目，弃曹投靠吕布。吕布战败后，随吕布等一同被曹操所擒，陈宫求即就戮，从容赴死。\n【演】在《三国演义》中，陈宫曾被刘晔评价为“陈宫多计”；荀攸评其“有谋而迟”。在下邳吕布战败后，陈宫亦于下邳城南门被曹操部将徐晃擒获。白门楼前，曹操劝降陈宫，陈宫不肯屈降，曹操忍痛下令斩首处决陈宫。"
+    },
+    {
+      "id": "official-hero-100449",
+      "officialId": 100449,
+      "iconId": 100449,
+      "portrait": "assets/portraits/100449.jpg",
+      "name": "夏侯惇",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200770",
+      "dismantle": "official-skill-谋定后动",
+      "dismantles": [
+        "official-skill-谋定后动"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 94,
+        "strategy": 67,
+        "defense": 98,
+        "speed": 90
+      },
+      "desc": "【史】汉末年三国时期曹魏名将，西汉开国元勋夏侯婴的后代。少年时以勇气闻名于乡里。曹操起兵，夏侯惇是其最早的将领之一。与吕布军交战时，曾一度被擒为人质，又被流矢射瞎左眼。多次为曹操镇守后方，曾率军民阻断太寿河水，筑陂塘灌溉农田，使百姓受益，功勋卓著。历任折冲校尉、济阴太守、建武将军，官至大将军，封高安乡侯，追谥忠侯。青龙元年（233年），得以配享太祖（曹操）庙庭。\n【演】在《三国演义》中，夏侯惇在徐州攻防战时迎战吕布部将高顺，高顺败逃，夏侯惇从后追赶，不料遭另一名敌将曹性射箭偷袭。夏侯惇左眼被射中，痛得怒吼一声便匆忙用手拔箭，却不慎连着眼珠子拔了出来。夏侯惇立即大喊：“父精母血，不可弃也！”便把眼睛塞进嘴巴吞咽下去；然后又挺枪纵马，上前斩了曹性报回一箭之仇。"
+    },
+    {
+      "id": "official-hero-100450",
+      "officialId": 100450,
+      "iconId": 100450,
+      "portrait": "assets/portraits/100450.jpg",
+      "name": "孙策",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200771",
+      "dismantle": "official-skill-谋定后动",
+      "dismantles": [
+        "official-skill-谋定后动"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 96,
+        "strategy": 72,
+        "defense": 92,
+        "speed": 82
+      },
+      "desc": "【史】三国时期孙吴的奠基者之一，孙坚长子、吴大帝孙权长兄。其人有智有勇，英姿勃发，其治军严整，军纪严明，被称为“江东小霸王”。初为继承父亲孙坚的遗业而屈事袁术，征战时屡获大胜。袁术僭越称帝后，孙策与袁术决裂，曹操下诏书给孙策，要孙策讨伐袁术。之后孙策统一江东，但在一次狩猎中为刺客所伤，不久后身亡。其弟孙权接掌孙策势力。\n【演】在《三国演义》中，孙策的事迹基本与正史相符。而在描写孙策被刺后，引入了孙策斩道士于吉而受其诅咒，伤重而亡的情节。"
+    },
+    {
+      "id": "official-hero-100451",
+      "officialId": 100451,
+      "iconId": 100451,
+      "portrait": "assets/portraits/100451.jpg",
+      "name": "关羽",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200769",
+      "dismantle": "official-skill-谋定后动",
+      "dismantles": [
+        "official-skill-谋定后动"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 102,
+        "strategy": 83,
+        "defense": 90,
+        "speed": 95
+      },
+      "desc": "【史】蜀汉名将，是刘备、张飞的结义兄弟。早期跟随刘备辗转各地，曾被曹操生擒，于白马坡斩袁绍大将颜良，与张飞一同被称为万人敌。赤壁之战后，刘备助东吴周瑜攻打南郡曹仁，别遣关羽绝北道，阻挡曹操援军，曹仁退走后，关羽被刘备任命为襄阳太守。刘备入益州，关羽留守荆州。建安二十四年，关羽围襄樊，擒于禁，斩庞德，威震华夏，曹操曾想迁都以避其锐。后曹操派徐晃前来增援，东吴吕蒙又偷袭荆州，关羽腹背受敌，兵败身亡。\n【演】与刘备、张飞桃园结义，羽居其次。使八十二斤青龙偃月刀随刘备东征西讨。汜水关温酒斩华雄，屯土山降汉不降曹。为报恩斩颜良、诛文丑，解曹操白马之围。后得知刘备音信，过五关斩六将，千里寻兄。刘备平定益州后，封关羽为五虎大将之首，督荆州事。羽起军攻曹，放水淹七军，威震华夏。围樊城右臂中箭，幸得华佗医治，刮骨疗伤。但未曾提防东吴袭荆州，关羽父子败走麦城，突围中被捕，不屈遭害。"
+    },
+    {
+      "id": "official-hero-100452",
+      "officialId": 100452,
+      "iconId": 100452,
+      "portrait": "assets/portraits/100452.jpg",
+      "name": "木鹿大王",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200772",
+      "dismantle": "official-skill-兵无常势",
+      "dismantles": [
+        "official-skill-兵无常势"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 82,
+        "strategy": 83,
+        "defense": 85,
+        "speed": 75
+      },
+      "desc": "【演】《三国演义》中的虚构人物，八纳洞主，孟获盟友。擅魔法，能改变天气，控制动物并指挥它们作战。在法术帮助下最初对蜀军取得一些胜利，但在诸葛亮的喷火木兽将他的动物吓跑后战败，最后死于乱军之中。"
+    },
+    {
+      "id": "official-hero-100471",
+      "officialId": 100471,
+      "iconId": 100471,
+      "portrait": "assets/portraits/100471.jpg",
+      "name": "曹节",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200631",
+      "dismantle": "official-skill-养精蓄锐",
+      "dismantles": [
+        "official-skill-养精蓄锐"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 70,
+        "strategy": 64,
+        "defense": 70,
+        "speed": 83
+      },
+      "desc": "【史】曹操次女。初为汉献帝贵人，伏皇后被废杀后，进号皇后。建安二十五年，其兄长曹丕代汉自立，派遣使者索取皇帝玺绶，曹皇后愤怒不与。如此反复数次，曹皇后最终召见使者，要亲手交出玉玺。但使者来后，她又将玉玺摔至轩下，流泪怒斥：“天不祚尔！”左右皆莫能仰视。献帝禅位后被封山阳公，曹节为山阳公夫人，去世后谥曰“献穆皇后”。\n【演】在《三国演义》中，曹节生平与正史大体一致。而曹节则是对曹休、曹洪破口大骂：“俱是汝等乱贼，希图富贵，共造逆谋！吾父功盖寰区，威震天下，然且不敢篡窃神器。今吾兄嗣位未几，辄思篡汉，皇天必不祚尔！”言罢，痛哭入宫。"
+    },
+    {
+      "id": "official-hero-100472",
+      "officialId": 100472,
+      "iconId": 100472,
+      "portrait": "assets/portraits/100472.jpg",
+      "name": "司马懿",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200080",
+      "dismantle": "official-skill-深谋远虑",
+      "dismantles": [
+        "official-skill-深谋远虑"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 72,
+        "strategy": 98,
+        "defense": 97,
+        "speed": 30
+      },
+      "desc": "【史】三国时期魏国杰出的政治家、军事家、战略家，西晋王朝的奠基人。是辅佐了魏国三代的托孤辅政之重臣，后期成为掌控魏国朝政的权臣。善谋奇策，多次征伐有功，其中最显著的功绩是两次率大军成功抵御诸葛亮北伐和远征平定辽东。对屯田、水利等农耕经济发展有重要贡献。\n【演】在《三国演义》中，司马懿的生平基本与正史相符。而在小说中，则将其塑造成“奸诈”的负面形象。"
+    },
+    {
+      "id": "official-hero-100474",
+      "officialId": 100474,
+      "iconId": 100474,
+      "portrait": "assets/portraits/100474.jpg",
+      "name": "张宁",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200685",
+      "dismantle": "official-skill-始计",
+      "dismantles": [
+        "official-skill-始计"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 37,
+        "strategy": 88,
+        "defense": 72,
+        "speed": 47
+      },
+      "desc": "张宁在《三国志》，《三国演义》均未有提及，是东汉末年大贤良师张角的女儿，虚拟人物。"
+    },
+    {
+      "id": "official-hero-100475",
+      "officialId": 100475,
+      "iconId": 100475,
+      "portrait": "assets/portraits/100475.jpg",
+      "name": "郝昭",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200689",
+      "dismantle": "official-skill-白刃",
+      "dismantles": [
+        "official-skill-白刃"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 83,
+        "strategy": 82,
+        "defense": 92,
+        "speed": 31
+      },
+      "desc": "【史】曹魏初年著名将领。郝昭少年从军，屡立战功，后受曹真的推荐镇守陈仓，防御蜀汉。太和二年（228年），诸葛亮率军北伐，为郝昭所阻，劝降不成，昼夜相攻二十余日后被迫退军。\n【演】在《三国演义》中，郝昭生平与正史大体相当。身长九尺，猿臂善射，深有谋略。诸葛亮第三次北伐前探知郝昭病重，赶在张郃换防前出兵。郝昭呻吟之间忽听报蜀军到城下，急令人上城把守。但当时各门上火起，城中大乱。郝昭听知惊死，陈仓终被破。事后诸葛亮怜郝昭之死，令其妻小扶灵柩回魏国，以表其忠。"
+    },
+    {
+      "id": "official-hero-100476",
+      "officialId": 100476,
+      "iconId": 100476,
+      "portrait": "assets/portraits/100476.jpg",
+      "name": "郭嘉",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200692",
+      "dismantle": "official-skill-十面埋伏",
+      "dismantles": [
+        "official-skill-十面埋伏"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 40,
+        "strategy": 100,
+        "defense": 87,
+        "speed": 78
+      },
+      "desc": "【史】曹操帐下著名谋士。原为袁绍部下，后转投曹操，为曹操统一中国北方立下了功勋，官至军师祭酒，封洧阳亭侯。在曹操征伐乌丸时病逝，年仅三十八岁。史书上称他“才策谋略，世之奇士”。曹操称赞他见识过人，是自己的“奇佐”。\n【演】在《三国演义》中，郭嘉生平与三国志基本相同，前期由荀彧推荐给曹操，再让程昱加以肯定与推举；是曹操麾下洞察力敏锐的谋士，深得信赖，自身也曾经推举过参谋刘晔。增加遗计定辽东的剧情，成功让公孙康诛灭二袁并降曹，使曹操不费一兵一卒兼领辽东（史书未载定辽东之策为郭嘉所出）。"
+    },
+    {
+      "id": "official-hero-100477",
+      "officialId": 100477,
+      "iconId": 100477,
+      "portrait": "assets/portraits/100477.jpg",
+      "name": "庞统",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200693",
+      "dismantle": "official-skill-十面埋伏",
+      "dismantles": [
+        "official-skill-十面埋伏"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 71,
+        "strategy": 98,
+        "defense": 91,
+        "speed": 42
+      },
+      "desc": "【史】号凤雏，刘备帐下重要谋士，与诸葛亮同拜为军师中郎将。与刘备一同入川，于刘备与刘璋决裂之际，献上上中下三条计策，刘备用其中计。进围雒县时，庞统率众攻城，不幸中流矢而亡，年仅三十六岁。后来庞统所葬之处遂名为落凤坡。\n【演】被称为凤雏，与诸葛亮齐名。赤壁之战时，庞统避乱江东，鲁肃将其荐于周瑜，入曹营献连环计，助周瑜大败曹军。周瑜死后，诸葛亮前往吊孝，因而得见庞统。当时鲁肃亦引荐庞统给孙权，但因其外貌丑陋，而不被起用。庞统于是投靠刘备，但亦因其貌丑陋而不被重用。\n庞统到任后，不理政事，于是刘备遣张飞前往问责，张飞因赏识庞统之才，遂拜其为副军师中郎将，与诸葛亮共赞方略，教练军士。后庞统随刘备取蜀，设计斩杨怀、高沛，得涪水关。攻雒城时，因疑诸葛亮欲争功，而不听从劝阻，进至落凤坡，中张任埋伏，为乱箭射死。"
+    },
+    {
+      "id": "official-hero-100478",
+      "officialId": 100478,
+      "iconId": 100478,
+      "portrait": "assets/portraits/100478.jpg",
+      "name": "陆逊",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200694",
+      "dismantle": "official-skill-十面埋伏",
+      "dismantles": [
+        "official-skill-十面埋伏"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 63,
+        "strategy": 95,
+        "defense": 95,
+        "speed": 40
+      },
+      "desc": "【史】三国时期吴国政治家、军事家。建安二十四年（219年），陆逊参与袭取荆州。章武二年（222年），孙权以陆逊为大都督，在夷陵火烧连营击败刘备，一战成名。黄武七年（228年），陆逊取得石亭之战的胜利。黄龙元年（229年），孙权称帝后，以陆逊为上大将军、辅佐太子孙登并掌管陪都武昌事宜，后卷入立嗣之争。\n赤乌七年（244年）拜为丞相，总领三公事务，领武昌事。陆逊跟随孙权四十余年，统领吴国军政十余年，深得孙权器重。深谋远虑，忠诚耿直。一生出将入相，被赞为“社稷之臣”。\n【演】在《三国演义》中，称其“身长八尺，面如美玉，体如凝酥”。孙权统事后，陆逊投奔入孙权门下。陆逊、董袭作为第五队参与了赤壁之战。合肥之战时陆逊董袭又救出重伤的太史慈；樊城之战前吕蒙因为想不出对付关羽的办法装病躲避。陆逊向孙权进言猜测是诈病，后又献夺荆州计谋。孙权遂以陆逊代吕蒙守陆口。后孙权力排众议，拜陆逊为大都督。"
+    },
+    {
+      "id": "official-hero-100479",
+      "officialId": 100479,
+      "iconId": 100479,
+      "portrait": "assets/portraits/100479.jpg",
+      "name": "吕布",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200012",
+      "dismantle": "official-skill-万箭齐发",
+      "dismantles": [
+        "official-skill-万箭齐发"
+      ],
+      "cost": 3.5,
+      "distance": 4,
+      "stats": {
+        "attack": 101,
+        "strategy": 29,
+        "defense": 72,
+        "speed": 77
+      },
+      "desc": "【史】吕布以勇武闻名，号称“飞将”，时有“人中吕布，马中赤兔”之说。原为丁原部将，被唆使谋害丁原归附董卓，与董卓誓为父子，后又被司徒王允唆使诛灭董卓。旋即被董卓旧部李傕等击败，依附袁绍，又被袁绍猜忌，依附张杨。兴平元年（194年），吕布趁曹操攻打陶谦时与陈宫等叛乱，占据濮阳，但两年间被曹操击败转而去依附徐州刘备，又趁刘备与袁术作战时袭取了徐州，与刘备和好一阵又相互攻伐。\n期间，以辕门射戟化解刘备与纪灵的争斗。建安三年（198年），吕布先后击败刘备与夏侯惇后，曹操亲自出马征讨吕布，水淹下邳，吕布被部下叛变，城破被俘，被处死。\n【演】吕布是骁勇善战的汉末诸侯，先后跟随丁原、董卓作战，并最终谋害了丁原和董卓。成为独立势力后，吕布与曹操为敌，和刘备、袁术等诸侯时敌时友，最终不敌曹操和刘备的联军，兵败人亡。吕布虽然勇猛，但是少有计策，为人反复无常，唯利是图。在演义中，吕布是天下无双的超一流武将，曾在虎牢关大战刘备、关羽、张飞，曾一人独斗曹操军六员大将，武艺可谓公认的演义第一。"
+    },
+    {
+      "id": "official-hero-100480",
+      "officialId": 100480,
+      "iconId": 100480,
+      "portrait": "assets/portraits/100480.jpg",
+      "name": "董卓",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200014",
+      "dismantle": "official-skill-万箭齐发",
+      "dismantles": [
+        "official-skill-万箭齐发"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 91,
+        "strategy": 70,
+        "defense": 100,
+        "speed": 52
+      },
+      "desc": "【史】中平六年（189年），受大将军何进、司隶校尉袁绍所召，率军进京讨伐十常侍，却借何进被害之机，得以掌握朝政。他随后废除汉少帝，改立献帝。关东诸侯联盟讨伐董卓，董卓放弃洛阳，移都长安。董卓生性残虐，当权后横征暴敛，激起了民愤，最后被王允和吕布诛灭。\n【演】原为汉河东太守，征讨黄巾不利，却因贿赂十常侍官至西凉刺史。董卓借何进被害之机，得以掌握朝政，又赠赤兔马给吕布，诱其投降并谋害丁原，从此不可一世。董卓废汉少帝，立汉献帝，朝臣敢怒不敢言；董卓生性残暴，经常纵兵掠民，百姓皆恨。后来，司徒王允利用貂蝉巧使连环计，使董卓为吕布所诛。"
+    },
+    {
+      "id": "official-hero-100481",
+      "officialId": 100481,
+      "iconId": 100481,
+      "portrait": "assets/portraits/100481.jpg",
+      "name": "丁奉",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200700",
+      "dismantle": "official-skill-鹤翼",
+      "dismantles": [
+        "official-skill-鹤翼"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 88,
+        "strategy": 81,
+        "defense": 72,
+        "speed": 83
+      },
+      "desc": "【史】吴国重要将领。年少时以骁勇为小将，经常奋勇破敌，屡立功勋。在东兴之战中“雪中奋短兵”，大破进犯东吴的魏军。丁奉一生征战，与北方政权从曹操时代打到司马炎时代，侍奉了孙权到孙皓四位吴国君主，见证了三国的盛衰兴亡。\n【演】在《三国演义》中的丁奉事迹较史书记载简略，主要描述了他在东兴之战中“雪中奋短兵”的事迹以及诛灭孙綝时的表现。同时还增加了曹丕伐吴，张辽保护曹丕撤退时，丁奉用箭射中了张辽腰部，使张辽回营后旧伤迸发、不治而亡的情节。"
+    },
+    {
+      "id": "official-hero-100482",
+      "officialId": 100482,
+      "iconId": 100127,
+      "portrait": "assets/portraits/100127.jpg",
+      "name": "韩遂",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200701",
+      "dismantle": "official-skill-鹤翼",
+      "dismantles": [
+        "official-skill-鹤翼"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 77,
+        "strategy": 73,
+        "defense": 89,
+        "speed": 88
+      },
+      "desc": "【史】汉末群雄之一，以诛宦官为名举兵造反，聚众十万，先后败皇甫嵩、张温、董卓、孙坚等名将，后受朝廷招安，拥兵割据一方长达三十余年。袁绍、曹操相争之际，马腾、韩遂被钟繇说服，依附于曹操。\n【演】在《三国演义》中，韩遂形象与正史有一些出入。与马腾结为异姓兄弟，同镇西凉，曾随马腾勤王，进攻李傕等人，因军粮不足被击败。后马腾被曹操诱入京城，遇害。出于兄弟之谊，韩遂与马腾之子马超联合，起兵进攻曹操，欲为马腾报仇。几番交战之后，马超、韩遂中曹操离间之计，马超对韩遂起疑，韩遂手下密谋降曹，被马超发现，砍断左手。最终，马超败走，韩遂降于曹操。"
+    },
+    {
+      "id": "official-hero-100483",
+      "officialId": 100483,
+      "iconId": 100122,
+      "portrait": "assets/portraits/100122.jpg",
+      "name": "麴义",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200702",
+      "dismantle": "official-skill-方圆",
+      "dismantles": [
+        "official-skill-方圆"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 90,
+        "strategy": 58,
+        "defense": 69,
+        "speed": 61
+      },
+      "desc": "【史】袁绍部下的将领，能征善战，屡建战功，早年在凉州，精通羌人战法，率领着袁绍的精锐部队。后来由于自恃功高而骄纵不轨，被袁绍所诛。\n【演】在《三国演义》中，麴义于第七回登场，袁绍、公孙瓒两军在磐河对峙，袁绍令麴义引八百弓手，步兵一万五千，列于阵中，自引马步军于后接应。公孙瓒遣大将严纲为先锋，鼓噪前来，麴义军乱箭齐发，麴义拍马舞刀，斩严纲于马下，直冲过界桥，击败公孙瓒，斩将夺旗，复引军冲公孙瓒后军，正撞着赵云，战不数合，被赵云一枪刺于马下。"
+    },
+    {
+      "id": "official-hero-100484",
+      "officialId": 100484,
+      "iconId": 100114,
+      "portrait": "assets/portraits/100114.jpg",
+      "name": "公孙瓒",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200703",
+      "dismantle": "official-skill-锋矢",
+      "dismantles": [
+        "official-skill-锋矢"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 87,
+        "strategy": 71,
+        "defense": 88,
+        "speed": 85
+      },
+      "desc": "【史】汉末群雄之一。依靠自己的才能逐步做到中郎将，以强硬的态度对抗北方少数民族，作战勇猛，威震边疆。公孙瓒好战，与主张以怀柔政策对待胡人的刘虞不和，后来公孙瓒灭刘虞，并挟持朝廷使者，得到了总督北方四州的授权，成为北方最强大的诸侯之一。他与袁绍多次相争，初期占据优势，但在龙凑之战后，公孙瓒锐气顿减，采取自保战略，逐渐失去了部下信任，被袁绍击败。最终困于高楼，引火自焚。\n【演】在《三国演义》中，公孙瓒犹如刘备恩人一般的存在。在黄巾起义和讨伐董卓时，公孙瓒均有举荐刘备。刘备在徐州抵御为报父仇而兴兵的曹操后，几乎没有与公孙瓒有任何联系。最终由曹操麾下的满宠告知刘备，公孙瓒已败于袁绍之手，死于易京的消息。"
+    },
+    {
+      "id": "official-hero-100486",
+      "officialId": 100486,
+      "iconId": 100486,
+      "portrait": "assets/portraits/100486.jpg",
+      "name": "潘凤",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200719",
+      "dismantle": "official-skill-折戟强攻",
+      "dismantles": [
+        "official-skill-折戟强攻"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 89,
+        "strategy": 42,
+        "defense": 80,
+        "speed": 85
+      },
+      "desc": "【演】《三国演义》中的虚构人物，冀州牧韩馥属下，善使大斧，于诸侯讨董之汜水关战中，遭华雄击败而被斩。韩馥经典语曰：吾有上将潘凤，可斩华雄。"
+    },
+    {
+      "id": "official-hero-100487",
+      "officialId": 100487,
+      "iconId": 100487,
+      "portrait": "assets/portraits/100487.jpg",
+      "name": "张鲁",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200720",
+      "dismantle": "official-skill-火积",
+      "dismantles": [
+        "official-skill-火积"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 65,
+        "strategy": 89,
+        "defense": 75,
+        "speed": 40
+      },
+      "desc": "【史】东汉末年割据汉中一带的军阀，据传是西汉留侯张良的十世孙、天师道（五斗米道）教祖张陵之孙。张鲁为五斗米道的第三代天师（称系师），在诛灭张修后继续在汉中一带传播五斗米道，并自称“师君”。雄据汉中近三十年，后投降曹操，官拜镇南将军，封阆中侯，食邑万户。张鲁去世后谥号为“原”，葬于邺城东。\n【演】在《三国演义》中，张鲁为汉宁太守，继父祖之后传播五斗米教。刘璋害死张鲁之母，二人因此结仇，多次交战。刘备攻益州时，刘璋向张鲁求援。张鲁派马超前往，但马超投降刘备。张鲁后见曹操自封魏王，想要自立为汉宁王，为谋士阎圃劝免。后曹操讨汉中，张鲁败，众人劝其烧粮仓，张鲁认为这是国家之物，未听从，为曹操所称赞。不久投降曹操，任镇南将军。"
+    },
+    {
+      "id": "official-hero-100489",
+      "officialId": 100489,
+      "iconId": 100489,
+      "portrait": "assets/portraits/100489.jpg",
+      "name": "孟优",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200725",
+      "dismantle": "official-skill-临危",
+      "dismantles": [
+        "official-skill-临危"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 75,
+        "strategy": 51,
+        "defense": 84,
+        "speed": 78
+      },
+      "desc": "【演】《三国演义》中的虚构人物，南蛮王孟获之弟。与诸葛亮的南征军交战，向战败的兄长推荐朵思大王，劝兄长借助朵思之力与蜀军对抗。后来与兄长一起归顺蜀汉。"
+    },
+    {
+      "id": "official-hero-100490",
+      "officialId": 100490,
+      "iconId": 100490,
+      "portrait": "assets/portraits/100490.jpg",
+      "name": "带来洞主",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200727",
+      "dismantle": "official-skill-强攻兵法",
+      "dismantles": [
+        "official-skill-强攻兵法"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 81,
+        "strategy": 65,
+        "defense": 73,
+        "speed": 35
+      },
+      "desc": "【演】南蛮王孟获之妻祝融夫人之弟。曾向连败的孟获相继推荐了木鹿大王和兀突骨以应对诸葛亮率领的来犯蜀军，并假投降欲接近诸葛亮趁机行刺，但均被诸葛亮识破。"
+    },
+    {
+      "id": "official-hero-100491",
+      "officialId": 100491,
+      "iconId": 100491,
+      "portrait": "assets/portraits/100491.jpg",
+      "name": "金环三结",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200726",
+      "dismantle": "official-skill-临危",
+      "dismantles": [
+        "official-skill-临危"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 85,
+        "strategy": 40,
+        "defense": 70,
+        "speed": 38
+      },
+      "desc": "【演】是《三国演义》的虚构人物。南蛮孟获属下大将，第一洞元帅。为了迎击蜀汉军马，与阿会喃、董荼那一起出洞。遭到夜袭，混乱之中被赵云一枪刺死。"
+    },
+    {
+      "id": "official-hero-100492",
+      "officialId": 100492,
+      "iconId": 100492,
+      "portrait": "assets/portraits/100492.jpg",
+      "name": "阿会喃",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200729",
+      "dismantle": "official-skill-顽抗",
+      "dismantles": [
+        "official-skill-顽抗"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 64,
+        "strategy": 25,
+        "defense": 65,
+        "speed": 31
+      },
+      "desc": "【演】南蛮王孟获部下三洞元帅之一，第三洞元帅。与董荼那一起担任孟获的援军出征，但被蜀军俘虏，又被诸葛亮释放，孟获怀疑其叛变而斩之。"
+    },
+    {
+      "id": "official-hero-100493",
+      "officialId": 100493,
+      "iconId": 100493,
+      "portrait": "assets/portraits/100493.jpg",
+      "name": "董荼那",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200729",
+      "dismantle": "official-skill-顽抗",
+      "dismantles": [
+        "official-skill-顽抗"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 71,
+        "strategy": 35,
+        "defense": 46,
+        "speed": 33
+      },
+      "desc": "【演】南蛮王孟获部下三洞元帅之一，第二洞元帅。与阿会喃等人一起担任孟获的援军出征，但被蜀军俘虏，又被诸葛亮释放，孟获怀疑其叛变而斩之。"
+    },
+    {
+      "id": "official-hero-100494",
+      "officialId": 100494,
+      "iconId": 100494,
+      "portrait": "assets/portraits/100494.jpg",
+      "name": "祝融夫人",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200730",
+      "dismantle": "official-skill-全军突击",
+      "dismantles": [
+        "official-skill-全军突击"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 88,
+        "strategy": 30,
+        "defense": 81,
+        "speed": 73
+      },
+      "desc": "【演】在《三国演义》中，为火神祝融氏后裔，南蛮王孟获之妻，带来洞主之姐。武艺高强，善使飞刀，百发百中。曾与孟获一起抵抗蜀军，在两军阵前被赵云活捉，在诸葛亮七擒七纵孟获之后，随孟获归顺蜀汉。祝融夫人为虚构人物，不见于正史记载。"
+    },
+    {
+      "id": "official-hero-100495",
+      "officialId": 100495,
+      "iconId": 100495,
+      "portrait": "assets/portraits/100495.jpg",
+      "name": "颜良＆文丑",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200736",
+      "dismantle": "official-skill-攻其不备",
+      "dismantles": [
+        "official-skill-攻其不备"
+      ],
+      "cost": 4,
+      "distance": 3,
+      "stats": {
+        "attack": 98,
+        "strategy": 39,
+        "defense": 88,
+        "speed": 85
+      },
+      "desc": "【史】颜良与文丑一起作为袁绍军队的勇将而闻名，孔融曾称赞二人勇冠三军，并以二人作为袁绍军队的武将代表劝谏曹操小心他们。\n【演】在《三国演义》中，于讨董战役的汜水关之战中第一次被提及姓名，当时颜良、文丑催军未回，使袁绍颇为华雄的猖狂而叹息。袁绍计逼韩馥，夺取冀州之时，关纯行刺袁绍，被文丑所斩。磐河一战，文丑策马挺枪，直冲上桥，十余合大败公孙瓒，平定河北。\n曹、袁交兵，先锋颜良攻白马被斩，文丑领军为其报仇，据延津挑战曹操，却中饵敌之计而军乱，文丑挺身独战，射退张辽，与徐晃大战三十合不分胜败，追击中正遇关羽，战不三合，心怯欲走，被关羽赶上斩于马下。"
+    },
+    {
+      "id": "official-hero-100496",
+      "officialId": 100496,
+      "iconId": 100496,
+      "portrait": "assets/portraits/100496.jpg",
+      "name": "诸葛亮",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200737",
+      "dismantle": "official-skill-胜兵求战",
+      "dismantles": [
+        "official-skill-胜兵求战"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 49,
+        "strategy": 108,
+        "defense": 95,
+        "speed": 55
+      },
+      "desc": "【史】政治家、军事家，被誉为“千古良相”的典范。策动孙、刘联盟，于赤壁之战中大破曹操，奠定三国鼎立的基础。蜀汉建立，拜为丞相。刘备伐吴失败，受托孤于永安，辅佐幼主，外联东吴，内修政理，南征平叛，北抗强魏。为完成统一中原，兴复汉室的大业，先后五次进攻魏国。在治国、治军等方面发挥了非凡的才能。最后一次北伐时采取分兵屯田之策，与司马懿大军相持百余日，但不幸因积劳成疾而逝世，享年五十四岁，谥曰忠武侯。\n【演】在《三国演义》中，人称卧龙先生，有经天纬地之才，鬼神不测之机。刘皇叔三顾茅庐，遂允出山相助。曾舌战群儒、借东风、智算华容、三气周瑜，辅佐刘备于赤壁之战大败曹操，更取得荆州为基本。后奉命率军入川，于定军山智激老黄忠，斩夏侯渊，败走曹操，夺取汉中。刘备伐吴失败，受遗诏托孤，安居平五路，七纵平蛮，六出祁山，鞠躬尽瘁，死而后已。其手摇羽扇，运筹帷幄的潇洒形象，千百年来已成为人们心中“智慧”的代名词。"
+    },
+    {
+      "id": "official-hero-100497",
+      "officialId": 100497,
+      "iconId": 100497,
+      "portrait": "assets/portraits/100497.jpg",
+      "name": "步皇后",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200738",
+      "dismantle": "official-skill-胜兵求战",
+      "dismantles": [
+        "official-skill-胜兵求战"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 70,
+        "strategy": 88,
+        "defense": 78,
+        "speed": 36
+      },
+      "desc": "【史】步练师，与吴国丞相步骘同族，吴大帝孙权的宠妃。步练师在孙权众嫔妃中最受孙权宠爱，生有二女：即全公主孙鲁班和朱公主孙鲁育。"
+    },
+    {
+      "id": "official-hero-100498",
+      "officialId": 100498,
+      "iconId": 100498,
+      "portrait": "assets/portraits/100498.jpg",
+      "name": "曹纯",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200739",
+      "dismantle": "official-skill-攻其不备",
+      "dismantles": [
+        "official-skill-攻其不备"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 96,
+        "strategy": 68,
+        "defense": 85,
+        "speed": 88
+      },
+      "desc": "【史】曹操麾下将领，曹仁之弟。为人擅战，甚得人心，为人重纲纪，不失理智。是曹操部下精锐部队“虎豹骑”的统领者之一，因在平定北方的战役中颇有功绩，被加封为高陵亭侯。\n【演】在《三国演义》中，曹纯作为曹仁的部将跟随曹仁一起防守南郡，受派遣，与牛金一起去救援曹洪，成功将吴将甘宁围困在彝陵，直至周瑜亲自前来解围。后来，曹仁全军偷袭周瑜大营，曹纯与曹洪同为合后，中计兵败，接应曹仁弃城而逃。"
+    },
+    {
+      "id": "official-hero-100499",
+      "officialId": 100499,
+      "iconId": 100097,
+      "portrait": "assets/portraits/100097.jpg",
+      "name": "蒯良＆蒯越",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200740",
+      "dismantle": "official-skill-近攻",
+      "dismantles": [
+        "official-skill-近攻"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 20,
+        "strategy": 92,
+        "defense": 78,
+        "speed": 36
+      },
+      "desc": "【史】蒯良为刘表定下安抚荆楚的政治方向，佐其成业，被刘表誉为“雍季之论”。蒯越原为刘表的部下，曾经在刘表初上任时帮助刘表铲除荆州一带的宗贼。刘表病逝后与刘琮一同投降曹操。\n【演】在《三国演义》中，则描写蒯良、蒯越为兄弟。二人均足智多谋，辅助刘表，佐其成业。"
+    },
+    {
+      "id": "official-hero-100500",
+      "officialId": 100500,
+      "iconId": 100186,
+      "portrait": "assets/portraits/100186.jpg",
+      "name": "审配",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200741",
+      "dismantle": "official-skill-觑隙",
+      "dismantles": [
+        "official-skill-觑隙"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 72,
+        "strategy": 82,
+        "defense": 88,
+        "speed": 40
+      },
+      "desc": "【史】袁绍的军师，为人正直，被委以腹心之任。河北平定，袁绍以审配、逢纪统军事，审配恃其强盛，力主与曹操决战。曾率领弓弩手大破曹军于官渡。后官渡战败，审配二子被俘，反因此受谮见疑，幸得逢纪力保。袁绍病死后，审配等矫诏立袁尚为嗣，导致兄弟相争，被曹操各个击破。曹操围邺，审配死守数月，终城破被擒，拒不投降，慷慨受死。\n【演】在《三国演义》中，审配生平与正史基本一致。"
+    },
+    {
+      "id": "official-hero-100501",
+      "officialId": 100501,
+      "iconId": 100133,
+      "portrait": "assets/portraits/100133.jpg",
+      "name": "陈到",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200742",
+      "dismantle": "official-skill-重整旗鼓",
+      "dismantles": [
+        "official-skill-重整旗鼓"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 87,
+        "strategy": 65,
+        "defense": 80,
+        "speed": 42
+      },
+      "desc": "【史】陈到，字叔至，豫州汝南人，三国时期蜀汉将领。刘备在豫州时期，陈到开始追随刘备，名位常亚于赵云，以忠勇著称。先后担任护军、征西将军，在建兴四年接替李严担任永安都督，封亭侯。负责统率和管理白毦兵，在永安任上去世。"
+    },
+    {
+      "id": "official-hero-100502",
+      "officialId": 100502,
+      "iconId": 100502,
+      "portrait": "assets/portraits/100502.jpg",
+      "name": "曹植",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200743",
+      "dismantle": "official-skill-重整旗鼓",
+      "dismantles": [
+        "official-skill-重整旗鼓"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 77,
+        "strategy": 88,
+        "defense": 70,
+        "speed": 61
+      },
+      "desc": "【史】曹操的三子。曹植很有才学，早年被曹操宠爱，几乎被立为太子，后失宠。魏文帝时，他受兄长曹丕的猜忌和迫害，屡遭贬爵和改换封地。曹植为建安文学中成就最高者，其诗以笔力雄健和词采画眉见长，留有集三十卷，已佚，今存《曹子建集》为宋人所编。\n【演】在《三国演义》中，曹操一度想立他为世子，但疑其乖巧，而不如曹丕心诚，最终听信贾诩的建议，立曹丕为嗣。曹操去世后，曹丕继位，以曹植不来奔丧为由问罪。曹丕发兵将曹植捉来，让其“七步成诗”，继而又让其立即成诗，曹植均能做到。之后，曹丕迫于太后的压力，放过曹植，对其只做贬爵处罚。"
+    },
+    {
+      "id": "official-hero-100503",
+      "officialId": 100503,
+      "iconId": 100503,
+      "portrait": "assets/portraits/100503.jpg",
+      "name": "戏志才",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200744",
+      "dismantle": "official-skill-连环",
+      "dismantles": [
+        "official-skill-连环"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 23,
+        "strategy": 89,
+        "defense": 78,
+        "speed": 36
+      },
+      "desc": "【史】经荀彧推荐，成为曹操手下谋士。为人多谋略，曹操十分器重，不幸早卒。他死后，荀彧推荐了郭嘉。"
+    },
+    {
+      "id": "official-hero-100504",
+      "officialId": 100504,
+      "iconId": 100246,
+      "portrait": "assets/portraits/100246.jpg",
+      "name": "潘璋",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200745",
+      "dismantle": "official-skill-觑隙",
+      "dismantles": [
+        "official-skill-觑隙"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 83,
+        "strategy": 68,
+        "defense": 76,
+        "speed": 36
+      },
+      "desc": "【史】吴国将领。潘璋年轻时家贫，跟随孙权后得到其赏识，加上其作战勇猛，不断升迁，其一生为孙权东征西讨，在合肥之战、追擒关羽、夷陵之战、江陵保卫战中多次立下战功。但其为人奢侈贪财。经常设立军市，又洗劫将士以获得财物，但孙权念其有功未予深究。被陈寿盛赞为“江表之虎臣”。 \n【演】在《三国演义》中，描写潘璋擒获关羽，并夺取了青龙偃月刀及赤兔马，而且描写了在夷陵之战被为父报仇的关兴所诛，但实际上都是小说虚构的。"
+    },
+    {
+      "id": "official-hero-100505",
+      "officialId": 100505,
+      "iconId": 100161,
+      "portrait": "assets/portraits/100161.jpg",
+      "name": "张昭",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200746",
+      "dismantle": "official-skill-连环",
+      "dismantles": [
+        "official-skill-连环"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 17,
+        "strategy": 87,
+        "defense": 59,
+        "speed": 36
+      },
+      "desc": "【史】少时好学，博览群书。二十岁时拒绝应试孝廉而与名士王朗等人讨论时事，深受陈琳赏识。东汉末年张昭避乱扬州。孙策举事时，张昭出任长史、抚军中郎将。孙策器重张昭，有关文武之事均由张昭办理。 孙策死时将孙权托付给张昭，张昭则尽力辅佐孙权，迅速稳定了民心士气。\n张昭敢于直言谏议，曾因违背孙权意愿而一度不让他朝见。孙权称帝之后，张昭因年老多病而辞官，著有《春秋左氏传》解和《论语》注。嘉禾五年，张昭去世。孙权素服吊唁并赠谥号文侯。 \n【演】在《三国演义》中，张昭好学善书，是当时的著名人物，于汉末避乱江东。孙策在江东创业时，辟张昭为长史，以管仲视之。孙策临终时，将孙权托付于张昭、周瑜，遗言“内事托子布，外事全赖公瑾”。张昭性格严肃，对孙权多有直谏。赤壁之战之际，张昭主降，孙权深感失望。孙权称帝后，张昭被封为娄侯，数年后病逝。"
+    },
+    {
+      "id": "official-hero-100506",
+      "officialId": 100506,
+      "iconId": 100506,
+      "portrait": "assets/portraits/100506.jpg",
+      "name": "刘豹",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200748",
+      "dismantle": "official-skill-远射",
+      "dismantles": [
+        "official-skill-远射"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 80,
+        "strategy": 35,
+        "defense": 60,
+        "speed": 77
+      },
+      "desc": "【史】南匈奴单于于扶罗之子，汉赵光文帝刘渊之父，东汉、魏晋时期南匈奴首领。由于南匈奴的动乱，刘豹因此留居汉地。其叔呼厨泉在於夫罗死后继位单于，刘豹则成为左贤王，后接掌了匈奴左部。\n【演】在《三国演义》第三十三回和第七十一回中提及。高干兵败后投奔左贤王，左贤王不愿结怨于曹操，于是将高干呵退。蔡邕之女蔡琰被匈奴劫往北地，曹操派人去赎，左贤王迫于曹操的势力，送还蔡琰。"
+    },
+    {
+      "id": "official-hero-100507",
+      "officialId": 100507,
+      "iconId": 100507,
+      "portrait": "assets/portraits/100507.jpg",
+      "name": "楼班",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200748",
+      "dismantle": "official-skill-远射",
+      "dismantles": [
+        "official-skill-远射"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 70,
+        "strategy": 61,
+        "defense": 78,
+        "speed": 80
+      },
+      "desc": "【史】乌丸王丘力居之子。丘力居死时，楼班年少，而从子蹋顿有武略，代立，总摄三部，众皆从蹋顿号令。楼班长大后，难楼、苏仆延率其部众奉楼班为单于，蹋顿为王，然蹋顿犹秉计策。袁尚败奔蹋顿，凭其势，复图冀州。后曹操亲自出征大破蹋顿于柳城。袁尚与楼班等人皆走辽东，最后被辽东太守公孙康所诛。"
+    },
+    {
+      "id": "official-hero-100508",
+      "officialId": 100508,
+      "iconId": 100508,
+      "portrait": "assets/portraits/100508.jpg",
+      "name": "严白虎",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200747",
+      "dismantle": "official-skill-近攻",
+      "dismantles": [
+        "official-skill-近攻"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 74,
+        "strategy": 59,
+        "defense": 73,
+        "speed": 46
+      },
+      "desc": "【史】其绰号为白虎，本名不详，为当地强族，献帝初拥兵万人自固。孙策受袁术使渡江，攻破白虎等。白虎奔余杭，投靠许昭。建安二年（197），复为孙策所破。\n【演】在《三国演义》中，严白虎自称东吴德王，占据吴郡，与孙策军交战，战败，请和不成，遂弃城而逃，投奔会稽太守王朗。王朗战败后，严白虎逃往余杭，为董袭所诛，首级献与孙策。"
+    },
+    {
+      "id": "official-hero-100509",
+      "officialId": 100509,
+      "iconId": 100168,
+      "portrait": "assets/portraits/100168.jpg",
+      "name": "张让",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200236",
+      "dismantle": "official-skill-疑兵",
+      "dismantles": [
+        "official-skill-疑兵",
+        "official-skill-陷阱"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 36,
+        "strategy": 30,
+        "defense": 48,
+        "speed": 81
+      },
+      "desc": "【史】东汉宦官，颍川（今河南禹县）人。桓帝、灵帝时，历为小黄门、中常侍等职，封列侯。在职时以搜刮暴敛、骄纵贪婪见称，灵帝极为宠信，常谓“张常侍是我父”。中平六年（189年），何进谋诛宦官，事泄，他和其余几个常侍设计谋害何进。袁绍、袁术等人闻何进被害，入宫诛灭宦官，张让走投无路，投水自尽。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100510",
+      "officialId": 100510,
+      "iconId": 100169,
+      "portrait": "assets/portraits/100169.jpg",
+      "name": "赵忠",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200234",
+      "dismantle": "official-skill-陷阱",
+      "dismantles": [
+        "official-skill-陷阱",
+        "official-skill-疑兵"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 55,
+        "strategy": 29,
+        "defense": 46,
+        "speed": 78
+      },
+      "desc": "【史】东汉末年宦官，赵延之兄。桓帝、灵帝时，历为小黄门、中常侍、大长秋、车骑将军等职，封都乡侯。在职时以搜刮暴敛、骄纵贪婪见称，灵帝极为宠信，常谓“赵常侍是我母”。中平六年（189年），何进谋诛宦官，事泄，他和其余几个常侍设计谋害何进，袁绍、袁术等人闻何进被害，入宫诛灭宦官，后诛灭赵忠。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100511",
+      "officialId": 100511,
+      "iconId": 100170,
+      "portrait": "assets/portraits/100170.jpg",
+      "name": "夏恽",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200227",
+      "dismantle": "official-skill-佯攻",
+      "dismantles": [
+        "official-skill-佯攻",
+        "official-skill-反计"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 56,
+        "strategy": 46,
+        "defense": 43,
+        "speed": 23
+      },
+      "desc": "【史】东汉宦官。汉灵帝中平初为中常侍，宗亲依势横行于州郡。时中常侍吕强清忠奉公，为平息人民对朝廷不满情绪，建议汉灵帝先诛左右贪浊者、大赦党人。夏恽以吕强主张危及自身利益，遂与同僚赵忠等诬陷吕强与党人联合，诽谤朝廷。汉灵帝不察，致使吕强自戮，宗亲财产没入官府。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100512",
+      "officialId": 100512,
+      "iconId": 100171,
+      "portrait": "assets/portraits/100171.jpg",
+      "name": "郭胜",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200213",
+      "dismantle": "official-skill-反计",
+      "dismantles": [
+        "official-skill-反计",
+        "official-skill-佯攻"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 58,
+        "strategy": 46,
+        "defense": 53,
+        "speed": 27
+      },
+      "desc": "【史】东汉宦官，十常侍之一。十常侍朋比为奸，祸乱朝纲，制造出党锢之祸，后被袁绍所诛。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100513",
+      "officialId": 100513,
+      "iconId": 100172,
+      "portrait": "assets/portraits/100172.jpg",
+      "name": "毕岚",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200227",
+      "dismantle": "official-skill-佯攻",
+      "dismantles": [
+        "official-skill-佯攻",
+        "official-skill-反计"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 40,
+        "strategy": 35,
+        "defense": 45,
+        "speed": 40
+      },
+      "desc": "【史】东汉宦官，十常侍之一。十常侍朋比为奸，祸乱朝纲，制造出党锢之祸，后被袁绍所诛。另外，毕岚曾制造翻车，用于取河水洒路。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100514",
+      "officialId": 100514,
+      "iconId": 100173,
+      "portrait": "assets/portraits/100173.jpg",
+      "name": "段珪",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200227",
+      "dismantle": "official-skill-佯攻",
+      "dismantles": [
+        "official-skill-佯攻",
+        "official-skill-反计"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 60,
+        "strategy": 50,
+        "defense": 40,
+        "speed": 33
+      },
+      "desc": "【史】东汉宦官，“十常侍”之一。十常侍党同伐异，卖官鬻爵，后在“十常侍之乱”中被袁绍所诛。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100515",
+      "officialId": 100515,
+      "iconId": 100174,
+      "portrait": "assets/portraits/100174.jpg",
+      "name": "高望",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200236",
+      "dismantle": "official-skill-疑兵",
+      "dismantles": [
+        "official-skill-疑兵",
+        "official-skill-陷阱"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 48,
+        "strategy": 38,
+        "defense": 46,
+        "speed": 75
+      },
+      "desc": "【史】东汉宦官，“十常侍”之一。十常侍党同伐异，卖官鬻爵，后在“十常侍之乱”中被袁绍所诛。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100516",
+      "officialId": 100516,
+      "iconId": 100175,
+      "portrait": "assets/portraits/100175.jpg",
+      "name": "张恭",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200234",
+      "dismantle": "official-skill-陷阱",
+      "dismantles": [
+        "official-skill-陷阱",
+        "official-skill-疑兵"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 56,
+        "strategy": 51,
+        "defense": 57,
+        "speed": 29
+      },
+      "desc": "【史】东汉宦官，“十常侍”之一，后被袁绍所诛。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100517",
+      "officialId": 100517,
+      "iconId": 100176,
+      "portrait": "assets/portraits/100176.jpg",
+      "name": "韩悝",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200213",
+      "dismantle": "official-skill-反计",
+      "dismantles": [
+        "official-skill-反计",
+        "official-skill-佯攻"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 39,
+        "strategy": 52,
+        "defense": 48,
+        "speed": 45
+      },
+      "desc": "【史】东汉宦官，十常侍之一。十常侍朋比为奸，祸乱朝纲，制造出党锢之祸，后被袁绍所诛。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100518",
+      "officialId": 100518,
+      "iconId": 100177,
+      "portrait": "assets/portraits/100177.jpg",
+      "name": "宋典",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200213",
+      "dismantle": "official-skill-反计",
+      "dismantles": [
+        "official-skill-反计",
+        "official-skill-佯攻"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 41,
+        "strategy": 39,
+        "defense": 60,
+        "speed": 41
+      },
+      "desc": "【史】东汉宦官，十常侍之一。十常侍朋比为奸，祸乱朝纲，制造出党锢之祸，后被袁绍所诛。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100519",
+      "officialId": 100519,
+      "iconId": 100519,
+      "portrait": "assets/portraits/100519.jpg",
+      "name": "兀突骨",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200756",
+      "dismantle": "official-skill-一夫当关",
+      "dismantles": [
+        "official-skill-一夫当关"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 84,
+        "strategy": 30,
+        "defense": 128,
+        "speed": 32
+      },
+      "desc": "【演】在三国演义中，兀突骨是虚构人物。南蛮乌戈国之主，是身长十二尺的巨汉。孟获遭到六擒六纵之后向兀突骨求援，兀突骨亲自带领两名兵长土安、奚泥及三万藤甲兵去攻蜀。在连胜魏延十五阵之后，追击至蟠蛇谷，被诸葛亮埋伏，以火攻反击之，兀突骨及其三万部下全部战死。"
+    },
+    {
+      "id": "official-hero-100520",
+      "officialId": 100520,
+      "iconId": 100520,
+      "portrait": "assets/portraits/100520.jpg",
+      "name": "花鬘",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200760",
+      "dismantle": "official-skill-合流",
+      "dismantles": [
+        "official-skill-合流"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 80,
+        "strategy": 60,
+        "defense": 71,
+        "speed": 58
+      },
+      "desc": "花鬘在《三国志》，《三国演义》均未有提及，只是古典戏曲《龙凤巾》中的虚构人物。其形象并非一般君主家中闺秀，而是与其母祝融相似，是一个可以披甲上阵，善于刀枪作战的女武将。戏曲中在诸葛亮平定南蛮时，花鬘曾与关索作战，失败被俘，两人互生爱意，南蛮王孟获降服后二人成婚。"
+    },
+    {
+      "id": "official-hero-100521",
+      "officialId": 100521,
+      "iconId": 100521,
+      "portrait": "assets/portraits/100521.jpg",
+      "name": "文聘",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200761",
+      "dismantle": "official-skill-火积",
+      "dismantles": [
+        "official-skill-火积"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 86,
+        "strategy": 76,
+        "defense": 85,
+        "speed": 82
+      },
+      "desc": "【史】三国时期曹魏名将。本来是荆州刘表的大将。刘表死后，其子刘琮降曹操。文聘初不随见曹操，直至曹操召聘相见。曹操仍旧让他守卫江夏，使其典北兵、镇荆江。文聘也不负曹操所望，守御荆城之际，多次引兵阻遏关羽之师，攻其辎重，烧其战船，立下莫大之功，成为曹操倚为屏障的大将之一，威名远播。\n后又多从征讨，累封后将军，新野侯。曹叡即位之初，文聘在江夏击退了孙权的进攻。死后追谥曰壮。\n【演】在《三国演义》中，本来是荆州刘表的大将，镇守荆北。后来刘表死后，其子刘琮继位，议降曹操。刘琮降于曹操后，文聘初不随见曹操，直至曹操召聘相见。曹操委以兵马之重，令其引军追击刘备；然而追上刘备后，被刘备片言责退。赤壁战前夕，文聘为阻止黄盖伪船来闯，独引小舟拦截，却被敌军弓箭所伤。\n后来文聘多从征讨，于国有功。曹丕即位后，举军造舟以攻东吴，以文聘等将作先行，却为吴将徐盛所破。文聘不避险阻，棹舟上龙船，亲负曹丕脱险，曹丕方免于难。\n\n本武将设计建议来自：\n【129区玩家：王者归来】"
+    },
+    {
+      "id": "official-hero-100522",
+      "officialId": 100522,
+      "iconId": 100522,
+      "portrait": "assets/portraits/100522.jpg",
+      "name": "诸葛恪",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200762",
+      "dismantle": "official-skill-疾风迅雷",
+      "dismantles": [
+        "official-skill-疾风迅雷"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 58,
+        "strategy": 90,
+        "defense": 88,
+        "speed": 50
+      },
+      "desc": "【史】诸葛瑾的长子，从小就以才思敏捷、善于应对著称，曾任丹杨太守，为吴国征得大量兵源。孙亮继位后，诸葛恪掌握了吴国大权，率军抵挡了魏国三路进攻，在东兴大胜魏军。此后，诸葛恪开始轻敌，率大军伐魏，围攻新城不下，士卒因疾病死伤惨重，回军后为掩饰过失，更加独断专权。不久，诸葛恪被孙峻联合吴主孙亮设计所诛，被夷灭三族。\n【演】在《三国演义》中，诸葛恪曾为吴太子孙登的太子左辅。孙亮继位后，诸葛恪掌握了吴国大权，率军抵挡了魏国三路进攻，在东兴大胜魏军。此后，诸葛恪开始轻敌，率军二十万伐魏，围攻新城不下，被魏国援军大败，回军后为掩饰过失，更加独断专权。不久，诸葛恪被孙峻联合吴主孙亮设计所诛，被满门抄斩。"
+    },
+    {
+      "id": "official-hero-100523",
+      "officialId": 100523,
+      "iconId": 100523,
+      "portrait": "assets/portraits/100523.jpg",
+      "name": "全琮",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200763",
+      "dismantle": "official-skill-索敌",
+      "dismantles": [
+        "official-skill-索敌"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 80,
+        "strategy": 75,
+        "defense": 85,
+        "speed": 30
+      },
+      "desc": "【史】吴国名将。全琮很有谋略，曾参与多场重要战役的谋划。孙权将自己的女儿孙鲁班嫁给了全琮，全琮的家族也成为吴国的名门；但全琮本人并不因此而骄横跋扈，仍然以十分谦恭的态度对待他人。\n【演】全琮在《三国演义》里着墨处不多，后期战役常与朱桓出阵。初登场于第九十六回，其时周鲂行计引诱曹休走进陷阱，陆逊担任外应带兵伏击曹休。当时陆逊为了分兵三路以迎击曹休，便向孙权推荐朱桓与全琮为辅佐。结果全琮引一军暗袭魏寨后方，与魏将薛乔对垒并击退薛乔，最后会合主军大败魏兵。"
+    },
+    {
+      "id": "official-hero-100524",
+      "officialId": 100524,
+      "iconId": 100524,
+      "portrait": "assets/portraits/100524.jpg",
+      "name": "沙摩柯",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200764",
+      "dismantle": "official-skill-健卒不殆",
+      "dismantles": [
+        "official-skill-健卒不殆"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 95,
+        "strategy": 36,
+        "defense": 90,
+        "speed": 71
+      },
+      "desc": "【史】三国时期五溪蛮首领。为报关羽被东吴所害之仇，刘备亲自领兵攻孙权，以金锦爵赏诱沙摩柯助战。沙摩柯率一万余人响应蜀军，表现活跃。章武二年（222年），吴大都督陆逊以火攻破刘备，率诸军齐击，蜀军四十多个营寨被攻破，沙摩柯在大乱中匹马奔逃，死于乱军。\n【演】为刘备伐吴的援军。生得面如噀血，碧眼突出，使一个铁蒺藜骨朵，腰带两张弓，威风抖擞。伐吴期间，曾一箭射死东吴猛将甘宁。后刘备兵败，沙摩柯被东吴大将周泰所害。"
+    },
+    {
+      "id": "official-hero-100525",
+      "officialId": 100525,
+      "iconId": 100525,
+      "portrait": "assets/portraits/100525.jpg",
+      "name": "赵统＆赵广",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200765",
+      "dismantle": "official-skill-闪击",
+      "dismantles": [
+        "official-skill-闪击"
+      ],
+      "cost": 4,
+      "distance": 2,
+      "stats": {
+        "attack": 87,
+        "strategy": 65,
+        "defense": 81,
+        "speed": 80
+      },
+      "desc": "【史】赵统、赵广分别是赵云的长子和次子。赵统在赵云去世后，袭爵永昌亭侯，官至蜀汉虎贲中郎督，加行领军。赵广随姜维前往沓中，官拜牙门将。曹魏司马氏派五路大军伐蜀时，赵广随大将军姜维与魏兵战于疆川口，姜维败绩还守剑阁，赵广于沓中战死。\n【演】在《三国演义》中，于九十七回登场。赵统、赵广拜见诸葛亮，并告知父亲赵云的噩耗。"
+    },
+    {
+      "id": "official-hero-100526",
+      "officialId": 100526,
+      "iconId": 100526,
+      "portrait": "assets/portraits/100526.jpg",
+      "name": "张机",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200773",
+      "dismantle": "official-skill-兵无常势",
+      "dismantles": [
+        "official-skill-兵无常势"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 81,
+        "strategy": 88,
+        "defense": 90,
+        "speed": 55
+      },
+      "desc": "【史】名机，字仲景，南阳郡人。以表字行施于世，即汉末著名医学家“张仲景”。早年学医于同郡张伯祖，尽得其真传。初举孝廉，相传于建安年间任长沙太守，时大疫流行，乃钻研《内经》《难经》等古医书，博采众方，撰写《伤寒杂病论》，与华佗、董奉齐名，并称“建安三神医”，后世尊其为“医圣”。其著作辗转流散，经后人编次校勘，分别整理为《伤寒论》和《金匮要略》二书，流传至今。"
+    },
+    {
+      "id": "official-hero-100527",
+      "officialId": 100527,
+      "iconId": 100164,
+      "portrait": "assets/portraits/100164.jpg",
+      "name": "诸葛瑾",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200780",
+      "dismantle": "official-skill-鱼鳞",
+      "dismantles": [
+        "official-skill-鱼鳞"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 58,
+        "strategy": 82,
+        "defense": 70,
+        "speed": 50
+      },
+      "desc": "【史】三国时期吴国重臣，诸葛亮之兄，诸葛恪之父。经弘咨推荐，为东吴效力。胸怀宽广，温厚诚信，得到孙权的深深信赖，称为“神交”，并努力缓和蜀汉与东吴的关系。建安二十五年（220年）吕蒙病逝，诸葛瑾代吕蒙领南郡太守，驻守公安。孙权称帝后，诸葛瑾官至大将军，领豫州牧。\n【演】在《三国演义》中，诸葛瑾经鲁肃推荐，为东吴效力。胸怀宽广，温厚诚信，得到孙权的深深信赖，努力缓和蜀汉与东吴的关系，曾于刘备伐吴之际出使求和，但未成功。"
+    },
+    {
+      "id": "official-hero-100528",
+      "officialId": 100528,
+      "iconId": 100528,
+      "portrait": "assets/portraits/100528.jpg",
+      "name": "吾粲",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200776",
+      "dismantle": "official-skill-衡轭",
+      "dismantles": [
+        "official-skill-衡轭"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 68,
+        "defense": 80,
+        "speed": 28
+      },
+      "desc": "【史】三国时期吴国大臣。吾粲初为县中小吏，后得县长孙河赏识，担任曲阿县丞，又升任长史，治理有声名政绩，与同郡人陆逊、卜静等齐名。孙权任车骑将军，征召吾粲为主簿，外任山阴县令，入朝为参军校尉。黄武元年（222年），与吕范、贺齐等以水军抗击魏将曹休，升任会稽太守。\n后任昭义中郎将，与吕岱讨平山越，入朝又任屯骑校尉、少府、太子太傅。赤乌年间，孙权欲废太子孙和，而立鲁王孙霸，他坚持“嫡庶之分”，违忤孙权。后被孙霸等人诬陷，下狱处死。\n【演】在《三国演义》中，吾粲在孙权招贤纳士之时投奔东吴。"
+    },
+    {
+      "id": "official-hero-100529",
+      "officialId": 100529,
+      "iconId": 100529,
+      "portrait": "assets/portraits/100529.jpg",
+      "name": "步度根",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200774",
+      "dismantle": "official-skill-疏数",
+      "dismantles": [
+        "official-skill-疏数"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 82,
+        "strategy": 30,
+        "defense": 68,
+        "speed": 78
+      },
+      "desc": "【史】汉末魏初的鲜卑单于之一，蒲头之弟。其部众分布在并州的太原、雁门等地，与轲比能数相攻伐。"
+    },
+    {
+      "id": "official-hero-100530",
+      "officialId": 100530,
+      "iconId": 100107,
+      "portrait": "assets/portraits/100107.jpg",
+      "name": "刘表",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200768",
+      "dismantle": "official-skill-鱼鳞",
+      "dismantles": [
+        "official-skill-鱼鳞"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 75,
+        "strategy": 80,
+        "defense": 70,
+        "speed": 56
+      },
+      "desc": "【史】其人身长八尺余，姿貌温厚伟壮，少时知名于世，名列“八俊”。在荆州期间，刘表远交袁绍，近结张绣，内纳刘备，据地数千里，带甲十余万，称雄荆江，先破孙坚，后又常抗曹操。然而刘表为人性多疑忌，好于坐谈，立意自守，而无四方之志，后更宠溺后妻蔡氏，使妻族蔡瑁等得权。刘表死后，蔡瑁等人废长立幼，奉表次子刘琮为主；曹操南征，刘琮举州投降，荆州遂没。\n【演】在《三国演义》中，刘表生平基本与正史相符。"
+    },
+    {
+      "id": "official-hero-100531",
+      "officialId": 100531,
+      "iconId": 100143,
+      "portrait": "assets/portraits/100143.jpg",
+      "name": "于禁",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200779",
+      "dismantle": "official-skill-衡轭",
+      "dismantles": [
+        "official-skill-衡轭"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 83,
+        "strategy": 71,
+        "defense": 81,
+        "speed": 84
+      },
+      "desc": "【史】三国时期魏国武将。本为鲍信部将，后属曹操，曾于张绣造反时讨伐不守军纪的青州兵，同时为迎击敌军而固守营垒，因此曹操称赞他可与古代名将相比。然而在建安二十四年（219年）的襄樊之战中，于禁在败给关羽后投降，致使晚节不保。关羽败亡后，于禁从荆州获释到了吴国。黄初二年（公元221年），孙权遣还于禁回魏，同年去世，谥曰厉侯，有一子于圭。\n【演】在《三国演义》中，于禁于曹操招贤之时前来投奔。后随曹操参与官渡之战、赤壁之战。赤壁兵败之后，于禁随曹操征讨马超、韩遂，于阵前不敌马超而败北。关羽率军攻樊城时，于禁、庞德奉命前往援救镇守樊城的曹仁终被关羽以水攻大败。战后于禁被俘，向关羽乞降，被押解往荆州。吕蒙攻陷荆州后于禁被送往吴国，孙权降魏后将其释放返魏，奉命守护曹操陵墓。曹丕遣人将于禁战败乞降等事画于陵壁，于禁看后惭愧发病而死。"
+    },
+    {
+      "id": "official-hero-100532",
+      "officialId": 100532,
+      "iconId": 100532,
+      "portrait": "assets/portraits/100532.jpg",
+      "name": "蜀三相",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200778",
+      "dismantle": "official-skill-鱼鳞",
+      "dismantles": [
+        "official-skill-鱼鳞"
+      ],
+      "cost": 4,
+      "distance": 3,
+      "stats": {
+        "attack": 50,
+        "strategy": 90,
+        "defense": 78,
+        "speed": 40
+      },
+      "desc": "【史】蒋琬、董允、费祎三人为三国时期蜀汉的重臣，与诸葛亮并称为“蜀汉四相”。三人在内政方面表现出色，为蜀汉政权作出了很大的贡献。"
+    },
+    {
+      "id": "official-hero-100534",
+      "officialId": 100534,
+      "iconId": 100534,
+      "portrait": "assets/portraits/100534.jpg",
+      "name": "徐庶",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200785",
+      "dismantle": "official-skill-道行险阻",
+      "dismantles": [
+        "official-skill-道行险阻"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 80,
+        "strategy": 97,
+        "defense": 90,
+        "speed": 88
+      },
+      "desc": "【史】东汉末年刘备帐下谋士，后归曹操，并仕于曹魏。徐庶本名徐福，为寒门子弟。早年为人报仇，获救后改名徐庶，求学于儒舍。后与同郡石广元避难于荆州，与司马徽、诸葛亮、崔州平等道友来往密切。刘备屯驻新野时，徐庶前往投奔，并向刘备推荐诸葛亮。徐庶南下时因母亲被曹操所掳获，徐庶不得已辞别刘备，进入曹营。魏文帝时，徐庶官至右中郎将、御史中丞。\n【演】在《三国演义》中，徐庶化名单福。刘备在新野时，投效于刘备，被拜为军师。徐庶为刘备出谋划策，击败曹将吕旷、吕翔，斗阵胜曹仁，并计取樊城。不久曹操手下谋士程昱识破了徐庶的身份，称徐庶之才十倍于己。曹操欲拉拢徐庶，于是程昱取来徐庶老母，用伪书赚徐庶来降。徐庶临走前向刘备“走马荐诸葛”，并立誓在曹营“终身不设一谋”。后徐庶跟随曹操参加赤壁之战，在庞统建议下，主动请命去散关防守马腾、韩遂，逃过赤壁大火。"
+    },
+    {
+      "id": "official-hero-100553",
+      "officialId": 100553,
+      "iconId": 100553,
+      "portrait": "assets/portraits/100553.jpg",
+      "name": "朱儁",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200791",
+      "dismantle": "official-skill-众谋不懈",
+      "dismantles": [
+        "official-skill-众谋不懈"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 89,
+        "strategy": 77,
+        "defense": 88,
+        "speed": 52
+      },
+      "desc": "【史】东汉末年名将。光和七年（184年），黄巾起义爆发，朱儁担任右中郎将、持节。平定三郡之地后，被皇甫嵩上表推功，进封西乡侯，迁任镇贼中郎将。又率军讨平南阳黄巾。董卓秉政时，想任朱儁为副手，遭其婉拒。其后出逃荆州，更屯军中牟，徐州刺史陶谦等欲推举他为太师，并传檄各州牧伯，相邀讨伐李傕、奉迎天子。但朱儁却奉诏入京任太仆。兴平二年（195年），李傕、郭汜相攻时，郭汜扣留朱儁为人质，朱儁性格刚烈，同日即发病而死。\n【演】在《三国演义》中，朱儁形象与正史相似。是汉车骑将军。黄巾起义时，为中郎将，引军讨伐。屡立功绩，迁车骑将军，河南尹。后董卓余党李傕、郭汜乱政，掠夺公卿，朱儁对汉室衰微的状况感到悲哀，归家后即病逝。"
+    },
+    {
+      "id": "official-hero-100557",
+      "officialId": 100557,
+      "iconId": 100557,
+      "portrait": "assets/portraits/100557.jpg",
+      "name": "张梁",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200795",
+      "dismantle": "official-skill-众谋不懈",
+      "dismantles": [
+        "official-skill-众谋不懈"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 81,
+        "strategy": 55,
+        "defense": 85,
+        "speed": 32
+      },
+      "desc": "【史】东汉末农民起义首领。张角、张宝的弟弟。熹平年间，张角创太平道，梁与角同在河北一带传教，秘密进行组织工作。中平元年（184）黄巾起义时，号称“人公将军”，协同张角击败卢植、董卓进攻。角病死，东汉政府增调左中郎将皇甫嵩往攻，梁坚守广宗，英勇反击而获胜。后因麻痹轻敌，于广宗被皇甫嵩击败身亡。\n【演】在《三国演义》中，张梁同兄弟一起发动黄巾起义，在曲阳被皇甫嵩和曹操围攻，连败七阵身亡。"
+    },
+    {
+      "id": "official-hero-100562",
+      "officialId": 100562,
+      "iconId": 100562,
+      "portrait": "assets/portraits/100562.jpg",
+      "name": "张宝",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200796",
+      "dismantle": "official-skill-众谋不懈",
+      "dismantles": [
+        "official-skill-众谋不懈"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 69,
+        "strategy": 80,
+        "defense": 78,
+        "speed": 50
+      },
+      "desc": "【史】张角之弟，张梁之兄，中平元年（184）二月，同兄弟一起发动黄巾起义，号地公将军。同年十一月于下曲阳（今河北晋州）遭到左中郎将皇甫嵩、钜鹿太守郭典的围攻，兵败被斩。\n【演】在《三国演义》中，张宝同兄弟一起发动黄巾起义，于阳城与朱儁军对抗。后刘备兄弟率军前来，帮助朱儁与张宝交战，张宝使用妖术，一度获胜，但不久就被破解，张宝被刘备射伤，逃入阳城坚守。朱儁等加紧围攻，张宝的部下严政斩了张宝，献首投降。"
+    },
+    {
+      "id": "official-hero-100570",
+      "officialId": 100570,
+      "iconId": 100098,
+      "portrait": "assets/portraits/100098.jpg",
+      "name": "何进",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200250",
+      "dismantle": "official-skill-索敌",
+      "dismantles": [
+        "official-skill-索敌"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 81,
+        "strategy": 42,
+        "defense": 73,
+        "speed": 83
+      },
+      "desc": "【史】东汉灵帝时外戚，何进的异母妹有宠于灵帝并被立为皇后，他也随之升迁。黄巾起义时，为大将军。灵帝驾崩后，何进从袁绍之言，博征智谋之士为己所用。自此独揽大权。然而何进不纳陈琳之谏，多结外镇军阀，翘首京师，与袁绍等谋诛宦竖。终于事泄，被张让等先下手为强，遇刺身亡。\n【演】在《三国演义》中，何进本为屠夫，因为其妹入宫为皇后，以外戚身份入仕。对于是否诛灭当权宦官，犹豫不决。在袁绍建议下，决定除去十常侍，但不听众人劝告，召董卓带兵入京。宦官们知道外兵入京要对付自己，十常侍之首张让设计让何太后召何进入宫，并埋伏了刀斧手五十人于长乐宫嘉德门内，何进中了埋伏，被斩。"
+    },
+    {
+      "id": "official-hero-100574",
+      "officialId": 100574,
+      "iconId": 100574,
+      "portrait": "assets/portraits/100574.jpg",
+      "name": "陆抗",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200824",
+      "dismantle": "official-skill-铁戟金戈",
+      "dismantles": [
+        "official-skill-铁戟金戈"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 93,
+        "defense": 93,
+        "speed": 43
+      },
+      "desc": "【史】三国时期吴国名将，丞相陆逊次子。陆抗袭父爵为江陵侯，为建武校尉，领其父众五千人。后迁立节中郎将、镇军将军等。孙皓为帝，任镇军大将军、都督西陵、信陵、夷道、乐乡、公安诸军事，驻乐乡。凤凰元年，击退晋将羊祜进攻，并击败叛将西陵督步阐。与陆逊皆是吴国的中流砥柱，并称“逊抗”，被誉为吴国最后的名将。\n【演】陆抗足智多谋，率众平定了西陵步阐的叛乱。又奉命屯兵江口，以图襄阳。晋派羊祜镇守襄阳，陆抗与羊祜英雄相惜，自守疆界，不动干戈。又上疏说：“晋不可伐，劝君主实施仁德，修养生息。”来回复君主孙皓攻打襄阳的计划。孙皓大怒，以为陆抗与敌人私通，削去了他的兵权，令孙冀代替他。这时羊祜上表劝晋主伐吴，几年后陆抗死去。"
+    },
+    {
+      "id": "official-hero-100582",
+      "officialId": 100582,
+      "iconId": 100582,
+      "portrait": "assets/portraits/100582.jpg",
+      "name": "法正",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200828",
+      "dismantle": "official-skill-兼弱攻昧",
+      "dismantles": [
+        "official-skill-兼弱攻昧"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 60,
+        "strategy": 99,
+        "defense": 85,
+        "speed": 91
+      },
+      "desc": "【史】原为刘璋部下，刘备围成都时劝说刘璋投降，而后又与刘备进取汉中，献计将曹操大将夏侯渊斩首。法正善奇谋，深受刘备信任和敬重，被陈寿称赞为可比魏国的程昱和郭嘉。\n【演】在《三国演义》中，法正的生平事迹与正史大体相当。原为刘璋部属，与张松、孟达合谋献益州给刘备。在涪城大会上，与庞统一起策划谋害刘璋的计划。伐蜀成功后，曾与诸葛亮讨论治法之事。后来任蜀郡太守时公报私仇，听闻诸葛亮向他人的解释后有所收敛。曹刘争汉中时，说服刘备亲征，又受诸葛亮之命助黄忠斩夏侯渊。"
+    },
+    {
+      "id": "official-hero-100585",
+      "officialId": 100585,
+      "iconId": 100585,
+      "portrait": "assets/portraits/100585.jpg",
+      "name": "曹仁",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200836",
+      "dismantle": "official-skill-疾击其后",
+      "dismantles": [
+        "official-skill-疾击其后"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 88,
+        "strategy": 74,
+        "defense": 96,
+        "speed": 57
+      },
+      "desc": "【史】曹操从弟。三国曹魏名将。从曹操多年，为魏朝立下汗马功劳。破袁术，曹仁所斩获颇多，大破陶谦军及陶谦部将吕由，攻克句阳，生擒吕布的部将刘何，官渡之战中，在隐强打败刘备军、鸡落山之战又战胜袁绍军。\n【演】在《三国演义》中，曹仁于曹操起兵时与曹洪一同前来投奔，并随曹操一同参与讨董战役。后从征袁术、吕布、张绣，参加官渡之战，多立功勋。曹操平定北方后决意南征，曹仁率军先攻刘备，并列八门金锁阵以敌刘备，但阵法却被徐庶所破。赤壁之战后，周瑜乘胜进取荆州，与镇守南郡的曹仁大战，曹仁用曹操遗计诈败引周瑜入城，随命放箭，周瑜中箭败退。然此后反中东吴军士诈降之计，被周瑜击败。"
+    },
+    {
+      "id": "official-hero-100586",
+      "officialId": 100586,
+      "iconId": 100586,
+      "portrait": "assets/portraits/100586.jpg",
+      "name": "庞德",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200837",
+      "dismantle": "official-skill-疾击其后",
+      "dismantles": [
+        "official-skill-疾击其后"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 94,
+        "strategy": 70,
+        "defense": 86,
+        "speed": 90
+      },
+      "desc": "【史】初为马腾部下，在平定羌民的征伐中屡立战功。建安年间，庞德跟随马超征战，每次出征常冲锋陷阵，勇冠凉州三军。后几经辗转，随张鲁归降于曹操麾下。219年，庞德协助曹仁抵御关羽。时值汉水暴溢，他率诸将与关羽殊死搏斗，箭镞尽，又短兵相接。\n而他格斗益怒，胆气愈壮，力战多时后因小舟被洪水打翻为关羽军所擒。关羽敬重他的刚毅威武，以封将劝降，但他却怒目不跪，怒斥关羽，最终殒身殉节。\n【演】在《三国演义》中，曹操进攻汉中时，庞德被曹操所擒，且因张鲁的不仁而转投曹操。此后，庞德屡立战功，濡须口之战斩东吴名将陈武，汉中之战中击败蜀汉名将魏延，救出曹操。后来曹仁被关羽包围在樊城，庞德随于禁引军赴救。其时诸将皆以庞德兄长庞柔、故主马超均在蜀，都怀疑庞德有二心；\n庞德抬棺决死，遂力斗关羽父子，又箭射关羽，深为关羽所忌惮。然而于禁惧其立功，加以掣肘。魏军战败，庞德被周仓在水中擒获，誓死不降，为关羽所害。曹操闻知此事甚为伤悲，为之流涕。"
+    },
+    {
+      "id": "official-hero-100589",
+      "officialId": 100589,
+      "iconId": 100589,
+      "portrait": "assets/portraits/100589.jpg",
+      "name": "周泰",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200843",
+      "dismantle": "official-skill-白刃",
+      "dismantles": [
+        "official-skill-白刃"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 90,
+        "strategy": 61,
+        "defense": 102,
+        "speed": 35
+      },
+      "desc": "【史】三国时期吴国武将。孙策平定江东时与同郡蒋钦一起加入孙策军，随孙策左右，后孙权爱其为人，向孙策请求让周泰跟随自己。周泰多次于战乱当中保护孙权的安危，身上受的伤多达几十处，就像在皮肤上雕画一样，吴将朱然、徐盛等因此对其拜服。后来孙权为了表彰周泰为了东吴出生入死的功绩，而赐给他青罗伞盖。官至汉中太守、奋威将军，封陵阳侯。死于黄武中年，有子周邵，亦数有战功，死于黄龙二年，周邵的弟弟周承继承了兵权和爵位。\n【演】在《三国演义》中，跟正史差不多，最初和蒋钦一同在江中劫掠为生，后归顺孙策，并助孙策攻刘繇营寨。孙策攻取吴郡之时，周泰与孙权镇守宣城，期间山贼前来攻城，周泰为保护孙权而被刺12枪，身受重伤，幸得名医华佗救治才得以保全一命。"
+    },
+    {
+      "id": "official-hero-100592",
+      "officialId": 100592,
+      "iconId": 100592,
+      "portrait": "assets/portraits/100592.jpg",
+      "name": "董白",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200848",
+      "dismantle": "official-skill-战必断金",
+      "dismantles": [
+        "official-skill-战必断金"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 48,
+        "strategy": 86,
+        "defense": 83,
+        "speed": 62
+      },
+      "desc": "【史】董白，东汉末年县君，陇西临洮（今甘肃省岷县）人，董卓之孙女，尚未及笄就被封渭阳君。董卓被诛，灭三族时被处死。"
+    },
+    {
+      "id": "official-hero-100593",
+      "officialId": 100593,
+      "iconId": 100593,
+      "portrait": "assets/portraits/100593.jpg",
+      "name": "张郃",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200849",
+      "dismantle": "official-skill-风声鹤唳",
+      "dismantles": [
+        "official-skill-风声鹤唳"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 93,
+        "strategy": 68,
+        "defense": 88,
+        "speed": 88
+      },
+      "desc": "【史】征西车骑将军。先从韩馥，后投袁绍，在与公孙瓒的交战中多有功劳。官渡之战时，张郃受郭图陷害，率众投降于曹操，得以重用，随曹操平定北方，远征乌桓，平马超，斩宋建，灭张鲁，多有战功。后来，张郃随夏侯渊驻守汉中，在夏侯渊被害后暂代主帅，维持败兵。\n魏明帝时诸葛亮第一次北伐，张郃奉命救援陇右，在街亭大败蜀将马谡，导致诸葛亮撤兵；诸葛亮第四次时，张郃随司马懿前往相拒。后诸葛亮粮尽退兵，张郃追至木门，与诸葛亮军交战，被飞矢射中右膝而亡。\n【演】在《三国演义》中，张郃原为袁绍手下名将，官渡之战时，受郭图陷害，无奈投降于曹操，从此被曹操重用，跟随曹操南征北战，平马超，灭张鲁，多有战功。诸葛亮一出祁山时，张郃任司马懿先锋，跟随司马懿在街亭击败蜀将马谡，使诸葛亮撤兵。此后，在诸葛亮的多次北伐中，张郃先后随曹真、司马懿前往对抗，多有表现，连诸葛亮也叹其勇猛。诸葛亮五出祁山撤退时，于在剑阁设计埋伏，张郃前往追击，中埋伏被乱箭射死。"
+    },
+    {
+      "id": "official-hero-100594",
+      "officialId": 100594,
+      "iconId": 100594,
+      "portrait": "assets/portraits/100594.jpg",
+      "name": "司马朗",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200121",
+      "dismantle": "official-skill-溃堤",
+      "dismantles": [
+        "official-skill-溃堤",
+        "official-skill-运筹帷幄"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 58,
+        "strategy": 67,
+        "defense": 49,
+        "speed": 26
+      },
+      "desc": "【史】汉末之际，领家属逃离董卓，又迁往黎阳，成功躲避战乱。曹操任司空后，司马朗被辟为司空属官，又历任成皋令、堂阳长、元城令、丞相主簿、兖州刺史等职，所在皆有政绩，深受百姓爱戴。后司马朗与夏侯惇、臧霸等征讨吴国，到达居巢。军队中流行瘟疫，司马朗亲自去视察，派送医药，因此染病去世。"
+    },
+    {
+      "id": "official-hero-100595",
+      "officialId": 100595,
+      "iconId": 100595,
+      "portrait": "assets/portraits/100595.jpg",
+      "name": "司马孚",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200121",
+      "dismantle": "official-skill-溃堤",
+      "dismantles": [
+        "official-skill-溃堤",
+        "official-skill-运筹帷幄"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 56,
+        "strategy": 57,
+        "defense": 50,
+        "speed": 33
+      },
+      "desc": "【史】司马懿的三弟，自曹操时代起，就任文学掾，而后历仕魏国五代皇帝，累迁至太傅。司马孚在“高平陵事变”之际，协助司马懿控制京师，诛灭曹爽一党，后又督军成功防御吴、蜀的进攻，为司马氏政权的稳固多有功劳，但他性格十分谨慎，自司马懿执掌大权起，便逐渐引退，未参与司马氏几次废立魏帝之事。\n西晋代魏后，司马孚进拜为太宰，封安平王。晋帝司马炎对他十分尊宠，但他并不以此为荣，至死仍以魏臣自称。《晋书》语曰：“‘疾风彰劲草’，献王其有焉。故能位班上列，享年眉寿，清徽至范，为晋宗英，子孙遵业，世笃其庆。”，又赞曰：“安平立节，雅性贞亮。”"
+    },
+    {
+      "id": "official-hero-100596",
+      "officialId": 100596,
+      "iconId": 100596,
+      "portrait": "assets/portraits/100596.jpg",
+      "name": "司马馗",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200123",
+      "dismantle": "official-skill-落石",
+      "dismantles": [
+        "official-skill-落石",
+        "official-skill-急救"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 56,
+        "strategy": 53,
+        "defense": 60,
+        "speed": 30
+      },
+      "desc": "【史】司马懿的四弟。曹魏时期官员，官至太常，封东武城侯，死后谥曰戴。"
+    },
+    {
+      "id": "official-hero-100597",
+      "officialId": 100597,
+      "iconId": 100597,
+      "portrait": "assets/portraits/100597.jpg",
+      "name": "司马恂",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200115",
+      "dismantle": "official-skill-夹攻",
+      "dismantles": [
+        "official-skill-夹攻",
+        "official-skill-成竹在胸"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 41,
+        "strategy": 66,
+        "defense": 53,
+        "speed": 40
+      },
+      "desc": "【史】司马懿的五弟。司马恂在曹魏任鸿胪丞，西晋建立之前去世。"
+    },
+    {
+      "id": "official-hero-100598",
+      "officialId": 100598,
+      "iconId": 100598,
+      "portrait": "assets/portraits/100598.jpg",
+      "name": "司马进",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200123",
+      "dismantle": "official-skill-落石",
+      "dismantles": [
+        "official-skill-落石",
+        "official-skill-急救"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 66,
+        "strategy": 58,
+        "defense": 51,
+        "speed": 21
+      },
+      "desc": "【史】司马懿的六弟。司马进在曹魏任中郎，西晋建立之前去世。"
+    },
+    {
+      "id": "official-hero-100599",
+      "officialId": 100599,
+      "iconId": 100599,
+      "portrait": "assets/portraits/100599.jpg",
+      "name": "司马通",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200114",
+      "dismantle": "official-skill-伏兵",
+      "dismantles": [
+        "official-skill-伏兵",
+        "official-skill-看破"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 54,
+        "strategy": 64,
+        "defense": 53,
+        "speed": 26
+      },
+      "desc": "【史】司马懿的七弟。司马通在曹魏任司隶从事、安城亭侯，西晋建立之前去世。"
+    },
+    {
+      "id": "official-hero-100600",
+      "officialId": 100600,
+      "iconId": 100600,
+      "portrait": "assets/portraits/100600.jpg",
+      "name": "司马敏",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200115",
+      "dismantle": "official-skill-夹攻",
+      "dismantles": [
+        "official-skill-夹攻",
+        "official-skill-成竹在胸"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 59,
+        "strategy": 59,
+        "defense": 52,
+        "speed": 42
+      },
+      "desc": "【史】司马懿的八弟。司马敏在曹魏任安平亭侯，西晋建立之前去世。"
+    },
+    {
+      "id": "official-hero-100603",
+      "officialId": 100603,
+      "iconId": 100603,
+      "portrait": "assets/portraits/100603.jpg",
+      "name": "卞夫人",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200852",
+      "dismantle": "official-skill-美人计",
+      "dismantles": [
+        "official-skill-美人计"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 35,
+        "strategy": 87,
+        "defense": 78,
+        "speed": 88
+      },
+      "desc": "【史】魏武帝曹操的正妻（继室），魏文帝曹丕、任城威王曹彰、陈思王曹植、萧怀王曹熊的母亲。原本是倡家，即汉代专门从事音乐歌舞的乐人家庭，后来与曹操成婚，建安初年，原配丁夫人被废，卞夫人成为曹操的正妻。曹丕继位后尊其为皇太后，曹叡继位后尊其为太皇太后。卞后在太和四年去世，与魏武帝曹操合葬高陵。"
+    },
+    {
+      "id": "official-hero-100604",
+      "officialId": 100604,
+      "iconId": 100604,
+      "portrait": "assets/portraits/100604.jpg",
+      "name": "李儒",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200857",
+      "dismantle": "official-skill-翕处还张",
+      "dismantles": [
+        "official-skill-翕处还张"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 42,
+        "strategy": 94,
+        "defense": 82,
+        "speed": 59
+      },
+      "desc": "【史】董卓专政时担任弘农王郎中令，奉董卓之命，入宫毒死汉少帝。董卓死后，李傕攻进长安，控制朝政，李傕推举博士李儒为侍中，但被汉献帝拒绝。\n【演】董卓的谋士，董卓的大小事宜均与之参谋，堪称智囊。董卓趁乱进京、说降吕布、废立皇帝、迁都长安等举动，均离不开李儒的参谋之功。汉少帝刘辩被废后不满，李儒奉董卓之命，亲自带人入宫，毒死刘辩。后王允使“连环计”离间董卓、吕布，李儒劝董卓放弃貂蝉而换取吕布的效忠，董卓最终没有听从，死于吕布之手。董卓死时，李儒卧病在家，被家仆捆绑献出，处斩于市曹之中。"
+    },
+    {
+      "id": "official-hero-100615",
+      "officialId": 100615,
+      "iconId": 100615,
+      "portrait": "assets/portraits/100615.jpg",
+      "name": "马岱",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200865",
+      "dismantle": "official-skill-击势",
+      "dismantles": [
+        "official-skill-击势"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 92,
+        "strategy": 72,
+        "defense": 86,
+        "speed": 88
+      },
+      "desc": "【史】三国时期蜀汉将领，马超的从弟。早年追随马超大战曹操，反攻陇上，围攻成都，汉中之战等。后在诸葛亮病逝后受杨仪派遣斩了蜀将魏延。曾率领军队出师北伐，被魏将牛金击败而退还。官至平北将军，陈仓侯。\n【演】在《三国演义》中，马岱初次登场随马腾入许昌。后来马腾和其余诸子尽皆被害，马岱乔装逃出。马超起兵，马岱随之周旋。曾在潼关前打败钟繇。建安十九年，马岱随马超救援刘璋，曾与张飞大战十余合败北，旋即随马超归降刘备。刘禅登基后，跟随丞相诸葛亮南征孟获和北伐曹魏。马岱久经沙场、多负辛劳，作战冷静而勇猛，深得诸葛亮信任。诸葛亮临终授命于马岱，袭斩魏延。"
+    },
+    {
+      "id": "official-hero-100616",
+      "officialId": 100616,
+      "iconId": 100616,
+      "portrait": "assets/portraits/100616.jpg",
+      "name": "凌统",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200864",
+      "dismantle": "official-skill-击势",
+      "dismantles": [
+        "official-skill-击势"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 85,
+        "strategy": 70,
+        "defense": 94,
+        "speed": 62
+      },
+      "desc": "【史】吴国名将。凌操之子，少有名盛，为人有国士之风，多次战役中表现出色，官至偏将军。被陈寿盛赞为“江表之虎臣”\n【演】在《三国演义》中，凌统因父亲凌操被甘宁所害而一直仇视甘宁，但在濡须口与乐进交战时得甘宁所救，从此便尽释前嫌，与甘宁结为生死之交。其他事迹与正史大致相同。"
+    },
+    {
+      "id": "official-hero-100618",
+      "officialId": 100618,
+      "iconId": 100618,
+      "portrait": "assets/portraits/100618.jpg",
+      "name": "贾诩",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200882",
+      "dismantle": "official-skill-鸟云山兵",
+      "dismantles": [
+        "official-skill-鸟云山兵"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 48,
+        "strategy": 101,
+        "defense": 93,
+        "speed": 40
+      },
+      "desc": "【史】东汉末年至三国初年著名谋士、军事战略家，曹魏开国功臣。原为董卓部将，董卓死后，献计李傕、郭汜反攻长安。李傕等人失败后，辗转成为张绣的谋士。张绣曾用他的计策两次打败曹操，官渡之战前他劝张绣归降曹操。曹操与关中联军相持渭南时，贾诩献离间计瓦解马超、韩遂，使得曹操一举平定关中。\n【演】在《三国演义》中，贾诩的生平大体与正史相符。其形象突出，计无不中，甚至曾令善于用兵的曹操几度败绩。其所从属势力颇多，先随李傕，再随张绣，最后事曹操曹丕两代。加上他曾助曹丕篡汉，其形象不算十分正面。可是即使贾诩曾助李傕、曹魏这些在《三国演义》形象比较负面的势力，他的才能仍备受肯定。而且不论是李傕、张绣，还是曹操、曹丕，都将贾诩视为心腹。可见其人善于交际，亦深晓乱世自保之术。"
+    },
+    {
+      "id": "official-hero-100619",
+      "officialId": 100619,
+      "iconId": 100619,
+      "portrait": "assets/portraits/100619.jpg",
+      "name": "大乔",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200884",
+      "dismantle": "official-skill-三军之众",
+      "dismantles": [
+        "official-skill-三军之众"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 44,
+        "strategy": 69,
+        "defense": 68,
+        "speed": 46
+      },
+      "desc": "【史】吴国乔公长女，孙策之妾、小乔之姊。大乔国色流离、资貌绝伦。建安三年，孙策攻皖，拔之。纳大乔。后人谓英雄美女，天作之合。\n【演】在《三国演义》中，大乔唯一一次登场在二十九回中，孙策去世时，留下遗言命她孝顺吴夫人。孔明智激周瑜时，暗示曹操打仗是为了二乔，并将她们放到铜雀台中，引得小乔之夫周瑜暴怒，最终同意联刘抗曹。"
+    },
+    {
+      "id": "official-hero-100620",
+      "officialId": 100620,
+      "iconId": 100620,
+      "portrait": "assets/portraits/100620.jpg",
+      "name": "张绣",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200885",
+      "dismantle": "official-skill-三军之众",
+      "dismantles": [
+        "official-skill-三军之众"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 90,
+        "strategy": 68,
+        "defense": 85,
+        "speed": 85
+      },
+      "desc": "【史】骠骑将军张济的从子。东汉末年割据宛城的军阀，汉末群雄之一。初随张济征伐，张济死后与刘表联合。后降曹操，因不满其言行而突袭曹操，复与刘表联合。官渡之战前夕，听从贾诩的建议再次投降曹操，参加官渡之战，官至破羌将军，封宣威侯。在北征乌桓（207年）途中去世（一说为曹丕逼死），谥定侯。\n【演】在《三国演义》中，张绣是骠骑将军张济的侄子。建安元年，张济因军中缺粮，自关中引兵入荆州界，与刘表交战，攻穰城，中流矢而死。建安二年，曹操南征，部队到达淯水，张绣率众投降。曹操纳了张济的遗孀邹夫人，张绣因此怀恨曹操。后来，张绣偷袭曹操，曹操战败，长子曹昂，侄子曹安民被害，猛将典韦战死。\n张绣引兵追击，被曹操击退，于是张绣退回防守穰城，再次与刘表联盟。建安四年，张绣听从贾诩的建议，再次向曹操投降。张绣到达后，曹操牵着张绣的手，一起参加宴会，为自己的儿子曹均娶了张绣的女儿，并封张绣为扬武将军。"
+    },
+    {
+      "id": "official-hero-100630",
+      "officialId": 100630,
+      "iconId": 100630,
+      "portrait": "assets/portraits/100630.jpg",
+      "name": "皇甫嵩",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200898",
+      "dismantle": "official-skill-垒实迎击",
+      "dismantles": [
+        "official-skill-垒实迎击"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 92,
+        "strategy": 88,
+        "defense": 75,
+        "speed": 47
+      },
+      "desc": "【史】为人仁爱谨慎，尽忠职守，有谋略，有胆识。于黄巾起义时，以中郎将身份讨伐黄巾，用火攻大破张梁、张宝，拜左车骑将军。后因拒绝贿赂宦官而被免职。董卓掌权时，征皇甫嵩入朝为城门校尉，因私怨被其陷害下狱，经其子皇甫坚寿求情才得以保全。\n【演】在《三国演义》中，皇甫嵩形象与正史相似。于黄巾起义时，大破张梁、张宝。后接替董卓进攻张梁，连胜七阵。掘张角墓，拜左车骑将军、冀州牧，因拒绝贿赂宦官而被免职。董卓死，王允命其与吕布等共至郿坞抄籍董卓家产、人口，皇甫嵩将坞中所藏良家子女，尽行释放。"
+    },
+    {
+      "id": "official-hero-100631",
+      "officialId": 100631,
+      "iconId": 100631,
+      "portrait": "assets/portraits/100631.jpg",
+      "name": "严颜",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200899",
+      "dismantle": "official-skill-垒实迎击",
+      "dismantles": [
+        "official-skill-垒实迎击"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 83,
+        "strategy": 68,
+        "defense": 97,
+        "speed": 84
+      },
+      "desc": "【史】东汉末年武将，初为刘璋部下，担任巴郡太守。建安十九年，刘备进攻江州，严颜战败被俘，张飞对严颜说：“大军至，何以不降而敢拒战？”，严颜回答说：“卿等无状，侵夺我州，我州但有断头将军，无降将军也！”，张飞生气，命左右将严颜牵去砍头，严颜表情不变地说：“砍头便砍头，何为怒邪！”张飞敬佩严颜的勇气，遂释放严颜并以严颜为宾客，之后的事迹不在正史中出现。\n【演】在《三国演义》中，严颜在刘备攻取成都，径取汉川中登场。擅使硬弓和大刀，有万夫莫敌之勇。据守巴郡，与张飞交战，后为张飞用计俘虏。张飞质问：“大将在这里，为什么不投降，而敢率军拒敌？”颜宁死不屈，张飞壮而释之，引为上宾，严颜感概张飞的恩义而归降。"
+    },
+    {
+      "id": "official-hero-100634",
+      "officialId": 100634,
+      "iconId": 100634,
+      "portrait": "assets/portraits/100634.jpg",
+      "name": "吕姬",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200902",
+      "dismantle": "official-skill-美人计",
+      "dismantles": [
+        "official-skill-美人计"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 51,
+        "defense": 74,
+        "speed": 35
+      },
+      "desc": "【史】吕布与严氏之女，生卒年不详。下邳战役时吕布遭曹操围困，作为派出援军条件，吕姬与袁术之子有政治婚姻，但因出嫁途中被刘备与曹操拦截因而返回。吕布死后随母亲发往许昌，后不知所终。"
+    },
+    {
+      "id": "official-hero-100635",
+      "officialId": 100635,
+      "iconId": 100635,
+      "portrait": "assets/portraits/100635.jpg",
+      "name": "丘力居",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200903",
+      "dismantle": "official-skill-叫阵",
+      "dismantles": [
+        "official-skill-叫阵"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 82,
+        "strategy": 45,
+        "defense": 83,
+        "speed": 81
+      },
+      "desc": "【史】东汉末年辽西乌丸首领，楼班之父。曾与张举、张纯于渔阳反叛，自立为三郡乌丸元帅，横行幽、冀、青、徐四州，后降于幽州牧刘虞。"
+    },
+    {
+      "id": "official-hero-100636",
+      "officialId": 100636,
+      "iconId": 100636,
+      "portrait": "assets/portraits/100636.jpg",
+      "name": "迷当大王",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200904",
+      "dismantle": "official-skill-叫阵",
+      "dismantles": [
+        "official-skill-叫阵"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 78,
+        "strategy": 50,
+        "defense": 76,
+        "speed": 40
+      },
+      "desc": "【史】羌族首领，正始元年，响应姜维北伐曹魏，后被郭淮镇压。\n【演】羌族之王，与蜀交好，共讨魏国。姜维北伐之时，起兵五万出南安。后被魏将陈泰设计生擒，被郭淮好言相劝投降后，带魏兵奇袭蜀军大营。"
+    },
+    {
+      "id": "official-hero-100637",
+      "officialId": 100637,
+      "iconId": 100637,
+      "portrait": "assets/portraits/100637.jpg",
+      "name": "俄何烧戈",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200905",
+      "dismantle": "official-skill-叫阵",
+      "dismantles": [
+        "official-skill-叫阵"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 44,
+        "defense": 78,
+        "speed": 80
+      },
+      "desc": "【史】正史中俄何、烧戈为两名羌族首领。在联结蜀汉共同伐魏的过程中，为郭淮所败，两将双双被斩。\n【演】演义中的羌族将领，羌王迷当账下大将。羌军援蜀北伐之时，中魏将陈泰诈降之计，同陈泰共劫魏营，反被魏军围困，遂自刎而死。"
+    },
+    {
+      "id": "official-hero-100638",
+      "officialId": 100638,
+      "iconId": 100638,
+      "portrait": "assets/portraits/100638.jpg",
+      "name": "越吉",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200906",
+      "dismantle": "official-skill-文伐",
+      "dismantles": [
+        "official-skill-文伐"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 82,
+        "strategy": 32,
+        "defense": 80,
+        "speed": 79
+      },
+      "desc": "【演】《三国演义》中的虚构人物，西羌元帅，西羌王彻里吉手下大将。诸葛亮“一出祁山”伐魏时，曾起羌兵十五万并兵车直扣西平关，大败关兴，后因关公显灵而败退。"
+    },
+    {
+      "id": "official-hero-100639",
+      "officialId": 100639,
+      "iconId": 100639,
+      "portrait": "assets/portraits/100639.jpg",
+      "name": "彻里吉",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200907",
+      "dismantle": "official-skill-文伐",
+      "dismantles": [
+        "official-skill-文伐"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 79,
+        "strategy": 70,
+        "defense": 84,
+        "speed": 30
+      },
+      "desc": "【演】《三国演义》中的虚构人物，西羌国王。诸葛亮“一出祁山”伐魏时，曾遣越吉元帅率羌兵并兵车十五万直扣阳平关，后羌兵大败，蜀国尽数归还所获俘虏辎重，彻里吉感蜀恩义，与之结盟。"
+    },
+    {
+      "id": "official-hero-100640",
+      "officialId": 100640,
+      "iconId": 100640,
+      "portrait": "assets/portraits/100640.jpg",
+      "name": "朵思大王",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200908",
+      "dismantle": "official-skill-文伐",
+      "dismantles": [
+        "official-skill-文伐"
+      ],
+      "cost": 2,
+      "distance": 4,
+      "stats": {
+        "attack": 64,
+        "strategy": 81,
+        "defense": 59,
+        "speed": 58
+      },
+      "desc": "【演】《三国演义》中的虚构人物，南蛮秃龙洞元帅，号称南蛮第一智者。曾以南蛮地势与四眼毒泉防御；被俘释放后，又于三江城以毒矢大败蜀军，后三江城破，死于乱军之中。"
+    },
+    {
+      "id": "official-hero-100641",
+      "officialId": 100641,
+      "iconId": 100641,
+      "portrait": "assets/portraits/100641.jpg",
+      "name": "朱然",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200909",
+      "dismantle": "official-skill-伐谋",
+      "dismantles": [
+        "official-skill-伐谋"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 75,
+        "strategy": 72,
+        "defense": 80,
+        "speed": 28
+      },
+      "desc": "【史】吴国名将，朱治之甥及养子。于夷陵之战中与陆逊大破刘备；并面对曹真，张郃等魏将的围困，坚守江陵六月之久，名震敌国。官至左大司马，右军师，当阳侯。\n【演】演义中，朱然协助潘璋擒住关羽父子。后与孙桓共同抵抗刘备大军，参加夷陵之战。在追击刘备途中，被前来接应的赵云所诛。"
+    },
+    {
+      "id": "official-hero-100642",
+      "officialId": 100642,
+      "iconId": 100642,
+      "portrait": "assets/portraits/100642.jpg",
+      "name": "关索",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200910",
+      "dismantle": "official-skill-雀伏",
+      "dismantles": [
+        "official-skill-雀伏"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 97,
+        "strategy": 70,
+        "defense": 81,
+        "speed": 72
+      },
+      "desc": "【演】《三国演义》中的虚构人物，关羽三子，荆州失陷后逃难至鲍家庄养伤，后回归蜀国，并随诸葛亮南征，留下众多传说遗迹。明《花关索传》曾记载其与妻鲍三娘守葭萌关，《花关索》中提及其认父途中与王悦、王桃比武并迎娶二女；京剧《化外奇缘》则记载其在南征途中与孟获之女花鬘相爱结为夫妻。"
+    },
+    {
+      "id": "official-hero-100643",
+      "officialId": 100643,
+      "iconId": 100643,
+      "portrait": "assets/portraits/100643.jpg",
+      "name": "文钦",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200911",
+      "dismantle": "official-skill-窃兵",
+      "dismantles": [
+        "official-skill-窃兵"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 89,
+        "strategy": 55,
+        "defense": 92,
+        "speed": 86
+      },
+      "desc": "【史】魏国将领，文鸯、文虎之父。曾与毌丘俭起兵勤王，讨伐司马师，兵败后投奔吴国，任镇北大将军，幽州牧，封谯侯。后其随吴军援助起兵反抗司马氏的诸葛诞，却与之不和被诛。\n【演】在《三国演义》中，文钦和正史的形象大体相当。"
+    },
+    {
+      "id": "official-hero-100644",
+      "officialId": 100644,
+      "iconId": 100644,
+      "portrait": "assets/portraits/100644.jpg",
+      "name": "王双",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200912",
+      "dismantle": "official-skill-雀伏",
+      "dismantles": [
+        "official-skill-雀伏"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 95,
+        "strategy": 28,
+        "defense": 90,
+        "speed": 40
+      },
+      "desc": "【史】正史中，王双为曹真部将，于诸葛亮第二次北伐时追击撤还的蜀军，后战死。\n【演】魏国将领，善使流星锤，有万夫不当之勇。诸葛亮“二出祁山”之时，曾被曹真举荐，任虎威将军，驰援坚守陈仓的郝昭。于阵中斩蜀国数将，又重创张嶷，后因中了诸葛亮的诱敌之计为魏延所斩。"
+    },
+    {
+      "id": "official-hero-100645",
+      "officialId": 100645,
+      "iconId": 100645,
+      "portrait": "assets/portraits/100645.jpg",
+      "name": "徐晃",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200915",
+      "dismantle": "official-skill-翕处还张",
+      "dismantles": [
+        "official-skill-翕处还张"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 95,
+        "strategy": 89,
+        "defense": 84,
+        "speed": 95
+      },
+      "desc": "【史】三国时期曹魏名将。本为杨奉帐下骑都尉，杨奉被曹操击败后转投曹操，在曹操手下多立功勋，参与官渡、赤壁、关中征伐、汉中征伐等几次重大战役。樊城之战中徐晃作为曹仁的援军击败关羽，因于此役中治军严整而被曹操称赞“有周亚夫之风”。曹丕称帝后，徐晃被加为右将军，于公元227年病逝，谥曰壮侯。\n【演】在《三国演义》中，徐晃的生平与正史大体相当。"
+    },
+    {
+      "id": "official-hero-100647",
+      "officialId": 100647,
+      "iconId": 100647,
+      "portrait": "assets/portraits/100647.jpg",
+      "name": "华雄",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200927",
+      "dismantle": "official-skill-飒沓如星",
+      "dismantles": [
+        "official-skill-飒沓如星"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 93,
+        "strategy": 42,
+        "defense": 86,
+        "speed": 77
+      },
+      "desc": "【史】东汉末年为董卓帐下都督。袁绍等起兵讨伐董卓时，孙坚大破董卓军，华雄在此战中被孙坚一军所斩。\n【演】在《三国演义》中华雄的相关故事与史实差距较大。华雄被描述为身长九尺、虎体狼腰、豹头猿臂的猛将。在第五回中，华雄自告奋勇在汜水关抵挡十八路诸侯联军的进攻，并偷袭了孙坚的营寨，大败孙坚军，并斩了孙坚部将祖茂。后来诸侯们先后派出俞涉、潘凤两员大将与华雄交战，但二人均被华雄所斩。\n正当诸侯们手足无措之时，当时名不见经传的关羽自告奋勇出战华雄，并且在曹操为他斟的热酒尚温之时，便斩了华雄得胜归来。此段故事也被称作“温酒斩华雄”。"
+    },
+    {
+      "id": "official-hero-100648",
+      "officialId": 100648,
+      "iconId": 100648,
+      "portrait": "assets/portraits/100648.jpg",
+      "name": "张昭",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200928",
+      "dismantle": "official-skill-飒沓如星",
+      "dismantles": [
+        "official-skill-飒沓如星"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 35,
+        "strategy": 99,
+        "defense": 96,
+        "speed": 65
+      },
+      "desc": "【史】少时好学，博览群书。二十岁时拒绝应试孝廉而与名士王朗等人讨论时事，深受陈琳赏识。东汉末年张昭避乱扬州。孙策举事时，张昭出任长史、抚军中郎将。孙策器重张昭，有关文武之事均由张昭办理。 孙策死时将孙权托付给张昭，张昭则尽力辅佐孙权，迅速稳定了民心士气。\n张昭敢于直言谏议，曾因违背孙权意愿而一度不让他朝见。孙权称帝之后，张昭因年老多病而辞官，著有《春秋左氏传》解和《论语》注。嘉禾五年，张昭去世。孙权素服吊唁并赠谥号文侯。 \n【演】在《三国演义》中，张昭好学善书，是当时的著名人物，于汉末避乱江东。孙策在江东创业时，辟张昭为长史，以管仲视之。孙策临终时，将孙权托付于张昭、周瑜，遗言“内事托子布，外事全赖公瑾”。张昭性格严肃，对孙权多有直谏。赤壁之战之际，张昭主降，孙权深感失望。孙权称帝后，张昭被封为娄侯，数年后病逝。"
+    },
+    {
+      "id": "official-hero-100649",
+      "officialId": 100649,
+      "iconId": 100649,
+      "portrait": "assets/portraits/100649.jpg",
+      "name": "魏延",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200930",
+      "dismantle": "official-skill-鸟云山兵",
+      "dismantles": [
+        "official-skill-鸟云山兵"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 93,
+        "strategy": 69,
+        "defense": 90,
+        "speed": 50
+      },
+      "desc": "【史】刘备入川时魏延因数有战功被任命为牙门将军，刘备攻下汉中后又将其破格提拔为镇远将军，领汉中太守，镇守汉中，成为独当一方的大将。魏延镇守汉中近十年，之后又屡次随诸葛亮北伐，功绩显著。期间魏延多次请诸葛亮给他统领一万兵，另走一路攻关中，最后与诸葛亮会师于潼关，如同韩信的例子，但诸葛亮一直不许，因而认为自己无法完全发挥才能，心怀不满。\n与长史杨仪不和，诸葛亮死后，两人矛盾激化，相互争权，魏延败逃，为马岱所追斩，并被夷灭三族。\n【演】在《三国演义》中，刘备率军入蜀，魏延随军前往。刘备逝世后，魏延随诸葛亮平定“南蛮王”孟获的叛乱。于诸葛亮北伐时献“子午谷奇谋”之策，但未被诸葛亮采纳；因此在奉命进攻箕谷时无视诸葛亮的军令，险些败北。于诸葛亮向天祈祷延命时进帐报告敌军入侵的消息，不慎碰倒主灯，导致诸葛亮的祈祷失败。\n诸葛亮临终前遗命杨仪统兵，魏延对此不满，于诸葛亮病逝后率军反攻杨仪，而杨仪则根据诸葛亮的遗计挑衅魏延，魏延最终被马岱所斩。"
+    },
+    {
+      "id": "official-hero-100652",
+      "officialId": 100652,
+      "iconId": 100652,
+      "portrait": "assets/portraits/100652.jpg",
+      "name": "王朗",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200934",
+      "dismantle": "official-skill-以直报怨",
+      "dismantles": [
+        "official-skill-以直报怨"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 80,
+        "strategy": 96,
+        "defense": 80,
+        "speed": 60
+      },
+      "desc": "【史】汉末至三国曹魏时期重臣、经学家。王朗早年师从太尉杨赐，因通晓经籍而被拜为郎中。徐州刺史陶谦又举其为茂才，拜治中从事。迁任会稽太守，任内获百姓爱戴。建安元年（196年）孙策攻会稽时，王朗举兵抵抗，为孙策所败。王朗在逃亡失败后投降，孙策敬重王朗而未加害。后为曹操所征，因战乱辗转数年后才抵达，被拜为谏议大夫、参司空军事。魏国建立，王朗以军祭酒身份领魏郡太守，又任少府、奉常、大理等职。\n【演】在《三国演义》中，王朗以会稽太守的身份初次登场。在孙策打败吴郡的严白虎之后节节进逼，基于唇亡齿寒的原因，力排众议接纳了逃亡的严白虎，但遭到虞翻的反对。之后派遣大将周昕与孙策作战失败，自知不敌孙策而向中原逃亡。逃亡至中原后，受到曹操的赏识在朝中任职。在此之后则成为极力帮助曹操夺权的得力助手，与华歆等人联手，使曹操得以晋升至魏公、魏王的位子。曹操死后则威逼汉献帝禅让帝位与曹丕，成为魏国建立的一大功臣。"
+    },
+    {
+      "id": "official-hero-100653",
+      "officialId": 100653,
+      "iconId": 100653,
+      "portrait": "assets/portraits/100653.jpg",
+      "name": "关兴＆张苞",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200933",
+      "dismantle": "official-skill-以直报怨",
+      "dismantles": [
+        "official-skill-以直报怨"
+      ],
+      "cost": 4,
+      "distance": 3,
+      "stats": {
+        "attack": 101,
+        "strategy": 55,
+        "defense": 92,
+        "speed": 30
+      },
+      "desc": "【史】关兴为关羽次子，蜀汉后期重要将领，在诸葛亮第六次北伐之前病逝。张苞为张飞长子，早夭。\n【演】在《三国演义》中，关兴和张苞是关系很好的结拜兄弟，两人并称“小关张”。在蜀军中的表现相当活跃。"
+    },
+    {
+      "id": "official-hero-100654",
+      "officialId": 100654,
+      "iconId": 100654,
+      "portrait": "assets/portraits/100654.jpg",
+      "name": "孙鲁班",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200937",
+      "dismantle": "official-skill-三术奇谋",
+      "dismantles": [
+        "official-skill-三术奇谋"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 70,
+        "strategy": 87,
+        "defense": 82,
+        "speed": 68
+      },
+      "desc": "【史】孙权与步练师之女，曾嫁于周瑜之子，后改嫁全琮，故又称全公主。凭借孙权的宠爱，介入吴国继任者之争，为权谋斗争致死胞妹，曾与情夫孙峻凭借外戚关系把持朝政。孙峻死后，在政治斗争中失败被流放豫章，不知所终。"
+    },
+    {
+      "id": "official-hero-100655",
+      "officialId": 100655,
+      "iconId": 100655,
+      "portrait": "assets/portraits/100655.jpg",
+      "name": "郭皇后",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200940",
+      "dismantle": "official-skill-擅兵不寡",
+      "dismantles": [
+        "official-skill-擅兵不寡"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 61,
+        "strategy": 92,
+        "defense": 77,
+        "speed": 72
+      },
+      "desc": "【史】曹魏王朝第一位皇后，曹丕之妻。其祖上世代为郡县官吏，但早失二亲。曹操为魏公时，入曹丕东宫。曹丕即王位，封为夫人（位次王后），同年魏受禅，进为贵嫔（位次皇后）。黄初三年（222年），册立为皇后。\n【演】在《三国演义》第九十一回短暂提及郭后 ，于曹丕称帝后，聘为贵妃，姿貌艳丽，颇有城府。郭贵妃欲谋为后，与宠臣张韬商议，谎称甄夫人以魇镇之术谋害天子。曹丕遂将甄夫人赐死，立郭贵妃为皇后。因郭后无出，养曹叡为子，虽甚爱之，不立为嗣。"
+    },
+    {
+      "id": "official-hero-100656",
+      "officialId": 100656,
+      "iconId": 100656,
+      "portrait": "assets/portraits/100656.jpg",
+      "name": "高顺",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200939",
+      "dismantle": "official-skill-甚陷不惧",
+      "dismantles": [
+        "official-skill-甚陷不惧"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 92,
+        "strategy": 56,
+        "defense": 87,
+        "speed": 91
+      },
+      "desc": "【史】吕布帐下中郎将。高顺为人清白有威严，不好饮酒，所统率的部队精锐非常，号称“陷阵营”。屡进忠言于吕布，吕布虽知其忠而不能用。曹操击破吕布后，高顺被曹操所斩。\n【演】在《三国演义》的第十八章提到，高顺军在下邳城外与夏侯惇军交战时曾与其单挑。双方大战了四五十个回合夏侯惇击败了高顺，高顺欲退回城内，夏侯惇则令其战马追赶。夏侯惇在追赶高顺途中，被高顺的部下曹性用弓箭射中眼睛，最后，高顺部队反攻夏侯惇的部队而获胜。"
+    },
+    {
+      "id": "official-hero-100670",
+      "officialId": 100670,
+      "iconId": 100670,
+      "portrait": "assets/portraits/100670.jpg",
+      "name": "袁绍",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200947",
+      "dismantle": "official-skill-势无虚动",
+      "dismantles": [
+        "official-skill-势无虚动"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 88,
+        "strategy": 83,
+        "defense": 79,
+        "speed": 67
+      },
+      "desc": "【史】东汉末年军阀，汉末群雄之一。在汉末群雄割据的过程中，袁绍先占据冀州，又先后夺青、并二州，并于建安四年（199年）的易京之战中击败了割据幽州的军阀公孙瓒，统一河北，势力达到顶点。但在建安五年（200年）的官渡之战中大败于曹操。建安七年（202年），袁绍在平定冀州叛乱之后病逝。\n【演】在《三国演义》中，袁绍初为何进党羽。何进被害后，与袁术等共同诛灭宦官。董卓夺权之后，残暴不仁，涂炭生灵。袁绍奔冀州组成十七路诸侯反董卓联合。董卓迁都长安后，袁绍便引诱公孙瓒进攻冀州，并胁迫韩馥控制冀州。随后袁绍为扩大势力范围而相继占领青州、并州。\n袁绍歼灭公孙瓒，平定幽州之后，在河北建立起庞大的势力。为了与曹操一决雌雄，袁绍遣七十万兵越过黄河，却于官渡之战中被火烧乌巢，惨遭落败。最终，袁绍与曹操在仓亭决战，败归后不久病死。"
+    },
+    {
+      "id": "official-hero-100671",
+      "officialId": 100671,
+      "iconId": 100671,
+      "portrait": "assets/portraits/100671.jpg",
+      "name": "蒋钦",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200948",
+      "dismantle": "official-skill-势无虚动",
+      "dismantles": [
+        "official-skill-势无虚动"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 89,
+        "strategy": 60,
+        "defense": 82,
+        "speed": 69
+      },
+      "desc": "【史】汉末东吴名将，其人贵守约，性豁达。早年随孙策平定丹阳、吴郡、会稽和豫章四郡。平盗贼，迁西部都尉。讨会稽贼吕合、秦狼等，徙讨越中郎将。又与贺齐并力讨平黟贼。从征合肥，因功迁荡寇将军，被陈寿盛赞为“江表之虎臣”。孙权讨伐关羽时，蒋钦率领水军入沔水。回军途中病逝。\n【演】在《三国演义》中，蒋钦是擅长弓术的将领。与周泰原为江贼，孙策下江东自立门户时，和周泰一起率众投靠。孙策攻刘繇，并引出城中麾下的陈横、薛礼、张英三名将领，陈横被蒋钦一箭射死。曾在赤壁之战与周泰，还有擅使长枪的韩当率领水军在三江口踏江破敌。南郡之战请命攻曹仁，但却被曹仁和牛金击退，周瑜打算怒斩蒋钦，众将求情劝免，其后故事与《三国志》基本相同。"
+    },
+    {
+      "id": "official-hero-100672",
+      "officialId": 100672,
+      "iconId": 100672,
+      "portrait": "assets/portraits/100672.jpg",
+      "name": "曹植",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200950",
+      "dismantle": "official-skill-三术奇谋",
+      "dismantles": [
+        "official-skill-三术奇谋"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 46,
+        "strategy": 94,
+        "defense": 80,
+        "speed": 76
+      },
+      "desc": "【史】曹操的三子。曹植很有才学，早年被曹操宠爱，几乎被立为太子，后失宠。魏文帝时，他受兄长曹丕的猜忌和迫害，屡遭贬爵和改换封地。曹植为建安文学中成就最高者，其诗以笔力雄健和词采画眉见长，留有集三十卷，已佚，今存《曹子建集》为宋人所编。\n【演】在《三国演义》中，曹操一度想立他为世子，但疑其乖巧，而不如曹丕心诚，最终听信贾诩的建议，立曹丕为嗣。曹操去世后，曹丕继位，以曹植不来奔丧为由问罪。曹丕发兵将曹植捉来，让其“七步成诗”，继而又让其立即成诗，曹植均能做到。之后，曹丕迫于太后的压力，放过曹植，对其只做贬爵处罚。"
+    },
+    {
+      "id": "official-hero-100675",
+      "officialId": 100675,
+      "iconId": 100675,
+      "portrait": "assets/portraits/100675.jpg",
+      "name": "刘表",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200952",
+      "dismantle": "official-skill-筹策绝道",
+      "dismantles": [
+        "official-skill-筹策绝道"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 68,
+        "strategy": 88,
+        "defense": 86,
+        "speed": 58
+      },
+      "desc": "【史】其人身长八尺余，姿貌温厚伟壮，少时知名于世，名列“八俊”。在荆州期间，刘表远交袁绍，近结张绣，内纳刘备，据地数千里，带甲十余万，称雄荆江，先破孙坚，后又常抗曹操。然而刘表为人性多疑忌，好于坐谈，立意自守，而无四方之志，后更宠溺后妻蔡氏，使妻族蔡瑁等得权。刘表死后，蔡瑁等人废长立幼，奉表次子刘琮为主；曹操南征，刘琮举州投降，荆州遂没。\n【演】在《三国演义》中，刘表生平基本与正史相符。"
+    },
+    {
+      "id": "official-hero-100676",
+      "officialId": 100676,
+      "iconId": 100676,
+      "portrait": "assets/portraits/100676.jpg",
+      "name": "王昭君",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200954",
+      "dismantle": "official-skill-三军齐出",
+      "dismantles": [
+        "official-skill-三军齐出"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 45,
+        "strategy": 93,
+        "defense": 79,
+        "speed": 75
+      },
+      "desc": "【史】西汉民女，南郡首选入掖庭。匈奴单于入朝求亲时，被汉元帝赐予单于，元帝临辞召见昭君，见其丰容靓饰，光明汉宫，顾景裴回，竦动左右。元帝意欲留之，而难于失信，遂与匈奴。从此“昭君出塞”被世人盛传。"
+    },
+    {
+      "id": "official-hero-100677",
+      "officialId": 100677,
+      "iconId": 100677,
+      "portrait": "assets/portraits/100677.jpg",
+      "name": "公孙瓒",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200955",
+      "dismantle": "official-skill-三军齐出",
+      "dismantles": [
+        "official-skill-三军齐出"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 93,
+        "strategy": 46,
+        "defense": 85,
+        "speed": 100
+      },
+      "desc": "【史】汉末群雄之一。依靠自己的才能逐步做到中郎将，以强硬的态度对抗北方少数民族，作战勇猛，威震边疆。公孙瓒好战，与主张以怀柔政策对待胡人的刘虞不和，后来公孙瓒诛灭刘虞，并挟持朝廷使者，得到了总督北方四州的授权，成为北方最强大的诸侯之一。他与袁绍多次相争，初期占据优势，但在龙凑之战后，公孙瓒锐气顿减，采取自保战略，逐渐失去了部下信任，被袁绍击败。最终困于高楼，引火自焚。\n【演】在《三国演义》中，公孙瓒犹如刘备恩人一般的存在。在黄巾起义和讨伐董卓时，公孙瓒均有举荐刘备。刘备在徐州抵御为报父仇而兴兵的曹操后，几乎没有与公孙瓒有任何联系。最终由曹操麾下的满宠告知刘备，公孙瓒已败于袁绍之手，死于易京的消息。"
+    },
+    {
+      "id": "official-hero-100683",
+      "officialId": 100683,
+      "iconId": 100683,
+      "portrait": "assets/portraits/100683.jpg",
+      "name": "曹彰",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200957",
+      "dismantle": "official-skill-久战熟谋",
+      "dismantles": [
+        "official-skill-久战熟谋"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 98,
+        "strategy": 65,
+        "defense": 91,
+        "speed": 96
+      },
+      "desc": "【史】曹操之子。其胡须黄色，被曹操称为“黄须儿”。弱冠前喜搏猛虎，臂力过人、不善文章。代北乌桓无（能）臣氐等造反，曹彰引军往讨，大捷而归。后又降服辽东鲜卑大人轲比能。曹丕即位后，曹彰与诸侯就国。\n【演】在《三国演义》中，曹彰的生平与正史大体相同。在阳平为曹操助战，曹彰使一条长戟，大败刘封，斩蜀将吴兰。后来曹操逝世，世子曹丕继位；曹彰得知父亲病逝，便自长安引十万大军到洛阳；然而却被贾逵以片言折服，入宫交割军马后，便回鄢陵自守。\n\n本武将设计建议来自：\n【48区（兵渡沪水）玩家：法承汇俊】"
+    },
+    {
+      "id": "official-hero-100684",
+      "officialId": 100684,
+      "iconId": 100684,
+      "portrait": "assets/portraits/100684.jpg",
+      "name": "程普",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200958",
+      "dismantle": "official-skill-久战熟谋",
+      "dismantles": [
+        "official-skill-久战熟谋"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 83,
+        "defense": 90,
+        "speed": 43
+      },
+      "desc": "【史】历仕孙坚、孙策、孙权三任君主。是吴国最年长的将军，人们都敬称其为“程公”。他曾跟随孙坚讨伐过黄巾、董卓，又助孙策平定江东。孙策死后，他与张昭等人共同辅佐孙权，并讨伐江东境内的山贼，功勋卓著。\n【演】在《三国演义》中，使用武器为铁脊蛇矛，为孙坚最早的部下。斩华雄手下胡轸，也是为孙坚提出计谋的将领。孙坚发现玉玺后，提议孙坚回家的计策。当孙坚和袁绍对立时，与黄盖，韩当一起和袁绍手下大将颜良、文丑对峙 。"
+    },
+    {
+      "id": "official-hero-100685",
+      "officialId": 100685,
+      "iconId": 100685,
+      "portrait": "assets/portraits/100685.jpg",
+      "name": "乐进",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200961",
+      "dismantle": "official-skill-三军齐出",
+      "dismantles": [
+        "official-skill-三军齐出"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 96,
+        "strategy": 67,
+        "defense": 87,
+        "speed": 46
+      },
+      "desc": "【史】曹魏名将。以胆识英烈而从曹操，随军多年，南征北讨，战功无数。从击袁绍于官渡，奋勇力战，斩袁绍部将淳于琼。又从击袁谭、袁尚于黎阳，斩其大将严敬。不久乐进别击黄巾、雍奴、管承，皆大破之。从平荆州，留屯襄阳，进击关羽、苏飞等人，击退其众，南郡诸郡的山谷蛮夷都前往乐进处投降。后世将其与张辽、张郃、于禁、徐晃并称为曹魏“五子良将”。\n【演】在《三国演义》中，乐进是曹操招贤时最早投靠的武将，可惜在小说整体表现并不出色，常与另一魏将李典共同登场。赤壁之战后，曹操留乐进与张辽、李典屯于合肥，以当孙权。其时孙权入寇，双方对阵，乐进忽施突袭，一骑马一口刀，如一道电光，折贾华、宋谦之双戟，几乎擒得孙权。后来与吴将凌统鏖战，得曹休之助，本可取胜，却被吴将甘宁发箭所伤，退入军中调治伤势。"
+    },
+    {
+      "id": "official-hero-100687",
+      "officialId": 100687,
+      "iconId": 100687,
+      "portrait": "assets/portraits/100687.jpg",
+      "name": "小乔",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200960",
+      "dismantle": "official-skill-掎角之势",
+      "dismantles": [
+        "official-skill-掎角之势"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 36,
+        "strategy": 90,
+        "defense": 60,
+        "speed": 50
+      },
+      "desc": "【史】东汉末年时期的美女，庐江皖县（今安徽潜山）人。乔公的次女，汉末名将周瑜之妾。\n【演】在《三国演义》中，她是庐江皖县乔国老次女，秀美绝伦，貌压群芳，又琴棋书画无所不通。周瑜攻取皖城，迎娶小乔为妻。周郎小乔英雄美女、郎才女貌 ，被流传为千古佳话。"
+    },
+    {
+      "id": "official-hero-100689",
+      "officialId": 100689,
+      "iconId": 100689,
+      "portrait": "assets/portraits/100689.jpg",
+      "name": "刘禅",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200962",
+      "dismantle": "official-skill-合纵连横",
+      "dismantles": [
+        "official-skill-合纵连横"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 51,
+        "strategy": 83,
+        "defense": 74,
+        "speed": 32
+      },
+      "desc": "【史】刘备之子。建安二十四年，刘备为汉中王，立刘禅为王太子。章武三年四月刘备崩逝于永安宫，四月刘禅袭位于成都，拜诸葛亮为相父，继续支持北伐。诸葛亮逝世后，继续重用蒋琬、费祎、董允，支持姜维进行北伐。后宠幸宦官黄皓，多有怠政。景耀六年，兴师出兵，邓艾率部进军成都，刘禅自请受降，移居洛阳，受封为安乐县公。西晋泰始七年，在洛阳去世，晋谥其为思公。\n【演】在《三国演义》中，据传刘禅之母甘夫人因夜梦仰吞北斗而怀孕，故称小名为阿斗。幼时遭受战乱，幸得重将维护，曾在长坂坡被赵云七进七出救出敌阵。国亡投降后，移居洛阳，曾被司马昭试探是否仍思念蜀国，答道“此间乐，不思蜀也”。"
+    },
+    {
+      "id": "official-hero-100690",
+      "officialId": 100690,
+      "iconId": 100690,
+      "portrait": "assets/portraits/100690.jpg",
+      "name": "西施",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200963",
+      "dismantle": "official-skill-合纵连横",
+      "dismantles": [
+        "official-skill-合纵连横"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 45,
+        "strategy": 71,
+        "defense": 78,
+        "speed": 43
+      },
+      "desc": "【史】春秋时期越国民女，中国四大美女之一，相传浣纱时鱼因感其美貌而忘记游水，沉于水底，后世称其有“沉鱼”之美。春秋吴越之争时，越王将她献于吴王，以惑其心，乱其谋。吴王沉湎于西施美色，兴建姑苏台，日日玩乐而荒废政事，最终被越王灭国。"
+    },
+    {
+      "id": "official-hero-100691",
+      "officialId": 100691,
+      "iconId": 100691,
+      "portrait": "assets/portraits/100691.jpg",
+      "name": "周仓",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200965",
+      "dismantle": "official-skill-勠力同心",
+      "dismantles": [
+        "official-skill-勠力同心"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 89,
+        "strategy": 73,
+        "defense": 88,
+        "speed": 48
+      },
+      "desc": "【演】在《三国演义》中，周仓为身材高大、黑面虬髯的关西大汉，黄巾军出身。关羽千里寻兄之时请求跟随，自此对关羽忠心不二；在听说关羽兵败被害后，周仓也自刎而死。"
+    },
+    {
+      "id": "official-hero-100692",
+      "officialId": 100692,
+      "iconId": 100692,
+      "portrait": "assets/portraits/100692.jpg",
+      "name": "田丰",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200966",
+      "dismantle": "official-skill-勠力同心",
+      "dismantles": [
+        "official-skill-勠力同心"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 59,
+        "strategy": 95,
+        "defense": 87,
+        "speed": 92
+      },
+      "desc": "【史】东汉末年袁绍部下谋臣，官至冀州别驾。其为人刚直，曾多次向袁绍进言而不被采纳，曹操部下谋臣荀彧曾评价他“刚而犯上”。后因谏阻袁绍征伐曹操而被袁绍下令监禁。官渡之战后，田丰被袁绍所害。\n【演】在《三国演义》中，田丰博览多识，权略多奇，曾在朝中任侍御史，因不满宦官专权，弃官归家。袁绍起兵讨伐董卓，应其邀请，出任别驾，以图匡救王室之志。后袁绍用田丰谋略，消灭公孙瓒，平定河北，虎据四州。官渡之战，田丰建议据险固守，分兵抄掠的疲敌策略，乃至强谏，被袁绍以为沮众，械系牢狱。建安五年，袁绍官渡战败，因羞见田丰而害。"
+    },
+    {
+      "id": "official-hero-100693",
+      "officialId": 100693,
+      "iconId": 100693,
+      "portrait": "assets/portraits/100693.jpg",
+      "name": "王允",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200968",
+      "dismantle": "official-skill-掎角之势",
+      "dismantles": [
+        "official-skill-掎角之势"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 81,
+        "strategy": 93,
+        "defense": 94,
+        "speed": 58
+      },
+      "desc": "【史】东汉末年大臣。王允出身官宦世家。他十九岁就开始任公职，壮年时任豫州刺史。因为在和中常侍张让的斗争中失败，王允被迫去官隐居，在中平六年，何进掌权之后重新出仕，历任从事中郎和河南尹。在何进被宦官所害，董卓掌权时，他已经代替杨彪成为了司徒兼尚书令。\n身为地方官勤政爱民，由于朝廷腐败而被迫在此为官，从而密谋诛灭董卓。董卓死后，王允与吕布共执朝政，但是董卓余党李傕、郭汜、樊稠等率军攻破长安，吕布出逃，王允被处死，时年56岁。\n【演】在《三国演义》中，他是貂蝉的义父，貂蝉是造成吕布和董卓反目，以致于吕布最终诛灭了董卓的主要原因。"
+    },
+    {
+      "id": "official-hero-100694",
+      "officialId": 100694,
+      "iconId": 100694,
+      "portrait": "assets/portraits/100694.jpg",
+      "name": "张邈",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200969",
+      "dismantle": "official-skill-扬威",
+      "dismantles": [
+        "official-skill-扬威"
+      ],
+      "cost": 1.5,
+      "distance": 3,
+      "stats": {
+        "attack": 68,
+        "strategy": 70,
+        "defense": 72,
+        "speed": 88
+      },
+      "desc": "【史】东汉末年陈留太守。张邈年少侠义，常接济贫困，故被称为“八厨”之一。董卓废少立献后，张邈与曹操率先举兵讨董，参加汴水之战，后归附于曹操。吕布背叛袁绍后，张邈与之私交，引袁绍愤而要求曹操诛杀张邈，虽然曹操拒绝了，但是张邈仍惴惴不安。于是在兴平元年（194年），曹操讨伐陶谦时，张邈联合陈宫等人发动叛乱，兵败，投奔徐州牧刘备。兴平二年（195年）张邈在向袁术借兵途中被部下所杀。\n【演】在《三国演义》中，张邈的形象与正史基本相符。作为陈留太守，张邈是讨伐董卓的第六镇诸侯。后经陈宫劝说背叛曹操，与曹操作战失败后，投奔袁术。"
+    },
+    {
+      "id": "official-hero-100695",
+      "officialId": 100695,
+      "iconId": 100695,
+      "portrait": "assets/portraits/100695.jpg",
+      "name": "刘岱",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200970",
+      "dismantle": "official-skill-扬威",
+      "dismantles": [
+        "official-skill-扬威"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 52,
+        "defense": 78,
+        "speed": 89
+      },
+      "desc": "【史】汉东汉末年兖州刺史，家世显赫，素负盛名。董卓倒行逆施后各地群雄起兵，兖州刺史刘岱与张邈等屯兵酸枣，以袁绍为首打出讨董旗号。后袁绍与公孙瓒不和，谋士程昱建议刘岱帮助袁绍，后公孙瓒果然大败。初平三年青州黄巾军攻打兖州，刘岱不顾济北相鲍信劝阻，坚持出战，结果兵败被杀。\n【演】在《三国演义》中，刘岱初登场时为讨董联军第四镇诸侯。青州黄巾军大举进犯兖州，于曹操取兖州时降曹操。后刘岱引兵攻打刘备所在的徐州，被张飞生擒。返回许都后，曹操黜罢其爵禄。"
+    },
+    {
+      "id": "official-hero-100696",
+      "officialId": 100696,
+      "iconId": 100696,
+      "portrait": "assets/portraits/100696.jpg",
+      "name": "孔融",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200971",
+      "dismantle": "official-skill-破胆",
+      "dismantles": [
+        "official-skill-破胆"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 77,
+        "strategy": 83,
+        "defense": 80,
+        "speed": 56
+      },
+      "desc": "【史】东汉末年文学家，“建安七子”之一，家学渊源，为孔子的二十世孙。其人少有异才，勤奋好学，性好宾客，喜抨议时政，言辞激烈，后因触怒曹操而为其所害。\n【演】在《三国演义》中，孔融形象与正史相似。十八路诸侯起兵讨董卓，孔融为第十镇。后黄巾将领管亥率兵数万围北海，孔融与之战不利，幸得太史慈求救于刘备。后召还为太中大夫，曹操征荆州时，孔融劝阻，被曹操叱退。孔融口出怨言，为郗虑宾客所听闻。郗虑素来与孔融不睦，于是将此事告诉曹操，孔融被下狱弃市。"
+    },
+    {
+      "id": "official-hero-100697",
+      "officialId": 100697,
+      "iconId": 100697,
+      "portrait": "assets/portraits/100697.jpg",
+      "name": "陶谦",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200972",
+      "dismantle": "official-skill-破胆",
+      "dismantles": [
+        "official-skill-破胆"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 69,
+        "strategy": 84,
+        "defense": 82,
+        "speed": 45
+      },
+      "desc": "【史】汉末群雄之一。最初为诸生，在州郡任职，被举茂才，历任舒、卢二县令、幽州刺史、议郎，性格刚直，有大志。后随左车骑将军皇甫嵩对抗北宫伯玉，任扬武校尉，之后又随张温征韩遂、边章。\n【演】在《三国演义》中，陶谦被描述成一副和蔼可亲的老实善人形象，是为参与讨伐董卓的诸侯之一。由于曹操来犯，请求孔融、刘备救援。后来病倒，恳求刘备治理徐州。"
+    },
+    {
+      "id": "official-hero-100698",
+      "officialId": 100698,
+      "iconId": 100698,
+      "portrait": "assets/portraits/100698.jpg",
+      "name": "简雍",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200973",
+      "dismantle": "official-skill-奇术折冲",
+      "dismantles": [
+        "official-skill-奇术折冲"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 65,
+        "strategy": 87,
+        "defense": 77,
+        "speed": 40
+      },
+      "desc": "【史】简雍擅于辩论、议事，官拜昭德将军，地位次于麋竺。其人性情简单直接、不拘小节。年少时便与刘备相识，后跟随刘备奔走。常作为谈客，往来使命，刘备围成都时，简雍劝说刘璋投降。\n【演】在《三国演义》中，简雍形象与正史相似。与刘备同乡。随其周旋，任幕宾。刘备投袁绍，后想要离去，简雍为其设计脱身。刘璋投降时，以简雍为使，简雍坐于车中，有意的傲睨自若，为秦宓所斥责。不久，拜简雍为昭德将军。"
+    },
+    {
+      "id": "official-hero-100699",
+      "officialId": 100699,
+      "iconId": 100699,
+      "portrait": "assets/portraits/100699.jpg",
+      "name": "华歆",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200974",
+      "dismantle": "official-skill-奇术折冲",
+      "dismantles": [
+        "official-skill-奇术折冲"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 62,
+        "strategy": 85,
+        "defense": 80,
+        "speed": 42
+      },
+      "desc": "【史】华歆，汉末曹魏名臣，官至司徒、太尉。华歆年轻时便名闻山东，曾被时为大将军的何进征召担任尚书郎。因董卓作乱，华歆自请为县令，在上任途中被袁术所留。后因袁术不愿出兵伐董，华歆遂离开袁术担任豫章太守，担任太守期间深得百姓爱戴。华歆欣赏孙策之能，成为了孙策上宾。华歆后被曹操以天子名义征召担任议郎，是迫使汉献帝禅让帝位的主要参与者之一。\n【演】在《三国演义》中，华歆被描写成一个趋炎附势、助纣为虐的政客。演义中华歆为豫章太守，在孙策崛起江东之际降于孙策麾下，但直到孙权时皆未获重用。后作为吴使臣觐见曹操，随即被曹操任命为大理寺卿，留在朝廷。曹丕欲篡汉自立时，华歆自行草诏，并威逼汉献帝承认，成为曹魏开国功臣。"
+    },
+    {
+      "id": "official-hero-100700",
+      "officialId": 100700,
+      "iconId": 100700,
+      "portrait": "assets/portraits/100700.jpg",
+      "name": "朱治",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200975",
+      "dismantle": "official-skill-扬威",
+      "dismantles": [
+        "official-skill-扬威"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 75,
+        "strategy": 70,
+        "defense": 88,
+        "speed": 42
+      },
+      "desc": "【史】三国时期吴国武将，东吴名将朱然之嗣父。早年随从孙坚、孙策征伐，又辅助孙权，稳定江东，功勋卓著。此后长期居住在吴郡，孙权为吴王，拜其为安国将军，配金印紫绶，徙封毗陵侯。每次进见，孙权都亲自迎接。黄武三年（224年）卒，年六十九。\n【演】在《三国演义》中，朱治生平与正史大体相当，为孙坚旧将，孙坚阵亡后，孙策附袁术，朱治、吕范为之定计，用玉玺向袁术借兵夺取江东。孙策平定东路后，任命朱治为吴郡太守，收军返回江东。后来赤壁之战，大都督周瑜令朱治、吕范为四方巡警使，催督六郡官军。"
+    },
+    {
+      "id": "official-hero-100701",
+      "officialId": 100701,
+      "iconId": 100701,
+      "portrait": "assets/portraits/100701.jpg",
+      "name": "司马师",
+      "faction": "晋",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200983",
+      "dismantle": "official-skill-及锋而试",
+      "dismantles": [
+        "official-skill-及锋而试"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 94,
+        "defense": 90,
+        "speed": 85
+      },
+      "desc": "【史】司马懿和张春华之长子，司马昭之兄，司马炎之伯父。文雅风度，雄才大略，遇事沉着冷静。\n曹芳时期，担任散骑常侍、中护军，严格选拔官员。在高平陵之变中，司马师阴养三千死士，为司马懿战胜曹爽立下大功。司马懿死后，任大将军，都督中外诸军、录尚书事，独揽军政大权，成为曹魏最大权臣。\n在朝堂行废立之事，立高贵乡公曹髦为帝。平定毌丘俭、文钦叛乱，返回途中病故。是西晋王朝的奠基人，死时年仅四十八岁，谥号忠武。后被追尊为晋景王。西晋时被追尊为晋景帝，庙号世宗。\n【演】在《三国演义》中，司马师多次随司马懿共同参与讨伐孟达、防守诸葛亮北伐、火烧上方谷等事件。其余事迹与正史相似。"
+    },
+    {
+      "id": "official-hero-100702",
+      "officialId": 100702,
+      "iconId": 100702,
+      "portrait": "assets/portraits/100702.jpg",
+      "name": "司马昭",
+      "faction": "晋",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200984",
+      "dismantle": "official-skill-及锋而试",
+      "dismantles": [
+        "official-skill-及锋而试"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 91,
+        "defense": 83,
+        "speed": 92
+      },
+      "desc": "【史】司马师之弟，司马炎之父。三国时期曹魏权臣，西晋王朝的奠基人之一。司马昭早年随父亲司马懿抗击蜀汉，嘉平四年进为都督，与吴国大战于东关。司马师病逝后司马昭继其兄位，大权独揽，并率军镇压诸葛诞的反叛。魏甘露五年，魏帝曹髦愤而言左右称“司马昭之心，路人皆知也”，亲率宫人迎战司马昭。弑帝后的司马昭掌握实权，立曹奂为魏元帝后成功灭蜀。\n【演】在《三国演义》中，司马昭随司马懿、司马师共同参与讨伐孟达、防守诸葛亮北伐、火烧上方谷等事件。因为觉得曹髦不甘成为傀儡，司马昭担心不早处理会生变故，故授意贾充将其杀害。"
+    },
+    {
+      "id": "official-hero-100703",
+      "officialId": 100703,
+      "iconId": 100703,
+      "portrait": "assets/portraits/100703.jpg",
+      "name": "司马炎",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200985",
+      "dismantle": "official-skill-及锋而试",
+      "dismantles": [
+        "official-skill-及锋而试"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 69,
+        "strategy": 88,
+        "defense": 89,
+        "speed": 42
+      },
+      "desc": "【史】司马懿之孙，司马昭与王元姬的嫡长子，晋朝开国皇帝，成功统一三国，谥号武皇帝。\n最初以父勋入仕，封为北平亭侯。后担任中抚军，封新昌乡侯，又拜为抚军大将军、晋世子。后来逼迫魏元帝曹奂禅让，即位为帝，定国号为晋，史称西晋。即位之后，司马炎推行无为而治的宽容政治方略，使饱受战乱以及曹魏苛政的百姓得以休养生息，社会得以繁荣发展，史称“太康之治”。\n【演】在《三国演义》中，司马炎继承父亲司马昭的政治遗产后逼迫曹奂禅位，并发兵讨吴，一统三国，其余事迹与正史相似。"
+    },
+    {
+      "id": "official-hero-100704",
+      "officialId": 100704,
+      "iconId": 100704,
+      "portrait": "assets/portraits/100704.jpg",
+      "name": "文鸯",
+      "faction": "晋",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200986",
+      "dismantle": "official-skill-乘胜追击",
+      "dismantles": [
+        "official-skill-乘胜追击"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 105,
+        "strategy": 25,
+        "defense": 85,
+        "speed": 99
+      },
+      "desc": "【史】本名文俶，小名阿鸯，以文鸯之名流传于世。文钦之子，文虎之兄，是魏晋时期的名将。\n文鸯武艺非凡，在司马师行废立之事后，随父亲文钦与毌丘俭一同在淮南起兵反叛司马氏。曾以少量兵力冲击司马师大营，引发司马师病情加重，间接加速了司马师死亡。\n兵败后逃往吴国，随父亲文钦率军支援诸葛诞的反叛。因诸葛诞杀害文钦，文鸯与文虎重新归顺司马昭。\n西晋时期，任平虏护军，曾督凉秦雍三州军事，大破鲜卑首领秃发树机能，名闻天下。\n后迁东夷校尉，假节，上任前被晋武帝司马炎借口免官。又因诸葛诞外孙东安公司马繇诬陷文鸯谋反，被夷三族，年仅五十四岁。\n【演】在《三国演义》中，文鸯本名为文淑。文鸯在毌丘俭、文钦叛乱和诸葛诞叛乱中登场，具体事迹与正史相似。"
+    },
+    {
+      "id": "official-hero-100705",
+      "officialId": 100705,
+      "iconId": 100705,
+      "portrait": "assets/portraits/100705.jpg",
+      "name": "杜预",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200987",
+      "dismantle": "official-skill-乘胜追击",
+      "dismantles": [
+        "official-skill-乘胜追击"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 84,
+        "strategy": 95,
+        "defense": 86,
+        "speed": 50
+      },
+      "desc": "【史】三国魏晋时期军事家、经学家、律学家。\n曹魏尚书仆射杜畿之孙、散骑常侍杜恕之子，因杜恕与司马懿不和，故而杜预久未得用。司马昭掌权期间，娶高陆公主，拜尚书郎，袭祖爵丰乐亭侯。\n后转参相府军事，历任镇西长史、河南尹、安西军司、秦州刺史、东羌校尉、轻车将军等职，假节，之后又担任度支尚书。\n积极支持司马炎的灭吴战略，羊祜去世前推荐杜预接替，于是杜预又担任镇南大将军、都督荆州诸军事，是灭吴之战的统帅之一，以功封当阳县侯。又任司隶校尉，加位特进，卒于任上。\n杜预博学多才，与贾充一起修《晋律》，并进行注解；所撰《春秋左氏经传集解》流传至今；兴修水利，勤于讲武，被称为“杜父”。又因精通多才，被誉为“杜武库”。同时也因最喜欢左传，自称“左传癖”。\n是明朝之前唯一一位同时进入文庙和武庙之人。\n【演】在《三国演义》中，杜预登场于最后一回，受羊祜病危之时的举荐，担任镇南大将军参与伐吴，击败孙歆、陆景、伍延，并上表司马炎劝其继续进军，使司马炎下定决心，下令征进。最终吴主孙皓投降，三分归一统。"
+    },
+    {
+      "id": "official-hero-100706",
+      "officialId": 100706,
+      "iconId": 100706,
+      "portrait": "assets/portraits/100706.jpg",
+      "name": "王元姬",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200988",
+      "dismantle": "official-skill-胜负先征",
+      "dismantles": [
+        "official-skill-胜负先征"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 69,
+        "strategy": 89,
+        "defense": 67,
+        "speed": 66
+      },
+      "desc": "【史】文明王皇后，讳元姬。西晋时期皇后，是曹魏司徒王朗的孙女、中领军王肃的女儿。\n嫁给洛阳中郎将司马昭，生下司马炎与司马攸。其人颇有远见，预言钟会谋反之事。\n晋武帝司马炎即位后，尊为皇太后，居住于崇化宫。身处太后之位，提倡节俭，身体力行，作为后宫表率。\n泰始四年（268年），王元姬崩逝，终年五十二岁，谥号文明，与晋文帝司马昭合葬于崇阳陵。\n【演】在《三国演义》中，王元姬仅作为为王肃之女、司马昭之妻、司马炎和司马攸之母出场一次，没有任何事迹。"
+    },
+    {
+      "id": "official-hero-100707",
+      "officialId": 100707,
+      "iconId": 100707,
+      "portrait": "assets/portraits/100707.jpg",
+      "name": "卫瓘",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200989",
+      "dismantle": "official-skill-胜负先征",
+      "dismantles": [
+        "official-skill-胜负先征"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 88,
+        "strategy": 85,
+        "defense": 84,
+        "speed": 52
+      },
+      "desc": "【史】魏晋时期重臣、书法家。早年担任曹魏尚书郎，历任散骑常侍、侍中、廷尉。在魏灭蜀之战中，以镇西军司的身份，持节监军，蜀汉灭亡后，受命逮捕邓艾，之后平定钟会、姜维的叛乱，并命令田续杀害邓艾父子，因此被名将杜预批评。以功封镇东将军，都督徐州诸军事，封菑阳侯。西晋时期，进爵为公，累迁征东将军、征东大将军、征北大将军，历任青州刺史、青州牧、幽州刺史，在青州、幽州颇有建树。后徵拜尚书令，加侍中，历任司空、太子少傅、太保，录尚书事，在朝堂有巨大影响力。在贾南风发动的政变中，不肯对抗矫诏的楚王司马玮，满门遇害。卫瓘擅长草书，与索靖并称「一台二妙」，书法影响极为深远。\n【演】在《三国演义》中，卫瓘生平与正史相似，在魏灭蜀之战中以监军身份登场，劝阻钟会斩杀诸葛绪，然后奉司马昭之命，逮捕邓艾，随后在钟会叛乱时，率领众将击败钟会、姜维，并因为害怕邓艾报复，派遣田续谋害了邓艾父子，之后留守成都，再未出场。"
+    },
+    {
+      "id": "official-hero-100708",
+      "officialId": 100708,
+      "iconId": 100708,
+      "portrait": "assets/portraits/100708.jpg",
+      "name": "贾充",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200990",
+      "dismantle": "official-skill-望风而降",
+      "dismantles": [
+        "official-skill-望风而降"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 43,
+        "strategy": 97,
+        "defense": 81,
+        "speed": 38
+      },
+      "desc": "【史】三国魏晋时期重臣，贾逵晚年之子，西晋开国功臣。参与平定毌丘俭、文钦叛乱，并献计平定诸葛诞叛乱。在魏帝曹髦进攻司马昭之时，指使太子舍人成济当众杀害曹髦。晋朝时，累迁车骑将军、散骑常侍、尚书仆射、司空、太尉，被封为鲁郡公。两个女儿分别嫁给司马攸与司马衷，深受司马氏信任。在平吴之战担任大都督、假黄钺。负责晋国法律的制定，卓有成效。死后追赠太宰，礼官建议谥号为荒，被司马炎否定后，重新建议谥号为武。\n【演】在《三国演义》中，贾充生平与正史相似，试探诸葛诞并献计平定诸葛诞叛乱，而且更加明目张胆的下令让成济杀害曹髦，还因此被投降的吴主孙皓出言讥讽。"
+    },
+    {
+      "id": "official-hero-100709",
+      "officialId": 100709,
+      "iconId": 100709,
+      "portrait": "assets/portraits/100709.jpg",
+      "name": "羊祜",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200991",
+      "dismantle": "official-skill-望风而降",
+      "dismantles": [
+        "official-skill-望风而降"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 51,
+        "strategy": 81,
+        "defense": 85,
+        "speed": 35
+      },
+      "desc": "【史】泰山名门羊氏之后，早年在曹魏政权中担任中书郎等职。高平陵事变前，曾拒绝曹爽的征辟，进而避免卷入政变之中。\n晋代魏之后，出任车骑将军，都督荆州军事，与东吴名将陆抗对峙荆州。在西陵之战中，被陆抗绝其粮道，败于陆抗。战败后，羊祜认识到平吴不宜操之过急，于是采用怀柔以及逐步蚕食的策略。在荆州任职期间，屯田兴学，以德怀柔，深得晋吴边境军民之心，其与陆抗交好的事迹被后世称为“羊陆之交”。\n羊祜去世时，向晋武帝献计伐吴，并推荐杜预作为接班人，晋武帝依其计策灭吴，完成一统。\n【演】在《三国演义》中，羊祜生平与正史相似。在前线都督时提倡信义，并与东吴将领陆抗彼此交好。年老以病辞归后，向晋主司马炎献上灭吴之策，并推荐了杜预。司马炎依计完成了平吴大业，一统三国。"
+    },
+    {
+      "id": "official-hero-100710",
+      "officialId": 100710,
+      "iconId": 100710,
+      "portrait": "assets/portraits/100710.jpg",
+      "name": "嵇康",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200997",
+      "dismantle": "official-skill-共饮避世",
+      "dismantles": [
+        "official-skill-共饮避世"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 56,
+        "strategy": 84,
+        "defense": 83,
+        "speed": 36
+      },
+      "desc": "【史】“竹林七贤”之一，三国时期著名文学家、思想家、音乐家，官至中散大夫。嵇康激烈地抨击世俗规范，主张顺应自然，保全天性，积极推广服食养生理论，在当时具有极高的声望与影响力，后因司马昭忌惮其言论会影响到司马氏政权，于吕安案中被处死。嵇康死后，其思想主张在东晋与南朝备受推崇，成为了魏晋玄学的重要构成理论。嵇康著有《嵇康集》、《养生论》、《声无哀乐论》等，其作曲《广陵散》，给后人留下了广陵绝响的典故。"
+    },
+    {
+      "id": "official-hero-100711",
+      "officialId": 100711,
+      "iconId": 100711,
+      "portrait": "assets/portraits/100711.jpg",
+      "name": "刘伶",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200998",
+      "dismantle": "official-skill-共饮避世",
+      "dismantles": [
+        "official-skill-共饮避世"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 34,
+        "strategy": 80,
+        "defense": 66,
+        "speed": 39
+      },
+      "desc": "【史】魏晋名士，“竹林七贤”之一。沛国人，淡泊名利，沉默寡言，嗜酒。曾担任建威参军。泰始初年，因无为而治的对策而被朝中视为无用，因此遭到罢免。豁达机敏，曾著有《酒德颂》。后寿终正寝。"
+    },
+    {
+      "id": "official-hero-100712",
+      "officialId": 100712,
+      "iconId": 100712,
+      "portrait": "assets/portraits/100712.jpg",
+      "name": "阮籍",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200999",
+      "dismantle": "official-skill-共饮避世",
+      "dismantles": [
+        "official-skill-共饮避世"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 67,
+        "strategy": 82,
+        "defense": 80,
+        "speed": 37
+      },
+      "desc": "【史】三国时期著名诗人。博览群书，精通音律，任性不羁，崇奉老庄之学。不拘礼教，时人多有非议。又与嵇康、山涛等七人为友，世称“竹林七贤”。阮籍志向高远，然囿于乱朝，常恐罹谤遇祸，故而不问世事。曾多次以病辞官，更示人以狂放酣醉之状，司马昭称其“至慎”。景元四年魏帝曹奂下诏加封司马昭，阮籍执笔作劝进表，言辞清丽，时人重之。同年冬卒，时年五十四。"
+    },
+    {
+      "id": "official-hero-100713",
+      "officialId": 100713,
+      "iconId": 100713,
+      "portrait": "assets/portraits/100713.jpg",
+      "name": "山涛",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-201000",
+      "dismantle": "official-skill-激水之疾",
+      "dismantles": [
+        "official-skill-激水之疾"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 65,
+        "strategy": 83,
+        "defense": 75,
+        "speed": 40
+      },
+      "desc": "【史】魏晋时期大臣，“竹林七贤”之一。幼年丧父，生活困苦。四十岁时，才担任郡主簿、功曹、上计掾。曾判断司马懿称病必有用意，便弃官而去，未到两年司马懿果然发动了高平陵之变。曾向司马昭谏言：“废长立少，违礼不祥。国之安危，恒必由之。”于是司马昭才定下司马炎为世子，司马炎亦因此亲自拜谢山涛。历任太子少傅、散骑常侍、侍中、光禄大夫等职，官至司徒。\n【演】在《三国演义》中，山涛仅登场一次，以“废长立幼，违礼不祥”为理由，劝阻司马昭想要立司马攸为继承人的想法。"
+    },
+    {
+      "id": "official-hero-100714",
+      "officialId": 100714,
+      "iconId": 100714,
+      "portrait": "assets/portraits/100714.jpg",
+      "name": "向秀",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-201001",
+      "dismantle": "official-skill-激水之疾",
+      "dismantles": [
+        "official-skill-激水之疾"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 23,
+        "strategy": 81,
+        "defense": 71,
+        "speed": 28
+      },
+      "desc": "【史】“竹林七贤”之一，官至散骑常侍。主张本体论玄学，万物自生、自化的崇有论哲学观。原本隐居山阳，在嵇康、吕安去世后应召前往洛阳任官，但是在朝期间向秀只做官不做事，消极无为。著有《思旧赋》、《难嵇叔夜养生论》。"
+    },
+    {
+      "id": "official-hero-100715",
+      "officialId": 100715,
+      "iconId": 100715,
+      "portrait": "assets/portraits/100715.jpg",
+      "name": "阮咸",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-201002",
+      "dismantle": "official-skill-蓄盈待竭",
+      "dismantles": [
+        "official-skill-蓄盈待竭"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 42,
+        "strategy": 80,
+        "defense": 71,
+        "speed": 30
+      },
+      "desc": "【史】阮籍之侄，“竹林七贤”之一，官至始平太守，为人不拘常规，妙解音律，时人称之为“神解”，传说弦乐器“阮”便是阮咸改造发明的。阮咸嗜酒，曾留下与猪群共饮的轶事。阮咸最终以寿终，无著作传世。"
+    },
+    {
+      "id": "official-hero-100716",
+      "officialId": 100716,
+      "iconId": 100716,
+      "portrait": "assets/portraits/100716.jpg",
+      "name": "王戎",
+      "faction": "晋",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-201003",
+      "dismantle": "official-skill-蓄盈待竭",
+      "dismantles": [
+        "official-skill-蓄盈待竭"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 86,
+        "defense": 82,
+        "speed": 82
+      },
+      "desc": "【史】魏晋名士，幽州刺史王雄之孙、凉州刺史王浑之子。与阮籍交好，“竹林七贤”之一。承袭父爵贞陵亭侯，被司马昭辟为掾属。钟会曾向王戎询问伐蜀的计谋，王戎言：“非成功难，保之难也。”次年钟会果然叛乱被杀。历任散骑常侍、河东太守、荆州刺史，后迁为豫州刺史，加封建威将军，受诏伐吴，进攻武昌，因功进封安丰侯。官至司徒。\n【演】在《三国演义》中，王戎登场时为建威将军，伐吴之战中负责武昌地区的作战。"
+    },
+    {
+      "id": "official-hero-100717",
+      "officialId": 100717,
+      "iconId": 100717,
+      "portrait": "assets/portraits/100717.jpg",
+      "name": "司马攸",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-201004",
+      "dismantle": "official-skill-亡命一搏",
+      "dismantles": [
+        "official-skill-亡命一搏"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 48,
+        "strategy": 87,
+        "defense": 57,
+        "speed": 48
+      },
+      "desc": "【史】小字桃符，司马炎的胞弟，司马昭的次子，后过继给司马师。司马攸聪慧温和，颇具人望，备受司马懿器重。司马炎立晋后，司马攸受封为齐王，并广施恩信，深得民心。东吴既平，司马炎健康恶化，而子嗣暗弱，朝中欲推司马攸继位之声愈烈。司马炎得知后，以正太子名位为由逼迫司马攸回到自己的封国，司马攸要求留守生母王元姬之墓，但不被允许，因此愤恨引疾，抱病辞行，最终吐血而亡，谥号“献”。\n【演】在《三国演义》中，司马攸是司马昭次子，性情温和，因司马师无子而过继给司马师。司马昭认为天下应该是司马师的，想要立司马攸为世子，后因群臣反对而作罢。"
+    },
+    {
+      "id": "official-hero-100718",
+      "officialId": 100718,
+      "iconId": 100718,
+      "portrait": "assets/portraits/100718.jpg",
+      "name": "文虎",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-201005",
+      "dismantle": "official-skill-亡命一搏",
+      "dismantles": [
+        "official-skill-亡命一搏"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 92,
+        "strategy": 28,
+        "defense": 74,
+        "speed": 56
+      },
+      "desc": "【史】魏晋时期将领，文钦之子，文鸯之弟。与父兄一起，同毌丘俭起兵勤王，兵败后逃往吴国。又参与诸葛诞反抗司马氏的叛乱，因文钦被诸葛诞杀害，与文鸯一起重新归顺司马昭，被封为将军。\n【演】在《三国演义》中，文虎和正史的形象大体一致，在诸葛诞起兵时登场，诸葛诞杀害文钦后，投降司马昭。"
+    },
+    {
+      "id": "official-hero-100719",
+      "officialId": 100719,
+      "iconId": 100719,
+      "portrait": "assets/portraits/100719.jpg",
+      "name": "曹爽",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200245",
+      "dismantle": "official-skill-亡命一搏",
+      "dismantles": [
+        "official-skill-亡命一搏"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 83,
+        "strategy": 60,
+        "defense": 82,
+        "speed": 88
+      },
+      "desc": "【史】曹魏重臣，曹真之子。先后担任散骑常侍、武卫将军，后承袭父爵邵陵侯。太和五年，曹叡病危时以曹爽和司马懿为托孤大臣，拜大将军，假节钺，都督中外诸军事，录尚书事。曹芳即位后加侍中，封武安侯，权倾四海。正始年间，曹爽削去司马懿军权，并任用私人，专权乱政，出兵伐蜀空耗国力，又软禁郭太后，肆无忌惮，纵容党羽亲信，招致诸臣不满。正始十年，司马懿发动高平陵之变，曹爽认罪投降，后被司马懿诛灭三族。\n【演】在《三国演义》中，曹爽的生平基本与史实一致，骄奢淫逸，多有僭越之举，最终被司马懿诛灭三族。"
+    },
+    {
+      "id": "official-hero-100721",
+      "officialId": 100721,
+      "iconId": 100721,
+      "portrait": "assets/portraits/100721.jpg",
+      "name": "成济",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200110",
+      "dismantle": "official-skill-浴血",
+      "dismantles": [
+        "official-skill-浴血",
+        "official-skill-先驱"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 82,
+        "strategy": 22,
+        "defense": 52,
+        "speed": 21
+      },
+      "desc": "【史】司马家族的部下，担任太子舍人。在甘露五年曹髦讨伐司马昭的政变中，受到贾充指使，当街刺杀天子曹髦。后被司马昭归罪，夷三族。\n【演】在《三国演义》中，成济的事迹与正史大体一致，受贾充指使而杀害曹髦，后被灭三族。"
+    },
+    {
+      "id": "official-hero-100722",
+      "officialId": 100722,
+      "iconId": 100722,
+      "portrait": "assets/portraits/100722.jpg",
+      "name": "冯紞",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200123",
+      "dismantle": "official-skill-落石",
+      "dismantles": [
+        "official-skill-落石",
+        "official-skill-急救"
+      ],
+      "cost": 1.5,
+      "distance": 4,
+      "stats": {
+        "attack": 31,
+        "strategy": 85,
+        "defense": 66,
+        "speed": 48
+      },
+      "desc": "【史】西晋宠臣，博览群书，能言善辩。曾历任魏郡太守、步兵校尉、越骑校尉、左卫将军。善于逢迎媚上，得到晋武帝宠信。与贾充、荀勖结为朋党。曾上书建议晋武帝遣返齐王司马攸回封地，间接导致司马攸病重去世。后先后担任汝南太守、御史中丞、侍中。晋武帝早期谋划伐吴时，曾和贾充、荀勖大力反对。临终时被封为散骑常侍。\n【演】在《三国演义》中，羊祜上表建议伐吴时，贾充、荀勖、冯紞三人力劝不可，于是此次伐吴未能成行。"
+    },
+    {
+      "id": "official-hero-100723",
+      "officialId": 100723,
+      "iconId": 100723,
+      "portrait": "assets/portraits/100723.jpg",
+      "name": "田续",
+      "faction": "晋",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200108",
+      "dismantle": "official-skill-重伤",
+      "dismantles": [
+        "official-skill-重伤",
+        "official-skill-投石轰击"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 34,
+        "defense": 48,
+        "speed": 88
+      },
+      "desc": "【史】魏晋时期将领，议郎田畴的从孙。以镇西护军的身份参与伐蜀之战。曾违抗邓艾军令，险被斩杀。后邓艾受诬被囚，押往洛阳，监军卫瓘平定钟会叛乱后，派遣田续追讨邓艾，最终在绵竹斩杀邓艾邓忠父子。\n【演】在《三国演义》中，田续生平与正史大体一致，在邓艾偷渡阴平、将要进攻涪城时，田续建议邓艾，士卒疲惫需要休养，险些被邓艾以惑乱军心为由斩杀。后卫瓘平定钟会叛乱，田续主动请求并率兵追上邓艾父子，将其杀害。"
+    },
+    {
+      "id": "official-hero-100724",
+      "officialId": 100724,
+      "iconId": 100724,
+      "portrait": "assets/portraits/100724.jpg",
+      "name": "王业",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200128",
+      "dismantle": "official-skill-狼烟",
+      "dismantles": [
+        "official-skill-狼烟",
+        "official-skill-收拢"
+      ],
+      "cost": 1.5,
+      "distance": 3,
+      "stats": {
+        "attack": 12,
+        "strategy": 79,
+        "defense": 83,
+        "speed": 70
+      },
+      "desc": "【史】魏晋时期官员。曹髦时期，担任散骑常侍。曹髦讨伐司马昭时，与王沈共同告密，使司马昭有所防备。晋朝时期先后担任中护军、尚书左仆射。\n【演】在《三国演义》中，王业的事迹与正史大体一致，在曹髦讨伐司马昭的政变过程中，为避免灭族之祸，向司马昭告密。"
+    },
+    {
+      "id": "official-hero-100741",
+      "officialId": 100741,
+      "iconId": 100741,
+      "portrait": "assets/portraits/100741.jpg",
+      "name": "鲁肃",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-201006",
+      "dismantle": "official-skill-诱敌深入",
+      "dismantles": [
+        "official-skill-诱敌深入"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 90,
+        "defense": 91,
+        "speed": 42
+      },
+      "desc": "【史】东吴名臣，战略家、外交家。仗义疏财，性格豪爽，曾慷慨将一囷粮食送给周瑜，并与之结为好友。后投奔孙权，为其提出鼎足江东的战略规划，因此得到孙权的赏识。建安十三年，曹操率大军南下。孙权部下多主降，而鲁肃与周瑜力排众议，坚决主战。鲁肃主张联合刘备共同抗曹，并与刘备成功结为盟友。在赤壁之战中，孙刘联军大破曹军，三国鼎立之势已成。在刘备请求都督荆州时，鲁肃力主分荆州土地给刘备，曹操得知后惊讶的把笔掉在了地上。周瑜死后，鲁肃接任并统领其兵马。后孙刘联盟多次摩擦，鲁肃从中周旋，与关羽各自单刀赴会，毫无惧色，争论荆州归属。在湘水划界后，继续维持孙刘联盟。\n【演】在《三国演义》中，鲁肃是以一个老实人的形象出现，孙权继位后为周瑜推荐，仕于孙权，为孙权谋划战略，深受器重。赤壁之战时，鲁肃力主抗曹，出使联合刘备，并协助诸葛亮、周瑜说服孙权。鲁肃为人忠厚老实，不忍周瑜陷害诸葛亮，多次协助诸葛亮脱险。赤壁战后，鲁肃在诸葛亮的设计下，成为保人，将荆州“借”予刘备，此后多次讨要不成，处于两难的境地。周瑜去世后，鲁肃代周瑜成为水军都督。"
+    },
+    {
+      "id": "official-hero-100742",
+      "officialId": 100742,
+      "iconId": 100742,
+      "portrait": "assets/portraits/100742.jpg",
+      "name": "阴丽华",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-201007",
+      "dismantle": "official-skill-诱敌深入",
+      "dismantles": [
+        "official-skill-诱敌深入"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 50,
+        "strategy": 83,
+        "defense": 74,
+        "speed": 44
+      },
+      "desc": "【史】汉光武帝刘秀的原配妻子，东汉第二任皇后。南阳新野人，以美貌知名，刘秀对其一见钟情，曾叹曰：“娶妻当得阴丽华”。更始元年（公元23年）6月，刘秀在宛城迎娶阴丽华。\n刘秀称帝后，封阴丽华为贵人。因为阴丽华雅性宽仁，想要立其为皇后。阴丽华以另一名贵人郭圣通有子为由，坚决推辞，最终郭氏成为皇后，一定程度上稳定了朝中局势。\n建武十七年（公元41年），刘秀废除郭皇后，立阴丽华为皇后。永平七年（公元64年）去世，与刘秀合葬于原陵，共在位二十四年，谥曰“光烈”。"
+    },
+    {
+      "id": "official-hero-100744",
+      "officialId": 100744,
+      "iconId": 100280,
+      "portrait": "assets/portraits/100280.jpg",
+      "name": "王子服",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200670",
+      "dismantle": "official-skill-谨言",
+      "dismantles": [
+        "official-skill-谨言"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 39,
+        "strategy": 57,
+        "defense": 37,
+        "speed": 31
+      },
+      "desc": "【史】东汉末年越骑校尉、偏将军。建安五年，服与董承、长水校尉种辑、议郎吴硕受衣带诏共谋曹操。后事发，为操所诛。\n【演】在《三国演义》中，他与董承、长水校尉种辑、议郎吴硕受衣带诏共谋曹操。后事发，为操所诛。"
+    },
+    {
+      "id": "official-hero-100745",
+      "officialId": 100745,
+      "iconId": 100283,
+      "portrait": "assets/portraits/100283.jpg",
+      "name": "曹豹",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200189",
+      "dismantle": "official-skill-投石轰击",
+      "dismantles": [
+        "official-skill-投石轰击",
+        "official-skill-重伤"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 73,
+        "strategy": 46,
+        "defense": 61,
+        "speed": 46
+      },
+      "desc": "【史】初为陶谦部下，后仕刘备。刘备领徐州牧后，与袁术战于淮阴石亭，曹豹与张飞守下邳。豹反刘备，间迎吕布，致使吕布得以自称徐州刺史。\n【演】在《三国演义》中，吕布为曹豹的女婿。刘备讨袁术，留张飞守徐州，飞设宴请各官赴席。把酒至曹豹面前，豹只饮一杯，飞并怒其为吕布丈人，鞭豹至五十。豹深恨飞，阴与布谋，引布夺徐州。"
+    },
+    {
+      "id": "official-hero-100746",
+      "officialId": 100746,
+      "iconId": 100284,
+      "portrait": "assets/portraits/100284.jpg",
+      "name": "郑泰",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200186",
+      "dismantle": "official-skill-援军秘策",
+      "dismantles": [
+        "official-skill-援军秘策",
+        "official-skill-犒劳"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 50,
+        "strategy": 75,
+        "defense": 48,
+        "speed": 23
+      },
+      "desc": "【史】东汉末官吏。郑泰年轻时已有才略，喜欢结交豪杰。后来郑泰获举孝廉，由三府辟命并由公车征召，但郑泰不应命。汉灵帝死后，汉少帝刘辩继位，并由大将军何进辅政，何进任命郑泰为尚书侍郎，迁待御史。同时何进密谋诛除宦官，打算召凉州牧董卓入京协助。由于何进不听郑泰的劝阻，郑泰弃官而去。后来郑泰与荀攸和何颙等合谋诛灭董卓，但秘密泄漏，郑泰从武关逃离长安，投奔后将军袁术，袁术则上表郑泰为扬州刺史。郑泰于上任的路上去世，享年四十一岁。\n【演】在《三国演义》中，郑泰生平与正史大体相当。"
+    },
+    {
+      "id": "official-hero-100747",
+      "officialId": 100747,
+      "iconId": 100288,
+      "portrait": "assets/portraits/100288.jpg",
+      "name": "杨彪",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200138",
+      "dismantle": "official-skill-包扎",
+      "dismantles": [
+        "official-skill-包扎",
+        "official-skill-固阵"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 61,
+        "strategy": 81,
+        "defense": 58,
+        "speed": 96
+      },
+      "desc": "【史】东汉末年名臣，太尉杨赐之子、名士杨修之父，出身东汉名门“弘农杨氏”。汉献帝时，杨彪历官三公（司空、司徒、太尉）。权臣董卓意图迁都时，他据理力争。献帝东迁时，杨彪尽节护主。曹操挟献帝定都许县后，将杨彪下狱，获释后又任太常。他见汉室衰微，便诈称脚疾，不理世事。曹魏建立后，拒绝出任太尉，改光禄大夫，待以客礼。黄初六年（225年），杨彪逝世，年八十四。其著作现仅存《答曹公书》一篇。\n【演】在《三国演义》中，杨彪为东汉太尉，与司徒王允等共同迎接失散的少帝和陈留王，后为司徒，与太尉黄琬共谏欲迁都的董卓，遭罢免，废为庶人。后任太尉，献计于献帝以离间李傕、郭汜二人。二人交战时，奉命同众官诣郭汜营中劝和，为郭汜所监，杨彪怒斥郭汜，郭汜恼怒，欲害之，中郎将杨密力劝，郭汜才放了杨彪与大司农朱儁，二人出营相抱而哭，昏绝于地。\n又建议东迁中的献帝依靠曹操，因与袁术为姻亲，被曹操诬陷下狱，经孔融力争才得以幸免。"
+    },
+    {
+      "id": "official-hero-100748",
+      "officialId": 100748,
+      "iconId": 100229,
+      "portrait": "assets/portraits/100229.jpg",
+      "name": "朱灵",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200195",
+      "dismantle": "official-skill-奋起",
+      "dismantles": [
+        "official-skill-奋起",
+        "official-skill-铁壁"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 70,
+        "strategy": 47,
+        "defense": 41,
+        "speed": 47
+      },
+      "desc": "【史】三国时期曹魏名将。官至后将军，封为高唐侯，谥号威侯。初为袁绍部将，后归顺曹操，随曹操征伐四方，屡建战功。\n【演】在《三国演义》中，朱灵于第二十一回登场。其时刘备与曹操同在朝中，刘备深感掣肘，欲求脱计。适时袁术以淮南甚乱，欲北投族兄袁绍。刘备以其必从徐州过，向曹操请兵击之。曹操准其议，就遣朱灵、路昭与刘备同行，并以朱、路二人监督刘备。大军到徐州，大败袁术，不久袁术败逃病死。\n刘备便驻徐州，使朱、路二人回许都。曹操大怒，欲斩朱、路二人，荀彧告免。朱灵后又从征马超、韩遂，与徐晃夜渡蒲阪津，据河西为营，为大破关西军立下功劳。"
+    },
+    {
+      "id": "official-hero-100749",
+      "officialId": 100749,
+      "iconId": 100230,
+      "portrait": "assets/portraits/100230.jpg",
+      "name": "牛金",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200178",
+      "dismantle": "official-skill-坚守突击",
+      "dismantles": [
+        "official-skill-坚守突击",
+        "official-skill-凿穿"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 86,
+        "strategy": 41,
+        "defense": 72,
+        "speed": 95
+      },
+      "desc": "【史】初为曹仁部曲将，周瑜军数万人来攻，前锋数千人始至，曹仁遣牛金迎战。但对方兵力较多，牛金遂被围困。曹仁亲自攻入阵中救出牛金。司马懿使牛金轻骑饵诱蜀军，刚交战诸葛亮就退兵，追至祁山。蜀将马岱入寇，司马懿遣将军牛金击退，斩千余级。公孙渊反，司马懿率牛金、胡遵等步骑四万发自洛阳，后平定辽东。牛金官至后将军。\n【演】曹仁麾下骁将，与东吴交战时，将甘宁困于夷陵城，却被周瑜所救。之后，牛金欲夜袭周瑜营寨，但被周瑜识破，大败。"
+    },
+    {
+      "id": "official-hero-100750",
+      "officialId": 100750,
+      "iconId": 100223,
+      "portrait": "assets/portraits/100223.jpg",
+      "name": "孙静",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200197",
+      "dismantle": "official-skill-犒劳",
+      "dismantles": [
+        "official-skill-犒劳",
+        "official-skill-援军秘策"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 67,
+        "strategy": 81,
+        "defense": 75,
+        "speed": 51
+      },
+      "desc": "【史】东汉末年长沙太守孙坚之弟，孙策、孙权之叔。孙坚初起义军时，孙静集合乡里及宗族子弟五六百人作为孙坚的基础队伍。孙静献计助孙策击败钱塘太守王朗，平定会稽。孙策上表任命孙静为奋武校尉，打算委以重任。但孙静留念故乡，不愿出外为官。建安四年（200年），孙权执掌大事，就地升任孙静为昭义中郎将。孙静后终老故乡。\n【演】在《三国演义》中，孙策进攻会稽，派人请孙静，孙静带家属与孙策在钱塘会面。孙静献计助孙策击败钱塘太守王朗，平定会稽。孙策死后，张昭安排孙静处理丧事。孙权统领时期，指派孙静驻守吴会。"
+    },
+    {
+      "id": "official-hero-100751",
+      "officialId": 100751,
+      "iconId": 100240,
+      "portrait": "assets/portraits/100240.jpg",
+      "name": "吕范",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200101",
+      "dismantle": "official-skill-齐射",
+      "dismantles": [
+        "official-skill-齐射",
+        "official-skill-疾风突击"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 78,
+        "strategy": 72,
+        "defense": 79,
+        "speed": 61
+      },
+      "desc": "【史】东吴重臣。吕范年轻为汝南县吏，后避难寿春，结识孙策。随孙策、孙权征伐四方，对稳定江东做出了杰出的贡献，孙权将其比之于吴汉。官至前将军、假节、扬州牧，封南昌侯。黄武七年（228年），拜大司马，印绶未下，吕范已病卒。孙权悲痛不已，遣使者追赠大司马印绶。孙权还都建业后，以太牢礼祭祀吕范。\n【演】在《三国演义》中，吕范初为袁术谋士，后从孙策，与之平定江东。赤壁之战后，孙权与刘备表面为盟友，实则互竞诡谲。其时周瑜献美人计，欲以孙权之妹许配刘备，让刘备入赘为东吴女婿，吕范则负责说媒，并以“人不可中道而废人伦”与及“两家结秦晋之好”为由，说服刘备接受亲事。当刘备到甘露寺见吴国太之时，吕范更建议伏刀斧手以斩刘备，然而失败告终。\n在第八十五回中，陆逊统领吴军将举国来侵的刘备击退后，曹丕乘蜀吴交战之时安排曹仁、曹休、曹真三路袭吴，吕范则受命抵御曹休，并成功将敌军击败（事实上，洞口之役的结果是吕范败于曹休、臧霸等）。"
+    },
+    {
+      "id": "official-hero-100752",
+      "officialId": 100752,
+      "iconId": 100247,
+      "portrait": "assets/portraits/100247.jpg",
+      "name": "孙瑜",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200129",
+      "dismantle": "official-skill-毒泉",
+      "dismantles": [
+        "official-skill-毒泉",
+        "official-skill-乱阵"
+      ],
+      "cost": 1.5,
+      "distance": 4,
+      "stats": {
+        "attack": 50,
+        "strategy": 81,
+        "defense": 63,
+        "speed": 49
+      },
+      "desc": "【史】孙坚之侄，昭义中郎将孙静第二子。初为恭义校尉。后领丹杨太守，得众万余人，加绥远将军。建安十一年（204）与周瑜共克麻、保二屯。后从孙权拒曹操于濡须（今安徽无为附近），迁奋威将军，后转屯牛渚，招降魏兵。又在军中立学，请马普为师。孙瑜喜好读书，虽军务繁忙也不停辍。年三十九而卒。\n【演】在《三国演义》中，孙瑜是孙权的堂弟，东吴的宗室成员，于三国演义第57回登场。周瑜以取蜀为借口，欲取荆州时，孙瑜受孙权派遣，率兵前来会合，支援周瑜。"
+    },
+    {
+      "id": "official-hero-100753",
+      "officialId": 100753,
+      "iconId": 100248,
+      "portrait": "assets/portraits/100248.jpg",
+      "name": "骆统",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200118",
+      "dismantle": "official-skill-火辎",
+      "dismantles": [
+        "official-skill-火辎",
+        "official-skill-文韬武略"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 48,
+        "strategy": 85,
+        "defense": 57,
+        "speed": 47
+      },
+      "desc": "【史】三国时吴国将领、学者。陈国相骆俊之子。年二十，就担任乌程相，任内有政绩，使得民户过万。曾劝孙权尊贤纳士，省役息民。凌统卒，骆统领其部曲。因战功迁偏将军，封新阳亭侯，任濡须督。\n【演】在《三国演义》中，骆统在舌战群儒时出场，欲与赴东吴的诸葛亮辩论，被黄盖劝阻。"
+    },
+    {
+      "id": "official-hero-100754",
+      "officialId": 100754,
+      "iconId": 100321,
+      "portrait": "assets/portraits/100321.jpg",
+      "name": "贺齐",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200108",
+      "dismantle": "official-skill-重伤",
+      "dismantles": [
+        "official-skill-重伤",
+        "official-skill-投石轰击"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 90,
+        "strategy": 63,
+        "defense": 61,
+        "speed": 25
+      },
+      "desc": "【史】吴国名将。早年在平定山越的战争中立有大功，又讨平叛乱无数，身经百战，所向披靡，深受孙权器重。后来在与魏国的多次边境争斗中也屡立战功，官至后将军。"
+    },
+    {
+      "id": "official-hero-100755",
+      "officialId": 100755,
+      "iconId": 100181,
+      "portrait": "assets/portraits/100181.jpg",
+      "name": "程远志",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200179",
+      "dismantle": "official-skill-疾风突击",
+      "dismantles": [
+        "official-skill-疾风突击",
+        "official-skill-齐射"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 74,
+        "strategy": 65,
+        "defense": 71,
+        "speed": 33
+      },
+      "desc": "【演】黄巾军将领，于三国演义第一回登场，统兵五万进犯涿郡。幽州刺史刘焉令校尉邹靖引刘备、关羽、张飞三人，统兵五百，前去破敌。在大兴山下，两军交战，程远志被关羽一刀挥为两段，余众溃散。"
+    },
+    {
+      "id": "official-hero-100756",
+      "officialId": 100756,
+      "iconId": 100182,
+      "portrait": "assets/portraits/100182.jpg",
+      "name": "裴元绍",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200104",
+      "dismantle": "official-skill-乱击",
+      "dismantles": [
+        "official-skill-乱击",
+        "official-skill-速战坚守"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 88,
+        "strategy": 50,
+        "defense": 74,
+        "speed": 102
+      },
+      "desc": "【演】《三国演义》中的虚构人物。原黄巾军之武将。黄巾起义失败后，与周仓一同率领残部当了山贼。在关羽过五关时，与周仓一同希望成为关羽的部下，后被留守山中。不久后，因其欲夺偶然路过的赵云之马，反遭讨伐战败身死。"
+    },
+    {
+      "id": "official-hero-100757",
+      "officialId": 100757,
+      "iconId": 100183,
+      "portrait": "assets/portraits/100183.jpg",
+      "name": "马元义",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200182",
+      "dismantle": "official-skill-文韬武略",
+      "dismantles": [
+        "official-skill-文韬武略",
+        "official-skill-火辎"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 65,
+        "strategy": 46,
+        "defense": 78,
+        "speed": 58
+      },
+      "desc": "【史】东汉末年黄巾起义的组织者之一，是黄巾大方首领。光和六年（183年），马元义奉张角之命，筹划起事的准备工作。马元义聚集荆州、扬州信徒数万人约定于邺城相会，并收买中常侍封谞、徐奉等为内应，准备于次年（甲子年）三月初五（甲子日）内外同时起事。由于张角弟子济南人唐周的告密，马元义于于中平元年（184年）正月在河内郡山阳县被捕。由于马元义被害，迫使张角提前于二月起兵发动起义。\n【演】张角派马元义暗中收买中常侍封谞作为内应。张角将要起义时，由于其弟子唐周的告密。使得灵帝召大将军何进调兵诛马元义。"
+    },
+    {
+      "id": "official-hero-100758",
+      "officialId": 100758,
+      "iconId": 100266,
+      "portrait": "assets/portraits/100266.jpg",
+      "name": "波才",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200134",
+      "dismantle": "official-skill-休整",
+      "dismantles": [
+        "official-skill-休整",
+        "official-skill-坚守"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 38,
+        "strategy": 79,
+        "defense": 62,
+        "speed": 77
+      },
+      "desc": "【史】黄巾军高级将领，统领东方黄巾军部队。曾在黄巾起义初期取得一定战果，但在长社之战被皇甫嵩的火攻击溃。"
+    },
+    {
+      "id": "official-hero-100759",
+      "officialId": 100759,
+      "iconId": 100270,
+      "portrait": "assets/portraits/100270.jpg",
+      "name": "邓茂",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200178",
+      "dismantle": "official-skill-坚守突击",
+      "dismantles": [
+        "official-skill-坚守突击",
+        "official-skill-凿穿"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 67,
+        "strategy": 48,
+        "defense": 55,
+        "speed": 26
+      },
+      "desc": "【演】黄巾军将领程远志的副将，随之引兵五万进犯涿郡。在大兴山下，邓茂被张飞一回合刺于马下。"
+    },
+    {
+      "id": "official-hero-100760",
+      "officialId": 100760,
+      "iconId": 100208,
+      "portrait": "assets/portraits/100208.jpg",
+      "name": "曹昂",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200098",
+      "dismantle": "official-skill-凿穿",
+      "dismantles": [
+        "official-skill-凿穿",
+        "official-skill-坚守突击"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 85,
+        "strategy": 39,
+        "defense": 74,
+        "speed": 99
+      },
+      "desc": "【史】曹操的长子。聪明且性情谦和，为曹操所喜爱，二十岁时即举孝廉。随曹操出征张绣时，因张绣突然袭击，曹昂为救曹操负责断后，与大将典韦一同战死于宛城。\n【演】在《三国演义》中，宛城之战，曹昂把自己的马让给曹操，曹操乘马脱险，而曹昂死于乱军之中。"
+    },
+    {
+      "id": "official-hero-100761",
+      "officialId": 100761,
+      "iconId": 100185,
+      "portrait": "assets/portraits/100185.jpg",
+      "name": "许攸",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200124",
+      "dismantle": "official-skill-绝道",
+      "dismantles": [
+        "official-skill-绝道",
+        "official-skill-劫粮"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 57,
+        "strategy": 88,
+        "defense": 41,
+        "speed": 54
+      },
+      "desc": "【史】本为袁绍帐下谋士，官渡之战时其家人因犯法而被收捕，许攸因此背袁投曹，并为曹操设下偷袭袁绍军屯粮之所乌巢的计策，袁绍因此而大败于官渡。后许攸随曹操平定冀州，因自恃其功而屡屡口出狂言，终因触怒曹操而被害。\n【演】在《三国演义》中，许攸年轻时与曹操相友善，后来成为袁绍的谋士，多次为袁绍出谋划策，力主攻打曹操都城许昌。官渡之战之际，许攸因家人犯法被收治而投奔曹操，提供了重要情报，建议曹操偷袭乌巢，结果大获全胜。官渡之战后，许攸跟随曹操到达邺城，口出狂言，辱骂曹操，轻视曹军将士，被许褚一怒之下所斩，曹操见后深责许褚，下令厚葬许攸。"
+    },
+    {
+      "id": "official-hero-100762",
+      "officialId": 100762,
+      "iconId": 100188,
+      "portrait": "assets/portraits/100188.jpg",
+      "name": "郭图",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200200",
+      "dismantle": "official-skill-乱阵",
+      "dismantles": [
+        "official-skill-乱阵",
+        "official-skill-毒泉"
+      ],
+      "cost": 2,
+      "distance": 4,
+      "stats": {
+        "attack": 38,
+        "strategy": 79,
+        "defense": 62,
+        "speed": 53
+      },
+      "desc": "【史】袁绍帐下谋士。官渡之战时力主趁机偷袭曹营，在此计失败后为免于责罚而归罪于率军偷袭曹营的张郃、高览，致使二人背袁投曹。袁绍死后为其长子袁谭效力，后和袁谭一同被曹操所害。\n【演】在《三国演义》中，郭图生平与正史大体相当。"
+    },
+    {
+      "id": "official-hero-100763",
+      "officialId": 100763,
+      "iconId": 100763,
+      "portrait": "assets/portraits/100763.jpg",
+      "name": "荣晦",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200666",
+      "dismantle": "official-skill-游击",
+      "dismantles": [
+        "official-skill-游击"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 73,
+        "strategy": 33,
+        "defense": 54,
+        "speed": 24
+      },
+      "desc": "【史】魏晋时期武将。卫瓘担任司空时，荣晦曾因犯罪而被卫瓘责骂驱逐，心怀怨恨。司马玮矫诏带领部队收捕司马亮、卫瓘时，荣晦也在军中，趁机杀害卫瓘及其子孙。卫瓘平反时，卫瓘的后人上表要求报仇，因此荣晦被族诛。"
+    },
+    {
+      "id": "official-hero-100764",
+      "officialId": 100764,
+      "iconId": 100764,
+      "portrait": "assets/portraits/100764.jpg",
+      "name": "王衍",
+      "faction": "晋",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200180",
+      "dismantle": "official-skill-速战坚守",
+      "dismantles": [
+        "official-skill-速战坚守",
+        "official-skill-乱击"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 33,
+        "strategy": 87,
+        "defense": 48,
+        "speed": 46
+      },
+      "desc": "【史】西晋重臣，神情明秀，风姿详雅。曾经拜访山涛，山涛送走王衍后感叹：“误天下苍生者，未必非此人也。”先后担任太子舍人、黄门侍郎、中领军、尚书令等职，后更升任司空、司徒。然而王衍虽身居高位，却不在意国家治理，而只考虑自全之计，遭受时人鄙夷。永嘉五年（311年），石勒击败晋军，王衍与石勒相见时，想要避祸而劝石勒称帝，石勒怒斥王衍：“你名盖四海，身居重任，仕朝一生，竟说自己不参与国事！破坏天下，正是你的罪状。”然后将王衍杀死。王衍时年五十六岁。"
+    },
+    {
+      "id": "official-hero-100765",
+      "officialId": 100765,
+      "iconId": 100765,
+      "portrait": "assets/portraits/100765.jpg",
+      "name": "黄皓",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200203",
+      "dismantle": "official-skill-劫粮",
+      "dismantles": [
+        "official-skill-劫粮",
+        "official-skill-绝道"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 39,
+        "strategy": 56,
+        "defense": 52,
+        "speed": 90
+      },
+      "desc": "【史】三国时期蜀国宦官，受到后主刘禅宠信。董允在世时，对后主尽职尽责，黄皓位不过黄门丞。董允去世后，陈祗替代董允担任侍中，与黄皓内外勾结，黄皓开始干预政事。陈祗死后，黄皓先后升任中常侍、奉车都尉，权柄滔天。曾离间刘禅与弟弟刘永的关系，导致刘永多年见不到刘禅。大臣不亲附黄皓的，也会遭到贬斥。邓艾破蜀后，听说黄皓奸诈险恶，想要杀掉黄皓。后因黄皓准备厚礼贿赂邓艾的左右，最终免于一死。\n【演】在《三国演义》中，黄皓在姜维北伐期间，黄皓收受邓艾的贿赂，散布谣言，导致刘禅两次下诏姜维班师回朝。姜维两次在大好形势下不得不返回成都，劝说刘禅杀掉黄皓未果后，率兵前往沓中避祸。在钟会邓艾伐蜀期间，黄皓又请巫婆进行占卜祷告，以至于刘禅没有见到姜维的告急表文，最终误了大事。而在结局中，黄皓虽然贿赂邓艾暂时逃过一死，却被司马昭下令凌迟处死。其余实际与史实相似。"
+    },
+    {
+      "id": "official-hero-100766",
+      "officialId": 100766,
+      "iconId": 100766,
+      "portrait": "assets/portraits/100766.jpg",
+      "name": "麋芳",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200191",
+      "dismantle": "official-skill-坚守",
+      "dismantles": [
+        "official-skill-坚守",
+        "official-skill-休整"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 74,
+        "strategy": 42,
+        "defense": 73,
+        "speed": 26
+      },
+      "desc": "【史】三国时期蜀国将领。徐州东海人，麋竺之弟，刘备妻子麋夫人的兄弟。曾担任彭城相，与哥哥麋竺共同辞官追随刘备，后来担任南郡太守。建安二十四年（219年）关羽北伐襄樊时，麋芳与士仁未能及时供给军资，关羽说“等回来一定收拾你们。”据吴录记载，南郡城中失火，军器被焚烧了很多，关羽以此责备麋芳。之后二人心中不安，在士仁投降东吴后，麋芳也放弃抵抗，投降东吴，导致关羽兵败被害。其兄麋竺虽然被刘备劝慰原谅，但依然羞愧而死。担任吴国将领期间，曾被虞翻多次羞辱。\n【演】在《三国演义》中写作“糜芳”，多次担任守城等任务。在关羽北伐之前，他与士仁饮酒失火，烧毁军器，险些被关羽下令斩杀，费诗以出师先斩将不利为由进行劝谏，改为杖责四十。后来投降东吴，刘备称帝后伐吴，他与士仁听说小兵要杀害自己来换取刘备的原谅，二人杀死马忠重新投奔刘备，但被刘备下令处死，关兴亲自用刀剐之，以祭关公。其余事迹与史实相似。"
+    },
+    {
+      "id": "official-hero-100767",
+      "officialId": 100767,
+      "iconId": 100767,
+      "portrait": "assets/portraits/100767.jpg",
+      "name": "士仁",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200192",
+      "dismantle": "official-skill-铁壁",
+      "dismantles": [
+        "official-skill-铁壁",
+        "official-skill-奋起"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 52,
+        "strategy": 75,
+        "defense": 55,
+        "speed": 89
+      },
+      "desc": "【史】三国时期蜀国将领。幽州广阳人，《三国志》中大部分记载为士仁，唯《关羽传》记载为傅士仁，有学者认为是在传播抄写过程中出现的错误，后《资治通鉴》《三国演义》等皆写作傅士仁。关羽北伐襄樊之时驻扎在公安。吴兵依吕蒙白衣渡江之计进犯荆州，士仁被虞翻说降，之后在麋芳守江陵城时随吕蒙一起出现，于是麋芳也一起投降。\n【演】在《三国演义》中，士仁被写作“傅士仁”，在关羽北伐襄樊时出场，与麋芳饮酒失火，烧毁军器，险些被关羽下令斩杀，费诗以出师先斩将不利为由进行劝谏，改为杖责四十。后来投降东吴，刘备称帝后伐吴，与麋芳听说小兵要杀害自己来换取刘备的原谅，二人杀死马忠重新投奔刘备，但被刘备下令处死，关兴亲自用刀剐之，以祭关公。"
+    },
+    {
+      "id": "official-hero-100768",
+      "officialId": 100768,
+      "iconId": 100768,
+      "portrait": "assets/portraits/100768.jpg",
+      "name": "廖立",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200193",
+      "dismantle": "official-skill-固阵",
+      "dismantles": [
+        "official-skill-固阵",
+        "official-skill-包扎"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 31,
+        "strategy": 73,
+        "defense": 40,
+        "speed": 91
+      },
+      "desc": "【史】三国时期蜀国谋臣。曾经得到诸葛亮的赞誉，认为他与庞统都是“楚之良才”，担任长沙太守。建安二十年，吴国侵犯荆州南三郡，廖立逃脱回到刘备身边，改为巴郡太守，后迁侍中、长水校尉。自以为才名仅次于诸葛亮，但未被重视，因此经常抱怨。因出言讽刺先帝刘备、关羽、马良兄弟，被诸葛亮贬为平民。诸葛亮死后，廖立认为不会再有人敢用自己，感叹“吾终为左衽矣！”\n【演】在《三国演义》中，廖立在诸葛亮死时出场，记载与史实相似。"
+    },
+    {
+      "id": "official-hero-100769",
+      "officialId": 100769,
+      "iconId": 100769,
+      "portrait": "assets/portraits/100769.jpg",
+      "name": "典韦",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200993",
+      "dismantle": "official-skill-雄兵破敌",
+      "dismantles": [
+        "official-skill-雄兵破敌"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 102,
+        "strategy": 33,
+        "defense": 97,
+        "speed": 35
+      },
+      "desc": "【史】曹操部将，相貌魁梧，膂力过人。本属张邈，后归曹操。曹操征讨吕布时被募为陷阵，表现英勇，被拜为校尉，宿卫曹操。后曹操于宛城时，张绣先降而复反，急迫曹操本营；典韦守着大门，殊死恶斗，破敌无算，最终因敌人太多而战死。 \n【演】在《三国演义》中，因其悍武，曹操称其为“古之恶来”。张绣背叛时，先令胡车儿暗盗韦双戟，再引军急迫曹操本营。典韦守大门，殊死恶斗，破敌无算，刀坏了竟双手各提一人为武器迎敌。群贼不敢近，只远远以箭射之，箭如骤雨，典韦犹死拒寨门。"
+    },
+    {
+      "id": "official-hero-100770",
+      "officialId": 100770,
+      "iconId": 100770,
+      "portrait": "assets/portraits/100770.jpg",
+      "name": "许劭",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200242",
+      "dismantle": "official-skill-全军突击",
+      "dismantles": [
+        "official-skill-全军突击"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 61,
+        "strategy": 86,
+        "defense": 88,
+        "speed": 55
+      },
+      "desc": "【史】东汉末年著名人物评论家。许劭与其兄许靖都声名在外，每月会品评乡党人物，是为“月旦评”。经过其评品的人物皆显名于世，曾评价曹操“清平之奸贼，乱世之英雄”（孙盛《异同杂语》记载为“治世之能臣，乱世之奸雄”）。许劭早年为汝南郡功曹，后以“小人道长，王室将乱”为由拒绝朝廷征召，前往南方投奔扬州刺史刘繇避祸，后病逝。\n【演】在《三国演义》中，许劭仅出场一次，评价曹操“治世之能臣，乱世之奸雄”，之后再无出场。"
+    },
+    {
+      "id": "official-hero-100771",
+      "officialId": 100771,
+      "iconId": 100771,
+      "portrait": "assets/portraits/100771.jpg",
+      "name": "沮授",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200246",
+      "dismantle": "official-skill-诱敌深入",
+      "dismantles": [
+        "official-skill-诱敌深入"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 52,
+        "strategy": 95,
+        "defense": 80,
+        "speed": 35
+      },
+      "desc": "【史】袁绍帐下谋士。史载他“少有大志，擅于谋略”。袁绍占据冀州后任用沮授为从事。沮授经常对袁绍提出良策，但很多时候袁绍并不听从。官渡之战时袁绍大败，沮授未及逃走，被曹操所获，因拒降被曹操处死。\n【演】在《三国演义》中，沮授生平与正史大体相当。官渡之战，沮授夜观天象，知乌巢屯粮有险，连夜求见，促速遣精兵巡哨，袁绍以其妄言惑众，更人监押。袁军战败，沮授急走不脱，为曹军所获，不降而盗马欲归，曹操怒而斩之。"
+    },
+    {
+      "id": "official-hero-100772",
+      "officialId": 100772,
+      "iconId": 100772,
+      "portrait": "assets/portraits/100772.jpg",
+      "name": "许攸",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200247",
+      "dismantle": "official-skill-激水之疾",
+      "dismantles": [
+        "official-skill-激水之疾"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 55,
+        "strategy": 91,
+        "defense": 65,
+        "speed": 75
+      },
+      "desc": "【史】本为袁绍帐下谋士，官渡之战时其家人因犯法而被收捕，许攸因此背袁投曹，并为曹操设下偷袭袁绍军屯粮之所乌巢的计策，袁绍因此而大败于官渡。后许攸随曹操平定冀州，因自恃其功而屡屡口出狂言，终因触怒曹操而被害。\n【演】在《三国演义》中，许攸年轻时与曹操相友善，后来成为袁绍的谋士，多次为袁绍出谋划策，力主攻打曹操都城许昌。官渡之战之际，许攸因家人犯法被收治而投奔曹操，提供了重要情报，建议曹操偷袭乌巢，结果大获全胜。官渡之战后，许攸跟随曹操到达邺城，口出狂言，辱骂曹操，轻视曹军将士，被许褚一怒之下所斩，曹操见后深责许褚，下令厚葬许攸。"
+    },
+    {
+      "id": "official-hero-100783",
+      "officialId": 100783,
+      "iconId": 100783,
+      "portrait": "assets/portraits/100783.jpg",
+      "name": "黄盖",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200251",
+      "dismantle": "official-skill-百战无怯",
+      "dismantles": [
+        "official-skill-百战无怯"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 86,
+        "strategy": 70,
+        "defense": 80,
+        "speed": 51
+      },
+      "desc": "【史】孙吴名将。历仕孙坚、孙策、孙权三任君主。为人严肃，善于训练士卒，每每征讨，他的部队皆勇猛善战。赤壁之战时，黄盖前往曹营诈降，并趁机以火攻大破曹操的军队，是赤壁之战主要功臣之一。\n【演】在《三国演义》中，黄盖以铁鞭为兵器。曹操军来犯之际，黄盖向周瑜提议火攻破敌，周瑜要他行苦肉计，黄盖一口答应。黄盖故意提出投降曹操，周瑜假意下令斩首，后改为杖打五十，打得皮开肉绽。黄盖向曹操献降书，曹操起初识破诈降，但有两细作回报黄盖遭刑的事，曹操才相信。但苦肉计并无正史记载，赤壁之战时候黄盖只是“建策火攻”而已。"
+    },
+    {
+      "id": "official-hero-100784",
+      "officialId": 100784,
+      "iconId": 100784,
+      "portrait": "assets/portraits/100784.jpg",
+      "name": "周瑜",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200254",
+      "dismantle": "official-skill-望风而降",
+      "dismantles": [
+        "official-skill-望风而降"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 67,
+        "strategy": 107,
+        "defense": 86,
+        "speed": 50
+      },
+      "desc": "【史】东汉末年名将。洛阳令周异之子，堂祖父周景、堂叔周忠，都官至太尉。长壮有姿貌、精音律，江东有“曲有误，周郎顾”之语。周瑜少与孙策交好，21岁起随孙策奔赴战场平定江东，后孙策遇刺身亡，孙权继任，周瑜将兵赴丧，以中护军的身份与长史张昭共掌众事。\n建安十三年 （208年），周瑜率军与刘备联合，于赤壁之战中大败曹军，由此奠定了“三分天下”的基础。建安十四年（209年），拜偏将军领南郡太守。建安十五年（210年）病逝于巴丘，年仅36岁。\n【演】在《三国演义》中，为了凸显诸葛亮的智慧，对历史上的周瑜形象做了较大的改动，并虚构了较多的情节，如赤壁之战，周瑜的主张不太明确，是战是和踌躇不定，诸葛亮借曹操修筑铜雀台欲夺小乔之事，智激周瑜，坚定周瑜抗曹的决心。\n曹操命周瑜同窗好友蒋干劝降周瑜，周瑜设下计策，假装友善，伪造了曹操水军都督蔡瑁、张允写给周瑜的降书让蒋干发现，上演了一出“蒋干盗书”的好戏，为赤壁之战的成功奠定了基础。"
+    },
+    {
+      "id": "official-hero-100785",
+      "officialId": 100785,
+      "iconId": 100785,
+      "portrait": "assets/portraits/100785.jpg",
+      "name": "马腾",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200255",
+      "dismantle": "official-skill-百战无怯",
+      "dismantles": [
+        "official-skill-百战无怯"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 62,
+        "defense": 94,
+        "speed": 95
+      },
+      "desc": "【史】东汉末年割据凉州一带的军阀，马超、马休、马铁之父。马腾身长八尺余，身体洪大，面鼻雄异，性格贤良忠厚，受众人尊敬。兴平元年（194年），马腾企图连结种邵等诛灭权臣李傕、郭汜，但为其所败，只得回到凉州。后与韩遂不和，互相攻击。\n之后，马腾听从张既的建议，入朝担任卫尉。建安十六年（211年），其子马超起兵抗拒曹操。次年，马腾与其二子皆为曹操所害，夷灭三族。\n【演】在《三国演义》中，马腾被写成对汉室十分忠诚的忠臣。董卓乱政时，马腾为西凉太守，起兵应诏，为十八路诸侯之一。董卓败亡后，其余党李傕、郭汜秉政，马腾受献帝诏，同韩遂讨伐李傕、郭汜，因缺粮为其所败，退还西凉。曹操将汉献帝迁往许都后，马腾入朝，参与刘备和董承等人谋诛专权的曹操的计划，因事情败露而逃回凉州。\n后曹操用荀攸计，假诏召马腾入京，他为了达成多年心愿，和黄奎欲讨伐曹操，但事情还是败露了，马腾和儿子马休、马铁全部被害。马腾的死讯传出后，马超和韩遂为了替他报仇，于是在西凉起兵反叛。"
+    },
+    {
+      "id": "official-hero-100786",
+      "officialId": 100786,
+      "iconId": 100786,
+      "portrait": "assets/portraits/100786.jpg",
+      "name": "卫子夫",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200256",
+      "dismantle": "official-skill-铁戟金戈",
+      "dismantles": [
+        "official-skill-铁戟金戈"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 68,
+        "strategy": 85,
+        "defense": 76,
+        "speed": 38
+      },
+      "desc": "【史】西汉河东平阳人，汉武帝皇后。本为平阳公主家讴者，为武帝所纳，元朔元年生太子刘据，被立为皇后。其弟卫青官至大司马大将军，姊子霍去病亦官至大司马骠骑将军。巫蛊之祸起，据起兵诛江充，兵败自杀。武帝以策收皇后玺绶，遂自杀。宣帝立，追谥思。"
+    },
+    {
+      "id": "official-hero-100787",
+      "officialId": 100787,
+      "iconId": 100787,
+      "portrait": "assets/portraits/100787.jpg",
+      "name": "程昱",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200257",
+      "dismantle": "official-skill-乘间击隙",
+      "dismantles": [
+        "official-skill-乘间击隙"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 60,
+        "strategy": 95,
+        "defense": 96,
+        "speed": 45
+      },
+      "desc": "【史】东汉后期至三国时期曹魏谋士、名臣。本名程立，因梦中在泰山捧日，更名程昱。曾于东阿率领民众抗击黄巾。初平三年，被曹操征辟为寿张令，从此为其出谋献策、征战四方。曹操征徐州时，程昱与荀彧留守后方，阻吕布、陈宫大军，保住三城。\n【演】在《三国演义》中，程昱初在山中读书，经荀彧荐仕曹操。曾于徐州用计迫降关羽；曹操征河北，昱举羽以敌颜良，又於仓亭献十面埋伏之计，大胜袁绍。后与刘备战，昱计挟亲赚徐庶，使庶来投。从南征，昱谏曹操以防火攻，又识黄盖粮船之伪，免大寨遭创，曹操亦因此逃逸得及。后又于濡须劝曹操班师。魏国既建，以昱为卫尉。"
+    },
+    {
+      "id": "official-hero-100788",
+      "officialId": 100788,
+      "iconId": 100788,
+      "portrait": "assets/portraits/100788.jpg",
+      "name": "丁奉",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200258",
+      "dismantle": "official-skill-乘间击隙",
+      "dismantles": [
+        "official-skill-乘间击隙"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 93,
+        "strategy": 60,
+        "defense": 80,
+        "speed": 52
+      },
+      "desc": "【史】吴国重要将领。年少时以骁勇为小将，经常奋勇破敌，屡立功勋。在东兴之战中“雪中奋短兵”，大破进犯东吴的魏军。丁奉一生征战，与北方政权从曹操时代打到司马炎时代，侍奉了孙权到孙皓四位吴国君主，见证了三国的盛衰兴亡。\n【演】在《三国演义》中的丁奉事迹较史书记载简略，主要描述了他在东兴之战中“雪中奋短兵”的事迹以及诛灭孙綝时的表现。同时还增加了曹丕伐吴，张辽保护曹丕撤退时，丁奉用箭射中了张辽腰部，使张辽回营后旧伤迸发、不治而亡的情节。"
+    },
+    {
+      "id": "official-hero-100789",
+      "officialId": 100789,
+      "iconId": 100789,
+      "portrait": "assets/portraits/100789.jpg",
+      "name": "陆绩",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200266",
+      "dismantle": "official-skill-雄兵破敌",
+      "dismantles": [
+        "official-skill-雄兵破敌"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 58,
+        "strategy": 87,
+        "defense": 67,
+        "speed": 60
+      },
+      "desc": "【史】吴郡吴县人，庐江太守陆康之子，东吴名将陆逊的从叔，但年纪比陆逊更小。六岁时曾随父前往九江见袁术，袁术用桔子招待客人，陆绩将三个桔子放入怀中，但在告别时掉落，被发现后，陆绩说要带给母亲吃，令袁术非常惊叹。孙策进攻庐江时，陆康将儿子陆绩和从孙陆逊送回吴郡避难，后成为孙策宾客。孙权继承东吴基业后，任命陆绩为奏曹掾，以直言正道令人敬畏，后担任郁林太守、偏将军。\n【演】在《三国演义》中，作为诸葛亮舌战群儒的配角出场，因怀桔遗亲的往事被诸葛亮调侃为“袁术座间怀桔之陆郎”，之后并未出场。"
+    },
+    {
+      "id": "official-hero-100790",
+      "officialId": 100790,
+      "iconId": 100790,
+      "portrait": "assets/portraits/100790.jpg",
+      "name": "袁术",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200262",
+      "dismantle": "official-skill-胜敌益强",
+      "dismantles": [
+        "official-skill-胜敌益强"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 68,
+        "strategy": 50,
+        "defense": 98,
+        "speed": 38
+      },
+      "desc": "【史】袁逢之嫡次子，袁基、袁绍之弟。初为虎贲中郎将。董卓进京后以袁术为后将军，袁术因畏祸而出奔南阳。初平元年（190年）与袁绍、曹操等同时起兵，共讨董卓。后与袁绍对立，被袁绍、曹操击败，率馀众奔九江，割据扬州。建安二年（197年）称帝，建号仲氏 ，但未受人承认。此后袁术奢侈荒淫，横征暴敛，使江淮地区残破不堪，民多饥死，部众离心，先后为吕布、曹操所破，元气大伤，后于建安四年（199年）呕血而死。\n【演】在《三国演义》中，他的家族四代中有五人位居三公，是当世的大豪族。因董卓祸国，十八路诸侯聚讨董卓，袁术以第一镇诸侯的身份参与。同盟解散后，袁术为了除掉刘备，派遣使者想和吕布结亲，吕布将使者送给曹操斩首。得知吕布送斩他的使者，就发兵攻打他，却反被吕布所破。曹操又会合吕布、刘备、孙策等讨伐袁术，袁术大败。"
+    },
+    {
+      "id": "official-hero-100791",
+      "officialId": 100791,
+      "iconId": 100791,
+      "portrait": "assets/portraits/100791.jpg",
+      "name": "陆逊",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200264",
+      "dismantle": "official-skill-敛众定气",
+      "dismantles": [
+        "official-skill-敛众定气"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 85,
+        "strategy": 96,
+        "defense": 82,
+        "speed": 55
+      },
+      "desc": "【史】三国时期吴国政治家、军事家。建安二十四年（219年），陆逊参与袭取荆州。章武二年（222年），孙权以陆逊为大都督，在夷陵火烧连营击败刘备，一战成名。黄武七年（228年），陆逊取得石亭之战的胜利。黄龙元年（229年），孙权称帝后，以陆逊为上大将军、辅佐太子孙登并掌管陪都武昌事宜，后卷入立嗣之争。\n赤乌七年（244年）拜为丞相，总领三公事务，领武昌事。陆逊跟随孙权四十余年，统领吴国军政十余年，深得孙权器重。深谋远虑，忠诚耿直。一生出将入相，被赞为“社稷之臣”。\n【演】在《三国演义》中，称其“身长八尺，面如美玉，体如凝酥”。孙权统事后，陆逊投奔入孙权门下。陆逊、董袭作为第五队参与了赤壁之战。合肥之战时陆逊董袭又救出重伤的太史慈；樊城之战前吕蒙因为想不出对付关羽的办法装病躲避。陆逊向孙权进言猜测是诈病，后又献夺荆州计谋。孙权遂以陆逊代吕蒙守陆口。后孙权力排众议，拜陆逊为大都督。"
+    },
+    {
+      "id": "official-hero-100792",
+      "officialId": 100792,
+      "iconId": 100792,
+      "portrait": "assets/portraits/100792.jpg",
+      "name": "马良",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200265",
+      "dismantle": "official-skill-敛众定气",
+      "dismantles": [
+        "official-skill-敛众定气"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 46,
+        "strategy": 87,
+        "defense": 80,
+        "speed": 40
+      },
+      "desc": "【史】蜀汉官员，马谡之兄。马良兄弟五人都有才华名气，而马良又在五人中最为出色，因此有“马氏五常，白眉最良”的赞誉。建安十四年（209年），刘备担任荆州牧，征召马良为州从事。马良与诸葛亮关系友善，曾奉命出使东吴，受到孙权恭敬的接待。章武元年（221年），刘备称帝，建立蜀汉政权，任命马良为侍中。刘备东征东吴时，派马良招纳五溪少数民族。同年，刘备在夷陵之战中兵败，马良也遇害身亡。\n【演】在《三国演义》中，关羽讨魏时，以马良、伊籍为参谋，一同征进。关羽臂中毒箭，名医华佗为其刮骨，关羽与马良弈棋。后荆州失守，关羽遣马良、伊籍、赍文三道，星夜赴成都求救。夷陵之战中，刘备因报仇心切，起兵伐吴，并任马良、陈震掌理文书，马良劝阻，但刘备不听，孙权拜陆逊为都督，马良劝刘备需要提防，但刘备又不听。吴军坚守不出，马良认为吴军必定在等待蜀军的变化而作出行动。期间，马良曾携地理图本前往请教诸葛亮。"
+    },
+    {
+      "id": "official-hero-100793",
+      "officialId": 100793,
+      "iconId": 100793,
+      "portrait": "assets/portraits/100793.jpg",
+      "name": "陈到",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200268",
+      "dismantle": "official-skill-胜敌益强",
+      "dismantles": [
+        "official-skill-胜敌益强"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 86,
+        "strategy": 86,
+        "defense": 70,
+        "speed": 41
+      },
+      "desc": "【史】陈到，字叔至，豫州汝南人，三国时期蜀汉将领。刘备在豫州时期，陈到开始追随刘备，名位常亚于赵云，以忠勇著称。先后担任护军、征西将军，在建兴四年接替李严担任永安都督，封亭侯。负责统率和管理白毦兵，在永安任上去世。"
+    },
+    {
+      "id": "official-hero-100794",
+      "officialId": 100794,
+      "iconId": 100794,
+      "portrait": "assets/portraits/100794.jpg",
+      "name": "荀彧",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200269",
+      "dismantle": "official-skill-袭屯夺气",
+      "dismantles": [
+        "official-skill-袭屯夺气"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 42,
+        "strategy": 99,
+        "defense": 85,
+        "speed": 46
+      },
+      "desc": "【史】东汉末年著名政治家、战略家，曹操统一北方的首席谋臣和功臣。荀彧早年被称为“王佐之才”，初举孝廉，任守宫令。后弃官归乡，又率宗族避难冀州，被袁绍待为上宾。其后投奔曹操。官至侍中，守尚书令，封万岁亭侯。因其任尚书令，居中持重达十数年，处理军国事务，被人敬称为“荀令君”。后因反对曹操称魏公而受曹操所忌，调离中枢，在寿春忧郁成病而亡，年五十。获谥敬侯，后追赠太尉。\n【演】在《三国演义》中，荀彧旧从袁绍，因知袁绍终不能成大事遂与其侄荀攸投奔曹操。荀彧为曹操出过很多重要的战略谋划，如以兖州为基地、二虎竞食和驱虎吞狼、迎汉献帝往许都、开玄武湖练水军等等，立有大功。荀彧后为汉侍中、尚书令，参与国家大事並经常留守许都。后来董昭劝曹操称魏公，荀彧表示反对，曹操深感不满，遂将其招入军中，从征孙权。荀彧因病留于寿春，不久在曹操的暗示下服毒自尽。"
+    },
+    {
+      "id": "official-hero-100795",
+      "officialId": 100795,
+      "iconId": 100795,
+      "portrait": "assets/portraits/100795.jpg",
+      "name": "献帝",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200270",
+      "dismantle": "official-skill-袭屯夺气",
+      "dismantles": [
+        "official-skill-袭屯夺气"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 38,
+        "strategy": 80,
+        "defense": 88,
+        "speed": 77
+      },
+      "desc": "【史】东汉最后一任皇帝，公元189年－220年在位。因被董太后抚养，故称“董侯”，初封渤海王，后改封陈留王。公元189年，董卓废汉少帝刘辩，立刘协为皇帝。董卓被王允和吕布诛灭后，董卓部将李傕等攻入长安，再次挟持了他，后来逃出长安。公元196年，曹操控制了刘协，并迁都许县，挟天子以令诸侯。公元220年，曹操病死，刘协被曹丕控制，随后被迫禅让于曹丕。公元234年，刘协寿终正寝，享年54岁。\n【演】在《三国演义》中，他是汉灵帝中子。汉中平九月甲戌，即皇帝位，年九岁。后为董卓、曹操接连要挟，成为傀儡。建安二十五年冬十月乙卯，帝逊位，丕称天子。奉帝为山阳公。传言帝遇害，汉中王刘备闻知，痛哭终日，下令百官挂孝，遥望设祭，上尊谥曰“孝愍皇帝”。"
+    },
+    {
+      "id": "official-hero-100796",
+      "officialId": 100796,
+      "iconId": 100796,
+      "portrait": "assets/portraits/100796.jpg",
+      "name": "于禁",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200272",
+      "dismantle": "official-skill-以诱待来",
+      "dismantles": [
+        "official-skill-以诱待来"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 62,
+        "defense": 90,
+        "speed": 43
+      },
+      "desc": "【史】三国时期魏国武将。本为鲍信部将，后属曹操，曾于张绣造反时讨伐不守军纪的青州兵，同时为迎击敌军而固守营垒，因此曹操称赞他可与古代名将相比。然而在建安二十四年（219年）的襄樊之战中，于禁在败给关羽后投降，致使晚节不保。关羽败亡后，于禁从荆州获释到了吴国。黄初二年（公元221年），孙权遣还于禁回魏，同年去世，谥曰厉侯，有一子于圭。\n【演】在《三国演义》中，于禁于曹操招贤之时前来投奔。后随曹操参与官渡之战、赤壁之战。赤壁兵败之后，于禁随曹操征讨马超、韩遂，于阵前不敌马超而败北。关羽率军攻樊城时，于禁、庞德奉命前往援救镇守樊城的曹仁终被关羽以水攻大败。战后于禁被俘，向关羽乞降，被押解往荆州。吕蒙攻陷荆州后于禁被送往吴国，孙权降魏后将其释放返魏，奉命守护曹操陵墓。曹丕遣人将于禁战败乞降等事画于陵壁，于禁看后惭愧发病而死。"
+    },
+    {
+      "id": "official-hero-100797",
+      "officialId": 100797,
+      "iconId": 100797,
+      "portrait": "assets/portraits/100797.jpg",
+      "name": "胡芳",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200273",
+      "dismantle": "official-skill-兼弱攻昧",
+      "dismantles": [
+        "official-skill-兼弱攻昧"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 75,
+        "strategy": 71,
+        "defense": 70,
+        "speed": 40
+      },
+      "desc": "【史】晋镇军大将军胡奋之女，晋武帝司马炎的贵嫔。泰始九年，晋武帝选择良家女充实后宫，胡芳被选中，拜为贵嫔。胡芳性格直率，言辞直接，曾经在与晋武帝玩“摴蒲”（一种古代游戏，类似掷骰子）时，伤到晋武帝手指，惹得晋武帝大骂“就是个武将的孩子！”胡芳回答“（我父亲跟你祖父都）北伐公孙，西距诸葛，可不就是武将的孩子嘛。”让晋武帝非常惭愧。\n深得晋武帝宠爱，侍御服饰仅次于皇后，以至于后来皇后杨艳病重，担心晋武帝会因宠爱胡芳而立其为后，威胁太子地位，因此杨艳临终时请求晋武帝立自己妹妹杨芷为后，得到晋武帝的同意。\n为司马炎诞下一女武安公主。"
+    },
+    {
+      "id": "official-hero-100799",
+      "officialId": 100799,
+      "iconId": 100799,
+      "portrait": "assets/portraits/100799.jpg",
+      "name": "马谡",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200275",
+      "dismantle": "official-skill-除恶务尽",
+      "dismantles": [
+        "official-skill-除恶务尽"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 55,
+        "strategy": 90,
+        "defense": 88,
+        "speed": 92
+      },
+      "desc": "【史】字幼常，襄阳宜城人。以荆州从事随刘备入蜀，先后担任绵竹令、成都令、越巂太守。才器过人，好论军计，但刘备认为他“言过其实，不可大用”，不过诸葛亮仍然重用马谡，以其为参军。建兴三年，诸葛亮征南中，马谡献“攻心为上，攻城为下，心战为上，兵战为下”之策，诸葛亮纳之，赦孟获而服南方。建兴六年，诸葛亮军出祁山，不听众人建议，拔马谡为先锋。与魏将张郃战于街亭，违背诸葛亮的安排，为张郃所破，导致街亭失守。\n【演】在《三国演义》中的马谡，事迹与正史中大致相同，唯有随诸葛亮南征孟获、献计离间司马懿与魏明帝曹叡等情节，为小说虚构。"
+    },
+    {
+      "id": "official-hero-100800",
+      "officialId": 100800,
+      "iconId": 100800,
+      "portrait": "assets/portraits/100800.jpg",
+      "name": "蒋琬",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200277",
+      "dismantle": "official-skill-除恶务尽",
+      "dismantles": [
+        "official-skill-除恶务尽"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 77,
+        "strategy": 97,
+        "defense": 92,
+        "speed": 39
+      },
+      "desc": "【史】字公琰，零陵湘乡人 三国时蜀汉执政大臣，与诸葛亮、董允、费祎并称“四相”。弱冠知名，初以书佐随刘备入蜀，任广都长，为政以安民为本，刘备以为蒋琬荒怠政事，怒欲处置，因诸葛亮劝解而得免。后受诸葛亮器重，被评为“社稷之器”，历任什邡令、丞相府东曹掾等职。刘禅建兴中，诸葛亮驻汉中，以琬为丞相长史，统理府事，常足食足兵以相供给。建兴十二年（234年），诸葛亮卒，蒋琬代为执政。延熙初，屯军汉中，受命开府，加大司马。总揽蜀汉军政。曾制定由水路进攻曹魏的计划，但因其健康状况恶化，以及群臣反对而未能成行。\n【演】在《三国演义》中，蒋琬形象与正史相似。在荆州时成为刘备属下，在内政方面发挥才能。北伐之时在后方支援大军。诸葛亮死后，刘禅依诸葛亮遗言加蒋琬为丞相、大将军，录尚书事，与费祎一起处理丞相事务。"
+    },
+    {
+      "id": "official-hero-100801",
+      "officialId": 100801,
+      "iconId": 100801,
+      "portrait": "assets/portraits/100801.jpg",
+      "name": "裴秀",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200278",
+      "dismantle": "official-skill-利兵谋胜",
+      "dismantles": [
+        "official-skill-利兵谋胜"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 40,
+        "strategy": 85,
+        "defense": 82,
+        "speed": 46
+      },
+      "desc": "【史】河东闻喜人，魏晋名臣，地图学家，出身河东裴氏，其祖父为东汉尚书裴茂，其父为曹魏光禄大夫裴潜。年少好学，有风度，被人称作“后进领袖”。被大将军曹爽辟为掾属，继承清阳亭侯爵位，迁黄门侍郎。高平陵之变曹爽被诛，裴秀因此也被免职。之后先后担任廷尉正、安东将军及卫将军司马，提出很多军国建议，都被信任采纳，又迁散骑常侍。\n司马昭讨伐诸葛诞时，裴秀与尚书仆射陈泰、黄门侍郎钟会一同以行台身份参加，之后转为尚书，封鲁阳乡侯。曹奂继位后，封为县侯，迁尚书仆射。咸熙年间，裴秀负责修改官制，因此被封为济川侯。司马昭立世子时，司马炎曾寻找裴秀询问相术，裴秀以司马炎“非人臣之相”为由向司马昭提出建议，后来果然世子为司马炎。司马炎继承王位后，拜裴秀为尚书令、右光禄大夫，开府，加给事中。晋朝建立后，加左光禄大夫，封钜鹿郡公。曾因谋私而被举报，但司马炎并未处罚，反而令裴秀担任司空。后因服寒食散误饮冷酒去世。\n裴秀曾主编完成《禹贡地域图》，是中国有文献可考的最早的历史图集，并在序言中提出了制图六体，即：分率、准望、道里、高下、方邪、迂直，6项地图绘制的基本准则，为中国传统地图奠定了理论基础，是中国传统地图学的奠基人。为纪念这位中国地图科学创始人而设立的“裴秀奖”，每两年评选一次，是中国地图学界最高奖项。2021年，国际天文学联合会批准将月球正面的一个环形山命名为“裴秀环形山”。\n【演】在三国演义中，裴秀仅在结尾出场，与贾充、何曾一同建议司马昭立司马炎为世子，并在魏帝禅让时与贾充并列左右，无其他描写。"
+    },
+    {
+      "id": "official-hero-100802",
+      "officialId": 100802,
+      "iconId": 100802,
+      "portrait": "assets/portraits/100802.jpg",
+      "name": "左慈",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200279",
+      "dismantle": "official-skill-令无空悬",
+      "dismantles": [
+        "official-skill-令无空悬"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 76,
+        "strategy": 85,
+        "defense": 75,
+        "speed": 50
+      },
+      "desc": "【史】东汉末年著名方士，年少时就精通五经，而且懂天文星象，预见到汉祚将尽，天下乱起，认为此时官高者危，财多者死，荣华不值一提，于是在天柱山专心修炼。据《后汉书》记载，左慈有神通，曾经参与曹操举办的宴会，在铜盘中放水，凭空钓出松江鲈鱼，又变出蜀地生姜，并隔空给曹操派去蜀地的使者传信，令其多买蜀锦，后来也得到验证。曾用酒一升、脯一斤，令百官皆酒足饭饱。曹操想要杀害左慈时，满街都是左慈，后来不知去向。此事《神仙传》中亦有记载，同时据《神仙传》所言，道教灵宝派祖师葛玄曾以左慈为师，左慈告知葛玄自己将要去霍山中合九转丹，炼成之后就仙去了。\n【演】在《三国演义》中，左慈是一名道士，道号乌角先生。在峨嵋山修练，得到《遁甲天书》，精通法术。在曹操宴会席上出现，使出种种幻术，把曹操捉弄一番后，留下了庚子年曹操将死的预言：“土鼠随金虎，奸雄一旦休！”，然后扬长而去。曹操因此惊而成疾。"
+    },
+    {
+      "id": "official-hero-100803",
+      "officialId": 100803,
+      "iconId": 100803,
+      "portrait": "assets/portraits/100803.jpg",
+      "name": "刘备",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200286",
+      "dismantle": "official-skill-先声夺人",
+      "dismantles": [
+        "official-skill-先声夺人"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 73,
+        "strategy": 70,
+        "defense": 76,
+        "speed": 36
+      },
+      "desc": "【史】西汉中山靖王刘胜之后，三国时期蜀汉开国皇帝、政治家，史家又称他为先主。刘备早年颠沛流离，备尝艰辛，投靠过多个诸侯。赤壁之战时，与孙权联盟击败曹操，趁势夺取荆州。而后进取益州。于章武元年（221年）在成都称帝，国号汉，史称蜀或蜀汉。《三国志》评刘备的机权干略不及曹操，但其弘毅宽厚，知人待士，百折不挠，终成帝业。刘备也称自己做事“每与操反，事乃成尔”。\n【演】在《三国演义》中，刘备的事迹基本与正史相符。书中将其塑造成一位胸襟开阔的，十足的明主形象。并重点突出其几个性格特点：一是亲贤爱士，善待人才；二是生性善良，爱民如子；三是待人宽厚，不求全责备；四是偶有权谋，颇有心计。"
+    },
+    {
+      "id": "official-hero-100804",
+      "officialId": 100804,
+      "iconId": 100804,
+      "portrait": "assets/portraits/100804.jpg",
+      "name": "曹操",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200287",
+      "dismantle": "official-skill-先声夺人",
+      "dismantles": [
+        "official-skill-先声夺人"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 76,
+        "strategy": 72,
+        "defense": 88,
+        "speed": 78
+      },
+      "desc": "【史】三国中曹魏政权的奠基人。其人文武精通，可谓非常之人，超世之杰。以汉天子的名义征讨四方，对内消灭二袁、吕布、刘表、马超、韩遂等割据势力，对外降服南匈奴、乌桓、鲜卑等，统一了中国北方，并实行一系列政策恢复经济生产和社会秩序，奠定了曹魏立国的基础。\n【演】在《三国演义》中，曹操的事迹基本与正史相符。主要将其塑造成一个“奸雄”形象，并且更突出“奸”的一面。"
+    },
+    {
+      "id": "official-hero-100805",
+      "officialId": 100805,
+      "iconId": 100805,
+      "portrait": "assets/portraits/100805.jpg",
+      "name": "孙坚",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200288",
+      "dismantle": "official-skill-先声夺人",
+      "dismantles": [
+        "official-skill-先声夺人"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 84,
+        "strategy": 62,
+        "defense": 83,
+        "speed": 56
+      },
+      "desc": "【史】县吏出身，因勇敢又有谋略被官府赏识，提拔为军官。曾参与讨伐黄巾军的战役以及讨伐董卓的战役。后与刘表作战时阵亡。孙坚的儿子孙策、孙权后来创建了东吴政权。\n【演】在《三国演义》中，孙坚由于征讨黄巾有功，被封为长沙太守。在董卓乱政期间，孙坚作为诸侯联军的先锋，表现得十分活跃，但因袁术存在私心，拒不发粮，而被董卓将华雄击败。后来董卓迁都长安，孙坚进驻洛阳，意外发现传国玉玺，并藏匿返回。不料事情泄漏，与袁绍、刘表结仇。不久，孙坚在与刘表手下黄祖的交战中，中埋伏而死。"
+    },
+    {
+      "id": "official-hero-100806",
+      "officialId": 100806,
+      "iconId": 100806,
+      "portrait": "assets/portraits/100806.jpg",
+      "name": "姜维",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200290",
+      "dismantle": "official-skill-避锐治气",
+      "dismantles": [
+        "official-skill-避锐治气"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 89,
+        "defense": 84,
+        "speed": 84
+      },
+      "desc": "【史】三国时蜀汉名将，官至大将军。曾为魏中郎将，诸葛亮北伐时，姜维被怀疑有异心，姜维不得已投降蜀汉。因他忠勤时事、思虑精密、敏于军事、既有胆义，又兼心存汉室，故深得诸葛亮器重。诸葛亮去世后姜维在蜀汉开始崭露头角，费祎死后姜维开始独掌军权，继续率领蜀汉军队北伐曹魏。\n后因蜀中大臣多反对北伐，而宦官黄皓弄权，姜维只得在沓中屯田避祸。后司马昭五道伐蜀，姜维据守剑阁，阻挡钟会大军，却被邓艾从阴平偷袭成都，刘禅投降。后姜维假意投降魏将钟会，打算利用钟会反叛曹魏以实现恢复汉室的愿望，但最终反叛失败，与钟会一同被魏军所害。\n【演】在《三国演义》中，姜维生平与正史相似。在描写姜维降蜀时，在天水中识破设伏的赵云，并劫了诸葛亮的寨。诸葛亮视其为接班人，用计令夏侯楙和马遵误以姜维降蜀，最终使得姜维走投无路而降蜀。"
+    },
+    {
+      "id": "official-hero-100807",
+      "officialId": 100807,
+      "iconId": 100807,
+      "portrait": "assets/portraits/100807.jpg",
+      "name": "司马懿",
+      "faction": "晋",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200282",
+      "dismantle": "official-skill-避锐治气",
+      "dismantles": [
+        "official-skill-避锐治气"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 108,
+        "defense": 92,
+        "speed": 37
+      },
+      "desc": "【史】三国时期魏国杰出的政治家、军事家、战略家，西晋王朝的奠基人。是辅佐了魏国三代的托孤辅政之重臣，后期成为掌控魏国朝政的权臣。善谋奇策，多次征伐有功，其中最显著的功绩是两次率大军成功抵御诸葛亮北伐和远征平定辽东。对屯田、水利等农耕经济发展有重要贡献。\n【演】在《三国演义》中，司马懿的生平基本与正史相符。而在小说中，则将其塑造成“奸诈”的负面形象。"
+    },
+    {
+      "id": "official-hero-100808",
+      "officialId": 100808,
+      "iconId": 100808,
+      "portrait": "assets/portraits/100808.jpg",
+      "name": "孙权",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200283",
+      "dismantle": "official-skill-避锐治气",
+      "dismantles": [
+        "official-skill-避锐治气"
+      ],
+      "cost": 3.5,
+      "distance": 4,
+      "stats": {
+        "attack": 75,
+        "strategy": 92,
+        "defense": 86,
+        "speed": 59
+      },
+      "desc": "【史】孙坚之子，孙策之弟。东汉建安五年，兄孙策遇刺身亡，孙权继位吴侯、讨逆将军，领会稽太守，开始统领江东。他击败了黄祖。后东吴联合刘备，于赤壁击溃了曹操军。东吴后来又和曹操军在合肥附近鏖战，并从刘备手中夺回荆州、擒关羽、大破刘备的讨伐军。曹丕称帝后孙权先向北方称臣，后自己建吴称帝，迁都建业。孙权病逝后谥号大皇帝，史称东吴大帝。\n【演】在《三国演义》中，孙权19岁就继承了其兄孙策之位，力据江东，击败了黄祖。后东吴联合刘备，在赤壁大战击溃了曹操军。东吴后来又和曹操军在合肥附近鏖战，并从刘备手中夺回荆州、擒关羽、大破刘备的讨伐军。曹丕称帝后孙权先向北方称臣，后自己建吴称帝，迁都建业。"
+    },
+    {
+      "id": "official-hero-100810",
+      "officialId": 100810,
+      "iconId": 100810,
+      "portrait": "assets/portraits/100810.jpg",
+      "name": "黄忠",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200292",
+      "dismantle": "official-skill-令无空悬",
+      "dismantles": [
+        "official-skill-令无空悬"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 95,
+        "strategy": 72,
+        "defense": 86,
+        "speed": 55
+      },
+      "desc": "【史】本为刘表部下，后归刘备，并助刘备攻益州刘璋。在定军山一战中阵斩曹操部下名将夏侯渊。黄忠在后世多以勇猛的老将形象出现于各类文学艺术作品中。\n【演】在《三国演义》中，刘备称汉中王后将其封为五虎上将之一。初为刘表部下，后事韩玄；虽年近六旬，却有万夫不当之勇。关羽攻长沙时，关羽用拖刀计将黄忠击败，但不忍害之。次日，黄忠计诱关羽，为报关羽之恩，用弓箭只射关羽盔缨，但韩玄却因此怀疑黄忠有二心，想将黄忠斩首，但遭魏延劫场，韩玄被诛，黄忠与魏延一同降蜀。\n黄忠入蜀后，战功赫赫。先与严颜败张郃，后更于定军山亲斩夏侯渊。刘备称帝后伐吴，黄忠不顾年迈，请令担任先锋，为吴将马忠偷袭射中，回营后不治而亡。"
+    },
+    {
+      "id": "official-hero-100811",
+      "officialId": 100811,
+      "iconId": 100811,
+      "portrait": "assets/portraits/100811.jpg",
+      "name": "司马徽",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200294",
+      "dismantle": "official-skill-以诱待来",
+      "dismantles": [
+        "official-skill-以诱待来"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 55,
+        "strategy": 93,
+        "defense": 83,
+        "speed": 45
+      },
+      "desc": "【史】东汉末年名士，精通道学、奇门、兵法、经学。有“水镜先生”之称。司马徽为人清雅，学识广博，有知人之明，并向刘备推荐了诸葛亮、庞统等人，受到世人的敬重。\n【演】刘备马跃檀溪后，偶然相遇司马徽。司马徽向刘备举荐诸葛亮和庞统，并称诸葛亮为“卧龙”，庞统为“凤雏”，刘备随后夜宿庄院。次日，司马徽自称“山野闲散之人”，谢绝了刘备请求他出山辅佐的好意。不久，赵云率军寻找到庄前，刘备便随赵云离开。其后，刘备准备拜访诸葛亮，司马徽想要探访徐庶，但徐庶已经中曹操的计策前往许昌，刘备向司马徽提起徐庶举荐诸葛亮的事情，司马徽再次力荐诸葛亮。"
+    },
+    {
+      "id": "official-hero-100812",
+      "officialId": 100812,
+      "iconId": 100812,
+      "portrait": "assets/portraits/100812.jpg",
+      "name": "冯嫽",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200295",
+      "dismantle": "official-skill-合纵连横",
+      "dismantles": [
+        "official-skill-合纵连横"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 50,
+        "strategy": 82,
+        "defense": 86,
+        "speed": 86
+      },
+      "desc": "【史】西汉女政治家、外交家。因西汉派去与乌孙国联姻的公主刘细君去世，汉武帝以刘解忧为公主继续与乌孙国联姻，冯嫽作为解忧公主的侍女，共同前往乌孙国。冯嫽懂史书，熟悉事务，曾经作为公主的使者前往西域各国赏赐西域贵族，得到了西域各国的信任和尊敬，号称“冯夫人”，后嫁给乌孙国右大将为妻。\n乌孙国王病逝后，乌孙国贵族未按约定立解忧公主的儿子为王，反而立上一任国王有匈奴血统的儿子为王，史称狂王。解忧公主与汉朝使者设宴刺杀狂王使其受伤逃跑，乌孙国贵族乌就屠趁机袭杀狂王，自立为昆弥（乌孙之王）。冯嫽的丈夫右大将与乌就屠交好，因此西域都护派遣冯夫人前去劝降乌就屠。汉宣帝征召冯夫人亲自过问此事，并正式派遣冯夫人锦车持节，前往乌孙国宣读诏书，最终解忧公主之子担任大昆弥，乌就屠担任小昆弥，共同治理乌孙国。后来解忧公主的儿子去世，冯嫽陪同公主返回长安，但公主之孙、新任大昆弥星靡年幼，冯夫人上书宣帝，希望出使乌孙辅佐星靡。宣帝派一百余人送冯夫人，再次出使乌孙国。\n冯嫽是中国历史上第一位有史料记载的女外交官。"
+    },
+    {
+      "id": "official-hero-102001",
+      "officialId": 102001,
+      "iconId": 100021,
+      "portrait": "assets/portraits/100021.jpg",
+      "name": "赵云",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200704",
+      "dismantle": "official-skill-步步为营",
+      "dismantles": [
+        "official-skill-步步为营"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 101,
+        "strategy": 78,
+        "defense": 92,
+        "speed": 65
+      },
+      "desc": "【史】三国时期蜀汉名将。赵云跟随刘备将近三十年，先后参加过博望坡之战、长坂坡之战、江南平定战，独自指挥过入川之战、汉水之战、箕谷之战，都取得了非常好的战果。除了四处征战，赵云还先后以偏将军任桂阳太守，以留营司马留守公安，以翊军将军督江州。除此之外，赵云于平定益州时引霍去病故事劝谏刘备将田宅归还百姓，又于关羽张飞被害之后劝谏刘备不要伐吴，被后世赞为有大臣局量的儒将，甚至被认为是三国时期的完美人物。\n【演】在《三国演义》中，赵云一登场即和河北名将文丑大战，救了公孙瓒。曾和多名三国名将对战，冲锋陷阵罕见败绩。长坂坡救阿斗时，连续阵斩曹营名将五十余员。智取桂阳时，更是展现了他过人的机智和出众的谋略。随诸葛亮吊祭周瑜时，因赵云带剑相随，吴将无人敢动诸葛亮。汉水救黄忠时，让魏国名将张郃、徐晃心惊胆战，不敢迎敌。\n刘备去世之后，曹魏五路犯蜀，赵云把守阳平关，一将当关，万夫莫开。七十几岁时仍为蜀汉先锋，阵前力斩被作者称为“有万夫不当之勇”的西凉大将韩德一门五将。"
+    },
+    {
+      "id": "official-hero-102002",
+      "officialId": 102002,
+      "iconId": 100435,
+      "portrait": "assets/portraits/100435.jpg",
+      "name": "夏侯渊",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200705",
+      "dismantle": "official-skill-先驱突击",
+      "dismantles": [
+        "official-skill-先驱突击"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 91,
+        "strategy": 66,
+        "defense": 90,
+        "speed": 100
+      },
+      "desc": "【史】东汉末年名将，擅长千里奔袭作战，官至征西将军，封博昌亭侯。初期随曹操征伐，官渡之战为曹操督运粮草，又督诸将先后平定昌豨、徐和、雷绪、商曜等叛乱。后率军驻凉州，逐马超、破韩遂、灭宋建、横扫羌、氐，虎步关右。张鲁降曹操后夏侯渊留守汉中，与刘备相拒逾年，于定军山被刘备部将黄忠所袭，战死，谥曰愍侯。\n【演】在《三国演义》中，夏侯渊是夏侯婴之后、大将军惇族弟。自曹操陈留起兵起，便跟随征伐，历任陈留、颍川太守。官渡之战后，夏侯渊负责粮草补给，保证了曹操平定北方。而后夏侯渊又率兵四处征讨叛乱，破昌豨、徐和、雷绪、商曜等，战功卓著。而后夏侯渊督张郃、徐晃等留守汉中，与前来取汉中的刘备大军交战，为刘备将黄忠所袭，不幸战死。谥曰愍侯。魏齐王正始四年从祀曹操庙庭。"
+    },
+    {
+      "id": "official-hero-102003",
+      "officialId": 102003,
+      "iconId": 100090,
+      "portrait": "assets/portraits/100090.jpg",
+      "name": "太史慈",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200706",
+      "dismantle": "official-skill-钝兵挫锐",
+      "dismantles": [
+        "official-skill-钝兵挫锐"
+      ],
+      "cost": 2.5,
+      "distance": 5,
+      "stats": {
+        "attack": 98,
+        "strategy": 67,
+        "defense": 89,
+        "speed": 65
+      },
+      "desc": "【史】东汉末年名将，官至建昌都尉。弓马熟练，箭法精良。原为刘繇部下，后被孙策收降，自此太史慈为孙氏大将，助其扫荡江东。孙权统事后，因太史慈能制刘磐，便将管理南方的要务委托给他。建安十一年（206年）太史慈逝世。\n【演】在《三国演义》中，初登场为第十一回“刘皇叔北海救孔融，吕温侯濮阳破曹操”，后来表现与《三国志》中没有太大分别，但其死亡时间却往后调了数年。于群英会、赤壁之战中，太史慈也有登场，先在群英会上为周瑜担任监酒官，于赤壁战中则负责绕到曹军背后，断绝来自合肥的曹军援兵。\n后来太史慈更于合肥之战一役中大战魏将张辽，可惜其所献的“里应外合”之计被张辽悉破，张辽更将计就计，安排伏兵，袭击进入合肥城的太史慈，令太史慈身中数箭，回营后伤重身亡。"
+    },
+    {
+      "id": "official-hero-102004",
+      "officialId": 102004,
+      "iconId": 100007,
+      "portrait": "assets/portraits/100007.jpg",
+      "name": "卢植",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200707",
+      "dismantle": "official-skill-步步为营",
+      "dismantles": [
+        "official-skill-步步为营"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 108,
+        "strategy": 123,
+        "defense": 132,
+        "speed": 89
+      },
+      "desc": "【史】东汉名臣，刘备和公孙瓒之师。黄巾起义时为北中郎将，率军与张角交战，后被诬陷下狱，皇甫嵩平定黄巾后力救卢植，于是复任为尚书。后因上谏激怒董卓被免官，隐居在上谷军都山，被袁绍请为军师。\n【演】在《三国演义》中，卢植为汉末大儒，名望远闻于时。刘备曾经从师于他。黄巾起义，卢植奉命镇压，以三万精锐，包围了广宗城张角的十五万人马，未见胜负，因拒绝黄门左丰索要贿赂，而被诬陷罢职问罪。何进招董卓进京诛宦臣。卢植力谏，何进不听。于是辞官而去。董卓得政后，卢植又复职，谏阻董卓废少帝立陈留王。"
+    },
+    {
+      "id": "official-hero-102005",
+      "officialId": 102005,
+      "iconId": 100015,
+      "portrait": "assets/portraits/100015.jpg",
+      "name": "甄洛",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200708",
+      "dismantle": "official-skill-怯心夺志",
+      "dismantles": [
+        "official-skill-怯心夺志"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 65,
+        "strategy": 90,
+        "defense": 75,
+        "speed": 42
+      },
+      "desc": "【史】魏文帝曹丕的妻子，魏明帝曹叡的生母。黄初二年（221年），曹丕称帝以后甄夫人被赐死，曹叡即位后追尊甄氏为文昭皇后。\n【演】在《三国演义》中，甄氏生平与正史大体相当。初期嫁与袁绍次子袁熙，袁熙带兵出外征战，留下甄氏独身照顾婆婆，袁氏败亡后，曹操之子曹丕见其美艳动人，便纳为己有。黄初年间，魏文帝曹丕登基后，郭贵妃以巫蛊之术陷害甄氏。文帝曹丕大怒，将甄氏赐死。"
+    },
+    {
+      "id": "official-hero-102006",
+      "officialId": 102006,
+      "iconId": 100129,
+      "portrait": "assets/portraits/100129.jpg",
+      "name": "关平",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200709",
+      "dismantle": "official-skill-了如指掌",
+      "dismantles": [
+        "official-skill-了如指掌"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 88,
+        "strategy": 64,
+        "defense": 81,
+        "speed": 41
+      },
+      "desc": "【史】关羽之子，关羽率军攻打樊城时，孙权借机征讨荆州。关平与其父一同被擒，最后被斩于临沮县。此外，民间通常认为他是关羽收养的义子而非亲子。\n【演】原为冀州关家庄庄主关定之子，关羽过五关时被收为义子，从此作为关羽副将，随关羽南征北战，屡立功劳，多与刘封搭档。之后逐渐成长为一员大将，曾与庞德大战三十合，不分胜负。关羽败走麦城之际，关平跟随，一同被捕，遭孙权所害。"
+    },
+    {
+      "id": "official-hero-102007",
+      "officialId": 102007,
+      "iconId": 100081,
+      "portrait": "assets/portraits/100081.jpg",
+      "name": "典韦",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200710",
+      "dismantle": "official-skill-青囊秘要",
+      "dismantles": [
+        "official-skill-青囊秘要"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 93,
+        "strategy": 33,
+        "defense": 92,
+        "speed": 29
+      },
+      "desc": "【史】曹操部将，相貌魁梧，膂力过人。本属张邈，后归曹操。曹操征讨吕布时被募为陷阵，表现英勇，被拜为校尉，宿卫曹操。后曹操于宛城时，张绣先降而复反，急迫曹操本营；典韦守着大门，殊死恶斗，破敌甚众，最终因敌人太多而战死。 \n【演】在《三国演义》中，因其悍武，曹操称其为“古之恶来”。张绣背叛时，先令胡车儿暗盗韦双戟，再引军急迫曹操本营。典韦守大门，殊死恶斗，破敌甚众，刀坏了竟双手各提一人为武器迎敌。群贼不敢近，只远远以箭射之，箭如骤雨，典韦犹死拒寨门。"
+    },
+    {
+      "id": "official-hero-102008",
+      "officialId": 102008,
+      "iconId": 100091,
+      "portrait": "assets/portraits/100091.jpg",
+      "name": "吴夫人",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200711",
+      "dismantle": "official-skill-了如指掌",
+      "dismantles": [
+        "official-skill-了如指掌"
+      ],
+      "cost": 1.5,
+      "distance": 2,
+      "stats": {
+        "attack": 49,
+        "strategy": 80,
+        "defense": 66,
+        "speed": 87
+      },
+      "desc": "【史】孙坚夫人。孙策、孙权之母。本姓吴，早丧父母，与其弟吴景居处。孙坚闻其才貌，娶而为妻，生四男一女。孙策、孙权分别执政时，吴夫人皆助治军国大事，甚有补益。临终引见张昭等，嘱以后事。死后与孙坚合葬高陵。\n【演】在《三国演义》中，被称为吴太夫人。其次子孙权自立为吴国皇帝后，她被追尊为皇后。并且演义中虚构其妹继为国太，在孙刘联姻一事上起主导作用。"
+    },
+    {
+      "id": "official-hero-102009",
+      "officialId": 102009,
+      "iconId": 100041,
+      "portrait": "assets/portraits/100041.jpg",
+      "name": "张奂",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200712",
+      "dismantle": "official-skill-百战精兵",
+      "dismantles": [
+        "official-skill-百战精兵"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 88,
+        "defense": 79,
+        "speed": 33
+      },
+      "desc": "【史】东汉时期名将、学者，凉州三明之一。汉阳太守张惇之子。少年时师从太尉朱宠，学习《欧阳尚书》，又自行删减《牟氏章句》。在东汉对外战争中功勋卓著，多次以恩信安抚、招降外族，使得北方宁静一时。后入朝，为宦官所利用，率军前往进击窦武。\n事后自责不已，拒受封侯。拜少府，迁任大司农，又上疏为窦武等人伸冤。不久迁太常，因得罪宦官被诬陷罢免。最终回乡教授弟子，不再出仕。光和四年（181年）去世，终年七十八岁，遗令素服薄葬。"
+    },
+    {
+      "id": "official-hero-102010",
+      "officialId": 102010,
+      "iconId": 100116,
+      "portrait": "assets/portraits/100116.jpg",
+      "name": "袁术",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200713",
+      "dismantle": "official-skill-攻心",
+      "dismantles": [
+        "official-skill-攻心"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 70,
+        "defense": 79,
+        "speed": 37
+      },
+      "desc": "【史】袁逢之嫡次子，袁基、袁绍之弟。初为虎贲中郎将。董卓进京后以袁术为后将军，袁术因畏祸而出奔南阳。初平元年（190年）与袁绍、曹操等同时起兵，共讨董卓。后与袁绍对立，被袁绍、曹操击败，率馀众奔九江，割据扬州。建安二年（197年）称帝，建号仲氏 ，但未受人承认。此后袁术奢侈荒淫，横征暴敛，使江淮地区残破不堪，民多饥死，部众离心，先后为吕布、曹操所破，元气大伤，后于建安四年（199年）呕血而死。\n【演】在《三国演义》中，他的家族四代中有五人位居三公，是当世的大豪族。因董卓祸国，十八路诸侯聚讨董卓，袁术以第一镇诸侯的身份参与。同盟解散后，袁术为了除掉刘备，派遣使者想和吕布结亲，吕布将使者送给曹操斩首。得知吕布送斩他的使者，就发兵攻打他，却反被吕布所破。曹操又会合吕布、刘备、孙策等讨伐袁术，袁术大败。"
+    },
+    {
+      "id": "official-hero-102011",
+      "officialId": 102011,
+      "iconId": 100004,
+      "portrait": "assets/portraits/100004.jpg",
+      "name": "蔡文姬",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200004",
+      "dismantle": "official-skill-不攻",
+      "dismantles": [
+        "official-skill-不攻"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 61,
+        "strategy": 90,
+        "defense": 82,
+        "speed": 45
+      },
+      "desc": "【史】东汉末才女，博学多才且精通音律。匈奴入侵时，被匈奴掳走。十二年后，曹操统一北方，用重金将蔡文姬赎回，并将其嫁给董祀。"
+    },
+    {
+      "id": "official-hero-102012",
+      "officialId": 102012,
+      "iconId": 100074,
+      "portrait": "assets/portraits/100074.jpg",
+      "name": "姜维",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200072",
+      "dismantle": "official-skill-大赏三军",
+      "dismantles": [
+        "official-skill-大赏三军"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 92,
+        "strategy": 91,
+        "defense": 89,
+        "speed": 61
+      },
+      "desc": "【史】三国时蜀汉名将，官至大将军。曾为魏中郎将，诸葛亮北伐时，姜维被怀疑有异心，姜维不得已投降蜀汉。因他忠勤时事、思虑精密、敏于军事、既有胆义，又兼心存汉室，故深得诸葛亮器重。诸葛亮去世后姜维在蜀汉开始崭露头角，费祎死后姜维开始独掌军权，继续率领蜀汉军队北伐曹魏。\n后因蜀中大臣多反对北伐，而宦官黄皓弄权，姜维只得在沓中屯田避祸。后司马昭五道伐蜀，姜维据守剑阁，阻挡钟会大军，却被邓艾从阴平偷袭成都，刘禅投降。后姜维假意投降魏将钟会，打算利用钟会反叛曹魏以实现恢复汉室的愿望，但最终反叛失败，与钟会一同被魏军所害。\n【演】在《三国演义》中，姜维生平与正史相似。在描写姜维降蜀时，在天水中识破设伏的赵云，并劫了诸葛亮的寨。诸葛亮视其为接班人，用计令夏侯楙和马遵误以姜维降蜀，最终使得姜维走投无路而降蜀。"
+    },
+    {
+      "id": "official-hero-102014",
+      "officialId": 102014,
+      "iconId": 100008,
+      "portrait": "assets/portraits/100008.jpg",
+      "name": "张角",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200008",
+      "dismantle": "official-skill-反计之策",
+      "dismantles": [
+        "official-skill-反计之策"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 21,
+        "strategy": 93,
+        "defense": 67,
+        "speed": 85
+      },
+      "desc": "【史】东汉末农民起义领袖。汉灵帝时期在各地传播“太平道”，发展部众至几十万，遍及青、徐、幽、冀、荆、扬、兖、豫八州。184年二月，张角发动起义，打出了“苍天已死，黄天当立”的口号，矛头直指东汉政府，史称“黄巾起义”，影响遍及全国，极大地动摇了东汉政府的统治。同年十月，张角病死，不久其直接领导的黄巾军被镇压，但其后各地起义不断，最终导致东汉灭亡。\n【演】在《三国演义》中，张角原是个不第的秀才，在山中采药时遇南华老仙，得天书三卷，名为《太平要术》。张角依此书所传道术，开始散施符水，为人治病，徒众发展到数十万。张角遂起了夺取天下的野心，与兄弟张宝、张梁一起发兵起义，声势浩大，但最终被朝廷和各路豪杰镇压。张角病死，黄巾军主力随即覆灭，但仍有很多残党在各地活动。"
+    },
+    {
+      "id": "official-hero-102015",
+      "officialId": 102015,
+      "iconId": 100036,
+      "portrait": "assets/portraits/100036.jpg",
+      "name": "孙尚香",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200035",
+      "dismantle": "official-skill-反计之策",
+      "dismantles": [
+        "official-skill-反计之策"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 90,
+        "strategy": 62,
+        "defense": 77,
+        "speed": 59
+      },
+      "desc": "【史】孙权之妹，名字不详。刘备定荆州时，孙权对其十分畏惮，于是进妹予刘备为夫人，重固盟好。孙夫人才捷刚猛，有诸兄之风，身边侍婢百余人，皆亲自执刀侍立，刘备每入，心内常觉凛然惊惧。后刘备入益州，使赵云领留营司马，留守荆州。\n此时孙夫人自以孙权之妹的身份，骄妄豪强，常带着一群东吴吏兵，在荆州纵横不法。既尔孙权闻知刘备西征，于是大遣舟船以迎孙夫人，而夫人带着后主刘禅回吴，幸得赵云与张飞勒兵截江，方重夺刘禅。\n【演】在《三国演义》中，名为孙尚香。孙夫人才捷刚猛，有诸兄之风，身边侍婢百余人，皆亲自执刀侍立。不料在诸葛亮的锦囊妙计安排下，假婚成真姻；后来夫人更助刘备返蜀，于路上怒斥追袭的吴将。后刘备入益州，使赵云领留营司马，留守荆州。\n此时孙权闻知刘备西征，于是遣周善引领舟船以迎孙夫人，而夫人带着后主刘禅回吴，幸得赵云与张飞勒兵截江，方重夺刘禅。彝陵之战，刘备战败，有讹言传入吴中，道刘备已死，孙夫人伤心不已，望西痛哭，投江而死。"
+    },
+    {
+      "id": "official-hero-102016",
+      "officialId": 102016,
+      "iconId": 100494,
+      "portrait": "assets/portraits/100494.jpg",
+      "name": "祝融夫人",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200730",
+      "dismantle": "official-skill-全军突击",
+      "dismantles": [
+        "official-skill-全军突击"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 88,
+        "strategy": 30,
+        "defense": 81,
+        "speed": 73
+      },
+      "desc": "【演】在《三国演义》中，为火神祝融氏后裔，南蛮王孟获之妻，带来洞主之姐。武艺高强，善使飞刀，百发百中。曾与孟获一起抵抗蜀军，在两军阵前被赵云活捉，在诸葛亮七擒七纵孟获之后，随孟获归顺蜀汉。祝融夫人为虚构人物，不见于正史记载。"
+    },
+    {
+      "id": "official-hero-102017",
+      "officialId": 102017,
+      "iconId": 100032,
+      "portrait": "assets/portraits/100032.jpg",
+      "name": "周姬",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200032",
+      "dismantle": "official-skill-始计",
+      "dismantles": [
+        "official-skill-始计"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 25,
+        "strategy": 80,
+        "defense": 49,
+        "speed": 35
+      },
+      "desc": "【史】周瑜之女，母疑为汉末美女小乔，兄长为周循和周胤。\n【演】在《三国演义》中，提及周瑜去世后留下二子一女，孙权对他们很关照。周瑜的女儿日后嫁给了太子。"
+    },
+    {
+      "id": "official-hero-100001",
+      "officialId": 100001,
+      "iconId": 100001,
+      "portrait": "assets/portraits/100001.jpg",
+      "name": "献帝",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200001",
+      "dismantle": "official-skill-坚守兵法",
+      "dismantles": [
+        "official-skill-坚守兵法"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 35,
+        "strategy": 81,
+        "defense": 81,
+        "speed": 41
+      },
+      "desc": "【史】东汉最后一任皇帝，公元189年－220年在位。因被董太后抚养，故称“董侯”，初封渤海王，后改封陈留王。公元189年，董卓废汉少帝刘辩，立刘协为皇帝。董卓被王允和吕布诛灭后，董卓部将李傕等攻入长安，再次挟持了他，后来逃出长安。公元196年，曹操控制了刘协，并迁都许县，挟天子以令诸侯。公元220年，曹操病死，刘协被曹丕控制，随后被迫禅让于曹丕。公元234年，刘协寿终正寝，享年54岁。\n【演】在《三国演义》中，他是汉灵帝中子。汉中平九月甲戌，即皇帝位，年九岁。后为董卓、曹操接连要挟，成为傀儡。建安二十五年冬十月乙卯，帝逊位，丕称天子。奉帝为山阳公。传言帝遇害，汉中王刘备闻知，痛哭终日，下令百官挂孝，遥望设祭，上尊谥曰“孝愍皇帝”。"
+    },
+    {
+      "id": "official-hero-100002",
+      "officialId": 100002,
+      "iconId": 100002,
+      "portrait": "assets/portraits/100002.jpg",
+      "name": "十常侍",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200002",
+      "dismantle": "official-skill-浑水摸鱼",
+      "dismantles": [
+        "official-skill-浑水摸鱼"
+      ],
+      "cost": 5.5,
+      "distance": 4,
+      "stats": {
+        "attack": 73,
+        "strategy": 82,
+        "defense": 74,
+        "speed": 78
+      },
+      "desc": "【史】汉灵帝时的宦官集团。张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典十二个宦官，他们推动了汉朝的灭亡，是引发了汉末时局大动荡的主要原因。\n【演】张让、赵忠、夏恽、郭胜、孙璋、毕岚、栗嵩、段珪、高望、张恭、韩悝、宋典等十二个宦官朋比为奸，号为“十常侍”。"
+    },
+    {
+      "id": "official-hero-100003",
+      "officialId": 100003,
+      "iconId": 100003,
+      "portrait": "assets/portraits/100003.jpg",
+      "name": "吕布",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200003",
+      "dismantle": "official-skill-愈战愈勇",
+      "dismantles": [
+        "official-skill-愈战愈勇"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 99,
+        "strategy": 30,
+        "defense": 100,
+        "speed": 100
+      },
+      "desc": "【史】吕布以勇武闻名，号称“飞将”，时有“人中吕布，马中赤兔”之说。原为丁原部将，被唆使谋害丁原归附董卓，与董卓誓为父子，后又被司徒王允唆使诛灭董卓。旋即被董卓旧部李傕等击败，依附袁绍，又被袁绍猜忌，依附张杨。兴平元年（194年），吕布趁曹操攻打陶谦时与陈宫等叛乱，占据濮阳，但两年间被曹操击败转而去依附徐州刘备，又趁刘备与袁术作战时袭取了徐州，与刘备和好一阵又相互攻伐。\n期间，以辕门射戟化解刘备与纪灵的争斗。建安三年（198年），吕布先后击败刘备与夏侯惇后，曹操亲自出马征讨吕布，水淹下邳，吕布被部下叛变，城破被俘，被处死。\n【演】吕布是骁勇善战的汉末诸侯，先后跟随丁原、董卓作战，并最终谋害了丁原和董卓。成为独立势力后，吕布与曹操为敌，和刘备、袁术等诸侯时敌时友，最终不敌曹操和刘备的联军，兵败人亡。吕布虽然勇猛，但是少有计策，为人反复无常，唯利是图。在演义中，吕布是天下无双的超一流武将，曾在虎牢关大战刘备、关羽、张飞，曾一人独斗曹操军六员大将，武艺可谓公认的演义第一。"
+    },
+    {
+      "id": "official-hero-100004",
+      "officialId": 100004,
+      "iconId": 100004,
+      "portrait": "assets/portraits/100004.jpg",
+      "name": "蔡文姬",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200004",
+      "dismantle": "official-skill-不攻",
+      "dismantles": [
+        "official-skill-不攻"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 61,
+        "strategy": 90,
+        "defense": 72,
+        "speed": 85
+      },
+      "desc": "【史】东汉末才女，博学多才且精通音律。匈奴入侵时，被匈奴掳走。十二年后，曹操统一北方，用重金将蔡文姬赎回，并将其嫁给董祀。"
+    },
+    {
+      "id": "official-hero-100005",
+      "officialId": 100005,
+      "iconId": 100005,
+      "portrait": "assets/portraits/100005.jpg",
+      "name": "貂蝉",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200005",
+      "dismantle": "official-skill-妖术",
+      "dismantles": [
+        "official-skill-妖术"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 79,
+        "strategy": 88,
+        "defense": 74,
+        "speed": 68
+      },
+      "desc": "【演】中国古代四大美女之一。其善歌舞，色伎俱佳，凭借自己的美貌智慧在诸侯争霸的战乱年代，辗转于各诸侯之间。她通过王允的安排成为了吕布的妾室，巧施连环计成功诱使吕布诛灭了董卓。"
+    },
+    {
+      "id": "official-hero-100006",
+      "officialId": 100006,
+      "iconId": 100006,
+      "portrait": "assets/portraits/100006.jpg",
+      "name": "袁绍",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200006",
+      "dismantle": "official-skill-大赏三军",
+      "dismantles": [
+        "official-skill-大赏三军"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 80,
+        "defense": 88,
+        "speed": 36
+      },
+      "desc": "【史】东汉末年军阀，汉末群雄之一。在汉末群雄割据的过程中，袁绍先占据冀州，又先后夺青、并二州，并于建安四年（199年）的易京之战中击败了割据幽州的军阀公孙瓒，统一河北，势力达到顶点。但在建安五年（200年）的官渡之战中大败于曹操。建安七年（202年），袁绍在平定冀州叛乱之后病逝。\n【演】在《三国演义》中，袁绍初为何进党羽。何进被害后，与袁术等共同诛灭宦官。董卓夺权之后，残暴不仁，涂炭生灵。袁绍奔冀州组成十七路诸侯反董卓联合。董卓迁都长安后，袁绍便引诱公孙瓒进攻冀州，并胁迫韩馥控制冀州。随后袁绍为扩大势力范围而相继占领青州、并州。\n袁绍歼灭公孙瓒，平定幽州之后，在河北建立起庞大的势力。为了与曹操一决雌雄，袁绍遣七十万兵越过黄河，却于官渡之战中被火烧乌巢，惨遭落败。最终，袁绍与曹操在仓亭决战，败归后不久病死。"
+    },
+    {
+      "id": "official-hero-100007",
+      "officialId": 100007,
+      "iconId": 100007,
+      "portrait": "assets/portraits/100007.jpg",
+      "name": "卢植",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200007",
+      "dismantle": "official-skill-步步为营",
+      "dismantles": [
+        "official-skill-步步为营"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 108,
+        "strategy": 123,
+        "defense": 132,
+        "speed": 89
+      },
+      "desc": "【史】东汉名臣，刘备和公孙瓒之师。黄巾起义时为北中郎将，率军与张角交战，后被诬陷下狱，皇甫嵩平定黄巾后力救卢植，于是复任为尚书。后因上谏激怒董卓被免官，隐居在上谷军都山，被袁绍请为军师。\n【演】在《三国演义》中，卢植为汉末大儒，名望远闻于时。刘备曾经从师于他。黄巾起义，卢植奉命镇压，以三万精锐，包围了广宗城张角的十五万人马，未见胜负，因拒绝黄门左丰索要贿赂，而被诬陷罢职问罪。何进招董卓进京诛宦臣。卢植力谏，何进不听。于是辞官而去。董卓得政后，卢植又复职，谏阻董卓废少帝立陈留王。"
+    },
+    {
+      "id": "official-hero-100008",
+      "officialId": 100008,
+      "iconId": 100008,
+      "portrait": "assets/portraits/100008.jpg",
+      "name": "张角",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200008",
+      "dismantle": "official-skill-反计之策",
+      "dismantles": [
+        "official-skill-反计之策"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 21,
+        "strategy": 93,
+        "defense": 67,
+        "speed": 85
+      },
+      "desc": "【史】东汉末农民起义领袖。汉灵帝时期在各地传播“太平道”，发展部众至几十万，遍及青、徐、幽、冀、荆、扬、兖、豫八州。184年二月，张角发动起义，打出了“苍天已死，黄天当立”的口号，矛头直指东汉政府，史称“黄巾起义”，影响遍及全国，极大地动摇了东汉政府的统治。同年十月，张角病死，不久其直接领导的黄巾军被镇压，但其后各地起义不断，最终导致东汉灭亡。\n【演】在《三国演义》中，张角原是个不第的秀才，在山中采药时遇南华老仙，得天书三卷，名为《太平要术》。张角依此书所传道术，开始散施符水，为人治病，徒众发展到数十万。张角遂起了夺取天下的野心，与兄弟张宝、张梁一起发兵起义，声势浩大，但最终被朝廷和各路豪杰镇压。张角病死，黄巾军主力随即覆灭，但仍有很多残党在各地活动。"
+    },
+    {
+      "id": "official-hero-100009",
+      "officialId": 100009,
+      "iconId": 100009,
+      "portrait": "assets/portraits/100009.jpg",
+      "name": "董卓",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200009",
+      "dismantle": "official-skill-先驱突击",
+      "dismantles": [
+        "official-skill-先驱突击"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 88,
+        "strategy": 68,
+        "defense": 91,
+        "speed": 81
+      },
+      "desc": "【史】中平六年（189年），受大将军何进、司隶校尉袁绍所召，率军进京讨伐十常侍，却借何进被害之机，得以掌握朝政。他随后废除汉少帝，改立献帝。关东诸侯联盟讨伐董卓，董卓放弃洛阳，移都长安。董卓生性残虐，当权后横征暴敛，激起了民愤，最后被王允和吕布所诛。\n【演】原为汉河东太守，征讨黄巾不利，却因贿赂十常侍官至西凉刺史。董卓借何进被害之机，得以掌握朝政，又赠赤兔马给吕布，诱其投降并谋害丁原，从此不可一世。董卓废汉少帝，立汉献帝，朝臣敢怒不敢言；董卓生性残暴，经常纵兵掠民，百姓皆恨。后来，司徒王允利用貂蝉巧使连环计，使董卓为吕布所诛。"
+    },
+    {
+      "id": "official-hero-100010",
+      "officialId": 100010,
+      "iconId": 100010,
+      "portrait": "assets/portraits/100010.jpg",
+      "name": "吕布",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200010",
+      "dismantle": "official-skill-一骑当千",
+      "dismantles": [
+        "official-skill-一骑当千"
+      ],
+      "cost": 4,
+      "distance": 3,
+      "stats": {
+        "attack": 108,
+        "strategy": 28,
+        "defense": 92,
+        "speed": 100
+      },
+      "desc": "【史】吕布以勇武闻名，号称“飞将”，时有“人中吕布，马中赤兔”之说。原为丁原部将，被唆使谋害丁原归附董卓，与董卓誓为父子，后又被司徒王允唆使诛灭董卓。旋即被董卓旧部李傕等击败，依附袁绍，又被袁绍猜忌，依附张杨。兴平元年（194年），吕布趁曹操攻打陶谦时与陈宫等叛乱，占据濮阳，但两年间被曹操击败转而去依附徐州刘备，又趁刘备与袁术作战时袭取了徐州，与刘备和好一阵又相互攻伐。\n期间，以辕门射戟化解刘备与纪灵的争斗。建安三年（198年），吕布先后击败刘备与夏侯惇后，曹操亲自出马征讨吕布，水淹下邳，吕布被部下叛变，城破被俘，被处死。\n【演】吕布是骁勇善战的汉末诸侯，先后跟随丁原、董卓作战，并最终谋害了丁原和董卓。成为独立势力后，吕布与曹操为敌，和刘备、袁术等诸侯时敌时友，最终不敌曹操和刘备的联军，兵败人亡。吕布虽然勇猛，但是少有计策，为人反复无常，唯利是图。在演义中，吕布是天下无双的超一流武将，曾在虎牢关大战刘备、关羽、张飞，曾一人独斗曹操军六员大将，武艺可谓公认的演义第一。"
+    },
+    {
+      "id": "official-hero-100013",
+      "officialId": 100013,
+      "iconId": 100013,
+      "portrait": "assets/portraits/100013.jpg",
+      "name": "马超",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200013",
+      "dismantle": "official-skill-先驱突击",
+      "dismantles": [
+        "official-skill-先驱突击"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 97,
+        "strategy": 45,
+        "defense": 91,
+        "speed": 92
+      },
+      "desc": "【史】马腾之子，少年成名，曹操曾多次征召马超入京为官，但都被马超拒绝。建安十六年（211年），曹操治兵关中，马超联合关中诸侯韩遂等抵抗曹操，曾一度对曹操造成了极大的威胁，但被曹操用离间计击败退走，而后聚拢部队再次攻取陇上诸郡，失败后依附汉中张鲁。刘备攻打刘璋时，马超投降刘备，与刘备军合围成都，汉中之战后联名上书尊刘备为汉中王。蜀汉建立后，马超官至骠骑将军、斄乡侯。\n【演】在《三国演义》中，马超被称为“锦马超”，羌人将其奉为“神威天将军”。出场时十七岁，在长安连破之前逐走吕布的董卓部将王方、李蒙。曹操诱诛马腾后，马超为报父仇，起兵反曹，在潼关击败大将张郃，数合枪挑李通，逼得曹操割须弃袍。而后大战虎痴许褚，被贾诩用离间计击败，败走凉州。\n不久马超卷土重来，占领冀城，虽然非常勇猛，战场上阵斩杨阜七位兄弟，但仍被夏侯渊、杨阜等人联合击退。投奔汉中张鲁后，在葭萌关前大战张飞，被劝降归附刘备，随即引兵迫降刘璋，并活跃于汉中之战。蜀汉建立后马超镇守西平关，令伐蜀五路兵的羌兵不战自退。"
+    },
+    {
+      "id": "official-hero-100015",
+      "officialId": 100015,
+      "iconId": 100015,
+      "portrait": "assets/portraits/100015.jpg",
+      "name": "甄洛",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200015",
+      "dismantle": "official-skill-怯心夺志",
+      "dismantles": [
+        "official-skill-怯心夺志"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 65,
+        "strategy": 90,
+        "defense": 75,
+        "speed": 42
+      },
+      "desc": "【史】魏文帝曹丕的妻子，魏明帝曹叡的生母。黄初二年（221年），曹丕称帝以后甄夫人被赐死，曹叡即位后追尊甄氏为文昭皇后。\n【演】在《三国演义》中，甄氏生平与正史大体相当。初期嫁与袁绍次子袁熙，袁熙带兵出外征战，留下甄氏独身照顾婆婆，袁氏败亡后，曹操之子曹丕见其美艳动人，便纳为己有。黄初年间，魏文帝曹丕登基后，郭贵妃以巫蛊之术陷害甄氏。文帝曹丕大怒，将甄氏赐死。"
+    },
+    {
+      "id": "official-hero-100016",
+      "officialId": 100016,
+      "iconId": 100016,
+      "portrait": "assets/portraits/100016.jpg",
+      "name": "刘备",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200016",
+      "dismantle": "official-skill-神兵天降",
+      "dismantles": [
+        "official-skill-神兵天降"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 80,
+        "strategy": 80,
+        "defense": 81,
+        "speed": 38
+      },
+      "desc": "【史】西汉中山靖王刘胜之后，三国时期蜀汉开国皇帝、政治家，史家又称他为先主。刘备早年颠沛流离，备尝艰辛，投靠过多个诸侯。赤壁之战时，与孙权联盟击败曹操，趁势夺取荆州。而后进取益州。于章武元年（221年）在成都称帝，国号汉，史称蜀或蜀汉。《三国志》评刘备的机权干略不及曹操，但其弘毅宽厚，知人待士，百折不挠，终成帝业。刘备也称自己做事“每与操反，事乃成尔”。\n【演】在《三国演义》中，刘备的事迹基本与正史相符。书中将其塑造成一位胸襟开阔的，十足的明主形象。并重点突出其几个性格特点：一是亲贤爱士，善待人才；二是生性善良，爱民如子；三是待人宽厚，不求全责备；四是偶有权谋，颇有心计。"
+    },
+    {
+      "id": "official-hero-100017",
+      "officialId": 100017,
+      "iconId": 100017,
+      "portrait": "assets/portraits/100017.jpg",
+      "name": "诸葛亮",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200017",
+      "dismantle": "official-skill-深谋远虑",
+      "dismantles": [
+        "official-skill-深谋远虑"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 49,
+        "strategy": 108,
+        "defense": 95,
+        "speed": 22
+      },
+      "desc": "【史】政治家、军事家，被誉为“千古良相”的典范。策动孙、刘联盟，于赤壁之战中大破曹操，奠定三国鼎立的基础。蜀汉建立，拜为丞相。刘备伐吴失败，受托孤于永安，辅佐幼主，外联东吴，内修政理，南征平叛，北抗强魏。为完成统一中原，兴复汉室的大业，先后五次进攻魏国。在治国、治军等方面发挥了非凡的才能。最后一次北伐时采取分兵屯田之策，与司马懿大军相持百余日，但不幸因积劳成疾而逝世，享年五十四岁，谥曰忠武侯。\n【演】在《三国演义》中，人称卧龙先生，有经天纬地之才，鬼神不测之机。刘皇叔三顾茅庐，遂允出山相助。曾舌战群儒、借东风、智算华容、三气周瑜，辅佐刘备于赤壁之战大败曹操，更取得荆州为基本。后奉命率军入川，于定军山智激老黄忠，斩夏侯渊，败走曹操，夺取汉中。刘备伐吴失败，受遗诏托孤，安居平五路，七纵平蛮，六出祁山，鞠躬尽瘁，死而后已。其手摇羽扇，运筹帷幄的潇洒形象，千百年来已成为人们心中“智慧”的代名词。"
+    },
+    {
+      "id": "official-hero-100019",
+      "officialId": 100019,
+      "iconId": 100019,
+      "portrait": "assets/portraits/100019.jpg",
+      "name": "马云禄",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200019",
+      "dismantle": "official-skill-愈战愈勇",
+      "dismantles": [
+        "official-skill-愈战愈勇"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 89,
+        "strategy": 55,
+        "defense": 78,
+        "speed": 88
+      },
+      "desc": "是民国作家周大荒小说《反三国演义》中的虚构人物。马超之妹，自幼习武，女中无双。在为马腾复仇的战事中跟随马超来到中原，与赵云一见钟情。\n之后嫁于赵云，与丈夫和兄长并肩作战。"
+    },
+    {
+      "id": "official-hero-100020",
+      "officialId": 100020,
+      "iconId": 100020,
+      "portrait": "assets/portraits/100020.jpg",
+      "name": "黄月英",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200020",
+      "dismantle": "official-skill-神兵天降",
+      "dismantles": [
+        "official-skill-神兵天降"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 33,
+        "strategy": 94,
+        "defense": 70,
+        "speed": 29
+      },
+      "desc": "【史】诸葛亮之妻，本名不详。其长相丑陋，黄头发，黑皮肤，但才华却与诸葛亮相当。诸葛亮发明木牛流马，相传就是从黄月英的传授的技巧上发展出来。\n【演】诸葛瞻之母，容貌甚丑，而有奇才。上通天文，下察地理，韬略近于诸书无所不晓，诸葛亮在南阳时闻其贤，迎娶黄月英。诸葛亮所学，很多是由黄月英所授。诸葛亮死后，黄月英也很快病逝，临终以“忠孝”勉励其子诸葛瞻。而正史上没有提及诸葛瞻是何人所生。"
+    },
+    {
+      "id": "official-hero-100021",
+      "officialId": 100021,
+      "iconId": 100021,
+      "portrait": "assets/portraits/100021.jpg",
+      "name": "赵云",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200021",
+      "dismantle": "official-skill-步步为营",
+      "dismantles": [
+        "official-skill-步步为营"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 101,
+        "strategy": 78,
+        "defense": 92,
+        "speed": 65
+      },
+      "desc": "【史】三国时期蜀汉名将。赵云跟随刘备将近三十年，先后参加过博望坡之战、长坂坡之战、江南平定战，独自指挥过入川之战、汉水之战、箕谷之战，都取得了非常好的战果。除了四处征战，赵云还先后以偏将军任桂阳太守，以留营司马留守公安，以翊军将军督江州。除此之外，赵云于平定益州时引霍去病故事劝谏刘备将田宅归还百姓，又于关羽张飞被害之后劝谏刘备不要伐吴，被后世赞为有大臣局量的儒将，甚至被认为是三国时期的完美人物。\n【演】在《三国演义》中，赵云一登场即和河北名将文丑大战，救了公孙瓒。曾和多名三国名将对战，冲锋陷阵罕见败绩。长坂坡救阿斗时，连续阵斩曹营名将五十余员。智取桂阳时，更是展现了他过人的机智和出众的谋略。随诸葛亮吊祭周瑜时，因赵云带剑相随，吴将无人敢动诸葛亮。汉水救黄忠时，让魏国名将张郃、徐晃心惊胆战，不敢迎敌。\n刘备去世之后，曹魏五路犯蜀，赵云把守阳平关，一将当关，万夫莫开。七十几岁时仍为蜀汉先锋，阵前力斩被作者称为“有万夫不当之勇”的西凉大将韩德一门五将。"
+    },
+    {
+      "id": "official-hero-100022",
+      "officialId": 100022,
+      "iconId": 100022,
+      "portrait": "assets/portraits/100022.jpg",
+      "name": "张飞",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200022",
+      "dismantle": "official-skill-一骑当千",
+      "dismantles": [
+        "official-skill-一骑当千"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 103,
+        "strategy": 45,
+        "defense": 87,
+        "speed": 71
+      },
+      "desc": "【史】三国时期蜀汉名将。刘备长坂坡败退，张飞仅率二十骑断后，据水断桥，曹军没人敢逼近；与诸葛亮、赵云扫荡西川时，于江州义释严颜；汉中之战时又于宕渠击败张郃，对蜀汉贡献极大，官至车骑将军、领司隶校尉，封西乡侯，后被范强、张达所刺。后主时代追谥为“桓侯”。\n【演】在《三国演义》中，张飞是位重情重义嫉恶如仇，肤色黝黑的壮汉，同时又武力过人，曾多次主动挑战号称天下第一的吕布，吕布竟曾一度忌惮张飞，嗓门大更是人物一大亮点，是蜀汉大臣中少有的个性鲜明的武将。"
+    },
+    {
+      "id": "official-hero-100023",
+      "officialId": 100023,
+      "iconId": 100023,
+      "portrait": "assets/portraits/100023.jpg",
+      "name": "曹操",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200023",
+      "dismantle": "official-skill-远攻秘策",
+      "dismantles": [
+        "official-skill-远攻秘策"
+      ],
+      "cost": 3.5,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 90,
+        "defense": 107,
+        "speed": 88
+      },
+      "desc": "【史】三国中曹魏政权的奠基人。其人文武精通，可谓非常之人，超世之杰。以汉天子的名义征讨四方，对内消灭二袁、吕布、刘表、马超、韩遂等割据势力，对外降服南匈奴、乌桓、鲜卑等，统一了中国北方，并实行一系列政策恢复经济生产和社会秩序，奠定了曹魏立国的基础。\n【演】在《三国演义》中，曹操的事迹基本与正史相符。主要将其塑造成一个“奸雄”形象，并且更突出“奸”的一面。"
+    },
+    {
+      "id": "official-hero-100024",
+      "officialId": 100024,
+      "iconId": 100024,
+      "portrait": "assets/portraits/100024.jpg",
+      "name": "荀彧",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200024",
+      "dismantle": "official-skill-怯心夺志",
+      "dismantles": [
+        "official-skill-怯心夺志"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 47,
+        "strategy": 96,
+        "defense": 89,
+        "speed": 85
+      },
+      "desc": "【史】东汉末年著名政治家、战略家，曹操统一北方的首席谋臣和功臣。荀彧早年被称为“王佐之才”，初举孝廉，任守宫令。后弃官归乡，又率宗族避难冀州，被袁绍待为上宾。其后投奔曹操。官至侍中，守尚书令，封万岁亭侯。因其任尚书令，居中持重达十数年，处理军国事务，被人敬称为“荀令君”。后因反对曹操称魏公而受曹操所忌，调离中枢，在寿春忧郁成病而亡，年五十。获谥敬侯，后追赠太尉。\n【演】在《三国演义》中，荀彧旧从袁绍，因知袁绍终不能成大事遂与其侄荀攸投奔曹操。荀彧为曹操出过很多重要的战略谋划，如以兖州为基地、二虎竞食和驱虎吞狼、迎汉献帝往许都、开玄武湖练水军等等，立有大功。荀彧后为汉侍中、尚书令，参与国家大事並经常留守许都。后来董昭劝曹操称魏公，荀彧表示反对，曹操深感不满，遂将其招入军中，从征孙权。荀彧因病留于寿春，不久在曹操的暗示下服毒自尽。"
+    },
+    {
+      "id": "official-hero-100025",
+      "officialId": 100025,
+      "iconId": 100025,
+      "portrait": "assets/portraits/100025.jpg",
+      "name": "曹丕",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200025",
+      "dismantle": "official-skill-浑水摸鱼",
+      "dismantles": [
+        "official-skill-浑水摸鱼"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 83,
+        "strategy": 83,
+        "defense": 78,
+        "speed": 45
+      },
+      "desc": "【史】曹操与卞夫人的长子。其文武双全，八岁能提笔为文，善骑射，好击剑，博览古今经传，通晓诸子百家学说。曹操去世后，曹丕继任丞相、魏王。之后逼献帝禅让成为文帝，以魏代汉，结束了汉朝四百多年的统治。在位期间，平定边患。击退鲜卑，和匈奴、氐、羌等外夷修好，恢复汉朝在西域的设置。并执行了多个优良政策，重用贤臣，使魏国安定。但时年四十岁，病逝。\n【演】在继承权问题上处心积虑，战胜了文才更胜一筹的曹植，被立为王世子。曹操逝世后，曹丕继位成为魏王，以不参加葬礼之罪逼弟弟曹植写下七步诗，险些将其所害，又顺利夺下弟弟曹彰的兵权，坐稳魏王之位。不久，曹丕逼汉献帝让位，代汉称帝，为魏国开国皇帝。\n刘备伐吴时，曹丕看出刘备要失败，但不听谋士之言，偏要坐山观虎斗，事后又起兵伐吴，结果被徐盛火攻击败。回洛阳后，曹丕大病，临终前托付曹叡给曹真、司马懿等人，终年四十岁。"
+    },
+    {
+      "id": "official-hero-100026",
+      "officialId": 100026,
+      "iconId": 100026,
+      "portrait": "assets/portraits/100026.jpg",
+      "name": "关羽",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200026",
+      "dismantle": "official-skill-无心恋战",
+      "dismantles": [
+        "official-skill-无心恋战"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 102,
+        "strategy": 62,
+        "defense": 86,
+        "speed": 90
+      },
+      "desc": "【史】蜀汉名将，是刘备、张飞的结义兄弟。早期跟随刘备辗转各地，曾被曹操生擒，于白马坡阵斩袁绍大将颜良，与张飞一同被称为万人敌。赤壁之战后，刘备助东吴周瑜攻打南郡曹仁，别遣关羽绝北道，阻挡曹操援军，曹仁退走后，关羽被刘备任命为襄阳太守。刘备入益州，关羽留守荆州。建安二十四年，关羽围襄樊，擒获于禁，阵斩庞德，威震华夏，曹操曾想迁都以避其锐。后曹操派徐晃前来增援，东吴吕蒙又偷袭荆州，关羽腹背受敌，兵败身亡。\n【演】与刘备、张飞桃园结义，羽居其次。使八十二斤青龙偃月刀随刘备东征西讨。汜水关温酒斩华雄，屯土山降汉不降曹。为报恩斩颜良、诛文丑，解曹操白马之围。后得知刘备音信，过五关斩六将，千里寻兄。刘备平定益州后，封关羽为五虎大将之首，督荆州事。羽起军攻曹，放水淹七军，威震华夏。围樊城右臂中箭，幸得华佗医治，刮骨疗伤。但未曾提防东吴袭荆州，关羽父子败走麦城，突围中被捕，不屈遭害。"
+    },
+    {
+      "id": "official-hero-100027",
+      "officialId": 100027,
+      "iconId": 100027,
+      "portrait": "assets/portraits/100027.jpg",
+      "name": "张辽",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 5,
+      "innate": "official-skill-200027",
+      "dismantle": "official-skill-避其锋芒",
+      "dismantles": [
+        "official-skill-避其锋芒"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 91,
+        "strategy": 83,
+        "defense": 94,
+        "speed": 105
+      },
+      "desc": "【史】汉末三国时期曹魏名将。曾从属丁原、董卓、吕布。吕布下邳败亡后，归顺曹操。此后随曹操四处征讨，战功累累。张辽为历代推崇，并成为古今六十四名将之一。曹丕登基后，仍令张辽守御孙权。黄初二年（221年），张辽屯驻雍丘，染病。张辽大病期间，孙权依旧对其非常忌惮。黄初三年（222年），张辽不负众望，抱病击破吴将吕范。同年在江都病逝，谥刚侯，享年五十四岁。\n【演】在《三国演义》中，他先为吕布部将，多番令曹军陷于苦战，其武勇连关羽亦甚称道。后来吕布战败遭擒，曹操下令绞死吕布后，刘备、关羽为张辽求情，曹操便待张辽以上宾之礼。张辽感其恩情，于是投降，自此成为曹操将领。后来，张辽随曹丕以大船征伐江东，军队被徐盛所击败。曹丕登岸逃亡时，吴将丁奉从岸边袭来，张辽为保护曹丕上前迎敌，却被丁奉以箭射其腰，回营后不治身亡，曹丕厚葬之。"
+    },
+    {
+      "id": "official-hero-100028",
+      "officialId": 100028,
+      "iconId": 100028,
+      "portrait": "assets/portraits/100028.jpg",
+      "name": "王异",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200028",
+      "dismantle": "official-skill-妖术",
+      "dismantles": [
+        "official-skill-妖术"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 88,
+        "strategy": 90,
+        "defense": 52,
+        "speed": 53
+      },
+      "desc": "【史】益州刺史赵伟璋妻，后为羌道令赵昂妻。赵英、赵月之母。马超作乱凉州时，王异协助丈夫守城，多有功勋，自马超攻冀城至祁山坚守，赵昂曾出奇计九条，王异皆有参与。\n【演】在《三国演义》中，作者不载其名，只称“王氏”。赵昂与杨阜、姜叙、尹奉等密谋起兵对抗强攻冀城的马超，赵昂因顾虑儿子赵月而回家跟妻子王氏商量，王氏听罢便怒道：“雪君父之大耻，虽丧身亦不惜，何况一子乎！君若顾子而不行，吾当先死矣！”令赵昂下定决心协助杨阜。王氏更将自己的首饰资帛，亲自往祁山军中赏劳军士，亦因此而避过马超后来的屠戮。"
+    },
+    {
+      "id": "official-hero-100029",
+      "officialId": 100029,
+      "iconId": 100029,
+      "portrait": "assets/portraits/100029.jpg",
+      "name": "张春华",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200029",
+      "dismantle": "official-skill-浑水摸鱼",
+      "dismantles": [
+        "official-skill-浑水摸鱼"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 77,
+        "strategy": 82,
+        "defense": 56,
+        "speed": 55
+      },
+      "desc": "【史】曹魏粟邑令张汪之女，晋宣帝司马懿之妻，晋景帝司马师和晋文帝司马昭的母亲。正始八年（247年），张春华去世，时年五十九岁，葬于洛阳高原陵，追赠广平县君。咸熙元年（264年），追谥为宣穆妃。泰始元年（265年），张春华之孙晋武帝司马炎登基，追谥她为宣穆皇后。"
+    },
+    {
+      "id": "official-hero-100030",
+      "officialId": 100030,
+      "iconId": 100030,
+      "portrait": "assets/portraits/100030.jpg",
+      "name": "孙权",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200030",
+      "dismantle": "official-skill-空城",
+      "dismantles": [
+        "official-skill-空城"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 76,
+        "strategy": 85,
+        "defense": 88,
+        "speed": 58
+      },
+      "desc": "【史】孙坚之子，孙策之弟。东汉建安五年，兄孙策遇刺身亡，孙权继位吴侯、讨逆将军，领会稽太守，开始统领江东。他击败了黄祖。后东吴联合刘备，于赤壁击溃了曹操军。东吴后来又和曹操军在合肥附近鏖战，并从刘备手中夺回荆州、擒关羽、大破刘备的讨伐军。曹丕称帝后孙权先向北方称臣，后自己建吴称帝，迁都建业。孙权病逝后谥号大皇帝，史称东吴大帝。\n【演】在《三国演义》中，孙权19岁就继承了其兄孙策之位，力据江东，击败了黄祖。后东吴联合刘备，在赤壁大战击溃了曹操军。东吴后来又和曹操军在合肥附近鏖战，并从刘备手中夺回荆州、擒关羽、大破刘备的讨伐军。曹丕称帝后孙权先向北方称臣，后自己建吴称帝，迁都建业。"
+    },
+    {
+      "id": "official-hero-100031",
+      "officialId": 100031,
+      "iconId": 100031,
+      "portrait": "assets/portraits/100031.jpg",
+      "name": "周瑜",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200031",
+      "dismantle": "official-skill-不攻",
+      "dismantles": [
+        "official-skill-不攻"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 70,
+        "strategy": 98,
+        "defense": 92,
+        "speed": 53
+      },
+      "desc": "【史】东汉末年名将。洛阳令周异之子，堂祖父周景、堂叔周忠，都官至太尉。长壮有姿貌、精音律，江东有“曲有误，周郎顾”之语。周瑜少与孙策交好，21岁起随孙策奔赴战场平定江东，后孙策遇刺身亡，孙权继任，周瑜将兵赴丧，以中护军的身份与长史张昭共掌众事。\n建安十三年 （208年），周瑜率军与刘备联合，于赤壁之战中大败曹军，由此奠定了“三分天下”的基础。建安十四年（209年），拜偏将军领南郡太守。建安十五年（210年）病逝于巴丘，年仅36岁。\n【演】在《三国演义》中，为了凸显诸葛亮的智慧，对历史上的周瑜形象做了较大的改动，并虚构了较多的情节，如赤壁之战，周瑜的主张不太明确，是战是和踌躇不定，诸葛亮借曹操修筑铜雀台欲夺小乔之事，智激周瑜，坚定周瑜抗曹的决心。\n曹操命周瑜同窗好友蒋干劝降周瑜，周瑜设下计策，假装友善，伪造了曹操水军都督蔡瑁、张允写给周瑜的降书让蒋干发现，上演了一出“蒋干盗书”的好戏，为赤壁之战的成功奠定了基础。"
+    },
+    {
+      "id": "official-hero-100032",
+      "officialId": 100032,
+      "iconId": 100032,
+      "portrait": "assets/portraits/100032.jpg",
+      "name": "周姬",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200032",
+      "dismantle": "official-skill-始计",
+      "dismantles": [
+        "official-skill-始计"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 27,
+        "strategy": 85,
+        "defense": 50,
+        "speed": 37
+      },
+      "desc": "【史】周瑜之女，母疑为汉末美女小乔，兄长为周循和周胤。\n【演】在《三国演义》中，提及周瑜去世后留下二子一女，孙权对他们很关照。周瑜的女儿日后嫁给了太子。"
+    },
+    {
+      "id": "official-hero-100033",
+      "officialId": 100033,
+      "iconId": 100033,
+      "portrait": "assets/portraits/100033.jpg",
+      "name": "孙坚",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200033",
+      "dismantle": "official-skill-战必断金",
+      "dismantles": [
+        "official-skill-战必断金"
+      ],
+      "cost": 3.5,
+      "distance": 3,
+      "stats": {
+        "attack": 90,
+        "strategy": 72,
+        "defense": 100,
+        "speed": 36
+      },
+      "desc": "【史】县吏出身，因勇敢又有谋略被官府赏识，提拔为军官。曾参与讨伐黄巾军的战役以及讨伐董卓的战役。后与刘表作战时阵亡。孙坚的儿子孙策、孙权后来创建了东吴政权。\n【演】在《三国演义》中，孙坚由于征讨黄巾有功，被封为长沙太守。在董卓乱政期间，孙坚作为诸侯联军的先锋，表现得十分活跃，但因袁术存在私心，拒不发粮，而被董卓将华雄击败。后来董卓迁都长安，孙坚进驻洛阳，意外发现传国玉玺，并藏匿返回。不料事情泄漏，与袁绍、刘表结仇。不久，孙坚在与刘表手下黄祖的交战中，中埋伏而死。"
+    },
+    {
+      "id": "official-hero-100034",
+      "officialId": 100034,
+      "iconId": 100034,
+      "portrait": "assets/portraits/100034.jpg",
+      "name": "甘宁",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200034",
+      "dismantle": "official-skill-疾风迅雷",
+      "dismantles": [
+        "official-skill-疾风迅雷"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 96,
+        "strategy": 67,
+        "defense": 87,
+        "speed": 46
+      },
+      "desc": "【史】吴国猛将。性格粗暴，年轻时经常为非作歹，行为举止旁若无人。后来熟读诸子而被感化，投靠刘表和黄祖，但均未被重用。于是甘宁率部众投奔孙权，破黄祖据楚关，攻曹仁取夷陵，镇益阳拒关羽，守西陵获朱光，率骑袭曹营，战功赫赫。孙权曾说：“孟德有张辽，孤有甘兴霸，足相敌也。”他为人仗义疏财，深得士卒拥戴，被陈寿盛赞为“江表之虎臣”。\n【演】在《三国演义》中，描写的甘宁事迹与史书记载基本相同。小说中甘宁参与了夷陵之战，被蜀国蛮将沙摩柯一箭射中额头，此后逃到一棵大树下坐着死去。"
+    },
+    {
+      "id": "official-hero-100035",
+      "officialId": 100035,
+      "iconId": 100035,
+      "portrait": "assets/portraits/100035.jpg",
+      "name": "吕蒙",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200648",
+      "dismantle": "official-skill-神兵天降",
+      "dismantles": [
+        "official-skill-神兵天降"
+      ],
+      "cost": 3.5,
+      "distance": 4,
+      "stats": {
+        "attack": 86,
+        "strategy": 93,
+        "defense": 92,
+        "speed": 54
+      },
+      "desc": "【史】孙吴重臣。早年果敢有胆，后折节读书，识见精博，终成大将，有“士别三日，刮目相待”之语。少年时依附姊夫邓当，随孙策为将。孙权统事后，渐受重用。破黄祖作先登，封横野中郎将。围曹仁于南郡，破朱光于皖城，累功拜庐江太守。后进占荆南三郡，计擒郝普，在逍遥津之战中奋勇抵抗张辽军追袭，并于濡须数御魏军，以功除左护军、虎威将军。鲁肃去世后，代守陆口，设计袭取荆州，击败蜀汉名将关羽，使东吴国土面积大增。\n【演】在《三国演义》中，吕蒙和正史的形象大体相当。但小说中则将夺荆州的功劳归于陆逊。吕蒙听说荆州早有防备，害怕无法实现目标因此称病躲避主公。直到孙权派来的陆逊来献出白衣渡江之计。历史上这则是吕蒙和孙权的计谋。第七十七回《玉泉山关公显圣》吕蒙的死法也较为荒诞，竟被关羽魂魄索命而死。另外，小说中未有提及吕蒙年轻时奋进及其由武转文的学习经历。"
+    },
+    {
+      "id": "official-hero-100036",
+      "officialId": 100036,
+      "iconId": 100036,
+      "portrait": "assets/portraits/100036.jpg",
+      "name": "孙尚香",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200035",
+      "dismantle": "official-skill-反计之策",
+      "dismantles": [
+        "official-skill-反计之策"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 90,
+        "strategy": 62,
+        "defense": 77,
+        "speed": 59
+      },
+      "desc": "【史】孙权之妹，名字不详。刘备定荆州时，孙权对其十分畏惮，于是进妹予刘备为夫人，重固盟好。孙夫人才捷刚猛，有诸兄之风，身边侍婢百余人，皆亲自执刀侍立，刘备每入，心内常觉凛然惊惧。后刘备入益州，使赵云领留营司马，留守荆州。\n此时孙夫人自以孙权之妹的身份，骄妄豪强，常带着一群东吴吏兵，在荆州纵横不法。既尔孙权闻知刘备西征，于是大遣舟船以迎孙夫人，而夫人带着后主刘禅回吴，幸得赵云与张飞勒兵截江，方重夺刘禅。\n【演】在《三国演义》中，名为孙尚香。孙夫人才捷刚猛，有诸兄之风，身边侍婢百余人，皆亲自执刀侍立。不料在诸葛亮的锦囊妙计安排下，假婚成真姻；后来夫人更助刘备返蜀，于路上怒斥追袭的吴将。后刘备入益州，使赵云领留营司马，留守荆州。\n此时孙权闻知刘备西征，于是遣周善引领舟船以迎孙夫人，而夫人带着后主刘禅回吴，幸得赵云与张飞勒兵截江，方重夺刘禅。彝陵之战，刘备战败，有讹言传入吴中，道刘备已死，孙夫人伤心不已，望西痛哭，投江而死。"
+    },
+    {
+      "id": "official-hero-100037",
+      "officialId": 100037,
+      "iconId": 100037,
+      "portrait": "assets/portraits/100037.jpg",
+      "name": "何太后",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200037",
+      "dismantle": "official-skill-空城",
+      "dismantles": [
+        "official-skill-空城"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 68,
+        "strategy": 81,
+        "defense": 77,
+        "speed": 53
+      },
+      "desc": "【史】何氏出身于屠户家庭，后选入掖庭，得到汉灵帝临幸，生下皇子刘辩，并受封贵人。光和三年（180年），立为皇后。中平六年（189年），汉灵帝去世，刘辩继位，尊何氏为皇太后。董卓进京，废黜刘辩，不久毒死刘辩及何氏。\n【演】在《三国演义》中，何太后生平基本与正史相符。不过并非被董卓毒死。董卓当权后，废少帝辩为弘农王，何太后还政。后董卓欲灭口，太后大骂：“董贼逼我母子，皇天不佑！汝等助恶，必当灭族！”李儒大怒，双手扯住太后，直撺下楼。"
+    },
+    {
+      "id": "official-hero-100038",
+      "officialId": 100038,
+      "iconId": 100038,
+      "portrait": "assets/portraits/100038.jpg",
+      "name": "王美人",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200038",
+      "dismantle": "official-skill-声东击西",
+      "dismantles": [
+        "official-skill-声东击西"
+      ],
+      "cost": 1.5,
+      "distance": 2,
+      "stats": {
+        "attack": 60,
+        "strategy": 83,
+        "defense": 78,
+        "speed": 86
+      },
+      "desc": "【史】灵怀皇后王荣，生汉献帝。祖父王苞为五官中郎将。王美人姿色秀丽，聪敏有才明，能书会计，以良家子的身份选入掖庭。当时灵帝的皇后何氏“性强忌，后宫莫不震慑”。王美人怀孕后，畏惧何皇后，服药欲堕胎，而胎安不动，又数次梦到负日而行。\n光和四年（公元181年），王美人生下皇子刘协，何皇后遂毒鸩王美人。永汉元年（公元189年），其子刘协为董卓立为皇帝，是为汉献帝。兴平元年（公元194年），有司乃奏追尊王美人为灵怀皇后，改葬文昭陵。 \n【演】在《三国演义》中，王美人是汉献帝的生母。帝宠幸王美人，生皇子协。何后嫉妒，毒鸩王美人。"
+    },
+    {
+      "id": "official-hero-100039",
+      "officialId": 100039,
+      "iconId": 100039,
+      "portrait": "assets/portraits/100039.jpg",
+      "name": "皇甫嵩",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200039",
+      "dismantle": "official-skill-焰焚箕轸",
+      "dismantles": [
+        "official-skill-焰焚箕轸"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 76,
+        "strategy": 82,
+        "defense": 93,
+        "speed": 89
+      },
+      "desc": "【史】为人仁爱谨慎，尽忠职守，有谋略，有胆识。于黄巾起义时，以中郎将身份讨伐黄巾，用火攻大破张梁、张宝，拜左车骑将军。后因拒绝贿赂宦官而被免职。董卓掌权时，征皇甫嵩入朝为城门校尉，因私怨被其陷害下狱，经其子皇甫坚寿求情才得以保全。\n【演】在《三国演义》中，皇甫嵩形象与正史相似。于黄巾起义时，大破张梁、张宝。后接替董卓进攻张梁，连胜七阵。掘张角墓，拜左车骑将军、冀州牧，因拒绝贿赂宦官而被免职。董卓死，王允命其与吕布等共至郿坞抄籍董卓家产、人口，皇甫嵩将坞中所藏良家子女，尽行释放。"
+    },
+    {
+      "id": "official-hero-100040",
+      "officialId": 100040,
+      "iconId": 100040,
+      "portrait": "assets/portraits/100040.jpg",
+      "name": "朱儁",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200040",
+      "dismantle": "official-skill-长驱直入",
+      "dismantles": [
+        "official-skill-长驱直入"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 89,
+        "strategy": 75,
+        "defense": 83,
+        "speed": 48
+      },
+      "desc": "【史】东汉末年名将。光和七年（184年），黄巾起义爆发，朱儁担任右中郎将、持节。平定三郡之地后，被皇甫嵩上表推功，进封西乡侯，迁任镇贼中郎将。又率军讨平南阳黄巾。董卓秉政时，想任朱儁为副手，遭其婉拒。其后出逃荆州，更屯军中牟，徐州刺史陶谦等欲推举他为太师，并传檄各州牧伯，相邀讨伐李傕、奉迎天子。但朱儁却奉诏入京任太仆。兴平二年（195年），李傕、郭汜相攻时，郭汜扣留朱儁为人质，朱儁性格刚烈，同日即发病而死。\n【演】在《三国演义》中，朱儁形象与正史相似。是汉车骑将军。黄巾起义时，为中郎将，引军讨伐。屡立功绩，迁车骑将军，河南尹。后董卓余党李傕、郭汜乱政，掠夺公卿，朱儁对汉室衰微的状况感到悲哀，归家后即病逝。"
+    },
+    {
+      "id": "official-hero-100041",
+      "officialId": 100041,
+      "iconId": 100041,
+      "portrait": "assets/portraits/100041.jpg",
+      "name": "张奂",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200041",
+      "dismantle": "official-skill-百战精兵",
+      "dismantles": [
+        "official-skill-百战精兵"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 88,
+        "defense": 79,
+        "speed": 33
+      },
+      "desc": "【史】东汉时期名将、学者，凉州三明之一。汉阳太守张惇之子。少年时师从太尉朱宠，学习《欧阳尚书》，又自行删减《牟氏章句》。在东汉对外战争中功勋卓著，多次以恩信安抚、招降外族，使得北方宁静一时。后入朝，为宦官所利用，率军前往进击窦武。\n事后自责不已，拒受封侯。拜少府，迁任大司农，又上疏为窦武等人伸冤。不久迁太常，因得罪宦官被诬陷罢免。最终回乡教授弟子，不再出仕。光和四年（181年）去世，终年七十八岁，遗令素服薄葬。"
+    },
+    {
+      "id": "official-hero-100042",
+      "officialId": 100042,
+      "iconId": 100042,
+      "portrait": "assets/portraits/100042.jpg",
+      "name": "曹操",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200042",
+      "dismantle": "official-skill-奔袭",
+      "dismantles": [
+        "official-skill-奔袭"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 85,
+        "defense": 88,
+        "speed": 93
+      },
+      "desc": "【史】三国中曹魏政权的奠基人。其人文武精通，可谓非常之人，超世之杰。以汉天子的名义征讨四方，对内消灭二袁、吕布、刘表、马超、韩遂等割据势力，对外降服南匈奴、乌桓、鲜卑等，统一了中国北方，并实行一系列政策恢复经济生产和社会秩序，奠定了曹魏立国的基础。\n【演】在《三国演义》中主要将曹操塑造成一个“奸雄”形象，并且更突出“奸”的一面。"
+    },
+    {
+      "id": "official-hero-100043",
+      "officialId": 100043,
+      "iconId": 100043,
+      "portrait": "assets/portraits/100043.jpg",
+      "name": "孙坚",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200043",
+      "dismantle": "official-skill-温酒斩将",
+      "dismantles": [
+        "official-skill-温酒斩将"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 90,
+        "strategy": 62,
+        "defense": 82,
+        "speed": 92
+      },
+      "desc": "【史】县吏出身，因勇敢又有谋略被官府赏识，提拔为军官。曾参与讨伐黄巾军的战役以及讨伐董卓的战役。后与刘表作战时阵亡。孙坚的儿子孙策、孙权后来创建了东吴政权。\n【演】在《三国演义》中，孙坚由于征讨黄巾有功，被封为长沙太守。在董卓乱政期间，孙坚作为诸侯联军的先锋，表现得十分活跃，但因袁术存在私心，拒不发粮，而被董卓将华雄击败。后来董卓迁都长安，孙坚进驻洛阳，意外发现传国玉玺，并藏匿返回。不料事情泄漏，与袁绍、刘表结仇。不久，孙坚在与刘表手下黄祖的交战中，中埋伏而死。"
+    },
+    {
+      "id": "official-hero-100044",
+      "officialId": 100044,
+      "iconId": 100044,
+      "portrait": "assets/portraits/100044.jpg",
+      "name": "刘备",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200044",
+      "dismantle": "official-skill-青囊秘要",
+      "dismantles": [
+        "official-skill-青囊秘要"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 75,
+        "strategy": 72,
+        "defense": 81,
+        "speed": 56
+      },
+      "desc": "【史】西汉中山靖王刘胜之后，三国时期蜀汉开国皇帝、政治家，史家又称他为先主。刘备早年颠沛流离，备尝艰辛，投靠过多个诸侯。赤壁之战时，与孙权联盟击败曹操，趁势夺取荆州。而后进取益州。于章武元年（221年）在成都称帝，国号汉，史称蜀或蜀汉。《三国志》评刘备的机权干略不及曹操，但其弘毅宽厚，知人待士，百折不挠，终成帝业。刘备也称自己做事“每与操反，事乃成尔”。\n【演】在《三国演义》中，刘备的事迹基本与正史相符。书中将其塑造成一位胸襟开阔的，十足的明主形象。并重点突出其几个性格特点：一是亲贤爱士，善待人才；二是生性善良，爱民如子；三是待人宽厚，不求全责备；四是偶有权谋，颇有心计。"
+    },
+    {
+      "id": "official-hero-100045",
+      "officialId": 100045,
+      "iconId": 100045,
+      "portrait": "assets/portraits/100045.jpg",
+      "name": "鲍信",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200679",
+      "dismantle": "official-skill-设伏",
+      "dismantles": [
+        "official-skill-设伏"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 64,
+        "strategy": 87,
+        "defense": 83,
+        "speed": 61
+      },
+      "desc": "【史】受何进征召在外募兵，回洛阳时适逢董卓进京，鲍信劝袁绍除掉董卓，袁绍不同意。后袁绍、曹操等人起兵对抗董卓，鲍信也起兵响应。后联盟破裂，鲍信劝戒曹操静观其变。兖州爆发农民起义，刺史刘岱不听鲍信所劝冒然出战，兵败战死。鲍信把曹操迎为兖州牧。在镇压农民起义期间，鲍信为救曹操不幸战死，曹操后来追记功绩，赐封其子。\n【演】在《三国演义》中，后军校尉鲍信求见袁绍，说董卓有异心，劝袁绍除之，袁绍不同意，鲍信又找王允商量，王允也不同意，鲍信于是引本部军兵投泰山。后以济北相身份参加讨伐董卓的义军，鲍信因为怕孙坚抢头功，暗中令其弟鲍忠出战。结果鲍忠为华雄所斩。李傕等人控制朝廷后，以献帝名义命曹操与鲍信镇压青州黄巾起义，于是两人在寿张迎击黄巾军，鲍信深入重地，为敌所害。"
+    },
+    {
+      "id": "official-hero-100046",
+      "officialId": 100046,
+      "iconId": 100046,
+      "portrait": "assets/portraits/100046.jpg",
+      "name": "董姬",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200046",
+      "dismantle": "official-skill-攻心",
+      "dismantles": [
+        "official-skill-攻心"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 64,
+        "strategy": 70,
+        "defense": 52,
+        "speed": 96
+      },
+      "desc": "【史】董白，东汉末年县君，陇西临洮（今甘肃省岷县）人，董卓之孙女，尚未及笄就被封渭阳君。董卓被诛，灭三族时被处死。"
+    },
+    {
+      "id": "official-hero-100047",
+      "officialId": 100047,
+      "iconId": 100047,
+      "portrait": "assets/portraits/100047.jpg",
+      "name": "严氏",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200649",
+      "dismantle": "official-skill-穷追猛打",
+      "dismantles": [
+        "official-skill-穷追猛打"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 90,
+        "strategy": 67,
+        "defense": 63,
+        "speed": 75
+      },
+      "desc": "【史】东汉末年著名武将吕布的正妻，未提及姓名。在李傕郭汜之乱期间曾受困，幸亏被庞舒所救，私藏于府中而得以幸免。吕布被曹操围困时，反对陈宫的计谋，导致了吕布的失败。\n【演】在《三国演义》中，严氏是吕布的妻子。"
+    },
+    {
+      "id": "official-hero-100048",
+      "officialId": 100048,
+      "iconId": 100048,
+      "portrait": "assets/portraits/100048.jpg",
+      "name": "邹氏",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200047",
+      "dismantle": "official-skill-养精蓄锐",
+      "dismantles": [
+        "official-skill-养精蓄锐"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 59,
+        "strategy": 55,
+        "defense": 79,
+        "speed": 30
+      },
+      "desc": "【演】在《三国演义》中，出现在第十六回，被曹操强纳，因而之后有张绣造反，曹操兵败宛城，曹昂、典韦、曹安民战死等诸多之事。"
+    },
+    {
+      "id": "official-hero-100049",
+      "officialId": 100049,
+      "iconId": 100049,
+      "portrait": "assets/portraits/100049.jpg",
+      "name": "华雄",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200048",
+      "dismantle": "official-skill-破甲",
+      "dismantles": [
+        "official-skill-破甲"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 41,
+        "defense": 86,
+        "speed": 32
+      },
+      "desc": "【史】东汉末年为董卓帐下都督。袁绍等起兵讨伐董卓时，孙坚大破董卓军，华雄在此战中被孙坚一军所斩。\n【演】在《三国演义》中华雄的相关故事与史实差距较大。华雄被描述为身长九尺、虎体狼腰、豹头猿臂的猛将。在第五回中，华雄自告奋勇在汜水关抵挡十八路诸侯联军的进攻，并偷袭了孙坚的营寨，大败孙坚军，并斩了孙坚部将祖茂。后来诸侯们先后派出俞涉、潘凤两员大将与华雄交战，但二人均被华雄所斩。\n正当诸侯们手足无措之时，当时名不见经传的关羽自告奋勇出战华雄，并且在曹操为他斟的热酒尚温之时，便斩了华雄得胜归来。此段故事也被称作“温酒斩华雄”。"
+    },
+    {
+      "id": "official-hero-100050",
+      "officialId": 100050,
+      "iconId": 100050,
+      "portrait": "assets/portraits/100050.jpg",
+      "name": "张辽",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200049",
+      "dismantle": "official-skill-冲锋",
+      "dismantles": [
+        "official-skill-冲锋"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 92,
+        "strategy": 63,
+        "defense": 88,
+        "speed": 98
+      },
+      "desc": "【史】汉末三国时期曹魏名将。曾从属丁原、董卓、吕布。吕布下邳败亡后，归顺曹操。此后随曹操四处征讨，战功累累。张辽为历代推崇，并成为古今六十四名将之一。曹丕登基后，仍令张辽守御孙权。黄初二年（221年），张辽屯驻雍丘，染病。张辽大病期间，孙权依旧对其非常忌惮。黄初三年（222年），张辽不负众望，抱病击破吴将吕范。同年在江都病逝，谥刚侯，享年五十四岁。\n【演】在《三国演义》中，他先为吕布部将，多番令曹军陷于苦战，其武勇连关羽亦甚称道。后来吕布战败遭擒，曹操下令绞死吕布后，刘备、关羽为张辽求情，曹操便待张辽以上宾之礼。张辽感其恩情，于是投降，自此成为曹操将领。后来，张辽随曹丕以大船征伐江东，军队被徐盛所击败。曹丕登岸逃亡时，吴将丁奉从岸边袭来，张辽为保护曹丕上前迎敌，却被丁奉以箭射其腰，回营后不治身亡，曹丕厚葬之。"
+    },
+    {
+      "id": "official-hero-100051",
+      "officialId": 100051,
+      "iconId": 100051,
+      "portrait": "assets/portraits/100051.jpg",
+      "name": "张梁",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200053",
+      "dismantle": "official-skill-回马",
+      "dismantles": [
+        "official-skill-回马"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 81,
+        "strategy": 77,
+        "defense": 79,
+        "speed": 32
+      },
+      "desc": "【史】东汉末农民起义首领。张角、张宝的弟弟。熹平年间，张角创太平道，梁与角同在河北一带传教，秘密进行组织工作。中平元年（184）黄巾起义时，号称“人公将军”，协同张角击败卢植、董卓进攻。角病死，东汉政府增调左中郎将皇甫嵩往攻，梁坚守广宗，英勇反击而获胜。后因麻痹轻敌，于广宗被皇甫嵩击败身亡。\n【演】在《三国演义》中，张梁同兄弟一起发动黄巾起义，在曲阳被皇甫嵩和曹操围攻，连败七阵，身亡。"
+    },
+    {
+      "id": "official-hero-100052",
+      "officialId": 100052,
+      "iconId": 100052,
+      "portrait": "assets/portraits/100052.jpg",
+      "name": "管亥",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200051",
+      "dismantle": "official-skill-远攻强化",
+      "dismantles": [
+        "official-skill-远攻强化"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 91,
+        "strategy": 33,
+        "defense": 70,
+        "speed": 84
+      },
+      "desc": "【史】东汉末年黄巾军的将领。孔融屯兵都昌时，他率军围攻孔融，孔融派太史慈前去向刘备求救，他被刘备的援军击退。\n【演】在《三国演义》中，管亥曾经一合阵斩孔融的大将宗宝，后与关羽大战数十合后被斩。"
+    },
+    {
+      "id": "official-hero-100053",
+      "officialId": 100053,
+      "iconId": 100053,
+      "portrait": "assets/portraits/100053.jpg",
+      "name": "徐荣",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200052",
+      "dismantle": "official-skill-移花接木",
+      "dismantles": [
+        "official-skill-移花接木"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 66,
+        "defense": 85,
+        "speed": 32
+      },
+      "desc": "【史】东汉末年将领。本为中郎将，曾向董卓推举同郡出身的公孙度出任辽东太守。于汴水之战中击败曹操的独立追击军，以及在梁东之战中击败孙坚的部队。在董卓死后，受司徒王允的命令与李傕、郭汜交战，因部将胡轸投降，寡不敌众，于新丰之战被击败，战死在乱军之中。\n【演】在《三国演义》中，徐荣是一个被夏侯惇交马数回，斩于马下的三流将领，但演义和历史往往是有出入的。历史上的徐荣，可谓是一位名动一时的猛人。他的战绩足以令人瞠目结舌。 他的记载虽然很少，却足以令他跻身三国一线大将行列。"
+    },
+    {
+      "id": "official-hero-100054",
+      "officialId": 100054,
+      "iconId": 100054,
+      "portrait": "assets/portraits/100054.jpg",
+      "name": "张曼成",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200206",
+      "dismantle": "official-skill-追击",
+      "dismantles": [
+        "official-skill-追击",
+        "official-skill-飞虹"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 60,
+        "defense": 75,
+        "speed": 24
+      },
+      "desc": "【史】东汉末南阳黄巾军首领。灵帝中平元年（184）率众起义，聚众数万，诛南阳郡守褚贡。屯宛下百余日，后为太守秦颉诛灭。"
+    },
+    {
+      "id": "official-hero-100057",
+      "officialId": 100057,
+      "iconId": 100057,
+      "portrait": "assets/portraits/100057.jpg",
+      "name": "田丰",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200056",
+      "dismantle": "official-skill-水淹七军",
+      "dismantles": [
+        "official-skill-水淹七军"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 50,
+        "strategy": 91,
+        "defense": 84,
+        "speed": 79
+      },
+      "desc": "【史】东汉末年袁绍部下谋臣，官至冀州别驾。其为人刚直，曾多次向袁绍进言而不被采纳，曹操部下谋臣荀彧曾评价他“刚而犯上”。后因谏阻袁绍征伐曹操而被袁绍下令监禁。官渡之战后，田丰被袁绍所害。\n【演】在《三国演义》中，田丰博览多识，权略多奇，曾在朝中任侍御史，因不满宦官专权，弃官归家。袁绍起兵讨伐董卓，应其邀请，出任别驾，以图匡救王室之志。后袁绍用田丰谋略，消灭公孙瓒，平定河北，虎据四州。官渡之战，田丰建议据险固守，分兵抄掠的疲敌策略，乃至强谏，被袁绍以为沮众，械系牢狱。建安五年，袁绍官渡战败，因羞见田丰而害。"
+    },
+    {
+      "id": "official-hero-100058",
+      "officialId": 100058,
+      "iconId": 100058,
+      "portrait": "assets/portraits/100058.jpg",
+      "name": "颜良",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200057",
+      "dismantle": "official-skill-激昂",
+      "dismantles": [
+        "official-skill-激昂"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 92,
+        "strategy": 52,
+        "defense": 74,
+        "speed": 95
+      },
+      "desc": "【史】东汉末年河北军阀袁绍部将，以勇而闻名。建安四年（199年），袁绍以颜良、文丑为将，率精卒十万，准备攻许（今河南许昌）。建安五年（200年），兵进黎阳（今河南浚县），遣颜良攻白马（今河南滑县）。曹操北救，以荀攸计分兵渡河，引袁绍西应，自率轻兵掩袭白马，颜良仓猝逆战，被关羽击斩。\n【演】在《三国演义》中，颜良未参加关东联军，使袁绍颇为华雄的猖狂而叹息。绍计逼韩馥，谋夺冀州，耿武欲行刺，颜良斩之。随后与文丑为先锋，击公孙瓒，平定河北。曹袁交兵，颜良统十万精兵为前部，进攻白马，连斩宋宪、魏续，二十合败徐晃，曹军诸将栗然。关羽出战，颜良方欲问时，因赤兔马快，措手不及，被关羽一刀刺于马下而死。"
+    },
+    {
+      "id": "official-hero-100059",
+      "officialId": 100059,
+      "iconId": 100059,
+      "portrait": "assets/portraits/100059.jpg",
+      "name": "文丑",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200058",
+      "dismantle": "official-skill-激昂",
+      "dismantles": [
+        "official-skill-激昂"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 91,
+        "strategy": 50,
+        "defense": 89,
+        "speed": 23
+      },
+      "desc": "【史】东汉末年冀州牧袁绍帐下的大将。建安五年（200年），袁绍命文丑率军于延津攻曹操，曹操以诱敌之计大破文丑一军，文丑于此战中丧生。\n【演】在《三国演义》中，于讨董战役的汜水关之战中第一次被提及。袁绍计逼韩馥，夺取冀州之时，关纯行刺袁绍，被文丑阵斩。磐河一战，文丑策马挺枪，直扑上桥，十余合大败公孙瓒，随后与颜良为先锋，击公孙瓒，平定河北。曹、袁交兵，先锋颜良攻白马被斩，文丑领军为其报仇，据延津挑战曹操，却中饵敌之计而军乱，文丑挺身独战，射退张辽，与徐晃大战三十合不分胜败，追击中正遇关羽，战不三合，心怯欲走，被关羽赶上斩于马下。"
+    },
+    {
+      "id": "official-hero-100060",
+      "officialId": 100060,
+      "iconId": 100060,
+      "portrait": "assets/portraits/100060.jpg",
+      "name": "吕姬",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200059",
+      "dismantle": "official-skill-锋矢",
+      "dismantles": [
+        "official-skill-锋矢"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 86,
+        "strategy": 45,
+        "defense": 68,
+        "speed": 86
+      },
+      "desc": "【史】吕布与严氏之女，生卒年不详。下邳战役时吕布遭曹操围困，作为派出援军条件，吕姬与袁术之子有政治婚姻，但因出嫁途中被刘备与曹操拦截因而返回。吕布死后随母亲发往许昌，后不知所终。"
+    },
+    {
+      "id": "official-hero-100062",
+      "officialId": 100062,
+      "iconId": 100062,
+      "portrait": "assets/portraits/100062.jpg",
+      "name": "马腾",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200061",
+      "dismantle": "official-skill-车悬",
+      "dismantles": [
+        "official-skill-车悬"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 91,
+        "strategy": 62,
+        "defense": 76,
+        "speed": 93
+      },
+      "desc": "【史】东汉末年割据凉州一带的军阀，马超、马休、马铁之父。马腾身长八尺余，身体洪大，面鼻雄异，性格贤良忠厚，受众人尊敬。兴平元年（194年），马腾企图连结种邵等诛灭权臣李傕、郭汜，但为其所败，只得回到凉州。后与韩遂不和，互相攻击。\n之后，马腾听从张既的建议，入朝担任卫尉。建安十六年（211年），其子马超起兵抗拒曹操。次年，马腾与其二子皆为曹操所害，夷灭三族。\n【演】在《三国演义》中，马腾被写成对汉室十分忠诚的忠臣。董卓乱政时，马腾为西凉太守，起兵应诏，为十八路诸侯之一。董卓败亡后，其余党李傕、郭汜秉政，马腾受献帝诏，同韩遂讨伐李傕、郭汜，因缺粮为其所败，退还西凉。曹操将汉献帝迁往许都后，马腾入朝，参与刘备和董承等人欲刺专权的曹操的计划，因事情败露而逃回凉州。\n后曹操用荀攸计，假诏召马腾入京，他为了达成多年心愿，和黄奎欲讨伐曹操，但事情还是败露了，马腾和儿子马休、马铁全部被害。马腾的死讯传出后，马超和韩遂为了替他报仇，于是在西凉起兵反叛。"
+    },
+    {
+      "id": "official-hero-100063",
+      "officialId": 100063,
+      "iconId": 100063,
+      "portrait": "assets/portraits/100063.jpg",
+      "name": "甘皇后",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200062",
+      "dismantle": "official-skill-远攻奇略",
+      "dismantles": [
+        "official-skill-远攻奇略"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 35,
+        "strategy": 86,
+        "defense": 52,
+        "speed": 21
+      },
+      "desc": "【史】刘备之妻，刘禅之母。刘备因早年多次丧偶，甘夫人常代理主持家事。甘夫人随刘备到荆州时，生刘备长子刘禅，后来去世，葬于南郡。刘备称帝后，追谥其为“皇思夫人”。刘禅即位后追谥其为“昭烈皇后”。\n【演】刘备住在小沛时，娶甘氏为妻，与麋夫人俱为刘备夫人。后来刘备兵败，投袁绍。关羽保二夫人暂投曹操。关羽寻得刘备下落，带二夫人奔之。甘夫人随刘备至荆州，生下刘禅。后曹操军至，刘备逃走，甘夫人及刘禅走失，为赵云所救。赤壁之战结束后不久，甘夫人去世，周瑜遂定下美人计。"
+    },
+    {
+      "id": "official-hero-100064",
+      "officialId": 100064,
+      "iconId": 100064,
+      "portrait": "assets/portraits/100064.jpg",
+      "name": "麋夫人",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200650",
+      "dismantle": "official-skill-青囊秘要",
+      "dismantles": [
+        "official-skill-青囊秘要"
+      ],
+      "cost": 1.5,
+      "distance": 4,
+      "stats": {
+        "attack": 65,
+        "strategy": 80,
+        "defense": 48,
+        "speed": 41
+      },
+      "desc": "【史】刘备之妻，麋竺之妹。与关羽一起被曹操俘虏后事迹不详。\n【演】在《三国演义》中写作“糜夫人”，刘备兵败长坂坡之时，她怀抱年仅两岁的刘禅在乱军中走散，后来被赵云发现。但她因为赵云只有一匹马而不肯上马，最终将阿斗托付给赵云后投井而亡。"
+    },
+    {
+      "id": "official-hero-100065",
+      "officialId": 100065,
+      "iconId": 100065,
+      "portrait": "assets/portraits/100065.jpg",
+      "name": "关羽",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200063",
+      "dismantle": "official-skill-移花接木",
+      "dismantles": [
+        "official-skill-移花接木"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 97,
+        "strategy": 70,
+        "defense": 90,
+        "speed": 37
+      },
+      "desc": "【史】蜀汉名将，是刘备、张飞的结义兄弟。早期跟随刘备辗转各地，曾被曹操生擒，于白马坡阵斩袁绍大将颜良，与张飞一同被称为万人敌。赤壁之战后，刘备助东吴周瑜攻打南郡曹仁，别遣关羽绝北道，阻挡曹操援军，曹仁退走后，关羽被刘备任命为襄阳太守。刘备入益州，关羽留守荆州。建安二十四年，关羽围襄樊，擒获于禁，阵斩庞德，威震华夏，曹操曾想迁都以避其锐。后曹操派徐晃前来增援，东吴吕蒙又偷袭荆州，关羽腹背受敌，兵败身亡。\n【演】与刘备、张飞桃园结义，羽居其次。使八十二斤青龙偃月刀随刘备东征西讨。汜水关关温酒斩华雄，屯土山降汉不降曹。为报恩斩颜良、诛文丑，解曹操白马之围。后得知刘备音信，过五关斩六将，千里寻兄。刘备平定益州后，封关羽为五虎大将之首，督荆州事。羽起军攻曹，放水淹七军，威震华夏。围樊城右臂中箭，幸得华佗医治，刮骨疗伤。但未曾提防东吴袭荆州，关羽父子败走麦城，突围中被捕，不屈遭害。"
+    },
+    {
+      "id": "official-hero-100066",
+      "officialId": 100066,
+      "iconId": 100066,
+      "portrait": "assets/portraits/100066.jpg",
+      "name": "魏延",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200064",
+      "dismantle": "official-skill-闪击",
+      "dismantles": [
+        "official-skill-闪击"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 93,
+        "strategy": 66,
+        "defense": 85,
+        "speed": 32
+      },
+      "desc": "【史】刘备入川时魏延因数有战功被任命为牙门将军，刘备攻下汉中后又将其破格提拔为镇远将军，领汉中太守，镇守汉中，成为独当一方的大将。魏延镇守汉中近十年，之后又屡次随诸葛亮北伐，功绩显著。期间魏延多次请诸葛亮给他统领一万兵，另走一路攻关中，最后与诸葛亮会师于潼关，如同韩信的例子，但诸葛亮一直不许，因而认为自己无法完全发挥才能，心怀不满。\n与长史杨仪不和，诸葛亮死后，两人矛盾激化，相互争权，魏延败逃，为马岱所追斩，并被夷灭三族。\n【演】在《三国演义》中，刘备率军入蜀，魏延随军前往。刘备逝世后，魏延随诸葛亮平定“南蛮王”孟获的叛乱。于诸葛亮北伐时献“子午谷奇谋”之策，但未被诸葛亮采纳；因此在奉命进攻箕谷时无视诸葛亮的军令，险些败北。于诸葛亮向天祈祷延命时进帐报告敌军入侵的消息，不慎碰倒主灯，导致诸葛亮的祈祷失败。\n诸葛亮临终前遗命杨仪统兵，魏延对此不满，于诸葛亮病逝后率军反攻杨仪，而杨仪则根据诸葛亮的遗计挑衅魏延，魏延最终被马岱所诛。"
+    },
+    {
+      "id": "official-hero-100067",
+      "officialId": 100067,
+      "iconId": 100067,
+      "portrait": "assets/portraits/100067.jpg",
+      "name": "徐庶",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200065",
+      "dismantle": "official-skill-远攻奇略",
+      "dismantles": [
+        "official-skill-远攻奇略"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 80,
+        "strategy": 97,
+        "defense": 82,
+        "speed": 88
+      },
+      "desc": "【史】东汉末年刘备帐下谋士，后归曹操，并仕于曹魏。徐庶本名徐福，为寒门子弟。早年为人报仇，获救后改名徐庶，求学于儒舍。后与同郡石广元避难于荆州，与司马徽、诸葛亮、崔州平等道友来往密切。刘备屯驻新野时，徐庶前往投奔，并向刘备推荐诸葛亮。徐庶南下时因母亲被曹操所掳获，徐庶不得已辞别刘备，进入曹营。魏文帝时，徐庶官至右中郎将、御史中丞。\n【演】在《三国演义》中，徐庶化名单福。刘备在新野时，投效于刘备，被拜为军师。徐庶为刘备出谋划策，击败曹将吕旷、吕翔，斗阵胜曹仁，并计取樊城。不久曹操手下谋士程昱识破了徐庶的身份，称徐庶之才十倍于己。曹操欲拉拢徐庶，于是程昱取来徐庶老母，用伪书赚徐庶来降。徐庶临走前向刘备“走马荐诸葛”，并立誓在曹营“终身不设一谋”。后徐庶跟随曹操参加赤壁之战，在庞统建议下，主动请命去散关防守马腾、韩遂，逃过赤壁大火。"
+    },
+    {
+      "id": "official-hero-100068",
+      "officialId": 100068,
+      "iconId": 100068,
+      "portrait": "assets/portraits/100068.jpg",
+      "name": "张飞",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200066",
+      "dismantle": "official-skill-斩铁",
+      "dismantles": [
+        "official-skill-斩铁"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 99,
+        "strategy": 35,
+        "defense": 78,
+        "speed": 28
+      },
+      "desc": "【史】三国时期蜀汉名将。刘备长坂坡败退，张飞仅率二十骑断后，据水断桥，曹军没人敢逼近；与诸葛亮、赵云扫荡西川时，于江州义释严颜；汉中之战时又于宕渠击败张郃，对蜀汉贡献极大，官至车骑将军、领司隶校尉，封西乡侯，后被范强、张达所刺。后主时代追谥为“桓侯”。\n【演】在《三国演义》中，张飞是位重情重义嫉恶如仇，肤色黝黑的壮汉，同时又武力过人，曾多次主动挑战号称天下第一的吕布，吕布竟曾一度忌惮张飞，嗓门大更是人物一大亮点，是蜀汉大臣中少有的个性鲜明的武将。"
+    },
+    {
+      "id": "official-hero-100069",
+      "officialId": 100069,
+      "iconId": 100069,
+      "portrait": "assets/portraits/100069.jpg",
+      "name": "庞统",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200067",
+      "dismantle": "official-skill-水淹七军",
+      "dismantles": [
+        "official-skill-水淹七军"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 59,
+        "strategy": 98,
+        "defense": 71,
+        "speed": 23
+      },
+      "desc": "【史】号凤雏，刘备帐下重要谋士，与诸葛亮同拜为军师中郎将。与刘备一同入川，于刘备与刘璋决裂之际，献上上中下三条计策，刘备用其中计。进围雒县时，庞统率众攻城，不幸中流矢而亡，年仅三十六岁。后来庞统所葬之处遂名为落凤坡。\n【演】被称为凤雏，与诸葛亮齐名。赤壁之战时，庞统避乱江东，鲁肃将其荐于周瑜，入曹营献连环计，助周瑜大败曹军。周瑜死后，诸葛亮前往吊孝，因而得见庞统。当时鲁肃亦引荐庞统给孙权，但因其外貌丑陋，而不被起用。庞统于是投靠刘备，但亦因其貌丑陋而不被重用。\n庞统到任后，不理政事，于是刘备遣张飞前往问责，张飞因赏识庞统之才，遂拜其为副军师中郎将，与诸葛亮共赞方略，教练军士。后庞统随刘备取蜀，设计斩杨怀、高沛，得涪水关。攻雒城时，因疑诸葛亮欲争功，而不听从劝阻，进至落凤坡，中张任埋伏，为乱箭射死。"
+    },
+    {
+      "id": "official-hero-100071",
+      "officialId": 100071,
+      "iconId": 100071,
+      "portrait": "assets/portraits/100071.jpg",
+      "name": "马姬",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200069",
+      "dismantle": "official-skill-锋矢",
+      "dismantles": [
+        "official-skill-锋矢"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 78,
+        "strategy": 55,
+        "defense": 81,
+        "speed": 86
+      },
+      "desc": "【史】蜀国名将马超之女。许配与安平王刘理。"
+    },
+    {
+      "id": "official-hero-100072",
+      "officialId": 100072,
+      "iconId": 100072,
+      "portrait": "assets/portraits/100072.jpg",
+      "name": "关银屏",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200070",
+      "dismantle": "official-skill-远攻秘策",
+      "dismantles": [
+        "official-skill-远攻秘策"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 63,
+        "defense": 84,
+        "speed": 33
+      },
+      "desc": "【史】关羽之女。史书里未载关羽女儿名字。后人编造名字为关银屏和关凤等。因在关羽的四个子女中排行第三，故又被称作“关三小姐”、“关氏三姐”或“关羽三小姐”。在传说中她是赵云的弟子、并随同诸葛亮平定南蛮，嫁给蜀国名臣李恢之子李遗，最终也在建宁俞元（今云南澄江）去世，现澄江存有夫妻二人的合墓。\n【演】关羽之女，孙权曾欲为子娶之，但被关羽以“虎女安嫁犬子”拒绝。"
+    },
+    {
+      "id": "official-hero-100074",
+      "officialId": 100074,
+      "iconId": 100074,
+      "portrait": "assets/portraits/100074.jpg",
+      "name": "姜维",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200072",
+      "dismantle": "official-skill-大赏三军",
+      "dismantles": [
+        "official-skill-大赏三军"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 92,
+        "strategy": 91,
+        "defense": 89,
+        "speed": 29
+      },
+      "desc": "【史】三国时蜀汉名将，官至大将军。曾为魏中郎将，诸葛亮北伐时，姜维被怀疑有异心，姜维不得已投降蜀汉。因他忠勤时事、思虑精密、敏于军事、既有胆义，又兼心存汉室，故深得诸葛亮器重。诸葛亮去世后姜维在蜀汉开始崭露头角，费祎死后姜维开始独掌军权，继续率领蜀汉军队北伐曹魏。\n后因蜀中大臣多反对北伐，而宦官黄皓弄权，姜维只得在沓中屯田避祸。后司马昭五道伐蜀，姜维据守剑阁，阻挡钟会大军，却被邓艾从阴平偷袭成都，刘禅投降。后姜维假意投降魏将钟会，打算利用钟会反叛曹魏以实现恢复汉室的愿望，但最终反叛失败，与钟会一同被魏军所害。\n【演】在《三国演义》中，姜维生平与正史相似。在描写姜维降蜀时，在天水中识破设伏的赵云，并劫了诸葛亮的寨。诸葛亮视其为接班人，用计令夏侯楙和马遵误以姜维降蜀，最终使得姜维走投无路而降蜀。"
+    },
+    {
+      "id": "official-hero-100076",
+      "officialId": 100076,
+      "iconId": 100076,
+      "portrait": "assets/portraits/100076.jpg",
+      "name": "卞夫人",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200074",
+      "dismantle": "official-skill-迷阵",
+      "dismantles": [
+        "official-skill-迷阵"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 32,
+        "strategy": 70,
+        "defense": 41,
+        "speed": 90
+      },
+      "desc": "【史】魏武帝曹操的正妻（继室），魏文帝曹丕、任城威王曹彰、陈思王曹植、萧怀王曹熊的母亲。原本是倡家，即汉代专门从事音乐歌舞的乐人家庭，后来与曹操成婚，建安初年，原配丁夫人被废，卞夫人成为曹操的正妻。曹丕继位后尊其为皇太后，曹叡继位后尊其为太皇太后。卞后在太和四年去世，与魏武帝曹操合葬高陵。"
+    },
+    {
+      "id": "official-hero-100077",
+      "officialId": 100077,
+      "iconId": 100077,
+      "portrait": "assets/portraits/100077.jpg",
+      "name": "丁夫人",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200075",
+      "dismantle": "official-skill-诱敌",
+      "dismantles": [
+        "official-skill-诱敌"
+      ],
+      "cost": 1.5,
+      "distance": 2,
+      "stats": {
+        "attack": 50,
+        "strategy": 66,
+        "defense": 72,
+        "speed": 24
+      },
+      "desc": "【史】曹操的正室，曹操长子曹昂的养母。因养子之死与曹操决裂，后来离异，丁夫人去世后，葬在许都城南。\n【演】在《三国演义》中，丁夫人乃曹操大妻，因为无出被黜。"
+    },
+    {
+      "id": "official-hero-100078",
+      "officialId": 100078,
+      "iconId": 100078,
+      "portrait": "assets/portraits/100078.jpg",
+      "name": "郭嘉",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200076",
+      "dismantle": "official-skill-落雷",
+      "dismantles": [
+        "official-skill-落雷"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 50,
+        "strategy": 100,
+        "defense": 65,
+        "speed": 85
+      },
+      "desc": "【史】曹操帐下著名谋士。原为袁绍部下，后转投曹操，为曹操统一中国北方立下了功勋，官至军师祭酒，封洧阳亭侯。在曹操征伐乌丸时病逝，年仅三十八岁。史书上称他“才策谋略，世之奇士”。曹操称赞他见识过人，是自己的“奇佐”。\n【演】在《三国演义》中，郭嘉生平与三国志基本相同，前期由荀彧推荐给曹操，再让程昱加以肯定与推举；是曹操麾下洞察力敏锐的谋士，深得信赖，自身也曾经推举过参谋刘晔。增加遗计定辽东的剧情，成功让公孙康诛灭二袁并降曹，使曹操不费一兵一卒兼领辽东（史书未载定辽东之策为郭嘉所出）。"
+    },
+    {
+      "id": "official-hero-100079",
+      "officialId": 100079,
+      "iconId": 100079,
+      "portrait": "assets/portraits/100079.jpg",
+      "name": "夏侯惇",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200077",
+      "dismantle": "official-skill-死士突击",
+      "dismantles": [
+        "official-skill-死士突击"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 89,
+        "strategy": 76,
+        "defense": 92,
+        "speed": 83
+      },
+      "desc": "【史】汉末年三国时期曹魏名将，西汉开国元勋夏侯婴的后代。少年时以勇气闻名于乡里。曹操起兵，夏侯惇是其最早的将领之一。与吕布军交战时，曾一度被擒为人质，又被流矢射瞎左眼。多次为曹操镇守后方，曾率军民阻断太寿河水，筑陂塘灌溉农田，使百姓受益，功勋卓著。历任折冲校尉、济阴太守、建武将军，官至大将军，封高安乡侯，追谥忠侯。青龙元年（233年），得以配享太祖（曹操）庙庭。\n【演】在《三国演义》中，夏侯惇在徐州攻防战时迎战吕布部将高顺，高顺败逃，夏侯惇从后追赶，不料遭另一名敌将曹性射箭偷袭。夏侯惇左眼被射中，痛得怒吼一声便匆忙用手拔箭，却不慎连着眼珠子拔了出来。夏侯惇立即大喊：“父精母血，不可弃也！”便把眼睛塞进嘴巴吞咽下去；然后又挺枪纵马，上前斩了曹性报回一箭之仇。"
+    },
+    {
+      "id": "official-hero-100081",
+      "officialId": 100081,
+      "iconId": 100081,
+      "portrait": "assets/portraits/100081.jpg",
+      "name": "典韦",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200079",
+      "dismantle": "official-skill-青囊秘要",
+      "dismantles": [
+        "official-skill-青囊秘要"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 93,
+        "strategy": 33,
+        "defense": 92,
+        "speed": 29
+      },
+      "desc": "【史】曹操部将，相貌魁梧，膂力过人。本属张邈，后归曹操。曹操征讨吕布时被募为陷阵，表现英勇，被拜为校尉，宿卫曹操。后曹操于宛城时，张绣先降而复反，急迫曹操本营；典韦守着大门，殊死恶斗，破敌无算，最终因敌人太多而战死。 \n【演】在《三国演义》中，因其悍武，曹操称其为“古之恶来”。张绣背叛时，先令胡车儿暗盗韦双戟，再引军急迫曹操本营。典韦守大门，殊死恶斗，破敌无算，刀坏了竟双手各提一人为武器迎敌。群贼不敢近，只远远以箭射之，箭如骤雨，典韦犹死拒寨门。"
+    },
+    {
+      "id": "official-hero-100084",
+      "officialId": 100084,
+      "iconId": 100084,
+      "portrait": "assets/portraits/100084.jpg",
+      "name": "庞德",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200082",
+      "dismantle": "official-skill-坚守兵法",
+      "dismantles": [
+        "official-skill-坚守兵法"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 79,
+        "strategy": 71,
+        "defense": 98,
+        "speed": 96
+      },
+      "desc": "【史】初为马腾部下，在平定羌民的征伐中屡立战功。建安年间，庞德跟随马超征战，每次出征常冲锋陷阵，勇冠凉州三军。后几经辗转，随张鲁归降于曹操麾下。219年，庞德协助曹仁抵御关羽。时值汉水暴溢，他率诸将与关羽殊死搏斗，箭镞尽，又短兵相接。\n而他格斗益怒，胆气愈壮，力战多时后因小舟被洪水打翻为关羽军所擒。关羽敬重他的刚毅威武，以封将劝降，但他却怒目不跪，怒斥关羽，最终殒身殉节。\n【演】在《三国演义》中，曹操进攻汉中时，庞德被曹操所擒，且因张鲁的不仁而转投曹操。此后，庞德屡立战功，濡须口之战斩东吴名将陈武，汉中之战中击败蜀汉名将魏延，救出曹操。后来曹仁被关羽包围在樊城，庞德随于禁引军赴救。其时诸将皆以庞德兄长庞柔、故主马超均在蜀，都怀疑庞德有二心；\n庞德抬棺决死，遂力斗关羽父子，又箭射关羽，深为关羽所忌惮。然而于禁惧其立功，加以掣肘。魏军战败，庞德被周仓在水中擒获，誓死不降，为关羽所害。曹操闻知此事甚为伤悲，为之流涕。"
+    },
+    {
+      "id": "official-hero-100085",
+      "officialId": 100085,
+      "iconId": 100085,
+      "portrait": "assets/portraits/100085.jpg",
+      "name": "曹仁",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200083",
+      "dismantle": "official-skill-措手不及",
+      "dismantles": [
+        "official-skill-措手不及"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 70,
+        "defense": 88,
+        "speed": 87
+      },
+      "desc": "【史】曹操从弟。三国曹魏名将。从曹操多年，为魏朝立下汗马功劳。破袁术，曹仁所斩获颇多，大破陶谦军及陶谦部将吕由，攻克句阳，生擒吕布的部将刘何，官渡之战中，在隐强打败刘备军、鸡落山之战又战胜袁绍军。\n【演】在《三国演义》中，曹仁于曹操起兵时与曹洪一同前来投奔，并随曹操一同参与讨董战役。后从征袁术、吕布、张绣，参加官渡之战，多立功勋。曹操平定北方后决意南征，曹仁率军先攻刘备，并列八门金锁阵以敌刘备，但阵法却被徐庶所破。赤壁之战后，周瑜乘胜进取荆州，与镇守南郡的曹仁大战，曹仁用曹操遗计诈败引周瑜入城，随命放箭，周瑜中箭败退。然此后反中东吴军士诈降之计，被周瑜击败。"
+    },
+    {
+      "id": "official-hero-100086",
+      "officialId": 100086,
+      "iconId": 100086,
+      "portrait": "assets/portraits/100086.jpg",
+      "name": "周泰",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200084",
+      "dismantle": "official-skill-回马",
+      "dismantles": [
+        "official-skill-回马"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 87,
+        "strategy": 61,
+        "defense": 90,
+        "speed": 28
+      },
+      "desc": "【史】三国时期吴国武将。孙策平定江东时与同郡蒋钦一起加入孙策军，随孙策左右，后孙权爱其为人，向孙策请求让周泰跟随自己。周泰多次于战乱当中保护孙权的安危，身上受的伤多达几十处，就像在皮肤上雕画一样，吴将朱然、徐盛等因此对其拜服。后来孙权为了表彰周泰为了东吴出生入死的功绩，而赐给他青罗伞盖。官至汉中太守、奋威将军，封陵阳侯。死于黄武中年，有子周邵，亦数有战功，死于黄龙二年，周邵的弟弟周承继承了兵权和爵位。\n【演】在《三国演义》中，跟正史差不多，最初和蒋钦一同在江中劫掠为生，后归顺孙策，并助孙策攻刘繇营寨。孙策攻取吴郡之时，周泰与孙权镇守宣城，期间山贼前来攻城，周泰为保护孙权而被刺12枪，身受重伤，幸得名医华佗救治才得以保全一命。"
+    },
+    {
+      "id": "official-hero-100087",
+      "officialId": 100087,
+      "iconId": 100087,
+      "portrait": "assets/portraits/100087.jpg",
+      "name": "徐盛",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200085",
+      "dismantle": "official-skill-破甲",
+      "dismantles": [
+        "official-skill-破甲"
+      ],
+      "cost": 2.5,
+      "distance": 4,
+      "stats": {
+        "attack": 83,
+        "strategy": 73,
+        "defense": 76,
+        "speed": 57
+      },
+      "desc": "【史】三国时吴国名将。早年徐盛抗击黄祖，因功升为中郎将。刘备伐吴时，徐盛跟随陆逊攻下蜀军多处屯营；曹休伐吴时，徐盛在形势不利的情况下以少抗多，成功防御。因前后战功，徐盛先后升任建武将军、安东将军，任庐江太守。后来，曹丕大举攻吴，吴国依徐盛的建议在建业外围筑上围墙，曹丕被迫退走。黄武年间，徐盛病逝，被陈寿盛赞为“江表之虎臣”。其官爵由儿子徐楷继承。\n【演】在《三国演义》中，无论前期或者后期，徐盛与丁奉都是一起登场和破敌。在曹丕224年伐吴，徐盛与丁奉一起率军迎敌，偃旗息鼓地在广陵城内设芦苇草人，装作布满士兵的空城。曹丕在龙舟上闻曹真回报城里没有一人，认为是诡计打算下舟查探，但心里拿不定注意询问刘晔，但刘晔也跟曹丕一样看法。当夜，曹丕军举起火把，灯火通明，反而江南没有半点光。曹丕认为是诡计便撤退，而淮河布满事先浸满鱼油的芦苇，徐盛把芦苇点燃，大火连横。"
+    },
+    {
+      "id": "official-hero-100088",
+      "officialId": 100088,
+      "iconId": 100088,
+      "portrait": "assets/portraits/100088.jpg",
+      "name": "孙坚",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200086",
+      "dismantle": "official-skill-反击之策",
+      "dismantles": [
+        "official-skill-反击之策"
+      ],
+      "cost": 3,
+      "distance": 1,
+      "stats": {
+        "attack": 89,
+        "strategy": 67,
+        "defense": 93,
+        "speed": 86
+      },
+      "desc": "【史】县吏出身，因勇敢又有谋略被官府赏识，提拔为军官。曾参与讨伐黄巾军的战役以及讨伐董卓的战役。后与刘表作战时阵亡。孙坚的儿子孙策、孙权后来创建了东吴政权。\n【演】在《三国演义》中，孙坚由于征讨黄巾有功，被封为长沙太守。在董卓乱政期间，孙坚作为诸侯联军的先锋，表现得十分活跃，但因袁术存在私心，拒不发粮，而被董卓将华雄击败。后来董卓迁都长安，孙坚进驻洛阳，意外发现传国玉玺，并藏匿返回。不料事情泄漏，与袁绍、刘表结仇。不久，孙坚在与刘表手下黄祖的交战中，中埋伏而死。"
+    },
+    {
+      "id": "official-hero-100089",
+      "officialId": 100089,
+      "iconId": 100089,
+      "portrait": "assets/portraits/100089.jpg",
+      "name": "孙策",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200087",
+      "dismantle": "official-skill-死士突击",
+      "dismantles": [
+        "official-skill-死士突击"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 95,
+        "strategy": 71,
+        "defense": 71,
+        "speed": 76
+      },
+      "desc": "【史】三国时期孙吴的奠基者之一，孙坚长子、吴大帝孙权长兄。其人有智有勇，英姿勃发，其治军严整，军纪严明，被称为“江东小霸王”。初为继承父亲孙坚的遗业而屈事袁术，征战时屡获大胜。袁术僭越称帝后，孙策与袁术决裂，曹操下诏书给孙策，要孙策讨伐袁术。之后孙策统一江东，但在一次狩猎中为刺客所伤，不久后身亡。其弟孙权接掌孙策势力。\n【演】在《三国演义》中，孙策的事迹基本与正史相符。而在描写孙策被刺后，引入了孙策斩道士于吉而受其诅咒，伤重而亡的情节。"
+    },
+    {
+      "id": "official-hero-100090",
+      "officialId": 100090,
+      "iconId": 100090,
+      "portrait": "assets/portraits/100090.jpg",
+      "name": "太史慈",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200088",
+      "dismantle": "official-skill-钝兵挫锐",
+      "dismantles": [
+        "official-skill-钝兵挫锐"
+      ],
+      "cost": 2.5,
+      "distance": 5,
+      "stats": {
+        "attack": 98,
+        "strategy": 67,
+        "defense": 89,
+        "speed": 65
+      },
+      "desc": "【史】东汉末年名将，官至建昌都尉。弓马熟练，箭法精良。原为刘繇部下，后被孙策收降，自此太史慈为孙氏大将，助其扫荡江东。孙权统事后，因太史慈能制刘磐，便将管理南方的要务委托给他。建安十一年（206年）太史慈逝世。\n【演】在《三国演义》中，初登场为第十一回“刘皇叔北海救孔融，吕温侯濮阳破曹操”，后来表现与《三国志》中没有太大分别，但其死亡时间却往后调了数年。于群英会、赤壁之战中，太史慈也有登场，先在群英会上为周瑜担任监酒官，于赤壁战中则负责绕到曹军背后，断绝来自合肥的曹军援兵。\n后来太史慈更于合肥之战一役中大战魏将张辽，可惜其所献的“里应外合”之计被张辽悉破，张辽更将计就计，安排伏兵，袭击进入合肥城的太史慈，令太史慈身中数箭，回营后伤重身亡。"
+    },
+    {
+      "id": "official-hero-100091",
+      "officialId": 100091,
+      "iconId": 100091,
+      "portrait": "assets/portraits/100091.jpg",
+      "name": "吴夫人",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200089",
+      "dismantle": "official-skill-了如指掌",
+      "dismantles": [
+        "official-skill-了如指掌"
+      ],
+      "cost": 1.5,
+      "distance": 2,
+      "stats": {
+        "attack": 49,
+        "strategy": 80,
+        "defense": 66,
+        "speed": 87
+      },
+      "desc": "【史】孙坚夫人。孙策、孙权之母。本姓吴，早丧父母，与其弟吴景居处。孙坚闻其才貌，娶而为妻，生四男一女。孙策、孙权分别执政时，吴夫人皆助治军国大事，甚有补益。临终引见张昭等，嘱以后事。死后与孙坚合葬高陵。\n【演】在《三国演义》中，被称为吴太夫人。其次子孙权自立为吴国皇帝后，她被追尊为皇后。并且演义中虚构其妹继为国太，在孙刘联姻一事上起主导作用。"
+    },
+    {
+      "id": "official-hero-100092",
+      "officialId": 100092,
+      "iconId": 100092,
+      "portrait": "assets/portraits/100092.jpg",
+      "name": "陆逊",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200090",
+      "dismantle": "official-skill-焰焚箕轸",
+      "dismantles": [
+        "official-skill-焰焚箕轸"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 68,
+        "strategy": 99,
+        "defense": 96,
+        "speed": 25
+      },
+      "desc": "【史】三国时期吴国政治家、军事家。建安二十四年（219年），陆逊参与袭取荆州。章武二年（222年），孙权以陆逊为大都督，在夷陵火烧连营击败刘备，一战成名。黄武七年（228年），陆逊取得石亭之战的胜利。黄龙元年（229年），孙权称帝后，以陆逊为上大将军、辅佐太子孙登并掌管陪都武昌事宜，后卷入立嗣之争。\n赤乌七年（244年）拜为丞相，总领三公事务，领武昌事。陆逊跟随孙权四十余年，统领吴国军政十余年，深得孙权器重。深谋远虑，忠诚耿直。一生出将入相，被赞为“社稷之臣”。\n【演】在《三国演义》中，称其“身长八尺，面如美玉，体如凝酥”。孙权统事后，陆逊投奔入孙权门下。陆逊、董袭作为第五队参与了赤壁之战。合肥之战时陆逊董袭又救出重伤的太史慈；樊城之战前吕蒙因为想不出对付关羽的办法装病躲避。陆逊向孙权进言猜测是诈病，后又献夺荆州计谋。孙权遂以陆逊代吕蒙守陆口。后孙权力排众议，拜陆逊为大都督。"
+    },
+    {
+      "id": "official-hero-100093",
+      "officialId": 100093,
+      "iconId": 100093,
+      "portrait": "assets/portraits/100093.jpg",
+      "name": "徐夫人",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200651",
+      "dismantle": "official-skill-诱敌",
+      "dismantles": [
+        "official-skill-诱敌"
+      ],
+      "cost": 2,
+      "distance": 4,
+      "stats": {
+        "attack": 65,
+        "strategy": 51,
+        "defense": 63,
+        "speed": 64
+      },
+      "desc": "【史】徐夫人，吴郡富春人，吴郡豪族徐琨之女，吴大帝孙权之妻。徐氏初嫁予陆尚，陆尚殁后嫁给时为讨虏将军的孙权为妻，并抚养庶长子孙登。徐氏因善妒不受孙权宠爱，被孙权废黜于吴郡。孙权称帝后，群臣请立徐氏为后，但孙权已属意步氏，遂不许。\n【演】在《三国演义》中，徐夫人为吴太子孙登生母，其他生平与正史大体相当。"
+    },
+    {
+      "id": "official-hero-100094",
+      "officialId": 100094,
+      "iconId": 100094,
+      "portrait": "assets/portraits/100094.jpg",
+      "name": "小乔",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200091",
+      "dismantle": "official-skill-远攻之策",
+      "dismantles": [
+        "official-skill-远攻之策"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 77,
+        "strategy": 81,
+        "defense": 53,
+        "speed": 61
+      },
+      "desc": "【史】东汉末年时期的美女，庐江皖县（今安徽潜山）人。乔公的次女，汉末名将周瑜之妾。\n【演】在《三国演义》中，她是庐江皖县乔国老次女，秀美绝伦，貌压群芳，又琴棋书画无所不通。周瑜攻取皖城，迎娶小乔为妻。周郎小乔英雄美女、郎才女貌 ，被流传为千古佳话。"
+    },
+    {
+      "id": "official-hero-100095",
+      "officialId": 100095,
+      "iconId": 100095,
+      "portrait": "assets/portraits/100095.jpg",
+      "name": "大乔",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200092",
+      "dismantle": "official-skill-窃兵",
+      "dismantles": [
+        "official-skill-窃兵"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 57,
+        "strategy": 82,
+        "defense": 75,
+        "speed": 54
+      },
+      "desc": "【史】吴国乔公长女，孙策之妾、小乔之姊。大乔国色流离、资貌绝伦。建安三年，孙策攻皖，拔之。纳大乔。后人谓英雄美女，天作之合。\n【演】在《三国演义》中，大乔唯一一次登场在二十九回中，孙策去世时，留下遗言命她孝顺吴夫人。孔明智激周瑜时，暗示曹操打仗是为了二乔，并将她们放到铜雀台中，引得小乔之夫周瑜暴怒，最终同意联刘抗曹。"
+    },
+    {
+      "id": "official-hero-100101",
+      "officialId": 100101,
+      "iconId": 100101,
+      "portrait": "assets/portraits/100101.jpg",
+      "name": "灵帝",
+      "faction": "汉",
+      "arm": "弓",
+      "rarity": 5,
+      "innate": "official-skill-200607",
+      "dismantle": "official-skill-避其锋芒",
+      "dismantles": [
+        "official-skill-避其锋芒"
+      ],
+      "cost": 3.5,
+      "distance": 4,
+      "stats": {
+        "attack": 85,
+        "strategy": 84,
+        "defense": 91,
+        "speed": 65
+      },
+      "desc": "【史】汉灵帝，刘宏。在位期间，大部分时间施行党锢及宦官政治，又设置西园，巧立名目搜刮钱财，甚至卖官鬻爵以用于自己享乐，在位晚期爆发了黄巾起义，而凉州等地也陷入持续动乱之中。\n【演】在《三国演义》中，刘宏的生平与正史基本相同。为人昏庸无能，对政治毫不关心，实权全部掌握在十常侍的手里。刘宏死后，由于其生前没有选定继承人，故而使得刘辩和刘协之间争夺皇位。"
+    },
+    {
+      "id": "official-hero-100102",
+      "officialId": 100102,
+      "iconId": 100102,
+      "portrait": "assets/portraits/100102.jpg",
+      "name": "王烈",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200114",
+      "dismantle": "official-skill-伏兵",
+      "dismantles": [
+        "official-skill-伏兵",
+        "official-skill-看破"
+      ],
+      "cost": 1.5,
+      "distance": 2,
+      "stats": {
+        "attack": 55,
+        "strategy": 57,
+        "defense": 69,
+        "speed": 21
+      },
+      "desc": "【史】王烈少时师从陈寔，闻名遐迩。董卓作乱时避乱辽东，并多次拒绝曹操的聘请。七十八岁时病死于辽东。"
+    },
+    {
+      "id": "official-hero-100104",
+      "officialId": 100104,
+      "iconId": 100104,
+      "portrait": "assets/portraits/100104.jpg",
+      "name": "刘虞",
+      "faction": "汉",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200137",
+      "dismantle": "official-skill-急救",
+      "dismantles": [
+        "official-skill-急救",
+        "official-skill-落石"
+      ],
+      "cost": 1.5,
+      "distance": 3,
+      "stats": {
+        "attack": 66,
+        "strategy": 61,
+        "defense": 54,
+        "speed": 88
+      },
+      "desc": "【史】汉光武帝刘秀之子东海恭王刘强之后。镇守幽州时为政宽仁，安抚百姓，深得人心。由于与公孙瓒意见不合而产生矛盾，因而进兵攻击公孙瓒，兵败身亡。\n【演】在《三国演义》中，刘虞于第二回登场，被朝廷任命为幽州牧，负责征讨张举、张纯。刘备曾在他手下任职，立功后被刘虞推荐升为下密丞。刘虞也因平叛有功升为太尉。"
+    },
+    {
+      "id": "official-hero-100110",
+      "officialId": 100110,
+      "iconId": 100110,
+      "portrait": "assets/portraits/100110.jpg",
+      "name": "李儒",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200610",
+      "dismantle": "official-skill-楚歌四起",
+      "dismantles": [
+        "official-skill-楚歌四起"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 53,
+        "strategy": 93,
+        "defense": 63,
+        "speed": 54
+      },
+      "desc": "【史】董卓专政时担任弘农王郎中令，奉董卓之命，入宫毒死汉少帝。董卓死后，李傕攻进长安，控制朝政，李傕推举博士李儒为侍中，但被汉献帝拒绝。\n【演】董卓的谋士，董卓的大小事宜均与之参谋，堪称智囊。董卓趁乱进京、说降吕布、废立皇帝、迁都长安等举动，均离不开李儒的参谋之功。汉少帝刘辩被废后不满，李儒奉董卓之命，亲自带人入宫，毒死刘辩。后王允使“连环计”离间董卓、吕布，李儒劝董卓放弃貂蝉而换取吕布的效忠，董卓最终没有听从，死于吕布之手。董卓死时，李儒卧病在家，被家仆捆绑献出，处斩于市曹之中。"
+    },
+    {
+      "id": "official-hero-100111",
+      "officialId": 100111,
+      "iconId": 100111,
+      "portrait": "assets/portraits/100111.jpg",
+      "name": "周仓",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200098",
+      "dismantle": "official-skill-凿穿",
+      "dismantles": [
+        "official-skill-凿穿",
+        "official-skill-坚守突击"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 81,
+        "strategy": 57,
+        "defense": 72,
+        "speed": 31
+      },
+      "desc": "【演】在《三国演义》中，周仓为身材高大、黑面虬髯的关西大汉，黄巾军出身。关羽千里寻兄之时请求跟随，自此对关羽忠心不二；在听说关羽兵败被害后，周仓也自刎而死。"
+    },
+    {
+      "id": "official-hero-100113",
+      "officialId": 100113,
+      "iconId": 100113,
+      "portrait": "assets/portraits/100113.jpg",
+      "name": "李肃",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200100",
+      "dismantle": "official-skill-飞虹",
+      "dismantles": [
+        "official-skill-飞虹",
+        "official-skill-追击"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 73,
+        "strategy": 53,
+        "defense": 75,
+        "speed": 48
+      },
+      "desc": "【史】吕布同郡之人，协同吕布诛灭董卓，随后受派遣，前往陕地征讨牛辅，被牛辅击败，退至弘农，为吕布所害。\n【演】董卓帐下武将，与吕布同乡，曾主动请命为董卓说服吕布来降。诸侯联军伐董卓之际，李肃协同华雄镇守汜水关，为华雄出谋划策，击败缺粮的孙坚军。后王允、吕布策划诛灭董卓，拉拢李肃同谋，李肃因久不升迁，心怀不满，与吕布一拍即合，共同诛灭了董卓，又为吕布先锋与牛辅军交战，兵败后被吕布斩首示众。"
+    },
+    {
+      "id": "official-hero-100115",
+      "officialId": 100115,
+      "iconId": 100115,
+      "portrait": "assets/portraits/100115.jpg",
+      "name": "高顺",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200608",
+      "dismantle": "official-skill-远攻强化",
+      "dismantles": [
+        "official-skill-远攻强化"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 88,
+        "strategy": 43,
+        "defense": 89,
+        "speed": 91
+      },
+      "desc": "【史】吕布帐下中郎将。高顺为人清白有威严，不好饮酒，所统率的部队精锐非常，号称“陷阵营”。屡进忠言于吕布，吕布虽知其忠而不能用。曹操击破吕布后，高顺被曹操所害。\n【演】在《三国演义》的第十八章提到，高顺军在下邳城外与夏侯惇军交战时曾与其单挑。双方大战了四五十个回合夏侯惇击败了高顺，高顺欲退回城内，夏侯惇则令其战马追赶。夏侯惇在追赶高顺途中，被高顺的部下曹性用弓箭射中眼睛，最后，高顺部队反攻夏侯惇的部队而获胜。"
+    },
+    {
+      "id": "official-hero-100116",
+      "officialId": 100116,
+      "iconId": 100116,
+      "portrait": "assets/portraits/100116.jpg",
+      "name": "袁术",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200609",
+      "dismantle": "official-skill-攻心",
+      "dismantles": [
+        "official-skill-攻心"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 70,
+        "defense": 79,
+        "speed": 37
+      },
+      "desc": "【史】袁逢之嫡次子，袁基、袁绍之弟。初为虎贲中郎将。董卓进京后以袁术为后将军，袁术因畏祸而出奔南阳。初平元年（190年）与袁绍、曹操等同时起兵，共讨董卓。后与袁绍对立，被袁绍、曹操击败，率馀众奔九江，割据扬州。建安二年（197年）称帝，建号仲氏 ，但未受人承认。此后袁术奢侈荒淫，横征暴敛，使江淮地区残破不堪，民多饥死，部众离心，先后为吕布、曹操所破，元气大伤，后于建安四年（199年）呕血而死。\n【演】在《三国演义》中，他的家族四代中有五人位居三公，是当世的大豪族。因董卓祸国，十八路诸侯聚讨董卓，袁术以第一镇诸侯的身份参与。同盟解散后，袁术为了除掉刘备，派遣使者想和吕布结亲，吕布将使者送给曹操斩首。得知吕布送斩他的使者，就发兵攻打他，却反被吕布所破。曹操又会合吕布、刘备、孙策等讨伐袁术，袁术大败。"
+    },
+    {
+      "id": "official-hero-100119",
+      "officialId": 100119,
+      "iconId": 100119,
+      "portrait": "assets/portraits/100119.jpg",
+      "name": "高览",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200110",
+      "dismantle": "official-skill-浴血",
+      "dismantles": [
+        "official-skill-浴血",
+        "official-skill-先驱"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 77,
+        "strategy": 67,
+        "defense": 77,
+        "speed": 36
+      },
+      "desc": "【史】与颜良、文丑、张郃并称河间四将，本为袁绍部将，后在官渡之战因遭郭图谗言，与张郃一同投降曹操，官至偏将军、东莱侯。\n【演】在《三国演义》中，高览曾和许褚大战而不分胜负。曹操偷袭乌巢，袁绍从郭图之计，命高览、张郃率兵劫曹营，遭埋伏兵败，惧罪而降于曹操。后随曹操出征汝南，率军伏击刘备，三合斩刘辟，正欲擒刘备，被赵云一枪刺于马下。"
+    },
+    {
+      "id": "official-hero-100123",
+      "officialId": 100123,
+      "iconId": 100123,
+      "portrait": "assets/portraits/100123.jpg",
+      "name": "张郃",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200637",
+      "dismantle": "official-skill-百战精兵",
+      "dismantles": [
+        "official-skill-百战精兵"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 89,
+        "strategy": 70,
+        "defense": 80,
+        "speed": 32
+      },
+      "desc": "【史】征西车骑将军。先从韩馥，后投袁绍，在与公孙瓒的交战中多有功劳。官渡之战时，张郃受郭图陷害，率众投降于曹操，得以重用，随曹操平定北方，远征乌桓，平马超，斩宋建，灭张鲁，多有战功。后来，张郃随夏侯渊驻守汉中，在夏侯渊被害后暂代主帅，维持败兵。\n魏明帝时诸葛亮第一次北伐，张郃奉命救援陇右，在街亭大败蜀将马谡，导致诸葛亮撤兵；诸葛亮第四次时，张郃随司马懿前往相拒。后诸葛亮粮尽退兵，张郃追至木门，与诸葛亮军交战，被飞矢射中右膝而亡。\n【演】在《三国演义》中，张郃原为袁绍手下名将，官渡之战时，受郭图陷害，无奈投降于曹操，从此被曹操重用，跟随曹操南征北战，平马超，灭张鲁，多有战功。诸葛亮一出祁山时，张郃任司马懿先锋，跟随司马懿在街亭击败蜀将马谡，使诸葛亮撤兵。此后，在诸葛亮的多次北伐中，张郃先后随曹真、司马懿前往对抗，多有表现，连诸葛亮也叹其勇猛。诸葛亮五出祁山撤退时，于在剑阁设计埋伏，张郃前往追击，中埋伏被乱箭射死。"
+    },
+    {
+      "id": "official-hero-100126",
+      "officialId": 100126,
+      "iconId": 100126,
+      "portrait": "assets/portraits/100126.jpg",
+      "name": "祢衡",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200663",
+      "dismantle": "official-skill-云梯",
+      "dismantles": [
+        "official-skill-云梯",
+        "official-skill-成竹在胸"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 29,
+        "strategy": 81,
+        "defense": 62,
+        "speed": 31
+      },
+      "desc": "【史】其人个性恃才傲物．和孔融交好。孔融著有《荐祢衡表》，向曹操推荐祢衡，但是祢衡称病不肯去，曹操封他为鼓手，想要羞辱祢衡，却反而被祢衡裸身击鼓而羞辱。后来祢衡骂曹操，曹操就把他遣送给刘表，祢衡对刘表也很轻慢，刘表又把他送去给江夏太守黄祖，最后因为和黄祖言语冲突而被害，时年二十六岁。黄祖对此感到十分后悔，便将其加以厚葬。\n【演】在《三国演义》中，祢衡的事迹基本与正史相符。"
+    },
+    {
+      "id": "official-hero-100129",
+      "officialId": 100129,
+      "iconId": 100129,
+      "portrait": "assets/portraits/100129.jpg",
+      "name": "关平",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200625",
+      "dismantle": "official-skill-了如指掌",
+      "dismantles": [
+        "official-skill-了如指掌"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 88,
+        "strategy": 64,
+        "defense": 81,
+        "speed": 41
+      },
+      "desc": "【史】关羽之子，关羽率军攻打樊城时，孙权借机征讨荆州。关平与其父一同被擒，最后被斩于临沮县。此外，民间通常认为他是关羽收养的义子而非亲子。\n【演】原为冀州关家庄庄主关定之子，关羽过五关时被收为义子，从此作为关羽副将，随关羽南征北战，屡立功劳，多与刘封搭档。之后逐渐成长为一员大将，曾与庞德大战三十合，不分胜负。关羽败走麦城之际，关平跟随，一同被捕，遭孙权所害。"
+    },
+    {
+      "id": "official-hero-100131",
+      "officialId": 100131,
+      "iconId": 100131,
+      "portrait": "assets/portraits/100131.jpg",
+      "name": "赵云",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200055",
+      "dismantle": "official-skill-长兵方阵",
+      "dismantles": [
+        "official-skill-长兵方阵"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 95,
+        "strategy": 64,
+        "defense": 78,
+        "speed": 89
+      },
+      "desc": "【史】三国时期蜀汉名将。赵云跟随刘备将近三十年，先后参加过博望坡之战、长坂坡之战、江南平定战，独自指挥过入川之战、汉水之战、箕谷之战，都取得了非常好的战果。除了四处征战，赵云还先后以偏将军任桂阳太守，以留营司马留守公安，以翊军将军督江州。除此之外，赵云于平定益州时引霍去病故事劝谏刘备将田宅归还百姓，又于关羽张飞被害之后劝谏刘备不要伐吴，被后世赞为有大臣局量的儒将，甚至被认为是三国时期的完美人物。\n【演】在《三国演义》中，赵云一登场即和河北名将文丑大战，救了公孙瓒。曾和多名三国名将对战，冲锋陷阵罕见败绩。长坂坡救阿斗时，连续阵斩曹营名将五十余员。智取桂阳时，更是展现了他过人的机智和出众的谋略。随诸葛亮吊祭周瑜时，因赵云带剑相随，吴将无人敢动诸葛亮。汉水救黄忠时，让魏国名将张郃、徐晃心惊胆战，不敢迎敌。\n刘备去世之后，曹魏五路犯蜀，赵云把守阳平关，一将当关，万夫莫开。七十几岁时仍为蜀汉先锋，阵前力斩被作者称为“有万夫不当之勇”的西凉大将韩德一门五将。"
+    },
+    {
+      "id": "official-hero-100134",
+      "officialId": 100134,
+      "iconId": 100134,
+      "portrait": "assets/portraits/100134.jpg",
+      "name": "严颜",
+      "faction": "蜀",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200657",
+      "dismantle": "official-skill-速战兵法",
+      "dismantles": [
+        "official-skill-速战兵法"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 83,
+        "strategy": 54,
+        "defense": 73,
+        "speed": 37
+      },
+      "desc": "【史】东汉末年武将，初为刘璋部下，担任巴郡太守。建安十九年，刘备进攻江州，严颜战败被俘，张飞对严颜说：“大军至，何以不降而敢拒战？”，严颜回答说：“卿等无状，侵夺我州，我州但有断头将军，无降将军也！”，张飞生气，命左右将严颜牵去砍头，严颜表情不变地说：“砍头便砍头，何为怒邪！”张飞敬佩严颜的勇气，遂释放严颜并以严颜为宾客，之后的事迹不在正史中出现。\n【演】在《三国演义》中，严颜在刘备攻取成都，径取汉川中登场。擅使硬弓和大刀，有万夫莫敌之勇。据守巴郡，与张飞交战，后为张飞用计俘虏。张飞质问：“大将在这里，为什么不投降，而敢率军拒敌？”颜宁死不屈，张飞壮而释之，引为上宾，严颜感概张飞的恩义而归降。"
+    },
+    {
+      "id": "official-hero-100136",
+      "officialId": 100136,
+      "iconId": 100136,
+      "portrait": "assets/portraits/100136.jpg",
+      "name": "吴兰",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200199",
+      "dismantle": "official-skill-威压",
+      "dismantles": [
+        "official-skill-威压",
+        "official-skill-洞察"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 65,
+        "strategy": 50,
+        "defense": 69,
+        "speed": 96
+      },
+      "desc": "【史】东汉末年益州牧刘璋的部将，后降刘备。汉中对曹操的战役中，与马超、张飞各领一军，驻扎在下卞，被魏将曹洪所击败，败退时为阴平的氐族首领强端所害。\n【演】在《三国演义》中，最初为刘璋部下，在刘备进川时刘璋部将吴懿举荐雷铜、吴兰为副将，领两万军马前往雒城。另一将领汵苞被刘备击破，雷铜、吴兰前去接应被黄忠击退。二将退守雒城围困魏延又被黄忠击败，二将又跟随刘璝攻夺刘备寨。刘备攻打雒城，雷铜、吴兰和魏延、黄忠二将对阵，后二将追击时中刘备设下的埋伏，迫不得已，只好投降刘备。"
+    },
+    {
+      "id": "official-hero-100137",
+      "officialId": 100137,
+      "iconId": 100137,
+      "portrait": "assets/portraits/100137.jpg",
+      "name": "雷铜",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200238",
+      "dismantle": "official-skill-援护",
+      "dismantles": [
+        "official-skill-援护",
+        "official-skill-连战"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 70,
+        "strategy": 60,
+        "defense": 69,
+        "speed": 26
+      },
+      "desc": "【史】东汉末年将领。本属益州牧刘璋麾下，刘备攻取益州后而归刘备麾下。归顺刘备后屡建奇功。后于下辨之战中与吴兰一起被曹洪军击败阵亡。\n【演】在《三国演义》中，雷铜在汉中之战，与张飞一同对抗魏将张郃时，表现勇猛。后中张郃之埋伏计而被张郃所斩。"
+    },
+    {
+      "id": "official-hero-100139",
+      "officialId": 100139,
+      "iconId": 100139,
+      "portrait": "assets/portraits/100139.jpg",
+      "name": "马岱",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200642",
+      "dismantle": "official-skill-破魂",
+      "dismantles": [
+        "official-skill-破魂"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 86,
+        "strategy": 72,
+        "defense": 81,
+        "speed": 77
+      },
+      "desc": "【史】三国时期蜀汉将领，马超的从弟。早年追随马超大战曹操，反攻陇上，围攻成都，汉中之战等。后在诸葛亮病逝后受杨仪派遣斩了蜀将魏延。曾率领军队出师北伐，被魏将牛金击败而退还。官至平北将军，陈仓侯。\n【演】在《三国演义》中，马岱初次登场随马腾入许昌。后来马腾和其余诸子尽皆被害，马岱乔装逃出。马超起兵，马岱随之周旋。曾在潼关前打败钟繇。建安十九年，马岱随马超救援刘璋，曾与张飞大战十余合败北，旋即随马超归降刘备。刘禅登基后，跟随丞相诸葛亮南征孟获和北伐曹魏。马岱久经沙场、多负辛劳，作战冷静而勇猛，深得诸葛亮信任。诸葛亮临终授命于马岱，袭斩魏延。"
+    },
+    {
+      "id": "official-hero-100140",
+      "officialId": 100140,
+      "iconId": 100140,
+      "portrait": "assets/portraits/100140.jpg",
+      "name": "马超",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200623",
+      "dismantle": "official-skill-迷阵",
+      "dismantles": [
+        "official-skill-迷阵"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 97,
+        "strategy": 42,
+        "defense": 92,
+        "speed": 85
+      },
+      "desc": "【史】马腾之子，少年成名，曹操曾多次征召马超入京为官，但都被马超拒绝。建安十六年（211年），曹操治兵关中，马超联合关中诸侯韩遂等抵抗曹操，曾一度对曹操造成了极大的威胁，但被曹操用离间计击败退走，而后聚拢部队再次攻取陇上诸郡，失败后依附汉中张鲁。刘备攻打刘璋时，马超投降刘备，与刘备军合围成都，汉中之战后联名上书尊刘备为汉中王。蜀汉建立后，马超官至骠骑将军、斄乡侯。\n【演】在《三国演义》中，马超被称为“锦马超”，蜀国“五虎上将”之一。羌人将其奉为“神威天将军”。出场时十七岁，在长安连斩之前逐走吕布的董卓部将王方、李蒙。曹操害死马腾后，马超为报父仇，起兵反曹，在潼关击败大将张郃，数合枪挑李通，逼得曹操割须弃袍。而后大战虎痴许褚，被贾诩用离间计击败，败走凉州。\n不久马超卷土重来，占领冀城，虽然非常勇猛，战场上将杨阜七位兄弟阵斩，但仍被夏侯渊、杨阜等人联合击退。投奔汉中张鲁后，在葭萌关前大战张飞，被劝降归附刘备，随即引兵迫降刘璋，并活跃于汉中之战。蜀汉建立后马超镇守西平关，令伐蜀五路兵的羌兵不战自退。"
+    },
+    {
+      "id": "official-hero-100145",
+      "officialId": 100145,
+      "iconId": 100145,
+      "portrait": "assets/portraits/100145.jpg",
+      "name": "夏侯渊",
+      "faction": "魏",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200613",
+      "dismantle": "official-skill-箭岚",
+      "dismantles": [
+        "official-skill-箭岚"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 88,
+        "strategy": 68,
+        "defense": 81,
+        "speed": 55
+      },
+      "desc": "【史】东汉末年名将，擅长千里奔袭作战，官至征西将军，封博昌亭侯。初期随曹操征伐，官渡之战为曹操督运粮草，又督诸将先后平定昌豨、徐和、雷绪、商曜等叛乱。后率军驻凉州，逐马超、破韩遂、灭宋建、横扫羌、氐，虎步关右。张鲁降曹操后夏侯渊留守汉中，与刘备相拒逾年，于定军山被刘备部将黄忠所袭，战死，谥曰愍侯。\n【演】在《三国演义》中，夏侯渊是夏侯婴之后、大将军惇族弟。自曹操陈留起兵起，便跟随征伐，历任陈留、颍川太守。官渡之战后，夏侯渊负责粮草补给，保证了曹操平定北方。而后夏侯渊又率兵四处征讨叛乱，破昌豨、徐和、雷绪、商曜等，战功卓著。而后夏侯渊督张郃、徐晃等留守汉中，与前来取汉中的刘备大军交战，为刘备将黄忠所袭，不幸战死。谥曰愍侯。魏齐王正始四年从祀曹操庙庭。"
+    },
+    {
+      "id": "official-hero-100146",
+      "officialId": 100146,
+      "iconId": 100146,
+      "portrait": "assets/portraits/100146.jpg",
+      "name": "邓忠",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200225",
+      "dismantle": "official-skill-横扫",
+      "dismantles": [
+        "official-skill-横扫",
+        "official-skill-火箭"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 81,
+        "strategy": 46,
+        "defense": 84,
+        "speed": 25
+      },
+      "desc": "【史】曹魏将领邓艾之子。钟会谋反事败，士兵哗变，钟会被诛，邓艾部将想追还邓艾父子，但卫瓘却派田续追邓艾，于绵竹西相遇，将邓艾和邓忠等人所害。\n【演】在《三国演义》中，邓忠随父亲在段谷打败姜维。在长城作战时，与姜维激战，不分胜负。后遭钟会诬陷，与其父邓艾押往洛阳，半路被邓艾旧部解救，后被卫瓘之将田续追上所害。"
+    },
+    {
+      "id": "official-hero-100147",
+      "officialId": 100147,
+      "iconId": 100147,
+      "portrait": "assets/portraits/100147.jpg",
+      "name": "曹洪",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200207",
+      "dismantle": "official-skill-攻其要害",
+      "dismantles": [
+        "official-skill-攻其要害",
+        "official-skill-假途"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 79,
+        "strategy": 67,
+        "defense": 87,
+        "speed": 85
+      },
+      "desc": "【史】曹洪早年随曹操起兵讨伐董卓。曹操于荥阳兵败失马时，曹洪舍命献马，并救护曹操，使其免于厄难。后多随军征伐，平兖州、征刘表、讨祝臂。官渡之战时，曹操令其驻守本阵。汉中之战时，与曹休在下辩抵御刘备，破斩吴兰、任夔，逼退张飞与马超。\n【演】在《三国演义》中，曹洪的生平与正史大体相同。"
+    },
+    {
+      "id": "official-hero-100148",
+      "officialId": 100148,
+      "iconId": 100148,
+      "portrait": "assets/portraits/100148.jpg",
+      "name": "曹彰",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200633",
+      "dismantle": "official-skill-奔袭",
+      "dismantles": [
+        "official-skill-奔袭"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 89,
+        "strategy": 48,
+        "defense": 75,
+        "speed": 86
+      },
+      "desc": "【史】曹操之子。其胡须黄色，被曹操称为“黄须儿”。弱冠前喜搏猛虎，臂力过人、不善文章。代北乌桓无（能）臣氐等造反，曹彰引军往讨，大捷而归。后又降服辽东鲜卑大人轲比能。曹丕即位后，曹彰与诸侯就国。\n【演】在《三国演义》中，曹彰的生平与正史大体相同。在阳平为曹操助战，曹彰使一条长戟，大败刘封，斩蜀将吴兰。后来曹操逝世，世子曹丕继位；曹彰得知父亲病逝，便自长安引十万大军到洛阳；然而却被贾逵以片言折服，入宫交割军马后，便回鄢陵自守。"
+    },
+    {
+      "id": "official-hero-100149",
+      "officialId": 100149,
+      "iconId": 100149,
+      "portrait": "assets/portraits/100149.jpg",
+      "name": "程昱",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200614",
+      "dismantle": "official-skill-危崖困军",
+      "dismantles": [
+        "official-skill-危崖困军"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 62,
+        "strategy": 93,
+        "defense": 76,
+        "speed": 25
+      },
+      "desc": "【史】东汉后期至三国时期曹魏谋士、名臣。本名程立，因梦中在泰山捧日，更名程昱。曾于东阿率领民众抗击黄巾。初平三年，被曹操征辟为寿张令，从此为其出谋献策、征战四方。曹操征徐州时，程昱与荀彧留守后方，阻吕布、陈宫大军，保住三城。\n【演】在《三国演义》中，程昱初在山中读书，经荀彧荐仕曹操。曾于徐州用计迫降关羽；曹操征河北，昱举羽以敌颜良，又於仓亭献十面埋伏之计，大胜袁绍。后与刘备战，昱计挟亲赚徐庶，使庶来投。从南征，昱谏曹操以防火攻，又识黄盖粮船之伪，免大寨遭创，曹操亦因此逃逸得及。后又于濡须劝曹操班师。魏国既建，以昱为卫尉。"
+    },
+    {
+      "id": "official-hero-100150",
+      "officialId": 100150,
+      "iconId": 100150,
+      "portrait": "assets/portraits/100150.jpg",
+      "name": "荀攸",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200634",
+      "dismantle": "official-skill-落雷",
+      "dismantles": [
+        "official-skill-落雷"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 23,
+        "strategy": 95,
+        "defense": 71,
+        "speed": 28
+      },
+      "desc": "【史】荀彧之侄，东汉末年谋士。曹操迎天子入许都之后，荀攸成为曹操的军师。 曹操征伐吕布时荀攸劝阻了曹操退兵，并献奇计水淹下邳城，活捉吕布。官渡之战荀攸献计声东击西，斩颜良和文丑。又策奇兵，派徐晃烧袁绍粮草，同时力主曹操接纳许攸，画策乌巢，立下大功。\n平定河北期间，荀攸力排众议，主张曹操消灭袁绍诸子，被曹操上奏朝廷封为陵树亭侯。荀攸行事周密低调，计谋百出，深受曹操称赞。建安十九年（214年），荀攸在曹操伐吴途中去世。\n【演】在《三国演义》中，荀攸初仕大将军何进，后弃官还乡。曹操在兖州，攸同从叔彧共来投之，为曹操重用。曹操迎天子都许，拜为军师。荀攸随讨吕布，定河北，及官渡、赤壁之战，屡出奇谋。及魏国建立，以荀攸为尚书令。曹操进爵魏王，荀攸认为曹操叛汉，曹操大怒，荀攸忧愤成疾，旋即去世。"
+    },
+    {
+      "id": "official-hero-100156",
+      "officialId": 100156,
+      "iconId": 100156,
+      "portrait": "assets/portraits/100156.jpg",
+      "name": "韩当",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200656",
+      "dismantle": "official-skill-长兵方阵",
+      "dismantles": [
+        "official-skill-长兵方阵"
+      ],
+      "cost": 2.5,
+      "distance": 3,
+      "stats": {
+        "attack": 82,
+        "strategy": 73,
+        "defense": 76,
+        "speed": 46
+      },
+      "desc": "【史】吴国将领。韩当因为长于弓箭、骑术并且膂力过人。历仕孙坚、孙策、孙权三代，随从其征伐四方，功勋卓著，对江东基业的逐渐稳固和吴国的建立有着重要影响。官至昭武将军、冠军太守，加都督称号，封爵石城侯。被陈寿盛赞为“江表之虎臣”。\n【演】在《三国演义》中，韩当的生平与正史相似，是东吴的开国老将，随孙坚攻打刘表时三十回合斩张虎。孙坚攻襄阳之时韩当劝其班师，孙坚不听，导致大败并且丢掉性命。后从孙策平定江东。扶佐孙权。赤壁之战，韩当为前部先锋，三江口之战，韩当大破蔡瑁，后斩焦触，与周泰合力败文聘，大战中又救黄盖。\n濡须口之战，韩当与周泰合力三十回合战平许褚。后随吕蒙奇袭荆州与蒋钦、周泰、丁奉、徐盛以伏兵之策战败关羽。夷陵之战，韩当为正将与陆逊、朱然等拒刘备。"
+    },
+    {
+      "id": "official-hero-100157",
+      "officialId": 100157,
+      "iconId": 100157,
+      "portrait": "assets/portraits/100157.jpg",
+      "name": "甘宁",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200624",
+      "dismantle": "official-skill-长驱直入",
+      "dismantles": [
+        "official-skill-长驱直入"
+      ],
+      "cost": 3,
+      "distance": 3,
+      "stats": {
+        "attack": 96,
+        "strategy": 71,
+        "defense": 75,
+        "speed": 47
+      },
+      "desc": "【史】吴国猛将。性格粗暴，年轻时经常为非作歹，行为举止旁若无人。后来熟读诸子而被感化，投靠刘表和黄祖，但均未被重用。于是甘宁率部众投奔孙权，破黄祖据楚关，攻曹仁取夷陵，镇益阳拒关羽，守西陵获朱光，率骑袭曹营，战功赫赫。孙权曾说：“孟德有张辽，孤有甘兴霸，足相敌也。”他为人仗义疏财，深得士卒拥戴，被陈寿盛赞为“江表之虎臣”。\n【演】在《三国演义》中，描写的甘宁事迹与史书记载基本相同。小说中甘宁参与了夷陵之战，被蜀国蛮将沙摩柯一箭射中额头，此后逃到一棵大树下坐着死去。"
+    },
+    {
+      "id": "official-hero-100158",
+      "officialId": 100158,
+      "iconId": 100158,
+      "portrait": "assets/portraits/100158.jpg",
+      "name": "黄盖",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200178",
+      "dismantle": "official-skill-坚守突击",
+      "dismantles": [
+        "official-skill-坚守突击",
+        "official-skill-凿穿"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 80,
+        "strategy": 65,
+        "defense": 89,
+        "speed": 21
+      },
+      "desc": "【史】孙吴名将。历仕孙坚、孙策、孙权三任君主。为人严肃，善于训练士卒，每每征讨，他的部队皆勇猛善战。赤壁之战时，黄盖前往曹营诈降，并趁机以火攻大破曹操的军队，是赤壁之战主要功臣之一。\n【演】在《三国演义》中，黄盖以铁鞭为兵器。曹操军来犯之际，黄盖向周瑜提议火攻破敌，周瑜要他行苦肉计，黄盖一口答应。黄盖故意提出投降曹操，周瑜假意下令斩首，后改为杖打五十，打得皮开肉绽。黄盖向曹操献降书，曹操起初识破诈降，但有两细作回报黄盖遭刑的事，曹操才相信。但苦肉计并无正史记载，赤壁之战时候黄盖只是“建策火攻”而已。"
+    },
+    {
+      "id": "official-hero-100159",
+      "officialId": 100159,
+      "iconId": 100159,
+      "portrait": "assets/portraits/100159.jpg",
+      "name": "蒋钦",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200641",
+      "dismantle": "official-skill-温酒斩将",
+      "dismantles": [
+        "official-skill-温酒斩将"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 82,
+        "strategy": 74,
+        "defense": 67,
+        "speed": 42
+      },
+      "desc": "【史】汉末东吴名将，其人贵守约，性豁达。早年随孙策平定丹阳、吴郡、会稽和豫章四郡。平盗贼，迁西部都尉。讨会稽贼吕合、秦狼等，徙讨越中郎将。又与贺齐并力讨平黟贼。从征合肥，因功迁荡寇将军，被陈寿盛赞为“江表之虎臣”。孙权讨伐关羽时，蒋钦率领水军入沔水。回军途中病逝。\n【演】在《三国演义》中，蒋钦是擅长弓术的将领。与周泰原为江贼，孙策下江东自立门户时，和周泰一起率众投靠。孙策攻刘繇，并引出城中麾下的陈横、薛礼、张英三名将领，陈横被蒋钦一箭射死。曾在赤壁之战与周泰，还有擅使长枪的韩当率领水军在三江口踏江破敌。南郡之战请命攻曹仁，但却被曹仁和牛金击退，周瑜打算怒斩蒋钦，众将求情劝免，其后故事与《三国志》基本相同。"
+    },
+    {
+      "id": "official-hero-100162",
+      "officialId": 100162,
+      "iconId": 100162,
+      "portrait": "assets/portraits/100162.jpg",
+      "name": "程普",
+      "faction": "吴",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200626",
+      "dismantle": "official-skill-危崖困军",
+      "dismantles": [
+        "official-skill-危崖困军"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 82,
+        "strategy": 77,
+        "defense": 89,
+        "speed": 80
+      },
+      "desc": "【史】历仕孙坚、孙策、孙权三任君主。是吴国最年长的将军，人们都敬称其为“程公”。他曾跟随孙坚讨伐过黄巾、董卓，又助孙策平定江东。孙策死后，他与张昭等人共同辅佐孙权，并讨伐江东境内的山贼，功勋卓著。\n【演】在《三国演义》中，使用武器为铁脊蛇矛，为孙坚最早的部下。斩华雄手下胡轸，也是为孙坚提出计谋的将领。孙坚发现玉玺后，提议孙坚回家的计策。当孙坚和袁绍对立时，与黄盖，韩当一起和袁绍手下大将颜良、文丑对峙 。"
+    },
+    {
+      "id": "official-hero-100163",
+      "officialId": 100163,
+      "iconId": 100163,
+      "portrait": "assets/portraits/100163.jpg",
+      "name": "鲁肃",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200617",
+      "dismantle": "official-skill-声东击西",
+      "dismantles": [
+        "official-skill-声东击西"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 51,
+        "strategy": 91,
+        "defense": 67,
+        "speed": 48
+      },
+      "desc": "【史】东吴名臣。曾为其提出鼎足江东的战略规划，因此得到孙权的赏识。建安十三年，曹操率大军南下。孙权部下多主降，而鲁肃与周瑜力排众议，坚决主战。结果，孙、刘联军大败曹军于赤壁，从此，奠定了三国鼎立格局。\n【演】在《三国演义》中，鲁肃是以一个老实人的形象出现，孙权继位后为周瑜推荐，仕于孙权，为孙权谋划战略，深受器重。赤壁之战时，鲁肃力主抗曹，出使联合刘备，并协助诸葛亮、周瑜说服孙权。鲁肃为人忠厚老实，不忍周瑜陷害诸葛亮，多次协助诸葛亮脱险。赤壁战后，鲁肃在诸葛亮的设计下，成为保人，将荆州“借”予刘备，此后多次讨要不成，处于两难的境地。周瑜去世后，鲁肃代周瑜成为水军都督。"
+    },
+    {
+      "id": "official-hero-100228",
+      "officialId": 100228,
+      "iconId": 100228,
+      "portrait": "assets/portraits/100228.jpg",
+      "name": "李通",
+      "faction": "魏",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200229",
+      "dismantle": "official-skill-奇袭",
+      "dismantles": [
+        "official-skill-奇袭",
+        "official-skill-援军之策"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 75,
+        "strategy": 51,
+        "defense": 72,
+        "speed": 82
+      },
+      "desc": "【史】早年以游侠闻名于江汝，在率众补充曹操兵源有功拜为阳安都尉，其间不因私而忘公。官渡之战不但不被利诱，在当时许都以南民心不稳，唯李通的阳安犹存。在准备救援曹仁于南郡时病死于途中。\n【演】原守备汝南，于曹操与张绣、刘表作战时前来接应曹操，得到曹操的封赏。后来在曹操讨伐马超时出阵挑战，死于马超枪下。"
+    },
+    {
+      "id": "official-hero-100241",
+      "officialId": 100241,
+      "iconId": 100241,
+      "portrait": "assets/portraits/100241.jpg",
+      "name": "宋谦",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200103",
+      "dismantle": "official-skill-强攻",
+      "dismantles": [
+        "official-skill-强攻",
+        "official-skill-毁墙"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 70,
+        "strategy": 50,
+        "defense": 54,
+        "speed": 32
+      },
+      "desc": "【史】东吴将领。曾于神亭岭一役中与黄盖、韩当等人一同护卫孙策。曾在合肥之战中，救出败于乐进的孙权。夷陵之战中作为陆逊的部属，大破刘备。\n【演】孙权部将，和贾华一起担任孙权的护卫。于孙权攻合肥时与贾华一同持画戟立马于孙权两旁。张辽和太史慈单挑时，乐进突入孙权阵中，挥刀砍断宋、贾二人画戟。宋谦拿过军士手中枪，正欲赶去与乐进交锋，被李典一箭射中心窝，死于马下。"
+    },
+    {
+      "id": "official-hero-100243",
+      "officialId": 100243,
+      "iconId": 100243,
+      "portrait": "assets/portraits/100243.jpg",
+      "name": "孙桓",
+      "faction": "吴",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200662",
+      "dismantle": "official-skill-设伏",
+      "dismantles": [
+        "official-skill-设伏"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 85,
+        "strategy": 83,
+        "defense": 85,
+        "speed": 43
+      },
+      "desc": "【史】吴国将领。其人仪容端正，器怀聪明，博学强记，能论议应对，孙权常称其为“宗室颜渊”。跟随陆逊抗击进攻东吴的刘备时。刘备率领众多兵众进攻，满山都是蜀军，孙桓奋战，与陆逊等协力击破蜀军。刘备兵败逃走，孙桓截击，“斩上夔道，扼要径”，差点生擒刘备。刘备忿恨地感叹：“吾昔初至京城，（孙）桓尚小儿，而今迫孤至此也！”\n【演】在《三国演义》中，孙桓的事迹基本与正史相符。"
+    },
+    {
+      "id": "official-hero-100245",
+      "officialId": 100245,
+      "iconId": 100245,
+      "portrait": "assets/portraits/100245.jpg",
+      "name": "董袭",
+      "faction": "吴",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200660",
+      "dismantle": "official-skill-反击之策",
+      "dismantles": [
+        "official-skill-反击之策"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 88,
+        "strategy": 50,
+        "defense": 85,
+        "speed": 39
+      },
+      "desc": "【史】孙吴部将，身高八尺，武力过人。孙策见他甚为奇伟，十分欣赏。在讨伐山阴贼，平定江东叛乱，征战黄祖的战役中屡立功绩。曹操攻濡须时，孙权派董袭率领五艘楼船到濡须口。至夜深时，暴风狂袭，五艘楼船都要倾覆，董袭死守在船上，最终溺死。被陈寿盛赞为“江表之虎臣”。\n【演】在《三国演义》中，董袭生平与正史大体相当，孙策征战江东时，董袭献上严白虎的人头来降孙策。赤壁之战，董袭受周瑜命，分兵去汉阳，合肥会战时接应太史慈，逍遥津支援孙权。濡须口之战时，董袭在船上督战，船覆董袭坚守殉职。"
+    },
+    {
+      "id": "official-hero-100265",
+      "officialId": 100265,
+      "iconId": 100265,
+      "portrait": "assets/portraits/100265.jpg",
+      "name": "侯成",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200206",
+      "dismantle": "official-skill-追击",
+      "dismantles": [
+        "official-skill-追击",
+        "official-skill-飞虹"
+      ],
+      "cost": 1.5,
+      "distance": 1,
+      "stats": {
+        "attack": 62,
+        "strategy": 32,
+        "defense": 69,
+        "speed": 86
+      },
+      "desc": "【史】东汉末年武将。曾任吕布部将八健将之一，吕布被酒色所伤故下禁酒令，侯成不知，献酒于吕布被吕布所打。曹操围下邳，侯成与宋宪、魏续等缚陈宫、高顺，率众降曹操。\n【演】本为吕布帐下八健将之一，数次与曹军交战。后曹军围吕布于下邳，侯成有马十五匹，被后槽人盗去，欲献与刘备。成知觉，追击后槽人，将马夺回。侯成酿得五六斛酒，欲与诸将会饮，恐吕布见罪，乃先以酒五瓶诣布府。恰好吕布刚禁酒，见如此，怒欲斩之。众将告免，打成五十背花，成怀恨，盗赤兔马降曹。"
+    },
+    {
+      "id": "official-hero-100268",
+      "officialId": 100268,
+      "iconId": 100268,
+      "portrait": "assets/portraits/100268.jpg",
+      "name": "张绣",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200096",
+      "dismantle": "official-skill-枪阵",
+      "dismantles": [
+        "official-skill-枪阵"
+      ],
+      "cost": 2.5,
+      "distance": 1,
+      "stats": {
+        "attack": 85,
+        "strategy": 62,
+        "defense": 78,
+        "speed": 90
+      },
+      "desc": "【史】骠骑将军张济的从子。东汉末年割据宛城的军阀，汉末群雄之一。初随张济征伐，张济死后与刘表联合。后降曹操，因不满其言行而突袭曹操，复与刘表联合。官渡之战前夕，听从贾诩的建议再次投降曹操，参加官渡之战，官至破羌将军，封宣威侯。在北征乌桓（207年）途中去世（一说为曹丕逼死），谥定侯。\n【演】在《三国演义》中，张绣是骠骑将军张济的侄子。建安元年，张济因军中缺粮，自关中引兵入荆州界，与刘表交战，攻穰城，中流矢而死。建安二年，曹操南征，部队到达淯水，张绣率众投降。曹操纳了张济的遗孀邹夫人，张绣因此怀恨曹操。后来，张绣偷袭曹操，曹操战败，长子曹昂，侄子曹安民被斩，猛将典韦战死。\n张绣引兵追击，被曹操击退，于是张绣退回防守穰城，再次与刘表联盟。建安四年，张绣听从贾诩的建议，再次向曹操投降。张绣到达后，曹操牵着张绣的手，一起参加宴会，为自己的儿子曹均娶了张绣的女儿，并封张绣为扬武将军。"
+    },
+    {
+      "id": "official-hero-100269",
+      "officialId": 100269,
+      "iconId": 100269,
+      "portrait": "assets/portraits/100269.jpg",
+      "name": "魏续",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 3,
+      "innate": "official-skill-200100",
+      "dismantle": "official-skill-飞虹",
+      "dismantles": [
+        "official-skill-飞虹",
+        "official-skill-追击"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 66,
+        "strategy": 38,
+        "defense": 51,
+        "speed": 44
+      },
+      "desc": "【史】东汉末吕布部将。与吕布有亲，吕布将高顺兵归续管。建安三年（198年），曹操率军攻吕布，围之三月。魏续与侯成、宋宪缚陈宫，降曹。吕布被迫降，被缢死在白门楼。\n【演】在《三国演义》中，与侯成、宋宪一起背叛吕布、投降曹操。白马之战中宋宪被颜良斩落马下。魏续上马持矛准备报仇，在阵前大骂颜良。最终颜良将魏续劈于马下。"
+    },
+    {
+      "id": "official-hero-100271",
+      "officialId": 100271,
+      "iconId": 100271,
+      "portrait": "assets/portraits/100271.jpg",
+      "name": "袁氏兄弟",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200123",
+      "dismantle": "official-skill-落石",
+      "dismantles": [
+        "official-skill-落石",
+        "official-skill-急救"
+      ],
+      "cost": 4,
+      "distance": 1,
+      "stats": {
+        "attack": 56,
+        "strategy": 48,
+        "defense": 70,
+        "speed": 80
+      },
+      "desc": "【史】袁谭、袁熙、袁尚三兄弟，皆为袁绍之子。在袁绍败给曹操并病死后，为了争夺爵位，被曹操利用并相继身死。\n【演】在《三国演义》中，袁谭、袁熙、袁尚皆为袁绍之子。袁绍死后，由于袁尚自行继位，袁谭与袁尚争锋，结果以失败告终。后来，袁谭求得曹操的援助，战胜了袁尚，但最终被曹操所诛。袁熙后来接纳了战败给曹操的袁尚，但是由于属下背叛而逃往乌丸。后来袁熙投奔辽东的公孙康，却被公孙康斩了首级并献予曹操。"
+    },
+    {
+      "id": "official-hero-100285",
+      "officialId": 100285,
+      "iconId": 100285,
+      "portrait": "assets/portraits/100285.jpg",
+      "name": "刘焉",
+      "faction": "汉",
+      "arm": "步",
+      "rarity": 3,
+      "innate": "official-skill-200214",
+      "dismantle": "official-skill-规避",
+      "dismantles": [
+        "official-skill-规避",
+        "official-skill-驱逐"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 50,
+        "strategy": 70,
+        "defense": 74,
+        "speed": 38
+      },
+      "desc": "【史】刘璋之父，汉末群雄之一。黄巾起义时，刘焉欲取得一安身立命之所，割据一方。于是向朝廷求为益州牧。刘焉进入益州后，派张鲁盘踞汉中，张鲁截断交通，斩汉使，从此益州与中央道路不通。刘焉进一步对内打击地方豪强，巩固自身势力，益州因而处于半独立的状态。后因背疮迸发而卒，其子刘璋继领益州牧。\n【演】在《三国演义》中，刘焉主要在第一回登场，当时正值黄巾起义，刘焉初任幽州太守，发榜招募义兵以抗黄巾，在刘备说出自己身份后，刘焉大喜，遂认刘备为侄，后官至益州牧。之后在第五十九回提及刘焉于兴平元年患病疽而死，由其子刘璋袭位。"
+    },
+    {
+      "id": "official-hero-100310",
+      "officialId": 100310,
+      "iconId": 100310,
+      "portrait": "assets/portraits/100310.jpg",
+      "name": "邓艾",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200677",
+      "dismantle": "official-skill-掎角之势",
+      "dismantles": [
+        "official-skill-掎角之势"
+      ],
+      "cost": 3,
+      "distance": 2,
+      "stats": {
+        "attack": 92,
+        "strategy": 89,
+        "defense": 87,
+        "speed": 60
+      },
+      "desc": "【史】魏国名将。其人文武全才，深谙兵法，对内政也颇有建树。被推崇为古今六十四名将之一。邓艾多年在曹魏西边战线防备蜀汉姜维。公元263年他与钟会分别率军攻打蜀汉，最后他率先进入成都，使得蜀汉灭亡。后因遭到钟会的污蔑和陷害，被司马昭猜忌而被收押，最后与其子邓忠一起被卫瓘派遣的武将田续所害。\n【演】在《三国演义》中，邓艾资性敏捷、善识地理，司马懿以为奇才。其生平基本与正史相同。"
+    },
+    {
+      "id": "official-hero-100314",
+      "officialId": 100314,
+      "iconId": 100314,
+      "portrait": "assets/portraits/100314.jpg",
+      "name": "辛宪英",
+      "faction": "魏",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200777",
+      "dismantle": "official-skill-衡轭",
+      "dismantles": [
+        "official-skill-衡轭"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 57,
+        "strategy": 83,
+        "defense": 68,
+        "speed": 32
+      },
+      "desc": "【史】颍川阳翟人。辛毗之女，羊耽之妻、辛敞之姐。魏晋时期才女。辛宪英聪朗有才鉴，曾劝弟尽忠职守，又预言钟会将会叛变。\n【演】在《三国演义》中，记载了辛宪英分析司马懿对付曹爽及劝弟尽忠职守之事。"
+    },
+    {
+      "id": "official-hero-100326",
+      "officialId": 100326,
+      "iconId": 100326,
+      "portrait": "assets/portraits/100326.jpg",
+      "name": "夏侯月姬",
+      "faction": "蜀",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200733",
+      "dismantle": "official-skill-索敌",
+      "dismantles": [
+        "official-skill-索敌"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 85,
+        "strategy": 70,
+        "defense": 77,
+        "speed": 80
+      },
+      "desc": "【史】张飞之妻、后主敬哀皇后之母、魏夏侯渊之弟女。父早亡，时兖、豫大乱，伯父渊以饥乏，弃其幼子，而活亡之。建安五年，时年十三四，在本郡，出行樵采，为张飞所得。飞知其良家女，遂以为妻，产息女，为刘禅皇后。渊之初亡，飞妻请而葬之。"
+    },
+    {
+      "id": "official-hero-100329",
+      "officialId": 100329,
+      "iconId": 100329,
+      "portrait": "assets/portraits/100329.jpg",
+      "name": "敬哀皇后",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200071",
+      "dismantle": "official-skill-安抚军心",
+      "dismantles": [
+        "official-skill-安抚军心"
+      ],
+      "cost": 2,
+      "distance": 1,
+      "stats": {
+        "attack": 52,
+        "strategy": 82,
+        "defense": 85,
+        "speed": 34
+      },
+      "desc": "【史】张飞长女，蜀汉后主刘禅第一任皇后。221年作为太子刘禅的妃子入宫；223年被立为皇后。237年逝世，其妹成为刘禅之皇后。她通常被称为敬哀皇后，其妹则被称为张皇后。\n【演】在《三国演义》中，敬哀皇后为人贤惠，十七岁时，诸葛亮上言后主刘禅立其为正宫皇后。"
+    },
+    {
+      "id": "official-hero-100331",
+      "officialId": 100331,
+      "iconId": 100331,
+      "portrait": "assets/portraits/100331.jpg",
+      "name": "霍弋",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200653",
+      "dismantle": "official-skill-破甲",
+      "dismantles": [
+        "official-skill-破甲"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 77,
+        "strategy": 64,
+        "defense": 83,
+        "speed": 32
+      },
+      "desc": "【史】三国蜀汉至西晋初时将领，霍峻之子。尽言规谏刘禅，甚为得体。后永昌郡蛮夷作乱，刘禅以霍弋领永昌太守，率军讨伐，斩其豪帅。邓艾偷袭阴平，霍弋想率军救援成都，但刘禅以成都已有准备，不准，后刘禅投降，霍弋在得知司马氏善待刘禅后，才率领南中六郡投降。\n【演】初为蜀建宁太守，弋闻成都不守，素服望西大哭三日。诸将皆劝速降，弋不从。后弋探听得后主受封，遂率部下军士来降。"
+    },
+    {
+      "id": "official-hero-100334",
+      "officialId": 100334,
+      "iconId": 100334,
+      "portrait": "assets/portraits/100334.jpg",
+      "name": "黄权",
+      "faction": "蜀",
+      "arm": "步",
+      "rarity": 4,
+      "innate": "official-skill-200654",
+      "dismantle": "official-skill-远攻之策",
+      "dismantles": [
+        "official-skill-远攻之策"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 56,
+        "strategy": 78,
+        "defense": 88,
+        "speed": 27
+      },
+      "desc": "【史】原为刘璋部将，因劝谏刘璋勿引刘备入蜀，而为刘璋所疏远。刘璋战败，才降刘备。刘备称帝，将征伐东吴，黄权劝谏而不纳。刘备伐吴败还，而归途隔绝，黄权不得归，无奈之下率部降魏。\n【演】在《三国演义》中，黄权生平与正史大体相当，而在黄权归降的描写上略有不同。刘璋战败，刘备平定益州后，黄权闭门不降，刘备于是亲自前往请他，黄权才归降。"
+    },
+    {
+      "id": "official-hero-100337",
+      "officialId": 100337,
+      "iconId": 100337,
+      "portrait": "assets/portraits/100337.jpg",
+      "name": "貂蝉",
+      "faction": "群",
+      "arm": "步",
+      "rarity": 5,
+      "innate": "official-skill-200603",
+      "dismantle": "official-skill-无心恋战",
+      "dismantles": [
+        "official-skill-无心恋战"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 75,
+        "strategy": 88,
+        "defense": 72,
+        "speed": 58
+      },
+      "desc": "【演】中国古代四大美女之一。其善歌舞，色伎俱佳，凭借自己的美貌智慧在诸侯争霸的战乱年代，辗转于各诸侯之间。她通过王允的安排成为了吕布的妾室，巧施连环计成功诱使吕布诛灭了董卓。"
+    },
+    {
+      "id": "official-hero-100338",
+      "officialId": 100338,
+      "iconId": 100338,
+      "portrait": "assets/portraits/100338.jpg",
+      "name": "宋宪",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 3,
+      "innate": "official-skill-200097",
+      "dismantle": "official-skill-突进",
+      "dismantles": [
+        "official-skill-突进",
+        "official-skill-反击"
+      ],
+      "cost": 2,
+      "distance": 2,
+      "stats": {
+        "attack": 61,
+        "strategy": 47,
+        "defense": 33,
+        "speed": 80
+      },
+      "desc": "【史】吕布部将八健将之一。宋宪勇猛，武力过人。建安三年（198年），曹操攻吕布，与刘备围下邳。因同伴侯成送酒于吕布被吕布杖打，对吕布感到失望后怀恨在心，宋宪与魏续、侯成等执吕布的谋士陈宫及大将高顺，献城降，曹操遂诛吕布。后不见史书记载。\n【演】吕布麾下大将。见同僚侯成因为皮毛小事而遭棒责，与侯成、魏续一起投降了曹操。后来与袁绍军交战时，死在猛将颜良刀下。"
+    },
+    {
+      "id": "official-hero-100340",
+      "officialId": 100340,
+      "iconId": 100340,
+      "portrait": "assets/portraits/100340.jpg",
+      "name": "于吉",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200686",
+      "dismantle": "official-skill-合流",
+      "dismantles": [
+        "official-skill-合流"
+      ],
+      "cost": 2,
+      "distance": 3,
+      "stats": {
+        "attack": 20,
+        "strategy": 90,
+        "defense": 34,
+        "speed": 31
+      },
+      "desc": "【史】东汉末年黄老道代表人物之一，史书有两种说法：（1）认为其即《太平经》作者。《后汉书·襄楷传》：“顺帝时，琅邪宫崇诣阙，上其师干吉于曲阳泉水上所得神书百七十卷，皆缥白素朱介青首朱目，号《太平青领书》。”（2）认为其乃三国时道士，《三国志·孙策传》注引《江表传》：“时有道士琅邪于吉，先寓居东方，往来吴会，立精舍，烧香读道书，制作符水以治病，吴会人多事之。”后为孙策所斩。\n【演】在《三国演义》中，于吉在吴郡、会稽一带为百姓治病，深得人心。孙策以蛊惑人心为由将他斩了。后策常受吉咒，死。"
+    },
+    {
+      "id": "official-hero-100342",
+      "officialId": 100342,
+      "iconId": 100342,
+      "portrait": "assets/portraits/100342.jpg",
+      "name": "张横",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200695",
+      "dismantle": "official-skill-拒盾",
+      "dismantles": [
+        "official-skill-拒盾"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 71,
+        "strategy": 42,
+        "defense": 76,
+        "speed": 79
+      },
+      "desc": "【史】东汉末年凉州军阀。建安十六年，跟随马超起兵反抗曹操。同年九月，兵败后，下落不明。\n【演】在《三国演义》中，张横是关中将领，拥兵割据一方，是马超八健将之一。韩遂、马超讨伐曹操时，马超联合韩遂、张横、侯选、程银、李堪、梁兴、成宜、马玩、杨秋共十部势力起兵反抗曹操，渭南之战中被徐晃击败，他和程银死于陷坑之中。"
+    },
+    {
+      "id": "official-hero-100343",
+      "officialId": 100343,
+      "iconId": 100343,
+      "portrait": "assets/portraits/100343.jpg",
+      "name": "李堪",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200695",
+      "dismantle": "official-skill-拒盾",
+      "dismantles": [
+        "official-skill-拒盾"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 77,
+        "strategy": 40,
+        "defense": 79,
+        "speed": 85
+      },
+      "desc": "【史】于兴平年间起兵作乱，有部众数千家。后李堪联合马超、韩遂、侯选、程银、张横、梁兴、成宜、马玩、杨秋共十部势力起兵反抗曹操，被击败，临阵战死。\n【演】韩遂手下八部兵马将领之一，同马超、韩遂一起起兵反抗曹操。后马超中曹操离间之计，与韩遂火并，李堪等五将步战围攻马超，不能取胜，被马超砍死二人，李堪逃窜。混战中李堪又遇马超，被马超追赶。曹将于禁箭射马超，被闪过，误中李堪，李堪坠马而死。"
+    },
+    {
+      "id": "official-hero-100344",
+      "officialId": 100344,
+      "iconId": 100344,
+      "portrait": "assets/portraits/100344.jpg",
+      "name": "马玩",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200697",
+      "dismantle": "official-skill-退避",
+      "dismantles": [
+        "official-skill-退避"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 73,
+        "strategy": 42,
+        "defense": 68,
+        "speed": 88
+      },
+      "desc": "【史】拥兵割据一方。后马玩联合马超、韩遂、侯选、程银、李堪、张横、梁兴、杨秋共十部势力起兵反抗曹操，被击败。\n【演】韩遂手下旗本八骑之一，同马超、韩遂一起起兵反抗曹操。后马超中曹操离间之计，与韩遂火并，马玩等五将步战围攻马超，不能取胜。结果，马玩被马超砍死。"
+    },
+    {
+      "id": "official-hero-100345",
+      "officialId": 100345,
+      "iconId": 100345,
+      "portrait": "assets/portraits/100345.jpg",
+      "name": "杨秋",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200698",
+      "dismantle": "official-skill-截断",
+      "dismantles": [
+        "official-skill-截断"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 74,
+        "strategy": 38,
+        "defense": 69,
+        "speed": 83
+      },
+      "desc": "【史】汉末凉州军阀之一，三国时期魏国将领。建安十六年，从附马超起兵反抗曹操，兵败于渭南后，逃到安定。曹操兵围安定，杨秋降曹操，成为魏之名将。曹丕称帝后，秋为冠军将军，畤乡侯。征讨郑甘、卢水、平定关中。官至讨寇将军，封临泾侯。\n【演】在《三国演义》中，杨秋是马超八健将之一，同马超、韩遂一起起兵反抗曹操。后韩遂派杨秋为使前往曹营言割地求和之事。之后因遭中贾诩反间计的马超的攻击，杨秋等五将步战围攻马超，不能取胜，被马超砍死二人。杨秋逃窜，投降于曹操，被曹操封为列侯，守渭口，之后便不在演义中亮相。"
+    },
+    {
+      "id": "official-hero-100346",
+      "officialId": 100346,
+      "iconId": 100346,
+      "portrait": "assets/portraits/100346.jpg",
+      "name": "侯选",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200696",
+      "dismantle": "official-skill-迫近",
+      "dismantles": [
+        "official-skill-迫近"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 75,
+        "strategy": 47,
+        "defense": 77,
+        "speed": 85
+      },
+      "desc": "【史】从附马超起兵反抗曹操，失败后入汉中依附张鲁，曹操平定汉中后，侯选投降，被封官赐爵。\n【演】在《三国演义》中，侯选是韩遂手下旗本八骑之一，同马超、韩遂一起起兵反抗曹操。后马超中曹操离间之计，与韩遂火并，侯选等五将步战围攻马超，不能取胜，被马超砍死二人，侯选逃窜，投降于曹操。"
+    },
+    {
+      "id": "official-hero-100347",
+      "officialId": 100347,
+      "iconId": 100347,
+      "portrait": "assets/portraits/100347.jpg",
+      "name": "程银",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200665",
+      "dismantle": "official-skill-抢攻",
+      "dismantles": [
+        "official-skill-抢攻"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 61,
+        "strategy": 52,
+        "defense": 78,
+        "speed": 86
+      },
+      "desc": "【史】关中将领。于兴平年间起兵作乱，有部众数千家。后程银联合马超、韩遂、侯选、李堪、张横、梁兴、成宜、马玩、杨秋共十部势力起兵反抗曹操，被击败，逃入汉中。曹操平定汉中后，程银投降，被封官赐爵。\n【演】韩遂手下八部兵马将领之一，追随马超、韩遂一起兴兵雪恨，征伐曹操。跟韩遂、庞德等人夜袭曹操营寨，中埋伏，战死。"
+    },
+    {
+      "id": "official-hero-100348",
+      "officialId": 100348,
+      "iconId": 100348,
+      "portrait": "assets/portraits/100348.jpg",
+      "name": "成宜",
+      "faction": "群",
+      "arm": "骑",
+      "rarity": 4,
+      "innate": "official-skill-200697",
+      "dismantle": "official-skill-退避",
+      "dismantles": [
+        "official-skill-退避"
+      ],
+      "cost": 2.5,
+      "distance": 2,
+      "stats": {
+        "attack": 78,
+        "strategy": 44,
+        "defense": 60,
+        "speed": 81
+      },
+      "desc": "【史】关中将领，拥兵割据一方。后成宜联合马超、韩遂、侯选、程银、李堪、张横、梁兴、马玩、杨秋共十部势力起兵反抗曹操，被击败，临阵战死。\n【演】韩遂手下八部兵马将领之一，追随马超、韩遂一起兴兵雪恨，征伐曹操。马超等人夜袭曹操营寨，先使成宜率三十骑往前哨探，侵入中军，被伏兵包围，成宜为夏侯渊所斩。"
+    },
+    {
+      "id": "official-hero-100351",
+      "officialId": 100351,
+      "iconId": 100351,
+      "portrait": "assets/portraits/100351.jpg",
+      "name": "张任",
+      "faction": "群",
+      "arm": "弓",
+      "rarity": 4,
+      "innate": "official-skill-200630",
+      "dismantle": "official-skill-箭岚",
+      "dismantles": [
+        "official-skill-箭岚"
+      ],
+      "cost": 3,
+      "distance": 4,
+      "stats": {
+        "attack": 87,
+        "strategy": 76,
+        "defense": 89,
+        "speed": 58
+      },
+      "desc": "【史】东汉末年益州牧刘璋的属下，官至益州从事。公元213年（建安十八年），在刘备进攻刘璋的战争中，张任率军迎战刘备，战败身死。\n【演】在《三国演义》中，张任以忠勇著称。刘备入蜀时，张任等文武官员出言劝谏刘璋提防刘备，刘璋不听。宴会之际，刘备手下谋士庞统策划让将军魏延舞剑，趁机除掉刘璋，张任见势，出面对舞，解救刘璋。刘备攻打刘璋，张任与诸将引兵对抗，并在落凤坡埋伏射死庞统。后诸葛亮从荆州前来支援刘备，用计擒获张任，张任宁死不降，遂被处斩。刘备感叹不已，令收其尸首，葬于金雁桥侧，以表其忠。"
+    }
+  ],
+  "skills": [
+    {
+      "id": "official-skill-200001",
+      "officialId": 200001,
+      "name": "衣带密诏",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "使友军单体的攻击属性提高18.8（受谋略属性影响），并使其进入休整状态，每回合恢复一定兵力（恢复率80.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200002",
+      "officialId": 200002,
+      "name": "乱政",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "使敌军单体获得如下10个负面效果中的1个：动摇、恐慌、燃烧、妖术、混乱、犹豫、暴走、怯战、挑衅、围困，持续2回合，该效果执行3次，每次的目标和效果独立判定。其中动摇、恐慌、燃烧、妖术的伤害率随战法等级提升",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200003",
+      "officialId": 200003,
+      "name": "金吾飞将",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对处于混乱或暴走状态的敌军单体发动一次猛攻（伤害率275.0%）；对随机敌军单体发动一次猛攻（伤害率275.0%），并使其陷入混乱状态，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200004",
+      "officialId": 200004,
+      "name": "胡笳离愁",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "恢复我军群体较多兵力（恢复率157.0%，受谋略属性影响），并使其进入休整状态，每回合再度恢复大量兵力（恢复率206.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200005",
+      "officialId": 200005,
+      "name": "闭月",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "1回合准备，使敌军群体陷入暴走状态，进行无差别攻击，并使其防御属性降低29.0（受谋略属性影响），持续3回合1回合准备，使敌军群体陷入暴走状态，进行无差别攻击，并使其防御属性降低29.0（受谋略属性影响），持续4回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200006",
+      "officialId": 200006,
+      "name": "四世三公",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "使我军全体分别对距离5以内的敌军单体发动一次攻击（伤害率150.0%），每次目标独立判定使我军全体分别对距离5以内的敌军单体发动一次攻击（伤害率150.0%），每次目标独立判定，额外使我军攻击属性最高单体，对敌军防御最低单体发动一次攻击（伤害率160.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200007",
+      "officialId": 200007,
+      "name": "将倾之柱",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次策略攻击（伤害率85.0%，受谋略属性影响），使自身受到攻击与策略攻击的伤害下降49.0%（受防御属性影响）持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200008",
+      "officialId": 200008,
+      "name": "黄天当立",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "1回合准备，使敌军全体陷入妖术诅咒，每回合损失一定兵力（伤害率180.0%，受谋略属性影响），持续2回合；敌军受到该战法的妖术伤害时，张角恢复一定兵力（恢复率60.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200009",
+      "officialId": 200009,
+      "name": "逆谋",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到攻击与策略攻击的伤害降低30.0%（受攻击属性影响），在战斗中造成攻击伤害时，能够借此恢复相当于伤害值50.0%的兵力",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200010",
+      "officialId": 200010,
+      "name": "天下无双",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后前4回合，使自身获得以下效果：攻击属性提高45.0，攻击距离+2，并进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，受到普通攻击后能进行反击（伤害率200.0%），并挑衅敌军全体使其攻击自身",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200011",
+      "officialId": 200011,
+      "name": "算无遗策",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200013",
+      "officialId": 200013,
+      "name": "血溅黄砂",
+      "type": "自带",
+      "target": "自己",
+      "desc": "以无法发动主动战法为代价，使自身进行攻击时的伤害提高120.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200015",
+      "officialId": 200015,
+      "name": "洛水佳人",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "本场战斗中，使我军全体每回合都有80.0%的几率恢复一定兵力（恢复率90.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200016",
+      "officialId": 200016,
+      "name": "皇裔流离",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "本场战斗中，使我军全体受到伤害时，有50.0%的几率能恢复一定兵力（恢复率68.0%，受谋略属性影响），该效果每生效3次后，生效几率提升5.0%，可叠加",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200017",
+      "officialId": 200017,
+      "name": "诸葛锦囊",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "使我军全体受到策略攻击时的伤害降低35.0%（受谋略属性影响），并使其进行攻击和策略攻击时的伤害提高14.0%（受谋略属性影响），且自身获得先手，持续2回合。若发动时目标已有诸葛锦囊效果，则额外恢复目标一定兵力（恢复率150.0%）使我军全体受到攻击和策略攻击时的伤害降低35.0%（受谋略属性影响），并使其进行攻击和策略攻击时的伤害提高14.0%（受谋略属性影响），且自身获得先手，持续2回合。若发动时目标已有诸葛锦囊效果，则额外恢复目标一定兵力（恢复率150.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200019",
+      "officialId": 200019,
+      "name": "红颜铁骑",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身每回合可以进行两次普通攻击，并使攻击属性提高50.0使自身每回合可以进行两次普通攻击，并使攻击属性提高50.0。发动主动战法后，造成的攻击伤害提高40.0%，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200020",
+      "officialId": 200020,
+      "name": "匠心不竭",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "战斗开始后，使敌军全体从第1、3、5回合开始，逐渐陷入恐慌（伤害率34.0%，受谋略属性影响）、燃烧（伤害率41.0%，受谋略属性影响）与妖术（伤害率44.0%，受谋略属性影响）的状态，每回合开始时损失一定兵力，持续直到战斗结束，所造成的伤害无视规避",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200021",
+      "officialId": 200021,
+      "name": "银龙冲阵",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "随机对敌军单体发动2次攻击（伤害率150.0%），并使首次受到伤害的敌军单体受到攻击和策略攻击时的伤害提高20.0%（受攻击属性影响），持续至战斗结束，最多可叠加3次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200022",
+      "officialId": 200022,
+      "name": "长坂之吼",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "2回合准备，对敌军群体2-3目标发动一次无视兵种相克的猛烈攻击（伤害率450.0%）2回合准备，对敌军单体发动三次无视兵种相克的猛烈攻击（伤害率333.0%），每次攻击的目标独立选择",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200023",
+      "officialId": 200023,
+      "name": "魏武之世",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体攻击距离+1在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体主动战法距离+1",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200024",
+      "officialId": 200024,
+      "name": "驱虎吞狼",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "对敌军全体发动策略攻击（伤害率153.0%，受谋略属性影响），并使其无法恢复兵力，持续2回合对敌军全体发动策略攻击（伤害率153.0%，受谋略属性影响），并使其无法恢复兵力，持续2回合。若有目标已处于无法恢复兵力状态，则使敌军单体陷入暴走状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200025",
+      "officialId": 200025,
+      "name": "魏武之泽",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "使我军群体免疫怯战，普通攻击和追击战法造成的伤害提高15.0%（受谋略属性影响），同时有100.0%几率使其每回合可以进行两次普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200026",
+      "officialId": 200026,
+      "name": "千里单骑",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率200.0%），并借此恢复一定兵力",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200027",
+      "officialId": 200027,
+      "name": "其疾如风",
+      "type": "自带",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "战斗开始后前3回合，使我军全体速度属性提高41.0（受谋略属性影响），并使其每回合有70.0%的几率可以进行两次普通攻击",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200028",
+      "officialId": 200028,
+      "name": "世仇",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率233.0%，受谋略属性影响），并使其无法急救和休整以恢复兵力，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200029",
+      "officialId": 200029,
+      "name": "强势",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体进行攻击时的伤害降低48.0%（受谋略属性影响），并使其陷入犹豫状态，无法发动主动战法，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200030",
+      "officialId": 200030,
+      "name": "九锡黄龙",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "移除我军全体有害效果，并使其进入规避状态，免疫接下来受到的2次伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200031",
+      "officialId": 200031,
+      "name": "玄武洰流",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "1回合准备，对敌军全体发动策略攻击（伤害率150.0%，受谋略属性影响），并使其陷入怯战状态，无法进行普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200032",
+      "officialId": 200032,
+      "name": "复誓业火",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体受到策略攻击时的伤害提高16.0%（受谋略属性影响），持续2回合，并对其发动一次火攻（伤害率114.0%，受谋略属性影响），同时使其陷入燃烧状态，每回合损失一定兵力（伤害率114.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200033",
+      "officialId": 200033,
+      "name": "遗志",
+      "type": "自带",
+      "target": "我军单体",
+      "desc": "战斗开始后第3回合，使我军前锋步兵或弓兵恢复极大量兵力，此后，受到普通攻击可以进行反击（伤害率85.0%），同时无法恢复兵力，持续直到战斗结束战斗开始后第3回合，使我军前锋步兵或弓兵恢复极大量兵力，此后，受到普通攻击可以进行反击（伤害率85.0%），持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200034",
+      "officialId": 200034,
+      "name": "侵掠如火",
+      "type": "自带",
+      "target": "自己",
+      "desc": "在战斗中可以优先行动，攻击类主动战法发动率提升20.0%，进行攻击时有30.0%的几率使本次攻击伤害提高50.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200035",
+      "officialId": 200035,
+      "name": "枭姬",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "1回合准备，对敌军全体发动一次攻击（伤害率160.0%），并随机对敌军群体2目标再度发动一次攻击（伤害率140.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200036",
+      "officialId": 200036,
+      "name": "辅王抑寇",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200037",
+      "officialId": 200037,
+      "name": "母仪浮梦",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗开始后，使我军全体在受到首次攻击时可进入规避状态免疫伤害，并使敌军全体在前4回合进行攻击或策略攻击时，有50.0%的几率使本次攻击的伤害降低30.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200038",
+      "officialId": 200038,
+      "name": "饮鸩之怨",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动策略攻击（伤害率177.0%，受谋略属性影响），并阻止其恢复兵力，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200039",
+      "officialId": 200039,
+      "name": "猛火",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动策略攻击（伤害率80.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率75.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200040",
+      "officialId": 200040,
+      "name": "节镇关东",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前2回合，使我军群体每回合都能优先行动，在此期间，令敌军群体陷入动摇，每回合损失一定兵力（伤害率120.0%），动摇效果造成的伤害无视规避",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200041",
+      "officialId": 200041,
+      "name": "威震北疆",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率64.0%，受谋略属性影响），同时谋略属性下降20.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200042",
+      "officialId": 200042,
+      "name": "献刀七星",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次猛攻（伤害率275.0%），并使其速度属性降低28.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200043",
+      "officialId": 200043,
+      "name": "藏玉在怀",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率150.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200044",
+      "officialId": 200044,
+      "name": "义勇军",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "恢复我军群体一定兵力（恢复率115.0%，受谋略属性影响），并使其防御属性提高23.0（受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200046",
+      "officialId": 200046,
+      "name": "修罗姬返",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "诅咒敌军群体，当其试图发动主动战法时，会陷入动摇状态，每回合产生逃兵（伤害率170.0%），并有75.0%的几率陷入怯战状态，无法进行普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200047",
+      "officialId": 200047,
+      "name": "枭雄所愿",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后第5回合直到战斗结束，使我军群体进入休整状态，每回合恢复一定兵力（恢复率118.0%，受谋略属性影响），并使其能够优先行动",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200048",
+      "officialId": 200048,
+      "name": "重斩",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率150.0%），并使其攻击属性降低25.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200049",
+      "officialId": 200049,
+      "name": "神速奔袭",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率200.0%），并使其速度属性降低40.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200050",
+      "officialId": 200050,
+      "name": "太平异道",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动策略攻击（伤害率124.0%，受谋略属性影响），并窃取其15.4的攻击转化至自身（受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200051",
+      "officialId": 200051,
+      "name": "劫掠",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率50.0%），并有50.0%的几率借此恢复一定兵力",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200052",
+      "officialId": 200052,
+      "name": "坚盾阵",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "1回合准备，援护友军全体，为其抵挡普通攻击，并使自身受到攻击时的伤害降低50.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200053",
+      "officialId": 200053,
+      "name": "黄巾军威",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前3回合，使我军群体的防御属性提高29.0，每回合有60.0%的几率使其受到普通攻击时进行反击（伤害率100.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200054",
+      "officialId": 200054,
+      "name": "温侯遗勇",
+      "type": "主动",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200055",
+      "officialId": 200055,
+      "name": "固军备战",
+      "type": "自带",
+      "target": "自己",
+      "desc": "受到攻击或策略攻击时，都有50.0%的几率使本次受到的伤害降低60.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200056",
+      "officialId": 200056,
+      "name": "直言",
+      "type": "自带",
+      "target": "我军群体(有效距离内1-2个目标)",
+      "desc": "恢复我军群体一定兵力（恢复率112.0%，受谋略属性影响），并使其谋略属性提高30.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200057",
+      "officialId": 200057,
+      "name": "骁勇",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率150.0%），并使其进行攻击时的伤害降低25.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200058",
+      "officialId": 200058,
+      "name": "奋威",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率130.0%），并挑衅之使其攻击自身，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200061",
+      "officialId": 200061,
+      "name": "铁骑突击",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率130.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率50.0%），持续2回合，并有50.0%的几率使其在2回合后再额外产生大量逃兵（伤害率140.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200062",
+      "officialId": 200062,
+      "name": "昭烈神思",
+      "type": "自带",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "战斗开始后前3回合，使我军群体进行策略攻击时的伤害提高22.0%（受谋略属性影响），每回合有80.0%的几率能优先行动",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200063",
+      "officialId": 200063,
+      "name": "迎险御侮",
+      "type": "自带",
+      "target": "自己",
+      "desc": "对敌军单体发动2次攻击（伤害率120.0%），并使自身与友军单体受到的下1次攻击伤害大幅降低。",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200064",
+      "officialId": 200064,
+      "name": "傲将奇兵",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率230.0%），此攻击有几率会引起自身一定兵力的损耗",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200065",
+      "officialId": 200065,
+      "name": "沙场破阵",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率119.0%，受谋略属性影响），并有40.0%的几率使其陷入暴走状态，进行无差别攻击，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200066",
+      "officialId": 200066,
+      "name": "锐矛贯体",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率180.0%），并有80.0%的几率使其陷入犹豫或怯战状态，无法进行普通攻击或发动主动战法，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200067",
+      "officialId": 200067,
+      "name": "索命连环",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "移除敌军单体的有益效果，使其受到策略攻击时的伤害提高34.0%（受谋略属性影响），并陷入妖术诅咒，每回合有80.0%的几率损失较多兵力（伤害率145.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200068",
+      "officialId": 200068,
+      "name": "忠义蜀后",
+      "type": "主动",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200070",
+      "officialId": 200070,
+      "name": "巾帼战阵",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使自身造成的攻击伤害提高40.0%，且对敌军群体发动主动战法攻击（伤害率120.0%），但无法进行普通攻击",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200071",
+      "officialId": 200071,
+      "name": "默守贤义",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "使我军群体以无法恢复兵力为代价，受到攻击或策略攻击时的伤害降低45.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200072",
+      "officialId": 200072,
+      "name": "列营守险",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "使我军全体攻击、防御、速度、谋略属性提高29.2（受谋略属性影响），持续2回合，同时友军全体受到下3次伤害时有50.0%几率进入规避状态，免疫该次伤害。若自身士气高昂时，规避状态的目标变为我军全体使我军全体攻击、防御、速度、谋略属性提高29.2（受谋略属性影响），持续2回合，同时我军全体受到下3次伤害时有50.0%几率进入规避状态，免疫该次伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200073",
+      "officialId": 200073,
+      "name": "六宫无怨",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200074",
+      "officialId": 200074,
+      "name": "素衣伶姬",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前3回合，使敌军群体进行策略攻击时的伤害降低26.0%（受谋略属性影响），此效果结束后的1回合内有100.0%的几率陷入混乱状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200075",
+      "officialId": 200075,
+      "name": "决绝",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入犹豫状态，无法发动主动战法，并使其受到策略攻击时的伤害提高28.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200076",
+      "officialId": 200076,
+      "name": "鬼谋",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "阻止敌军单体恢复兵力，并使其每回合有40.0%的几率随机陷入混乱、暴走、怯战、犹豫等状态中，持续3回合，每个效果独立判定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200077",
+      "officialId": 200077,
+      "name": "拔箭啖睛",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中，每当自身受到攻击伤害后，将使攻击、防御属性提高10.0，此效果最多叠加15次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200078",
+      "officialId": 200078,
+      "name": "猛虎啸",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200079",
+      "officialId": 200079,
+      "name": "奋不顾身",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "援护友军单体，为其抵挡普通攻击，并使自身进入休整状态，每回合恢复一定兵力（恢复率200.0%），持续3回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200080",
+      "officialId": 200080,
+      "name": "破凰",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "立即引发敌军全体由破凰带来的剩余妖术效果，同时对敌军单体发动一次策略攻击（伤害率155.0%，受谋略属性影响），并使其每受到伤害时，额外引发一次妖术伤害（伤害率130.0%，受谋略属性影响），最多生效3次，持续3回合立即引发敌军全体由破凰带来的剩余妖术效果，同时对敌军兵力最低的单体发动一次策略攻击（伤害率155.0%，受谋略属性影响），并使其每受到伤害时，额外引发一次妖术伤害（伤害率130.0%，受谋略属性影响），最多生效3次，持续3回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200081",
+      "officialId": 200081,
+      "name": "以逸待劳",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200082",
+      "officialId": 200082,
+      "name": "死战明志",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中使自身处于洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，防御属性提高25.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200083",
+      "officialId": 200083,
+      "name": "八门金锁",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体陷入怯战状态，无法进行普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200084",
+      "officialId": 200084,
+      "name": "战伤无畏",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到普通攻击时能进行反击（伤害率70.0%），并在受到攻击时有30.0%的几率使本次伤害降低50.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200085",
+      "officialId": 200085,
+      "name": "炬石",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-3个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率130.0%），使其防御属性降低22.0（受谋略属性影响），并陷入燃烧状态，每回有75.0%的几率损失一定兵力（伤害率108.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200086",
+      "officialId": 200086,
+      "name": "古锭之锋",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "强化自身造成的伤害并发动攻击，使敌军单体陷入动摇状态，每回合产生逃兵（伤害率110.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200087",
+      "officialId": 200087,
+      "name": "小霸王",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "以一定兵力为代价，对敌军群体发动一次攻击（伤害率135.0%），并有40.0%的几率再次发动猛攻（伤害率200.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200088",
+      "officialId": 200088,
+      "name": "方阵突击",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率200.0%），并使其陷入混乱状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200089",
+      "officialId": 200089,
+      "name": "国太威仪",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前5回合，使我军群体的谋略属性提高34.0（受谋略属性影响），此效果结束后，使其进行策略攻击时的伤害提高28.0%（受谋略属性影响），持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200090",
+      "officialId": 200090,
+      "name": "奇计迭出",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "1回合准备，对敌军全体发动策略攻击（伤害率92.0%，受谋略属性影响），有50.0%的几率对其再次发动策略攻击（伤害率133.0%，受谋略属性影响），并使其陷入燃烧状态，每回合都有等同于上述的几率额外损失一定兵力（伤害率76.0%，受谋略属性影响）持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200091",
+      "officialId": 200091,
+      "name": "幻花乱影",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "1回合准备，以一定兵力为代价，使敌军群体的攻击属性、防御属性、谋略属性、速度全部降低26.0（受谋略属性影响），并使其陷入暴走状态，进行无差别攻击，持续3回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200092",
+      "officialId": 200092,
+      "name": "蝶舞红莲",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动策略攻击（伤害率119.0%，受谋略属性影响），并恢复友军全体一定兵力（恢复率109.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200093",
+      "officialId": 200093,
+      "name": "众望南疆",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200094",
+      "officialId": 200094,
+      "name": "将门虎女",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次进攻（伤害率190.0%），使其无法恢复兵力，持续2回合，并在1回合内，使其受到攻击伤害时有75.0%的几率引发一次动摇效果（伤害率35.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200096",
+      "officialId": 200096,
+      "name": "北地枪王",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率60.0%），并有30.0%的几率使其陷入动摇状态，每回合产生逃兵（伤害率60.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200097",
+      "officialId": 200097,
+      "name": "突进",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率115.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200098",
+      "officialId": 200098,
+      "name": "凿穿",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率135.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200099",
+      "officialId": 200099,
+      "name": "车悬",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200100",
+      "officialId": 200100,
+      "name": "飞虹",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率110.0%），并使其攻击属性降低15.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200101",
+      "officialId": 200101,
+      "name": "齐射",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率90.0%），并使其攻击属性降低16.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200102",
+      "officialId": 200102,
+      "name": "箭岚",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200103",
+      "officialId": 200103,
+      "name": "强攻",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率105.0%），并使其防御属性降低15.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200104",
+      "officialId": 200104,
+      "name": "乱击",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率120.0%），并使其防御属性降低15.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200105",
+      "officialId": 200105,
+      "name": "枪阵",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200106",
+      "officialId": 200106,
+      "name": "斩铁",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200107",
+      "officialId": 200107,
+      "name": "破魂",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200108",
+      "officialId": 200108,
+      "name": "重伤",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率115.0%），并使其攻击属性降低15.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200109",
+      "officialId": 200109,
+      "name": "破甲",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200110",
+      "officialId": 200110,
+      "name": "浴血",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，使攻击目标陷入动摇状态，每回合产生逃兵（伤害率75.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200111",
+      "officialId": 200111,
+      "name": "冲锋",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200112",
+      "officialId": 200112,
+      "name": "死士突击",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200113",
+      "officialId": 200113,
+      "name": "窃兵",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200114",
+      "officialId": 200114,
+      "name": "伏兵",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动策略攻击（伤害率105.2%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200115",
+      "officialId": 200115,
+      "name": "夹攻",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动策略攻击（伤害率89.6%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200116",
+      "officialId": 200116,
+      "name": "声东击西",
+      "type": "主动",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200117",
+      "officialId": 200117,
+      "name": "火箭",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200118",
+      "officialId": 200118,
+      "name": "火辎",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "1回合准备，对敌军群体发动策略攻击（伤害率75.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率75.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200119",
+      "officialId": 200119,
+      "name": "焰焚箕轸",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200120",
+      "officialId": 200120,
+      "name": "竭泽",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200121",
+      "officialId": 200121,
+      "name": "溃堤",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动策略攻击（伤害率79.8%，受谋略属性影响），并使其攻击属性降低10.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200122",
+      "officialId": 200122,
+      "name": "水淹七军",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200123",
+      "officialId": 200123,
+      "name": "落石",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动策略攻击（伤害率92.2%，受谋略属性影响），并使其防御属性降低5.2（受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200124",
+      "officialId": 200124,
+      "name": "绝道",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动策略攻击（伤害率105.0%，受谋略属性影响），并使其防御属性降低6.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200125",
+      "officialId": 200125,
+      "name": "危崖困军",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200126",
+      "officialId": 200126,
+      "name": "落雷",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200127",
+      "officialId": 200127,
+      "name": "迷阵",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200128",
+      "officialId": 200128,
+      "name": "狼烟",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率47.6%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200129",
+      "officialId": 200129,
+      "name": "毒泉",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率85.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200130",
+      "officialId": 200130,
+      "name": "楚歌四起",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200131",
+      "officialId": 200131,
+      "name": "驱逐",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200132",
+      "officialId": 200132,
+      "name": "攻心",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200133",
+      "officialId": 200133,
+      "name": "收拢",
+      "type": "主动",
+      "target": "友军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200134",
+      "officialId": 200134,
+      "name": "休整",
+      "type": "自带",
+      "target": "友军群体(有效距离内1-2个目标)",
+      "desc": "使友军群体进入休整状态，每回合恢复一定兵力（恢复率87.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200135",
+      "officialId": 200135,
+      "name": "养精蓄锐",
+      "type": "主动",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200136",
+      "officialId": 200136,
+      "name": "青囊秘要",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200137",
+      "officialId": 200137,
+      "name": "急救",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "恢复友军单体一定兵力（恢复率108.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200138",
+      "officialId": 200138,
+      "name": "包扎",
+      "type": "自带",
+      "target": "我军群体(有效距离内1-2个目标)",
+      "desc": "恢复我军群体一定兵力（恢复率98.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200139",
+      "officialId": 200139,
+      "name": "增援",
+      "type": "主动",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200141",
+      "officialId": 200141,
+      "name": "中级鼓舞",
+      "type": "主动",
+      "target": "我军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200145",
+      "officialId": 200145,
+      "name": "初级离间",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200146",
+      "officialId": 200146,
+      "name": "中级离间",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200151",
+      "officialId": 200151,
+      "name": "中级防御",
+      "type": "主动",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200153",
+      "officialId": 200153,
+      "name": "防御之策",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200161",
+      "officialId": 200161,
+      "name": "中级谎报",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200173",
+      "officialId": 200173,
+      "name": "牵制之策",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200178",
+      "officialId": 200178,
+      "name": "坚守突击",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身攻击属性、防御属性提高24.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200179",
+      "officialId": 200179,
+      "name": "疾风突击",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身攻击属性、速度属性提高24.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200180",
+      "officialId": 200180,
+      "name": "速战坚守",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身防御属性、速度属性提高24.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200181",
+      "officialId": 200181,
+      "name": "运筹帷握",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200182",
+      "officialId": 200182,
+      "name": "文韬武略",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身攻击属性、谋略属性提高24.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200183",
+      "officialId": 200183,
+      "name": "成竹在胸",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200184",
+      "officialId": 200184,
+      "name": "百战精兵",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200185",
+      "officialId": 200185,
+      "name": "援军之策",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率76.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200186",
+      "officialId": 200186,
+      "name": "援军秘策",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率103.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200188",
+      "officialId": 200188,
+      "name": "毁墙",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200189",
+      "officialId": 200189,
+      "name": "投石轰击",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "在本场战斗中使我军弓兵全体攻城属性提高13.0（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200190",
+      "officialId": 200190,
+      "name": "远攻强化",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200191",
+      "officialId": 200191,
+      "name": "坚守",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到攻击的伤害降低35.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200192",
+      "officialId": 200192,
+      "name": "铁壁",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到攻击和策略攻击时的伤害降低18.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200193",
+      "officialId": 200193,
+      "name": "固阵",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到策略攻击的伤害降低35.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200194",
+      "officialId": 200194,
+      "name": "避其锋芒",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200195",
+      "officialId": 200195,
+      "name": "奋起",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进行攻击时的伤害提高35.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200196",
+      "officialId": 200196,
+      "name": "激昂",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200197",
+      "officialId": 200197,
+      "name": "犒劳",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进行策略攻击时的伤害提高35.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200198",
+      "officialId": 200198,
+      "name": "大赏三军",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200199",
+      "officialId": 200199,
+      "name": "威压",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "使敌军群体进行攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200200",
+      "officialId": 200200,
+      "name": "乱阵",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "使敌军群体进行策略攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200201",
+      "officialId": 200201,
+      "name": "无心恋战",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200202",
+      "officialId": 200202,
+      "name": "假途",
+      "type": "主动",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200203",
+      "officialId": 200203,
+      "name": "劫粮",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "使敌军群体受到策略攻击时的伤害提高13.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200204",
+      "officialId": 200204,
+      "name": "神兵天降",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200205",
+      "officialId": 200205,
+      "name": "洞察",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200206",
+      "officialId": 200206,
+      "name": "追击",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率80.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200207",
+      "officialId": 200207,
+      "name": "攻其要害",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率125.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200208",
+      "officialId": 200208,
+      "name": "温酒斩将",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200209",
+      "officialId": 200209,
+      "name": "远攻之策",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200210",
+      "officialId": 200210,
+      "name": "远攻秘策",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200211",
+      "officialId": 200211,
+      "name": "挑衅",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200212",
+      "officialId": 200212,
+      "name": "辱骂",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200213",
+      "officialId": 200213,
+      "name": "反计",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入犹豫状态，无法发动主动战法，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200214",
+      "officialId": 200214,
+      "name": "规避",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进入规避状态，将免疫接下来受到的1次攻击的伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200215",
+      "officialId": 200215,
+      "name": "空城",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200216",
+      "officialId": 200216,
+      "name": "冷静",
+      "type": "主动",
+      "target": "我军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200217",
+      "officialId": 200217,
+      "name": "安抚军心",
+      "type": "主动",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200218",
+      "officialId": 200218,
+      "name": "看破",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200219",
+      "officialId": 200219,
+      "name": "了如指掌",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200220",
+      "officialId": 200220,
+      "name": "反计之策",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200221",
+      "officialId": 200221,
+      "name": "反击",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200222",
+      "officialId": 200222,
+      "name": "反击之策",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200223",
+      "officialId": 200223,
+      "name": "连战",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200224",
+      "officialId": 200224,
+      "name": "穷追猛打",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200225",
+      "officialId": 200225,
+      "name": "横扫",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率75.0%），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200226",
+      "officialId": 200226,
+      "name": "长兵方阵",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200227",
+      "officialId": 200227,
+      "name": "佯攻",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入怯战状态，无法进行普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200228",
+      "officialId": 200228,
+      "name": "战必断金",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200229",
+      "officialId": 200229,
+      "name": "奇袭",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率121.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200230",
+      "officialId": 200230,
+      "name": "措手不及",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200231",
+      "officialId": 200231,
+      "name": "先驱",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200232",
+      "officialId": 200232,
+      "name": "长驱直入",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200233",
+      "officialId": 200233,
+      "name": "先驱突击",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200234",
+      "officialId": 200234,
+      "name": "陷阱",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入混乱状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200235",
+      "officialId": 200235,
+      "name": "浑水摸鱼",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200236",
+      "officialId": 200236,
+      "name": "疑兵",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入暴走状态，进行无差别攻击，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200237",
+      "officialId": 200237,
+      "name": "妖术",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200238",
+      "officialId": 200238,
+      "name": "援护",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "援护友军单体，为其抵挡普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200239",
+      "officialId": 200239,
+      "name": "移花接木",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200603",
+      "officialId": 200603,
+      "name": "白楼独舞",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前3回合，使敌军群体进行攻击和策略攻击时的伤害降低26.0%（受谋略属性影响），此效果结束后，敌军将陷入暴走状态，进行无差别攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200604",
+      "officialId": 200604,
+      "name": "乱离中宫",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "移除友军全体的有害效果，并使其攻击属性提高27.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200605",
+      "officialId": 200605,
+      "name": "飘零红颜",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "以一定兵力为代价，对敌军群体发动一次策略攻击（伤害率90.0%，受谋略属性影响），并使其的攻击距离-1，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200606",
+      "officialId": 200606,
+      "name": "勇将继传",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后前4回合，使自身造成的伤害无视规避，在此期间，每回合都有90.0%进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率100.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200607",
+      "officialId": 200607,
+      "name": "帝临回光",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后第3回合起，以无法恢复兵力为代价，使自身攻击距离+1，并进入分兵状态（伤害率50.0%，受谋略属性影响），同时令敌军群体处于恐慌中，每回合损失一定兵力（伤害率69.0%，受谋略属性影响），持续直到战斗结束，恐慌效果造成的伤害无视规避",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200608",
+      "officialId": 200608,
+      "name": "陷阵营",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中使自身处于洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，攻城属性提高40.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200609",
+      "officialId": 200609,
+      "name": "伪帝",
+      "type": "自带",
+      "target": "自己",
+      "desc": "以每回合损失自身一定兵力为代价，使攻击属性提高39.0，防御属性提高42.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200610",
+      "officialId": 200610,
+      "name": "逆反毒杀",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "使敌军群体陷入恐慌及怯战状态，每回合损失一定兵力（伤害率83.0%，受谋略属性影响），并且无法发动普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200611",
+      "officialId": 200611,
+      "name": "老骥伏枥",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200613",
+      "officialId": 200613,
+      "name": "强弓连射",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对目标发动2次攻击（伤害率90.0%），并有50.0%的几率再度对目标发动最多2次攻击（伤害率70.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200614",
+      "officialId": 200614,
+      "name": "重谋",
+      "type": "自带",
+      "target": "我军单体",
+      "desc": "使我军单体的谋略属性提高16.8（受谋略属性影响），防御属性提高18.0（受谋略属性影响），持续3回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200616",
+      "officialId": 200616,
+      "name": "苦肉计",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "以一定兵力为代价，普通攻击后使目标陷入混乱状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200617",
+      "officialId": 200617,
+      "name": "王佐之才",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前4回合，使我军群体受到攻击与策略攻击时的伤害降低15.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200619",
+      "officialId": 200619,
+      "name": "强攻兵法",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200620",
+      "officialId": 200620,
+      "name": "坚守兵法",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200621",
+      "officialId": 200621,
+      "name": "速战兵法",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200622",
+      "officialId": 200622,
+      "name": "不攻",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200623",
+      "officialId": 200623,
+      "name": "锦马慑敌",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动攻击使其动摇，每回合损失一定兵力（伤害率140.0%），同时每回合有50.0%的几率陷入混乱，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200624",
+      "officialId": 200624,
+      "name": "轻侠妄为",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后前3回合，使自身进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，攻击所造成的伤害提高40.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200625",
+      "officialId": 200625,
+      "name": "竭忠",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "战斗中以自身受到的伤害提高9.0%为代价，使友军全体发动攻击的伤害提高18.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200626",
+      "officialId": 200626,
+      "name": "吴之副督",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前3回合，以降低自身攻击20.0为代价，使友军全体防御属性提高50.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200627",
+      "officialId": 200627,
+      "name": "慎兵",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200628",
+      "officialId": 200628,
+      "name": "斧钺之利",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "移除敌军群体的有益效果，并使其因为受重伤而动摇，每回合产生逃兵（伤害率120.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200629",
+      "officialId": 200629,
+      "name": "国士",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后前4回合，使自身造成的伤害无视规避，每回合有100.0%的几率进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200630",
+      "officialId": 200630,
+      "name": "拔剑护主",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到普通攻击时可以反击（伤害率80.0%），受到攻击和策略攻击的伤害降低30.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200631",
+      "officialId": 200631,
+      "name": "身佑废皇",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "使友军全体受到攻击的伤害以及发动攻击造成的伤害都降低28.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200632",
+      "officialId": 200632,
+      "name": "回马",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200633",
+      "officialId": 200633,
+      "name": "黄须虎子",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身发动攻击时的伤害提高45.0%，并进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率100.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200634",
+      "officialId": 200634,
+      "name": "十二奇策",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "移除友军单体的有害效果，并使每回合都有50.0%的几率随机获得洞察、规避、先手状态，持续3回合，每个效果独立判定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200635",
+      "officialId": 200635,
+      "name": "奔袭",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200636",
+      "officialId": 200636,
+      "name": "远攻奇略",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200637",
+      "officialId": 200637,
+      "name": "悍将",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身攻击属性、防御属性、谋略属性提高45.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200640",
+      "officialId": 200640,
+      "name": "以主制客",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200641",
+      "officialId": 200641,
+      "name": "水泽伏击",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标发动出其不意的伏击（伤害率120.0%），此攻击有50.0%的几率再度触发一次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200642",
+      "officialId": 200642,
+      "name": "借刀斩叛",
+      "type": "自带",
+      "target": "自己",
+      "desc": "每回合有25.0%的几率对敌军单体发动一次猛攻（伤害率300.0%），但此后将无法再发动主动战法，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200643",
+      "officialId": 200643,
+      "name": "愈战愈勇",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200644",
+      "officialId": 200644,
+      "name": "步步为营",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200645",
+      "officialId": 200645,
+      "name": "深谋远虑",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200646",
+      "officialId": 200646,
+      "name": "疾风迅雷",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200647",
+      "officialId": 200647,
+      "name": "一骑当千",
+      "type": "主动",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200648",
+      "officialId": 200648,
+      "name": "白衣渡江",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前2回合，使敌军群体无法进行普通攻击，在此效果结束后，将对敌军全体发动一次强力策略攻击（伤害率215.0%，受谋略属性影响），造成的伤害无视规避",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200649",
+      "officialId": 200649,
+      "name": "怯弱",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "战斗开始后前3回合，使敌军单体攻击距离-1，进行策略攻击时的伤害下降36.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200650",
+      "officialId": 200650,
+      "name": "存嗣流愿",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "以一定兵力为代价，使友军全体在受到下1次攻击时进入规避状态，可以免疫伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200651",
+      "officialId": 200651,
+      "name": "妒后",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "窃取敌军群体32.0防御（受谋略属性影响），并平均增加至我军群体，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200652",
+      "officialId": 200652,
+      "name": "双艳",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "使敌军群体陷入暴走状态，并有100.0%的几率使其攻击距离-1，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200653",
+      "officialId": 200653,
+      "name": "南中平蛮",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动攻击使其动摇，每回合产生逃兵（伤害率135.0%），持续2回合，在此期间，其防御会下降25.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200654",
+      "officialId": 200654,
+      "name": "安途若素",
+      "type": "自带",
+      "target": "自己",
+      "desc": "以进行策略攻击时伤害下降30.0%为代价，使自身防御增加20.0，受到策略攻击时的伤害下降20.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200655",
+      "officialId": 200655,
+      "name": "虎步关右",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身首次造成的攻击伤害提高70.0%（受速度属性影响）使自身首次造成的主动战法伤害提高70.0%（受速度属性影响），此效果最多叠加2次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200656",
+      "officialId": 200656,
+      "name": "经久善战",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "使我军全体防御属性提高35.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200657",
+      "officialId": 200657,
+      "name": "蜀中老将",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "使我军全体攻击属性提高30.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200658",
+      "officialId": 200658,
+      "name": "钝兵挫锐",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200659",
+      "officialId": 200659,
+      "name": "怯心夺志",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200660",
+      "officialId": 200660,
+      "name": "殉战",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身攻击属性提高25.0，防御属性提高35.0，但受到攻击时的伤害提高10.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200662",
+      "officialId": 200662,
+      "name": "困守",
+      "type": "自带",
+      "target": "自己",
+      "desc": "因处于被围困状态而无法恢复兵力，自身发动攻击和策略攻击所造成的伤害提高25.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200663",
+      "officialId": 200663,
+      "name": "云梯",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "在本场战斗中使我军步兵全体攻城属性提高20.0（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200666",
+      "officialId": 200666,
+      "name": "游击",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入动摇，每回合产生逃兵（伤害率125.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200669",
+      "officialId": 200669,
+      "name": "戒备",
+      "type": "主动",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200670",
+      "officialId": 200670,
+      "name": "谨言",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "使友军全体受到策略攻击的伤害降低16.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200671",
+      "officialId": 200671,
+      "name": "劫寨",
+      "type": "主动",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200672",
+      "officialId": 200672,
+      "name": "雀伏",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200673",
+      "officialId": 200673,
+      "name": "掎角之势",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200674",
+      "officialId": 200674,
+      "name": "一夫当关",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200676",
+      "officialId": 200676,
+      "name": "雄兵破敌",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200677",
+      "officialId": 200677,
+      "name": "险途暗渡",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率150.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率80.0%），持续1回合，同时使其士气降低10.0对敌军群体发动一次攻击（伤害率150.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率80.0%），持续1回合，同时使其士气降低10.0。敌军全体每有一个士气一般的武将，使我军单体士气提升5.0，每有一个士气低落的武将，使我军单体士气提升10.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200678",
+      "officialId": 200678,
+      "name": "名士在野",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "战斗中，使友军全体谋略属性提高35.0，每回合有50.0%的几率使其受到攻击的伤害下降22.0%（受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200679",
+      "officialId": 200679,
+      "name": "尽忠迎驾",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "挑衅敌军单体使其攻击属性降低29.2（受谋略属性影响），持续2回合，同时自身进入规避状态，免疫接下来受到的1次伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200680",
+      "officialId": 200680,
+      "name": "定军扬威",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率100.0%）并进行挑衅，同时使自身受到攻击的伤害降低25.0%（受防御属性影响）战法距离提升至4，对敌军群体发动一次攻击（伤害率100.0%）并进行挑衅，同时使自身受到攻击和策略攻击时的伤害降低25.0%（受防御属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200681",
+      "officialId": 200681,
+      "name": "虎痴嗔怒",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200682",
+      "officialId": 200682,
+      "name": "猜忌",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体防御属性降低41.0（受谋略属性影响）、速度属性降低53.0（受谋略属性影响），持续2回合，在此期间，每回合开始时都会移除其有益状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200683",
+      "officialId": 200683,
+      "name": "伐谋",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200684",
+      "officialId": 200684,
+      "name": "道行险阻",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200685",
+      "officialId": 200685,
+      "name": "黄天余音",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "吸取敌军单体26.0的全属性（受谋略属性影响）并附加于自身与友军单体，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200686",
+      "officialId": 200686,
+      "name": "符医术毒",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次策略攻击（伤害率168.0%，受谋略属性影响）并使其攻击属性降低32.0，持续1回合，同时有50.0%的几率为友军单体恢复一定兵力（恢复率153.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200687",
+      "officialId": 200687,
+      "name": "始计",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200688",
+      "officialId": 200688,
+      "name": "合流",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200689",
+      "officialId": 200689,
+      "name": "不动如山",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中，行动时会移除所有有害效果，同时防御属性提高100.0，谋略属性提高25.0战斗中，行动时会移除所有有害效果，同时全属性提高100.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200690",
+      "officialId": 200690,
+      "name": "闪击",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200691",
+      "officialId": 200691,
+      "name": "白刃",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200692",
+      "officialId": 200692,
+      "name": "奇佐鬼谋",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使自身和友军单体谋略属性提高22.0%，并使敌军群体随机陷入混乱、暴走、怯战、犹豫状态中的1种，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200693",
+      "officialId": 200693,
+      "name": "密谋定蜀",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体进行攻击和策略攻击的伤害降低30.0%（受谋略属性影响），并陷入恐慌（伤害率143.0%，受谋略属性影响），每当其试图发动追击战法将额外受到妖术诅咒（伤害率133.0%，受谋略属性影响），持续2回合；每次发动后，自身造成策略攻击伤害提升5.0%（受谋略属性影响），可叠加，持续到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200694",
+      "officialId": 200694,
+      "name": "火势风威",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "1回合准备，对敌军全体发动策略攻击（伤害率111.0%，受谋略属性影响），并使其在受到下一次伤害时，会额外引发一次燃烧（伤害率221.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200014",
+      "officialId": 200014,
+      "name": "酒池肉林",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗开始后前2回合，使我军全体受到的所有伤害降低32.0%（受防御属性影响），此效果结束后，将在1回合内使我军全体造成的所有伤害大幅度降低，第4回合开始，使自身造成攻击伤害时能够借此恢复相当于伤害值35.0%的兵力，持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200012",
+      "officialId": 200012,
+      "name": "辕门射戟",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动二次无视兵种相克的攻击（伤害率120.0%），并使第一次受击的敌军进行攻击的伤害大幅度降低，持续1回合，每次攻击的目标独立选择",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200714",
+      "officialId": 200714,
+      "name": "万箭齐发",
+      "type": "主动",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200715",
+      "officialId": 200715,
+      "name": "十面埋伏",
+      "type": "主动",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200695",
+      "officialId": 200695,
+      "name": "拒盾",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到攻击和策略攻击的伤害降低15.0%（受防御属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200696",
+      "officialId": 200696,
+      "name": "迫近",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体进行攻击的伤害降低15.0%（受防御属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200697",
+      "officialId": 200697,
+      "name": "退避",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身受到攻击和策略攻击的伤害降低18.0%（受速度属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200698",
+      "officialId": 200698,
+      "name": "截断",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体受到攻击的伤害提高13.0%（受速度属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200665",
+      "officialId": 200665,
+      "name": "抢攻",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进行攻击的伤害提高19.2%（受速度属性影响），并且可以优先行动，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200069",
+      "officialId": 200069,
+      "name": "神威将女",
+      "type": "自带",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "使自身进行攻击的伤害提高22.0%（受速度属性影响），并对敌军群体发动一次猛攻（伤害率190.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200059",
+      "officialId": 200059,
+      "name": "方天余烈",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使自身发动主动战法的伤害提高35.0%，且对敌军单体发动一次攻击（伤害率80.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200699",
+      "officialId": 200699,
+      "name": "疾行速战",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率150.0%），并使其进行攻击的伤害降低31.0%（受速度属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200700",
+      "officialId": 200700,
+      "name": "斩将搴旗",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次猛攻（伤害率325.0%），但此后将无法进行普通攻击，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200701",
+      "officialId": 200701,
+      "name": "据凉通叛",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "移除敌军群体有益效果，并使其陷入恐慌（伤害率110.0%，受谋略属性影响），每回合损失一定兵力，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200702",
+      "officialId": 200702,
+      "name": "先登死士",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身谋略属性降低30.0，进入洞察状态，免疫怯战、犹豫、混乱、暴走、挑衅，受到攻击可以进行反击（伤害率175.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200703",
+      "officialId": 200703,
+      "name": "北疆白马",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗开始后前3回合，使我军全体骑兵攻击属性提高36.0，速度属性提高50.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200716",
+      "officialId": 200716,
+      "name": "方圆",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200717",
+      "officialId": 200717,
+      "name": "鹤翼",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200718",
+      "officialId": 200718,
+      "name": "锋矢",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200704",
+      "officialId": 200704,
+      "name": "银龙孤胆",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "1回合准备，对随机敌军单体发动7次攻击（首次伤害率80.0%），每次目标独立判定，每次伤害率都递增7%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200705",
+      "officialId": 200705,
+      "name": "定军绝战",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率140.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200706",
+      "officialId": 200706,
+      "name": "方阵掩杀",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率235.0%），并使其进行下一次攻击的伤害大幅度降低",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200707",
+      "officialId": 200707,
+      "name": "中郎尽瘁",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进行攻击造成的伤害大幅度降低，受到主动、追击战法的伤害降低46.0%（受防御属性影响），并援护友军全体为其抵挡攻击，若自身处于士气高昂时，使自身进入休整状态，恢复一定兵力（恢复率152.0%，受防御属性影响）持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200708",
+      "officialId": 200708,
+      "name": "幽兰洛神",
+      "type": "自带",
+      "target": "友军单体",
+      "desc": "恢复友军单体一定兵力（恢复率105.0%，受谋略属性影响），并使其受到普通攻击的伤害降低33.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200709",
+      "officialId": 200709,
+      "name": "麦城追殇",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "以一定兵力为代价，使自身发动主动战法的伤害提高50.0%，并对敌军群体发动一次猛攻（伤害率100.0%），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200710",
+      "officialId": 200710,
+      "name": "恶来当道",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "1回合准备，使自身进行攻击的伤害提高21.0%（受防御属性影响），对敌军群体发动一次攻击（伤害率120.0%），并对敌军弓兵额外发动一次攻击（伤害率100.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200711",
+      "officialId": 200711,
+      "name": "阻挠",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体的随机1种属性降低20.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200712",
+      "officialId": 200712,
+      "name": "智取仁守",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体发动追击战法的伤害降低33.0%（受谋略属性影响），并使其陷入犹豫状态，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200713",
+      "officialId": 200713,
+      "name": "众叛亲离",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗中使我军全体无法恢复兵力，谋略属性降低90.0%，进行攻击的伤害提高23.0%（受防御属性影响），每回合有45.0%的几率使其受到普通攻击时进行反击（伤害率50.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200719",
+      "officialId": 200719,
+      "name": "上将潘凤",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次猛攻（伤害率355.0%），下一回合内，自身将会陷入混乱",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200720",
+      "officialId": 200720,
+      "name": "师君乐道",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "使友军全体攻击属性、防御属性、谋略属性、速度属性提高22.0，持续2回合，并为其恢复一定兵力（恢复率113.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200721",
+      "officialId": 200721,
+      "name": "折戟强攻",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200722",
+      "officialId": 200722,
+      "name": "火积",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200723",
+      "officialId": 200723,
+      "name": "南蛮强袭",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200724",
+      "officialId": 200724,
+      "name": "健卒不殆",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200725",
+      "officialId": 200725,
+      "name": "愚勇",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身攻击属性提高30.0，但受到的所有伤害提高12.0%，持续2回合，并对敌军群体1-2目标发动一次猛攻（伤害率210.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200726",
+      "officialId": 200726,
+      "name": "莽撞",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身防御属性提高35.0，同时随机使自身恢复一定兵力（恢复率150.0%），或进行攻击的伤害提高14.0%（受防御属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200727",
+      "officialId": 200727,
+      "name": "伪刺",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身规避下一次伤害，并在进行攻击时伤害提高65.0%，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200728",
+      "officialId": 200728,
+      "name": "临危",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200729",
+      "officialId": 200729,
+      "name": "顽抗",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "移除自身有害效果，并对敌军单体发动一次攻击（伤害率80.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200730",
+      "officialId": 200730,
+      "name": "火兽冲锋",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身进行普通攻击时的伤害提高80.0%，每回合有50.0%的几率对敌军单体发动一次攻击（伤害率160.0%），并使自身下一次普通攻击所造成的伤害额外提高160.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200731",
+      "officialId": 200731,
+      "name": "全军突击",
+      "type": "主动",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200732",
+      "officialId": 200732,
+      "name": "去疾",
+      "type": "主动",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200733",
+      "officialId": 200733,
+      "name": "行樵偶遇",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率50.0%），并使友军单体发动主动战法或追击战法的伤害提高21.0%（受攻击属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200734",
+      "officialId": 200734,
+      "name": "擅兵不寡",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200735",
+      "officialId": 200735,
+      "name": "索敌",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200736",
+      "officialId": 200736,
+      "name": "二夫之勇",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率140.0%），并使其发动主动战法造成的伤害降低50.0%，受到主动战法的伤害提高25.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200737",
+      "officialId": 200737,
+      "name": "明其虚实",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "战斗中，使敌军全体的谋略降低6.0%，此效果每回合叠加一次，并在前2回合，使敌军群体陷入犹豫状态，无法发动主动战法",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200738",
+      "officialId": 200738,
+      "name": "中宫追玺",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗开始后，使我军全体受到的所有伤害降低60.0%，每当受到攻击或策略攻击的伤害后，其对此类型伤害的减伤效果将降低1/5",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200739",
+      "officialId": 200739,
+      "name": "虎豹督军",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后首回合，使我军群体进行攻击的伤害提高50.0%（受攻击属性影响），此效果每回合降低1/8",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200740",
+      "officialId": 200740,
+      "name": "望族不息",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中，当自身受到策略攻击的伤害后，有90.0%的几率能恢复一定兵力（恢复率136.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200741",
+      "officialId": 200741,
+      "name": "孤城死守",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "战斗中，使敌军群体攻击降低21.0（受谋略属性影响），攻城降低25.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200742",
+      "officialId": 200742,
+      "name": "白毦亲兵",
+      "type": "自带",
+      "target": "自己",
+      "desc": "援护我军大营，为其抵挡普通攻击，并使自身受到的所有伤害降低50.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200743",
+      "officialId": 200743,
+      "name": "陈王求隐",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体造成的所有伤害降低39.0%（受谋略属性影响），在3回合内逐步恢复正常",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200744",
+      "officialId": 200744,
+      "name": "奇士薄寿",
+      "type": "自带",
+      "target": "自己",
+      "desc": "使自身谋略属性提高50.0，战斗开始后前4回合，使自身防御属性降低50.0%，并处于洞察状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200745",
+      "officialId": 200745,
+      "name": "固陵杀将",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使自身进行攻击的伤害提高42.0%（受攻击属性影响），持续1回合，并对敌军单体发动一次攻击（伤害率130.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200746",
+      "officialId": 200746,
+      "name": "拒战言和",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "使友军全体受到的所有伤害降低24.0%（受谋略属性影响），持续2回合，但同时会使自身处于怯战状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200747",
+      "officialId": 200747,
+      "name": "近攻",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对战法有效距离内最近的敌军发动一次攻击（伤害率200.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200748",
+      "officialId": 200748,
+      "name": "远射",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "1回合准备，对战法有效距离内最远的敌军发动一次攻击（伤害率255.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200754",
+      "officialId": 200754,
+      "name": "胜兵求战",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200755",
+      "officialId": 200755,
+      "name": "攻其不备",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200756",
+      "officialId": 200756,
+      "name": "藤甲突击",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "不受敌方指挥战法的影响，同时每回合首次发动主动战法后，对距离4以内敌军群体发动一次攻击（伤害率100.0%），并使其下一次造成的攻击或策略攻击伤害降低50.0%不受敌方指挥战法的影响，同时每回合发动主动战法时，对距离4以内敌军群体发动一次攻击（伤害率100.0%），并使其下一次造成的攻击或策略攻击伤害降低50.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200757",
+      "officialId": 200757,
+      "name": "重整旗鼓",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200758",
+      "officialId": 200758,
+      "name": "连环",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200759",
+      "officialId": 200759,
+      "name": "觑隙",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200760",
+      "officialId": 200760,
+      "name": "花中秀",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动攻击（伤害率255.0%），并使其攻击、谋略降低45.0%（受攻击属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200761",
+      "officialId": 200761,
+      "name": "疑兵避战",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后前2回合，使自身不攻击也不发动主动战法，受到普通攻击和主动战法的伤害大幅度降低，此效果结束后，将使自身攻击的伤害提高20.0%，直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200762",
+      "officialId": 200762,
+      "name": "计定山越",
+      "type": "自带",
+      "target": "自己",
+      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合失去一定兵力（伤害率134.0%，受谋略属性影响），若敌军群体士气一般或低落，则额外使其陷入围困状态，无法恢复兵力，持续2回合。使自身和友军单体恢复一定兵力（恢复率98.0%，受谋略属性影响）。",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200763",
+      "officialId": 200763,
+      "name": "辅臣应势",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌军单体发动一次攻击（伤害率100.0%），并使友军全体发动主动战法所造成的伤害提高28.0%（受防御属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200764",
+      "officialId": 200764,
+      "name": "落首箭",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "1回合准备，对敌军单体发动一次猛攻（伤害率300.0%），并对敌军大营再度发动一次攻击（伤害率180.0%），同时使敌军大营陷入混乱状态，持续1回合-2回合1回合准备，对敌军单体发动一次猛攻（伤害率300.0%），并对敌军大营再度发动一次攻击（伤害率180.0%），同时使敌军大营陷入混乱状态并且受到所有伤害增加20.0%（受攻击属性影响），持续1回合-2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200765",
+      "officialId": 200765,
+      "name": "虎贲牙将",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对战法有效距离内最近的敌军发动一次攻击（伤害率125.0%），防御属性减少27.0%（受攻击属性影响），持续1回合，有50.0%的几率对该目标再度发动一次攻击（伤害率125.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200766",
+      "officialId": 200766,
+      "name": "兵无常势",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200767",
+      "officialId": 200767,
+      "name": "谋定后动",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200768",
+      "officialId": 200768,
+      "name": "传檄荆襄",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体陷入恐慌状态，每回合损失较多兵力（伤害率137.0%，受谋略属性影响），同时发动主动战法造成的伤害降低25.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200769",
+      "officialId": 200769,
+      "name": "樊渊泅囚",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "1回合准备，对敌军全体发动一次猛攻（伤害率190.0%），并使其陷入犹豫状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200770",
+      "officialId": 200770,
+      "name": "盲侯奋勇",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "战斗中，攻击无视兵种相克，自身受到伤害后有40.0%的几率对有效距离4以内的敌方群体发动一次攻击（伤害率60.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200771",
+      "officialId": 200771,
+      "name": "霸王渡江",
+      "type": "自带",
+      "target": "自己",
+      "desc": "每回合有40.0%的几率对有效距离5以内的敌军单体发动三次猛烈攻击（伤害率150.0%），每次攻击目标独立判定，本场战斗中，自身无法发动主动战法，每次攻击造成伤害后可使霸王渡江发动率提升3.0%，该效果可叠加5次每回合有40.0%的几率对有效距离5以内的敌军单体发动三次猛烈攻击（伤害率150.0%），每次攻击目标独立判定，本场战斗中，自身无法发动主动战法，每次攻击造成伤害后可使霸王渡江发动率提升5.0%，该效果可叠加5次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200772",
+      "officialId": 200772,
+      "name": "夔吼象踏",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中，使自身进入分兵状态（伤害率60.0%），同时每回合对有效距离4以内的敌军单体发动一次策略攻击（伤害率70.2%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200773",
+      "officialId": 200773,
+      "name": "金匮要略",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗开始后前3回合，使我军全体受到的所有伤害降低20.4%（受谋略属性影响），同时使我军全体受到伤害时，有50.0%的几率能恢复一定兵力（恢复率80.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200774",
+      "officialId": 200774,
+      "name": "北狄互伐",
+      "type": "自带",
+      "target": "自己",
+      "desc": "发动二次猛攻（伤害率170.0%），第一次攻击目标必定为敌军单体，第二次攻击目标会在自身与随机敌军单体中选择，若攻击自身则伤害较小",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200775",
+      "officialId": 200775,
+      "name": "明妃",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使自身与敌军群体处于怯战状态，无法普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200776",
+      "officialId": 200776,
+      "name": "覆舟不弃",
+      "type": "自带",
+      "target": "我军单体",
+      "desc": "战斗中，使我军前锋受到攻击伤害降低20.0%（受防御属性影响），但前锋受到策略伤害后使我军全体发动攻击造成的伤害降低20.0%，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200777",
+      "officialId": 200777,
+      "name": "预识",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中，自身发动主动战法后，为我军单体恢复一定兵力（150.2%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200778",
+      "officialId": 200778,
+      "name": "衡众",
+      "type": "自带",
+      "target": "友军群体(有效距离内2个目标)",
+      "desc": "对友军群体发动以下两种效果的一种：被攻击时受到的伤害降低12.0%，发动攻击时造成的伤害提高12.0%，持续3回合，并且效果每回合逐渐增强",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200779",
+      "officialId": 200779,
+      "name": "土垒督战",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗中，使我军全体骑兵攻城属性提高15.2（受速度属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200780",
+      "officialId": 200780,
+      "name": "斫方善辞",
+      "type": "自带",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "移除我军群体的有害效果，并立即恢复其一定兵力（恢复率105.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200781",
+      "officialId": 200781,
+      "name": "衡轭",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200782",
+      "officialId": 200782,
+      "name": "疏数",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200783",
+      "officialId": 200783,
+      "name": "鱼鳞",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200785",
+      "officialId": 200785,
+      "name": "破阵强袭",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率119.0%，受谋略属性影响），并有40.0%的几率使其陷入暴走状态，持续1回合，此战法首次发动后，每次造成伤害时都使自身策略攻击的伤害提高5.0%，可叠加6次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200790",
+      "officialId": 200790,
+      "name": "青丘媚祸",
+      "type": "自带",
+      "target": "自己",
+      "desc": "本场战斗中，自身受到伤害后有60.0%的几率使距离4以内的随机敌军单体在下次行动时陷入暴走状态，进行无差别攻击，持续1回合，并使其下一次攻击和策略攻击的伤害下降24.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200804",
+      "officialId": 200804,
+      "name": "明法御狄",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200805",
+      "officialId": 200805,
+      "name": "迟智难酬",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次策略攻击（伤害率240.0%，受谋略属性影响），并使友军群体受到下1次策略攻击的伤害大幅度降低",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200791",
+      "officialId": 200791,
+      "name": "西乡武功",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗前2回合，使我军群体每回合都能优先行动，并使其在第2回合行动前对距离4以内的敌军群体2人发动一次策略攻击（伤害率191.0%，受谋略属性影响），且下一次受到的伤害大幅降低",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200795",
+      "officialId": 200795,
+      "name": "人公将军",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗前4回合，使我军全体的防御属性提高60.0，并使我军前锋、中军受到普通攻击时会进行反击（伤害率75.0%），在此期间，敌方武将存在妖术效果时造成的攻击伤害降低20.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200796",
+      "officialId": 200796,
+      "name": "地公将军",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动策略攻击（伤害率136.0%，受谋略属性影响），并吸取其24.0的防御、谋略属性并附加于友军群体（受谋略属性影响），若有目标存在妖术效果，则额外附加属性至自身，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200800",
+      "officialId": 200800,
+      "name": "众谋不懈",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200801",
+      "officialId": 200801,
+      "name": "利兵谋胜",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200824",
+      "officialId": 200824,
+      "name": "西陵克晋",
+      "type": "自带",
+      "target": "我军单体",
+      "desc": "战斗中，每回合有50.0%的几率使我军当前攻击属性最高的武将对距离4以内的敌军发动一次攻击（伤害率150.0%），我军当前谋略属性最高的武将对距离4以内的敌军发动一次策略攻击（伤害率150.0%，受谋略属性影响），并各自恢复一定兵力",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200825",
+      "officialId": 200825,
+      "name": "古之恶来",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200828",
+      "officialId": 200828,
+      "name": "难知如阴",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中，每2回合使友军单体在1回合内主动主战法发动率提高120.0%，如该主战法需要准备，则有75.0%的几率跳过1回合准备时间战斗中，每2回合使友军单体在1回合内主动主战法发动率提高120.0%，如该主战法需要准备，则有75.0%的几率跳过1回合准备时间，第3回合发动时目标调整为友军全体",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200829",
+      "officialId": 200829,
+      "name": "兼弱攻昧",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200833",
+      "officialId": 200833,
+      "name": "铁戟金戈",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200835",
+      "officialId": 200835,
+      "name": "谋主",
+      "type": "主动",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200175",
+      "officialId": 200175,
+      "name": "攻击强化",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200176",
+      "officialId": 200176,
+      "name": "防御强化",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200177",
+      "officialId": 200177,
+      "name": "速度强化",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200187",
+      "officialId": 200187,
+      "name": "冲车",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200638",
+      "officialId": 200638,
+      "name": "突击",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200639",
+      "officialId": 200639,
+      "name": "谋攻",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200784",
+      "officialId": 200784,
+      "name": "桃园结义",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200786",
+      "officialId": 200786,
+      "name": "掠敌之利",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200787",
+      "officialId": 200787,
+      "name": "分险",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200788",
+      "officialId": 200788,
+      "name": "枭雄",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200789",
+      "officialId": 200789,
+      "name": "凤仪亭",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200806",
+      "officialId": 200806,
+      "name": "唇枪舌剑",
+      "type": "增益",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200807",
+      "officialId": 200807,
+      "name": "千里疾行",
+      "type": "追击",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200808",
+      "officialId": 200808,
+      "name": "前军冲锋",
+      "type": "增益",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200809",
+      "officialId": 200809,
+      "name": "乱其军形",
+      "type": "增益",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200810",
+      "officialId": 200810,
+      "name": "训练有素",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200811",
+      "officialId": 200811,
+      "name": "领兵有方",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200812",
+      "officialId": 200812,
+      "name": "兵贵神速",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200813",
+      "officialId": 200813,
+      "name": "形兵之极",
+      "type": "指挥",
+      "target": "我军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200814",
+      "officialId": 200814,
+      "name": "汜水关",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200815",
+      "officialId": 200815,
+      "name": "奇正之势",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200816",
+      "officialId": 200816,
+      "name": "磐阵善守",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200817",
+      "officialId": 200817,
+      "name": "极火佐攻",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200818",
+      "officialId": 200818,
+      "name": "反间",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200819",
+      "officialId": 200819,
+      "name": "疾战",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200821",
+      "officialId": 200821,
+      "name": "励军",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200822",
+      "officialId": 200822,
+      "name": "合众",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200823",
+      "officialId": 200823,
+      "name": "武锋",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200826",
+      "officialId": 200826,
+      "name": "绝水遏敌",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200827",
+      "officialId": 200827,
+      "name": "并进",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200834",
+      "officialId": 200834,
+      "name": "人中吕布",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200836",
+      "officialId": 200836,
+      "name": "平壑拒吴",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军防御属性最低及兵力最低的单体分别发动一次攻击（伤害率210.0%），同时使敌军群体陷入怯战状态，无法进行普通攻击，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200837",
+      "officialId": 200837,
+      "name": "令明负榇",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗开始后前3回合，每回合使我军群体骑兵及步兵攻击造成的伤害提高6.0%，该效果可叠加3次，持续直到战斗结束，第4回合起进入分兵状态（伤害率50.0%，受速度属性影响），持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200838",
+      "officialId": 200838,
+      "name": "焚舟叩营",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200839",
+      "officialId": 200839,
+      "name": "疾击其后",
+      "type": "追击",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200840",
+      "officialId": 200840,
+      "name": "猎敌之锋",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200841",
+      "officialId": 200841,
+      "name": "陷敌之谋",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200842",
+      "officialId": 200842,
+      "name": "形兵列阵",
+      "type": "指挥",
+      "target": "我军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200843",
+      "officialId": 200843,
+      "name": "疮痍累身",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗开始后，使自身受到的所有伤害降低84.0%，每当受到攻击或策略攻击的伤害后，对此类型伤害的减伤效果将降低1/12，位于前锋及中军时前2回合援护友军全体；同时每次受到伤害后有50.0%几率使攻击属性、防御属性、谋略属性提高20.0，该效果可叠加，持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200844",
+      "officialId": 200844,
+      "name": "鼎足江东",
+      "type": "主动",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200845",
+      "officialId": 200845,
+      "name": "冢虎",
+      "type": "主动",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200846",
+      "officialId": 200846,
+      "name": "剑关叛立",
+      "type": "主动",
+      "target": "敌军群体(有效距离内1-2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200847",
+      "officialId": 200847,
+      "name": "河内世泽",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200848",
+      "officialId": 200848,
+      "name": "未笄难言",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "使敌军群体陷入妖术诅咒，每回合损失一定兵力（伤害率108.0%，受谋略属性影响），持续2回合；同时使敌军群体进行攻击和策略攻击时的伤害降低18.0%，该效果可叠加，持续直到战斗结束使敌军全体陷入妖术诅咒，每回合损失一定兵力（伤害率108.0%，受谋略属性影响），持续2回合；同时使敌军全体进行攻击和策略攻击时的伤害降低18.0%，该效果可叠加，持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200849",
+      "officialId": 200849,
+      "name": "兵行巧变",
+      "type": "自带",
+      "target": "自己",
+      "desc": "1回合准备，对敌军群体2目标发动一次攻击（伤害率260.0%），使其攻击、防御、谋略属性下降40.0（受攻击属性影响），同时我军群体攻击、防御、谋略属性提升40.0，持续2回合；或对敌军全体3目标发动一次攻击（伤害率200.0%），并使其攻击、防御、谋略属性下降80.0（受攻击属性影响），持续2回合1回合准备，对敌军群体2目标发动一次攻击（伤害率260.0%），使其攻击、防御、谋略属性下降40.0（受攻击属性影响），同时我军群体攻击、防御、谋略属性提升40.0；或对敌军全体3目标发动一次攻击（伤害率200.0%），并使其攻击、防御、谋略属性下降80.0（受攻击属性影响），所有属性变化效果持续3回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200850",
+      "officialId": 200850,
+      "name": "风声鹤唳",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200851",
+      "officialId": 200851,
+      "name": "陷储立齐",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "战斗中，我军全体每回合首次受到伤害后会随机吸取伤害来源的攻击、防御、谋略属性中的一种70.0并附加于自身，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200852",
+      "officialId": 200852,
+      "name": "俭仪蹈和",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "战斗开始后前3回合，使敌军攻击属性最高的武将攻击属性下降100.0，谋略属性最高武将谋略属性下降100.0，同时敌军群体每次发动主动战法或普通攻击后有50.0%几率使自身在下一回合随机陷入犹豫或怯战状态中的一种",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200853",
+      "officialId": 200853,
+      "name": "美人计",
+      "type": "指挥",
+      "target": "我军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200854",
+      "officialId": 200854,
+      "name": "投殳驱前",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200855",
+      "officialId": 200855,
+      "name": "六守精兵",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200856",
+      "officialId": 200856,
+      "name": "形兵险战",
+      "type": "指挥",
+      "target": "我军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200857",
+      "officialId": 200857,
+      "name": "计谕废立",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对敌方单体发动2次策略攻击（伤害率140.0%，受谋略属性影响），并使其分别陷入恐慌和燃烧状态（伤害率156.0%，受谋略属性影响），持续2回合，2次目标独立判定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200858",
+      "officialId": 200858,
+      "name": "铁马撼岳",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200859",
+      "officialId": 200859,
+      "name": "焚粮避祸",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200860",
+      "officialId": 200860,
+      "name": "威震江左",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200861",
+      "officialId": 200861,
+      "name": "弃憾破合",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200927",
+      "officialId": 200927,
+      "name": "将出关西",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "对随机敌军单体发动2-4次攻击（伤害率250.0%），每次伤害率减少40.0%。首次攻击造成的伤害无视规避，并使该目标无法恢复兵力，持续2回合对随机敌军单体发动2-5次攻击（伤害率250.0%），每次伤害率减少40.0%。首次攻击造成的伤害无视规避，并使该目标无法恢复兵力，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200928",
+      "officialId": 200928,
+      "name": "竭忠尽智",
+      "type": "自带",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "以自身与友军攻击属性最低的武将下一次行动时进入怯战状态为代价，使我军群体受到的攻击伤害降低20.0%（受谋略属性影响），该效果可以叠加1次，持续2回合；并使我军群体下2次造成的策略伤害提高30.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200929",
+      "officialId": 200929,
+      "name": "飒沓如星",
+      "type": "主动",
+      "target": "我军群体（有效距离内2个目标）",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302046",
+      "officialId": 302046,
+      "name": "修罗姬返XP",
+      "type": "主动",
+      "target": "敌军群体（有效距离内2~3个目标）",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302073",
+      "officialId": 302073,
+      "name": "六宫无怨XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302074",
+      "officialId": 302074,
+      "name": "素衣伶姬XP",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302082",
+      "officialId": 302082,
+      "name": "死战明志XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302083",
+      "officialId": 302083,
+      "name": "八门金锁XP",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302089",
+      "officialId": 302089,
+      "name": "国太威仪XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302093",
+      "officialId": 302093,
+      "name": "众望南疆XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302605",
+      "officialId": 302605,
+      "name": "飘零红颜XP",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302613",
+      "officialId": 302613,
+      "name": "强弓连射XP",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302624",
+      "officialId": 302624,
+      "name": "轻侠妄为XP",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302630",
+      "officialId": 302630,
+      "name": "拔剑护主XP",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302640",
+      "officialId": 302640,
+      "name": "以主制客XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302641",
+      "officialId": 302641,
+      "name": "水泽伏击XP",
+      "type": "追击",
+      "target": "攻击目标",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302700",
+      "officialId": 302700,
+      "name": "雪奋短兵XP",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302702",
+      "officialId": 302702,
+      "name": "先登死士XP",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302727",
+      "officialId": 302727,
+      "name": "伪刺XP",
+      "type": "主动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302743",
+      "officialId": 302743,
+      "name": "陈王求隐XP",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-302744",
+      "officialId": 302744,
+      "name": "奇士薄寿XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300001",
+      "officialId": 300001,
+      "name": "汉末纷争XP",
+      "type": "指挥",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300002",
+      "officialId": 300002,
+      "name": "一还一报XP",
+      "type": "指挥",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300003",
+      "officialId": 300003,
+      "name": "红颜薄命XP",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300004",
+      "officialId": 300004,
+      "name": "乱世毒计XP",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300005",
+      "officialId": 300005,
+      "name": "孤胆铁卫XP",
+      "type": "指挥",
+      "target": "友军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300006",
+      "officialId": 300006,
+      "name": "无上孝灵XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300007",
+      "officialId": 300007,
+      "name": "河北庭柱XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300008",
+      "officialId": 300008,
+      "name": "蛮夷之力XP",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300009",
+      "officialId": 300009,
+      "name": "婴城固守XP",
+      "type": "指挥",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300010",
+      "officialId": 300010,
+      "name": "母范之正XP",
+      "type": "指挥",
+      "target": "友军群体 (有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300011",
+      "officialId": 300011,
+      "name": "各怀异心XP",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300012",
+      "officialId": 300012,
+      "name": "各怀异心XP",
+      "type": "主动",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300013",
+      "officialId": 300013,
+      "name": "壮猛有谋XP",
+      "type": "指挥",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300014",
+      "officialId": 300014,
+      "name": "善战无前XP",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300015",
+      "officialId": 300015,
+      "name": "出其不意XP",
+      "type": "被动",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300016",
+      "officialId": 300016,
+      "name": "医者仁心XP",
+      "type": "指挥",
+      "target": "友军群体 (有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300017",
+      "officialId": 300017,
+      "name": "江东虎将XP",
+      "type": "指挥",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300018",
+      "officialId": 300018,
+      "name": "红颜祸水XP",
+      "type": "指挥",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300019",
+      "officialId": 300019,
+      "name": "大汉脊梁XP",
+      "type": "被动",
+      "target": "友军群体 (有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300020",
+      "officialId": 300020,
+      "name": "天妒英才XP",
+      "type": "主动",
+      "target": "敌军全体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300021",
+      "officialId": 300021,
+      "name": "內贤之助XP",
+      "type": "指挥",
+      "target": "我军全体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300022",
+      "officialId": 300022,
+      "name": "择木而栖XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300023",
+      "officialId": 300023,
+      "name": "不让须眉XP",
+      "type": "指挥",
+      "target": "友军群体 (有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300024",
+      "officialId": 300024,
+      "name": "大贤天师XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300025",
+      "officialId": 300025,
+      "name": "创业垂统XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300026",
+      "officialId": 300026,
+      "name": "忠勇骁锐XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300027",
+      "officialId": 300027,
+      "name": "社稷之臣XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300028",
+      "officialId": 300028,
+      "name": "匹马一麾XP",
+      "type": "指挥",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300029",
+      "officialId": 300029,
+      "name": "当阳之威XP",
+      "type": "指挥",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300050",
+      "officialId": 300050,
+      "name": "追亡逐北XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300051",
+      "officialId": 300051,
+      "name": "整旅厉卒XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300052",
+      "officialId": 300052,
+      "name": "摧枯拉朽XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300053",
+      "officialId": 300053,
+      "name": "成者自成XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300054",
+      "officialId": 300054,
+      "name": "摧城拔寨XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-300055",
+      "officialId": 300055,
+      "name": "长辔远驭XP",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200930",
+      "officialId": 200930,
+      "name": "奇兵拒北",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "每回合行动时有30.0%几率对敌军大营和中军分别发动一次攻击（伤害率180.0%），同时使速度最高的友军单体对敌军大营及中军分别发动一次攻击（伤害率120.0%-180.0%）。每回合奇兵拒北未生效时可提升其5%的发动率，可叠加，生效后发动率提升效果消失",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200933",
+      "officialId": 200933,
+      "name": "将门有将",
+      "type": "自带",
+      "target": "自己",
+      "desc": "每回合自身行动时有30.0%的概率获得以下效果：获得连击效果，持续1回合；获得分兵效果（伤害率100.0%），持续1回合。此概率每回合结束时提高10.0%，每个效果独立判断",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200934",
+      "officialId": 200934,
+      "name": "言出必克",
+      "type": "自带",
+      "target": "我军群体(有效距离内3个目标)",
+      "desc": "正式回合开始后，使我军全体受到的策略攻击伤害降低40.0%（受谋略属性影响），每次受到策略攻击伤害后，减伤效果降低1/8。同时，每回合行动时，有60.0%的概率为友军全体分摊一次50%受到的策略伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200935",
+      "officialId": 200935,
+      "name": "以直报怨",
+      "type": "指挥",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200936",
+      "officialId": 200936,
+      "name": "酩酊不休",
+      "type": "自带",
+      "target": "敌军单体",
+      "desc": "使敌军单体受到的伤害提升30.0%（受谋略属性影响），持续2回合，同时该目标下次行动时，受到一次猛烈的策略攻击（伤害率240.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200937",
+      "officialId": 200937,
+      "name": "全主诿异",
+      "type": "自带",
+      "target": "敌军群体(有效距离内3个目标)",
+      "desc": "使敌军全体被施加的燃烧、恐慌和妖术诅咒伤害提升20.0%（受谋略属性影响），持续3回合，同时对敌军群体1-2目标额外发动1次策略攻击（伤害率197.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200938",
+      "officialId": 200938,
+      "name": "三术奇谋",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200939",
+      "officialId": 200939,
+      "name": "登锋陷阵",
+      "type": "自带",
+      "target": "自己",
+      "desc": "战斗中使自身处于洞察状态，当自身兵力首次低于初始兵力的90%、70%、50%和30%时，使自身下次行动时所有攻击类主动战法发动率提高120.0%战斗中使自身处于洞察状态，当自身兵力首次低于初始兵力的90%、70%、50%和30%时，进入规避状态，免疫下1次伤害，使自身下次行动时所有攻击类主动战法发动率提高120.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200940",
+      "officialId": 200940,
+      "name": "文德椒房",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗中，每回合自身首次发动主动战法后，使我军群体进行策略攻击时的伤害提升10.0%（受谋略属性影响），此效果最多可叠加3次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200941",
+      "officialId": 200941,
+      "name": "甚陷不惧",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200947",
+      "officialId": 200947,
+      "name": "威震河朔",
+      "type": "自带",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "对敌军群体发动一次攻击（伤害率200.0%），使自身与友军单体的主动战法伤害提升20.0%（受攻击属性影响），持续2回合。此战法每发动一次，其发动率降低10.0%对敌军群体发动一次策略攻击（伤害率240.0%，受谋略属性影响），使自身与友军单体的主动战法伤害提升24.0%（受谋略属性影响），持续2回合。此战法每发动一次，其发动率降低10.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200948",
+      "officialId": 200948,
+      "name": "怒浪伐敌",
+      "type": "自带",
+      "target": "攻击目标",
+      "desc": "普通攻击后，对攻击目标发动一次袭击（伤害率240.0%）。此战法每发动一次，其发动率提高10.0%，可叠加",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200949",
+      "officialId": 200949,
+      "name": "势无虚动",
+      "type": "被动",
+      "target": "自己",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200950",
+      "officialId": 200950,
+      "name": "七步释嫌",
+      "type": "自带",
+      "target": "我军群体(有效距离内2个目标)",
+      "desc": "战斗中，我军全体每次发动普通攻击、试图发动主动战法或试图发动追击战法时，曹植使随机敌军单体下1次造成的伤害降低6.0%（受谋略属性影响），可叠加。我军全体发动普通攻击、试图发动主动战法或试图发动追击战法每累计7次时，曹植对我军群体恢复一定兵力（恢复率135.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200951",
+      "officialId": 200951,
+      "name": "虎步陷阵",
+      "type": "主动",
+      "target": "敌军单体",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200952",
+      "officialId": 200952,
+      "name": "抚民励德",
+      "type": "自带",
+      "target": "我军全体",
+      "desc": "第2、4、6回合自身行动时，使我军全体谋略、防御属性提升80.0，并且受到的所有伤害减少20.0%（受谋略属性影响），持续2回合。武将每次造成伤害时，自身该效果降低1/4。每次施加可刷新由抚民励德带来的属性与减伤效果",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200953",
+      "officialId": 200953,
+      "name": "筹策绝道",
+      "type": "主动",
+      "target": "敌军群体(有效距离内2个目标)",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200955",
+      "officialId": 200955,
+      "name": "动如雷震",
+      "type": "自带",
+      "target": "我军群体(有效距离内2-3个目标)",
+      "desc": "使我军群体追击战法发动率提升100.0%，追击战法伤害提升40.0%（受速度属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200956",
+      "officialId": 200956,
+      "name": "三军齐出",
+      "type": "被动",
+      "target": "自己 ",
+      "desc": "",
+      "source": "official-skill-list",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-迫近",
+      "officialId": null,
+      "name": "迫近",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体进行攻击的伤害降低15.0%（受防御属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-雀伏",
+      "officialId": null,
+      "name": "雀伏",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次策略攻击（伤害率165.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-伐谋",
+      "officialId": null,
+      "name": "伐谋",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次猛烈的策略攻击（伤害率209.0%，受谋略属性影响），并使其攻击属性、谋略属性下降45.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-钝兵挫锐",
+      "officialId": null,
+      "name": "钝兵挫锐",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率200.0%），并使其无法进行普通攻击，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-疏数",
+      "officialId": null,
+      "name": "疏数",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使我军弓兵防御提高50.0，骑兵每回合有40.0%的几率对距离3以内敌军单体发动一次攻击（伤害率100.0%），我军仅由弓兵和骑兵组成时生效",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-擅兵不寡",
+      "officialId": null,
+      "name": "擅兵不寡",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中每回合都会恢复一定兵力（恢复率180.0%），并有30.0%的几率额外恢复一定兵力（恢复率300.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-道行险阻",
+      "officialId": null,
+      "name": "道行险阻",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军单体防御属性降低50.0（受攻击属性影响）、谋略属性降低50.0（受谋略属性影响），持续1回合，同时在目标下一次行动前对其发动一次策略攻击（伤害率150.0%，受谋略属性影响）和一次攻击（伤害率150.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-美人计",
+      "officialId": null,
+      "name": "美人计",
+      "type": "可拆",
+      "target": "",
+      "desc": "正式回合开始后，我方3名武将均为女武将时，大营造成的所有伤害提升14.0%，中军每回合行动前随机使敌军单体男武将下一次攻击或策略攻击造成的伤害降低60.0%，前4回合前锋首次受到伤害时进入规避状态，免疫该次伤害",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200887",
+      "officialId": 200887,
+      "name": "烽火覆周",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军单体发动一次火攻（伤害率95.0%，受谋略属性影响），烽火覆周每次发动火攻后有60.0%概率再次发动火攻，此概率每次降低20%，每次目标独立判定，战法结束后此概率重置",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-破魂",
+      "officialId": null,
+      "name": "破魂",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率180.0%），并使其陷入暴走状态，进行无差别攻击，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-穷追猛打",
+      "officialId": null,
+      "name": "穷追猛打",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后第4回合起，使我军群体每回合有60.0%的几率可以进行两次普通攻击，持续4回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-增援",
+      "officialId": null,
+      "name": "增援",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，恢复我军群体较多兵力（恢复率198.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-援军之策",
+      "officialId": null,
+      "name": "援军之策",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率76.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-奇袭",
+      "officialId": null,
+      "name": "奇袭",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率121.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-鹤翼",
+      "officialId": null,
+      "name": "鹤翼",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗第1、3、5、7回合，我军全体弓兵进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率49.0%，受谋略属性影响），同时造成的普通攻击伤害降低20.0%，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-车悬",
+      "officialId": null,
+      "name": "车悬",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军单体发动一次猛攻（伤害率355.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-措手不及",
+      "officialId": null,
+      "name": "措手不及",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后第4回合，每回合有80.0%的几率使敌军群体陷入怯战状态，无法进行普通攻击，持续3回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-楚歌四起",
+      "officialId": null,
+      "name": "楚歌四起",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率127.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-先驱突击",
+      "officialId": null,
+      "name": "先驱突击",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使自身优先行动，每回合可进行两次普通攻击，并使攻击属性提高30.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-斩铁",
+      "officialId": null,
+      "name": "斩铁",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率170.0%），并使其陷入混乱状态，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-一夫当关",
+      "officialId": null,
+      "name": "一夫当关",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前2回合，援护友军全体，使自身受到攻击时的伤害降低50.0%（受防御属性影响），仅对自身处于前锋位置时生效",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-利兵谋胜",
+      "officialId": null,
+      "name": "利兵谋胜",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率200.0%，受谋略属性影响），并使自身及友军单体回复一定兵力（恢复率149.0%，受谋略影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-谋定后动",
+      "officialId": null,
+      "name": "谋定后动",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，每当发动需要准备的主战法时，有100.0%的几率使自身进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，持续2回合；当自身发动主动战法后，有100.0%的几率使我军群体攻击属性、防御属性、谋略属性提高55.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-兵无常势",
+      "officialId": null,
+      "name": "兵无常势",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，每回合自身行动时随机获得以下效果中的两种：自身恢复一定兵力（恢复率250.0%）；自身攻击、防御、谋略属性提高50.0，持续1回合；自身受到的所有伤害降低40.0%，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-养精蓄锐",
+      "officialId": null,
+      "name": "养精蓄锐",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使友军全体进入休整状态，每回合恢复较多兵力（恢复率122.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-深谋远虑",
+      "officialId": null,
+      "name": "深谋远虑",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进行策略攻击的伤害提高11.0%，此效果每回合开始时额外叠加一次，持续直到战斗结束",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-始计",
+      "officialId": null,
+      "name": "始计",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗前4回合，在自身行动前，使我军大营下一次攻击或策略攻击时的伤害提高20.0%（受谋略属性影响），敌方兵力最多单体下一次攻击或策略攻击时的伤害降低30.0%（受谋略属性影响），并在自身受到攻击或策略攻击伤害后，于本回合内进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-白刃",
+      "officialId": null,
+      "name": "白刃",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使敌我全军进行策略攻击的伤害降低35.0%，我军全体骑兵及步兵防御属性提高45.0，此效果结束后，攻击属性提高45.0，持续3回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-十面埋伏",
+      "officialId": null,
+      "name": "十面埋伏",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军全体发动一次策略攻击（伤害率130.0%，受谋略属性影响），并随机使敌军群体1-2目标造成的所有伤害大幅度降低，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-万箭齐发",
+      "officialId": null,
+      "name": "万箭齐发",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军全体发动一次攻击（伤害率180.0%），并随机使敌军单体进行攻击的伤害大幅度降低，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-方圆",
+      "officialId": null,
+      "name": "方圆",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使我军全体步兵进行普通攻击的伤害降低20.0%，主动、追击战法的伤害提高16.8%（受防御属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-锋矢",
+      "officialId": null,
+      "name": "锋矢",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使我军全体骑兵进行普通攻击的伤害降低25.0%，发动主动战法的伤害提高18.0%（受速度属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-折戟强攻",
+      "officialId": null,
+      "name": "折戟强攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次猛攻（伤害率225.0%），但此后使自身攻击属性降低50.0%，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-火积",
+      "officialId": null,
+      "name": "火积",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，使攻击目标立即受到燃烧伤害（伤害率192.0%，受谋略属性影响），并移除其有益效果",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-临危",
+      "officialId": null,
+      "name": "临危",
+      "type": "可拆",
+      "target": "",
+      "desc": "以一定兵力为代价，使自身在1回合内受到的所有伤害降低25.0%，并对敌军群体发动一次猛攻（伤害率135.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-强攻兵法",
+      "officialId": null,
+      "name": "强攻兵法",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身攻击属性提高28.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-顽抗",
+      "officialId": null,
+      "name": "顽抗",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除自身有害效果，并对敌军单体发动一次攻击（伤害率80.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-全军突击",
+      "officialId": null,
+      "name": "全军突击",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除我军全体骑兵及步兵的有害效果，对敌军单体发动一次攻击（伤害率145.0%），并使我军全体骑兵及步兵接下来2次攻击的伤害提高28.0%（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-攻其不备",
+      "officialId": null,
+      "name": "攻其不备",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使敌军群体在每受到一次攻击的伤害后，其所受到的所有伤害就提高11.6%（受速度属性影响），此效果最多叠加5次",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-胜兵求战",
+      "officialId": null,
+      "name": "胜兵求战",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，每当自身发动需要准备的主战法时，有80.0%的几率跳过1回合的准备时间。同时，任意友军发动主动战法后，自身下一个主动战法造成的伤害提高15.0%，此效果最多叠加3次",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-近攻",
+      "officialId": null,
+      "name": "近攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "对战法有效距离内最近的敌军发动一次攻击（伤害率200.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-觑隙",
+      "officialId": null,
+      "name": "觑隙",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率140.0%），并有50.0%的几率再度对随机敌军单体发动一次攻击（伤害率150.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-重整旗鼓",
+      "officialId": null,
+      "name": "重整旗鼓",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后第5回合起，每回合恢复我军群体较多兵力（恢复率140.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-连环",
+      "officialId": null,
+      "name": "连环",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对战法有效距离内最远的敌军单体发动一次策略攻击（伤害率132.0%，受谋略属性影响），并再度对随机敌军单体发动一次猛烈的策略攻击（伤害率198.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-远射",
+      "officialId": null,
+      "name": "远射",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对战法有效距离内最远的敌军发动一次攻击（伤害率255.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-疑兵",
+      "officialId": null,
+      "name": "疑兵",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军单体陷入暴走状态，进行无差别攻击，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-陷阱",
+      "officialId": null,
+      "name": "陷阱",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军单体陷入混乱状态，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-佯攻",
+      "officialId": null,
+      "name": "佯攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军单体陷入怯战状态，无法进行普通攻击，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-反计",
+      "officialId": null,
+      "name": "反计",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军单体陷入犹豫状态，无法发动主动战法，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-合流",
+      "officialId": null,
+      "name": "合流",
+      "type": "可拆",
+      "target": "",
+      "desc": "为自身与友军单体恢复一定兵力（恢复率131.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-疾风迅雷",
+      "officialId": null,
+      "name": "疾风迅雷",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中能够优先行动，第3回合开始，当普通攻击命中目标后将有40.0%的几率使其混乱，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-索敌",
+      "officialId": null,
+      "name": "索敌",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除敌军群体的有益效果并对其发动一次攻击（伤害率75.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-健卒不殆",
+      "officialId": null,
+      "name": "健卒不殆",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到普通攻击时能进行反击（伤害率40.0%），受到所有伤害时都有50.0%的几率使本次伤害降低50.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-闪击",
+      "officialId": null,
+      "name": "闪击",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率50.0%），并使敌军单体进行下一次攻击的伤害大幅度降低",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-鱼鳞",
+      "officialId": null,
+      "name": "鱼鳞",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使我军步兵防御属性提高50.0，弓兵受策略伤害降低35.0%，我军仅由步兵和弓兵组成时生效",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-衡轭",
+      "officialId": null,
+      "name": "衡轭",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使我军骑兵谋略属性提高50.0，步兵发动普通攻击造成的伤害提升50.0%，我军仅由骑兵和步兵组成时生效",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-众谋不懈",
+      "officialId": null,
+      "name": "众谋不懈",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，每当自身试图发动主动及追击战法前，有40.0%的几率对距离5以内的敌军单体发动一次策略攻击（伤害率194.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200250",
+      "officialId": 200250,
+      "name": "龙骧虎步",
+      "type": "自带",
+      "target": "",
+      "desc": "准备1回合，对敌军群体发动一次猛击（伤害率200.0%），并使自身攻击、防御属性提升20.0，持续2回合。",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-铁戟金戈",
+      "officialId": null,
+      "name": "铁戟金戈",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体2目标发动一次猛烈攻击（伤害率330.0%）或对敌军全体3目标发动一次猛烈攻击（伤害率225.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-兼弱攻昧",
+      "officialId": null,
+      "name": "兼弱攻昧",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军防御属性最低的武将发动一次攻击（伤害率200.0%），同时对敌军谋略属性最低的武将发动一次策略攻击（伤害率159.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-疾击其后",
+      "officialId": null,
+      "name": "疾击其后",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，随机对敌军单体再发动2次攻击（伤害率80.0%-140.0%），每次攻击的目标及伤害率独立判定",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-战必断金",
+      "officialId": null,
+      "name": "战必断金",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使敌军群体每回合都有90.0%的几率陷入怯战状态，无法进行普通攻击",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-风声鹤唳",
+      "officialId": null,
+      "name": "风声鹤唳",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率130.0%，受谋略属性影响），并使其受到策略攻击时的伤害提高12.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-溃堤",
+      "officialId": null,
+      "name": "溃堤",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动策略攻击（伤害率79.8%，受谋略属性影响），并使其攻击属性降低10.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-运筹帷幄",
+      "officialId": null,
+      "name": "运筹帷幄",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身谋略属性、速度属性提高24.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-落石",
+      "officialId": null,
+      "name": "落石",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动策略攻击（伤害率92.2%，受谋略属性影响），并使其防御属性降低5.2（受谋略属性影响），持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-急救",
+      "officialId": null,
+      "name": "急救",
+      "type": "可拆",
+      "target": "",
+      "desc": "恢复友军单体一定兵力（恢复率108.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-夹攻",
+      "officialId": null,
+      "name": "夹攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动策略攻击（伤害率89.6%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-成竹在胸",
+      "officialId": null,
+      "name": "成竹在胸",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身防御属性、谋略属性提高24.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-伏兵",
+      "officialId": null,
+      "name": "伏兵",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动策略攻击（伤害率105.2%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-看破",
+      "officialId": null,
+      "name": "看破",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除敌军单体的有益效果，并使其防御属性下降10.0，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-翕处还张",
+      "officialId": null,
+      "name": "翕处还张",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次策略攻击（伤害率132.0%，受谋略属性影响），并使敌军群体1-2目标下一次造成伤害后，再受到一次策略伤害（伤害率165.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-击势",
+      "officialId": null,
+      "name": "击势",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，每回合自身行动时有65.0%几率获得以下效果：自身攻击时的伤害提升50.0%，持续1回合；自身攻击时无视敌方60.0%防御属性，持续1回合。每个效果独立判断",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200865",
+      "officialId": 200865,
+      "name": "奉令护蜀",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中，任意友军发动普通攻击、主动战法、追击战法后，马岱的下1次普通攻击造成的伤害提升35.0%（受攻击属性影响），下1次受到的所有伤害降低20.0%（受防御属性影响），以上效果可叠加5次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200864",
+      "officialId": 200864,
+      "name": "国士无双",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后前3回合，使自身与友军单体每回合有90.0%的几率进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，同时自身攻击造成的伤害提升25.0%（受攻击属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-鸟云山兵",
+      "officialId": null,
+      "name": "鸟云山兵",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后，我军群体每回合行动时有30.0%几率使自身受到的攻击和策略攻击降低60.0%，持续1回合，两个效果独立判断，该效果生效几率每回合提升10%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200882",
+      "officialId": 200882,
+      "name": "谋谟帷幄",
+      "type": "自带",
+      "target": "",
+      "desc": "自身及友军单体每回合首次试图发动主动战法时，有60.0%几率对敌军单体发动一次策略攻击（伤害率171.0%，受谋略属性影响）；同时当我军全体各自低于初始兵力的60%时，其每回合首次试图发动主动战法时会额外对敌军单体发动一次策略攻击（伤害率76.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-三军之众",
+      "officialId": null,
+      "name": "三军之众",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使我军单体恢复4次兵力（恢复率151.0%，受谋略属性影响），每次目标独立判定",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200884",
+      "officialId": 200884,
+      "name": "巧音唤蝶",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次策略攻击（伤害率176.0%，受谋略属性影响）并使其陷入燃烧状态，当目标兵力高于初始兵力50%时受到一次策略伤害（伤害率86.0%，受谋略属性影响），持续1回合；同时使我军群体恢复一定兵力（恢复率161.0%，受谋略属性影响），并使其进入休整状态，当目标兵力低于初始兵力50%时恢复一定兵力（恢复率82.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200885",
+      "officialId": 200885,
+      "name": "宣威再战",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后前3回合，普通攻击后对攻击目标发动一次攻击（伤害率150.0%）；第4回合起，普通攻击后对敌军单体随机发动1-3次攻击（伤害率150.0%），每次目标独立判定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-垒实迎击",
+      "officialId": null,
+      "name": "垒实迎击",
+      "type": "可拆",
+      "target": "",
+      "desc": "受到普通攻击伤害时，有50.0%几率使自身恢复一定兵力（恢复率200.0%）；有50.0%几率移除自身由主动及追击战法带来的负面效果；使自身进入规避状态，有50.0%几率免疫下1次受到的伤害。同时当自身位于中军及前锋时，每回合开始时有50.0%几率援护友军全体，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200898",
+      "officialId": 200898,
+      "name": "京观垒冢",
+      "type": "自带",
+      "target": "",
+      "desc": "自身造成伤害时，有70.0%几率对目标额外发动一次攻击（伤害率200.0%）或策略攻击（伤害率200.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200899",
+      "officialId": 200899,
+      "name": "断首何怒",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中，自身受到伤害后有60.0%的几率使伤害来源的下一次攻击和策略攻击伤害下降42.0%（受防御属性影响）。同时每回合行动时使自身受到的所有伤害降低80.0%，每当受到攻击或策略攻击伤害后，减伤效果将降低1/5",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200902",
+      "officialId": 200902,
+      "name": "缚父临危",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率210.0%），并使自身及友军攻击属性最高的单体下两次攻击造成的伤害提升30.0%。同时使友军中吕布下一次造成的伤害无视规避",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-叫阵",
+      "officialId": null,
+      "name": "叫阵",
+      "type": "可拆",
+      "target": "",
+      "desc": "挑衅敌军单体使其攻击自身，同时自身防御属性提高80.0，谋略属性提高40.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200903",
+      "officialId": 200903,
+      "name": "寇略四州",
+      "type": "自带",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率170.0%），使其攻击属性降低30.0，同时自身攻击属性提高60.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200904",
+      "officialId": 200904,
+      "name": "去缚犒军",
+      "type": "自带",
+      "target": "",
+      "desc": "正式回合开始后，前3回合使自身受到的攻击伤害提升20.0%，从第4回合起，每回合自身行动前为我军群体恢复一定兵力（恢复率200.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200905",
+      "officialId": 200905,
+      "name": "叛羌急袭",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率225.0%），下一回合内，自身将会陷入犹豫状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-文伐",
+      "officialId": null,
+      "name": "文伐",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率228.0%，受谋略属性影响），并使其下一次受到策略攻击的伤害提升20.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200906",
+      "officialId": 200906,
+      "name": "羌帅衅敌",
+      "type": "自带",
+      "target": "",
+      "desc": "使自身和敌军单体互相挑衅，并使目标陷入犹豫状态，持续2回合；2回合后，使其陷入怯战状态，持续1回合；下一回合内，自身将会陷入犹豫状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200907",
+      "officialId": 200907,
+      "name": "岁贡固疆",
+      "type": "自带",
+      "target": "",
+      "desc": "1回合准备，为友军群体恢复一定兵力（恢复率160.0%），并使其在下次行动时对距离3以内敌军单体发动一次攻击（伤害率150.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200908",
+      "officialId": 200908,
+      "name": "疫箭拦江",
+      "type": "自带",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入动摇（伤害率130.0%）和恐慌状态（伤害率130.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200909",
+      "officialId": 200909,
+      "name": "名震敌国",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，使自己与随机友军单体在第1、3、5回合自身行动前，分别提高攻击属性30.0，防御属性40.0，谋略属性50.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200910",
+      "officialId": 200910,
+      "name": "月偃蛮平",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率190.0%），并使其陷入犹豫状态，持续2回合-3回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-窃兵",
+      "officialId": null,
+      "name": "窃兵",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率170.0%），并借此恢复自身少量兵力",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200911",
+      "officialId": 200911,
+      "name": "勇而无算",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率200.0%），同时使自身受到的谋略攻击伤害提高50.0%，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200912",
+      "officialId": 200912,
+      "name": "万夫之勇",
+      "type": "自带",
+      "target": "",
+      "desc": "普通攻击后，随机对敌军中军或大营发动一次猛攻（伤害率160.0%），并使其陷入动摇状态，每回合损失一定兵力（伤害率80.0%），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200915",
+      "officialId": 200915,
+      "name": "统军畏慎",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，我军全体每回合有80.0%几率攻击或策略攻击造成的伤害提高25.0%（受谋略属性影响），此几率每回合降低10%；每回合有30.0%几率造成伤害时无视敌方60.0%防御或谋略属性，此几率每回合提升10%。武将获得伤害提高效果与无视目标属性效果的类型由自身攻击与谋略中较高的属性决定战斗开始后，我军全体每回合有100.0%几率攻击或策略攻击造成的伤害提高25.0%（受谋略属性影响），此几率每回合降低10%；每回合有30.0%几率造成伤害时无视敌方60.0%防御或谋略属性，此几率每回合提升10%。武将获得伤害提高效果与无视目标属性效果的类型由自身攻击与谋略中较高的属性决定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-飒沓如星",
+      "officialId": null,
+      "name": "飒沓如星",
+      "type": "可拆",
+      "target": "",
+      "desc": "使我军群体骑兵造成的普通攻击伤害提升36.0%（受谋略属性影响），持续2回合，并使其下2次普通攻击进入分兵状态（伤害率55.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-以直报怨",
+      "officialId": null,
+      "name": "以直报怨",
+      "type": "可拆",
+      "target": "",
+      "desc": "每回合自身首次造成伤害后，使目标单体造成的所有伤害降低10.0%；自身首次受到伤害后，使我军单体受到的所有伤害降低10.0%。以上效果可叠加6次，持续直到战斗结束",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-三术奇谋",
+      "officialId": null,
+      "name": "三术奇谋",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军单体发动3次策略攻击（伤害率178.0%，受谋略属性影响），并依次使目标的攻击属性、防御属性、谋略属性下降18.0（受谋略属性影响），持续2回合，每次目标独立判定",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-甚陷不惧",
+      "officialId": null,
+      "name": "甚陷不惧",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中当自身兵力首次低于初始兵力的90%、70%、50%和30%时，使自身下次行动时武将主战法发动率提高50.0%，该效果仅对可造成攻击伤害或策略伤害的战法生效",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-势无虚动",
+      "officialId": null,
+      "name": "势无虚动",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，自身每次试图发动追击战法时，使下一次造成伤害无视规避，且下一次发动追击战法造成伤害提升40.0%，伤害提升效果最多可叠加3次",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-筹策绝道",
+      "officialId": null,
+      "name": "筹策绝道",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次策略攻击（伤害率250.0%，受谋略属性影响），并使其谋略、速度属性下降25.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-三军齐出",
+      "officialId": null,
+      "name": "三军齐出",
+      "type": "可拆",
+      "target": "",
+      "desc": "每回合行动时90.0%几率使自身进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率70.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200954",
+      "officialId": 200954,
+      "name": "汉韵旷野",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，使敌军全体进行攻击或策略攻击时，有40.0%几率使伤害降低30.0%（受谋略属性影响）。每回合王昭君行动时，使敌军全体伤害降低几率提升3.0%，非汉阵营武将伤害降低几率每回合额外提升3.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-久战熟谋",
+      "officialId": null,
+      "name": "久战熟谋",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，使友军群体每造成一次策略伤害后，其策略伤害就提高5.0%（受谋略属性影响），此效果最多叠加5次",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200957",
+      "officialId": 200957,
+      "name": "五兵之烈",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次猛烈的攻击（伤害率300.0%）。当授予曹彰不同种类宝物时，将额外获得以下效果。剑：先移除目标的有益效果再发动攻击；刀：使自身造成的攻击伤害提升15.0%，可叠加并持续直至战斗结束；长兵：使目标攻击距离-1，持续2回合；弓：有60.0%几率该战法目标数+1；其余宝物或未授予：使目标防御属性降低36.0%（受攻击属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200958",
+      "officialId": 200958,
+      "name": "鏖兵卫主",
+      "type": "自带",
+      "target": "",
+      "desc": "使我军群体每回合有45.0%几率增加50.0点防御属性（受防御属性影响），持续1回合。同时当自身位于中军及前锋时，大营兵力首次低于初始兵力的90%、70%、50%时，自身必定援护友军群体1回合，且自身下2次受到的伤害大幅度降低",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200961",
+      "officialId": 200961,
+      "name": "奋疾先登",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合行动时使自身攻击伤害提升8.0%，自身速度每高于一名武将，则有70.0%几率使攻击伤害额外提升8.0%，自身速度每低于或等于一名武将，则有30.0%几率使自身攻击伤害额外提升8.0%。当本战法造成的攻击伤害提升效果达到40%时，将对距离3以内的敌军群体发动一次攻击（伤害率190.0%），发动后攻击伤害提升效果消失，同时使目标速度属性降低20.0，该效果可叠加并持续直到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-掎角之势",
+      "officialId": null,
+      "name": "掎角之势",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率180.0%）和一次策略攻击（伤害率143.0%，受谋略属性影响），每次攻击的目标独立判定",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200960",
+      "officialId": 200960,
+      "name": "鸾凤和鸣",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中，自身每回合首次发动主动战法后，使我军群体2目标恢复一定兵力（恢复率85.0%，受谋略属性影响）；每回合自身行动时，使我军全体3目标造成的下一次随机目标的控制效果（混乱、犹豫、暴走、怯战）额外对一个目标生效",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-合纵连横",
+      "officialId": null,
+      "name": "合纵连横",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，我方出战的3名武将阵营均不相同时，令我军全体武将战法距离+1，对非自身阵营的武将造成攻击与策略伤害提升10.0%，对非自身阵营的武将普通攻击后有40.0%几率令目标无法恢复兵力，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200962",
+      "officialId": 200962,
+      "name": "赐剑长驱",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中自身无法释放主动战法或进行普通攻击，令友军全体每回合首次成功释放主动战法后，有40.0%几率（受谋略属性影响）再次发动（跳过所有准备回合），造成原战法50.0%的伤害和恢复效果",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200963",
+      "officialId": 200963,
+      "name": "绮阁飘香",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中，每回合以损失自身一定兵力为代价，令敌军当前兵力最高的单体武将攻击、谋略、防御属性下降6.0%（受谋略属性影响），该效果可叠加，持续至战斗结束；当该武将谋略属性低于自身时，令其下一次造成的攻击或策略伤害大幅度降低",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-勠力同心",
+      "officialId": null,
+      "name": "勠力同心",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，我方大营每次发动主动战法或追击战法后，前锋和中军下次行动阶段主动战法和追击战法造成的伤害提升40.0%，此效果可额外叠加1次。",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200965",
+      "officialId": 200965,
+      "name": "持刀从武",
+      "type": "自带",
+      "target": "",
+      "desc": "自身每回合行动时，每次有75.0%概率对友军大营上次行动阶段造成伤害的目标发动一次攻击（伤害率100.0%），重复三次，每次目标独立判定。当该攻击目标处于控制状态时，对同一目标的伤害率每次递增20.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200966",
+      "officialId": 200966,
+      "name": "尽言直谏",
+      "type": "自带",
+      "target": "",
+      "desc": "自身每回合行动时，随机令友方群体2个主动战法在下次行动阶段发动率提升10.0%且造成的伤害增加30.0%，若持续时间内任一战法发动，则下回合可选择3个主动战法",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200968",
+      "officialId": 200968,
+      "name": "连环计",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军单体施加连环计，依次发动下列战法：对连环计目标发动一次“伐谋”；若连环计目标谋略低于自身，则对随机敌军单体发动一次“迷阵”；若连环计目标处于暴走状态，则对随机敌军单体发动一次“落雷”。每个战法的效果与原战法在同等级下效果相同",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-扬威",
+      "officialId": null,
+      "name": "扬威",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对目标再次发动猛攻（伤害率160.0%），并使自身下1次攻击伤害提升20.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200969",
+      "officialId": 200969,
+      "name": "赈穷救急",
+      "type": "自带",
+      "target": "",
+      "desc": "恢复友军单体一定兵力（恢复率160.0%，受谋略属性影响），并使其下1次攻击造成的伤害提高20.0%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200970",
+      "officialId": 200970,
+      "name": "勇追穷寇",
+      "type": "自带",
+      "target": "",
+      "desc": "普通攻击后，使攻击目标陷入动摇状态，每回合产生逃兵（伤害率75.0%），并使自身攻击属性提升20.0，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-破胆",
+      "officialId": null,
+      "name": "破胆",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次猛攻（伤害率214.0%），并使其攻击属性降低30.0%，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200971",
+      "officialId": 200971,
+      "name": "名士在朝",
+      "type": "自带",
+      "target": "",
+      "desc": "使自身和友军单体进入规避状态，免疫接下来受到的1次伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200972",
+      "officialId": 200972,
+      "name": "三让徐州",
+      "type": "自带",
+      "target": "",
+      "desc": "第2、3、4回合自身行动时，恢复友军兵力最低单体大量兵力（恢复率168.0%，受谋略属性影响），并使其攻击、谋略与防御属性提升25.0，持续至战斗结束，可叠加",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-奇术折冲",
+      "officialId": null,
+      "name": "奇术折冲",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入妖术状态，每回合损失一定兵力（伤害率116.0%，受谋略属性影响），并使其造成的普通攻击伤害降低20.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200973",
+      "officialId": 200973,
+      "name": "游议定益",
+      "type": "自带",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率98.0%，受谋略属性影响），当其每次进行普通攻击后，将额外受到一次策略伤害（伤害率112.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200974",
+      "officialId": 200974,
+      "name": "登坛相仪",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次策略攻击（伤害率120.0%，受谋略属性影响），并使其每次受到普通攻击时额外引发一次恐慌效果（伤害率43.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200975",
+      "officialId": 200975,
+      "name": "忧勤王事",
+      "type": "自带",
+      "target": "",
+      "desc": "使自身受到的普通攻击伤害和追击战法伤害降低15.0%，每回合自身行动时额外叠加一次，此效果最多叠加3次，持续至战斗结束；当自身处于前锋时，第3、4、5回合每回合援护友军兵力最低武将",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-及锋而试",
+      "officialId": null,
+      "name": "及锋而试",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率120.0%）并使其士气降低10.0，每次发动后伤害率增加40.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200983",
+      "officialId": 200983,
+      "name": "运筹决胜",
+      "type": "自带",
+      "target": "",
+      "desc": "自身每次试图发动主动战法时，有30.0%几率令敌军单体陷入暴走状态，持续1回合，有50.0%几率对敌军全体处于混乱、暴走状态的目标发动一次策略攻击（伤害率220.0%，受谋略属性影响)",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200984",
+      "officialId": 200984,
+      "name": "怀德畏威",
+      "type": "自带",
+      "target": "",
+      "desc": "令谋略最低的友军单体对敌军随机单体发动一次攻击（伤害率160.0%）；自身对敌军群体2目标发动一次策略攻击（伤害率160.0%，受谋略属性影响）。若2次目标均为同一武将，则使其陷入混乱状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200985",
+      "officialId": 200985,
+      "name": "谋议宏图",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后首回合，我军全体受到伤害降低30.0%（受谋略属性影响），该效果每回合开始时减少1/8；我军全体每回合开始时士气提升8.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-乘胜追击",
+      "officialId": null,
+      "name": "乘胜追击",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标发动一次攻击（伤害率150.0%）；乘胜追击每次发动攻击后有60.0%概率对攻击目标再次发动一次攻击（伤害率100.0%），此概率每次降低20%，战法结束后此概率重置",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200986",
+      "officialId": 200986,
+      "name": "盛气横凌",
+      "type": "自带",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率260.0%）。若攻击目标士气高昂，则使其陷入混乱状态，持续1回合；若攻击目标士气一般或低落，则额外对其发动一次攻击（伤害率80.0%-160.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200987",
+      "officialId": 200987,
+      "name": "三军夺帅",
+      "type": "自带",
+      "target": "",
+      "desc": "自身每成功发动普通攻击、主动及追击战法后，自身对距离5以内敌军单体发动一次攻击（伤害率180.0%）并使自身攻击属性提高10.0，或对敌军群体2目标发动一次策略攻击（伤害率100.0%，受谋略属性影响）并使目标谋略属性降低5.0，属性变化可叠加，持续到战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-胜负先征",
+      "officialId": null,
+      "name": "胜负先征",
+      "type": "可拆",
+      "target": "",
+      "desc": "每回合自身行动时，若士气高昂，则使自身造成的主动和追击战法伤害提升40.0%，持续1回合；若士气处于一般或低落，则使自身受到伤害时恢复一定兵力（恢复率75.0%），持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200988",
+      "officialId": 200988,
+      "name": "明慧通透",
+      "type": "自带",
+      "target": "",
+      "desc": "移除友军单体有害效果，恢复其大量兵力（恢复率168.0%，受谋略属性影响），并使其在下回合有50.0%概率进入洞察状态",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200989",
+      "officialId": 200989,
+      "name": "持节镇西",
+      "type": "自带",
+      "target": "",
+      "desc": "使友军全体在每次造成攻击伤害前，攻击提高22.0（受攻击属性影响），可叠加4次，持续1回合；每次造成策略攻击伤害前，谋略提高22.0（受谋略属性影响），可叠加4次，持续1回合；每次受到伤害前，防御提高22.0（受防御属性影响），可叠加4次，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-望风而降",
+      "officialId": null,
+      "name": "望风而降",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动2次策略攻击（伤害率108.0%，受谋略属性影响），并有50.0%几率使其陷入恐慌状态（伤害率98.0%，受谋略属性影响），持续1回合，若目标士气低于自身，则此几率提升至100.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200990",
+      "officialId": 200990,
+      "name": "赏顺伐逆",
+      "type": "自带",
+      "target": "",
+      "desc": "受到恢复效果时，有75.0%几率为友军全体恢复一定兵力（恢复率65.0%，受谋略属性影响）；受到策略伤害时，有75.0%几率对伤害来源发动一次策略攻击（伤害率180.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200991",
+      "officialId": 200991,
+      "name": "潜谋远计",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中前4回合自身受到伤害时，有60.0%几率使自身恢复一定兵力（恢复率100.0%，受谋略属性影响）并使谋略属性和防御属性提高15.0，可叠加，持续至战斗结束；第5回合起，每回合行动时，对谋略低于自身的敌军全体有60.0%几率造成一次策略攻击（伤害率140.0%，受谋略属性影响）。仅对自身处于前锋或中军位置时生效",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-共饮避世",
+      "officialId": null,
+      "name": "共饮避世",
+      "type": "可拆",
+      "target": "",
+      "desc": "使我军群体受到的伤害降低28.0%，武将每次造成伤害时，该效果降低1/7",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200997",
+      "officialId": 200997,
+      "name": "广陵绝唱",
+      "type": "自带",
+      "target": "",
+      "desc": "为友军全体恢复一定兵力（恢复率172.0%，受谋略属性影响），并使随机友军单体士气提升5.0",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200998",
+      "officialId": 200998,
+      "name": "幕天席地",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合自身行动时使敌军兵力最高单体下一次造成的伤害降低30.0%（受谋略属性影响），我军兵力最低单体下一次受到的伤害降低30.0%（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200999",
+      "officialId": 200999,
+      "name": "青白分明",
+      "type": "自带",
+      "target": "",
+      "desc": "1回合准备，选择自身以外随机单体，若为敌军，则造成一次策略攻击（伤害率175.0%，受谋略属性影响），若为友军，则造成一次恢复（恢复率175.0%，受谋略属性影响），重复三次，每次目标独立判定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-激水之疾",
+      "officialId": null,
+      "name": "激水之疾",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次策略攻击（伤害率180.0%，受谋略属性影响），若目标士气低于自身，则使其谋略属性降低20.0，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201000",
+      "officialId": 201000,
+      "name": "缮甲厉兵",
+      "type": "自带",
+      "target": "",
+      "desc": "令友军全体免疫怯战效果，并使其攻击伤害提升12.0%（受到谋略属性影响），持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201001",
+      "officialId": 201001,
+      "name": "推己及人",
+      "type": "自带",
+      "target": "",
+      "desc": "当友军全体受到伤害后，自身有100.0%概率进入洞察状态，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-蓄盈待竭",
+      "officialId": null,
+      "name": "蓄盈待竭",
+      "type": "可拆",
+      "target": "",
+      "desc": "选择随机敌军单体，其士气值低于自身时，对该敌军发动一次攻击（伤害率200.0%），否则提升自身攻击、防御、谋略属性60.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201002",
+      "officialId": 201002,
+      "name": "神解音律",
+      "type": "自带",
+      "target": "",
+      "desc": "令我军群体恢复一定兵力（恢复率80.0%，受谋略属性影响），并使我军群体谋略属性提高20.0，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201003",
+      "officialId": 201003,
+      "name": "卿卿我我",
+      "type": "自带",
+      "target": "",
+      "desc": "我方出战武将有女性武将时，战斗中，女性武将每回合行动时有30.0%几率恢复一定兵力（恢复率80.0%，受谋略属性影响），同时自身每回合有30.0%几率使自身受到的攻击伤害和策略伤害降低20.0%（受谋略属性影响)，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-亡命一搏",
+      "officialId": null,
+      "name": "亡命一搏",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次猛击（伤害率160.0%），当自身兵力低于初始兵力25%时，伤害率变为460.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201004",
+      "officialId": 201004,
+      "name": "明德至亲",
+      "type": "自带",
+      "target": "",
+      "desc": "对友军全体发动以下两种效果的一种：攻击、谋略属性提升40.0，持续2回合；受到攻击和策略伤害降低30.0%，持续2回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201005",
+      "officialId": 201005,
+      "name": "唯瞻父兄",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率150.0%），使我军大营进行攻击和策略攻击时的伤害提升10.0%，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200245",
+      "officialId": 200245,
+      "name": "强军猛进",
+      "type": "自带",
+      "target": "",
+      "desc": "以自身士气下降5为代价，对敌军群体发动一次猛攻（伤害率150.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-浴血",
+      "officialId": null,
+      "name": "浴血",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，使攻击目标陷入动摇状态，每回合产生逃兵（伤害率75.0%），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-先驱",
+      "officialId": null,
+      "name": "先驱",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前2回合，每回合都有70.0%的几率使自身优先行动",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-重伤",
+      "officialId": null,
+      "name": "重伤",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率115.0%），并使其攻击属性降低15.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-投石轰击",
+      "officialId": null,
+      "name": "投石轰击",
+      "type": "可拆",
+      "target": "",
+      "desc": "在本场战斗中使我军弓兵全体攻城属性提高13.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-狼烟",
+      "officialId": null,
+      "name": "狼烟",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率47.6%，受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-收拢",
+      "officialId": null,
+      "name": "收拢",
+      "type": "可拆",
+      "target": "",
+      "desc": "使友军单体进入休整状态，每回合恢复一定兵力（恢复率82.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-诱敌深入",
+      "officialId": null,
+      "name": "诱敌深入",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后第3回合起，自身在我军全体每回合首次受到伤害后，有50.0%的几率对伤害来源造成一次策略攻击（伤害率136.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201006",
+      "officialId": 201006,
+      "name": "同仇敌忾",
+      "type": "自带",
+      "target": "",
+      "desc": "我军全体每次受到伤害后，其距离1以内的友军全体受到的伤害降低2.0%（受谋略属性影响）且造成所有伤害提升2.0%（受谋略属性影响），最多可叠加8次，持续至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-201007",
+      "officialId": 201007,
+      "name": "辞后定朝",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗前3回合，自身行动时有90.0%几率移除自身受到的由指挥、主动、追击战法带来的有害和有益效果；第4回合开始，使友军全体中男性武将攻击和防御属性提升40.0（受谋略属性影响），女性武将谋略和防御属性提升40.0（受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-谨言",
+      "officialId": null,
+      "name": "谨言",
+      "type": "可拆",
+      "target": "",
+      "desc": "使友军全体受到策略攻击的伤害降低16.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-援军秘策",
+      "officialId": null,
+      "name": "援军秘策",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率103.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-犒劳",
+      "officialId": null,
+      "name": "犒劳",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进行策略攻击时的伤害提高35.0%，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-包扎",
+      "officialId": null,
+      "name": "包扎",
+      "type": "可拆",
+      "target": "",
+      "desc": "恢复我军群体一定兵力（恢复率98.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-固阵",
+      "officialId": null,
+      "name": "固阵",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到策略攻击的伤害降低35.0%，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-奋起",
+      "officialId": null,
+      "name": "奋起",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进行攻击时的伤害提高35.0%，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-铁壁",
+      "officialId": null,
+      "name": "铁壁",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到攻击和策略攻击时的伤害降低18.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-坚守突击",
+      "officialId": null,
+      "name": "坚守突击",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身攻击属性、防御属性提高24.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-凿穿",
+      "officialId": null,
+      "name": "凿穿",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率135.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-齐射",
+      "officialId": null,
+      "name": "齐射",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率90.0%），并使其攻击属性降低16.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-疾风突击",
+      "officialId": null,
+      "name": "疾风突击",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身攻击属性、速度属性提高24.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-毒泉",
+      "officialId": null,
+      "name": "毒泉",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率85.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-乱阵",
+      "officialId": null,
+      "name": "乱阵",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体进行策略攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-火辎",
+      "officialId": null,
+      "name": "火辎",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动策略攻击（伤害率75.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率75.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-文韬武略",
+      "officialId": null,
+      "name": "文韬武略",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身攻击属性、谋略属性提高24.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-乱击",
+      "officialId": null,
+      "name": "乱击",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率120.0%），并使其防御属性降低15.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-速战坚守",
+      "officialId": null,
+      "name": "速战坚守",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身防御属性、速度属性提高24.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-休整",
+      "officialId": null,
+      "name": "休整",
+      "type": "可拆",
+      "target": "",
+      "desc": "使友军群体进入休整状态，每回合恢复一定兵力（恢复率87.0%，受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-坚守",
+      "officialId": null,
+      "name": "坚守",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到攻击的伤害降低35.0%，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-绝道",
+      "officialId": null,
+      "name": "绝道",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动策略攻击（伤害率105.0%，受谋略属性影响），并使其防御属性降低6.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-劫粮",
+      "officialId": null,
+      "name": "劫粮",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体受到策略攻击时的伤害提高13.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-游击",
+      "officialId": null,
+      "name": "游击",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军单体陷入动摇，每回合产生逃兵（伤害率125.0%），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-雄兵破敌",
+      "officialId": null,
+      "name": "雄兵破敌",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率210.0%），并使其防御、谋略属性降低65.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200993",
+      "officialId": 200993,
+      "name": "舍身卫主",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，受到2距离以内敌军的伤害时，有60.0%几率对伤害来源发动一次攻击（伤害率120.0%）。位于前锋或中军时，战斗开始后前3回合，敌军对友军全体造成的攻击伤害由典韦承担。",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200242",
+      "officialId": 200242,
+      "name": "举抑臧否",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合自身行动时随机选取攻击、防御、谋略三种属性之一， 使该属性最低的敌军单体对应属性降低20.0（受谋略属性影响），并有60.0%几率获得犹豫、怯战、围困中的1种效果，持续1回合；使该属性最高的友军单体对应属性提升20.0（受谋略属性影响），并有60.0%几率获得先手、洞察、无视规避中的1种效果，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200246",
+      "officialId": 200246,
+      "name": "缓师徐持",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗中每回合，已行动的敌军群体受到伤害后，沮授有50.0%几率（受谋略属性影响）令目标的攻击、防御、谋略、速度属性下降20.0点，重复两次，每次概率独立判定，可叠加至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200247",
+      "officialId": 200247,
+      "name": "计焚乌巢",
+      "type": "自带",
+      "target": "",
+      "desc": "1回合准备，对敌军单体发动一次策略攻击（伤害率160.0%,受谋略属性影响），使有效距离内最远的敌军受到主动战法伤害提升15.0%（受谋略属性影响），并有50.0%几率使其陷入燃烧状态（伤害率120.0%，受谋略属性影响），持续2回合。",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-百战无怯",
+      "officialId": null,
+      "name": "百战无怯",
+      "type": "可拆",
+      "target": "",
+      "desc": "自身位于中军或前锋时，在战斗开始后获得以下效果：造成伤害后，受到的攻击伤害与策略伤害降低20.0%，此效果最多叠加3次；战斗开始时已叠加3次，每回合开始时、受到攻击或策略攻击伤害后，失去1次叠加次数并恢复一定兵力（恢复率200.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200251",
+      "officialId": 200251,
+      "name": "烈火焚舟",
+      "type": "自带",
+      "target": "",
+      "desc": "普通攻击后，使攻击目标陷入燃烧状态（伤害率150.0%，受谋略属性影响），持续2回合；若目标已处于烈火焚舟的燃烧状态，则立即引发目标剩余的燃烧伤害，并使其和相邻的敌军士气降低10.0，并陷入燃烧状态（伤害率270.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200254",
+      "officialId": 200254,
+      "name": "衔命建功",
+      "type": "自带",
+      "target": "",
+      "desc": "敌军全体每回合首次受到持续性伤害时，周瑜有50.0%几率对其发动一次策略攻击（伤害率140.0%，受谋略属性影响）；第3回合起，敌军武将陷入持续性伤害时，立即额外引发一次该持续性伤害",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200255",
+      "officialId": 200255,
+      "name": "伏波扬砂",
+      "type": "自带",
+      "target": "",
+      "desc": "使我军全体普通攻击伤害提升25.0%（受攻击属性影响）。当友军全体发动普通攻击时，造成的伤害共计提升幅度每达到40%，马腾获得1层【扬砂】效果，最多叠加20层；马腾发动普通攻击后，将消耗4层【扬砂】效果进入连击状态，额外发动一次普通攻击，此效果将重复触发直到【扬砂】效果不足4层",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200256",
+      "officialId": 200256,
+      "name": "持玺兴兵",
+      "type": "自带",
+      "target": "",
+      "desc": "在友军全体受到伤害后，若其兵力低于初始兵力的50%，为其恢复一定兵力（恢复率200.0%，受谋略属性影响）并提升其30.0的攻击、谋略属性，同时自身攻击、谋略属性下降30.0，持续至战斗结束。该效果共可触发3次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-乘间击隙",
+      "officialId": null,
+      "name": "乘间击隙",
+      "type": "可拆",
+      "target": "",
+      "desc": "自身每发动主动主战法后，使自身造成的攻击伤害提升15.0%，最多叠加3次。该效果每叠加3次后，对敌军群体发动1次攻击（伤害率240.0%），发动后攻击伤害提升效果消失",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200257",
+      "officialId": 200257,
+      "name": "审时定计",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，敌军全体被施加特殊负面效果前，程昱有50.0%概率使其本回合受到所有伤害提升30.0%（受谋略属性影响）并恢复我军单体一定兵力（恢复率65.0%，受谋略属性影响）；战斗开始后，我军全体被施加挑衅、围困以及控制效果时，有50.0%概率抵御该负面效果，使其无法施加",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200258",
+      "officialId": 200258,
+      "name": "雪奋短兵",
+      "type": "自带",
+      "target": "",
+      "desc": "自身受到伤害时有50.0%概率进入规避状态，每回合结束时使自身攻击距离-1。攻击距离小于等于1时，不再触发攻击距离下降及规避效果，同时每回合自身行动时，对攻击距离内的敌军单体造成2次攻击伤害（伤害率60.0%）,有70.0%几率使攻击距离外的敌军群体进入动摇状态，行动时损失一定兵力（伤害率180.0%），持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200266",
+      "officialId": 200266,
+      "name": "怀橘遗亲",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合开始时，降低自身和我军除大营外友军单体10.0点攻击、防御、谋略属性，并提升我军大营20.0点攻击、防御、谋略属性，持续至该回合结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-胜敌益强",
+      "officialId": null,
+      "name": "胜敌益强",
+      "type": "可拆",
+      "target": "",
+      "desc": "每回合行动时使自身恢复1次兵力（恢复率120.0%，受防御属性影响），第2、4、6回合起，胜敌益强的恢复次数提升至2、3、4次，持续到战斗结束",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200262",
+      "officialId": 200262,
+      "name": "僭号天子",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后获得玉玺：我军全体受到的所有伤害的32.0%（受防御属性影响）由玉玺承担；第二回合起，每回合开始时玉玺对袁术造成其上一回合承担所有伤害，袁术仅受到来自玉玺伤害的50%，该比例每回合上升10%",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-敛众定气",
+      "officialId": null,
+      "name": "敛众定气",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除我军全体的有害效果，立即为其恢复一定兵力（恢复率85.0%，受谋略属性影响），并有50%几率使其免疫围困效果，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200264",
+      "officialId": 200264,
+      "name": "疲兵沮意",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合开始时，为我军群体叠加2层避锐效果，在其受到伤害前，消耗1层避锐效果令该次伤害降低10.0%（受谋略属性影响），避锐效果生效后有50%几率令敌军单体陷入燃烧状态（伤害率150.0%，受谋略属性影响），持续1回合，并使其后续受到疲兵沮意的燃烧伤害伤害率提升80.0%，可叠加至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200265",
+      "officialId": 200265,
+      "name": "雅虑适时",
+      "type": "自带",
+      "target": "",
+      "desc": "第3、5、7回合开始时，令我军全体受到所有伤害降低24.0%（受谋略属性影响）并进入同心状态，同心状态下任一武将受到伤害时，其余处于同心状态下武将为其分摊15%受到的伤害，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200268",
+      "officialId": 200268,
+      "name": "忠克猛烈",
+      "type": "自带",
+      "target": "",
+      "desc": "本战法造成的伤害无视兵种相克及目标的防御属性；对敌军单体发动1次攻击（伤害率280.0%），并使其陷入犹豫状态，持续1回合；直到陈到下回合行动前，目标每受到1次攻击伤害，陈到对其发动1次攻击(伤害率80.0%)，期间最多可触发3次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-袭屯夺气",
+      "officialId": null,
+      "name": "袭屯夺气",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次策略攻击（伤害率160.0%，受谋略属性影响），并使其陷入恐慌状态，在被成功施加属性下降效果时损失一定兵力（伤害率87.0%，受谋略属性影响），最多生效4次，每种属性单独计算",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200269",
+      "officialId": 200269,
+      "name": "举贤决机",
+      "type": "自带",
+      "target": "",
+      "desc": "首回合起，我军全体在被成功施加属性提升效果前，有40.0%几率使其恢复一定兵力（恢复率60.0%，受谋略属性影响），敌军全体在被成功施加属性下降效果前，有40.0%几率对其造成一次策略伤害（伤害率100.0%，受谋略属性影响），每种属性单独计算",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200270",
+      "officialId": 200270,
+      "name": "天子诏令",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合开始时，随机选择一名敌军单体，使其受到所有伤害提升16.0%（受谋略属性影响），可叠加，持续至战斗结束，同时使友军全体本回合内主动战法的首次伤害或首次普通攻击，有100.0%几率选中该目标，无视距离；若回合结束前该敌军单体受到3次或以上伤害，则使其受到伤害提升效果额外叠加一次，并使其全属性下降12.0（受谋略属性影响），可叠加，持续至战斗结束每回合开始时，随机选择一名敌军单体，使其受到所有伤害提升16.0%（受谋略属性影响），可叠加，持续至战斗结束，同时使友军全体本回合内主动战法的首次伤害或首次普通攻击，有100.0%几率选中该目标，无视距离；若回合结束前该敌军单体受到2次或以上伤害，则使其受到伤害提升效果额外叠加一次，并使其全属性下降12.0（受谋略属性影响），可叠加，持续至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-以诱待来",
+      "officialId": null,
+      "name": "以诱待来",
+      "type": "可拆",
+      "target": "",
+      "desc": "受到任何伤害后，有50.0%几率挑衅伤害来源，使其在下次行动时普通攻击自身，持续1回合；每次受到处于挑衅状态下的武将造成的伤害时，恢复自身兵力，恢复率150.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200272",
+      "officialId": 200272,
+      "name": "当敌制决",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，使自身受到的伤害降低50.0%；受到伤害后，使伤害来源受到的伤害提升8.0%（受防御属性影响），可叠加，持续至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200273",
+      "officialId": 200273,
+      "name": "率尔方雅",
+      "type": "自带",
+      "target": "",
+      "desc": "对自身以外的随机3名武将造成一次攻击伤害（伤害率10.0%），若目标为友军，则使其造成的所有伤害提升22.0%（受谋略属性影响），持续1回合，并使其立即对敌军群体发动一次攻击（伤害率160.0%）；若目标为敌军，则使其随机陷入犹豫、混乱、暴走、怯战状态中的一种，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-除恶务尽",
+      "officialId": null,
+      "name": "除恶务尽",
+      "type": "可拆",
+      "target": "",
+      "desc": "前三回合，令我军全体处于怯战状态下的武将受到的所有伤害降低30.0%；战斗开始后第四回合起，使我军全体每回合有70.0%几率可以进行两次普通攻击，持续至战斗结束",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200275",
+      "officialId": 200275,
+      "name": "心战为上",
+      "type": "自带",
+      "target": "",
+      "desc": "使我军全体每对敌军造成一次伤害时，伤害目标士气降低5点，我军全体累计可触发9次；使我军全体对敌军造成攻击伤害后，借此恢复相当于伤害值50.0%（受谋略属性影响）的兵力",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200277",
+      "officialId": 200277,
+      "name": "守静却敌",
+      "type": "自带",
+      "target": "",
+      "desc": "使我军全体受到的恢复效果提升10.0%（受谋略属性影响）；在第六回合、第八回合开始时，使我军全体对随机敌军单体造成一次策略伤害（伤害率100.0%，受谋略属性影响），每当我军武将受到一次恢复效果，使受到恢复的武将造成【守静却敌】的策略伤害时，伤害提升10.0%（受谋略属性影响），伤害提升效果至多可叠加15次",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200278",
+      "officialId": 200278,
+      "name": "佐命晋武",
+      "type": "自带",
+      "target": "",
+      "desc": "战斗开始后，我军全体士气提升时，造成的所有伤害提升4.8%（受谋略属性影响），持续至战斗结束，此效果最多叠加8次；每回合结束时，为我军兵力最低单体恢复2次兵力（恢复率100.0%，受谋略属性影响），每次目标独立判定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-令无空悬",
+      "officialId": null,
+      "name": "令无空悬",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中，自身每次试图发动主动战法时，使造成的下一次主动战法伤害提升30.0%，此效果最多叠加4次；第1、3、5、7回合自身行动时，本回合内造成攻击或策略攻击伤害的主动战法发动率提升10.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200279",
+      "officialId": 200279,
+      "name": "奇门遁甲",
+      "type": "自带",
+      "target": "",
+      "desc": "使自身随机发动除自身外的敌我全体所有主动战法中的1个，跳过全部准备回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-先声夺人",
+      "officialId": null,
+      "name": "先声夺人",
+      "type": "可拆",
+      "target": "",
+      "desc": "前3回合，每回合自身行动时有60.0%几率回合内获得以下效果：进入连击状态；进入分兵状态（伤害率60.0%）；对敌军单体造成一次攻击伤害（伤害率70.0%）。每种效果独立判定",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200286",
+      "officialId": 200286,
+      "name": "知人待士",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合行动时，有45.0%几率触发以下两种效果，两者独立判断：可使我军兵力最低单体恢复一定兵力（恢复率120.0%，受谋略属性影响）并使其受到所有伤害减少15.0%（受谋略属性影响），持续1回合；可使自身对敌军兵力最低单体发动一次策略攻击（伤害率120.0%，受谋略属性影响），并使我军攻击属性最高单体对敌军单体发动一次攻击（伤害率100.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200287",
+      "officialId": 200287,
+      "name": "举义诛暴",
+      "type": "自带",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率150.0%），并使其全属性下降5.0%（受攻击属性影响），敌军群体受到下2次伤害时，都有50.0%几率陷入怯战、犹豫、混乱、暴走状态之一，持续1回合",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200288",
+      "officialId": 200288,
+      "name": "勇挚刚毅",
+      "type": "自带",
+      "target": "",
+      "desc": "自身受到攻击伤害后，有60.0%几率对敌军单体发动一次攻击（伤害率100.0%），自身受到策略攻击伤害后，有40.0%几率对敌军群体发动一次攻击（伤害率80.0%）；当自身兵力首次低于初始兵力的90%、80%、70%和60%时，造成的攻击伤害提升5.0%（受攻击属性影响），受到恢复效果提升5.0%（受防御属性影响），此效果最多叠加4次；",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-避锐治气",
+      "officialId": null,
+      "name": "避锐治气",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前4回合，我军群体受到伤害时，受到的伤害共计提升幅度每达到50%时，有50.0%几率触发以下效果：自身恢复一定兵力（恢复率70.0%），并使敌军随机单体造成的所有伤害降低10.0%，持续到战斗结束，伤害降低效果最多叠加9次；前4回合每回合结束时，我军群体将额外触发一次以上效果",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200290",
+      "officialId": 200290,
+      "name": "九伐中原",
+      "type": "自带",
+      "target": "",
+      "desc": "自身发动主动战法后会对敌军群体发动一次攻击（伤害率90.0%）和策略攻击（伤害率90.0%，受谋略属性影响），本场战斗共计可发动九次；每回合开始时，自身造成所有伤害提升5.0%（受谋略属性影响），可叠加，持续至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200282",
+      "officialId": 200282,
+      "name": "其徐如林",
+      "type": "自带",
+      "target": "",
+      "desc": "我军全体在正式回合后施加的策略伤害，在生效时会对目标相邻的敌军额外造成一次策略伤害（伤害率为原伤害率的15.0%，受谋略属性影响），此比例每回合结束时额外提升5.0%（受谋略属性影响），可叠加，持续至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200283",
+      "officialId": 200283,
+      "name": "自擅江表",
+      "type": "自带",
+      "target": "",
+      "desc": "对友军群体发动一次攻击（伤害率60.0%）并恢复自身一定兵力（恢复率120.0%，受谋略属性影响），随后对敌军群体发动一次猛烈的策略攻击（伤害率160.0%，受谋略属性影响），每次发动后，此策略攻击的伤害率增加30.0%（受谋略属性影响），可叠加，持续至战斗结束",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200292",
+      "officialId": 200292,
+      "name": "万军取首",
+      "type": "自带",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动猛烈攻击（伤害率160.0%），第四回合起，会额外对5距离内敌军单体发动一次攻击（伤害率100.0%），同时有50.0%几率额外对敌方大营再发动一次猛烈攻击（伤害率160.0%）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200294",
+      "officialId": 200294,
+      "name": "徽言龙凤",
+      "type": "自带",
+      "target": "",
+      "desc": "友军全体共计造成6次伤害后，使友军全体获得以下效果：士气提升10.0（受谋略属性影响）；每回合行动时造成的所有伤害提升7.0%（受谋略属性影响），可叠加；每回合行动时有60.0%的几率对随机敌军单体造成1次攻击伤害（伤害率150.0%）或策略攻击伤害（伤害率120.0%，受谋略属性影响），由攻击或谋略属性中较高的属性决定",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-200295",
+      "officialId": 200295,
+      "name": "锦车持节",
+      "type": "自带",
+      "target": "",
+      "desc": "每回合开始前有50.0%几率（受谋略属性影响）使敌军单体本回合内陷入以下两种状态之一：造成所有伤害大幅降低；陷入暴走状态，且攻击距离与主动战法距离-2。以上效果触发后，在回合结束时额外恢复我军兵力最低单体一定兵力（恢复率150.0%，受谋略属性影响）",
+      "source": "official-hero-base",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-步步为营",
+      "officialId": null,
+      "name": "步步为营",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到的所有伤害降低11.0%，此效果每回合开始时额外叠加一次，持续直到战斗结束",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-怯心夺志",
+      "officialId": null,
+      "name": "怯心夺志",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率200.0%），并使其无法发动主动战法，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-了如指掌",
+      "officialId": null,
+      "name": "了如指掌",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除敌军群体的有益效果，并使其无法恢复兵力，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-青囊秘要",
+      "officialId": null,
+      "name": "青囊秘要",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗中每回合都会恢复一定兵力（恢复率150.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-百战精兵",
+      "officialId": null,
+      "name": "百战精兵",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身攻击属性、防御属性、谋略属性、速度属性全部提高32.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-攻心",
+      "officialId": null,
+      "name": "攻心",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率106.0%，受谋略属性影响），并恢复自身一定兵力",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-不攻",
+      "officialId": null,
+      "name": "不攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "在战斗中无法进行普通攻击，使自身发动策略攻击时造成的伤害提高25.0%，并在每回合都会对有效距离5以内的敌军单体发动一次策略攻击（伤害率83.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-大赏三军",
+      "officialId": null,
+      "name": "大赏三军",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-反计之策",
+      "officialId": null,
+      "name": "反计之策",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-坚守兵法",
+      "officialId": null,
+      "name": "坚守兵法",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身防御属性提高28.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-浑水摸鱼",
+      "officialId": null,
+      "name": "浑水摸鱼",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入混乱状态，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-愈战愈勇",
+      "officialId": null,
+      "name": "愈战愈勇",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进行攻击的伤害提高10.0%，此效果每回合开始时额外叠加一次，持续直到战斗结束",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-妖术",
+      "officialId": null,
+      "name": "妖术",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，使敌军群体陷入暴走状态，进行无差别攻击，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-一骑当千",
+      "officialId": null,
+      "name": "一骑当千",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军全体发动一次猛烈攻击（伤害率280.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-神兵天降",
+      "officialId": null,
+      "name": "神兵天降",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-远攻秘策",
+      "officialId": null,
+      "name": "远攻秘策",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身攻击属性提高20.0，谋略属性提高20.0，攻击距离+1，同时，使友军全体在战斗开始后前3回合也获得与自身同样的增益",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-无心恋战",
+      "officialId": null,
+      "name": "无心恋战",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使敌军群体进行攻击和策略攻击时的伤害降低30.0%（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-避其锋芒",
+      "officialId": null,
+      "name": "避其锋芒",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使我军群体受到攻击和策略攻击时的伤害降低30.0%（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-空城",
+      "officialId": null,
+      "name": "空城",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前2回合，受到伤害时有70.0%的几率使自身进入规避状态，可以免疫伤害",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-声东击西",
+      "officialId": null,
+      "name": "声东击西",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率231.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-焰焚箕轸",
+      "officialId": null,
+      "name": "焰焚箕轸",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率119.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率119.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-长驱直入",
+      "officialId": null,
+      "name": "长驱直入",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使我军群体每回合都有70.0%的几率优先行动，并使其防御属性提高23.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-奔袭",
+      "officialId": null,
+      "name": "奔袭",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率225.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-温酒斩将",
+      "officialId": null,
+      "name": "温酒斩将",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率200.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-设伏",
+      "officialId": null,
+      "name": "设伏",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军群体发动一次攻击（伤害率145.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-破甲",
+      "officialId": null,
+      "name": "破甲",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率165.0%），并使其防御属性降低25.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-冲锋",
+      "officialId": null,
+      "name": "冲锋",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进行攻击时的伤害提高30.0%，持续1回合，并对敌军单体发动一次攻击（伤害率180.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-回马",
+      "officialId": null,
+      "name": "回马",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到普通攻击时能进行反击（伤害率60.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-远攻强化",
+      "officialId": null,
+      "name": "远攻强化",
+      "type": "可拆",
+      "target": "",
+      "desc": "自身攻击距离+1，并使攻击属性提高15.0",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-移花接木",
+      "officialId": null,
+      "name": "移花接木",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除自身有害效果，防御属性提升50.0，并援护友军全体，为其抵挡普通攻击，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-追击",
+      "officialId": null,
+      "name": "追击",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率80.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-飞虹",
+      "officialId": null,
+      "name": "飞虹",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率110.0%），并使其攻击属性降低15.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-水淹七军",
+      "officialId": null,
+      "name": "水淹七军",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率205.0%，受谋略属性影响），并使其攻击属性降低10.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-激昂",
+      "officialId": null,
+      "name": "激昂",
+      "type": "可拆",
+      "target": "",
+      "desc": "每回合有30.0%的几率使自身进行攻击和策略攻击时的伤害提高60.0%，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-远攻奇略",
+      "officialId": null,
+      "name": "远攻奇略",
+      "type": "可拆",
+      "target": "",
+      "desc": "自身攻击距离+1，进行策略攻击时的伤害提高15.0%",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-迷阵",
+      "officialId": null,
+      "name": "迷阵",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动策略攻击（伤害率155.0%，受谋略属性影响），并使其陷入暴走状态，进行无差别攻击，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-诱敌",
+      "officialId": null,
+      "name": "诱敌",
+      "type": "可拆",
+      "target": "",
+      "desc": "挑衅敌军单体使其攻击自身，并使之攻击属性降低39.0（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-落雷",
+      "officialId": null,
+      "name": "落雷",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动策略攻击（伤害率148.0%，受谋略属性影响），并使其陷入混乱状态，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-死士突击",
+      "officialId": null,
+      "name": "死士突击",
+      "type": "可拆",
+      "target": "",
+      "desc": "以一定兵力为代价，对敌军单体发动一次猛攻（伤害率255.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-反击之策",
+      "officialId": null,
+      "name": "反击之策",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使我军群体每回合有75.0%的几率受到普通攻击时能进行反击（伤害率100.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-远攻之策",
+      "officialId": null,
+      "name": "远攻之策",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使我军群体攻击属性提高20.0，并使其每回合有100.0%的几率攻击距离+1",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-云梯",
+      "officialId": null,
+      "name": "云梯",
+      "type": "可拆",
+      "target": "",
+      "desc": "在本场战斗中使我军步兵全体攻城属性提高20.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-长兵方阵",
+      "officialId": null,
+      "name": "长兵方阵",
+      "type": "可拆",
+      "target": "",
+      "desc": "战斗开始后前3回合，使我军群体每回合都有75.0%的几率进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率60.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-速战兵法",
+      "officialId": null,
+      "name": "速战兵法",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身速度属性提高28.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-威压",
+      "officialId": null,
+      "name": "威压",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体进行攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-洞察",
+      "officialId": null,
+      "name": "洞察",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-援护",
+      "officialId": null,
+      "name": "援护",
+      "type": "可拆",
+      "target": "",
+      "desc": "援护友军单体，为其抵挡普通攻击，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-连战",
+      "officialId": null,
+      "name": "连战",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身可以进行两次普通攻击，持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-箭岚",
+      "officialId": null,
+      "name": "箭岚",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次猛攻（伤害率170.0%），并使其攻击属性降低45.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-横扫",
+      "officialId": null,
+      "name": "横扫",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率75.0%），持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-火箭",
+      "officialId": null,
+      "name": "火箭",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动策略攻击（伤害率69.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率69.0%，受谋略属性影响），持续1回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-攻其要害",
+      "officialId": null,
+      "name": "攻其要害",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率125.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-假途",
+      "officialId": null,
+      "name": "假途",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体受到攻击时的伤害提高13.0%（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-危崖困军",
+      "officialId": null,
+      "name": "危崖困军",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率210.0%，受谋略属性影响），并使其防御属性降低7.2（受谋略属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-强攻",
+      "officialId": null,
+      "name": "强攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率105.0%），并使其防御属性降低15.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-毁墙",
+      "officialId": null,
+      "name": "毁墙",
+      "type": "可拆",
+      "target": "",
+      "desc": "在本场战斗中使我军步兵群体攻城属性提高13.0（受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-枪阵",
+      "officialId": null,
+      "name": "枪阵",
+      "type": "可拆",
+      "target": "",
+      "desc": "1回合准备，对敌军群体发动一次猛攻（伤害率175.0%），并使其防御属性降低30.0，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-规避",
+      "officialId": null,
+      "name": "规避",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进入规避状态，将免疫接下来受到的1次攻击的伤害",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-驱逐",
+      "officialId": null,
+      "name": "驱逐",
+      "type": "可拆",
+      "target": "",
+      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率110.0%，受谋略属性影响），并移除其有益效果",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-安抚军心",
+      "officialId": null,
+      "name": "安抚军心",
+      "type": "可拆",
+      "target": "",
+      "desc": "移除我军群体的有害效果，并立即恢复其一定兵力（恢复率108.0%，受谋略属性影响）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-突进",
+      "officialId": null,
+      "name": "突进",
+      "type": "可拆",
+      "target": "",
+      "desc": "对敌军单体发动一次攻击（伤害率115.0%）",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-反击",
+      "officialId": null,
+      "name": "反击",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到普通攻击时能进行反击（伤害率75.0%），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-拒盾",
+      "officialId": null,
+      "name": "拒盾",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到攻击和策略攻击的伤害降低15.0%（受防御属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-退避",
+      "officialId": null,
+      "name": "退避",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身受到攻击和策略攻击的伤害降低18.0%（受速度属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-截断",
+      "officialId": null,
+      "name": "截断",
+      "type": "可拆",
+      "target": "",
+      "desc": "使敌军群体受到攻击的伤害提高13.0%（受速度属性影响），持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    },
+    {
+      "id": "official-skill-抢攻",
+      "officialId": null,
+      "name": "抢攻",
+      "type": "可拆",
+      "target": "",
+      "desc": "使自身进行攻击的伤害提高19.2%（受速度属性影响），并且可以优先行动，持续2回合",
+      "source": "official-hero-dismantle",
+      "trigger": "official"
+    }
+  ]
+};

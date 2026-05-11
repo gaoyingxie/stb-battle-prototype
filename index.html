@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>河洛战阵</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="战局操作">
+        <div class="brand">
+          <span class="seal" aria-hidden="true">战</span>
+          <div>
+            <h1>河洛战阵</h1>
+            <p>三将九法 · 八回合 PVE</p>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button id="drawTen" class="btn secondary" type="button">十连</button>
+          <button id="rerollEnemy" class="btn secondary" type="button">换守军</button>
+          <button id="resetAll" class="btn secondary danger" type="button">重置</button>
+          <button id="startBattle" class="btn primary" type="button">开战</button>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="panel roster-panel" aria-label="武将与编队">
+          <div class="panel-heading">
+            <h2>编队</h2>
+            <button id="autoTeam" class="icon-btn" type="button" title="自动上阵">整</button>
+          </div>
+          <div id="formationEditor" class="formation-editor"></div>
+
+          <div class="panel-heading roster-heading">
+            <h2>武将册</h2>
+            <div class="heading-pills">
+              <span id="rosterCount" class="pill">0</span>
+              <span id="fodderCount" class="pill">狗粮 0</span>
+            </div>
+          </div>
+          <div id="roster" class="roster"></div>
+        </aside>
+
+        <section class="battlefield panel" aria-label="战场">
+          <div class="battle-header">
+            <div>
+              <h2 id="battleTitle">郊野守军</h2>
+              <p id="battleSubtitle">等待开战</p>
+            </div>
+            <div id="battleResult" class="result-chip">未交锋</div>
+          </div>
+
+          <div class="war-map" aria-label="双方阵列">
+            <div class="side enemy-side">
+              <div class="side-label">守军</div>
+              <div id="enemyLine" class="line"></div>
+            </div>
+            <div class="clash-band" aria-hidden="true">
+              <span></span>
+              <strong>交锋线</strong>
+              <span></span>
+            </div>
+            <div class="side player-side">
+              <div class="side-label">我军</div>
+              <div id="playerLine" class="line"></div>
+            </div>
+          </div>
+
+          <div class="stats-strip">
+            <div>
+              <span>我军兵力</span>
+              <strong id="playerTroops">30000</strong>
+            </div>
+            <div>
+              <span>守军兵力</span>
+              <strong id="enemyTroops">30000</strong>
+            </div>
+            <div>
+              <span>战斗轮次</span>
+              <strong id="roundCount">0/8</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel report-panel" aria-label="战报">
+          <div class="panel-heading">
+            <h2>战报</h2>
+            <button id="clearReport" class="icon-btn" type="button" title="清空战报">清</button>
+          </div>
+          <div id="report" class="report"></div>
+        </aside>
+      </section>
+    </main>
+
+    <dialog id="skillModal" class="modal">
+      <div class="modal-card">
+        <div class="modal-head">
+          <div>
+            <h2 id="skillModalTitle">战法</h2>
+            <p id="skillModalMeta"></p>
+          </div>
+          <button id="skillModalClose" class="icon-btn" type="button" aria-label="关闭">×</button>
+        </div>
+        <div id="skillModalDesc" class="modal-desc"></div>
+      </div>
+    </dialog>
+
+    <dialog id="heroModal" class="modal hero-modal">
+      <div class="modal-card">
+        <div class="modal-head">
+          <div>
+            <h2 id="heroModalTitle">武将</h2>
+            <p id="heroModalMeta"></p>
+          </div>
+          <button id="heroModalClose" class="icon-btn" type="button" aria-label="关闭">×</button>
+        </div>
+        <div class="hero-detail">
+          <div id="heroModalPortrait" class="hero-detail-portrait"></div>
+          <div class="hero-detail-main">
+            <div id="heroModalStats" class="hero-detail-stats"></div>
+            <div class="hero-detail-skills">
+              <button id="heroModalInnate" class="detail-skill" type="button"></button>
+              <button id="heroModalDismantle" class="detail-skill" type="button"></button>
+            </div>
+            <p id="heroModalDesc" class="hero-detail-desc"></p>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="gachaModal" class="modal gacha-modal">
+      <div class="modal-card gacha-card">
+        <div class="gacha-light" aria-hidden="true"></div>
+        <div class="modal-head">
+          <div>
+            <h2>虎符点将</h2>
+            <p id="gachaSubtitle">新将入营</p>
+          </div>
+          <button id="gachaClose" class="icon-btn" type="button" aria-label="关闭">×</button>
+        </div>
+        <div id="gachaResults" class="gacha-results"></div>
+      </div>
+    </dialog>
+
+    <script src="./official-data.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>
