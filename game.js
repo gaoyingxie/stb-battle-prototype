@@ -1209,8 +1209,8 @@ function renderRoster() {
 function renderBattle(result) {
   const playerUnits = result?.player || createPreviewUnits(getPlayerTeam(), "player");
   const enemyUnits = result?.enemy || createPreviewUnits(state.enemy, "enemy");
-  els.playerLine.innerHTML = playerUnits.map(unitTemplate).join("");
-  els.enemyLine.innerHTML = enemyUnits.map(unitTemplate).join("");
+  els.playerLine.innerHTML = visualLineUnits(playerUnits).map(unitTemplate).join("");
+  els.enemyLine.innerHTML = visualLineUnits(enemyUnits).map(unitTemplate).join("");
   els.playerTroops.textContent = formatNumber(totalTroops(playerUnits));
   els.enemyTroops.textContent = formatNumber(totalTroops(enemyUnits));
   els.roundCount.textContent = `${result?.rounds || 0}/8`;
@@ -1218,6 +1218,11 @@ function renderBattle(result) {
   els.battleResult.textContent = result ? result.label : "未交锋";
   els.battleResult.style.borderColor = result?.winner === "player" ? "rgba(90, 161, 132, 0.7)" : result?.winner === "enemy" ? "rgba(184, 63, 53, 0.7)" : "rgba(215, 170, 71, 0.3)";
   updateBattleButton(result);
+}
+
+function visualLineUnits(units) {
+  const order = new Map(POSITIONS.map((position, index) => [position.id, index]));
+  return [...units].sort((a, b) => (order.get(a.position) ?? 99) - (order.get(b.position) ?? 99));
 }
 
 function createPreviewUnits(team, side) {
