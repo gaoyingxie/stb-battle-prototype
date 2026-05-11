@@ -1724,21 +1724,17 @@ function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = fals
     log(ctx, "control", `${defender.name}规避了${attacker.name}的【${source}】。`);
     return 0;
   }
-  const offense = mode === "strategy"
-    ? attacker.stats.strategy + statusValue(attacker, "strategyUp")
-    : attacker.stats.attack + statusValue(attacker, "attackUp");
-  const defense = Math.max(40, defender.stats.defense + statusValue(defender, "defenseUp") - statusValue(defender, "defenseDown"));
-  const troopFactor = 0.72 + (attacker.troops / attacker.maxTroops) * 0.48;
-  const variance = 0.9 + Math.random() * 0.2;
   const arm = armCounterModifier(attacker.arm, defender.arm);
-  let damage = (430 + offense * 9.3) * rate * troopFactor * variance * (100 / (80 + defense));
-  damage *= 1 + statusValue(attacker, "damageUp");
-  damage *= 1 + statusValue(defender, "damageTakenUp");
-  damage *= 1 - statusValue(defender, "damageDown");
-  damage *= arm.multiplier;
-  damage = Math.max(90, Math.round(damage));
+  const result = calculateDamage(attacker, defender, rate, mode, arm);
+  const damage = result.damage;
   defender.troops = Math.max(0, defender.troops - damage);
-  log(ctx, "hit", `${attacker.name}以【${source}】攻击${defender.name}${arm.text ? `（${arm.text}）` : ""}，造成${damage}兵损。`);
+  log(ctx, "hit", `${attacker.name}以【${source}】攻击${defender.name}${arm.text ? `（${arm.text}）` : ""}，造成${damage}兵损。`, {
+    actor: attacker.name,
+    target: defender.name,
+    skill: source,
+    amount: damage,
+    details: result.details,
+  });
 
   if (isNormal) applySplitDamage(ctx, attacker, originalDefender, source);
 
@@ -1753,6 +1749,50 @@ function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = fals
     }
   }
   return damage;
+}
+
+function calculateDamage(attacker, defender, rate, mode, arm) {
+  const attackUp = statusValue(attacker, "attackUp");
+  const strategyUp = statusValue(attacker, "strategyUp");
+  const offense = mode === "strategy"
+    ? attacker.stats.strategy + strategyUp
+    : attacker.stats.attack + attackUp;
+  const defense = Math.max(40, defender.stats.defense + statusValue(defender, "defenseUp") - statusValue(defender, "defenseDown"));
+  const troopCurve = (300 * attacker.troops) / (3500 + attacker.troops);
+  const basePressure = (mode === "strategy" ? 178 : 373) * attacker.troops / ((mode === "strategy" ? 6459 : 7700) + attacker.troops);
+  const strategyGuard = mode === "strategy"
+    ? Math.min(0.42, Math.max(0, (defender.stats.strategy - 80) / 520))
+    : 0;
+  const effectiveOffense = Math.max(20, offense * (1 - strategyGuard));
+  const defenseFactor = mode === "attack"
+    ? 100 / (100 + Math.max(0, defense - 65) * 0.62)
+    : 1;
+  const attackerBonus = statusValue(attacker, "damageUp");
+  const takenBonus = statusValue(defender, "damageTakenUp");
+  const defenderReduction = statusValue(defender, "damageDown");
+  const variance = 0.96 + Math.random() * 0.08;
+  let damage = (basePressure + rate * troopCurve * effectiveOffense * 0.075) * defenseFactor;
+  damage *= 1 + attackerBonus;
+  damage *= 1 + takenBonus;
+  damage *= Math.max(0.15, 1 - defenderReduction);
+  damage *= arm.multiplier;
+  damage *= variance;
+
+  const details = [
+    `伤害率${Math.round(rate * 100)}%`,
+    `兵力曲线${Math.round(troopCurve)}`,
+    mode === "attack" ? `防御修正${Math.round(defenseFactor * 100)}%` : "",
+    strategyGuard ? `谋略抵消${Math.round(strategyGuard * 100)}%` : "",
+    attackerBonus ? `攻方增伤+${Math.round(attackerBonus * 100)}%` : "",
+    takenBonus ? `守方易伤+${Math.round(takenBonus * 100)}%` : "",
+    defenderReduction ? `守方减伤-${Math.round(defenderReduction * 100)}%` : "",
+    arm.text,
+  ].filter(Boolean);
+
+  return {
+    damage: Math.max(60, Math.round(damage)),
+    details,
+  };
 }
 
 function guardTarget(ctx, attacker, defender) {
@@ -1869,7 +1909,12 @@ function heal(ctx, caster, target, amount, source) {
   const healAmount = Math.min(target.maxTroops - target.troops, Math.round(amount));
   if (healAmount <= 0) return 0;
   target.troops += healAmount;
-  log(ctx, "heal", `${caster.name}以【${source}】恢复${target.name}${healAmount}兵。`);
+  log(ctx, "heal", `${caster.name}以【${source}】恢复${target.name}${healAmount}兵。`, {
+    actor: caster.name,
+    target: target.name,
+    skill: source,
+    amount: healAmount,
+  });
   return healAmount;
 }
 
@@ -1971,13 +2016,57 @@ function formatNumber(number) {
   return Math.round(number).toLocaleString("zh-CN");
 }
 
-function log(ctx, type, text) {
-  ctx.log.push({ type, text });
+function log(ctx, type, text, meta = {}) {
+  ctx.log.push({ type, text, ...meta });
 }
 
 function writeReport(entries) {
-  els.report.innerHTML = entries.map((entry) => `<div class="log-line ${entry.type}">${entry.text}</div>`).join("");
+  const round = [...entries].reverse().find((entry) => entry.type === "round")?.text
+    || "准备回合";
+  els.report.innerHTML = `
+    <div class="report-detail-title">
+      <span>战报详情</span>
+      <b>${escapeHtml(round)}</b>
+    </div>
+    ${entries.map(reportLineHtml).join("")}
+  `;
   els.report.scrollTop = els.report.scrollHeight || 0;
+}
+
+function reportLineHtml(entry) {
+  if (entry.type === "round") {
+    return `<div class="log-line round"><span>${escapeHtml(entry.text)}</span><em>行动阶段</em></div>`;
+  }
+  const details = entry.details?.length
+    ? `<div class="report-modifiers">${entry.details.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div>`
+    : "";
+  return `
+    <div class="log-line ${entry.type}">
+      <span class="report-avatar">${escapeHtml(reportGlyph(entry))}</span>
+      <span class="report-text">${decorateReportText(entry)}${details}</span>
+    </div>
+  `;
+}
+
+function reportGlyph(entry) {
+  if (entry.actor) return entry.actor.slice(0, 1);
+  return {
+    hit: "伤",
+    heal: "疗",
+    control: "控",
+    system: "令",
+  }[entry.type] || "记";
+}
+
+function decorateReportText(entry) {
+  let text = escapeHtml(entry.text);
+  text = text.replace(/【([^】]+)】/g, '<b class="report-skill">【$1】</b>');
+  if (entry.type === "heal") {
+    text = text.replace(/(恢复)(\d[\d,]*)兵/g, '$1<strong class="report-number heal">$2</strong>兵');
+  } else {
+    text = text.replace(/(造成|损失)(\d[\d,]*)兵/g, '$1<strong class="report-number damage">$2</strong>兵');
+  }
+  return text;
 }
 
 init();
