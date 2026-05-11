@@ -1279,9 +1279,10 @@ function renderRoster() {
     const innate = skillById(hero.innate);
     const dismantles = dismantleSkillsForHero(hero);
     const canDismantle = (state.roster[hero.id] || 0) > 0 && dismantles.length;
+    const portrait = portraitForHero(hero);
     return `
-      <article class="hero-card" data-hero-id="${hero.id}">
-        ${avatarMarkup(hero)}
+      <article class="hero-card" data-hero-id="${hero.id}" ${portrait ? `style="--hero-portrait: url('${portrait}')"` : ""}>
+        ${avatarMarkup(hero, "avatar hero-avatar")}
         <div>
           <div class="hero-name-row">
             <span class="hero-name">${hero.name}</span>

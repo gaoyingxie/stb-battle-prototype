@@ -22,6 +22,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 20% 10%, rgba(184, 63, 53, 0.18), transparent 28rem),
     radial-gradient(circle at 82% 24%, rgba(90, 161, 132, 0.16), transparent 22rem),
@@ -46,9 +47,9 @@ button {
 
 .app-shell {
   width: 100%;
-  max-width: 1560px;
+  max-width: 1840px;
   margin: 0 auto;
-  padding: 18px 14px 24px;
+  padding: 18px 24px 28px;
 }
 
 .topbar,
@@ -172,9 +173,10 @@ h2 {
 
 .layout {
   display: grid;
-  grid-template-columns: 320px minmax(420px, 1fr) 390px;
-  gap: 14px;
-  margin-top: 14px;
+  grid-template-columns: minmax(380px, 430px) minmax(680px, 1fr) minmax(350px, 410px);
+  gap: 16px;
+  align-items: start;
+  margin-top: 16px;
 }
 
 .panel {
@@ -183,11 +185,15 @@ h2 {
   overflow: hidden;
 }
 
-.roster-panel,
+.roster-panel {
+  display: flex;
+  flex-direction: column;
+}
+
 .report-panel {
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - 128px);
+  max-height: min(760px, calc(100vh - 124px));
 }
 
 .panel-heading,
@@ -237,8 +243,8 @@ h2 {
 
 .formation-editor {
   display: grid;
-  gap: 10px;
-  padding: 12px;
+  gap: 12px;
+  padding: 14px;
 }
 
 .slot-editor {
@@ -272,18 +278,24 @@ select {
 .roster,
 .skill-codex {
   display: grid;
-  gap: 9px;
+  gap: 12px;
   overflow: auto;
-  padding: 12px;
+  padding: 14px;
 }
 
 .roster {
-  flex: 1 1 42%;
+  grid-template-columns: 1fr;
+  max-height: 560px;
 }
 
 .skill-codex {
-  flex: 1 1 38%;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  max-height: 560px;
   align-content: start;
+}
+
+.codex-panel {
+  margin-top: 16px;
 }
 
 .hero-card,
@@ -305,21 +317,47 @@ select {
 
 .hero-card {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
-  gap: 10px;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  gap: 14px;
   align-items: center;
-  min-height: 72px;
-  padding: 10px;
+  min-height: 118px;
+  padding: 14px;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(20, 19, 15, 0.98) 0%, rgba(20, 19, 15, 0.84) 48%, rgba(20, 19, 15, 0.34) 100%),
+    linear-gradient(135deg, rgba(244, 236, 216, 0.08), transparent 54%),
+    var(--hero-portrait, var(--panel-soft));
+  background-position: center, center, right 18%;
+  background-size: auto, auto, cover;
+  box-shadow: inset 0 1px rgba(255, 240, 194, 0.05);
+}
+
+.hero-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(245, 223, 170, 0.08), transparent 38%);
+  content: "";
+}
+
+.hero-card:hover {
+  border-color: rgba(245, 223, 170, 0.48);
+  transform: translateY(-1px);
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .skill-codex-card {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 9px;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 12px;
   align-items: center;
   width: 100%;
-  min-height: 66px;
-  padding: 9px;
+  min-height: 86px;
+  padding: 12px;
   border: 1px solid rgba(215, 170, 71, 0.18);
   border-radius: 8px;
   background: rgba(42, 37, 29, 0.58);
@@ -335,8 +373,8 @@ select {
 
 .skill-codex-card img,
 .skill-codex-mark {
-  width: 38px;
-  height: 38px;
+  width: 54px;
+  height: 54px;
   border: 1px solid rgba(215, 170, 71, 0.32);
   border-radius: 6px;
   background: rgba(20, 19, 15, 0.52);
@@ -369,7 +407,7 @@ select {
 
 .skill-codex-card strong {
   color: var(--paper);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .skill-codex-card em {
@@ -380,7 +418,7 @@ select {
 
 .skill-codex-card small {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .avatar {
@@ -405,6 +443,13 @@ select {
   height: 100%;
   object-fit: cover;
   object-position: 50% 18%;
+}
+
+.hero-avatar {
+  width: 68px;
+  height: 68px;
+  border-color: rgba(245, 223, 170, 0.68);
+  box-shadow: 0 0 0 3px rgba(20, 19, 15, 0.46), 0 12px 26px rgba(0, 0, 0, 0.36);
 }
 
 .hero-name-row,
@@ -436,12 +481,22 @@ select {
   font-weight: 900;
 }
 
+.hero-name {
+  color: #fff0c2;
+  font-size: 18px;
+}
+
 .hero-meta,
 .unit-meta,
 .skill-row {
   margin-top: 4px;
   color: var(--muted);
   font-size: 12px;
+}
+
+.hero-meta {
+  color: #d4c39c;
+  line-height: 1.45;
 }
 
 .rarity {
@@ -506,13 +561,14 @@ select {
 .battlefield {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .war-map {
   display: grid;
   grid-template-rows: 1fr auto 1fr;
-  min-height: 620px;
-  padding: 16px;
+  min-height: 660px;
+  padding: 18px;
   background:
     linear-gradient(90deg, rgba(245, 223, 170, 0.04) 1px, transparent 1px),
     linear-gradient(rgba(245, 223, 170, 0.04) 1px, transparent 1px),
@@ -548,7 +604,7 @@ select {
 .unit-card {
   display: grid;
   align-content: space-between;
-  min-height: 210px;
+  min-height: 230px;
   padding: 14px;
   isolation: isolate;
   background:
@@ -1046,6 +1102,7 @@ select {
   flex-direction: column;
   gap: 8px;
   overflow: auto;
+  min-height: 560px;
   padding: 12px;
 }
 
@@ -1161,5 +1218,40 @@ select {
 
   .hero-detail-portrait {
     min-height: 260px;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    padding: 8px;
+  }
+
+  .top-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    min-height: 112px;
+    padding: 12px;
+  }
+
+  .hero-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-card > div:nth-child(2) {
+    padding-right: 48px;
+  }
+
+  .hero-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .report {
+    min-height: 280px;
   }
 }
