@@ -479,9 +479,19 @@ const OFFICIAL_SKILL_ALIASES = new Map([
 mergeOfficialData();
 
 const EQUIPPABLE_SKILLS = SKILLS;
+const STARTER_SKILL_GRADES = new Set(["B", "C"]);
+const LEGACY_FREE_SKILL_IDS = new Set([
+  "grand-reward",
+  "avoid-edge",
+  "one-rider",
+  "counter-plan",
+  "golden-lock",
+]);
+const STARTER_SKILL_MIGRATION = "starter-bc-only";
 const state = {
   roster: {},
   skills: {},
+  migrations: {},
   fodder: 0,
   formation: starterFormation(),
   enemy: [],
@@ -1062,9 +1072,30 @@ function ensureStarterRoster() {
   ["cao-cao", "guan-yu", "liu-bei", "sun-shangxiang", "cao-ren"].forEach((id) => {
     state.roster[id] = Math.max(1, state.roster[id] || 0);
   });
-  ["grand-reward", "avoid-edge", "one-rider", "return-horse", "calm-army", "counter-plan", "feint", "golden-lock"].forEach((id) => {
-    state.skills[id] = Math.max(1, state.skills[id] || 0);
+  migrateLegacyFreeSkills();
+}
+
+function migrateLegacyFreeSkills() {
+  if (state.migrations?.[STARTER_SKILL_MIGRATION]) return;
+  LEGACY_FREE_SKILL_IDS.forEach((id) => {
+    const skill = skillById(id);
+    if (!skill || isStarterUnlockedSkill(skill)) return;
+    const count = Number(state.skills[id]) || 0;
+    if (count <= 1) {
+      delete state.skills[id];
+      return;
+    }
+    state.skills[id] = count - 1;
   });
+  state.formation?.forEach((slot, index) => {
+    const legacyLocked = (slot.skills || []).some((skillId) => (
+      LEGACY_FREE_SKILL_IDS.has(skillId)
+      && !isSkillUnlocked(skillById(skillId))
+    ));
+    if (legacyLocked) slot.skills = suggestSkills(index);
+  });
+  state.migrations ||= {};
+  state.migrations[STARTER_SKILL_MIGRATION] = true;
 }
 
 function resetAll() {
@@ -1082,6 +1113,7 @@ function resetAll() {
 function resetRuntimeState() {
   state.roster = {};
   state.skills = {};
+  state.migrations = {};
   state.fodder = 0;
   state.formation = starterFormation();
   state.enemy = [];
@@ -1091,9 +1123,9 @@ function resetRuntimeState() {
 
 function starterFormation() {
   return [
-    { heroId: "cao-cao", skills: ["grand-reward", "avoid-edge"] },
-    { heroId: "guan-yu", skills: ["one-rider", "return-horse"] },
-    { heroId: "liu-bei", skills: ["calm-army", "counter-plan"] },
+    { heroId: "cao-cao", skills: ["empty-fort", "calm-army"] },
+    { heroId: "guan-yu", skills: ["return-horse", "feint"] },
+    { heroId: "liu-bei", skills: ["moon-snare", "cliff"] },
   ];
 }
 
@@ -1102,6 +1134,8 @@ function loadState() {
     const saved = JSON.parse(localStorage.getItem("heluozhanzhen") || "{}");
     Object.assign(state, saved);
     state.fodder = Number(state.fodder) || 0;
+    state.skills ||= {};
+    state.migrations ||= {};
   } catch {
     localStorage.removeItem("heluozhanzhen");
   }
@@ -1111,6 +1145,7 @@ function saveState() {
   localStorage.setItem("heluozhanzhen", JSON.stringify({
     roster: state.roster,
     skills: state.skills,
+    migrations: state.migrations,
     fodder: state.fodder,
     formation: state.formation,
     enemy: state.enemy,
@@ -1164,9 +1199,9 @@ function autoTeam() {
 
 function suggestSkills(index) {
   const sets = [
-    ["grand-reward", "avoid-edge"],
-    ["one-rider", "feint"],
-    ["return-horse", "golden-lock"],
+    ["empty-fort", "calm-army"],
+    ["return-horse", "feint"],
+    ["moon-snare", "cliff"],
   ];
   return sets[index];
 }
@@ -1262,10 +1297,10 @@ function skillOptions(selected, slotIndex, skillIndex) {
 
 function unlockedEquippableSkills(selected, slotIndex = -1, skillIndex = -1) {
   const occupied = assignedSkillIds(slotIndex, skillIndex);
-  const unlocked = EQUIPPABLE_SKILLS.filter((skill) => state.skills[skill.id] > 0 && (!occupied.has(skill.id) || skill.id === selected));
+  const unlocked = EQUIPPABLE_SKILLS.filter((skill) => isSkillUnlocked(skill) && (!occupied.has(skill.id) || skill.id === selected));
   if (selected && !unlocked.some((skill) => skill.id === selected)) {
     const selectedSkill = skillById(selected);
-    if (selectedSkill) unlocked.unshift(selectedSkill);
+    if (selectedSkill && isSkillUnlocked(selectedSkill)) unlocked.unshift(selectedSkill);
   }
   return unlocked.sort((a, b) => a.name.localeCompare(b.name, "zh-Hans-CN"));
 }
@@ -1288,6 +1323,7 @@ function normalizeFormationSkills() {
     slot.skills ||= [];
     slot.skills = [slot.skills[0] || null, slot.skills[1] || null].map((skillId) => {
       if (!skillId) return null;
+      if (!isSkillUnlocked(skillById(skillId))) return null;
       if (used.has(skillId)) return null;
       used.add(skillId);
       return skillId;
@@ -1325,7 +1361,6 @@ function renderRoster() {
 }
 
 function renderSkillCodex() {
-  if (els.skillCodex.dataset.rendered === "1") return;
   const skills = skillCodexList();
   els.skillCodexCount.textContent = skills.length;
   els.skillCodex.innerHTML = skills.map((skill) => {
@@ -1347,14 +1382,13 @@ function renderSkillCodex() {
       </button>
     `;
   }).join("");
-  els.skillCodex.dataset.rendered = "1";
 }
 
 function skillCodexList() {
   const gradeOrder = { S: 0, A: 1, B: 2, C: 3 };
   const typeOrder = { 指挥: 0, 主动: 1, 追击: 2, 被动: 3, 自带: 4 };
   const byName = new Map();
-  SKILLS.forEach((skill) => {
+  SKILLS.filter(isSkillUnlocked).forEach((skill) => {
     const existing = byName.get(skill.name);
     if (!existing || skillInfoScore(skill) > skillInfoScore(existing)) byName.set(skill.name, skill);
   });
@@ -2081,6 +2115,26 @@ function heroById(id) {
 
 function skillById(id) {
   return SKILLS.find((skill) => skill.id === id);
+}
+
+function resolvedSkillGrade(skill) {
+  if (!skill) return "";
+  if (skill.grade) return skill.grade;
+  return SKILLS.find((candidate) => candidate.name === skill.name && candidate.grade)?.grade || "";
+}
+
+function isStarterUnlockedSkill(skill) {
+  return STARTER_SKILL_GRADES.has(resolvedSkillGrade(skill));
+}
+
+function isSkillUnlocked(skill) {
+  if (!skill) return false;
+  if (isStarterUnlockedSkill(skill)) return true;
+  if ((Number(state.skills[skill.id]) || 0) > 0) return true;
+  return SKILLS.some((candidate) => (
+    candidate.name === skill.name
+    && (Number(state.skills[candidate.id]) || 0) > 0
+  ));
 }
 
 function ownedHeroes() {
