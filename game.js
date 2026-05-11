@@ -1445,40 +1445,32 @@ function updateBattleButton(result) {
 function unitTemplate(unit) {
   const troopPct = percentOf(unit.troops, unit.maxTroops);
   const woundedPct = percentOf(unit.wounded, unit.maxTroops);
-  const positionLabel = POSITIONS.find((position) => position.id === unit.position)?.label || "";
-  const skillNames = unit.skills.map((skill) => skill.name);
   const baseRange = baseAttackRange(unit);
   const attackRange = getAttackRange(unit);
   const rangeText = attackRange === baseRange ? `攻距 ${attackRange}` : `攻距 ${baseRange}→${attackRange}`;
-  const bonusText = unit.bonuses?.length ? ` · ${unit.bonuses.join(" / ")}` : "";
+  const troopText = `${formatNumber(Math.max(0, Math.round(unit.troops)))}/${formatNumber(unit.maxTroops)}`;
+  const woundedText = unit.wounded ? `伤${formatNumber(unit.wounded)}` : `${troopPct}%`;
   const portrait = portraitForHero(unit);
   return `
     <article class="unit-card ${unit.side} ${unit.position} ${unit.troops <= 0 ? "fallen" : ""}" data-hero-id="${unit.heroId}" ${portrait ? `style="--unit-portrait: url('${portrait}')"` : ""}>
-      <div class="unit-content">
-        <div class="unit-top">
-          <div class="unit-identity">
-            ${avatarMarkup(unit, "avatar unit-avatar")}
-            <span class="unit-name">${unit.name}</span>
-          </div>
-          <span class="role-tag">${positionLabel}</span>
-        </div>
-        <div class="unit-meta">${unit.faction} · ${unit.arm} · ${"★".repeat(unit.rarity)} · ${rangeText}${bonusText}</div>
+      <div class="unit-portrait" aria-hidden="true">
+        <span class="unit-stars">${"★".repeat(unit.rarity)}</span>
       </div>
-      <div class="unit-content unit-bottom">
+      <div class="unit-nameplate">
+        <span class="unit-faction">${unit.faction}</span>
+        <strong class="unit-name">${unit.name}</strong>
+        <span class="unit-arm">${unit.arm}</span>
+        <span class="unit-range">${rangeText}</span>
+      </div>
+      <div class="unit-troops">
+        <div class="unit-troop-row">
+          <span>兵力</span>
+          <strong>${troopText}</strong>
+          <span class="unit-wounded">${woundedText}</span>
+        </div>
         <div class="troop-bar" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%; --wounded-pct: ${woundedPct}%">
           <div class="troop-fill"></div>
           <div class="wounded-fill"></div>
-        </div>
-        <div class="unit-troop-row">
-          <span>Lv.50</span>
-          <span>${formatNumber(Math.max(0, Math.round(unit.troops)))}/${formatNumber(unit.maxTroops)}</span>
-          <span>${unit.wounded ? `伤${formatNumber(unit.wounded)}` : `${troopPct}%`}</span>
-        </div>
-        <div class="unit-stats">
-          <span>攻 <b>${unit.stats.attack}</b></span>
-          <span>谋 <b>${unit.stats.strategy}</b></span>
-          <span>防 <b>${unit.stats.defense}</b></span>
-          <span>速 <b>${unit.stats.speed}</b></span>
         </div>
         <div class="skill-list">
           ${unit.skills.map((skill) => `<button class="skill-chip" data-skill-id="${skill.id}" type="button">${skillNameWithGrade(skill)}</button>`).join("")}
