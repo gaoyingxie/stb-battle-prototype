@@ -622,26 +622,50 @@ function mergeOfficialData() {
 
   const heroKeys = new Set(HEROES.map((hero) => `${hero.name}-${hero.faction}-${hero.arm}-${hero.innate}`));
   official.heroes.forEach((hero) => {
+    if (!skillById(hero.innate)) return;
     const key = `${hero.name}-${hero.faction}-${hero.arm}-${hero.innate}`;
-    if (heroKeys.has(key) || !skillById(hero.innate)) return;
-    HEROES.push({
-      id: hero.id,
-      officialId: hero.officialId,
-      name: hero.name,
-      faction: hero.faction,
-      arm: hero.arm,
-      rarity: hero.rarity,
-      innate: hero.innate,
-      dismantle: hero.dismantle,
-      dismantles: hero.dismantles || (hero.dismantle ? [hero.dismantle] : []),
-      iconId: hero.iconId,
-      portrait: hero.portrait,
-      cost: hero.cost,
-      distance: hero.distance,
-      stats: hero.stats,
-      desc: hero.desc,
-    });
+    const localSeed = HEROES.find((candidate) =>
+      !candidate.officialId
+      && candidate.name === hero.name
+      && candidate.faction === hero.faction
+      && candidate.arm === hero.arm
+      && candidate.rarity === hero.rarity
+    );
+    if (localSeed) {
+      applyOfficialHeroFields(localSeed, hero);
+      heroKeys.add(key);
+      return;
+    }
+    if (heroKeys.has(key)) return;
+    HEROES.push(officialHeroToLocal(hero));
     heroKeys.add(key);
+  });
+}
+
+function officialHeroToLocal(hero) {
+  return {
+    id: hero.id,
+    officialId: hero.officialId,
+    name: hero.name,
+    faction: hero.faction,
+    arm: hero.arm,
+    rarity: hero.rarity,
+    innate: hero.innate,
+    dismantle: hero.dismantle,
+    dismantles: hero.dismantles || (hero.dismantle ? [hero.dismantle] : []),
+    iconId: hero.iconId,
+    portrait: hero.portrait,
+    cost: hero.cost,
+    distance: hero.distance,
+    stats: hero.stats,
+    desc: hero.desc,
+  };
+}
+
+function applyOfficialHeroFields(target, hero) {
+  Object.assign(target, {
+    ...officialHeroToLocal(hero),
+    id: target.id,
   });
 }
 
