@@ -940,8 +940,8 @@ function showGacha(pulls) {
   const results = pulls.map((pull) => pull.hero ? pull : { hero: pull, converted: false });
   const convertedCount = results.filter((pull) => pull.converted).length;
   els.gachaSubtitle.textContent = results.some((pull) => pull.hero.rarity >= 5)
-    ? `金印显耀，名将入营${convertedCount ? `；${convertedCount}名低星武将转为狗粮` : ""}`
-    : `${convertedCount}名低星武将已转为狗粮`;
+    ? `金印显耀，名将入营${convertedCount ? `；${convertedCount}名3星武将转为狗粮` : ""}`
+    : convertedCount ? `${convertedCount}名3星武将已转为狗粮` : "四星武将已入册";
   els.gachaResults.innerHTML = results.map((pull, index) => {
     const hero = pull.hero;
     return `
@@ -1052,7 +1052,7 @@ function drawHeroes(count) {
   const pulls = [];
   for (let i = 0; i < count; i += 1) {
     const hero = weightedHero();
-    const converted = hero.rarity <= 4;
+    const converted = hero.rarity <= 3;
     if (converted) {
       state.fodder += 1;
     } else {
