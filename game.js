@@ -31,6 +31,13 @@ const ARM_BONUS_STATS = {
   弓: ["defense", "speed"],
 };
 
+const NEGATIVE_STATUS_TYPES = new Set([
+  "burn", "disarm", "silence", "confusion", "berserk", "activeSealAura",
+  "disarmAura", "defenseDown", "rangeDown", "damageTakenUp",
+]);
+
+const CONTROL_STATUS_TYPES = new Set(["disarm", "silence", "confusion", "berserk"]);
+
 const HEROES = [
   {
     id: "cao-cao",
@@ -682,7 +689,7 @@ function probabilityText(skill) {
 function attachOfficialSkillBehavior(skill) {
   const desc = skill.desc || "";
   if (/指挥|被动/.test(skill.type)) {
-    skill.trigger = "command";
+    skill.trigger = /被动/.test(skill.type) ? "passive" : "command";
     skill.apply = (ctx, unit) => {
       const allies = /我军|友军|自身/.test(desc) ? unit.sideUnits : [unit];
       if (/伤害.*提高|造成.*提高/.test(desc)) allies.forEach((ally) => addStatus(ally, "damageUp", 2, 0.1));
@@ -691,6 +698,9 @@ function attachOfficialSkillBehavior(skill) {
       const rangeUp = attackRangeDelta(desc);
       if (rangeUp > 0) allies.forEach((ally) => addStatus(ally, "rangeUp", 2, rangeUp));
       if (/防御.*提高|规避|减伤|伤害降低/.test(desc)) allies.forEach((ally) => addStatus(ally, "damageDown", 2, 0.1));
+      if (/洞察/.test(desc)) allies.forEach((ally) => addStatus(ally, "insight", durationFromText(desc, 8), 1));
+      if (/援护/.test(desc)) allies.forEach((ally) => addStatus(ally, "guard", durationFromText(desc, 2), 1));
+      if (/分兵/.test(desc)) allies.forEach((ally) => addStatus(ally, "split", durationFromText(desc, 1), damageRateFromText(desc, 0.35)));
       log(ctx, "system", `${unit.name}发动【${skill.name}】：${summarizeDesc(desc)}`);
     };
     return skill;
@@ -698,28 +708,37 @@ function attachOfficialSkillBehavior(skill) {
 
   skill.chance = chanceFromProbability(skill.probability, /追击/.test(skill.type) ? 0.4 : 0.35);
   skill.trigger = /追击/.test(skill.type) ? "pursuit" : "active";
+  skill.prepareRounds = prepareRoundsFromText(desc);
   skill.use = (ctx, unit, pursuedTarget) => {
+    if (/自身.*分兵|进入分兵/.test(desc)) addStatus(unit, "split", durationFromText(desc, 1), damageRateFromText(desc, 0.35));
+    if (/自身.*洞察|进入洞察/.test(desc)) addStatus(unit, "insight", durationFromText(desc, 2), 1);
+    if (/自身.*援护|进入援护/.test(desc)) addStatus(unit, "guard", durationFromText(desc, 2), 1);
     const targetText = `${skill.target || ""} ${desc}`;
     const distance = Number(skill.distance) || skillDistanceFromText(targetText);
     const hostile = /敌军|敌方|攻击目标/.test(targetText);
     const healing = /恢复|休整|急救/.test(desc);
+    const damaging = /伤害|攻击|恐慌|妖术|燃烧|灼烧|火攻/.test(desc);
     const count = targetCountFromText(targetText);
+    const targetPool = hostile && hasStatus(unit, "berserk")
+      ? [...unit.enemyUnits, ...unit.sideUnits.filter((ally) => ally.id !== unit.id)]
+      : hostile ? unit.enemyUnits : unit.sideUnits;
     const targets = healing
       ? filterSkillTargets(unit, unit.sideUnits, targetText, distance).sort((a, b) => a.troops - b.troops).slice(0, count)
       : pursuedTarget
         ? [pursuedTarget]
-        : pickSkillTargets(unit, hostile ? unit.enemyUnits : unit.sideUnits, count, targetText, distance);
+        : pickSkillTargets(unit, targetPool, count, targetText, distance);
     if (!targets.length) return false;
 
     targets.forEach((target) => {
       if (healing) {
         heal(ctx, unit, target, 520 + unit.stats.strategy * 4.2, skill.name);
-      } else {
+      } else if (damaging) {
         dealDamage(ctx, unit, target, /强力|猛烈|全体/.test(desc) ? 1.05 : 0.78, /策略|谋略|恐慌|妖术/.test(desc) ? "strategy" : "attack", skill.name);
       }
-      if (/怯战|无法进行普通攻击/.test(desc)) addStatus(target, "disarm", 1, 1);
-      if (/犹豫|无法发动主动/.test(desc)) addStatus(target, "silence", 1, 1);
-      if (/混乱|暴走/.test(desc)) addStatus(target, "silence", 1, 1);
+      if (/怯战|无法进行普通攻击/.test(desc)) addStatus(target, "disarm", durationFromText(desc, 1), 1, ctx, skill.name);
+      if (/犹豫|无法发动主动/.test(desc)) addStatus(target, "silence", durationFromText(desc, 1), 1, ctx, skill.name);
+      if (/混乱/.test(desc)) addStatus(target, "confusion", durationFromText(desc, 1), 1, ctx, skill.name);
+      if (/暴走/.test(desc)) addStatus(target, "berserk", durationFromText(desc, 1), 1, ctx, skill.name);
       if (/燃烧|灼烧|火攻/.test(desc)) addStatus(target, "burn", 2, 360 + unit.stats.strategy * 2);
       if (/防御.*降低/.test(desc)) addStatus(target, "defenseDown", 2, 10);
     });
@@ -874,6 +893,21 @@ function statusTextFromDesc(desc) {
   if (/燃烧|灼烧|火攻/.test(desc)) statuses.push("灼烧 2回合，每回合 360 + 谋略 × 2");
   if (/防御.*降低/.test(desc)) statuses.push("防御 -10，持续2回合");
   return statuses.join("；") || "无";
+}
+
+function prepareRoundsFromText(text = "") {
+  const match = text.match(/(\d+)\s*回合准备/);
+  return match ? Number(match[1]) : 0;
+}
+
+function durationFromText(text = "", fallback = 1) {
+  const match = text.match(/持续\s*(\d+)\s*回合/);
+  return match ? Number(match[1]) : fallback;
+}
+
+function damageRateFromText(text = "", fallback = 0.35) {
+  const match = text.match(/伤害率\s*(\d+(?:\.\d+)?)%/);
+  return match ? Number(match[1]) / 100 : fallback;
 }
 
 function escapeHtml(value) {
@@ -1385,10 +1419,8 @@ function createBattle(playerTeam, enemyTeam) {
   applyFormationBonuses(enemy, ctx, "守军");
 
   log(ctx, "system", "战斗开始：双方大营、中军、前锋各领一万兵。");
-  [...player, ...enemy].forEach((unit) => {
-    unit.skills.filter((skill) => skill.trigger === "command" || skill.trigger === "passive")
-      .forEach((skill) => skill.apply?.(ctx, unit));
-  });
+  log(ctx, "round", "准备回合");
+  applyPrepRoundSkills(ctx, [...player, ...enemy]);
 
   return {
     ctx,
@@ -1402,6 +1434,18 @@ function createBattle(playerTeam, enemyTeam) {
     complete: false,
     finishReason: null,
   };
+}
+
+function applyPrepRoundSkills(ctx, units) {
+  ["passive", "command"].forEach((trigger) => {
+    alive(units)
+      .sort((a, b) => actionSpeed(b) - actionSpeed(a))
+      .forEach((unit) => {
+        unit.skills
+          .filter((skill) => skill.trigger === trigger)
+          .forEach((skill) => skill.apply?.(ctx, unit));
+      });
+  });
 }
 
 function advanceBattleRound(battle) {
@@ -1503,6 +1547,7 @@ function createUnits(team, side, freshTroops) {
       troops: freshTroops ? 10000 : slot.troops || 10000,
       maxTroops: 10000,
       statuses: [],
+      pendingSkills: [],
       sideUnits: [],
       enemyUnits: [],
     };
@@ -1581,14 +1626,32 @@ function linkSides(player, enemy) {
 }
 
 function takeAction(ctx, unit) {
+  if (hasStatus(unit, "confusion")) {
+    log(ctx, "control", `${unit.name}陷入混乱，无法行动。`);
+    return;
+  }
+
   const activeBlocked = hasStatus(unit, "silence") || (hasStatus(unit, "activeSealAura") && Math.random() < statusValue(unit, "activeSealAura"));
+  resolvePreparedSkills(ctx, unit, activeBlocked);
+  if (campDown(unit.enemyUnits)) return;
+
   const activeSkills = unit.skills.filter((skill) => skill.use && skill.trigger !== "pursuit");
   for (const skill of activeSkills) {
     if (activeBlocked) {
-      log(ctx, "control", `${unit.name}受到扰乱，【${skill.name}】未能发动。`);
+      log(ctx, "control", `${unit.name}受到犹豫/封锁，【${skill.name}】未能发动。`);
       break;
     }
     if (Math.random() < (skill.chance || 0)) {
+      const prepareRounds = skill.prepareRounds ?? prepareRoundsFromText(skill.desc || "");
+      if (prepareRounds > 0) {
+        if (unit.pendingSkills.some((pending) => pending.skill.id === skill.id)) {
+          log(ctx, "system", `${unit.name}正在准备【${skill.name}】，本回合不重复进入准备。`);
+          continue;
+        }
+        unit.pendingSkills.push({ skill, rounds: prepareRounds });
+        log(ctx, "system", `${unit.name}开始准备【${skill.name}】，需${prepareRounds}回合。`);
+        continue;
+      }
       skill.use(ctx, unit);
       if (campDown(unit.enemyUnits)) return;
     }
@@ -1611,6 +1674,20 @@ function takeAction(ctx, unit) {
   });
 }
 
+function resolvePreparedSkills(ctx, unit, activeBlocked) {
+  if (!unit.pendingSkills?.length) return;
+  const ready = unit.pendingSkills.filter((pending) => pending.rounds <= 0);
+  unit.pendingSkills = unit.pendingSkills.filter((pending) => pending.rounds > 0);
+  ready.forEach(({ skill }) => {
+    if (activeBlocked) {
+      log(ctx, "control", `${unit.name}受到犹豫/封锁，准备完成的【${skill.name}】未能发动。`);
+      return;
+    }
+    log(ctx, "system", `${unit.name}准备完成，发动【${skill.name}】。`);
+    skill.use?.(ctx, unit);
+  });
+}
+
 function applyRoundStart(ctx, unit) {
   if (!unit.troops) return;
   const burn = statusValue(unit, "burn");
@@ -1623,6 +1700,8 @@ function applyRoundStart(ctx, unit) {
 
 function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = false) {
   if (!attacker.troops || !defender?.troops) return 0;
+  const originalDefender = defender;
+  if (isNormal) defender = guardTarget(ctx, attacker, defender);
   const evade = statusValue(defender, "evade");
   if (evade && Math.random() < evade) {
     log(ctx, "control", `${defender.name}规避了${attacker.name}的【${source}】。`);
@@ -1644,6 +1723,8 @@ function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = fals
   defender.troops = Math.max(0, defender.troops - damage);
   log(ctx, "hit", `${attacker.name}以【${source}】攻击${defender.name}${arm.text ? `（${arm.text}）` : ""}，造成${damage}兵损。`);
 
+  if (isNormal) applySplitDamage(ctx, attacker, originalDefender, source);
+
   if (isNormal && defender.troops > 0 && hasStatus(defender, "counter")) {
     const counterRate = statusValue(defender, "counter");
     if (Math.random() < counterRate) {
@@ -1655,6 +1736,30 @@ function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = fals
     }
   }
   return damage;
+}
+
+function guardTarget(ctx, attacker, defender) {
+  const guards = alive(defender.sideUnits)
+    .filter((unit) => unit.id !== defender.id && hasStatus(unit, "guard"));
+  if (!guards.length) return defender;
+  const guard = guards[Math.floor(Math.random() * guards.length)];
+  log(ctx, "control", `${guard.name}发动援护，替${defender.name}承受${attacker.name}的普通攻击。`);
+  return guard;
+}
+
+function applySplitDamage(ctx, attacker, defender, source) {
+  const splitRate = statusValue(attacker, "split");
+  if (!splitRate || !defender?.sideUnits) return;
+  adjacentUnits(defender).forEach((target) => {
+    dealDamage(ctx, attacker, target, splitRate, "attack", `${source}·分兵`);
+  });
+}
+
+function adjacentUnits(unit) {
+  const order = ["front", "middle", "camp"];
+  const index = order.indexOf(unit.position);
+  return alive(unit.sideUnits)
+    .filter((candidate) => candidate.id !== unit.id && Math.abs(order.indexOf(candidate.position) - index) === 1);
 }
 
 function armCounterModifier(attackerArm, defenderArm) {
@@ -1711,7 +1816,10 @@ function canReachByAttack(attacker, defender) {
 }
 
 function pickNormalAttackTarget(unit) {
-  const targets = alive(unit.enemyUnits).filter((target) => canReachByAttack(unit, target));
+  const targetPool = hasStatus(unit, "berserk")
+    ? [...unit.enemyUnits, ...unit.sideUnits.filter((ally) => ally.id !== unit.id)]
+    : unit.enemyUnits;
+  const targets = alive(targetPool).filter((target) => canReachByAttack(unit, target));
   return targets[Math.floor(Math.random() * targets.length)];
 }
 
@@ -1749,16 +1857,28 @@ function heal(ctx, caster, target, amount, source) {
 }
 
 function pickTargets(units, count, exclude = []) {
-  const order = ["front", "middle", "camp"];
-  return alive(units)
+  return shuffle(alive(units)
     .filter((unit) => !exclude.includes(unit.id))
-    .sort((a, b) => order.indexOf(a.position) - order.indexOf(b.position) || a.troops - b.troops)
+    .sort((a, b) => positionDistanceFromFront(a) - positionDistanceFromFront(b) || a.troops - b.troops))
     .slice(0, count);
 }
 
-function addStatus(unit, type, rounds, value) {
+function positionDistanceFromFront(unit) {
+  return ["front", "middle", "camp"].indexOf(unit.position);
+}
+
+function addStatus(unit, type, rounds, value, ctx = null, source = "") {
+  if (NEGATIVE_STATUS_TYPES.has(type) && hasStatus(unit, "insight")) {
+    if (ctx) log(ctx, "control", `${unit.name}处于洞察，免疫${source ? `【${source}】` : ""}负面状态。`);
+    return false;
+  }
+  if (CONTROL_STATUS_TYPES.has(type) && hasStatus(unit, type)) {
+    if (ctx) log(ctx, "control", `${unit.name}已有${statusLabel(type)}，后续同类控制未生效。`);
+    return false;
+  }
   unit.statuses = unit.statuses.filter((status) => status.type !== type);
   unit.statuses.push({ type, rounds, value });
+  return true;
 }
 
 function tickStatuses(unit) {
@@ -1766,11 +1886,13 @@ function tickStatuses(unit) {
     status.rounds -= 1;
   });
   unit.statuses = unit.statuses.filter((status) => status.rounds > 0);
+  unit.pendingSkills?.forEach((pending) => {
+    pending.rounds -= 1;
+  });
 }
 
 function clearBadStatuses(unit) {
-  const bad = new Set(["burn", "disarm", "silence", "activeSealAura", "disarmAura", "defenseDown"]);
-  unit.statuses = unit.statuses.filter((status) => !bad.has(status.type));
+  unit.statuses = unit.statuses.filter((status) => !NEGATIVE_STATUS_TYPES.has(status.type));
 }
 
 function hasStatus(unit, type) {
@@ -1779,6 +1901,18 @@ function hasStatus(unit, type) {
 
 function statusValue(unit, type) {
   return unit.statuses.filter((status) => status.type === type).reduce((sum, status) => sum + status.value, 0);
+}
+
+function statusLabel(type) {
+  return {
+    disarm: "怯战",
+    silence: "犹豫",
+    confusion: "混乱",
+    berserk: "暴走",
+    insight: "洞察",
+    guard: "援护",
+    split: "分兵",
+  }[type] || type;
 }
 
 function actionSpeed(unit) {
