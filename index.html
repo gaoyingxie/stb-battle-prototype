@@ -49,38 +49,37 @@
               <h2 id="battleTitle">郊野守军</h2>
               <p id="battleSubtitle">等待开战</p>
             </div>
-            <div id="battleResult" class="result-chip">未交锋</div>
           </div>
 
           <div class="war-map" aria-label="双方阵列">
-            <div class="side enemy-side">
-              <div class="side-label">守军</div>
-              <div id="enemyLine" class="line"></div>
+            <section class="army-block player-block" aria-label="蓝色方我军">
+              <div class="army-title">
+                <span>蓝色方</span>
+                <strong id="playerTroops">30000</strong>
+              </div>
+              <div class="position-row" aria-hidden="true">
+                <span>大营</span>
+                <span>中军</span>
+                <span>前锋</span>
+              </div>
+              <div id="playerLine" class="line player-side"></div>
+            </section>
+            <div class="clash-band" aria-label="战果">
+              <div id="roundCount" class="round-count">第0封战报</div>
+              <div id="battleResult" class="result-chip">未交锋</div>
             </div>
-            <div class="clash-band" aria-hidden="true">
-              <span></span>
-              <strong>交锋线</strong>
-              <span></span>
-            </div>
-            <div class="side player-side">
-              <div class="side-label">我军</div>
-              <div id="playerLine" class="line"></div>
-            </div>
-          </div>
-
-          <div class="stats-strip">
-            <div>
-              <span>我军兵力</span>
-              <strong id="playerTroops">30000</strong>
-            </div>
-            <div>
-              <span>守军兵力</span>
-              <strong id="enemyTroops">30000</strong>
-            </div>
-            <div>
-              <span>战斗轮次</span>
-              <strong id="roundCount">0/8</strong>
-            </div>
+            <section class="army-block enemy-block" aria-label="红色方守军">
+              <div class="army-title">
+                <span>红色方</span>
+                <strong id="enemyTroops">30000</strong>
+              </div>
+              <div class="position-row" aria-hidden="true">
+                <span>大营</span>
+                <span>中军</span>
+                <span>前锋</span>
+              </div>
+              <div id="enemyLine" class="line enemy-side"></div>
+            </section>
           </div>
         </section>
 

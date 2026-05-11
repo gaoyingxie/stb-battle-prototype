@@ -1353,10 +1353,11 @@ function renderBattle(result) {
   els.enemyLine.innerHTML = visualLineUnits(enemyUnits).map(unitTemplate).join("");
   els.playerTroops.innerHTML = troopSummaryTemplate(playerUnits);
   els.enemyTroops.innerHTML = troopSummaryTemplate(enemyUnits);
-  els.roundCount.textContent = `${result?.rounds || 0}/8`;
+  const shownRound = Math.max(1, result?.rounds || 1);
+  els.roundCount.innerHTML = `<span>第 <b>${shownRound}</b> 封战报${result && !result.complete ? "（当前）" : ""}</span><small>共 1 封战报</small>`;
   els.battleSubtitle.textContent = result ? result.subtitle : "双方列阵，尚未交锋";
   els.battleResult.textContent = result ? result.label : "未交锋";
-  els.battleResult.style.borderColor = result?.winner === "player" ? "rgba(90, 161, 132, 0.7)" : result?.winner === "enemy" ? "rgba(184, 63, 53, 0.7)" : "rgba(215, 170, 71, 0.3)";
+  els.battleResult.dataset.result = result?.winner || "pending";
   updateBattleButton(result);
 }
 
@@ -1394,7 +1395,7 @@ function unitTemplate(unit) {
   const bonusText = unit.bonuses?.length ? ` · ${unit.bonuses.join(" / ")}` : "";
   const portrait = portraitForHero(unit);
   return `
-    <article class="unit-card ${unit.position} ${unit.troops <= 0 ? "fallen" : ""}" data-hero-id="${unit.heroId}" ${portrait ? `style="--unit-portrait: url('${portrait}')"` : ""}>
+    <article class="unit-card ${unit.side} ${unit.position} ${unit.troops <= 0 ? "fallen" : ""}" data-hero-id="${unit.heroId}" ${portrait ? `style="--unit-portrait: url('${portrait}')"` : ""}>
       <div class="unit-content">
         <div class="unit-top">
           <div class="unit-identity">
@@ -1410,8 +1411,9 @@ function unitTemplate(unit) {
           <div class="troop-fill"></div>
           <div class="wounded-fill"></div>
         </div>
-        <div class="skill-row">
-          <span>${formatNumber(Math.max(0, Math.round(unit.troops)))}</span>
+        <div class="unit-troop-row">
+          <span>Lv.50</span>
+          <span>${formatNumber(Math.max(0, Math.round(unit.troops)))}/${formatNumber(unit.maxTroops)}</span>
           <span>${unit.wounded ? `伤${formatNumber(unit.wounded)}` : `${troopPct}%`}</span>
         </div>
         <div class="unit-stats">
