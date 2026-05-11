@@ -925,14 +925,20 @@ function dismantleHero(heroId) {
   if (!hero || !skills.length || (state.roster[hero.id] || 0) <= 0) return;
   state.roster[hero.id] -= 1;
   removeHeroFromFormation(hero.id);
-  skills.forEach((skill) => {
-    state.skills[skill.id] = (state.skills[skill.id] || 0) + 1;
-  });
+  unlockDismantleSkills(hero);
   state.activeBattle = null;
   state.lastBattle = null;
   writeReport([{ type: "system", text: `拆解${hero.name}，获得战法【${skills.map((skill) => skill.name).join("】、【")}】。` }]);
   saveState();
   renderAll();
+}
+
+function unlockDismantleSkills(hero) {
+  const skills = dismantleSkillsForHero(hero);
+  skills.forEach((skill) => {
+    state.skills[skill.id] = (state.skills[skill.id] || 0) + 1;
+  });
+  return skills;
 }
 
 function removeHeroFromFormation(heroId) {
@@ -973,21 +979,26 @@ function dismantleSkillsForHero(hero) {
 function showGacha(pulls) {
   const results = pulls.map((pull) => pull.hero ? pull : { hero: pull, converted: false });
   const convertedCount = results.filter((pull) => pull.converted).length;
+  const dismantledNames = [...new Set(results.flatMap((pull) => pull.dismantledSkills || []).map((skill) => skill.name))];
   els.gachaSubtitle.textContent = results.some((pull) => pull.hero.rarity >= 5)
-    ? `金印显耀，名将入营${convertedCount ? `；${convertedCount}名3星武将转为狗粮` : ""}`
-    : convertedCount ? `${convertedCount}名3星武将已转为狗粮` : "四星武将已入册";
+    ? `金印显耀，名将入营${convertedCount ? `；${convertedCount}名低星武将转为狗粮` : ""}`
+    : convertedCount ? `${convertedCount}名低星武将已转为狗粮` : "名将已入册";
   els.gachaResults.innerHTML = results.map((pull, index) => {
     const hero = pull.hero;
+    const skillText = pull.dismantledSkills?.length ? ` · 拆${pull.dismantledSkills.length}战法` : "";
     return `
     <article class="gacha-result rarity-${hero.rarity} ${pull.converted ? "converted" : ""}" data-hero-id="${hero.id}" style="--delay: ${index * 42}ms">
       ${avatarMarkup(hero)}
       <strong>${hero.name}</strong>
       <span>${hero.faction} · ${hero.arm}</span>
       <em>${"★".repeat(hero.rarity)}</em>
-      ${pull.converted ? `<small>转为狗粮</small>` : ""}
+      ${pull.converted ? `<small>转为狗粮${skillText}</small>` : ""}
     </article>
   `;
   }).join("");
+  if (dismantledNames.length) {
+    els.gachaSubtitle.textContent += `；已解锁${dismantledNames.slice(0, 3).map((name) => `【${name}】`).join("")}${dismantledNames.length > 3 ? "等战法" : ""}`;
+  }
   els.gachaModal.showModal();
 }
 
@@ -1086,15 +1097,20 @@ function drawHeroes(count) {
   const pulls = [];
   for (let i = 0; i < count; i += 1) {
     const hero = weightedHero();
-    const converted = hero.rarity <= 3;
+    const converted = hero.rarity <= 4;
+    let dismantledSkills = [];
     if (converted) {
       state.fodder += 1;
+      dismantledSkills = unlockDismantleSkills(hero);
     } else {
       state.roster[hero.id] = (state.roster[hero.id] || 0) + 1;
     }
-    pulls.push({ hero, converted });
+    pulls.push({ hero, converted, dismantledSkills });
   }
-  const names = pulls.map(({ hero, converted }) => `${hero.name}${"★".repeat(hero.rarity)}${converted ? "→狗粮" : ""}`).join("、");
+  const names = pulls.map(({ hero, converted, dismantledSkills }) => {
+    const skillText = dismantledSkills?.length ? `，拆出${dismantledSkills.map((skill) => `【${skill.name}】`).join("")}` : "";
+    return `${hero.name}${"★".repeat(hero.rarity)}${converted ? `→狗粮${skillText}` : ""}`;
+  }).join("、");
   const convertedCount = pulls.filter((pull) => pull.converted).length;
   writeReport([{ type: "system", text: `招募结果：${names}${convertedCount ? `。狗粮 +${convertedCount}，当前 ${state.fodder}` : ""}` }]);
   showGacha(pulls);
