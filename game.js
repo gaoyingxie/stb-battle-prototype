@@ -586,6 +586,14 @@ function mergeOfficialData() {
       desc: skill.desc || "官方战法库条目暂无效果描述。",
       trigger: "official",
       officialId: skill.officialId,
+      soldierType: skill.soldierType || "",
+      distance: skill.distance ?? null,
+      probability: skill.probability || "",
+      effect: skill.effect || "",
+      icon: skill.icon || "",
+      skillCount: skill.skillCount ?? null,
+      studyDesc: skill.studyDesc || "",
+      studyDesc2: skill.studyDesc2 || "",
     }));
     skillIds.add(skill.id);
   });
@@ -615,6 +623,12 @@ function mergeOfficialData() {
   });
 }
 
+function chanceFromProbability(value, fallback) {
+  const numbers = String(value || "").match(/\d+(?:\.\d+)?/g)?.map(Number).filter(Number.isFinite) || [];
+  if (!numbers.length) return fallback;
+  return Math.max(...numbers) / 100;
+}
+
 function attachOfficialSkillBehavior(skill) {
   const desc = skill.desc || "";
   if (/指挥|被动/.test(skill.type)) {
@@ -632,18 +646,19 @@ function attachOfficialSkillBehavior(skill) {
     return skill;
   }
 
-  skill.chance = /追击/.test(skill.type) ? 0.4 : 0.35;
+  skill.chance = chanceFromProbability(skill.probability, /追击/.test(skill.type) ? 0.4 : 0.35);
   skill.trigger = /追击/.test(skill.type) ? "pursuit" : "active";
   skill.use = (ctx, unit, pursuedTarget) => {
     const targetText = `${skill.target || ""} ${desc}`;
+    const distance = Number(skill.distance) || skillDistanceFromText(targetText);
     const hostile = /敌军|敌方|攻击目标/.test(targetText);
     const healing = /恢复|休整|急救/.test(desc);
     const count = targetCountFromText(targetText);
     const targets = healing
-      ? filterSkillTargets(unit, unit.sideUnits, targetText).sort((a, b) => a.troops - b.troops).slice(0, count)
+      ? filterSkillTargets(unit, unit.sideUnits, targetText, distance).sort((a, b) => a.troops - b.troops).slice(0, count)
       : pursuedTarget
         ? [pursuedTarget]
-        : pickSkillTargets(unit, hostile ? unit.enemyUnits : unit.sideUnits, count, targetText);
+        : pickSkillTargets(unit, hostile ? unit.enemyUnits : unit.sideUnits, count, targetText, distance);
     if (!targets.length) return false;
 
     targets.forEach((target) => {
@@ -685,8 +700,13 @@ function handleBodyClick(event) {
 function showSkillModal(skillId) {
   const skill = skillById(skillId);
   if (!skill) return;
-  els.skillModalTitle.textContent = skill.name;
-  els.skillModalMeta.textContent = [skillGradeText(skill), skill.type, skill.target, skill.chance ? `发动率 ${Math.round(skill.chance * 100)}%` : ""]
+  els.skillModalTitle.innerHTML = `${skill.icon ? `<img class="skill-title-icon" src="${escapeHtml(skill.icon)}" alt="">` : ""}<span>${escapeHtml(skill.name)}</span>`;
+  els.skillModalMeta.textContent = [
+    skill.grade ? `战法品质：${skill.grade}` : skillGradeText(skill),
+    skill.type ? `战法类型：${skill.type}` : "",
+    skill.soldierType ? `兵种类型：${skill.soldierType}` : "",
+    skill.distance ? `有效距离：${skill.distance}` : "",
+  ]
     .filter(Boolean)
     .join(" · ");
   els.skillModalDesc.innerHTML = skillDetailHtml(skill);
@@ -757,8 +777,13 @@ function skillDetailHtml(skill) {
 function conciseSkillRows(skill) {
   const desc = skill.desc || "";
   return [
-    ["目标", skill.target || inferTargetText(desc)],
-    ["发动率", skill.chance ? `${Math.round(skill.chance * 100)}%` : triggerIsAlways(skill) ? "100%" : "按战法类型推断"],
+    ["战法品质", skill.grade || "暂无"],
+    ["战法类型", skill.type || "未知"],
+    ["兵种类型", skill.soldierType || "未知"],
+    ["有效距离", skill.distance ? String(skill.distance) : "按描述"],
+    ["目标群体", skill.target || inferTargetText(desc)],
+    ["发动率", skill.probability || (skill.chance ? `${Math.round(skill.chance * 100)}%` : triggerIsAlways(skill) ? "100%" : "按战法类型推断")],
+    ["效果", skill.effect || "按描述"],
     ["伤害类型", /恢复|休整|急救/.test(desc) ? "恢复" : /策略|谋略|恐慌|妖术/.test(desc) ? "策略伤害" : /攻击|伤害率|猛攻/.test(desc) ? "攻击伤害" : "按描述"],
   ];
 }
@@ -1106,7 +1131,7 @@ function renderFormationEditor() {
 function skillOptions(selected, slotIndex, skillIndex) {
   const options = unlockedEquippableSkills(selected, slotIndex, skillIndex);
   return `<option value="" ${selected ? "" : "selected"}>未配置</option>` + options.map((skill) => (
-    `<option value="${skill.id}" ${skill.id === selected ? "selected" : ""}>${skill.name} · ${[skillGradeText(skill), skill.type].filter(Boolean).join(" · ")}</option>`
+    `<option value="${skill.id}" ${skill.id === selected ? "selected" : ""}>${skill.name} · ${[skillGradeText(skill), skill.type, skill.distance ? `距${skill.distance}` : ""].filter(Boolean).join(" · ")}</option>`
   )).join("");
 }
 
@@ -1601,12 +1626,12 @@ function targetCountFromText(text = "") {
   return 1;
 }
 
-function pickSkillTargets(unit, units, count, text = "") {
-  return pickTargets(filterSkillTargets(unit, units, text), count);
+function pickSkillTargets(unit, units, count, text = "", explicitDistance = null) {
+  return pickTargets(filterSkillTargets(unit, units, text, explicitDistance), count);
 }
 
-function filterSkillTargets(unit, units, text = "") {
-  const distance = skillDistanceFromText(text);
+function filterSkillTargets(unit, units, text = "", explicitDistance = null) {
+  const distance = Number(explicitDistance) || skillDistanceFromText(text);
   return distance
     ? units.filter((target) => positionDistance(unit, target) <= distance)
     : units;

@@ -6,6 +6,7 @@ const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const OUT_FILE = path.join(ROOT, "official-data.js");
 const HERO_EXTRA = "https://g0.gph.netease.com/ngsocial/community/stzb/cfg/hero_extra.json?gameid=g10";
 const SKILL_LIST = "https://stzb.163.com/json/jineng_list.json";
+const SKILL_EXTRA = "https://g0.gph.netease.com/ngsocial/community/stzb/cfg/skill_extra.json?gameid=g10";
 
 const decodeHtml = (value = "") =>
   String(value)
@@ -40,6 +41,18 @@ const rarityFromQuality = (quality = "0-CS") => {
 const skillGrade = (value) => {
   const grade = String(value || "").trim().toUpperCase();
   return ["S", "A", "B", "C"].includes(grade) ? grade : "";
+};
+
+const skillIcon = (type = "") => {
+  const index = new Map([
+    ["指挥", 1],
+    ["主动", 2],
+    ["被动", 3],
+    ["追击", 4],
+  ]).get(type);
+  return index > 0
+    ? `https://g0.gph.netease.com/ngsocial/community/stzb/front_end/img/jineng/tactics_00${index}.png?gameid=g10`
+    : "";
 };
 
 const toNumber = (value, fallback = 60) => {
@@ -121,6 +134,14 @@ function upsertSkill(map, raw) {
     target: raw.target || existing.target || "",
     desc: raw.desc || existing.desc || "",
     grade: skillGrade(raw.grade || raw.quality || raw.rank || existing.grade),
+    soldierType: raw.soldierType || existing.soldierType || "",
+    distance: raw.distance ?? existing.distance ?? null,
+    probability: raw.probability || existing.probability || "",
+    effect: raw.effect || existing.effect || "",
+    icon: raw.icon || existing.icon || skillIcon(raw.type || existing.type),
+    skillCount: raw.skillCount ?? existing.skillCount ?? null,
+    studyDesc: raw.studyDesc || existing.studyDesc || "",
+    studyDesc2: raw.studyDesc2 || existing.studyDesc2 || "",
     source: raw.source || existing.source || "official",
     trigger: "official",
   });
@@ -128,19 +149,29 @@ function upsertSkill(map, raw) {
 }
 
 const heroesRaw = await fetchJson(HERO_EXTRA);
-const skillRaw = await fetchJson(SKILL_LIST);
+const skillRaw = await fetchJson(SKILL_EXTRA);
 const details = await scrapeDetails(heroesRaw);
 const skills = new Map();
 
 for (const skill of skillRaw) {
+  const type = decodeHtml(skill.type);
   upsertSkill(skills, {
     id: skillId(decodeHtml(skill.name), skill.id),
     officialId: skill.id,
     name: decodeHtml(skill.name),
-    type: decodeHtml(skill.type),
+    type,
     target: decodeHtml(skill.targetShow || skill.targetType || ""),
-    grade: skillGrade(skill.grade || skill.quality || skill.rank),
-    source: "official-skill-list",
+    desc: decodeHtml(skill.desc),
+    grade: skillGrade(skill.zfQuality || skill.grade || skill.quality || skill.rank),
+    soldierType: decodeHtml(skill.soldierType),
+    distance: Number(skill.distance) || null,
+    probability: decodeHtml(skill.probability),
+    effect: decodeHtml(skill.effect),
+    icon: skillIcon(type),
+    skillCount: skill.skillCount,
+    studyDesc: decodeHtml(skill.studyDesc),
+    studyDesc2: decodeHtml(skill.studyDesc2),
+    source: "official-skill-extra",
   });
 }
 
@@ -192,7 +223,9 @@ const heroes = heroesRaw.map((hero) => {
 const output = {
   source: {
     heroes: HERO_EXTRA,
-    skills: SKILL_LIST,
+    skills: SKILL_EXTRA,
+    skillListLegacy: SKILL_LIST,
+    skillExtra: SKILL_EXTRA,
     details: "https://stzb.163.com/herolist/{id}.html",
     note: "网易官网公开资料；页面提示官网数据仅供参考，以游戏内设定为准。",
   },

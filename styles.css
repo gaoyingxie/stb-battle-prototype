@@ -612,6 +612,22 @@ select {
   font-size: 13px;
 }
 
+.modal-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.skill-title-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(215, 170, 71, 0.42);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.6);
+  object-fit: cover;
+}
+
 .modal-desc {
   display: grid;
   gap: 14px;
@@ -668,7 +684,7 @@ select {
 }
 
 .effect-grid.compact {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
 }
 
 .effect-grid div {

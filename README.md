@@ -12,8 +12,8 @@
 - 顶部 `重置` 按钮会清空本地存档，包括抽卡获得的武将、拆解解锁战法、编队和战斗记录，并回到初始阵容。
 - 武将画像显示在武将册、战场单位和抽卡结果里。
 - 点击武将可看详情：画像、阵营、兵种、星级、COST、攻击距离、四维、自带战法、可拆战法、传记。
-- 点击战法可看详情：类型、目标、发动率和官方描述。
-- 战法 UI 已预留 `S/A/B/C` 品质显示；当前官网公开战法 JSON 没有品质字段，所以不会自行猜测标注。
+- 点击战法可看详情：图标、品质、类型、兵种类型、有效距离、目标群体、发动率、效果和官方描述。
+- 战法品质使用官网 `skill_extra.json` 里的 `zfQuality` 字段，UI 会显示官方 `S/A/B/C` 标注。
 - 点击弹窗外空白处可关闭武将详情和战法详情。
 - 拆解已拥有武将解锁可拆战法，解锁后才会出现在编队战法下拉里。
 - 可配战法遵循唯一占用规则：同一个战法在一支队伍里只能给一个武将装备一次。
@@ -26,7 +26,9 @@
 项目使用网易官网公开数据源生成本地数据文件：
 
 - 武将数据：`https://g0.gph.netease.com/ngsocial/community/stzb/cfg/hero_extra.json?gameid=g10`
-- 战法列表：`https://stzb.163.com/json/jineng_list.json`
+- 战法资料库：`https://stzb.163.com/jineng_list.html`
+- 战法详情数据：`https://g0.gph.netease.com/ngsocial/community/stzb/cfg/skill_extra.json?gameid=g10`
+- 战法图标：`https://g0.gph.netease.com/ngsocial/community/stzb/front_end/img/jineng/tactics_00{1-4}.png?gameid=g10`
 - 武将详情页：`https://stzb.163.com/herolist/{id}.html`
 
 生成结果写入：
@@ -36,7 +38,7 @@
 当前一次生成结果：
 
 - 官方武将：391 个
-- 官方战法记录：812 条
+- 官方战法记录：837 条
 - 游戏启动后会再合并少量手写原型武将/战法
 
 当前 `hero_extra.json` 没有覆盖所有早期经典武将。项目里保留了少量手写种子武将用于开局体验；这些种子武将如果配置了可拆战法，必须来自对应官网详情页核对过的可拆字段，例如：
@@ -46,7 +48,7 @@
 
 官网页面提示数据仅供参考，以游戏内设定为准。
 
-当前 `jineng_list.json` 只包含 `id`、`name`、`type`、`soldierType`、`targetType`、`targetShow`，没有官方 `S/A/B/C` 品质字段；项目不会用战法名或武将星级硬推品质，避免和官方不一致。
+当前战法详情来自 `skill_extra.json`，会保存 `zfQuality`、`type`、`soldierType`、`distance`、`probability`、`targetShow`、`effect`、`desc` 和类型图标。旧的 `jineng_list.json` 只作为历史资料源记录，不再作为战法详情主来源。
 
 ## 数据脚本
 
@@ -59,11 +61,11 @@ node .\scripts\scrape-stzb-official.mjs
 脚本会：
 
 - 抓取 `hero_extra.json`
-- 抓取 `jineng_list.json`
+- 抓取 `skill_extra.json`
 - 访问每个 `herolist/{id}.html`
 - 解析 `基础战法`
 - 解析所有 `可拆战法` / `可拆战法2` 等块
-- 如果未来公开数据里出现 `grade` / `quality` / `rank`，会保存为战法 `grade`，并在 UI 显示为 `S级` / `A级` / `B级` / `C级`
+- 保存官方 `zfQuality` 为战法 `grade`，并在 UI 显示为 `S级` / `A级` / `B级` / `C级`
 - 生成 `official-data.js`
 
 ## 画像脚本
@@ -120,7 +122,7 @@ https://g0.gph.netease.com/ngsocial/community/stzb/cn/cards/cut/card_medium_{ico
 - `回马` 等反击也检查攻击距离；如果反击方够不到攻击来源，则不会造成反击伤害。
 - 武将使用官网数据里的 `distance` 作为基础攻击距离；少量手写种子武将缺失距离时按兵种兜底：骑 2、步 2、弓 3。
 - `远攻秘策` 已按描述实现为我军全体前 3 回合攻击 +20、谋略 +20、攻击距离 +1。
-- 泛化官方战法会识别描述里的“距离 N 以内”来筛选目标；但只有“有效距离内 X 个目标”且没有距离数值的条目，目前仍只能按目标数近似，需要后续补抓/补录战法有效距离字段。
+- 泛化官方战法优先使用 `skill_extra.json` 的 `distance` 筛选有效距离；缺失时才回退识别描述里的“距离 N 以内”。
 
 规则参考：
 
@@ -162,7 +164,6 @@ https://g0.gph.netease.com/ngsocial/community/stzb/cn/cards/cut/card_medium_{ico
 
 - 称号/组合加成：需要补充官方称号组合数据后再做，目前 `official-data.js` 还没有这类结构化字段。
 - 兵种进阶与特性：例如重骑、轻骑、长弓等细分兵种及特性尚未建模。
-- 战法有效距离字段：部分官方战法只有描述文本，尚未结构化到每个战法的固定有效距离。
 - 准备回合、目标选择细则、控制优先级、援护/分兵/洞察/混乱等复杂状态仍是近似。
 - 士气、地形、建筑、赛季规则、兵种转换、政策与宝物暂不实现；宝物系统按当前需求明确跳过。
 
