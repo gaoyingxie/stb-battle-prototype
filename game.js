@@ -629,6 +629,14 @@ function chanceFromProbability(value, fallback) {
   return Math.max(...numbers) / 100;
 }
 
+function probabilityText(skill) {
+  const raw = skill.probability || "";
+  const numbers = String(raw).match(/\d+(?:\.\d+)?/g)?.map(Number).filter(Number.isFinite) || [];
+  if (numbers.length > 1) return `${raw}（满级按 ${Math.max(...numbers)}%）`;
+  if (raw && !/^--$/.test(raw)) return raw;
+  return skill.chance ? `${Math.round(skill.chance * 100)}%` : triggerIsAlways(skill) ? "100%" : "按战法类型推断";
+}
+
 function attachOfficialSkillBehavior(skill) {
   const desc = skill.desc || "";
   if (/指挥|被动/.test(skill.type)) {
@@ -782,7 +790,7 @@ function conciseSkillRows(skill) {
     ["兵种类型", skill.soldierType || "未知"],
     ["有效距离", skill.distance ? String(skill.distance) : "按描述"],
     ["目标群体", skill.target || inferTargetText(desc)],
-    ["发动率", skill.probability || (skill.chance ? `${Math.round(skill.chance * 100)}%` : triggerIsAlways(skill) ? "100%" : "按战法类型推断")],
+    ["发动率", probabilityText(skill)],
     ["效果", skill.effect || "按描述"],
     ["伤害类型", /恢复|休整|急救/.test(desc) ? "恢复" : /策略|谋略|恐慌|妖术/.test(desc) ? "策略伤害" : /攻击|伤害率|猛攻/.test(desc) ? "攻击伤害" : "按描述"],
   ];
