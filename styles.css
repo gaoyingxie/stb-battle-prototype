@@ -658,17 +658,35 @@ select {
 }
 
 .troop-bar {
+  position: relative;
   height: 10px;
   overflow: hidden;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.28);
 }
 
-.troop-fill {
-  width: 100%;
+.troop-fill,
+.wounded-fill {
+  position: absolute;
+  inset-block: 0;
+  display: block;
   height: 100%;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+
+.troop-fill {
+  left: 0;
+  width: var(--active-pct, 100%);
   background: linear-gradient(90deg, var(--red), var(--gold));
-  transition: width 0.2s ease;
+}
+
+.wounded-fill {
+  left: var(--active-pct, 100%);
+  width: var(--wounded-pct, 0%);
+  background:
+    linear-gradient(90deg, rgba(40, 134, 198, 0.88), rgba(124, 198, 232, 0.9)),
+    rgba(52, 146, 204, 0.8);
+  box-shadow: inset 0 0 8px rgba(190, 232, 255, 0.28);
 }
 
 .unit-stats {
@@ -1095,6 +1113,29 @@ select {
 .stats-strip strong {
   color: #f5dfaa;
   font-size: 20px;
+}
+
+.troop-summary-text {
+  display: block;
+  color: #f5dfaa;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.troop-summary-text small {
+  color: rgba(244, 236, 216, 0.54);
+  font-size: 15px;
+}
+
+.team-troop-bar {
+  position: relative;
+  display: block;
+  width: min(100%, 260px);
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 236, 216, 0.18);
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.54);
 }
 
 .report {

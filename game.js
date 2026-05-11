@@ -1351,8 +1351,8 @@ function renderBattle(result) {
   const enemyUnits = result?.enemy || createPreviewUnits(state.enemy, "enemy");
   els.playerLine.innerHTML = visualLineUnits(playerUnits).map(unitTemplate).join("");
   els.enemyLine.innerHTML = visualLineUnits(enemyUnits).map(unitTemplate).join("");
-  els.playerTroops.textContent = formatNumber(totalTroops(playerUnits));
-  els.enemyTroops.textContent = formatNumber(totalTroops(enemyUnits));
+  els.playerTroops.innerHTML = troopSummaryTemplate(playerUnits);
+  els.enemyTroops.innerHTML = troopSummaryTemplate(enemyUnits);
   els.roundCount.textContent = `${result?.rounds || 0}/8`;
   els.battleSubtitle.textContent = result ? result.subtitle : "双方列阵，尚未交锋";
   els.battleResult.textContent = result ? result.label : "未交锋";
@@ -1384,7 +1384,8 @@ function updateBattleButton(result) {
 }
 
 function unitTemplate(unit) {
-  const troopPct = Math.max(0, Math.round((unit.troops / unit.maxTroops) * 100));
+  const troopPct = percentOf(unit.troops, unit.maxTroops);
+  const woundedPct = percentOf(unit.wounded, unit.maxTroops);
   const positionLabel = POSITIONS.find((position) => position.id === unit.position)?.label || "";
   const skillNames = unit.skills.map((skill) => skill.name);
   const baseRange = baseAttackRange(unit);
@@ -1405,12 +1406,13 @@ function unitTemplate(unit) {
         <div class="unit-meta">${unit.faction} · ${unit.arm} · ${"★".repeat(unit.rarity)} · ${rangeText}${bonusText}</div>
       </div>
       <div class="unit-content unit-bottom">
-        <div class="troop-bar" aria-label="${unit.name}兵力">
-          <div class="troop-fill" style="width: ${troopPct}%"></div>
+        <div class="troop-bar" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%; --wounded-pct: ${woundedPct}%">
+          <div class="troop-fill"></div>
+          <div class="wounded-fill"></div>
         </div>
         <div class="skill-row">
           <span>${formatNumber(Math.max(0, Math.round(unit.troops)))}</span>
-          <span>${troopPct}%</span>
+          <span>${unit.wounded ? `伤${formatNumber(unit.wounded)}` : `${troopPct}%`}</span>
         </div>
         <div class="unit-stats">
           <span>攻 <b>${unit.stats.attack}</b></span>
@@ -1423,6 +1425,24 @@ function unitTemplate(unit) {
         </div>
       </div>
     </article>
+  `;
+}
+
+function troopSummaryTemplate(units) {
+  const active = totalTroops(units);
+  const wounded = totalWounded(units);
+  const max = totalMaxTroops(units);
+  const activePct = percentOf(active, max);
+  const woundedPct = percentOf(wounded, max);
+  return `
+    <span class="troop-summary-text">
+      ${formatNumber(active)}
+      <small>/ ${formatNumber(max)}${wounded ? ` · 伤${formatNumber(wounded)}` : ""}</small>
+    </span>
+    <span class="team-troop-bar" aria-hidden="true" style="--active-pct: ${activePct}%; --wounded-pct: ${woundedPct}%">
+      <i class="troop-fill"></i>
+      <i class="wounded-fill"></i>
+    </span>
   `;
 }
 
@@ -1562,6 +1582,7 @@ function createUnits(team, side, freshTroops) {
       bonuses: [],
       skills,
       troops: freshTroops ? 10000 : slot.troops || 10000,
+      wounded: freshTroops ? 0 : slot.wounded || 0,
       maxTroops: 10000,
       statuses: [],
       pendingSkills: [],
@@ -1709,9 +1730,12 @@ function applyRoundStart(ctx, unit) {
   if (!unit.troops) return;
   const burn = statusValue(unit, "burn");
   if (burn) {
-    const loss = Math.min(unit.troops, burn);
-    unit.troops -= loss;
-    log(ctx, "hit", `${unit.name}受到灼烧，损失${Math.round(loss)}兵。`);
+    const loss = applyTroopLoss(unit, burn);
+    log(ctx, "hit", `${unit.name}受到灼烧，损失${Math.round(loss)}兵。`, {
+      target: unit.name,
+      amount: loss,
+      details: troopLossDetails(unit, loss),
+    });
   }
 }
 
@@ -1726,14 +1750,13 @@ function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = fals
   }
   const arm = armCounterModifier(attacker.arm, defender.arm);
   const result = calculateDamage(attacker, defender, rate, mode, arm);
-  const damage = result.damage;
-  defender.troops = Math.max(0, defender.troops - damage);
+  const damage = applyTroopLoss(defender, result.damage);
   log(ctx, "hit", `${attacker.name}以【${source}】攻击${defender.name}${arm.text ? `（${arm.text}）` : ""}，造成${damage}兵损。`, {
     actor: attacker.name,
     target: defender.name,
     skill: source,
     amount: damage,
-    details: result.details,
+    details: [...result.details, ...troopLossDetails(defender, damage)],
   });
 
   if (isNormal) applySplitDamage(ctx, attacker, originalDefender, source);
@@ -1749,6 +1772,25 @@ function dealDamage(ctx, attacker, defender, rate, mode, source, isNormal = fals
     }
   }
   return damage;
+}
+
+function applyTroopLoss(unit, amount, woundedRate = 0.95) {
+  const loss = Math.min(unit.troops, Math.max(0, Math.round(amount)));
+  if (!loss) return 0;
+  unit.troops = Math.max(0, unit.troops - loss);
+  unit.wounded = Math.min(unit.maxTroops - unit.troops, (unit.wounded || 0) + Math.floor(loss * woundedRate));
+  if (unit.troops <= 0) {
+    unit.wounded = Math.floor(unit.wounded * 0.6);
+  }
+  return loss;
+}
+
+function troopLossDetails(unit, loss) {
+  if (!loss) return [];
+  return [
+    `伤兵+${formatNumber(Math.floor(loss * 0.95))}`,
+    unit.wounded ? `现有伤兵${formatNumber(unit.wounded)}` : "",
+  ].filter(Boolean);
 }
 
 function calculateDamage(attacker, defender, rate, mode, arm) {
@@ -1906,14 +1948,16 @@ function filterSkillTargets(unit, units, text = "", explicitDistance = null) {
 
 function heal(ctx, caster, target, amount, source) {
   if (!target?.troops) return 0;
-  const healAmount = Math.min(target.maxTroops - target.troops, Math.round(amount));
+  const healAmount = Math.min(target.wounded || 0, target.maxTroops - target.troops, Math.round(amount));
   if (healAmount <= 0) return 0;
   target.troops += healAmount;
+  target.wounded = Math.max(0, (target.wounded || 0) - healAmount);
   log(ctx, "heal", `${caster.name}以【${source}】恢复${target.name}${healAmount}兵。`, {
     actor: caster.name,
     target: target.name,
     skill: source,
     amount: healAmount,
+    details: target.wounded ? [`剩余伤兵${formatNumber(target.wounded)}`] : ["伤兵已恢复完"],
   });
   return healAmount;
 }
@@ -1991,6 +2035,18 @@ function alive(units) {
 
 function totalTroops(units) {
   return units.reduce((sum, unit) => sum + Math.max(0, unit.troops), 0);
+}
+
+function totalWounded(units) {
+  return units.reduce((sum, unit) => sum + Math.max(0, unit.wounded || 0), 0);
+}
+
+function totalMaxTroops(units) {
+  return units.reduce((sum, unit) => sum + Math.max(0, unit.maxTroops || 0), 0);
+}
+
+function percentOf(value, max) {
+  return max ? Math.max(0, Math.min(100, Math.round((value / max) * 100))) : 0;
 }
 
 function heroById(id) {
