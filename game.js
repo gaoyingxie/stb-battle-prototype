@@ -458,6 +458,17 @@ const SKILLS = [
   },
 ];
 
+const OFFICIAL_SKILL_ALIASES = new Map([
+  ["魏武之威", "魏武之世"],
+  ["仁德载世", "皇裔流离"],
+  ["飞将无双", "天下无双"],
+  ["火烧赤壁", "天妒英才XP"],
+  ["空城奇谋", "空城"],
+  ["枭姬连弩", "枭姬"],
+  ["燕人怒吼", "当阳桥"],
+  ["闭月离间", "闭月"],
+]);
+
 mergeOfficialData();
 
 const EQUIPPABLE_SKILLS = SKILLS;
@@ -503,6 +514,8 @@ const els = {
   roster: document.querySelector("#roster"),
   rosterCount: document.querySelector("#rosterCount"),
   fodderCount: document.querySelector("#fodderCount"),
+  skillCodex: document.querySelector("#skillCodex"),
+  skillCodexCount: document.querySelector("#skillCodexCount"),
   enemyLine: document.querySelector("#enemyLine"),
   playerLine: document.querySelector("#playerLine"),
   playerTroops: document.querySelector("#playerTroops"),
@@ -575,27 +588,29 @@ function mergeOfficialData() {
   const official = globalThis.STZB_OFFICIAL_DATA;
   if (!official?.heroes?.length || !official?.skills?.length) return;
   const skillIds = new Set(SKILLS.map((skill) => skill.id));
+  const localSkillByName = new Map(SKILLS.map((skill) => [skill.name, skill]));
   official.skills.forEach((skill) => {
+    const officialFields = officialSkillFields(skill);
+    const localSkill = localSkillByName.get(skill.name) || aliasLocalSkill(skill.name, localSkillByName);
+    if (localSkill) {
+      Object.assign(localSkill, {
+        ...officialFields,
+        id: localSkill.id,
+        trigger: localSkill.trigger,
+        chance: chanceFromProbability(officialFields.probability, localSkill.chance),
+        apply: localSkill.apply,
+        use: localSkill.use,
+      });
+    }
     if (skillIds.has(skill.id) || !skill.name) return;
-    SKILLS.push(attachOfficialSkillBehavior({
+    const mergedSkill = attachOfficialSkillBehavior({
       id: skill.id,
-      name: skill.name,
-      type: skill.type || "未知",
-      grade: skill.grade || "",
-      target: skill.target || "",
-      desc: skill.desc || "官方战法库条目暂无效果描述。",
       trigger: "official",
-      officialId: skill.officialId,
-      soldierType: skill.soldierType || "",
-      distance: skill.distance ?? null,
-      probability: skill.probability || "",
-      effect: skill.effect || "",
-      icon: skill.icon || "",
-      skillCount: skill.skillCount ?? null,
-      studyDesc: skill.studyDesc || "",
-      studyDesc2: skill.studyDesc2 || "",
-    }));
+      ...officialFields,
+    });
+    SKILLS.push(mergedSkill);
     skillIds.add(skill.id);
+    localSkillByName.set(skill.name, mergedSkill);
   });
 
   const heroKeys = new Set(HEROES.map((hero) => `${hero.name}-${hero.faction}-${hero.arm}-${hero.innate}`));
@@ -621,6 +636,33 @@ function mergeOfficialData() {
     });
     heroKeys.add(key);
   });
+}
+
+function aliasLocalSkill(officialName, skillMap) {
+  for (const [localName, mappedOfficialName] of OFFICIAL_SKILL_ALIASES) {
+    if (mappedOfficialName === officialName) return skillMap.get(localName);
+  }
+  return null;
+}
+
+function officialSkillFields(skill) {
+  return {
+    officialId: skill.officialId,
+    name: skill.name,
+    type: skill.type || "未知",
+    grade: skill.grade || "",
+    target: skill.target || "",
+    desc: skill.desc || "官方战法库条目暂无效果描述。",
+    soldierType: skill.soldierType || "",
+    distance: skill.distance ?? null,
+    probability: skill.probability || "",
+    effect: skill.effect || "",
+    icon: skill.icon || "",
+    skillCount: skill.skillCount ?? null,
+    studyDesc: skill.studyDesc || "",
+    studyDesc2: skill.studyDesc2 || "",
+    source: skill.source || "official",
+  };
 }
 
 function chanceFromProbability(value, fallback) {
@@ -1072,6 +1114,7 @@ function renderAll() {
   normalizeFormationSkills();
   renderFormationEditor();
   renderRoster();
+  renderSkillCodex();
   renderBattle(currentBattle());
 }
 
@@ -1204,6 +1247,52 @@ function renderRoster() {
       </article>
     `;
   }).join("");
+}
+
+function renderSkillCodex() {
+  if (els.skillCodex.dataset.rendered === "1") return;
+  const skills = skillCodexList();
+  els.skillCodexCount.textContent = skills.length;
+  els.skillCodex.innerHTML = skills.map((skill) => {
+    const meta = [
+      skill.grade ? `${skill.grade}级` : "",
+      skill.type || "",
+      skill.soldierType || "",
+      skill.distance ? `距${skill.distance}` : "",
+      skill.probability && skill.probability !== "--" ? skill.probability : "",
+    ].filter(Boolean).join(" · ");
+    return `
+      <button class="skill-codex-card" data-skill-id="${skill.id}" type="button">
+        ${skill.icon ? `<img src="${escapeHtml(skill.icon)}" alt="">` : `<span class="skill-codex-mark">${escapeHtml((skill.grade || skill.type || "战").slice(0, 1))}</span>`}
+        <span>
+          <strong>${escapeHtml(skill.name)}</strong>
+          <em>${escapeHtml(meta || "官方战法")}</em>
+          <small>${escapeHtml(skill.target || skill.effect || summarizeDesc(skill.desc || ""))}</small>
+        </span>
+      </button>
+    `;
+  }).join("");
+  els.skillCodex.dataset.rendered = "1";
+}
+
+function skillCodexList() {
+  const gradeOrder = { S: 0, A: 1, B: 2, C: 3 };
+  const typeOrder = { 指挥: 0, 主动: 1, 追击: 2, 被动: 3, 自带: 4 };
+  const byName = new Map();
+  SKILLS.forEach((skill) => {
+    const existing = byName.get(skill.name);
+    if (!existing || skillInfoScore(skill) > skillInfoScore(existing)) byName.set(skill.name, skill);
+  });
+  return [...byName.values()].sort((a, b) =>
+    (gradeOrder[a.grade] ?? 9) - (gradeOrder[b.grade] ?? 9)
+    || (typeOrder[a.type] ?? 9) - (typeOrder[b.type] ?? 9)
+    || a.name.localeCompare(b.name, "zh-Hans-CN")
+  );
+}
+
+function skillInfoScore(skill) {
+  return ["grade", "target", "desc", "soldierType", "distance", "probability", "effect", "icon"]
+    .reduce((score, key) => score + (skill[key] ? 1 : 0), 0);
 }
 
 function renderBattle(result) {

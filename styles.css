@@ -269,11 +269,21 @@ select {
   padding: 0 9px;
 }
 
-.roster {
+.roster,
+.skill-codex {
   display: grid;
   gap: 9px;
   overflow: auto;
   padding: 12px;
+}
+
+.roster {
+  flex: 1 1 42%;
+}
+
+.skill-codex {
+  flex: 1 1 38%;
+  align-content: start;
 }
 
 .hero-card,
@@ -300,6 +310,77 @@ select {
   align-items: center;
   min-height: 72px;
   padding: 10px;
+}
+
+.skill-codex-card {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+  width: 100%;
+  min-height: 66px;
+  padding: 9px;
+  border: 1px solid rgba(215, 170, 71, 0.18);
+  border-radius: 8px;
+  background: rgba(42, 37, 29, 0.58);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.skill-codex-card:hover {
+  border-color: rgba(245, 223, 170, 0.42);
+  background: rgba(62, 52, 35, 0.72);
+}
+
+.skill-codex-card img,
+.skill-codex-mark {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(215, 170, 71, 0.32);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.52);
+}
+
+.skill-codex-card img {
+  object-fit: cover;
+}
+
+.skill-codex-mark {
+  display: grid;
+  place-items: center;
+  color: #f5dfaa;
+  font-weight: 900;
+}
+
+.skill-codex-card span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.skill-codex-card strong,
+.skill-codex-card em,
+.skill-codex-card small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-codex-card strong {
+  color: var(--paper);
+  font-size: 13px;
+}
+
+.skill-codex-card em {
+  color: #f5dfaa;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.skill-codex-card small {
+  color: var(--muted);
+  font-size: 11px;
 }
 
 .avatar {
