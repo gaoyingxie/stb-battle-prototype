@@ -175,18 +175,26 @@ for (const skill of skillRaw) {
   });
 }
 
+const fullSkillIdByName = new Map(
+  [...skills.values()]
+    .filter((skill) => skill.name && skill.source === "official-skill-extra")
+    .map((skill) => [skill.name, skill.id]),
+);
+
 const heroes = heroesRaw.map((hero) => {
   const detail = details.get(hero.id) || {};
   const baseSkill = detail.baseSkill || {
     name: hero.methodName || hero.methodName1,
     desc: hero.methodDesc || hero.methodDesc1,
   };
-  const dismantles = (detail.dismantleSkills || []).map((dismantleSkill) => upsertSkill(skills, {
-    name: dismantleSkill?.name,
-    desc: dismantleSkill?.desc,
-    type: "可拆",
-    source: "official-hero-dismantle",
-  })).filter(Boolean);
+  const dismantles = (detail.dismantleSkills || []).map((dismantleSkill) => (
+    fullSkillIdByName.get(dismantleSkill?.name) || upsertSkill(skills, {
+      name: dismantleSkill?.name,
+      desc: dismantleSkill?.desc,
+      type: "可拆",
+      source: "official-hero-dismantle",
+    })
+  )).filter(Boolean);
   const innate = upsertSkill(skills, {
     id: skillId(baseSkill?.name, hero.methodId || hero.methodId1),
     officialId: hero.methodId || hero.methodId1 || null,

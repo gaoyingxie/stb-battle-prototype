@@ -7,7 +7,7 @@ window.STZB_OFFICIAL_DATA = {
     "details": "https://stzb.163.com/herolist/{id}.html",
     "note": "网易官网公开资料；页面提示官网数据仅供参考，以游戏内设定为准。"
   },
-  "generatedAt": "2026-05-11T03:24:03.093Z",
+  "generatedAt": "2026-05-11T14:32:17.114Z",
   "heroes": [
     {
       "id": "official-hero-100352",
@@ -19,9 +19,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200696",
-      "dismantle": "official-skill-迫近",
+      "dismantle": "official-skill-200696",
       "dismantles": [
-        "official-skill-迫近"
+        "official-skill-200696"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -43,9 +43,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200678",
-      "dismantle": "official-skill-雀伏",
+      "dismantle": "official-skill-200672",
       "dismantles": [
-        "official-skill-雀伏"
+        "official-skill-200672"
       ],
       "cost": 2,
       "distance": 2,
@@ -67,9 +67,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200682",
-      "dismantle": "official-skill-伐谋",
+      "dismantle": "official-skill-200683",
       "dismantles": [
-        "official-skill-伐谋"
+        "official-skill-200683"
       ],
       "cost": 1.5,
       "distance": 2,
@@ -91,9 +91,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200094",
-      "dismantle": "official-skill-钝兵挫锐",
+      "dismantle": "official-skill-200658",
       "dismantles": [
-        "official-skill-钝兵挫锐"
+        "official-skill-200658"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -115,9 +115,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200775",
-      "dismantle": "official-skill-疏数",
+      "dismantle": "official-skill-200782",
       "dismantles": [
-        "official-skill-疏数"
+        "official-skill-200782"
       ],
       "cost": 2,
       "distance": 3,
@@ -139,9 +139,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200790",
-      "dismantle": "official-skill-擅兵不寡",
+      "dismantle": "official-skill-200734",
       "dismantles": [
-        "official-skill-擅兵不寡"
+        "official-skill-200734"
       ],
       "cost": 3,
       "distance": 2,
@@ -163,9 +163,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200936",
-      "dismantle": "official-skill-道行险阻",
+      "dismantle": "official-skill-200684",
       "dismantles": [
-        "official-skill-道行险阻"
+        "official-skill-200684"
       ],
       "cost": 2,
       "distance": 2,
@@ -187,9 +187,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200887",
-      "dismantle": "official-skill-美人计",
+      "dismantle": "official-skill-200853",
       "dismantles": [
-        "official-skill-美人计"
+        "official-skill-200853"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -211,9 +211,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200851",
-      "dismantle": "official-skill-擅兵不寡",
+      "dismantle": "official-skill-200734",
       "dismantles": [
-        "official-skill-擅兵不寡"
+        "official-skill-200734"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -235,9 +235,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200604",
-      "dismantle": "official-skill-破魂",
+      "dismantle": "official-skill-200107",
       "dismantles": [
-        "official-skill-破魂"
+        "official-skill-200107"
       ],
       "cost": 2,
       "distance": 2,
@@ -259,9 +259,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200605",
-      "dismantle": "official-skill-穷追猛打",
+      "dismantle": "official-skill-200224",
       "dismantles": [
-        "official-skill-穷追猛打"
+        "official-skill-200224"
       ],
       "cost": 2,
       "distance": 2,
@@ -283,9 +283,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200606",
-      "dismantle": "official-skill-增援",
+      "dismantle": "official-skill-200139",
       "dismantles": [
-        "official-skill-增援"
+        "official-skill-200139"
       ],
       "cost": 4,
       "distance": 1,
@@ -307,10 +307,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200185",
-      "dismantle": "official-skill-援军之策",
+      "dismantle": "official-skill-200185",
       "dismantles": [
-        "official-skill-援军之策",
-        "official-skill-奇袭"
+        "official-skill-200185",
+        "official-skill-200229"
       ],
       "cost": 2,
       "distance": 2,
@@ -332,9 +332,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200699",
-      "dismantle": "official-skill-鹤翼",
+      "dismantle": "official-skill-200717",
       "dismantles": [
-        "official-skill-鹤翼"
+        "official-skill-200717"
       ],
       "cost": 3,
       "distance": 2,
@@ -356,9 +356,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200628",
-      "dismantle": "official-skill-车悬",
+      "dismantle": "official-skill-200099",
       "dismantles": [
-        "official-skill-车悬"
+        "official-skill-200099"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -380,9 +380,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200652",
-      "dismantle": "official-skill-道行险阻",
+      "dismantle": "official-skill-200684",
       "dismantles": [
-        "official-skill-道行险阻"
+        "official-skill-200684"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -404,9 +404,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200629",
-      "dismantle": "official-skill-措手不及",
+      "dismantle": "official-skill-200230",
       "dismantles": [
-        "official-skill-措手不及"
+        "official-skill-200230"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -428,9 +428,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200050",
-      "dismantle": "official-skill-楚歌四起",
+      "dismantle": "official-skill-200130",
       "dismantles": [
-        "official-skill-楚歌四起"
+        "official-skill-200130"
       ],
       "cost": 2,
       "distance": 4,
@@ -452,9 +452,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200655",
-      "dismantle": "official-skill-先驱突击",
+      "dismantle": "official-skill-200233",
       "dismantles": [
-        "official-skill-先驱突击"
+        "official-skill-200233"
       ],
       "cost": 3,
       "distance": 3,
@@ -476,9 +476,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200616",
-      "dismantle": "official-skill-斩铁",
+      "dismantle": "official-skill-200106",
       "dismantles": [
-        "official-skill-斩铁"
+        "official-skill-200106"
       ],
       "cost": 3,
       "distance": 2,
@@ -500,9 +500,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200680",
-      "dismantle": "official-skill-一夫当关",
+      "dismantle": "official-skill-200674",
       "dismantles": [
-        "official-skill-一夫当关"
+        "official-skill-200674"
       ],
       "cost": 3,
       "distance": 1,
@@ -524,9 +524,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200805",
-      "dismantle": "official-skill-利兵谋胜",
+      "dismantle": "official-skill-200801",
       "dismantles": [
-        "official-skill-利兵谋胜"
+        "official-skill-200801"
       ],
       "cost": 3,
       "distance": 4,
@@ -548,9 +548,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200770",
-      "dismantle": "official-skill-谋定后动",
+      "dismantle": "official-skill-200767",
       "dismantles": [
-        "official-skill-谋定后动"
+        "official-skill-200767"
       ],
       "cost": 3,
       "distance": 1,
@@ -572,9 +572,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200771",
-      "dismantle": "official-skill-谋定后动",
+      "dismantle": "official-skill-200767",
       "dismantles": [
-        "official-skill-谋定后动"
+        "official-skill-200767"
       ],
       "cost": 3,
       "distance": 2,
@@ -596,9 +596,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200769",
-      "dismantle": "official-skill-谋定后动",
+      "dismantle": "official-skill-200767",
       "dismantles": [
-        "official-skill-谋定后动"
+        "official-skill-200767"
       ],
       "cost": 3,
       "distance": 2,
@@ -620,9 +620,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200772",
-      "dismantle": "official-skill-兵无常势",
+      "dismantle": "official-skill-200766",
       "dismantles": [
-        "official-skill-兵无常势"
+        "official-skill-200766"
       ],
       "cost": 3,
       "distance": 3,
@@ -644,9 +644,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200631",
-      "dismantle": "official-skill-养精蓄锐",
+      "dismantle": "official-skill-200135",
       "dismantles": [
-        "official-skill-养精蓄锐"
+        "official-skill-200135"
       ],
       "cost": 2,
       "distance": 2,
@@ -668,9 +668,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200080",
-      "dismantle": "official-skill-深谋远虑",
+      "dismantle": "official-skill-200645",
       "dismantles": [
-        "official-skill-深谋远虑"
+        "official-skill-200645"
       ],
       "cost": 3,
       "distance": 3,
@@ -692,9 +692,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200685",
-      "dismantle": "official-skill-始计",
+      "dismantle": "official-skill-200687",
       "dismantles": [
-        "official-skill-始计"
+        "official-skill-200687"
       ],
       "cost": 3,
       "distance": 2,
@@ -716,9 +716,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200689",
-      "dismantle": "official-skill-白刃",
+      "dismantle": "official-skill-200691",
       "dismantles": [
-        "official-skill-白刃"
+        "official-skill-200691"
       ],
       "cost": 3,
       "distance": 2,
@@ -740,9 +740,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200692",
-      "dismantle": "official-skill-十面埋伏",
+      "dismantle": "official-skill-200715",
       "dismantles": [
-        "official-skill-十面埋伏"
+        "official-skill-200715"
       ],
       "cost": 3,
       "distance": 2,
@@ -764,9 +764,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200693",
-      "dismantle": "official-skill-十面埋伏",
+      "dismantle": "official-skill-200715",
       "dismantles": [
-        "official-skill-十面埋伏"
+        "official-skill-200715"
       ],
       "cost": 3,
       "distance": 3,
@@ -788,9 +788,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200694",
-      "dismantle": "official-skill-十面埋伏",
+      "dismantle": "official-skill-200715",
       "dismantles": [
-        "official-skill-十面埋伏"
+        "official-skill-200715"
       ],
       "cost": 3,
       "distance": 2,
@@ -812,9 +812,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200012",
-      "dismantle": "official-skill-万箭齐发",
+      "dismantle": "official-skill-200714",
       "dismantles": [
-        "official-skill-万箭齐发"
+        "official-skill-200714"
       ],
       "cost": 3.5,
       "distance": 4,
@@ -836,9 +836,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200014",
-      "dismantle": "official-skill-万箭齐发",
+      "dismantle": "official-skill-200714",
       "dismantles": [
-        "official-skill-万箭齐发"
+        "official-skill-200714"
       ],
       "cost": 3,
       "distance": 4,
@@ -860,9 +860,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200700",
-      "dismantle": "official-skill-鹤翼",
+      "dismantle": "official-skill-200717",
       "dismantles": [
-        "official-skill-鹤翼"
+        "official-skill-200717"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -884,9 +884,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200701",
-      "dismantle": "official-skill-鹤翼",
+      "dismantle": "official-skill-200717",
       "dismantles": [
-        "official-skill-鹤翼"
+        "official-skill-200717"
       ],
       "cost": 3,
       "distance": 2,
@@ -908,9 +908,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200702",
-      "dismantle": "official-skill-方圆",
+      "dismantle": "official-skill-200716",
       "dismantles": [
-        "official-skill-方圆"
+        "official-skill-200716"
       ],
       "cost": 3,
       "distance": 3,
@@ -932,9 +932,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200703",
-      "dismantle": "official-skill-锋矢",
+      "dismantle": "official-skill-200718",
       "dismantles": [
-        "official-skill-锋矢"
+        "official-skill-200718"
       ],
       "cost": 3,
       "distance": 3,
@@ -956,9 +956,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200719",
-      "dismantle": "official-skill-折戟强攻",
+      "dismantle": "official-skill-200721",
       "dismantles": [
-        "official-skill-折戟强攻"
+        "official-skill-200721"
       ],
       "cost": 3,
       "distance": 2,
@@ -980,9 +980,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200720",
-      "dismantle": "official-skill-火积",
+      "dismantle": "official-skill-200722",
       "dismantles": [
-        "official-skill-火积"
+        "official-skill-200722"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1004,9 +1004,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200725",
-      "dismantle": "official-skill-临危",
+      "dismantle": "official-skill-200728",
       "dismantles": [
-        "official-skill-临危"
+        "official-skill-200728"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -1028,9 +1028,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200727",
-      "dismantle": "official-skill-强攻兵法",
+      "dismantle": "official-skill-200619",
       "dismantles": [
-        "official-skill-强攻兵法"
+        "official-skill-200619"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -1052,9 +1052,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200726",
-      "dismantle": "official-skill-临危",
+      "dismantle": "official-skill-200728",
       "dismantles": [
-        "official-skill-临危"
+        "official-skill-200728"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1076,9 +1076,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200729",
-      "dismantle": "official-skill-顽抗",
+      "dismantle": "official-skill-200729",
       "dismantles": [
-        "official-skill-顽抗"
+        "official-skill-200729"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -1100,9 +1100,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200729",
-      "dismantle": "official-skill-顽抗",
+      "dismantle": "official-skill-200729",
       "dismantles": [
-        "official-skill-顽抗"
+        "official-skill-200729"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -1124,9 +1124,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200730",
-      "dismantle": "official-skill-全军突击",
+      "dismantle": "official-skill-200731",
       "dismantles": [
-        "official-skill-全军突击"
+        "official-skill-200731"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1148,9 +1148,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200736",
-      "dismantle": "official-skill-攻其不备",
+      "dismantle": "official-skill-200755",
       "dismantles": [
-        "official-skill-攻其不备"
+        "official-skill-200755"
       ],
       "cost": 4,
       "distance": 3,
@@ -1172,9 +1172,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200737",
-      "dismantle": "official-skill-胜兵求战",
+      "dismantle": "official-skill-200754",
       "dismantles": [
-        "official-skill-胜兵求战"
+        "official-skill-200754"
       ],
       "cost": 3,
       "distance": 3,
@@ -1196,9 +1196,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200738",
-      "dismantle": "official-skill-胜兵求战",
+      "dismantle": "official-skill-200754",
       "dismantles": [
-        "official-skill-胜兵求战"
+        "official-skill-200754"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -1220,9 +1220,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200739",
-      "dismantle": "official-skill-攻其不备",
+      "dismantle": "official-skill-200755",
       "dismantles": [
-        "official-skill-攻其不备"
+        "official-skill-200755"
       ],
       "cost": 3,
       "distance": 3,
@@ -1244,9 +1244,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200740",
-      "dismantle": "official-skill-近攻",
+      "dismantle": "official-skill-200747",
       "dismantles": [
-        "official-skill-近攻"
+        "official-skill-200747"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -1268,9 +1268,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200741",
-      "dismantle": "official-skill-觑隙",
+      "dismantle": "official-skill-200759",
       "dismantles": [
-        "official-skill-觑隙"
+        "official-skill-200759"
       ],
       "cost": 3,
       "distance": 1,
@@ -1292,9 +1292,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200742",
-      "dismantle": "official-skill-重整旗鼓",
+      "dismantle": "official-skill-200757",
       "dismantles": [
-        "official-skill-重整旗鼓"
+        "official-skill-200757"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -1316,9 +1316,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200743",
-      "dismantle": "official-skill-重整旗鼓",
+      "dismantle": "official-skill-200757",
       "dismantles": [
-        "official-skill-重整旗鼓"
+        "official-skill-200757"
       ],
       "cost": 3,
       "distance": 4,
@@ -1340,9 +1340,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200744",
-      "dismantle": "official-skill-连环",
+      "dismantle": "official-skill-200758",
       "dismantles": [
-        "official-skill-连环"
+        "official-skill-200758"
       ],
       "cost": 3,
       "distance": 2,
@@ -1364,9 +1364,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200745",
-      "dismantle": "official-skill-觑隙",
+      "dismantle": "official-skill-200759",
       "dismantles": [
-        "official-skill-觑隙"
+        "official-skill-200759"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1388,9 +1388,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200746",
-      "dismantle": "official-skill-连环",
+      "dismantle": "official-skill-200758",
       "dismantles": [
-        "official-skill-连环"
+        "official-skill-200758"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -1412,9 +1412,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200748",
-      "dismantle": "official-skill-远射",
+      "dismantle": "official-skill-200748",
       "dismantles": [
-        "official-skill-远射"
+        "official-skill-200748"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1436,9 +1436,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200748",
-      "dismantle": "official-skill-远射",
+      "dismantle": "official-skill-200748",
       "dismantles": [
-        "official-skill-远射"
+        "official-skill-200748"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1460,9 +1460,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200747",
-      "dismantle": "official-skill-近攻",
+      "dismantle": "official-skill-200747",
       "dismantles": [
-        "official-skill-近攻"
+        "official-skill-200747"
       ],
       "cost": 3,
       "distance": 3,
@@ -1484,10 +1484,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200236",
-      "dismantle": "official-skill-疑兵",
+      "dismantle": "official-skill-200236",
       "dismantles": [
-        "official-skill-疑兵",
-        "official-skill-陷阱"
+        "official-skill-200236",
+        "official-skill-200234"
       ],
       "cost": 2,
       "distance": 1,
@@ -1509,10 +1509,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200234",
-      "dismantle": "official-skill-陷阱",
+      "dismantle": "official-skill-200234",
       "dismantles": [
-        "official-skill-陷阱",
-        "official-skill-疑兵"
+        "official-skill-200234",
+        "official-skill-200236"
       ],
       "cost": 2,
       "distance": 1,
@@ -1534,10 +1534,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200227",
-      "dismantle": "official-skill-佯攻",
+      "dismantle": "official-skill-200227",
       "dismantles": [
-        "official-skill-佯攻",
-        "official-skill-反计"
+        "official-skill-200227",
+        "official-skill-200213"
       ],
       "cost": 2,
       "distance": 1,
@@ -1559,10 +1559,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200213",
-      "dismantle": "official-skill-反计",
+      "dismantle": "official-skill-200213",
       "dismantles": [
-        "official-skill-反计",
-        "official-skill-佯攻"
+        "official-skill-200213",
+        "official-skill-200227"
       ],
       "cost": 2,
       "distance": 2,
@@ -1584,10 +1584,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200227",
-      "dismantle": "official-skill-佯攻",
+      "dismantle": "official-skill-200227",
       "dismantles": [
-        "official-skill-佯攻",
-        "official-skill-反计"
+        "official-skill-200227",
+        "official-skill-200213"
       ],
       "cost": 2,
       "distance": 3,
@@ -1609,10 +1609,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200227",
-      "dismantle": "official-skill-佯攻",
+      "dismantle": "official-skill-200227",
       "dismantles": [
-        "official-skill-佯攻",
-        "official-skill-反计"
+        "official-skill-200227",
+        "official-skill-200213"
       ],
       "cost": 2,
       "distance": 3,
@@ -1634,10 +1634,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200236",
-      "dismantle": "official-skill-疑兵",
+      "dismantle": "official-skill-200236",
       "dismantles": [
-        "official-skill-疑兵",
-        "official-skill-陷阱"
+        "official-skill-200236",
+        "official-skill-200234"
       ],
       "cost": 2,
       "distance": 1,
@@ -1659,10 +1659,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200234",
-      "dismantle": "official-skill-陷阱",
+      "dismantle": "official-skill-200234",
       "dismantles": [
-        "official-skill-陷阱",
-        "official-skill-疑兵"
+        "official-skill-200234",
+        "official-skill-200236"
       ],
       "cost": 2,
       "distance": 2,
@@ -1684,10 +1684,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200213",
-      "dismantle": "official-skill-反计",
+      "dismantle": "official-skill-200213",
       "dismantles": [
-        "official-skill-反计",
-        "official-skill-佯攻"
+        "official-skill-200213",
+        "official-skill-200227"
       ],
       "cost": 2,
       "distance": 3,
@@ -1709,10 +1709,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200213",
-      "dismantle": "official-skill-反计",
+      "dismantle": "official-skill-200213",
       "dismantles": [
-        "official-skill-反计",
-        "official-skill-佯攻"
+        "official-skill-200213",
+        "official-skill-200227"
       ],
       "cost": 2,
       "distance": 1,
@@ -1734,9 +1734,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200756",
-      "dismantle": "official-skill-一夫当关",
+      "dismantle": "official-skill-200674",
       "dismantles": [
-        "official-skill-一夫当关"
+        "official-skill-200674"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -1758,9 +1758,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200760",
-      "dismantle": "official-skill-合流",
+      "dismantle": "official-skill-200688",
       "dismantles": [
-        "official-skill-合流"
+        "official-skill-200688"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -1782,9 +1782,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200761",
-      "dismantle": "official-skill-火积",
+      "dismantle": "official-skill-200722",
       "dismantles": [
-        "official-skill-火积"
+        "official-skill-200722"
       ],
       "cost": 3,
       "distance": 2,
@@ -1806,9 +1806,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200762",
-      "dismantle": "official-skill-疾风迅雷",
+      "dismantle": "official-skill-200646",
       "dismantles": [
-        "official-skill-疾风迅雷"
+        "official-skill-200646"
       ],
       "cost": 3,
       "distance": 3,
@@ -1830,9 +1830,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200763",
-      "dismantle": "official-skill-索敌",
+      "dismantle": "official-skill-200735",
       "dismantles": [
-        "official-skill-索敌"
+        "official-skill-200735"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -1854,9 +1854,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200764",
-      "dismantle": "official-skill-健卒不殆",
+      "dismantle": "official-skill-200724",
       "dismantles": [
-        "official-skill-健卒不殆"
+        "official-skill-200724"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -1878,9 +1878,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200765",
-      "dismantle": "official-skill-闪击",
+      "dismantle": "official-skill-200690",
       "dismantles": [
-        "official-skill-闪击"
+        "official-skill-200690"
       ],
       "cost": 4,
       "distance": 2,
@@ -1902,9 +1902,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200773",
-      "dismantle": "official-skill-兵无常势",
+      "dismantle": "official-skill-200766",
       "dismantles": [
-        "official-skill-兵无常势"
+        "official-skill-200766"
       ],
       "cost": 3,
       "distance": 3,
@@ -1926,9 +1926,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200780",
-      "dismantle": "official-skill-鱼鳞",
+      "dismantle": "official-skill-200783",
       "dismantles": [
-        "official-skill-鱼鳞"
+        "official-skill-200783"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1950,9 +1950,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200776",
-      "dismantle": "official-skill-衡轭",
+      "dismantle": "official-skill-200781",
       "dismantles": [
-        "official-skill-衡轭"
+        "official-skill-200781"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -1974,9 +1974,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200774",
-      "dismantle": "official-skill-疏数",
+      "dismantle": "official-skill-200782",
       "dismantles": [
-        "official-skill-疏数"
+        "official-skill-200782"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -1998,9 +1998,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200768",
-      "dismantle": "official-skill-鱼鳞",
+      "dismantle": "official-skill-200783",
       "dismantles": [
-        "official-skill-鱼鳞"
+        "official-skill-200783"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -2022,9 +2022,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200779",
-      "dismantle": "official-skill-衡轭",
+      "dismantle": "official-skill-200781",
       "dismantles": [
-        "official-skill-衡轭"
+        "official-skill-200781"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -2046,9 +2046,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200778",
-      "dismantle": "official-skill-鱼鳞",
+      "dismantle": "official-skill-200783",
       "dismantles": [
-        "official-skill-鱼鳞"
+        "official-skill-200783"
       ],
       "cost": 4,
       "distance": 3,
@@ -2070,9 +2070,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200785",
-      "dismantle": "official-skill-道行险阻",
+      "dismantle": "official-skill-200684",
       "dismantles": [
-        "official-skill-道行险阻"
+        "official-skill-200684"
       ],
       "cost": 3,
       "distance": 1,
@@ -2094,9 +2094,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200791",
-      "dismantle": "official-skill-众谋不懈",
+      "dismantle": "official-skill-200800",
       "dismantles": [
-        "official-skill-众谋不懈"
+        "official-skill-200800"
       ],
       "cost": 3,
       "distance": 4,
@@ -2118,9 +2118,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200795",
-      "dismantle": "official-skill-众谋不懈",
+      "dismantle": "official-skill-200800",
       "dismantles": [
-        "official-skill-众谋不懈"
+        "official-skill-200800"
       ],
       "cost": 3,
       "distance": 2,
@@ -2142,9 +2142,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200796",
-      "dismantle": "official-skill-众谋不懈",
+      "dismantle": "official-skill-200800",
       "dismantles": [
-        "official-skill-众谋不懈"
+        "official-skill-200800"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -2166,9 +2166,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200250",
-      "dismantle": "official-skill-索敌",
+      "dismantle": "official-skill-200735",
       "dismantles": [
-        "official-skill-索敌"
+        "official-skill-200735"
       ],
       "cost": 2,
       "distance": 2,
@@ -2190,9 +2190,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200824",
-      "dismantle": "official-skill-铁戟金戈",
+      "dismantle": "official-skill-200833",
       "dismantles": [
-        "official-skill-铁戟金戈"
+        "official-skill-200833"
       ],
       "cost": 3,
       "distance": 2,
@@ -2214,9 +2214,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200828",
-      "dismantle": "official-skill-兼弱攻昧",
+      "dismantle": "official-skill-200829",
       "dismantles": [
-        "official-skill-兼弱攻昧"
+        "official-skill-200829"
       ],
       "cost": 3,
       "distance": 2,
@@ -2238,9 +2238,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200836",
-      "dismantle": "official-skill-疾击其后",
+      "dismantle": "official-skill-200839",
       "dismantles": [
-        "official-skill-疾击其后"
+        "official-skill-200839"
       ],
       "cost": 3,
       "distance": 2,
@@ -2262,9 +2262,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200837",
-      "dismantle": "official-skill-疾击其后",
+      "dismantle": "official-skill-200839",
       "dismantles": [
-        "official-skill-疾击其后"
+        "official-skill-200839"
       ],
       "cost": 3,
       "distance": 3,
@@ -2286,9 +2286,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200843",
-      "dismantle": "official-skill-白刃",
+      "dismantle": "official-skill-200691",
       "dismantles": [
-        "official-skill-白刃"
+        "official-skill-200691"
       ],
       "cost": 3,
       "distance": 2,
@@ -2310,9 +2310,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200848",
-      "dismantle": "official-skill-战必断金",
+      "dismantle": "official-skill-200228",
       "dismantles": [
-        "official-skill-战必断金"
+        "official-skill-200228"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -2334,9 +2334,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200849",
-      "dismantle": "official-skill-风声鹤唳",
+      "dismantle": "official-skill-200850",
       "dismantles": [
-        "official-skill-风声鹤唳"
+        "official-skill-200850"
       ],
       "cost": 3,
       "distance": 2,
@@ -2358,10 +2358,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200121",
-      "dismantle": "official-skill-溃堤",
+      "dismantle": "official-skill-200121",
       "dismantles": [
-        "official-skill-溃堤",
-        "official-skill-运筹帷幄"
+        "official-skill-200121",
+        "official-skill-200181"
       ],
       "cost": 2,
       "distance": 2,
@@ -2383,10 +2383,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200121",
-      "dismantle": "official-skill-溃堤",
+      "dismantle": "official-skill-200121",
       "dismantles": [
-        "official-skill-溃堤",
-        "official-skill-运筹帷幄"
+        "official-skill-200121",
+        "official-skill-200181"
       ],
       "cost": 2,
       "distance": 3,
@@ -2408,10 +2408,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200123",
-      "dismantle": "official-skill-落石",
+      "dismantle": "official-skill-200123",
       "dismantles": [
-        "official-skill-落石",
-        "official-skill-急救"
+        "official-skill-200123",
+        "official-skill-200137"
       ],
       "cost": 2,
       "distance": 3,
@@ -2433,10 +2433,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200115",
-      "dismantle": "official-skill-夹攻",
+      "dismantle": "official-skill-200115",
       "dismantles": [
-        "official-skill-夹攻",
-        "official-skill-成竹在胸"
+        "official-skill-200115",
+        "official-skill-200183"
       ],
       "cost": 2,
       "distance": 1,
@@ -2458,10 +2458,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200123",
-      "dismantle": "official-skill-落石",
+      "dismantle": "official-skill-200123",
       "dismantles": [
-        "official-skill-落石",
-        "official-skill-急救"
+        "official-skill-200123",
+        "official-skill-200137"
       ],
       "cost": 2,
       "distance": 2,
@@ -2483,10 +2483,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200114",
-      "dismantle": "official-skill-伏兵",
+      "dismantle": "official-skill-200114",
       "dismantles": [
-        "official-skill-伏兵",
-        "official-skill-看破"
+        "official-skill-200114",
+        "official-skill-200218"
       ],
       "cost": 2,
       "distance": 3,
@@ -2508,10 +2508,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200115",
-      "dismantle": "official-skill-夹攻",
+      "dismantle": "official-skill-200115",
       "dismantles": [
-        "official-skill-夹攻",
-        "official-skill-成竹在胸"
+        "official-skill-200115",
+        "official-skill-200183"
       ],
       "cost": 2,
       "distance": 1,
@@ -2533,9 +2533,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200852",
-      "dismantle": "official-skill-美人计",
+      "dismantle": "official-skill-200853",
       "dismantles": [
-        "official-skill-美人计"
+        "official-skill-200853"
       ],
       "cost": 2,
       "distance": 2,
@@ -2557,9 +2557,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200857",
-      "dismantle": "official-skill-翕处还张",
+      "dismantle": "official-skill-200917",
       "dismantles": [
-        "official-skill-翕处还张"
+        "official-skill-200917"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -2581,9 +2581,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200865",
-      "dismantle": "official-skill-击势",
+      "dismantle": "official-skill-200863",
       "dismantles": [
-        "official-skill-击势"
+        "official-skill-200863"
       ],
       "cost": 3,
       "distance": 3,
@@ -2605,9 +2605,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200864",
-      "dismantle": "official-skill-击势",
+      "dismantle": "official-skill-200863",
       "dismantles": [
-        "official-skill-击势"
+        "official-skill-200863"
       ],
       "cost": 3,
       "distance": 3,
@@ -2629,9 +2629,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200882",
-      "dismantle": "official-skill-鸟云山兵",
+      "dismantle": "official-skill-200883",
       "dismantles": [
-        "official-skill-鸟云山兵"
+        "official-skill-200883"
       ],
       "cost": 3,
       "distance": 4,
@@ -2653,9 +2653,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200884",
-      "dismantle": "official-skill-三军之众",
+      "dismantle": "official-skill-200886",
       "dismantles": [
-        "official-skill-三军之众"
+        "official-skill-200886"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -2677,9 +2677,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200885",
-      "dismantle": "official-skill-三军之众",
+      "dismantle": "official-skill-200886",
       "dismantles": [
-        "official-skill-三军之众"
+        "official-skill-200886"
       ],
       "cost": 3,
       "distance": 1,
@@ -2701,9 +2701,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200898",
-      "dismantle": "official-skill-垒实迎击",
+      "dismantle": "official-skill-200900",
       "dismantles": [
-        "official-skill-垒实迎击"
+        "official-skill-200900"
       ],
       "cost": 3,
       "distance": 3,
@@ -2725,9 +2725,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200899",
-      "dismantle": "official-skill-垒实迎击",
+      "dismantle": "official-skill-200900",
       "dismantles": [
-        "official-skill-垒实迎击"
+        "official-skill-200900"
       ],
       "cost": 3,
       "distance": 2,
@@ -2749,9 +2749,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200902",
-      "dismantle": "official-skill-美人计",
+      "dismantle": "official-skill-200853",
       "dismantles": [
-        "official-skill-美人计"
+        "official-skill-200853"
       ],
       "cost": 3,
       "distance": 2,
@@ -2773,9 +2773,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200903",
-      "dismantle": "official-skill-叫阵",
+      "dismantle": "official-skill-200913",
       "dismantles": [
-        "official-skill-叫阵"
+        "official-skill-200913"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -2797,9 +2797,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200904",
-      "dismantle": "official-skill-叫阵",
+      "dismantle": "official-skill-200913",
       "dismantles": [
-        "official-skill-叫阵"
+        "official-skill-200913"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -2821,9 +2821,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200905",
-      "dismantle": "official-skill-叫阵",
+      "dismantle": "official-skill-200913",
       "dismantles": [
-        "official-skill-叫阵"
+        "official-skill-200913"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -2845,9 +2845,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200906",
-      "dismantle": "official-skill-文伐",
+      "dismantle": "official-skill-200914",
       "dismantles": [
-        "official-skill-文伐"
+        "official-skill-200914"
       ],
       "cost": 3,
       "distance": 3,
@@ -2869,9 +2869,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200907",
-      "dismantle": "official-skill-文伐",
+      "dismantle": "official-skill-200914",
       "dismantles": [
-        "official-skill-文伐"
+        "official-skill-200914"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -2893,9 +2893,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200908",
-      "dismantle": "official-skill-文伐",
+      "dismantle": "official-skill-200914",
       "dismantles": [
-        "official-skill-文伐"
+        "official-skill-200914"
       ],
       "cost": 2,
       "distance": 4,
@@ -2917,9 +2917,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200909",
-      "dismantle": "official-skill-伐谋",
+      "dismantle": "official-skill-200683",
       "dismantles": [
-        "official-skill-伐谋"
+        "official-skill-200683"
       ],
       "cost": 2,
       "distance": 2,
@@ -2941,9 +2941,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200910",
-      "dismantle": "official-skill-雀伏",
+      "dismantle": "official-skill-200672",
       "dismantles": [
-        "official-skill-雀伏"
+        "official-skill-200672"
       ],
       "cost": 3,
       "distance": 2,
@@ -2965,9 +2965,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200911",
-      "dismantle": "official-skill-窃兵",
+      "dismantle": "official-skill-200113",
       "dismantles": [
-        "official-skill-窃兵"
+        "official-skill-200113"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -2989,9 +2989,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200912",
-      "dismantle": "official-skill-雀伏",
+      "dismantle": "official-skill-200672",
       "dismantles": [
-        "official-skill-雀伏"
+        "official-skill-200672"
       ],
       "cost": 3,
       "distance": 1,
@@ -3013,9 +3013,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200915",
-      "dismantle": "official-skill-翕处还张",
+      "dismantle": "official-skill-200917",
       "dismantles": [
-        "official-skill-翕处还张"
+        "official-skill-200917"
       ],
       "cost": 3,
       "distance": 2,
@@ -3037,9 +3037,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200927",
-      "dismantle": "official-skill-飒沓如星",
+      "dismantle": "official-skill-200929",
       "dismantles": [
-        "official-skill-飒沓如星"
+        "official-skill-200929"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -3061,9 +3061,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200928",
-      "dismantle": "official-skill-飒沓如星",
+      "dismantle": "official-skill-200929",
       "dismantles": [
-        "official-skill-飒沓如星"
+        "official-skill-200929"
       ],
       "cost": 3,
       "distance": 3,
@@ -3085,9 +3085,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200930",
-      "dismantle": "official-skill-鸟云山兵",
+      "dismantle": "official-skill-200883",
       "dismantles": [
-        "official-skill-鸟云山兵"
+        "official-skill-200883"
       ],
       "cost": 3,
       "distance": 2,
@@ -3109,9 +3109,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200934",
-      "dismantle": "official-skill-以直报怨",
+      "dismantle": "official-skill-200935",
       "dismantles": [
-        "official-skill-以直报怨"
+        "official-skill-200935"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3133,9 +3133,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200933",
-      "dismantle": "official-skill-以直报怨",
+      "dismantle": "official-skill-200935",
       "dismantles": [
-        "official-skill-以直报怨"
+        "official-skill-200935"
       ],
       "cost": 4,
       "distance": 3,
@@ -3157,9 +3157,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200937",
-      "dismantle": "official-skill-三术奇谋",
+      "dismantle": "official-skill-200938",
       "dismantles": [
-        "official-skill-三术奇谋"
+        "official-skill-200938"
       ],
       "cost": 3,
       "distance": 4,
@@ -3181,9 +3181,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200940",
-      "dismantle": "official-skill-擅兵不寡",
+      "dismantle": "official-skill-200734",
       "dismantles": [
-        "official-skill-擅兵不寡"
+        "official-skill-200734"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3205,9 +3205,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200939",
-      "dismantle": "official-skill-甚陷不惧",
+      "dismantle": "official-skill-200941",
       "dismantles": [
-        "official-skill-甚陷不惧"
+        "official-skill-200941"
       ],
       "cost": 3,
       "distance": 2,
@@ -3229,9 +3229,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200947",
-      "dismantle": "official-skill-势无虚动",
+      "dismantle": "official-skill-200949",
       "dismantles": [
-        "official-skill-势无虚动"
+        "official-skill-200949"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -3253,9 +3253,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200948",
-      "dismantle": "official-skill-势无虚动",
+      "dismantle": "official-skill-200949",
       "dismantles": [
-        "official-skill-势无虚动"
+        "official-skill-200949"
       ],
       "cost": 3,
       "distance": 4,
@@ -3277,9 +3277,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200950",
-      "dismantle": "official-skill-三术奇谋",
+      "dismantle": "official-skill-200938",
       "dismantles": [
-        "official-skill-三术奇谋"
+        "official-skill-200938"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3301,9 +3301,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200952",
-      "dismantle": "official-skill-筹策绝道",
+      "dismantle": "official-skill-200953",
       "dismantles": [
-        "official-skill-筹策绝道"
+        "official-skill-200953"
       ],
       "cost": 3,
       "distance": 3,
@@ -3325,9 +3325,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200954",
-      "dismantle": "official-skill-三军齐出",
+      "dismantle": "official-skill-200956",
       "dismantles": [
-        "official-skill-三军齐出"
+        "official-skill-200956"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -3349,9 +3349,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200955",
-      "dismantle": "official-skill-三军齐出",
+      "dismantle": "official-skill-200956",
       "dismantles": [
-        "official-skill-三军齐出"
+        "official-skill-200956"
       ],
       "cost": 3,
       "distance": 3,
@@ -3373,9 +3373,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200957",
-      "dismantle": "official-skill-久战熟谋",
+      "dismantle": "official-skill-200959",
       "dismantles": [
-        "official-skill-久战熟谋"
+        "official-skill-200959"
       ],
       "cost": 3,
       "distance": 2,
@@ -3397,9 +3397,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200958",
-      "dismantle": "official-skill-久战熟谋",
+      "dismantle": "official-skill-200959",
       "dismantles": [
-        "official-skill-久战熟谋"
+        "official-skill-200959"
       ],
       "cost": 3,
       "distance": 2,
@@ -3421,9 +3421,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200961",
-      "dismantle": "official-skill-三军齐出",
+      "dismantle": "official-skill-200956",
       "dismantles": [
-        "official-skill-三军齐出"
+        "official-skill-200956"
       ],
       "cost": 3,
       "distance": 2,
@@ -3445,9 +3445,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200960",
-      "dismantle": "official-skill-掎角之势",
+      "dismantle": "official-skill-200673",
       "dismantles": [
-        "official-skill-掎角之势"
+        "official-skill-200673"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -3469,9 +3469,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200962",
-      "dismantle": "official-skill-合纵连横",
+      "dismantle": "official-skill-200964",
       "dismantles": [
-        "official-skill-合纵连横"
+        "official-skill-200964"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -3493,9 +3493,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200963",
-      "dismantle": "official-skill-合纵连横",
+      "dismantle": "official-skill-200964",
       "dismantles": [
-        "official-skill-合纵连横"
+        "official-skill-200964"
       ],
       "cost": 2,
       "distance": 2,
@@ -3517,9 +3517,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200965",
-      "dismantle": "official-skill-勠力同心",
+      "dismantle": "official-skill-200967",
       "dismantles": [
-        "official-skill-勠力同心"
+        "official-skill-200967"
       ],
       "cost": 3,
       "distance": 2,
@@ -3541,9 +3541,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200966",
-      "dismantle": "official-skill-勠力同心",
+      "dismantle": "official-skill-200967",
       "dismantles": [
-        "official-skill-勠力同心"
+        "official-skill-200967"
       ],
       "cost": 3,
       "distance": 2,
@@ -3565,9 +3565,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200968",
-      "dismantle": "official-skill-掎角之势",
+      "dismantle": "official-skill-200673",
       "dismantles": [
-        "official-skill-掎角之势"
+        "official-skill-200673"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3589,9 +3589,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200969",
-      "dismantle": "official-skill-扬威",
+      "dismantle": "official-skill-200976",
       "dismantles": [
-        "official-skill-扬威"
+        "official-skill-200976"
       ],
       "cost": 1.5,
       "distance": 3,
@@ -3613,9 +3613,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200970",
-      "dismantle": "official-skill-扬威",
+      "dismantle": "official-skill-200976",
       "dismantles": [
-        "official-skill-扬威"
+        "official-skill-200976"
       ],
       "cost": 2,
       "distance": 2,
@@ -3637,9 +3637,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200971",
-      "dismantle": "official-skill-破胆",
+      "dismantle": "official-skill-200978",
       "dismantles": [
-        "official-skill-破胆"
+        "official-skill-200978"
       ],
       "cost": 2,
       "distance": 3,
@@ -3661,9 +3661,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200972",
-      "dismantle": "official-skill-破胆",
+      "dismantle": "official-skill-200978",
       "dismantles": [
-        "official-skill-破胆"
+        "official-skill-200978"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3685,9 +3685,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200973",
-      "dismantle": "official-skill-奇术折冲",
+      "dismantle": "official-skill-200977",
       "dismantles": [
-        "official-skill-奇术折冲"
+        "official-skill-200977"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -3709,9 +3709,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200974",
-      "dismantle": "official-skill-奇术折冲",
+      "dismantle": "official-skill-200977",
       "dismantles": [
-        "official-skill-奇术折冲"
+        "official-skill-200977"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3733,9 +3733,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200975",
-      "dismantle": "official-skill-扬威",
+      "dismantle": "official-skill-200976",
       "dismantles": [
-        "official-skill-扬威"
+        "official-skill-200976"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -3757,9 +3757,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200983",
-      "dismantle": "official-skill-及锋而试",
+      "dismantle": "official-skill-200979",
       "dismantles": [
-        "official-skill-及锋而试"
+        "official-skill-200979"
       ],
       "cost": 3,
       "distance": 2,
@@ -3781,9 +3781,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200984",
-      "dismantle": "official-skill-及锋而试",
+      "dismantle": "official-skill-200979",
       "dismantles": [
-        "official-skill-及锋而试"
+        "official-skill-200979"
       ],
       "cost": 3,
       "distance": 2,
@@ -3805,9 +3805,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200985",
-      "dismantle": "official-skill-及锋而试",
+      "dismantle": "official-skill-200979",
       "dismantles": [
-        "official-skill-及锋而试"
+        "official-skill-200979"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -3829,9 +3829,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200986",
-      "dismantle": "official-skill-乘胜追击",
+      "dismantle": "official-skill-200980",
       "dismantles": [
-        "official-skill-乘胜追击"
+        "official-skill-200980"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -3853,9 +3853,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200987",
-      "dismantle": "official-skill-乘胜追击",
+      "dismantle": "official-skill-200980",
       "dismantles": [
-        "official-skill-乘胜追击"
+        "official-skill-200980"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -3877,9 +3877,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200988",
-      "dismantle": "official-skill-胜负先征",
+      "dismantle": "official-skill-200981",
       "dismantles": [
-        "official-skill-胜负先征"
+        "official-skill-200981"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3901,9 +3901,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200989",
-      "dismantle": "official-skill-胜负先征",
+      "dismantle": "official-skill-200981",
       "dismantles": [
-        "official-skill-胜负先征"
+        "official-skill-200981"
       ],
       "cost": 3,
       "distance": 2,
@@ -3925,9 +3925,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200990",
-      "dismantle": "official-skill-望风而降",
+      "dismantle": "official-skill-200982",
       "dismantles": [
-        "official-skill-望风而降"
+        "official-skill-200982"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -3949,9 +3949,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200991",
-      "dismantle": "official-skill-望风而降",
+      "dismantle": "official-skill-200982",
       "dismantles": [
-        "official-skill-望风而降"
+        "official-skill-200982"
       ],
       "cost": 3,
       "distance": 2,
@@ -3973,9 +3973,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200997",
-      "dismantle": "official-skill-共饮避世",
+      "dismantle": "official-skill-200994",
       "dismantles": [
-        "official-skill-共饮避世"
+        "official-skill-200994"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -3997,9 +3997,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200998",
-      "dismantle": "official-skill-共饮避世",
+      "dismantle": "official-skill-200994",
       "dismantles": [
-        "official-skill-共饮避世"
+        "official-skill-200994"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4021,9 +4021,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200999",
-      "dismantle": "official-skill-共饮避世",
+      "dismantle": "official-skill-200994",
       "dismantles": [
-        "official-skill-共饮避世"
+        "official-skill-200994"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4045,9 +4045,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-201000",
-      "dismantle": "official-skill-激水之疾",
+      "dismantle": "official-skill-200992",
       "dismantles": [
-        "official-skill-激水之疾"
+        "official-skill-200992"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -4069,9 +4069,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-201001",
-      "dismantle": "official-skill-激水之疾",
+      "dismantle": "official-skill-200992",
       "dismantles": [
-        "official-skill-激水之疾"
+        "official-skill-200992"
       ],
       "cost": 2,
       "distance": 2,
@@ -4093,9 +4093,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-201002",
-      "dismantle": "official-skill-蓄盈待竭",
+      "dismantle": "official-skill-200995",
       "dismantles": [
-        "official-skill-蓄盈待竭"
+        "official-skill-200995"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4117,9 +4117,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-201003",
-      "dismantle": "official-skill-蓄盈待竭",
+      "dismantle": "official-skill-200995",
       "dismantles": [
-        "official-skill-蓄盈待竭"
+        "official-skill-200995"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4141,9 +4141,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-201004",
-      "dismantle": "official-skill-亡命一搏",
+      "dismantle": "official-skill-200996",
       "dismantles": [
-        "official-skill-亡命一搏"
+        "official-skill-200996"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4165,9 +4165,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-201005",
-      "dismantle": "official-skill-亡命一搏",
+      "dismantle": "official-skill-200996",
       "dismantles": [
-        "official-skill-亡命一搏"
+        "official-skill-200996"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -4189,9 +4189,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200245",
-      "dismantle": "official-skill-亡命一搏",
+      "dismantle": "official-skill-200996",
       "dismantles": [
-        "official-skill-亡命一搏"
+        "official-skill-200996"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4213,10 +4213,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200110",
-      "dismantle": "official-skill-浴血",
+      "dismantle": "official-skill-200110",
       "dismantles": [
-        "official-skill-浴血",
-        "official-skill-先驱"
+        "official-skill-200110",
+        "official-skill-200231"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4238,10 +4238,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200123",
-      "dismantle": "official-skill-落石",
+      "dismantle": "official-skill-200123",
       "dismantles": [
-        "official-skill-落石",
-        "official-skill-急救"
+        "official-skill-200123",
+        "official-skill-200137"
       ],
       "cost": 1.5,
       "distance": 4,
@@ -4263,10 +4263,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200108",
-      "dismantle": "official-skill-重伤",
+      "dismantle": "official-skill-200108",
       "dismantles": [
-        "official-skill-重伤",
-        "official-skill-投石轰击"
+        "official-skill-200108",
+        "official-skill-200189"
       ],
       "cost": 2,
       "distance": 2,
@@ -4288,10 +4288,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200128",
-      "dismantle": "official-skill-狼烟",
+      "dismantle": "official-skill-200128",
       "dismantles": [
-        "official-skill-狼烟",
-        "official-skill-收拢"
+        "official-skill-200128",
+        "official-skill-200133"
       ],
       "cost": 1.5,
       "distance": 3,
@@ -4313,9 +4313,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-201006",
-      "dismantle": "official-skill-诱敌深入",
+      "dismantle": "official-skill-201008",
       "dismantles": [
-        "official-skill-诱敌深入"
+        "official-skill-201008"
       ],
       "cost": 3,
       "distance": 2,
@@ -4337,9 +4337,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-201007",
-      "dismantle": "official-skill-诱敌深入",
+      "dismantle": "official-skill-201008",
       "dismantles": [
-        "official-skill-诱敌深入"
+        "official-skill-201008"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -4361,9 +4361,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200670",
-      "dismantle": "official-skill-谨言",
+      "dismantle": "official-skill-200670",
       "dismantles": [
-        "official-skill-谨言"
+        "official-skill-200670"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4385,10 +4385,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200189",
-      "dismantle": "official-skill-投石轰击",
+      "dismantle": "official-skill-200189",
       "dismantles": [
-        "official-skill-投石轰击",
-        "official-skill-重伤"
+        "official-skill-200189",
+        "official-skill-200108"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4410,10 +4410,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200186",
-      "dismantle": "official-skill-援军秘策",
+      "dismantle": "official-skill-200186",
       "dismantles": [
-        "official-skill-援军秘策",
-        "official-skill-犒劳"
+        "official-skill-200186",
+        "official-skill-200197"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4435,10 +4435,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200138",
-      "dismantle": "official-skill-包扎",
+      "dismantle": "official-skill-200138",
       "dismantles": [
-        "official-skill-包扎",
-        "official-skill-固阵"
+        "official-skill-200138",
+        "official-skill-200193"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4460,10 +4460,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200195",
-      "dismantle": "official-skill-奋起",
+      "dismantle": "official-skill-200195",
       "dismantles": [
-        "official-skill-奋起",
-        "official-skill-铁壁"
+        "official-skill-200195",
+        "official-skill-200192"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -4485,10 +4485,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200178",
-      "dismantle": "official-skill-坚守突击",
+      "dismantle": "official-skill-200178",
       "dismantles": [
-        "official-skill-坚守突击",
-        "official-skill-凿穿"
+        "official-skill-200178",
+        "official-skill-200098"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4510,10 +4510,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200197",
-      "dismantle": "official-skill-犒劳",
+      "dismantle": "official-skill-200197",
       "dismantles": [
-        "official-skill-犒劳",
-        "official-skill-援军秘策"
+        "official-skill-200197",
+        "official-skill-200186"
       ],
       "cost": 2,
       "distance": 3,
@@ -4535,10 +4535,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200101",
-      "dismantle": "official-skill-齐射",
+      "dismantle": "official-skill-200101",
       "dismantles": [
-        "official-skill-齐射",
-        "official-skill-疾风突击"
+        "official-skill-200101",
+        "official-skill-200179"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -4560,10 +4560,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200129",
-      "dismantle": "official-skill-毒泉",
+      "dismantle": "official-skill-200129",
       "dismantles": [
-        "official-skill-毒泉",
-        "official-skill-乱阵"
+        "official-skill-200129",
+        "official-skill-200200"
       ],
       "cost": 1.5,
       "distance": 4,
@@ -4585,10 +4585,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200118",
-      "dismantle": "official-skill-火辎",
+      "dismantle": "official-skill-200118",
       "dismantles": [
-        "official-skill-火辎",
-        "official-skill-文韬武略"
+        "official-skill-200118",
+        "official-skill-200182"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4610,10 +4610,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200108",
-      "dismantle": "official-skill-重伤",
+      "dismantle": "official-skill-200108",
       "dismantles": [
-        "official-skill-重伤",
-        "official-skill-投石轰击"
+        "official-skill-200108",
+        "official-skill-200189"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4635,10 +4635,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200179",
-      "dismantle": "official-skill-疾风突击",
+      "dismantle": "official-skill-200179",
       "dismantles": [
-        "official-skill-疾风突击",
-        "official-skill-齐射"
+        "official-skill-200179",
+        "official-skill-200101"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4660,10 +4660,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200104",
-      "dismantle": "official-skill-乱击",
+      "dismantle": "official-skill-200104",
       "dismantles": [
-        "official-skill-乱击",
-        "official-skill-速战坚守"
+        "official-skill-200104",
+        "official-skill-200180"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4685,10 +4685,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200182",
-      "dismantle": "official-skill-文韬武略",
+      "dismantle": "official-skill-200182",
       "dismantles": [
-        "official-skill-文韬武略",
-        "official-skill-火辎"
+        "official-skill-200182",
+        "official-skill-200118"
       ],
       "cost": 2,
       "distance": 2,
@@ -4710,10 +4710,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200134",
-      "dismantle": "official-skill-休整",
+      "dismantle": "official-skill-200134",
       "dismantles": [
-        "official-skill-休整",
-        "official-skill-坚守"
+        "official-skill-200134",
+        "official-skill-200191"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4735,10 +4735,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200178",
-      "dismantle": "official-skill-坚守突击",
+      "dismantle": "official-skill-200178",
       "dismantles": [
-        "official-skill-坚守突击",
-        "official-skill-凿穿"
+        "official-skill-200178",
+        "official-skill-200098"
       ],
       "cost": 2,
       "distance": 2,
@@ -4760,10 +4760,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200098",
-      "dismantle": "official-skill-凿穿",
+      "dismantle": "official-skill-200098",
       "dismantles": [
-        "official-skill-凿穿",
-        "official-skill-坚守突击"
+        "official-skill-200098",
+        "official-skill-200178"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -4785,10 +4785,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200124",
-      "dismantle": "official-skill-绝道",
+      "dismantle": "official-skill-200124",
       "dismantles": [
-        "official-skill-绝道",
-        "official-skill-劫粮"
+        "official-skill-200124",
+        "official-skill-200203"
       ],
       "cost": 2,
       "distance": 2,
@@ -4810,10 +4810,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200200",
-      "dismantle": "official-skill-乱阵",
+      "dismantle": "official-skill-200200",
       "dismantles": [
-        "official-skill-乱阵",
-        "official-skill-毒泉"
+        "official-skill-200200",
+        "official-skill-200129"
       ],
       "cost": 2,
       "distance": 4,
@@ -4835,9 +4835,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200666",
-      "dismantle": "official-skill-游击",
+      "dismantle": "official-skill-200666",
       "dismantles": [
-        "official-skill-游击"
+        "official-skill-200666"
       ],
       "cost": 2,
       "distance": 3,
@@ -4859,10 +4859,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200180",
-      "dismantle": "official-skill-速战坚守",
+      "dismantle": "official-skill-200180",
       "dismantles": [
-        "official-skill-速战坚守",
-        "official-skill-乱击"
+        "official-skill-200180",
+        "official-skill-200104"
       ],
       "cost": 2,
       "distance": 3,
@@ -4884,10 +4884,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200203",
-      "dismantle": "official-skill-劫粮",
+      "dismantle": "official-skill-200203",
       "dismantles": [
-        "official-skill-劫粮",
-        "official-skill-绝道"
+        "official-skill-200203",
+        "official-skill-200124"
       ],
       "cost": 2,
       "distance": 2,
@@ -4909,10 +4909,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200191",
-      "dismantle": "official-skill-坚守",
+      "dismantle": "official-skill-200191",
       "dismantles": [
-        "official-skill-坚守",
-        "official-skill-休整"
+        "official-skill-200191",
+        "official-skill-200134"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -4934,10 +4934,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200192",
-      "dismantle": "official-skill-铁壁",
+      "dismantle": "official-skill-200192",
       "dismantles": [
-        "official-skill-铁壁",
-        "official-skill-奋起"
+        "official-skill-200192",
+        "official-skill-200195"
       ],
       "cost": 2,
       "distance": 2,
@@ -4959,10 +4959,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200193",
-      "dismantle": "official-skill-固阵",
+      "dismantle": "official-skill-200193",
       "dismantles": [
-        "official-skill-固阵",
-        "official-skill-包扎"
+        "official-skill-200193",
+        "official-skill-200138"
       ],
       "cost": 2,
       "distance": 2,
@@ -4984,9 +4984,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200993",
-      "dismantle": "official-skill-雄兵破敌",
+      "dismantle": "official-skill-200676",
       "dismantles": [
-        "official-skill-雄兵破敌"
+        "official-skill-200676"
       ],
       "cost": 3,
       "distance": 1,
@@ -5008,9 +5008,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200242",
-      "dismantle": "official-skill-全军突击",
+      "dismantle": "official-skill-200731",
       "dismantles": [
-        "official-skill-全军突击"
+        "official-skill-200731"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -5032,9 +5032,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200246",
-      "dismantle": "official-skill-诱敌深入",
+      "dismantle": "official-skill-201008",
       "dismantles": [
-        "official-skill-诱敌深入"
+        "official-skill-201008"
       ],
       "cost": 3,
       "distance": 2,
@@ -5056,9 +5056,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200247",
-      "dismantle": "official-skill-激水之疾",
+      "dismantle": "official-skill-200992",
       "dismantles": [
-        "official-skill-激水之疾"
+        "official-skill-200992"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -5080,9 +5080,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200251",
-      "dismantle": "official-skill-百战无怯",
+      "dismantle": "official-skill-200252",
       "dismantles": [
-        "official-skill-百战无怯"
+        "official-skill-200252"
       ],
       "cost": 3,
       "distance": 2,
@@ -5104,9 +5104,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200254",
-      "dismantle": "official-skill-望风而降",
+      "dismantle": "official-skill-200982",
       "dismantles": [
-        "official-skill-望风而降"
+        "official-skill-200982"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -5128,9 +5128,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200255",
-      "dismantle": "official-skill-百战无怯",
+      "dismantle": "official-skill-200252",
       "dismantles": [
-        "official-skill-百战无怯"
+        "official-skill-200252"
       ],
       "cost": 3,
       "distance": 2,
@@ -5152,9 +5152,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200256",
-      "dismantle": "official-skill-铁戟金戈",
+      "dismantle": "official-skill-200833",
       "dismantles": [
-        "official-skill-铁戟金戈"
+        "official-skill-200833"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -5176,9 +5176,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200257",
-      "dismantle": "official-skill-乘间击隙",
+      "dismantle": "official-skill-200259",
       "dismantles": [
-        "official-skill-乘间击隙"
+        "official-skill-200259"
       ],
       "cost": 3,
       "distance": 3,
@@ -5200,9 +5200,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200258",
-      "dismantle": "official-skill-乘间击隙",
+      "dismantle": "official-skill-200259",
       "dismantles": [
-        "official-skill-乘间击隙"
+        "official-skill-200259"
       ],
       "cost": 3,
       "distance": 3,
@@ -5224,9 +5224,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200266",
-      "dismantle": "official-skill-雄兵破敌",
+      "dismantle": "official-skill-200676",
       "dismantles": [
-        "official-skill-雄兵破敌"
+        "official-skill-200676"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -5248,9 +5248,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200262",
-      "dismantle": "official-skill-胜敌益强",
+      "dismantle": "official-skill-200261",
       "dismantles": [
-        "official-skill-胜敌益强"
+        "official-skill-200261"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -5272,9 +5272,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200264",
-      "dismantle": "official-skill-敛众定气",
+      "dismantle": "official-skill-200267",
       "dismantles": [
-        "official-skill-敛众定气"
+        "official-skill-200267"
       ],
       "cost": 3,
       "distance": 4,
@@ -5296,9 +5296,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200265",
-      "dismantle": "official-skill-敛众定气",
+      "dismantle": "official-skill-200267",
       "dismantles": [
-        "official-skill-敛众定气"
+        "official-skill-200267"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -5320,9 +5320,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200268",
-      "dismantle": "official-skill-胜敌益强",
+      "dismantle": "official-skill-200261",
       "dismantles": [
-        "official-skill-胜敌益强"
+        "official-skill-200261"
       ],
       "cost": 3,
       "distance": 2,
@@ -5344,9 +5344,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200269",
-      "dismantle": "official-skill-袭屯夺气",
+      "dismantle": "official-skill-200271",
       "dismantles": [
-        "official-skill-袭屯夺气"
+        "official-skill-200271"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -5368,9 +5368,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200270",
-      "dismantle": "official-skill-袭屯夺气",
+      "dismantle": "official-skill-200271",
       "dismantles": [
-        "official-skill-袭屯夺气"
+        "official-skill-200271"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -5392,9 +5392,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200272",
-      "dismantle": "official-skill-以诱待来",
+      "dismantle": "official-skill-200274",
       "dismantles": [
-        "official-skill-以诱待来"
+        "official-skill-200274"
       ],
       "cost": 3,
       "distance": 2,
@@ -5416,9 +5416,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200273",
-      "dismantle": "official-skill-兼弱攻昧",
+      "dismantle": "official-skill-200829",
       "dismantles": [
-        "official-skill-兼弱攻昧"
+        "official-skill-200829"
       ],
       "cost": 3,
       "distance": 2,
@@ -5440,9 +5440,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200275",
-      "dismantle": "official-skill-除恶务尽",
+      "dismantle": "official-skill-200276",
       "dismantles": [
-        "official-skill-除恶务尽"
+        "official-skill-200276"
       ],
       "cost": 3,
       "distance": 2,
@@ -5464,9 +5464,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200277",
-      "dismantle": "official-skill-除恶务尽",
+      "dismantle": "official-skill-200276",
       "dismantles": [
-        "official-skill-除恶务尽"
+        "official-skill-200276"
       ],
       "cost": 3,
       "distance": 3,
@@ -5488,9 +5488,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200278",
-      "dismantle": "official-skill-利兵谋胜",
+      "dismantle": "official-skill-200801",
       "dismantles": [
-        "official-skill-利兵谋胜"
+        "official-skill-200801"
       ],
       "cost": 3,
       "distance": 2,
@@ -5512,9 +5512,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200279",
-      "dismantle": "official-skill-令无空悬",
+      "dismantle": "official-skill-200280",
       "dismantles": [
-        "official-skill-令无空悬"
+        "official-skill-200280"
       ],
       "cost": 3,
       "distance": 2,
@@ -5536,9 +5536,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200286",
-      "dismantle": "official-skill-先声夺人",
+      "dismantle": "official-skill-200289",
       "dismantles": [
-        "official-skill-先声夺人"
+        "official-skill-200289"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -5560,9 +5560,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200287",
-      "dismantle": "official-skill-先声夺人",
+      "dismantle": "official-skill-200289",
       "dismantles": [
-        "official-skill-先声夺人"
+        "official-skill-200289"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -5584,9 +5584,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200288",
-      "dismantle": "official-skill-先声夺人",
+      "dismantle": "official-skill-200289",
       "dismantles": [
-        "official-skill-先声夺人"
+        "official-skill-200289"
       ],
       "cost": 3,
       "distance": 3,
@@ -5608,9 +5608,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200290",
-      "dismantle": "official-skill-避锐治气",
+      "dismantle": "official-skill-200291",
       "dismantles": [
-        "official-skill-避锐治气"
+        "official-skill-200291"
       ],
       "cost": 3,
       "distance": 2,
@@ -5632,9 +5632,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200282",
-      "dismantle": "official-skill-避锐治气",
+      "dismantle": "official-skill-200291",
       "dismantles": [
-        "official-skill-避锐治气"
+        "official-skill-200291"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -5656,9 +5656,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200283",
-      "dismantle": "official-skill-避锐治气",
+      "dismantle": "official-skill-200291",
       "dismantles": [
-        "official-skill-避锐治气"
+        "official-skill-200291"
       ],
       "cost": 3.5,
       "distance": 4,
@@ -5680,9 +5680,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200292",
-      "dismantle": "official-skill-令无空悬",
+      "dismantle": "official-skill-200280",
       "dismantles": [
-        "official-skill-令无空悬"
+        "official-skill-200280"
       ],
       "cost": 3,
       "distance": 4,
@@ -5704,9 +5704,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200294",
-      "dismantle": "official-skill-以诱待来",
+      "dismantle": "official-skill-200274",
       "dismantles": [
-        "official-skill-以诱待来"
+        "official-skill-200274"
       ],
       "cost": 3,
       "distance": 2,
@@ -5728,9 +5728,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200295",
-      "dismantle": "official-skill-合纵连横",
+      "dismantle": "official-skill-200964",
       "dismantles": [
-        "official-skill-合纵连横"
+        "official-skill-200964"
       ],
       "cost": 3,
       "distance": 2,
@@ -5752,9 +5752,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200704",
-      "dismantle": "official-skill-步步为营",
+      "dismantle": "official-skill-200644",
       "dismantles": [
-        "official-skill-步步为营"
+        "official-skill-200644"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -5776,9 +5776,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200705",
-      "dismantle": "official-skill-先驱突击",
+      "dismantle": "official-skill-200233",
       "dismantles": [
-        "official-skill-先驱突击"
+        "official-skill-200233"
       ],
       "cost": 3,
       "distance": 3,
@@ -5800,9 +5800,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200706",
-      "dismantle": "official-skill-钝兵挫锐",
+      "dismantle": "official-skill-200658",
       "dismantles": [
-        "official-skill-钝兵挫锐"
+        "official-skill-200658"
       ],
       "cost": 2.5,
       "distance": 5,
@@ -5824,9 +5824,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200707",
-      "dismantle": "official-skill-步步为营",
+      "dismantle": "official-skill-200644",
       "dismantles": [
-        "official-skill-步步为营"
+        "official-skill-200644"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -5848,9 +5848,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200708",
-      "dismantle": "official-skill-怯心夺志",
+      "dismantle": "official-skill-200659",
       "dismantles": [
-        "official-skill-怯心夺志"
+        "official-skill-200659"
       ],
       "cost": 2,
       "distance": 3,
@@ -5872,9 +5872,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200709",
-      "dismantle": "official-skill-了如指掌",
+      "dismantle": "official-skill-200219",
       "dismantles": [
-        "official-skill-了如指掌"
+        "official-skill-200219"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -5896,9 +5896,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200710",
-      "dismantle": "official-skill-青囊秘要",
+      "dismantle": "official-skill-200136",
       "dismantles": [
-        "official-skill-青囊秘要"
+        "official-skill-200136"
       ],
       "cost": 3,
       "distance": 1,
@@ -5920,9 +5920,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200711",
-      "dismantle": "official-skill-了如指掌",
+      "dismantle": "official-skill-200219",
       "dismantles": [
-        "official-skill-了如指掌"
+        "official-skill-200219"
       ],
       "cost": 1.5,
       "distance": 2,
@@ -5944,9 +5944,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200712",
-      "dismantle": "official-skill-百战精兵",
+      "dismantle": "official-skill-200184",
       "dismantles": [
-        "official-skill-百战精兵"
+        "official-skill-200184"
       ],
       "cost": 2,
       "distance": 2,
@@ -5968,9 +5968,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200713",
-      "dismantle": "official-skill-攻心",
+      "dismantle": "official-skill-200132",
       "dismantles": [
-        "official-skill-攻心"
+        "official-skill-200132"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -5992,9 +5992,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200004",
-      "dismantle": "official-skill-不攻",
+      "dismantle": "official-skill-200622",
       "dismantles": [
-        "official-skill-不攻"
+        "official-skill-200622"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -6016,9 +6016,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200072",
-      "dismantle": "official-skill-大赏三军",
+      "dismantle": "official-skill-200198",
       "dismantles": [
-        "official-skill-大赏三军"
+        "official-skill-200198"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6040,9 +6040,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200008",
-      "dismantle": "official-skill-反计之策",
+      "dismantle": "official-skill-200220",
       "dismantles": [
-        "official-skill-反计之策"
+        "official-skill-200220"
       ],
       "cost": 3,
       "distance": 2,
@@ -6064,9 +6064,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200035",
-      "dismantle": "official-skill-反计之策",
+      "dismantle": "official-skill-200220",
       "dismantles": [
-        "official-skill-反计之策"
+        "official-skill-200220"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -6088,9 +6088,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200730",
-      "dismantle": "official-skill-全军突击",
+      "dismantle": "official-skill-200731",
       "dismantles": [
-        "official-skill-全军突击"
+        "official-skill-200731"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6112,9 +6112,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200032",
-      "dismantle": "official-skill-始计",
+      "dismantle": "official-skill-200687",
       "dismantles": [
-        "official-skill-始计"
+        "official-skill-200687"
       ],
       "cost": 2,
       "distance": 3,
@@ -6136,9 +6136,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200001",
-      "dismantle": "official-skill-坚守兵法",
+      "dismantle": "official-skill-200620",
       "dismantles": [
-        "official-skill-坚守兵法"
+        "official-skill-200620"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6160,9 +6160,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200002",
-      "dismantle": "official-skill-浑水摸鱼",
+      "dismantle": "official-skill-200235",
       "dismantles": [
-        "official-skill-浑水摸鱼"
+        "official-skill-200235"
       ],
       "cost": 5.5,
       "distance": 4,
@@ -6184,9 +6184,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200003",
-      "dismantle": "official-skill-愈战愈勇",
+      "dismantle": "official-skill-200643",
       "dismantles": [
-        "official-skill-愈战愈勇"
+        "official-skill-200643"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -6208,9 +6208,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200004",
-      "dismantle": "official-skill-不攻",
+      "dismantle": "official-skill-200622",
       "dismantles": [
-        "official-skill-不攻"
+        "official-skill-200622"
       ],
       "cost": 2,
       "distance": 2,
@@ -6232,9 +6232,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200005",
-      "dismantle": "official-skill-妖术",
+      "dismantle": "official-skill-200237",
       "dismantles": [
-        "official-skill-妖术"
+        "official-skill-200237"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -6256,9 +6256,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200006",
-      "dismantle": "official-skill-大赏三军",
+      "dismantle": "official-skill-200198",
       "dismantles": [
-        "official-skill-大赏三军"
+        "official-skill-200198"
       ],
       "cost": 3,
       "distance": 2,
@@ -6280,9 +6280,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200007",
-      "dismantle": "official-skill-步步为营",
+      "dismantle": "official-skill-200644",
       "dismantles": [
-        "official-skill-步步为营"
+        "official-skill-200644"
       ],
       "cost": 3,
       "distance": 1,
@@ -6304,9 +6304,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200008",
-      "dismantle": "official-skill-反计之策",
+      "dismantle": "official-skill-200220",
       "dismantles": [
-        "official-skill-反计之策"
+        "official-skill-200220"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -6328,9 +6328,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200009",
-      "dismantle": "official-skill-先驱突击",
+      "dismantle": "official-skill-200233",
       "dismantles": [
-        "official-skill-先驱突击"
+        "official-skill-200233"
       ],
       "cost": 3,
       "distance": 3,
@@ -6352,9 +6352,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200010",
-      "dismantle": "official-skill-一骑当千",
+      "dismantle": "official-skill-200647",
       "dismantles": [
-        "official-skill-一骑当千"
+        "official-skill-200647"
       ],
       "cost": 4,
       "distance": 3,
@@ -6376,9 +6376,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200013",
-      "dismantle": "official-skill-先驱突击",
+      "dismantle": "official-skill-200233",
       "dismantles": [
-        "official-skill-先驱突击"
+        "official-skill-200233"
       ],
       "cost": 3,
       "distance": 3,
@@ -6400,9 +6400,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200015",
-      "dismantle": "official-skill-怯心夺志",
+      "dismantle": "official-skill-200659",
       "dismantles": [
-        "official-skill-怯心夺志"
+        "official-skill-200659"
       ],
       "cost": 2,
       "distance": 3,
@@ -6424,9 +6424,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200016",
-      "dismantle": "official-skill-神兵天降",
+      "dismantle": "official-skill-200204",
       "dismantles": [
-        "official-skill-神兵天降"
+        "official-skill-200204"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -6448,9 +6448,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200017",
-      "dismantle": "official-skill-深谋远虑",
+      "dismantle": "official-skill-200645",
       "dismantles": [
-        "official-skill-深谋远虑"
+        "official-skill-200645"
       ],
       "cost": 3,
       "distance": 2,
@@ -6472,9 +6472,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200019",
-      "dismantle": "official-skill-愈战愈勇",
+      "dismantle": "official-skill-200643",
       "dismantles": [
-        "official-skill-愈战愈勇"
+        "official-skill-200643"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6496,9 +6496,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200020",
-      "dismantle": "official-skill-神兵天降",
+      "dismantle": "official-skill-200204",
       "dismantles": [
-        "official-skill-神兵天降"
+        "official-skill-200204"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -6520,9 +6520,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200021",
-      "dismantle": "official-skill-步步为营",
+      "dismantle": "official-skill-200644",
       "dismantles": [
-        "official-skill-步步为营"
+        "official-skill-200644"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -6544,9 +6544,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200022",
-      "dismantle": "official-skill-一骑当千",
+      "dismantle": "official-skill-200647",
       "dismantles": [
-        "official-skill-一骑当千"
+        "official-skill-200647"
       ],
       "cost": 3,
       "distance": 2,
@@ -6568,9 +6568,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200023",
-      "dismantle": "official-skill-远攻秘策",
+      "dismantle": "official-skill-200210",
       "dismantles": [
-        "official-skill-远攻秘策"
+        "official-skill-200210"
       ],
       "cost": 3.5,
       "distance": 2,
@@ -6592,9 +6592,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200024",
-      "dismantle": "official-skill-怯心夺志",
+      "dismantle": "official-skill-200659",
       "dismantles": [
-        "official-skill-怯心夺志"
+        "official-skill-200659"
       ],
       "cost": 3,
       "distance": 2,
@@ -6616,9 +6616,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200025",
-      "dismantle": "official-skill-浑水摸鱼",
+      "dismantle": "official-skill-200235",
       "dismantles": [
-        "official-skill-浑水摸鱼"
+        "official-skill-200235"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -6640,9 +6640,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200026",
-      "dismantle": "official-skill-无心恋战",
+      "dismantle": "official-skill-200201",
       "dismantles": [
-        "official-skill-无心恋战"
+        "official-skill-200201"
       ],
       "cost": 3,
       "distance": 1,
@@ -6664,9 +6664,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 5,
       "innate": "official-skill-200027",
-      "dismantle": "official-skill-避其锋芒",
+      "dismantle": "official-skill-200194",
       "dismantles": [
-        "official-skill-避其锋芒"
+        "official-skill-200194"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -6688,9 +6688,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200028",
-      "dismantle": "official-skill-妖术",
+      "dismantle": "official-skill-200237",
       "dismantles": [
-        "official-skill-妖术"
+        "official-skill-200237"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -6712,9 +6712,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200029",
-      "dismantle": "official-skill-浑水摸鱼",
+      "dismantle": "official-skill-200235",
       "dismantles": [
-        "official-skill-浑水摸鱼"
+        "official-skill-200235"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6736,9 +6736,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200030",
-      "dismantle": "official-skill-空城",
+      "dismantle": "official-skill-200215",
       "dismantles": [
-        "official-skill-空城"
+        "official-skill-200215"
       ],
       "cost": 3,
       "distance": 4,
@@ -6760,9 +6760,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200031",
-      "dismantle": "official-skill-不攻",
+      "dismantle": "official-skill-200622",
       "dismantles": [
-        "official-skill-不攻"
+        "official-skill-200622"
       ],
       "cost": 3,
       "distance": 4,
@@ -6784,9 +6784,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200032",
-      "dismantle": "official-skill-始计",
+      "dismantle": "official-skill-200687",
       "dismantles": [
-        "official-skill-始计"
+        "official-skill-200687"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6808,9 +6808,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200033",
-      "dismantle": "official-skill-战必断金",
+      "dismantle": "official-skill-200228",
       "dismantles": [
-        "official-skill-战必断金"
+        "official-skill-200228"
       ],
       "cost": 3.5,
       "distance": 3,
@@ -6832,9 +6832,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200034",
-      "dismantle": "official-skill-疾风迅雷",
+      "dismantle": "official-skill-200646",
       "dismantles": [
-        "official-skill-疾风迅雷"
+        "official-skill-200646"
       ],
       "cost": 3,
       "distance": 2,
@@ -6856,9 +6856,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200648",
-      "dismantle": "official-skill-神兵天降",
+      "dismantle": "official-skill-200204",
       "dismantles": [
-        "official-skill-神兵天降"
+        "official-skill-200204"
       ],
       "cost": 3.5,
       "distance": 4,
@@ -6880,9 +6880,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200035",
-      "dismantle": "official-skill-反计之策",
+      "dismantle": "official-skill-200220",
       "dismantles": [
-        "official-skill-反计之策"
+        "official-skill-200220"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -6904,9 +6904,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200037",
-      "dismantle": "official-skill-空城",
+      "dismantle": "official-skill-200215",
       "dismantles": [
-        "official-skill-空城"
+        "official-skill-200215"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -6928,9 +6928,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200038",
-      "dismantle": "official-skill-声东击西",
+      "dismantle": "official-skill-200116",
       "dismantles": [
-        "official-skill-声东击西"
+        "official-skill-200116"
       ],
       "cost": 1.5,
       "distance": 2,
@@ -6952,9 +6952,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200039",
-      "dismantle": "official-skill-焰焚箕轸",
+      "dismantle": "official-skill-200119",
       "dismantles": [
-        "official-skill-焰焚箕轸"
+        "official-skill-200119"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -6976,9 +6976,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200040",
-      "dismantle": "official-skill-长驱直入",
+      "dismantle": "official-skill-200232",
       "dismantles": [
-        "official-skill-长驱直入"
+        "official-skill-200232"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -7000,9 +7000,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200041",
-      "dismantle": "official-skill-百战精兵",
+      "dismantle": "official-skill-200184",
       "dismantles": [
-        "official-skill-百战精兵"
+        "official-skill-200184"
       ],
       "cost": 2,
       "distance": 2,
@@ -7024,9 +7024,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200042",
-      "dismantle": "official-skill-奔袭",
+      "dismantle": "official-skill-200635",
       "dismantles": [
-        "official-skill-奔袭"
+        "official-skill-200635"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7048,9 +7048,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200043",
-      "dismantle": "official-skill-温酒斩将",
+      "dismantle": "official-skill-200208",
       "dismantles": [
-        "official-skill-温酒斩将"
+        "official-skill-200208"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7072,9 +7072,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200044",
-      "dismantle": "official-skill-青囊秘要",
+      "dismantle": "official-skill-200136",
       "dismantles": [
-        "official-skill-青囊秘要"
+        "official-skill-200136"
       ],
       "cost": 2,
       "distance": 3,
@@ -7096,9 +7096,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200679",
-      "dismantle": "official-skill-设伏",
+      "dismantle": "official-skill-200671",
       "dismantles": [
-        "official-skill-设伏"
+        "official-skill-200671"
       ],
       "cost": 2,
       "distance": 3,
@@ -7120,9 +7120,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200046",
-      "dismantle": "official-skill-攻心",
+      "dismantle": "official-skill-200132",
       "dismantles": [
-        "official-skill-攻心"
+        "official-skill-200132"
       ],
       "cost": 2,
       "distance": 1,
@@ -7144,9 +7144,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200649",
-      "dismantle": "official-skill-穷追猛打",
+      "dismantle": "official-skill-200224",
       "dismantles": [
-        "official-skill-穷追猛打"
+        "official-skill-200224"
       ],
       "cost": 2,
       "distance": 2,
@@ -7168,9 +7168,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200047",
-      "dismantle": "official-skill-养精蓄锐",
+      "dismantle": "official-skill-200135",
       "dismantles": [
-        "official-skill-养精蓄锐"
+        "official-skill-200135"
       ],
       "cost": 2,
       "distance": 1,
@@ -7192,9 +7192,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200048",
-      "dismantle": "official-skill-破甲",
+      "dismantle": "official-skill-200109",
       "dismantles": [
-        "official-skill-破甲"
+        "official-skill-200109"
       ],
       "cost": 3,
       "distance": 2,
@@ -7216,9 +7216,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200049",
-      "dismantle": "official-skill-冲锋",
+      "dismantle": "official-skill-200111",
       "dismantles": [
-        "official-skill-冲锋"
+        "official-skill-200111"
       ],
       "cost": 3,
       "distance": 1,
@@ -7240,9 +7240,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200053",
-      "dismantle": "official-skill-回马",
+      "dismantle": "official-skill-200632",
       "dismantles": [
-        "official-skill-回马"
+        "official-skill-200632"
       ],
       "cost": 3,
       "distance": 2,
@@ -7264,9 +7264,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200051",
-      "dismantle": "official-skill-远攻强化",
+      "dismantle": "official-skill-200190",
       "dismantles": [
-        "official-skill-远攻强化"
+        "official-skill-200190"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7288,9 +7288,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200052",
-      "dismantle": "official-skill-移花接木",
+      "dismantle": "official-skill-200239",
       "dismantles": [
-        "official-skill-移花接木"
+        "official-skill-200239"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7312,10 +7312,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200206",
-      "dismantle": "official-skill-追击",
+      "dismantle": "official-skill-200206",
       "dismantles": [
-        "official-skill-追击",
-        "official-skill-飞虹"
+        "official-skill-200206",
+        "official-skill-200100"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7337,9 +7337,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200056",
-      "dismantle": "official-skill-水淹七军",
+      "dismantle": "official-skill-200122",
       "dismantles": [
-        "official-skill-水淹七军"
+        "official-skill-200122"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -7361,9 +7361,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200057",
-      "dismantle": "official-skill-激昂",
+      "dismantle": "official-skill-200196",
       "dismantles": [
-        "official-skill-激昂"
+        "official-skill-200196"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -7385,9 +7385,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200058",
-      "dismantle": "official-skill-激昂",
+      "dismantle": "official-skill-200196",
       "dismantles": [
-        "official-skill-激昂"
+        "official-skill-200196"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7409,9 +7409,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200059",
-      "dismantle": "official-skill-锋矢",
+      "dismantle": "official-skill-200718",
       "dismantles": [
-        "official-skill-锋矢"
+        "official-skill-200718"
       ],
       "cost": 2,
       "distance": 2,
@@ -7433,9 +7433,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200061",
-      "dismantle": "official-skill-车悬",
+      "dismantle": "official-skill-200099",
       "dismantles": [
-        "official-skill-车悬"
+        "official-skill-200099"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -7457,9 +7457,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200062",
-      "dismantle": "official-skill-远攻奇略",
+      "dismantle": "official-skill-200636",
       "dismantles": [
-        "official-skill-远攻奇略"
+        "official-skill-200636"
       ],
       "cost": 2,
       "distance": 2,
@@ -7481,9 +7481,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200650",
-      "dismantle": "official-skill-青囊秘要",
+      "dismantle": "official-skill-200136",
       "dismantles": [
-        "official-skill-青囊秘要"
+        "official-skill-200136"
       ],
       "cost": 1.5,
       "distance": 4,
@@ -7505,9 +7505,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200063",
-      "dismantle": "official-skill-移花接木",
+      "dismantle": "official-skill-200239",
       "dismantles": [
-        "official-skill-移花接木"
+        "official-skill-200239"
       ],
       "cost": 3,
       "distance": 2,
@@ -7529,9 +7529,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200064",
-      "dismantle": "official-skill-闪击",
+      "dismantle": "official-skill-200690",
       "dismantles": [
-        "official-skill-闪击"
+        "official-skill-200690"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -7553,9 +7553,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200065",
-      "dismantle": "official-skill-远攻奇略",
+      "dismantle": "official-skill-200636",
       "dismantles": [
-        "official-skill-远攻奇略"
+        "official-skill-200636"
       ],
       "cost": 3,
       "distance": 1,
@@ -7577,9 +7577,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200066",
-      "dismantle": "official-skill-斩铁",
+      "dismantle": "official-skill-200106",
       "dismantles": [
-        "official-skill-斩铁"
+        "official-skill-200106"
       ],
       "cost": 3,
       "distance": 1,
@@ -7601,9 +7601,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200067",
-      "dismantle": "official-skill-水淹七军",
+      "dismantle": "official-skill-200122",
       "dismantles": [
-        "official-skill-水淹七军"
+        "official-skill-200122"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7625,9 +7625,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200069",
-      "dismantle": "official-skill-锋矢",
+      "dismantle": "official-skill-200718",
       "dismantles": [
-        "official-skill-锋矢"
+        "official-skill-200718"
       ],
       "cost": 3,
       "distance": 1,
@@ -7649,9 +7649,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200070",
-      "dismantle": "official-skill-远攻秘策",
+      "dismantle": "official-skill-200210",
       "dismantles": [
-        "official-skill-远攻秘策"
+        "official-skill-200210"
       ],
       "cost": 3,
       "distance": 2,
@@ -7673,9 +7673,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200072",
-      "dismantle": "official-skill-大赏三军",
+      "dismantle": "official-skill-200198",
       "dismantles": [
-        "official-skill-大赏三军"
+        "official-skill-200198"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -7697,9 +7697,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200074",
-      "dismantle": "official-skill-迷阵",
+      "dismantle": "official-skill-200127",
       "dismantles": [
-        "official-skill-迷阵"
+        "official-skill-200127"
       ],
       "cost": 2,
       "distance": 1,
@@ -7721,9 +7721,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200075",
-      "dismantle": "official-skill-诱敌",
+      "dismantle": "official-skill-200212",
       "dismantles": [
-        "official-skill-诱敌"
+        "official-skill-200212"
       ],
       "cost": 1.5,
       "distance": 2,
@@ -7745,9 +7745,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200076",
-      "dismantle": "official-skill-落雷",
+      "dismantle": "official-skill-200126",
       "dismantles": [
-        "official-skill-落雷"
+        "official-skill-200126"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -7769,9 +7769,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200077",
-      "dismantle": "official-skill-死士突击",
+      "dismantle": "official-skill-200112",
       "dismantles": [
-        "official-skill-死士突击"
+        "official-skill-200112"
       ],
       "cost": 3,
       "distance": 1,
@@ -7793,9 +7793,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200079",
-      "dismantle": "official-skill-青囊秘要",
+      "dismantle": "official-skill-200136",
       "dismantles": [
-        "official-skill-青囊秘要"
+        "official-skill-200136"
       ],
       "cost": 3,
       "distance": 1,
@@ -7817,9 +7817,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200082",
-      "dismantle": "official-skill-坚守兵法",
+      "dismantle": "official-skill-200620",
       "dismantles": [
-        "official-skill-坚守兵法"
+        "official-skill-200620"
       ],
       "cost": 3,
       "distance": 1,
@@ -7841,9 +7841,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200083",
-      "dismantle": "official-skill-措手不及",
+      "dismantle": "official-skill-200230",
       "dismantles": [
-        "official-skill-措手不及"
+        "official-skill-200230"
       ],
       "cost": 3,
       "distance": 2,
@@ -7865,9 +7865,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200084",
-      "dismantle": "official-skill-回马",
+      "dismantle": "official-skill-200632",
       "dismantles": [
-        "official-skill-回马"
+        "official-skill-200632"
       ],
       "cost": 3,
       "distance": 1,
@@ -7889,9 +7889,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200085",
-      "dismantle": "official-skill-破甲",
+      "dismantle": "official-skill-200109",
       "dismantles": [
-        "official-skill-破甲"
+        "official-skill-200109"
       ],
       "cost": 2.5,
       "distance": 4,
@@ -7913,9 +7913,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200086",
-      "dismantle": "official-skill-反击之策",
+      "dismantle": "official-skill-200222",
       "dismantles": [
-        "official-skill-反击之策"
+        "official-skill-200222"
       ],
       "cost": 3,
       "distance": 1,
@@ -7937,9 +7937,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200087",
-      "dismantle": "official-skill-死士突击",
+      "dismantle": "official-skill-200112",
       "dismantles": [
-        "official-skill-死士突击"
+        "official-skill-200112"
       ],
       "cost": 3,
       "distance": 2,
@@ -7961,9 +7961,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200088",
-      "dismantle": "official-skill-钝兵挫锐",
+      "dismantle": "official-skill-200658",
       "dismantles": [
-        "official-skill-钝兵挫锐"
+        "official-skill-200658"
       ],
       "cost": 2.5,
       "distance": 5,
@@ -7985,9 +7985,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200089",
-      "dismantle": "official-skill-了如指掌",
+      "dismantle": "official-skill-200219",
       "dismantles": [
-        "official-skill-了如指掌"
+        "official-skill-200219"
       ],
       "cost": 1.5,
       "distance": 2,
@@ -8009,9 +8009,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200090",
-      "dismantle": "official-skill-焰焚箕轸",
+      "dismantle": "official-skill-200119",
       "dismantles": [
-        "official-skill-焰焚箕轸"
+        "official-skill-200119"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8033,9 +8033,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200651",
-      "dismantle": "official-skill-诱敌",
+      "dismantle": "official-skill-200212",
       "dismantles": [
-        "official-skill-诱敌"
+        "official-skill-200212"
       ],
       "cost": 2,
       "distance": 4,
@@ -8057,9 +8057,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200091",
-      "dismantle": "official-skill-远攻之策",
+      "dismantle": "official-skill-200209",
       "dismantles": [
-        "official-skill-远攻之策"
+        "official-skill-200209"
       ],
       "cost": 2,
       "distance": 2,
@@ -8081,9 +8081,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200092",
-      "dismantle": "official-skill-窃兵",
+      "dismantle": "official-skill-200113",
       "dismantles": [
-        "official-skill-窃兵"
+        "official-skill-200113"
       ],
       "cost": 2,
       "distance": 3,
@@ -8105,9 +8105,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 5,
       "innate": "official-skill-200607",
-      "dismantle": "official-skill-避其锋芒",
+      "dismantle": "official-skill-200194",
       "dismantles": [
-        "official-skill-避其锋芒"
+        "official-skill-200194"
       ],
       "cost": 3.5,
       "distance": 4,
@@ -8129,10 +8129,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200114",
-      "dismantle": "official-skill-伏兵",
+      "dismantle": "official-skill-200114",
       "dismantles": [
-        "official-skill-伏兵",
-        "official-skill-看破"
+        "official-skill-200114",
+        "official-skill-200218"
       ],
       "cost": 1.5,
       "distance": 2,
@@ -8154,10 +8154,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200137",
-      "dismantle": "official-skill-急救",
+      "dismantle": "official-skill-200137",
       "dismantles": [
-        "official-skill-急救",
-        "official-skill-落石"
+        "official-skill-200137",
+        "official-skill-200123"
       ],
       "cost": 1.5,
       "distance": 3,
@@ -8179,9 +8179,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200610",
-      "dismantle": "official-skill-楚歌四起",
+      "dismantle": "official-skill-200130",
       "dismantles": [
-        "official-skill-楚歌四起"
+        "official-skill-200130"
       ],
       "cost": 2,
       "distance": 3,
@@ -8203,10 +8203,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200098",
-      "dismantle": "official-skill-凿穿",
+      "dismantle": "official-skill-200098",
       "dismantles": [
-        "official-skill-凿穿",
-        "official-skill-坚守突击"
+        "official-skill-200098",
+        "official-skill-200178"
       ],
       "cost": 2,
       "distance": 1,
@@ -8228,10 +8228,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200100",
-      "dismantle": "official-skill-飞虹",
+      "dismantle": "official-skill-200100",
       "dismantles": [
-        "official-skill-飞虹",
-        "official-skill-追击"
+        "official-skill-200100",
+        "official-skill-200206"
       ],
       "cost": 2,
       "distance": 2,
@@ -8253,9 +8253,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200608",
-      "dismantle": "official-skill-远攻强化",
+      "dismantle": "official-skill-200190",
       "dismantles": [
-        "official-skill-远攻强化"
+        "official-skill-200190"
       ],
       "cost": 3,
       "distance": 2,
@@ -8277,9 +8277,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200609",
-      "dismantle": "official-skill-攻心",
+      "dismantle": "official-skill-200132",
       "dismantles": [
-        "official-skill-攻心"
+        "official-skill-200132"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8301,10 +8301,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200110",
-      "dismantle": "official-skill-浴血",
+      "dismantle": "official-skill-200110",
       "dismantles": [
-        "official-skill-浴血",
-        "official-skill-先驱"
+        "official-skill-200110",
+        "official-skill-200231"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8326,9 +8326,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200637",
-      "dismantle": "official-skill-百战精兵",
+      "dismantle": "official-skill-200184",
       "dismantles": [
-        "official-skill-百战精兵"
+        "official-skill-200184"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -8350,10 +8350,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200663",
-      "dismantle": "official-skill-云梯",
+      "dismantle": "official-skill-200663",
       "dismantles": [
-        "official-skill-云梯",
-        "official-skill-成竹在胸"
+        "official-skill-200663",
+        "official-skill-200183"
       ],
       "cost": 2,
       "distance": 2,
@@ -8375,9 +8375,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200625",
-      "dismantle": "official-skill-了如指掌",
+      "dismantle": "official-skill-200219",
       "dismantles": [
-        "official-skill-了如指掌"
+        "official-skill-200219"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8399,9 +8399,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200055",
-      "dismantle": "official-skill-长兵方阵",
+      "dismantle": "official-skill-200226",
       "dismantles": [
-        "official-skill-长兵方阵"
+        "official-skill-200226"
       ],
       "cost": 3,
       "distance": 2,
@@ -8423,9 +8423,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200657",
-      "dismantle": "official-skill-速战兵法",
+      "dismantle": "official-skill-200621",
       "dismantles": [
-        "official-skill-速战兵法"
+        "official-skill-200621"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -8447,10 +8447,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200199",
-      "dismantle": "official-skill-威压",
+      "dismantle": "official-skill-200199",
       "dismantles": [
-        "official-skill-威压",
-        "official-skill-洞察"
+        "official-skill-200199",
+        "official-skill-200205"
       ],
       "cost": 2,
       "distance": 1,
@@ -8472,10 +8472,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200238",
-      "dismantle": "official-skill-援护",
+      "dismantle": "official-skill-200238",
       "dismantles": [
-        "official-skill-援护",
-        "official-skill-连战"
+        "official-skill-200238",
+        "official-skill-200223"
       ],
       "cost": 2,
       "distance": 2,
@@ -8497,9 +8497,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200642",
-      "dismantle": "official-skill-破魂",
+      "dismantle": "official-skill-200107",
       "dismantles": [
-        "official-skill-破魂"
+        "official-skill-200107"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8521,9 +8521,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200623",
-      "dismantle": "official-skill-迷阵",
+      "dismantle": "official-skill-200127",
       "dismantles": [
-        "official-skill-迷阵"
+        "official-skill-200127"
       ],
       "cost": 3,
       "distance": 2,
@@ -8545,9 +8545,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200613",
-      "dismantle": "official-skill-箭岚",
+      "dismantle": "official-skill-200102",
       "dismantles": [
-        "official-skill-箭岚"
+        "official-skill-200102"
       ],
       "cost": 3,
       "distance": 4,
@@ -8569,10 +8569,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200225",
-      "dismantle": "official-skill-横扫",
+      "dismantle": "official-skill-200225",
       "dismantles": [
-        "official-skill-横扫",
-        "official-skill-火箭"
+        "official-skill-200225",
+        "official-skill-200117"
       ],
       "cost": 2,
       "distance": 2,
@@ -8594,10 +8594,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200207",
-      "dismantle": "official-skill-攻其要害",
+      "dismantle": "official-skill-200207",
       "dismantles": [
-        "official-skill-攻其要害",
-        "official-skill-假途"
+        "official-skill-200207",
+        "official-skill-200202"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -8619,9 +8619,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200633",
-      "dismantle": "official-skill-奔袭",
+      "dismantle": "official-skill-200635",
       "dismantles": [
-        "official-skill-奔袭"
+        "official-skill-200635"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8643,9 +8643,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200614",
-      "dismantle": "official-skill-危崖困军",
+      "dismantle": "official-skill-200125",
       "dismantles": [
-        "official-skill-危崖困军"
+        "official-skill-200125"
       ],
       "cost": 2,
       "distance": 2,
@@ -8667,9 +8667,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200634",
-      "dismantle": "official-skill-落雷",
+      "dismantle": "official-skill-200126",
       "dismantles": [
-        "official-skill-落雷"
+        "official-skill-200126"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8691,9 +8691,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200656",
-      "dismantle": "official-skill-长兵方阵",
+      "dismantle": "official-skill-200226",
       "dismantles": [
-        "official-skill-长兵方阵"
+        "official-skill-200226"
       ],
       "cost": 2.5,
       "distance": 3,
@@ -8715,9 +8715,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200624",
-      "dismantle": "official-skill-长驱直入",
+      "dismantle": "official-skill-200232",
       "dismantles": [
-        "official-skill-长驱直入"
+        "official-skill-200232"
       ],
       "cost": 3,
       "distance": 3,
@@ -8739,10 +8739,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200178",
-      "dismantle": "official-skill-坚守突击",
+      "dismantle": "official-skill-200178",
       "dismantles": [
-        "official-skill-坚守突击",
-        "official-skill-凿穿"
+        "official-skill-200178",
+        "official-skill-200098"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8764,9 +8764,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200641",
-      "dismantle": "official-skill-温酒斩将",
+      "dismantle": "official-skill-200208",
       "dismantles": [
-        "official-skill-温酒斩将"
+        "official-skill-200208"
       ],
       "cost": 2,
       "distance": 3,
@@ -8788,9 +8788,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200626",
-      "dismantle": "official-skill-危崖困军",
+      "dismantle": "official-skill-200125",
       "dismantles": [
-        "official-skill-危崖困军"
+        "official-skill-200125"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -8812,9 +8812,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200617",
-      "dismantle": "official-skill-声东击西",
+      "dismantle": "official-skill-200116",
       "dismantles": [
-        "official-skill-声东击西"
+        "official-skill-200116"
       ],
       "cost": 2,
       "distance": 2,
@@ -8836,10 +8836,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200229",
-      "dismantle": "official-skill-奇袭",
+      "dismantle": "official-skill-200229",
       "dismantles": [
-        "official-skill-奇袭",
-        "official-skill-援军之策"
+        "official-skill-200229",
+        "official-skill-200185"
       ],
       "cost": 2,
       "distance": 1,
@@ -8861,10 +8861,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200103",
-      "dismantle": "official-skill-强攻",
+      "dismantle": "official-skill-200103",
       "dismantles": [
-        "official-skill-强攻",
-        "official-skill-毁墙"
+        "official-skill-200103",
+        "official-skill-200188"
       ],
       "cost": 2,
       "distance": 1,
@@ -8886,9 +8886,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200662",
-      "dismantle": "official-skill-设伏",
+      "dismantle": "official-skill-200671",
       "dismantles": [
-        "official-skill-设伏"
+        "official-skill-200671"
       ],
       "cost": 2,
       "distance": 3,
@@ -8910,9 +8910,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200660",
-      "dismantle": "official-skill-反击之策",
+      "dismantle": "official-skill-200222",
       "dismantles": [
-        "official-skill-反击之策"
+        "official-skill-200222"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -8934,10 +8934,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200206",
-      "dismantle": "official-skill-追击",
+      "dismantle": "official-skill-200206",
       "dismantles": [
-        "official-skill-追击",
-        "official-skill-飞虹"
+        "official-skill-200206",
+        "official-skill-200100"
       ],
       "cost": 1.5,
       "distance": 1,
@@ -8959,9 +8959,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200096",
-      "dismantle": "official-skill-枪阵",
+      "dismantle": "official-skill-200105",
       "dismantles": [
-        "official-skill-枪阵"
+        "official-skill-200105"
       ],
       "cost": 2.5,
       "distance": 1,
@@ -8983,10 +8983,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 3,
       "innate": "official-skill-200100",
-      "dismantle": "official-skill-飞虹",
+      "dismantle": "official-skill-200100",
       "dismantles": [
-        "official-skill-飞虹",
-        "official-skill-追击"
+        "official-skill-200100",
+        "official-skill-200206"
       ],
       "cost": 2,
       "distance": 3,
@@ -9008,10 +9008,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200123",
-      "dismantle": "official-skill-落石",
+      "dismantle": "official-skill-200123",
       "dismantles": [
-        "official-skill-落石",
-        "official-skill-急救"
+        "official-skill-200123",
+        "official-skill-200137"
       ],
       "cost": 4,
       "distance": 1,
@@ -9033,10 +9033,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 3,
       "innate": "official-skill-200214",
-      "dismantle": "official-skill-规避",
+      "dismantle": "official-skill-200214",
       "dismantles": [
-        "official-skill-规避",
-        "official-skill-驱逐"
+        "official-skill-200214",
+        "official-skill-200131"
       ],
       "cost": 2,
       "distance": 1,
@@ -9058,9 +9058,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200677",
-      "dismantle": "official-skill-掎角之势",
+      "dismantle": "official-skill-200673",
       "dismantles": [
-        "official-skill-掎角之势"
+        "official-skill-200673"
       ],
       "cost": 3,
       "distance": 2,
@@ -9082,9 +9082,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200777",
-      "dismantle": "official-skill-衡轭",
+      "dismantle": "official-skill-200781",
       "dismantles": [
-        "official-skill-衡轭"
+        "official-skill-200781"
       ],
       "cost": 2,
       "distance": 2,
@@ -9106,9 +9106,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200733",
-      "dismantle": "official-skill-索敌",
+      "dismantle": "official-skill-200735",
       "dismantles": [
-        "official-skill-索敌"
+        "official-skill-200735"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9130,9 +9130,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200071",
-      "dismantle": "official-skill-安抚军心",
+      "dismantle": "official-skill-200217",
       "dismantles": [
-        "official-skill-安抚军心"
+        "official-skill-200217"
       ],
       "cost": 2,
       "distance": 1,
@@ -9154,9 +9154,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200653",
-      "dismantle": "official-skill-破甲",
+      "dismantle": "official-skill-200109",
       "dismantles": [
-        "official-skill-破甲"
+        "official-skill-200109"
       ],
       "cost": 2,
       "distance": 2,
@@ -9178,9 +9178,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 4,
       "innate": "official-skill-200654",
-      "dismantle": "official-skill-远攻之策",
+      "dismantle": "official-skill-200209",
       "dismantles": [
-        "official-skill-远攻之策"
+        "official-skill-200209"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9202,9 +9202,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "步",
       "rarity": 5,
       "innate": "official-skill-200603",
-      "dismantle": "official-skill-无心恋战",
+      "dismantle": "official-skill-200201",
       "dismantles": [
-        "official-skill-无心恋战"
+        "official-skill-200201"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9226,10 +9226,10 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 3,
       "innate": "official-skill-200097",
-      "dismantle": "official-skill-突进",
+      "dismantle": "official-skill-200097",
       "dismantles": [
-        "official-skill-突进",
-        "official-skill-反击"
+        "official-skill-200097",
+        "official-skill-200221"
       ],
       "cost": 2,
       "distance": 2,
@@ -9251,9 +9251,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200686",
-      "dismantle": "official-skill-合流",
+      "dismantle": "official-skill-200688",
       "dismantles": [
-        "official-skill-合流"
+        "official-skill-200688"
       ],
       "cost": 2,
       "distance": 3,
@@ -9275,9 +9275,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200695",
-      "dismantle": "official-skill-拒盾",
+      "dismantle": "official-skill-200695",
       "dismantles": [
-        "official-skill-拒盾"
+        "official-skill-200695"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9299,9 +9299,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200695",
-      "dismantle": "official-skill-拒盾",
+      "dismantle": "official-skill-200695",
       "dismantles": [
-        "official-skill-拒盾"
+        "official-skill-200695"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9323,9 +9323,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200697",
-      "dismantle": "official-skill-退避",
+      "dismantle": "official-skill-200697",
       "dismantles": [
-        "official-skill-退避"
+        "official-skill-200697"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9347,9 +9347,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200698",
-      "dismantle": "official-skill-截断",
+      "dismantle": "official-skill-200698",
       "dismantles": [
-        "official-skill-截断"
+        "official-skill-200698"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9371,9 +9371,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200696",
-      "dismantle": "official-skill-迫近",
+      "dismantle": "official-skill-200696",
       "dismantles": [
-        "official-skill-迫近"
+        "official-skill-200696"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9395,9 +9395,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200665",
-      "dismantle": "official-skill-抢攻",
+      "dismantle": "official-skill-200665",
       "dismantles": [
-        "official-skill-抢攻"
+        "official-skill-200665"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9419,9 +9419,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "骑",
       "rarity": 4,
       "innate": "official-skill-200697",
-      "dismantle": "official-skill-退避",
+      "dismantle": "official-skill-200697",
       "dismantles": [
-        "official-skill-退避"
+        "official-skill-200697"
       ],
       "cost": 2.5,
       "distance": 2,
@@ -9443,9 +9443,9 @@ window.STZB_OFFICIAL_DATA = {
       "arm": "弓",
       "rarity": 4,
       "innate": "official-skill-200630",
-      "dismantle": "official-skill-箭岚",
+      "dismantle": "official-skill-200102",
       "dismantles": [
-        "official-skill-箭岚"
+        "official-skill-200102"
       ],
       "cost": 3,
       "distance": 4,
@@ -21465,3901 +21465,6 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-skill-extra",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-迫近",
-      "officialId": null,
-      "name": "迫近",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体进行攻击的伤害降低15.0%（受防御属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-雀伏",
-      "officialId": null,
-      "name": "雀伏",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次策略攻击（伤害率165.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-伐谋",
-      "officialId": null,
-      "name": "伐谋",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次猛烈的策略攻击（伤害率209.0%，受谋略属性影响），并使其攻击属性、谋略属性下降45.0（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-钝兵挫锐",
-      "officialId": null,
-      "name": "钝兵挫锐",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率200.0%），并使其无法进行普通攻击，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-疏数",
-      "officialId": null,
-      "name": "疏数",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使我军弓兵防御提高50.0，骑兵每回合有40.0%的几率对距离3以内敌军单体发动一次攻击（伤害率100.0%），我军仅由弓兵和骑兵组成时生效",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-擅兵不寡",
-      "officialId": null,
-      "name": "擅兵不寡",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中每回合都会恢复一定兵力（恢复率180.0%），并有30.0%的几率额外恢复一定兵力（恢复率300.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-道行险阻",
-      "officialId": null,
-      "name": "道行险阻",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军单体防御属性降低50.0（受攻击属性影响）、谋略属性降低50.0（受谋略属性影响），持续1回合，同时在目标下一次行动前对其发动一次策略攻击（伤害率150.0%，受谋略属性影响）和一次攻击（伤害率150.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-美人计",
-      "officialId": null,
-      "name": "美人计",
-      "type": "可拆",
-      "target": "",
-      "desc": "正式回合开始后，我方3名武将均为女武将时，大营造成的所有伤害提升14.0%，中军每回合行动前随机使敌军单体男武将下一次攻击或策略攻击造成的伤害降低60.0%，前4回合前锋首次受到伤害时进入规避状态，免疫该次伤害",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-破魂",
-      "officialId": null,
-      "name": "破魂",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率180.0%），并使其陷入暴走状态，进行无差别攻击，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-穷追猛打",
-      "officialId": null,
-      "name": "穷追猛打",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后第4回合起，使我军群体每回合有60.0%的几率可以进行两次普通攻击，持续4回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-增援",
-      "officialId": null,
-      "name": "增援",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，恢复我军群体较多兵力（恢复率198.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-援军之策",
-      "officialId": null,
-      "name": "援军之策",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率76.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-奇袭",
-      "officialId": null,
-      "name": "奇袭",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率121.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-鹤翼",
-      "officialId": null,
-      "name": "鹤翼",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗第1、3、5、7回合，我军全体弓兵进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率49.0%，受谋略属性影响），同时造成的普通攻击伤害降低20.0%，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-车悬",
-      "officialId": null,
-      "name": "车悬",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军单体发动一次猛攻（伤害率355.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-措手不及",
-      "officialId": null,
-      "name": "措手不及",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后第4回合，每回合有80.0%的几率使敌军群体陷入怯战状态，无法进行普通攻击，持续3回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-楚歌四起",
-      "officialId": null,
-      "name": "楚歌四起",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率127.0%，受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-先驱突击",
-      "officialId": null,
-      "name": "先驱突击",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使自身优先行动，每回合可进行两次普通攻击，并使攻击属性提高30.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-斩铁",
-      "officialId": null,
-      "name": "斩铁",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率170.0%），并使其陷入混乱状态，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-一夫当关",
-      "officialId": null,
-      "name": "一夫当关",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前2回合，援护友军全体，使自身受到攻击时的伤害降低50.0%（受防御属性影响），仅对自身处于前锋位置时生效",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-利兵谋胜",
-      "officialId": null,
-      "name": "利兵谋胜",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率200.0%，受谋略属性影响），并使自身及友军单体回复一定兵力（恢复率149.0%，受谋略影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-谋定后动",
-      "officialId": null,
-      "name": "谋定后动",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，每当发动需要准备的主战法时，有100.0%的几率使自身进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，持续2回合；当自身发动主动战法后，有100.0%的几率使我军群体攻击属性、防御属性、谋略属性提高55.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-兵无常势",
-      "officialId": null,
-      "name": "兵无常势",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，每回合自身行动时随机获得以下效果中的两种：自身恢复一定兵力（恢复率250.0%）；自身攻击、防御、谋略属性提高50.0，持续1回合；自身受到的所有伤害降低40.0%，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-养精蓄锐",
-      "officialId": null,
-      "name": "养精蓄锐",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使友军全体进入休整状态，每回合恢复较多兵力（恢复率122.0%，受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-深谋远虑",
-      "officialId": null,
-      "name": "深谋远虑",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进行策略攻击的伤害提高11.0%，此效果每回合开始时额外叠加一次，持续直到战斗结束",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-始计",
-      "officialId": null,
-      "name": "始计",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗前4回合，在自身行动前，使我军大营下一次攻击或策略攻击时的伤害提高20.0%（受谋略属性影响），敌方兵力最多单体下一次攻击或策略攻击时的伤害降低30.0%（受谋略属性影响），并在自身受到攻击或策略攻击伤害后，于本回合内进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-白刃",
-      "officialId": null,
-      "name": "白刃",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使敌我全军进行策略攻击的伤害降低35.0%，我军全体骑兵及步兵防御属性提高45.0，此效果结束后，攻击属性提高45.0，持续3回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-十面埋伏",
-      "officialId": null,
-      "name": "十面埋伏",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军全体发动一次策略攻击（伤害率130.0%，受谋略属性影响），并随机使敌军群体1-2目标造成的所有伤害大幅度降低，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-万箭齐发",
-      "officialId": null,
-      "name": "万箭齐发",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军全体发动一次攻击（伤害率180.0%），并随机使敌军单体进行攻击的伤害大幅度降低，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-方圆",
-      "officialId": null,
-      "name": "方圆",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使我军全体步兵进行普通攻击的伤害降低20.0%，主动、追击战法的伤害提高16.8%（受防御属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-锋矢",
-      "officialId": null,
-      "name": "锋矢",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使我军全体骑兵进行普通攻击的伤害降低25.0%，发动主动战法的伤害提高18.0%（受速度属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-折戟强攻",
-      "officialId": null,
-      "name": "折戟强攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次猛攻（伤害率225.0%），但此后使自身攻击属性降低50.0%，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-火积",
-      "officialId": null,
-      "name": "火积",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，使攻击目标立即受到燃烧伤害（伤害率192.0%，受谋略属性影响），并移除其有益效果",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-临危",
-      "officialId": null,
-      "name": "临危",
-      "type": "可拆",
-      "target": "",
-      "desc": "以一定兵力为代价，使自身在1回合内受到的所有伤害降低25.0%，并对敌军群体发动一次猛攻（伤害率135.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-强攻兵法",
-      "officialId": null,
-      "name": "强攻兵法",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身攻击属性提高28.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-顽抗",
-      "officialId": null,
-      "name": "顽抗",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除自身有害效果，并对敌军单体发动一次攻击（伤害率80.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-全军突击",
-      "officialId": null,
-      "name": "全军突击",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除我军全体骑兵及步兵的有害效果，对敌军单体发动一次攻击（伤害率145.0%），并使我军全体骑兵及步兵接下来2次攻击的伤害提高28.0%（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-攻其不备",
-      "officialId": null,
-      "name": "攻其不备",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使敌军群体在每受到一次攻击的伤害后，其所受到的所有伤害就提高11.6%（受速度属性影响），此效果最多叠加5次",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-胜兵求战",
-      "officialId": null,
-      "name": "胜兵求战",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，每当自身发动需要准备的主战法时，有80.0%的几率跳过1回合的准备时间。同时，任意友军发动主动战法后，自身下一个主动战法造成的伤害提高15.0%，此效果最多叠加3次",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-近攻",
-      "officialId": null,
-      "name": "近攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "对战法有效距离内最近的敌军发动一次攻击（伤害率200.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-觑隙",
-      "officialId": null,
-      "name": "觑隙",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率140.0%），并有50.0%的几率再度对随机敌军单体发动一次攻击（伤害率150.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-重整旗鼓",
-      "officialId": null,
-      "name": "重整旗鼓",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后第5回合起，每回合恢复我军群体较多兵力（恢复率140.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-连环",
-      "officialId": null,
-      "name": "连环",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对战法有效距离内最远的敌军单体发动一次策略攻击（伤害率132.0%，受谋略属性影响），并再度对随机敌军单体发动一次猛烈的策略攻击（伤害率198.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-远射",
-      "officialId": null,
-      "name": "远射",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对战法有效距离内最远的敌军发动一次攻击（伤害率255.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-疑兵",
-      "officialId": null,
-      "name": "疑兵",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军单体陷入暴走状态，进行无差别攻击，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-陷阱",
-      "officialId": null,
-      "name": "陷阱",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军单体陷入混乱状态，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-佯攻",
-      "officialId": null,
-      "name": "佯攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军单体陷入怯战状态，无法进行普通攻击，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-反计",
-      "officialId": null,
-      "name": "反计",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军单体陷入犹豫状态，无法发动主动战法，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-合流",
-      "officialId": null,
-      "name": "合流",
-      "type": "可拆",
-      "target": "",
-      "desc": "为自身与友军单体恢复一定兵力（恢复率131.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-疾风迅雷",
-      "officialId": null,
-      "name": "疾风迅雷",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中能够优先行动，第3回合开始，当普通攻击命中目标后将有40.0%的几率使其混乱，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-索敌",
-      "officialId": null,
-      "name": "索敌",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除敌军群体的有益效果并对其发动一次攻击（伤害率75.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-健卒不殆",
-      "officialId": null,
-      "name": "健卒不殆",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到普通攻击时能进行反击（伤害率40.0%），受到所有伤害时都有50.0%的几率使本次伤害降低50.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-闪击",
-      "officialId": null,
-      "name": "闪击",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次攻击（伤害率50.0%），并使敌军单体进行下一次攻击的伤害大幅度降低",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-鱼鳞",
-      "officialId": null,
-      "name": "鱼鳞",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使我军步兵防御属性提高50.0，弓兵受策略伤害降低35.0%，我军仅由步兵和弓兵组成时生效",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-衡轭",
-      "officialId": null,
-      "name": "衡轭",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使我军骑兵谋略属性提高50.0，步兵发动普通攻击造成的伤害提升50.0%，我军仅由骑兵和步兵组成时生效",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-众谋不懈",
-      "officialId": null,
-      "name": "众谋不懈",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，每当自身试图发动主动及追击战法前，有40.0%的几率对距离5以内的敌军单体发动一次策略攻击（伤害率194.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-铁戟金戈",
-      "officialId": null,
-      "name": "铁戟金戈",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体2目标发动一次猛烈攻击（伤害率330.0%）或对敌军全体3目标发动一次猛烈攻击（伤害率225.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-兼弱攻昧",
-      "officialId": null,
-      "name": "兼弱攻昧",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军防御属性最低的武将发动一次攻击（伤害率200.0%），同时对敌军谋略属性最低的武将发动一次策略攻击（伤害率159.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-疾击其后",
-      "officialId": null,
-      "name": "疾击其后",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，随机对敌军单体再发动2次攻击（伤害率80.0%-140.0%），每次攻击的目标及伤害率独立判定",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-战必断金",
-      "officialId": null,
-      "name": "战必断金",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使敌军群体每回合都有90.0%的几率陷入怯战状态，无法进行普通攻击",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-风声鹤唳",
-      "officialId": null,
-      "name": "风声鹤唳",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率130.0%，受谋略属性影响），并使其受到策略攻击时的伤害提高12.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-溃堤",
-      "officialId": null,
-      "name": "溃堤",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动策略攻击（伤害率79.8%，受谋略属性影响），并使其攻击属性降低10.0（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-运筹帷幄",
-      "officialId": null,
-      "name": "运筹帷幄",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身谋略属性、速度属性提高24.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-落石",
-      "officialId": null,
-      "name": "落石",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动策略攻击（伤害率92.2%，受谋略属性影响），并使其防御属性降低5.2（受谋略属性影响），持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-急救",
-      "officialId": null,
-      "name": "急救",
-      "type": "可拆",
-      "target": "",
-      "desc": "恢复友军单体一定兵力（恢复率108.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-夹攻",
-      "officialId": null,
-      "name": "夹攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动策略攻击（伤害率89.6%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-成竹在胸",
-      "officialId": null,
-      "name": "成竹在胸",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身防御属性、谋略属性提高24.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-伏兵",
-      "officialId": null,
-      "name": "伏兵",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动策略攻击（伤害率105.2%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-看破",
-      "officialId": null,
-      "name": "看破",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除敌军单体的有益效果，并使其防御属性下降10.0，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-翕处还张",
-      "officialId": null,
-      "name": "翕处还张",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次策略攻击（伤害率132.0%，受谋略属性影响），并使敌军群体1-2目标下一次造成伤害后，再受到一次策略伤害（伤害率165.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-击势",
-      "officialId": null,
-      "name": "击势",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，每回合自身行动时有65.0%几率获得以下效果：自身攻击时的伤害提升50.0%，持续1回合；自身攻击时无视敌方60.0%防御属性，持续1回合。每个效果独立判断",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-鸟云山兵",
-      "officialId": null,
-      "name": "鸟云山兵",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后，我军群体每回合行动时有30.0%几率使自身受到的攻击和策略攻击降低60.0%，持续1回合，两个效果独立判断，该效果生效几率每回合提升10%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-三军之众",
-      "officialId": null,
-      "name": "三军之众",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使我军单体恢复4次兵力（恢复率151.0%，受谋略属性影响），每次目标独立判定",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-垒实迎击",
-      "officialId": null,
-      "name": "垒实迎击",
-      "type": "可拆",
-      "target": "",
-      "desc": "受到普通攻击伤害时，有50.0%几率使自身恢复一定兵力（恢复率200.0%）；有50.0%几率移除自身由主动及追击战法带来的负面效果；使自身进入规避状态，有50.0%几率免疫下1次受到的伤害。同时当自身位于中军及前锋时，每回合开始时有50.0%几率援护友军全体，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-叫阵",
-      "officialId": null,
-      "name": "叫阵",
-      "type": "可拆",
-      "target": "",
-      "desc": "挑衅敌军单体使其攻击自身，同时自身防御属性提高80.0，谋略属性提高40.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-文伐",
-      "officialId": null,
-      "name": "文伐",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率228.0%，受谋略属性影响），并使其下一次受到策略攻击的伤害提升20.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-窃兵",
-      "officialId": null,
-      "name": "窃兵",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率170.0%），并借此恢复自身少量兵力",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-飒沓如星",
-      "officialId": null,
-      "name": "飒沓如星",
-      "type": "可拆",
-      "target": "",
-      "desc": "使我军群体骑兵造成的普通攻击伤害提升36.0%（受谋略属性影响），持续2回合，并使其下2次普通攻击进入分兵状态（伤害率55.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-以直报怨",
-      "officialId": null,
-      "name": "以直报怨",
-      "type": "可拆",
-      "target": "",
-      "desc": "每回合自身首次造成伤害后，使目标单体造成的所有伤害降低10.0%；自身首次受到伤害后，使我军单体受到的所有伤害降低10.0%。以上效果可叠加6次，持续直到战斗结束",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-三术奇谋",
-      "officialId": null,
-      "name": "三术奇谋",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军单体发动3次策略攻击（伤害率178.0%，受谋略属性影响），并依次使目标的攻击属性、防御属性、谋略属性下降18.0（受谋略属性影响），持续2回合，每次目标独立判定",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-甚陷不惧",
-      "officialId": null,
-      "name": "甚陷不惧",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中当自身兵力首次低于初始兵力的90%、70%、50%和30%时，使自身下次行动时武将主战法发动率提高50.0%，该效果仅对可造成攻击伤害或策略伤害的战法生效",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-势无虚动",
-      "officialId": null,
-      "name": "势无虚动",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，自身每次试图发动追击战法时，使下一次造成伤害无视规避，且下一次发动追击战法造成伤害提升40.0%，伤害提升效果最多可叠加3次",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-筹策绝道",
-      "officialId": null,
-      "name": "筹策绝道",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次策略攻击（伤害率250.0%，受谋略属性影响），并使其谋略、速度属性下降25.0（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-三军齐出",
-      "officialId": null,
-      "name": "三军齐出",
-      "type": "可拆",
-      "target": "",
-      "desc": "每回合行动时90.0%几率使自身进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率70.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-久战熟谋",
-      "officialId": null,
-      "name": "久战熟谋",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，使友军群体每造成一次策略伤害后，其策略伤害就提高5.0%（受谋略属性影响），此效果最多叠加5次",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-掎角之势",
-      "officialId": null,
-      "name": "掎角之势",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率180.0%）和一次策略攻击（伤害率143.0%，受谋略属性影响），每次攻击的目标独立判定",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-合纵连横",
-      "officialId": null,
-      "name": "合纵连横",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，我方出战的3名武将阵营均不相同时，令我军全体武将战法距离+1，对非自身阵营的武将造成攻击与策略伤害提升10.0%，对非自身阵营的武将普通攻击后有40.0%几率令目标无法恢复兵力，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-勠力同心",
-      "officialId": null,
-      "name": "勠力同心",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，我方大营每次发动主动战法或追击战法后，前锋和中军下次行动阶段主动战法和追击战法造成的伤害提升40.0%，此效果可额外叠加1次。",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-扬威",
-      "officialId": null,
-      "name": "扬威",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对目标再次发动猛攻（伤害率160.0%），并使自身下1次攻击伤害提升20.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-破胆",
-      "officialId": null,
-      "name": "破胆",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次猛攻（伤害率214.0%），并使其攻击属性降低30.0%，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-奇术折冲",
-      "officialId": null,
-      "name": "奇术折冲",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使敌军群体陷入妖术状态，每回合损失一定兵力（伤害率116.0%，受谋略属性影响），并使其造成的普通攻击伤害降低20.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-及锋而试",
-      "officialId": null,
-      "name": "及锋而试",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次攻击（伤害率120.0%）并使其士气降低10.0，每次发动后伤害率增加40.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-乘胜追击",
-      "officialId": null,
-      "name": "乘胜追击",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标发动一次攻击（伤害率150.0%）；乘胜追击每次发动攻击后有60.0%概率对攻击目标再次发动一次攻击（伤害率100.0%），此概率每次降低20%，战法结束后此概率重置",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-胜负先征",
-      "officialId": null,
-      "name": "胜负先征",
-      "type": "可拆",
-      "target": "",
-      "desc": "每回合自身行动时，若士气高昂，则使自身造成的主动和追击战法伤害提升40.0%，持续1回合；若士气处于一般或低落，则使自身受到伤害时恢复一定兵力（恢复率75.0%），持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-望风而降",
-      "officialId": null,
-      "name": "望风而降",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动2次策略攻击（伤害率108.0%，受谋略属性影响），并有50.0%几率使其陷入恐慌状态（伤害率98.0%，受谋略属性影响），持续1回合，若目标士气低于自身，则此几率提升至100.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-共饮避世",
-      "officialId": null,
-      "name": "共饮避世",
-      "type": "可拆",
-      "target": "",
-      "desc": "使我军群体受到的伤害降低28.0%，武将每次造成伤害时，该效果降低1/7",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-激水之疾",
-      "officialId": null,
-      "name": "激水之疾",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次策略攻击（伤害率180.0%，受谋略属性影响），若目标士气低于自身，则使其谋略属性降低20.0，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-蓄盈待竭",
-      "officialId": null,
-      "name": "蓄盈待竭",
-      "type": "可拆",
-      "target": "",
-      "desc": "选择随机敌军单体，其士气值低于自身时，对该敌军发动一次攻击（伤害率200.0%），否则提升自身攻击、防御、谋略属性60.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-亡命一搏",
-      "officialId": null,
-      "name": "亡命一搏",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次猛击（伤害率160.0%），当自身兵力低于初始兵力25%时，伤害率变为460.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-浴血",
-      "officialId": null,
-      "name": "浴血",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，使攻击目标陷入动摇状态，每回合产生逃兵（伤害率75.0%），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-先驱",
-      "officialId": null,
-      "name": "先驱",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前2回合，每回合都有70.0%的几率使自身优先行动",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-重伤",
-      "officialId": null,
-      "name": "重伤",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率115.0%），并使其攻击属性降低15.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-投石轰击",
-      "officialId": null,
-      "name": "投石轰击",
-      "type": "可拆",
-      "target": "",
-      "desc": "在本场战斗中使我军弓兵全体攻城属性提高13.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-狼烟",
-      "officialId": null,
-      "name": "狼烟",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率47.6%，受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-收拢",
-      "officialId": null,
-      "name": "收拢",
-      "type": "可拆",
-      "target": "",
-      "desc": "使友军单体进入休整状态，每回合恢复一定兵力（恢复率82.0%，受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-诱敌深入",
-      "officialId": null,
-      "name": "诱敌深入",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后第3回合起，自身在我军全体每回合首次受到伤害后，有50.0%的几率对伤害来源造成一次策略攻击（伤害率136.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-谨言",
-      "officialId": null,
-      "name": "谨言",
-      "type": "可拆",
-      "target": "",
-      "desc": "使友军全体受到策略攻击的伤害降低16.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-援军秘策",
-      "officialId": null,
-      "name": "援军秘策",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率103.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-犒劳",
-      "officialId": null,
-      "name": "犒劳",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进行策略攻击时的伤害提高35.0%，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-包扎",
-      "officialId": null,
-      "name": "包扎",
-      "type": "可拆",
-      "target": "",
-      "desc": "恢复我军群体一定兵力（恢复率98.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-固阵",
-      "officialId": null,
-      "name": "固阵",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到策略攻击的伤害降低35.0%，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-奋起",
-      "officialId": null,
-      "name": "奋起",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进行攻击时的伤害提高35.0%，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-铁壁",
-      "officialId": null,
-      "name": "铁壁",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到攻击和策略攻击时的伤害降低18.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-坚守突击",
-      "officialId": null,
-      "name": "坚守突击",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身攻击属性、防御属性提高24.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-凿穿",
-      "officialId": null,
-      "name": "凿穿",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率135.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-齐射",
-      "officialId": null,
-      "name": "齐射",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次攻击（伤害率90.0%），并使其攻击属性降低16.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-疾风突击",
-      "officialId": null,
-      "name": "疾风突击",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身攻击属性、速度属性提高24.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-毒泉",
-      "officialId": null,
-      "name": "毒泉",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率85.0%，受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-乱阵",
-      "officialId": null,
-      "name": "乱阵",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体进行策略攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-火辎",
-      "officialId": null,
-      "name": "火辎",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动策略攻击（伤害率75.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率75.0%，受谋略属性影响），持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-文韬武略",
-      "officialId": null,
-      "name": "文韬武略",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身攻击属性、谋略属性提高24.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-乱击",
-      "officialId": null,
-      "name": "乱击",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率120.0%），并使其防御属性降低15.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-速战坚守",
-      "officialId": null,
-      "name": "速战坚守",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身防御属性、速度属性提高24.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-休整",
-      "officialId": null,
-      "name": "休整",
-      "type": "可拆",
-      "target": "",
-      "desc": "使友军群体进入休整状态，每回合恢复一定兵力（恢复率87.0%，受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-坚守",
-      "officialId": null,
-      "name": "坚守",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到攻击的伤害降低35.0%，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-绝道",
-      "officialId": null,
-      "name": "绝道",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动策略攻击（伤害率105.0%，受谋略属性影响），并使其防御属性降低6.0（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-劫粮",
-      "officialId": null,
-      "name": "劫粮",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体受到策略攻击时的伤害提高13.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-游击",
-      "officialId": null,
-      "name": "游击",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军单体陷入动摇，每回合产生逃兵（伤害率125.0%），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-雄兵破敌",
-      "officialId": null,
-      "name": "雄兵破敌",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次攻击（伤害率210.0%），并使其防御、谋略属性降低65.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-百战无怯",
-      "officialId": null,
-      "name": "百战无怯",
-      "type": "可拆",
-      "target": "",
-      "desc": "自身位于中军或前锋时，在战斗开始后获得以下效果：造成伤害后，受到的攻击伤害与策略伤害降低20.0%，此效果最多叠加3次；战斗开始时已叠加3次，每回合开始时、受到攻击或策略攻击伤害后，失去1次叠加次数并恢复一定兵力（恢复率200.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-乘间击隙",
-      "officialId": null,
-      "name": "乘间击隙",
-      "type": "可拆",
-      "target": "",
-      "desc": "自身每发动主动主战法后，使自身造成的攻击伤害提升15.0%，最多叠加3次。该效果每叠加3次后，对敌军群体发动1次攻击（伤害率240.0%），发动后攻击伤害提升效果消失",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-胜敌益强",
-      "officialId": null,
-      "name": "胜敌益强",
-      "type": "可拆",
-      "target": "",
-      "desc": "每回合行动时使自身恢复1次兵力（恢复率120.0%，受防御属性影响），第2、4、6回合起，胜敌益强的恢复次数提升至2、3、4次，持续到战斗结束",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-敛众定气",
-      "officialId": null,
-      "name": "敛众定气",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除我军全体的有害效果，立即为其恢复一定兵力（恢复率85.0%，受谋略属性影响），并有50%几率使其免疫围困效果，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-袭屯夺气",
-      "officialId": null,
-      "name": "袭屯夺气",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次策略攻击（伤害率160.0%，受谋略属性影响），并使其陷入恐慌状态，在被成功施加属性下降效果时损失一定兵力（伤害率87.0%，受谋略属性影响），最多生效4次，每种属性单独计算",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-以诱待来",
-      "officialId": null,
-      "name": "以诱待来",
-      "type": "可拆",
-      "target": "",
-      "desc": "受到任何伤害后，有50.0%几率挑衅伤害来源，使其在下次行动时普通攻击自身，持续1回合；每次受到处于挑衅状态下的武将造成的伤害时，恢复自身兵力，恢复率150.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-除恶务尽",
-      "officialId": null,
-      "name": "除恶务尽",
-      "type": "可拆",
-      "target": "",
-      "desc": "前三回合，令我军全体处于怯战状态下的武将受到的所有伤害降低30.0%；战斗开始后第四回合起，使我军全体每回合有70.0%几率可以进行两次普通攻击，持续至战斗结束",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-令无空悬",
-      "officialId": null,
-      "name": "令无空悬",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中，自身每次试图发动主动战法时，使造成的下一次主动战法伤害提升30.0%，此效果最多叠加4次；第1、3、5、7回合自身行动时，本回合内造成攻击或策略攻击伤害的主动战法发动率提升10.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-先声夺人",
-      "officialId": null,
-      "name": "先声夺人",
-      "type": "可拆",
-      "target": "",
-      "desc": "前3回合，每回合自身行动时有60.0%几率回合内获得以下效果：进入连击状态；进入分兵状态（伤害率60.0%）；对敌军单体造成一次攻击伤害（伤害率70.0%）。每种效果独立判定",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-避锐治气",
-      "officialId": null,
-      "name": "避锐治气",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前4回合，我军群体受到伤害时，受到的伤害共计提升幅度每达到50%时，有50.0%几率触发以下效果：自身恢复一定兵力（恢复率70.0%），并使敌军随机单体造成的所有伤害降低10.0%，持续到战斗结束，伤害降低效果最多叠加9次；前4回合每回合结束时，我军群体将额外触发一次以上效果",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-步步为营",
-      "officialId": null,
-      "name": "步步为营",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到的所有伤害降低11.0%，此效果每回合开始时额外叠加一次，持续直到战斗结束",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-怯心夺志",
-      "officialId": null,
-      "name": "怯心夺志",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率200.0%），并使其无法发动主动战法，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-了如指掌",
-      "officialId": null,
-      "name": "了如指掌",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除敌军群体的有益效果，并使其无法恢复兵力，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-青囊秘要",
-      "officialId": null,
-      "name": "青囊秘要",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗中每回合都会恢复一定兵力（恢复率150.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-百战精兵",
-      "officialId": null,
-      "name": "百战精兵",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身攻击属性、防御属性、谋略属性、速度属性全部提高32.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-攻心",
-      "officialId": null,
-      "name": "攻心",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率106.0%，受谋略属性影响），并恢复自身一定兵力",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-不攻",
-      "officialId": null,
-      "name": "不攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "在战斗中无法进行普通攻击，使自身发动策略攻击时造成的伤害提高25.0%，并在每回合都会对有效距离5以内的敌军单体发动一次策略攻击（伤害率83.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-大赏三军",
-      "officialId": null,
-      "name": "大赏三军",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-反计之策",
-      "officialId": null,
-      "name": "反计之策",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-坚守兵法",
-      "officialId": null,
-      "name": "坚守兵法",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身防御属性提高28.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-浑水摸鱼",
-      "officialId": null,
-      "name": "浑水摸鱼",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使敌军群体陷入混乱状态，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-愈战愈勇",
-      "officialId": null,
-      "name": "愈战愈勇",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进行攻击的伤害提高10.0%，此效果每回合开始时额外叠加一次，持续直到战斗结束",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-妖术",
-      "officialId": null,
-      "name": "妖术",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，使敌军群体陷入暴走状态，进行无差别攻击，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-一骑当千",
-      "officialId": null,
-      "name": "一骑当千",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军全体发动一次猛烈攻击（伤害率280.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-神兵天降",
-      "officialId": null,
-      "name": "神兵天降",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-远攻秘策",
-      "officialId": null,
-      "name": "远攻秘策",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身攻击属性提高20.0，谋略属性提高20.0，攻击距离+1，同时，使友军全体在战斗开始后前3回合也获得与自身同样的增益",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-无心恋战",
-      "officialId": null,
-      "name": "无心恋战",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使敌军群体进行攻击和策略攻击时的伤害降低30.0%（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-避其锋芒",
-      "officialId": null,
-      "name": "避其锋芒",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使我军群体受到攻击和策略攻击时的伤害降低30.0%（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-空城",
-      "officialId": null,
-      "name": "空城",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前2回合，受到伤害时有70.0%的几率使自身进入规避状态，可以免疫伤害",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-声东击西",
-      "officialId": null,
-      "name": "声东击西",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率231.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-焰焚箕轸",
-      "officialId": null,
-      "name": "焰焚箕轸",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率119.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率119.0%，受谋略属性影响），持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-长驱直入",
-      "officialId": null,
-      "name": "长驱直入",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使我军群体每回合都有70.0%的几率优先行动，并使其防御属性提高23.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-奔袭",
-      "officialId": null,
-      "name": "奔袭",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率225.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-温酒斩将",
-      "officialId": null,
-      "name": "温酒斩将",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率200.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-设伏",
-      "officialId": null,
-      "name": "设伏",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军群体发动一次攻击（伤害率145.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-破甲",
-      "officialId": null,
-      "name": "破甲",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率165.0%），并使其防御属性降低25.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-冲锋",
-      "officialId": null,
-      "name": "冲锋",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进行攻击时的伤害提高30.0%，持续1回合，并对敌军单体发动一次攻击（伤害率180.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-回马",
-      "officialId": null,
-      "name": "回马",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到普通攻击时能进行反击（伤害率60.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-远攻强化",
-      "officialId": null,
-      "name": "远攻强化",
-      "type": "可拆",
-      "target": "",
-      "desc": "自身攻击距离+1，并使攻击属性提高15.0",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-移花接木",
-      "officialId": null,
-      "name": "移花接木",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除自身有害效果，防御属性提升50.0，并援护友军全体，为其抵挡普通攻击，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-追击",
-      "officialId": null,
-      "name": "追击",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率80.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-飞虹",
-      "officialId": null,
-      "name": "飞虹",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率110.0%），并使其攻击属性降低15.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-水淹七军",
-      "officialId": null,
-      "name": "水淹七军",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率205.0%，受谋略属性影响），并使其攻击属性降低10.0（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-激昂",
-      "officialId": null,
-      "name": "激昂",
-      "type": "可拆",
-      "target": "",
-      "desc": "每回合有30.0%的几率使自身进行攻击和策略攻击时的伤害提高60.0%，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-远攻奇略",
-      "officialId": null,
-      "name": "远攻奇略",
-      "type": "可拆",
-      "target": "",
-      "desc": "自身攻击距离+1，进行策略攻击时的伤害提高15.0%",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-迷阵",
-      "officialId": null,
-      "name": "迷阵",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动策略攻击（伤害率155.0%，受谋略属性影响），并使其陷入暴走状态，进行无差别攻击，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-诱敌",
-      "officialId": null,
-      "name": "诱敌",
-      "type": "可拆",
-      "target": "",
-      "desc": "挑衅敌军单体使其攻击自身，并使之攻击属性降低39.0（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-落雷",
-      "officialId": null,
-      "name": "落雷",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动策略攻击（伤害率148.0%，受谋略属性影响），并使其陷入混乱状态，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-死士突击",
-      "officialId": null,
-      "name": "死士突击",
-      "type": "可拆",
-      "target": "",
-      "desc": "以一定兵力为代价，对敌军单体发动一次猛攻（伤害率255.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-反击之策",
-      "officialId": null,
-      "name": "反击之策",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使我军群体每回合有75.0%的几率受到普通攻击时能进行反击（伤害率100.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-远攻之策",
-      "officialId": null,
-      "name": "远攻之策",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使我军群体攻击属性提高20.0，并使其每回合有100.0%的几率攻击距离+1",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-云梯",
-      "officialId": null,
-      "name": "云梯",
-      "type": "可拆",
-      "target": "",
-      "desc": "在本场战斗中使我军步兵全体攻城属性提高20.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-长兵方阵",
-      "officialId": null,
-      "name": "长兵方阵",
-      "type": "可拆",
-      "target": "",
-      "desc": "战斗开始后前3回合，使我军群体每回合都有75.0%的几率进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率60.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-速战兵法",
-      "officialId": null,
-      "name": "速战兵法",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身速度属性提高28.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-威压",
-      "officialId": null,
-      "name": "威压",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体进行攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-洞察",
-      "officialId": null,
-      "name": "洞察",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-援护",
-      "officialId": null,
-      "name": "援护",
-      "type": "可拆",
-      "target": "",
-      "desc": "援护友军单体，为其抵挡普通攻击，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-连战",
-      "officialId": null,
-      "name": "连战",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身可以进行两次普通攻击，持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-箭岚",
-      "officialId": null,
-      "name": "箭岚",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次猛攻（伤害率170.0%），并使其攻击属性降低45.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-横扫",
-      "officialId": null,
-      "name": "横扫",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率75.0%），持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-火箭",
-      "officialId": null,
-      "name": "火箭",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动策略攻击（伤害率69.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率69.0%，受谋略属性影响），持续1回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-攻其要害",
-      "officialId": null,
-      "name": "攻其要害",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率125.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-假途",
-      "officialId": null,
-      "name": "假途",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体受到攻击时的伤害提高13.0%（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-危崖困军",
-      "officialId": null,
-      "name": "危崖困军",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率210.0%，受谋略属性影响），并使其防御属性降低7.2（受谋略属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-强攻",
-      "officialId": null,
-      "name": "强攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率105.0%），并使其防御属性降低15.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-毁墙",
-      "officialId": null,
-      "name": "毁墙",
-      "type": "可拆",
-      "target": "",
-      "desc": "在本场战斗中使我军步兵群体攻城属性提高13.0（受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-枪阵",
-      "officialId": null,
-      "name": "枪阵",
-      "type": "可拆",
-      "target": "",
-      "desc": "1回合准备，对敌军群体发动一次猛攻（伤害率175.0%），并使其防御属性降低30.0，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-规避",
-      "officialId": null,
-      "name": "规避",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进入规避状态，将免疫接下来受到的1次攻击的伤害",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-驱逐",
-      "officialId": null,
-      "name": "驱逐",
-      "type": "可拆",
-      "target": "",
-      "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率110.0%，受谋略属性影响），并移除其有益效果",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-安抚军心",
-      "officialId": null,
-      "name": "安抚军心",
-      "type": "可拆",
-      "target": "",
-      "desc": "移除我军群体的有害效果，并立即恢复其一定兵力（恢复率108.0%，受谋略属性影响）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-突进",
-      "officialId": null,
-      "name": "突进",
-      "type": "可拆",
-      "target": "",
-      "desc": "对敌军单体发动一次攻击（伤害率115.0%）",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-反击",
-      "officialId": null,
-      "name": "反击",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到普通攻击时能进行反击（伤害率75.0%），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-拒盾",
-      "officialId": null,
-      "name": "拒盾",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到攻击和策略攻击的伤害降低15.0%（受防御属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-退避",
-      "officialId": null,
-      "name": "退避",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身受到攻击和策略攻击的伤害降低18.0%（受速度属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-截断",
-      "officialId": null,
-      "name": "截断",
-      "type": "可拆",
-      "target": "",
-      "desc": "使敌军群体受到攻击的伤害提高13.0%（受速度属性影响），持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
-      "trigger": "official"
-    },
-    {
-      "id": "official-skill-抢攻",
-      "officialId": null,
-      "name": "抢攻",
-      "type": "可拆",
-      "target": "",
-      "desc": "使自身进行攻击的伤害提高19.2%（受速度属性影响），并且可以优先行动，持续2回合",
-      "grade": "",
-      "soldierType": "",
-      "distance": null,
-      "probability": "",
-      "effect": "",
-      "icon": "",
-      "skillCount": null,
-      "studyDesc": "",
-      "studyDesc2": "",
-      "source": "official-hero-dismantle",
       "trigger": "official"
     }
   ]
