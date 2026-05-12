@@ -469,7 +469,6 @@ function conciseSkillRows(skill) {
   return [
     ["战法品质", skill.grade || "暂无"],
     ["战法类型", skill.type || "未知"],
-    ["标签", skillTags(skill).join("、") || "无"],
     ["兵种类型", skill.soldierType || "未知"],
     ["有效距离", skill.distance ? String(skill.distance) : "按描述"],
     ["目标群体", skill.target || inferTargetText(desc)],
