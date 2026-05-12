@@ -640,12 +640,12 @@ select {
 }
 
 .war-map {
-  --battle-card-width: clamp(172px, 13vw, 196px);
+  --battle-card-width: clamp(156px, 11.2vw, 176px);
   display: grid;
-  grid-template-rows: auto minmax(46px, auto) auto;
-  gap: 10px;
+  grid-template-rows: auto minmax(38px, auto) auto;
+  gap: 8px;
   min-height: auto;
-  padding: 14px;
+  padding: 10px 12px 12px;
   background:
     radial-gradient(circle at 50% 48%, rgba(244, 207, 120, 0.12), transparent 17rem),
     linear-gradient(90deg, rgba(245, 223, 170, 0.028) 1px, transparent 1px),
@@ -656,8 +656,8 @@ select {
 
 .army-block {
   display: grid;
-  gap: 8px;
-  padding: 10px;
+  gap: 6px;
+  padding: 8px;
   border: 1px solid rgba(245, 223, 170, 0.09);
   border-radius: 8px;
   background: rgba(8, 11, 12, 0.28);
@@ -681,7 +681,7 @@ select {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 12px;
   align-items: center;
-  min-height: 38px;
+  min-height: 32px;
   padding: 0;
   color: #f6edd5;
 }
@@ -697,7 +697,7 @@ select {
 .army-title span {
   display: inline-grid;
   min-width: 74px;
-  min-height: 30px;
+  min-height: 26px;
   place-items: center;
   border: 1px solid rgba(245, 223, 170, 0.15);
   border-radius: 999px;
@@ -733,7 +733,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   padding: 0;
   color: rgba(239, 232, 212, 0.72);
   font-size: 12px;
@@ -743,7 +743,7 @@ select {
 
 .position-row span {
   display: grid;
-  min-height: 24px;
+  min-height: 21px;
   place-items: center;
   border-bottom: 1px solid rgba(245, 223, 170, 0.16);
   background: rgba(255, 255, 255, 0.025);
@@ -754,7 +754,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   align-items: stretch;
 }
 
@@ -824,7 +824,7 @@ select {
 
 .unit-portrait {
   position: relative;
-  aspect-ratio: 1 / 1.04;
+  aspect-ratio: 1 / 0.94;
   height: auto;
   min-height: 0;
   overflow: hidden;
@@ -887,8 +887,8 @@ select {
   gap: 4px;
   align-items: center;
   width: 100%;
-  min-height: 27px;
-  padding: 4px 7px;
+  min-height: 24px;
+  padding: 3px 6px;
   border-block: 0;
   border-inline: 0;
   border-radius: 0;
@@ -946,7 +946,7 @@ select {
 
 .unit-troops {
   align-self: stretch;
-  padding: 6px 7px 8px;
+  padding: 4px 6px 6px;
   background:
     linear-gradient(180deg, rgba(22, 24, 22, 0.82), rgba(8, 9, 8, 0.94)),
     radial-gradient(circle at 50% 0, rgba(245, 223, 170, 0.07), transparent 56%);
@@ -963,8 +963,8 @@ select {
 
 .troop-bar {
   position: relative;
-  height: 7px;
-  margin-top: 5px;
+  height: 6px;
+  margin-top: 4px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
@@ -1112,7 +1112,7 @@ select {
   grid-template-columns: 1fr;
   gap: 3px;
   margin: 0;
-  padding: 26px 8px 7px;
+  padding: 20px 7px 6px;
   background:
     linear-gradient(180deg, transparent 0%, rgba(8, 9, 8, 0.18) 38%, rgba(8, 9, 8, 0.5) 100%),
     linear-gradient(90deg, rgba(255, 224, 156, 0.06), transparent 22%, transparent 78%, rgba(255, 224, 156, 0.05));
@@ -1133,8 +1133,8 @@ select {
 }
 
 .unit-portrait .skill-chip {
-  min-height: 19px;
-  padding: 3px 7px;
+  min-height: 17px;
+  padding: 2px 6px;
   border-color: rgba(255, 226, 170, 0.18);
   border-radius: 999px;
   background:
