@@ -122,6 +122,7 @@
       : null;
     return skills.filter((skill) => {
       if (!skill?.id) return false;
+      if (skill.isInnate || (Array.isArray(skill.tags) && skill.tags.includes("自带"))) return false;
       if (!grades) return true;
       return grades.has(normalizeGrade(skill.grade));
     });

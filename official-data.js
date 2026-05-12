@@ -7,7 +7,7 @@ window.STZB_OFFICIAL_DATA = {
     "details": "https://stzb.163.com/herolist/{id}.html",
     "note": "网易官网公开资料；页面提示官网数据仅供参考，以游戏内设定为准。"
   },
-  "generatedAt": "2026-05-11T14:32:17.114Z",
+  "generatedAt": "2026-05-12T13:17:25.757Z",
   "heroes": [
     {
       "id": "official-hero-100352",
@@ -9463,7 +9463,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200001",
       "officialId": 200001,
       "name": "衣带密诏",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "使友军单体的攻击属性提高18.8（受谋略属性影响），并使其进入休整状态，每回合恢复一定兵力（恢复率80.0%，受谋略属性影响），持续2回合",
       "grade": "C",
@@ -9476,6 +9476,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9501,7 +9505,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200002",
       "officialId": 200002,
       "name": "乱政",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体获得如下10个负面效果中的1个：动摇、恐慌、燃烧、妖术、混乱、犹豫、暴走、怯战、挑衅、围困，持续2回合，该效果执行3次，每次的目标和效果独立判定。其中动摇、恐慌、燃烧、妖术的伤害率随战法等级提升",
       "grade": "A",
@@ -9514,6 +9518,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9539,7 +9547,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200003",
       "officialId": 200003,
       "name": "金吾飞将",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "对处于混乱或暴走状态的敌军单体发动一次猛攻（伤害率275.0%）；对随机敌军单体发动一次猛攻（伤害率275.0%），并使其陷入混乱状态，持续2回合",
       "grade": "S",
@@ -9552,6 +9560,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9577,7 +9589,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200004",
       "officialId": 200004,
       "name": "胡笳离愁",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "恢复我军群体较多兵力（恢复率157.0%，受谋略属性影响），并使其进入休整状态，每回合再度恢复大量兵力（恢复率206.0%，受谋略属性影响），持续1回合",
       "grade": "B",
@@ -9590,6 +9602,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9615,7 +9631,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200005",
       "officialId": 200005,
       "name": "闭月",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，使敌军群体陷入暴走状态，进行无差别攻击，并使其防御属性降低29.0（受谋略属性影响），持续3回合1回合准备，使敌军群体陷入暴走状态，进行无差别攻击，并使其防御属性降低29.0（受谋略属性影响），持续4回合",
       "grade": "B",
@@ -9628,6 +9644,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9653,7 +9673,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200006",
       "officialId": 200006,
       "name": "四世三公",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "使我军全体分别对距离5以内的敌军单体发动一次攻击（伤害率150.0%），每次目标独立判定使我军全体分别对距离5以内的敌军单体发动一次攻击（伤害率150.0%），每次目标独立判定，额外使我军攻击属性最高单体，对敌军防御最低单体发动一次攻击（伤害率160.0%）",
       "grade": "B",
@@ -9666,6 +9686,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9691,7 +9715,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200007",
       "officialId": 200007,
       "name": "将倾之柱",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次策略攻击（伤害率85.0%，受谋略属性影响），使自身受到攻击与策略攻击的伤害下降49.0%（受防御属性影响）持续2回合",
       "grade": "B",
@@ -9704,6 +9728,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9729,7 +9757,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200008",
       "officialId": 200008,
       "name": "黄天当立",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军全体",
       "desc": "1回合准备，使敌军全体陷入妖术诅咒，每回合损失一定兵力（伤害率180.0%，受谋略属性影响），持续2回合；敌军受到该战法的妖术伤害时，张角恢复一定兵力（恢复率60.0%，受谋略属性影响）",
       "grade": "A",
@@ -9742,6 +9770,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9767,7 +9799,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200009",
       "officialId": 200009,
       "name": "逆谋",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身受到攻击与策略攻击的伤害降低30.0%（受攻击属性影响），在战斗中造成攻击伤害时，能够借此恢复相当于伤害值50.0%的兵力",
       "grade": "B",
@@ -9780,6 +9812,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9805,7 +9841,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200010",
       "officialId": 200010,
       "name": "天下无双",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗开始后前4回合，使自身获得以下效果：攻击属性提高45.0，攻击距离+2，并进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，受到普通攻击后能进行反击（伤害率200.0%），并挑衅敌军全体使其攻击自身",
       "grade": "S",
@@ -9818,6 +9854,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9843,7 +9883,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200013",
       "officialId": 200013,
       "name": "血溅黄砂",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "以无法发动主动战法为代价，使自身进行攻击时的伤害提高120.0%",
       "grade": "S",
@@ -9856,13 +9896,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200015",
       "officialId": 200015,
       "name": "洛水佳人",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "本场战斗中，使我军全体每回合都有80.0%的几率恢复一定兵力（恢复率90.0%，受谋略属性影响）",
       "grade": "S",
@@ -9875,6 +9919,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9900,7 +9948,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200016",
       "officialId": 200016,
       "name": "皇裔流离",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "本场战斗中，使我军全体受到伤害时，有50.0%的几率能恢复一定兵力（恢复率68.0%，受谋略属性影响），该效果每生效3次后，生效几率提升5.0%，可叠加",
       "grade": "S",
@@ -9913,6 +9961,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9938,7 +9990,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200017",
       "officialId": 200017,
       "name": "诸葛锦囊",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "使我军全体受到策略攻击时的伤害降低35.0%（受谋略属性影响），并使其进行攻击和策略攻击时的伤害提高14.0%（受谋略属性影响），且自身获得先手，持续2回合。若发动时目标已有诸葛锦囊效果，则额外恢复目标一定兵力（恢复率150.0%）使我军全体受到攻击和策略攻击时的伤害降低35.0%（受谋略属性影响），并使其进行攻击和策略攻击时的伤害提高14.0%（受谋略属性影响），且自身获得先手，持续2回合。若发动时目标已有诸葛锦囊效果，则额外恢复目标一定兵力（恢复率150.0%）",
       "grade": "A",
@@ -9951,6 +10003,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -9976,7 +10032,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200019",
       "officialId": 200019,
       "name": "红颜铁骑",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身每回合可以进行两次普通攻击，并使攻击属性提高50.0使自身每回合可以进行两次普通攻击，并使攻击属性提高50.0。发动主动战法后，造成的攻击伤害提高40.0%，持续1回合",
       "grade": "A",
@@ -9989,13 +10045,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200020",
       "officialId": 200020,
       "name": "匠心不竭",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "战斗开始后，使敌军全体从第1、3、5回合开始，逐渐陷入恐慌（伤害率34.0%，受谋略属性影响）、燃烧（伤害率41.0%，受谋略属性影响）与妖术（伤害率44.0%，受谋略属性影响）的状态，每回合开始时损失一定兵力，持续直到战斗结束，所造成的伤害无视规避",
       "grade": "A",
@@ -10008,13 +10068,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200021",
       "officialId": 200021,
       "name": "银龙冲阵",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "随机对敌军单体发动2次攻击（伤害率150.0%），并使首次受到伤害的敌军单体受到攻击和策略攻击时的伤害提高20.0%（受攻击属性影响），持续至战斗结束，最多可叠加3次",
       "grade": "S",
@@ -10027,13 +10091,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200022",
       "officialId": 200022,
       "name": "长坂之吼",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2-3个目标）敌军单体",
       "desc": "2回合准备，对敌军群体2-3目标发动一次无视兵种相克的猛烈攻击（伤害率450.0%）2回合准备，对敌军单体发动三次无视兵种相克的猛烈攻击（伤害率333.0%），每次攻击的目标独立选择",
       "grade": "A",
@@ -10046,13 +10114,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200023",
       "officialId": 200023,
       "name": "魏武之世",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体攻击距离+1在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体主动战法距离+1",
       "grade": "S",
@@ -10065,6 +10137,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10090,7 +10166,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200024",
       "officialId": 200024,
       "name": "驱虎吞狼",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "对敌军全体发动策略攻击（伤害率153.0%，受谋略属性影响），并使其无法恢复兵力，持续2回合对敌军全体发动策略攻击（伤害率153.0%，受谋略属性影响），并使其无法恢复兵力，持续2回合。若有目标已处于无法恢复兵力状态，则使敌军单体陷入暴走状态，持续1回合",
       "grade": "S",
@@ -10103,13 +10179,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200025",
       "officialId": 200025,
       "name": "魏武之泽",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "使我军群体免疫怯战，普通攻击和追击战法造成的伤害提高15.0%（受谋略属性影响），同时有100.0%几率使其每回合可以进行两次普通攻击，持续2回合",
       "grade": "B",
@@ -10122,13 +10202,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200026",
       "officialId": 200026,
       "name": "千里单骑",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率200.0%），并借此恢复一定兵力",
       "grade": "B",
@@ -10141,6 +10225,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10166,7 +10254,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200027",
       "officialId": 200027,
       "name": "其疾如风",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后前3回合，使我军全体速度属性提高41.0（受谋略属性影响），并使其每回合有70.0%的几率可以进行两次普通攻击",
       "grade": "S",
@@ -10179,6 +10267,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10204,7 +10296,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200028",
       "officialId": 200028,
       "name": "世仇",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率233.0%，受谋略属性影响），并使其无法急救和休整以恢复兵力，持续2回合",
       "grade": "A",
@@ -10217,13 +10309,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200029",
       "officialId": 200029,
       "name": "强势",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体进行攻击时的伤害降低48.0%（受谋略属性影响），并使其陷入犹豫状态，无法发动主动战法，持续2回合",
       "grade": "A",
@@ -10236,13 +10332,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200030",
       "officialId": 200030,
       "name": "九锡黄龙",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "移除我军全体有害效果，并使其进入规避状态，免疫接下来受到的2次伤害",
       "grade": "S",
@@ -10255,6 +10355,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10280,7 +10384,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200031",
       "officialId": 200031,
       "name": "玄武洰流",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "1回合准备，对敌军全体发动策略攻击（伤害率150.0%，受谋略属性影响），并使其陷入怯战状态，无法进行普通攻击，持续2回合",
       "grade": "A",
@@ -10293,13 +10397,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200032",
       "officialId": 200032,
       "name": "复誓业火",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体受到策略攻击时的伤害提高16.0%（受谋略属性影响），持续2回合，并对其发动一次火攻（伤害率114.0%，受谋略属性影响），同时使其陷入燃烧状态，每回合损失一定兵力（伤害率114.0%，受谋略属性影响），持续1回合",
       "grade": "B",
@@ -10312,6 +10420,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10337,7 +10449,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200033",
       "officialId": 200033,
       "name": "遗志",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军单体 ",
       "desc": "战斗开始后第3回合，使我军前锋步兵或弓兵恢复极大量兵力，此后，受到普通攻击可以进行反击（伤害率85.0%），同时无法恢复兵力，持续直到战斗结束战斗开始后第3回合，使我军前锋步兵或弓兵恢复极大量兵力，此后，受到普通攻击可以进行反击（伤害率85.0%），持续直到战斗结束",
       "grade": "B",
@@ -10350,6 +10462,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10375,7 +10491,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200034",
       "officialId": 200034,
       "name": "侵掠如火",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "在战斗中可以优先行动，攻击类主动战法发动率提升20.0%，进行攻击时有30.0%的几率使本次攻击伤害提高50.0%",
       "grade": "A",
@@ -10388,6 +10504,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10413,7 +10533,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200648",
       "officialId": 200648,
       "name": "白衣渡江",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗开始后前2回合，使敌军群体无法进行普通攻击，在此效果结束后，将对敌军全体发动一次强力策略攻击（伤害率215.0%，受谋略属性影响），造成的伤害无视规避",
       "grade": "S",
@@ -10426,13 +10546,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200035",
       "officialId": 200035,
       "name": "枭姬",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "1回合准备，对敌军全体发动一次攻击（伤害率160.0%），并随机对敌军群体2目标再度发动一次攻击（伤害率140.0%）",
       "grade": "B",
@@ -10445,13 +10569,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200037",
       "officialId": 200037,
       "name": "母仪浮梦",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后，使我军全体在受到首次攻击时可进入规避状态免疫伤害，并使敌军全体在前4回合进行攻击或策略攻击时，有50.0%的几率使本次攻击的伤害降低30.0%（受谋略属性影响）",
       "grade": "A",
@@ -10464,13 +10592,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200038",
       "officialId": 200038,
       "name": "饮鸩之怨",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动策略攻击（伤害率177.0%，受谋略属性影响），并阻止其恢复兵力，持续2回合",
       "grade": "C",
@@ -10483,6 +10615,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10508,7 +10644,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200039",
       "officialId": 200039,
       "name": "猛火",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动策略攻击（伤害率80.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率75.0%，受谋略属性影响），持续1回合",
       "grade": "B",
@@ -10521,6 +10657,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10546,7 +10686,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200040",
       "officialId": 200040,
       "name": "节镇关东",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后前2回合，使我军群体每回合都能优先行动，在此期间，令敌军群体陷入动摇，每回合损失一定兵力（伤害率120.0%），动摇效果造成的伤害无视规避",
       "grade": "B",
@@ -10559,6 +10699,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10584,7 +10728,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200041",
       "officialId": 200041,
       "name": "威震北疆",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率64.0%，受谋略属性影响），同时谋略属性下降20.0，持续2回合",
       "grade": "C",
@@ -10597,6 +10741,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10622,7 +10770,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200042",
       "officialId": 200042,
       "name": "献刀七星",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次猛攻（伤害率275.0%），并使其速度属性降低28.0，持续2回合",
       "grade": "B",
@@ -10635,6 +10783,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10660,7 +10812,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200043",
       "officialId": 200043,
       "name": "藏玉在怀",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率150.0%）",
       "grade": "B",
@@ -10673,6 +10825,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10698,7 +10854,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200044",
       "officialId": 200044,
       "name": "义勇军",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "恢复我军群体一定兵力（恢复率115.0%，受谋略属性影响），并使其防御属性提高23.0（受谋略属性影响），持续1回合",
       "grade": "B",
@@ -10711,6 +10867,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10736,7 +10896,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200679",
       "officialId": 200679,
       "name": "尽忠迎驾",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "挑衅敌军单体使其攻击属性降低29.2（受谋略属性影响），持续2回合，同时自身进入规避状态，免疫接下来受到的1次伤害",
       "grade": "C",
@@ -10749,6 +10909,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10774,7 +10938,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200046",
       "officialId": 200046,
       "name": "修罗姬返",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "诅咒敌军群体，当其试图发动主动战法时，会陷入动摇状态，每回合产生逃兵（伤害率170.0%），并有75.0%的几率陷入怯战状态，无法进行普通攻击，持续2回合",
       "grade": "B",
@@ -10787,6 +10951,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10812,7 +10980,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200649",
       "officialId": 200649,
       "name": "怯弱",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体 ",
       "desc": "战斗开始后前3回合，使敌军单体攻击距离-1，进行策略攻击时的伤害下降36.0%（受谋略属性影响）",
       "grade": "",
@@ -10825,6 +10993,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10850,7 +11022,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200047",
       "officialId": 200047,
       "name": "枭雄所愿",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后第5回合直到战斗结束，使我军群体进入休整状态，每回合恢复一定兵力（恢复率118.0%，受谋略属性影响），并使其能够优先行动",
       "grade": "C",
@@ -10863,6 +11035,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10888,7 +11064,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200048",
       "officialId": 200048,
       "name": "重斩",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率150.0%），并使其攻击属性降低25.0，持续2回合",
       "grade": "C",
@@ -10901,6 +11077,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10926,7 +11106,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200049",
       "officialId": 200049,
       "name": "神速奔袭",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率200.0%），并使其速度属性降低40.0，持续2回合",
       "grade": "B",
@@ -10939,6 +11119,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -10964,7 +11148,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200053",
       "officialId": 200053,
       "name": "黄巾军威",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后前3回合，使我军群体的防御属性提高29.0，每回合有60.0%的几率使其受到普通攻击时进行反击（伤害率100.0%）",
       "grade": "C",
@@ -10977,6 +11161,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11002,7 +11190,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200051",
       "officialId": 200051,
       "name": "劫掠",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率50.0%），并有50.0%的几率借此恢复一定兵力",
       "grade": "B",
@@ -11015,6 +11203,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11040,7 +11232,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200052",
       "officialId": 200052,
       "name": "坚盾阵",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "1回合准备，援护友军全体，为其抵挡普通攻击，并使自身受到攻击时的伤害降低50.0%，持续2回合",
       "grade": "B",
@@ -11053,6 +11245,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11078,7 +11274,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200206",
       "officialId": 200206,
       "name": "追击",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率80.0%）",
       "grade": "C",
@@ -11091,13 +11287,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·张曼成·步】【群·李肃·弓】【群·侯成·骑】【群·魏续·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200100",
       "officialId": 200100,
       "name": "飞虹",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率110.0%），并使其攻击属性降低15.0，持续2回合",
       "grade": "",
@@ -11110,13 +11310,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·张曼成·步】【群·李肃·弓】【群·侯成·骑】【群·魏续·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200056",
       "officialId": 200056,
       "name": "直言",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内1-2个目标）",
       "desc": "恢复我军群体一定兵力（恢复率112.0%，受谋略属性影响），并使其谋略属性提高30.0，持续2回合",
       "grade": "C",
@@ -11129,6 +11333,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11154,7 +11362,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200057",
       "officialId": 200057,
       "name": "骁勇",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率150.0%），并使其进行攻击时的伤害降低25.0%，持续2回合",
       "grade": "C",
@@ -11167,6 +11375,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11192,7 +11404,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200058",
       "officialId": 200058,
       "name": "奋威",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率130.0%），并挑衅之使其攻击自身，持续2回合",
       "grade": "C",
@@ -11205,13 +11417,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200059",
       "officialId": 200059,
       "name": "方天余烈",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使自身发动主动战法的伤害提高35.0%，且对敌军单体发动一次攻击（伤害率80.0%）",
       "grade": "A",
@@ -11224,6 +11440,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11249,7 +11469,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200061",
       "officialId": 200061,
       "name": "铁骑突击",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "1回合准备，对敌军群体发动一次攻击（伤害率130.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率50.0%），持续2回合，并有50.0%的几率使其在2回合后再额外产生大量逃兵（伤害率140.0%）",
       "grade": "B",
@@ -11262,6 +11482,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11287,7 +11511,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200062",
       "officialId": 200062,
       "name": "昭烈神思",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2-3个目标）",
       "desc": "战斗开始后前3回合，使我军群体进行策略攻击时的伤害提高22.0%（受谋略属性影响），每回合有80.0%的几率能优先行动",
       "grade": "B",
@@ -11300,6 +11524,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11325,7 +11553,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200650",
       "officialId": 200650,
       "name": "存嗣流愿",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "以一定兵力为代价，使友军全体在受到下1次攻击时进入规避状态，可以免疫伤害",
       "grade": "B",
@@ -11338,13 +11566,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200063",
       "officialId": 200063,
       "name": "迎险御侮",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "对敌军单体发动2次攻击（伤害率120.0%），并使自身与友军单体受到的下1次攻击伤害大幅降低。",
       "grade": "B",
@@ -11357,13 +11589,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200064",
       "officialId": 200064,
       "name": "傲将奇兵",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率230.0%），此攻击有几率会引起自身一定兵力的损耗",
       "grade": "C",
@@ -11376,6 +11612,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11401,7 +11641,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200065",
       "officialId": 200065,
       "name": "沙场破阵",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率119.0%，受谋略属性影响），并有40.0%的几率使其陷入暴走状态，进行无差别攻击，持续1回合",
       "grade": "A",
@@ -11414,13 +11654,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200066",
       "officialId": 200066,
       "name": "锐矛贯体",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率180.0%），并有80.0%的几率使其陷入犹豫或怯战状态，无法进行普通攻击或发动主动战法，持续2回合",
       "grade": "B",
@@ -11433,6 +11677,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11458,7 +11706,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200067",
       "officialId": 200067,
       "name": "索命连环",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "移除敌军单体的有益效果，使其受到策略攻击时的伤害提高34.0%（受谋略属性影响），并陷入妖术诅咒，每回合有80.0%的几率损失较多兵力（伤害率145.0%，受谋略属性影响），持续2回合",
       "grade": "B",
@@ -11471,13 +11719,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200069",
       "officialId": 200069,
       "name": "神威将女",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "使自身进行攻击的伤害提高22.0%（受速度属性影响），并对敌军群体发动一次猛攻（伤害率190.0%）",
       "grade": "B",
@@ -11490,13 +11742,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200070",
       "officialId": 200070,
       "name": "巾帼战阵",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使自身造成的攻击伤害提高40.0%，且对敌军群体发动主动战法攻击（伤害率120.0%），但无法进行普通攻击",
       "grade": "S",
@@ -11509,13 +11765,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200072",
       "officialId": 200072,
       "name": "列营守险",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "使我军全体攻击、防御、速度、谋略属性提高29.2（受谋略属性影响），持续2回合，同时友军全体受到下3次伤害时有50.0%几率进入规避状态，免疫该次伤害。若自身士气高昂时，规避状态的目标变为我军全体使我军全体攻击、防御、速度、谋略属性提高29.2（受谋略属性影响），持续2回合，同时我军全体受到下3次伤害时有50.0%几率进入规避状态，免疫该次伤害",
       "grade": "A",
@@ -11528,13 +11788,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200074",
       "officialId": 200074,
       "name": "素衣伶姬",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗开始后前3回合，使敌军群体进行策略攻击时的伤害降低26.0%（受谋略属性影响），此效果结束后的1回合内有100.0%的几率陷入混乱状态",
       "grade": "A",
@@ -11547,6 +11811,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11572,7 +11840,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200075",
       "officialId": 200075,
       "name": "决绝",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入犹豫状态，无法发动主动战法，并使其受到策略攻击时的伤害提高28.0%（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -11585,6 +11853,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11610,7 +11882,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200076",
       "officialId": 200076,
       "name": "鬼谋",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "阻止敌军单体恢复兵力，并使其每回合有40.0%的几率随机陷入混乱、暴走、怯战、犹豫等状态中，持续3回合，每个效果独立判定",
       "grade": "A",
@@ -11623,6 +11895,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11648,7 +11924,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200077",
       "officialId": 200077,
       "name": "拔箭啖睛",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗中，每当自身受到攻击伤害后，将使攻击、防御属性提高10.0，此效果最多叠加15次",
       "grade": "B",
@@ -11661,6 +11937,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11686,7 +11966,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200079",
       "officialId": 200079,
       "name": "奋不顾身",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "援护友军单体，为其抵挡普通攻击，并使自身进入休整状态，每回合恢复一定兵力（恢复率200.0%），持续3回合",
       "grade": "C",
@@ -11699,13 +11979,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200082",
       "officialId": 200082,
       "name": "死战明志",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中使自身处于洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，防御属性提高25.0",
       "grade": "C",
@@ -11718,13 +12002,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200083",
       "officialId": 200083,
       "name": "八门金锁",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体陷入怯战状态，无法进行普通攻击，持续2回合",
       "grade": "A",
@@ -11737,6 +12025,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11762,7 +12054,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200084",
       "officialId": 200084,
       "name": "战伤无畏",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身受到普通攻击时能进行反击（伤害率70.0%），并在受到攻击时有30.0%的几率使本次伤害降低50.0%",
       "grade": "B",
@@ -11775,13 +12067,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200085",
       "officialId": 200085,
       "name": "炬石",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-3个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率130.0%），使其防御属性降低22.0（受谋略属性影响），并陷入燃烧状态，每回有75.0%的几率损失一定兵力（伤害率108.0%，受谋略属性影响），持续2回合",
       "grade": "B",
@@ -11794,13 +12090,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200086",
       "officialId": 200086,
       "name": "古锭之锋",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "强化自身造成的伤害并发动攻击，使敌军单体陷入动摇状态，每回合产生逃兵（伤害率110.0%），持续2回合",
       "grade": "C",
@@ -11813,6 +12113,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11838,7 +12142,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200087",
       "officialId": 200087,
       "name": "小霸王",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "以一定兵力为代价，对敌军群体发动一次攻击（伤害率135.0%），并有40.0%的几率再次发动猛攻（伤害率200.0%）",
       "grade": "B",
@@ -11851,13 +12155,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200088",
       "officialId": 200088,
       "name": "方阵突击",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率200.0%），并使其陷入混乱状态，持续1回合",
       "grade": "A",
@@ -11870,6 +12178,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11895,7 +12207,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200089",
       "officialId": 200089,
       "name": "国太威仪",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后前5回合，使我军群体的谋略属性提高34.0（受谋略属性影响），此效果结束后，使其进行策略攻击时的伤害提高28.0%（受谋略属性影响），持续直到战斗结束",
       "grade": "C",
@@ -11908,6 +12220,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -11933,7 +12249,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200090",
       "officialId": 200090,
       "name": "奇计迭出",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "1回合准备，对敌军全体发动策略攻击（伤害率92.0%，受谋略属性影响），有50.0%的几率对其再次发动策略攻击（伤害率133.0%，受谋略属性影响），并使其陷入燃烧状态，每回合都有等同于上述的几率额外损失一定兵力（伤害率76.0%，受谋略属性影响）持续2回合",
       "grade": "A",
@@ -11946,13 +12262,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200651",
       "officialId": 200651,
       "name": "妒后",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "窃取敌军群体32.0防御（受谋略属性影响），并平均增加至我军群体，持续2回合",
       "grade": "C",
@@ -11965,13 +12285,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200091",
       "officialId": 200091,
       "name": "幻花乱影",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "1回合准备，以一定兵力为代价，使敌军群体的攻击属性、防御属性、谋略属性、速度全部降低26.0（受谋略属性影响），并使其陷入暴走状态，进行无差别攻击，持续3回合",
       "grade": "B",
@@ -11984,6 +12308,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12009,7 +12337,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200092",
       "officialId": 200092,
       "name": "蝶舞红莲",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动策略攻击（伤害率119.0%，受谋略属性影响），并恢复友军全体一定兵力（恢复率109.0%，受谋略属性影响）",
       "grade": "A",
@@ -12022,6 +12350,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12047,7 +12379,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200607",
       "officialId": 200607,
       "name": "帝临回光",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后第3回合起，以无法恢复兵力为代价，使自身攻击距离+1，并进入分兵状态（伤害率50.0%，受谋略属性影响），同时令敌军群体处于恐慌中，每回合损失一定兵力（伤害率69.0%，受谋略属性影响），持续直到战斗结束，恐慌效果造成的伤害无视规避",
       "grade": "A",
@@ -12060,13 +12392,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200114",
       "officialId": 200114,
       "name": "伏兵",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动策略攻击（伤害率105.2%，受谋略属性影响）",
       "grade": "C",
@@ -12079,6 +12415,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·王烈·步】【魏·司马通·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12104,7 +12444,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200137",
       "officialId": 200137,
       "name": "急救",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "恢复友军单体一定兵力（恢复率108.0%，受谋略属性影响）",
       "grade": "",
@@ -12117,13 +12457,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·刘虞·骑】【群·袁氏兄弟·骑】【魏·司马馗·弓】【魏·司马进·步】【晋·冯紞·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200123",
       "officialId": 200123,
       "name": "落石",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动策略攻击（伤害率92.2%，受谋略属性影响），并使其防御属性降低5.2（受谋略属性影响），持续1回合",
       "grade": "C",
@@ -12136,13 +12480,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·刘虞·骑】【群·袁氏兄弟·骑】【魏·司马馗·弓】【魏·司马进·步】【晋·冯紞·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200610",
       "officialId": 200610,
       "name": "逆反毒杀",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "使敌军群体陷入恐慌及怯战状态，每回合损失一定兵力（伤害率83.0%，受谋略属性影响），并且无法发动普通攻击，持续2回合",
       "grade": "A",
@@ -12155,6 +12503,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12180,7 +12532,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200098",
       "officialId": 200098,
       "name": "凿穿",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率135.0%）",
       "grade": "C",
@@ -12193,13 +12545,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·周仓·步】【吴·黄盖·步】【魏·牛金·骑】【群·邓茂·步】【魏·曹昂·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200178",
       "officialId": 200178,
       "name": "坚守突击",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身攻击属性、防御属性提高24.0",
       "grade": "",
@@ -12212,13 +12568,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·周仓·步】【吴·黄盖·步】【魏·牛金·骑】【群·邓茂·步】【魏·曹昂·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200608",
       "officialId": 200608,
       "name": "陷阵营",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中使自身处于洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，攻城属性提高40.0",
       "grade": "B",
@@ -12231,13 +12591,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200609",
       "officialId": 200609,
       "name": "伪帝",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "以每回合损失自身一定兵力为代价，使攻击属性提高39.0，防御属性提高42.0，持续2回合",
       "grade": "C",
@@ -12250,13 +12614,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200110",
       "officialId": 200110,
       "name": "浴血",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，使攻击目标陷入动摇状态，每回合产生逃兵（伤害率75.0%），持续2回合",
       "grade": "",
@@ -12269,6 +12637,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·高览·步】【晋·成济·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12294,7 +12666,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200637",
       "officialId": 200637,
       "name": "悍将",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身攻击属性、防御属性、谋略属性提高45.0",
       "grade": "B",
@@ -12307,13 +12679,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200663",
       "officialId": 200663,
       "name": "云梯",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "在本场战斗中使我军步兵全体攻城属性提高20.0（受谋略属性影响）",
       "grade": "",
@@ -12326,6 +12702,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·祢衡·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12351,7 +12731,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200625",
       "officialId": 200625,
       "name": "竭忠",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "战斗中以自身受到的伤害提高9.0%为代价，使友军全体发动攻击的伤害提高18.0%",
       "grade": "C",
@@ -12364,13 +12744,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200055",
       "officialId": 200055,
       "name": "固军备战",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "受到攻击或策略攻击时，都有50.0%的几率使本次受到的伤害降低60.0%",
       "grade": "B",
@@ -12383,6 +12767,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12408,7 +12796,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200657",
       "officialId": 200657,
       "name": "蜀中老将",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "使我军全体攻击属性提高30.0，持续2回合",
       "grade": "C",
@@ -12421,6 +12809,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12446,7 +12838,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200199",
       "officialId": 200199,
       "name": "威压",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "使敌军群体进行攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
       "grade": "",
@@ -12459,6 +12851,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【蜀·吴兰·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12484,7 +12880,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200238",
       "officialId": 200238,
       "name": "援护",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "援护友军单体，为其抵挡普通攻击，持续2回合",
       "grade": "",
@@ -12497,6 +12893,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【蜀·雷铜·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12522,7 +12922,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200642",
       "officialId": 200642,
       "name": "借刀斩叛",
-      "type": "自带",
+      "type": "被动",
       "target": "敌军单体",
       "desc": "每回合有25.0%的几率对敌军单体发动一次猛攻（伤害率300.0%），但此后将无法再发动主动战法，持续1回合",
       "grade": "B",
@@ -12535,6 +12935,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12560,7 +12964,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200623",
       "officialId": 200623,
       "name": "锦马慑敌",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动攻击使其动摇，每回合损失一定兵力（伤害率140.0%），同时每回合有50.0%的几率陷入混乱，持续2回合",
       "grade": "A",
@@ -12573,13 +12977,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200613",
       "officialId": 200613,
       "name": "强弓连射",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对目标发动2次攻击（伤害率90.0%），并有50.0%的几率再度对目标发动最多2次攻击（伤害率70.0%）",
       "grade": "B",
@@ -12592,6 +13000,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12617,7 +13029,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200225",
       "officialId": 200225,
       "name": "横扫",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率75.0%），持续1回合",
       "grade": "",
@@ -12630,6 +13042,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·邓忠·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12655,7 +13071,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200207",
       "officialId": 200207,
       "name": "攻其要害",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率125.0%）",
       "grade": "C",
@@ -12668,6 +13084,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·曹洪·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12693,7 +13113,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200633",
       "officialId": 200633,
       "name": "黄须虎子",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身发动攻击时的伤害提高45.0%，并进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率100.0%），持续2回合",
       "grade": "A",
@@ -12706,13 +13126,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200614",
       "officialId": 200614,
       "name": "重谋",
-      "type": "自带",
+      "type": "主动",
       "target": "我军单体 ",
       "desc": "使我军单体的谋略属性提高16.8（受谋略属性影响），防御属性提高18.0（受谋略属性影响），持续3回合",
       "grade": "C",
@@ -12725,6 +13149,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12750,7 +13178,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200634",
       "officialId": 200634,
       "name": "十二奇策",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "移除友军单体的有害效果，并使每回合都有50.0%的几率随机获得洞察、规避、先手状态，持续3回合，每个效果独立判定",
       "grade": "B",
@@ -12763,13 +13191,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200656",
       "officialId": 200656,
       "name": "经久善战",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "使我军全体防御属性提高35.0，持续2回合",
       "grade": "C",
@@ -12782,13 +13214,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200624",
       "officialId": 200624,
       "name": "轻侠妄为",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后前3回合，使自身进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，攻击所造成的伤害提高40.0%",
       "grade": "A",
@@ -12801,13 +13237,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200641",
       "officialId": 200641,
       "name": "水泽伏击",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标发动出其不意的伏击（伤害率120.0%），此攻击有50.0%的几率再度触发一次",
       "grade": "B",
@@ -12820,13 +13260,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200626",
       "officialId": 200626,
       "name": "吴之副督",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "战斗开始后前3回合，以降低自身攻击20.0为代价，使友军全体防御属性提高50.0",
       "grade": "B",
@@ -12839,13 +13283,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200617",
       "officialId": 200617,
       "name": "王佐之才",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后前4回合，使我军群体受到攻击与策略攻击时的伤害降低15.0%（受谋略属性影响）",
       "grade": "B",
@@ -12858,13 +13306,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200229",
       "officialId": 200229,
       "name": "奇袭",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率121.0%，受谋略属性影响）",
       "grade": "",
@@ -12877,13 +13329,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·李通·骑】【汉·少帝·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200185",
       "officialId": 200185,
       "name": "援军之策",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率76.0%，受谋略属性影响）",
       "grade": "C",
@@ -12896,13 +13352,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·李通·骑】【汉·少帝·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200103",
       "officialId": 200103,
       "name": "强攻",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率105.0%），并使其防御属性降低15.0，持续2回合",
       "grade": "",
@@ -12915,6 +13375,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·宋谦·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -12940,7 +13404,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200662",
       "officialId": 200662,
       "name": "困守",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "因处于被围困状态而无法恢复兵力，自身发动攻击和策略攻击所造成的伤害提高25.0%",
       "grade": "C",
@@ -12953,13 +13417,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200660",
       "officialId": 200660,
       "name": "殉战",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身攻击属性提高25.0，防御属性提高35.0，但受到攻击时的伤害提高10.0%",
       "grade": "C",
@@ -12972,13 +13440,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200096",
       "officialId": 200096,
       "name": "北地枪王",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率60.0%），并有30.0%的几率使其陷入动摇状态，每回合产生逃兵（伤害率60.0%），持续2回合",
       "grade": "B",
@@ -12991,6 +13463,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13016,7 +13492,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200214",
       "officialId": 200214,
       "name": "规避",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身进入规避状态，将免疫接下来受到的1次攻击的伤害",
       "grade": "C",
@@ -13029,6 +13505,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·刘焉·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13054,7 +13534,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200677",
       "officialId": 200677,
       "name": "险途暗渡",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率150.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率80.0%），持续1回合，同时使其士气降低10.0对敌军群体发动一次攻击（伤害率150.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率80.0%），持续1回合，同时使其士气降低10.0。敌军全体每有一个士气一般的武将，使我军单体士气提升5.0，每有一个士气低落的武将，使我军单体士气提升10.0",
       "grade": "A",
@@ -13067,6 +13547,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13092,7 +13576,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200777",
       "officialId": 200777,
       "name": "预识",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军单体",
       "desc": "战斗中，自身发动主动战法后，为我军单体恢复一定兵力（150.2%，受谋略属性影响）",
       "grade": "B",
@@ -13105,6 +13589,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13130,7 +13618,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200733",
       "officialId": 200733,
       "name": "行樵偶遇",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率50.0%），并使友军单体发动主动战法或追击战法的伤害提高21.0%（受攻击属性影响），持续2回合",
       "grade": "B",
@@ -13143,6 +13631,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13168,7 +13660,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200071",
       "officialId": 200071,
       "name": "默守贤义",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "使我军群体以无法恢复兵力为代价，受到攻击或策略攻击时的伤害降低45.0%（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -13181,6 +13673,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13206,7 +13702,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200653",
       "officialId": 200653,
       "name": "南中平蛮",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动攻击使其动摇，每回合产生逃兵（伤害率135.0%），持续2回合，在此期间，其防御会下降25.0",
       "grade": "B",
@@ -13219,13 +13715,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200654",
       "officialId": 200654,
       "name": "安途若素",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "以进行策略攻击时伤害下降30.0%为代价，使自身防御增加20.0，受到策略攻击时的伤害下降20.0%",
       "grade": "C",
@@ -13238,13 +13738,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200603",
       "officialId": 200603,
       "name": "白楼独舞",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗开始后前3回合，使敌军群体进行攻击和策略攻击时的伤害降低26.0%（受谋略属性影响），此效果结束后，敌军将陷入暴走状态，进行无差别攻击，持续2回合",
       "grade": "S",
@@ -13257,13 +13761,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200097",
       "officialId": 200097,
       "name": "突进",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率115.0%）",
       "grade": "",
@@ -13276,6 +13784,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·宋宪·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13301,7 +13813,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200686",
       "officialId": 200686,
       "name": "符医术毒",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次策略攻击（伤害率168.0%，受谋略属性影响）并使其攻击属性降低32.0，持续1回合，同时有50.0%的几率为友军单体恢复一定兵力（恢复率153.0%，受谋略属性影响）",
       "grade": "B",
@@ -13314,6 +13826,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13339,7 +13855,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200695",
       "officialId": 200695,
       "name": "拒盾",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身受到攻击和策略攻击的伤害降低15.0%（受防御属性影响），持续2回合",
       "grade": "C",
@@ -13352,13 +13868,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·张横·骑】【群·李堪·骑】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·张横·骑】【群·李堪·骑】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200697",
       "officialId": 200697,
       "name": "退避",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身受到攻击和策略攻击的伤害降低18.0%（受速度属性影响），持续2回合",
       "grade": "C",
@@ -13371,13 +13891,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·马玩·骑】【群·成宜·骑】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·马玩·骑】【群·成宜·骑】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200698",
       "officialId": 200698,
       "name": "截断",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体受到攻击的伤害提高13.0%（受速度属性影响），持续2回合",
       "grade": "C",
@@ -13390,13 +13914,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·杨秋·骑】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·杨秋·骑】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200696",
       "officialId": 200696,
       "name": "迫近",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体进行攻击的伤害降低15.0%（受防御属性影响），持续2回合",
       "grade": "C",
@@ -13409,13 +13937,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·侯选·骑】【群·梁兴·骑】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·侯选·骑】【群·梁兴·骑】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200665",
       "officialId": 200665,
       "name": "抢攻",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身进行攻击的伤害提高19.2%（受速度属性影响），并且可以优先行动，持续2回合",
       "grade": "C",
@@ -13428,13 +13960,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·程银·骑】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·程银·骑】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200630",
       "officialId": 200630,
       "name": "拔剑护主",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身受到普通攻击时可以反击（伤害率80.0%），受到攻击和策略攻击的伤害降低30.0%，持续2回合",
       "grade": "B",
@@ -13447,13 +13983,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200678",
       "officialId": 200678,
       "name": "名士在野",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "战斗中，使友军全体谋略属性提高35.0，每回合有50.0%的几率使其受到攻击的伤害下降22.0%（受谋略属性影响），持续1回合",
       "grade": "C",
@@ -13466,6 +14006,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13491,7 +14035,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200682",
       "officialId": 200682,
       "name": "猜忌",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体防御属性降低41.0（受谋略属性影响）、速度属性降低53.0（受谋略属性影响），持续2回合，在此期间，每回合开始时都会移除其有益状态",
       "grade": "C",
@@ -13504,6 +14048,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13529,7 +14077,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200094",
       "officialId": 200094,
       "name": "将门虎女",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次进攻（伤害率190.0%），使其无法恢复兵力，持续2回合，并在1回合内，使其受到攻击伤害时有75.0%的几率引发一次动摇效果（伤害率35.0%）",
       "grade": "B",
@@ -13542,13 +14090,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200775",
       "officialId": 200775,
       "name": "明妃",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使自身与敌军群体处于怯战状态，无法普通攻击，持续2回合",
       "grade": "B",
@@ -13561,6 +14113,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13586,7 +14142,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200790",
       "officialId": 200790,
       "name": "青丘媚祸",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体",
       "desc": "本场战斗中，自身受到伤害后有60.0%的几率使距离4以内的随机敌军单体在下次行动时陷入暴走状态，进行无差别攻击，持续1回合，并使其下一次攻击和策略攻击的伤害下降24.0%（受谋略属性影响）",
       "grade": "A",
@@ -13599,6 +14155,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13624,7 +14184,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200936",
       "officialId": 200936,
       "name": "酩酊不休",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体受到的伤害提升30.0%（受谋略属性影响），持续2回合，同时该目标下次行动时，受到一次猛烈的策略攻击（伤害率240.0%，受谋略属性影响）",
       "grade": "B",
@@ -13637,6 +14197,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13662,7 +14226,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200887",
       "officialId": 200887,
       "name": "烽火覆周",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次火攻（伤害率95.0%，受谋略属性影响），烽火覆周每次发动火攻后有60.0%概率再次发动火攻，此概率每次降低20%，每次目标独立判定，战法结束后此概率重置",
       "grade": "B",
@@ -13675,6 +14239,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13700,7 +14268,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200851",
       "officialId": 200851,
       "name": "陷储立齐",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗中，我军全体每回合首次受到伤害后会随机吸取伤害来源的攻击、防御、谋略属性中的一种70.0并附加于自身，持续2回合",
       "grade": "B",
@@ -13713,13 +14281,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200604",
       "officialId": 200604,
       "name": "乱离中宫",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "移除友军全体的有害效果，并使其攻击属性提高27.0（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -13732,13 +14304,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200605",
       "officialId": 200605,
       "name": "飘零红颜",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "以一定兵力为代价，对敌军群体发动一次策略攻击（伤害率90.0%，受谋略属性影响），并使其的攻击距离-1，持续1回合",
       "grade": "C",
@@ -13751,13 +14327,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200606",
       "officialId": 200606,
       "name": "勇将继传",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后前4回合，使自身造成的伤害无视规避，在此期间，每回合都有90.0%进入分兵状态，普通攻击后同时对附近的敌军造成伤害（伤害率100.0%）",
       "grade": "C",
@@ -13770,6 +14350,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13795,7 +14379,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200699",
       "officialId": 200699,
       "name": "疾行速战",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率150.0%），并使其进行攻击的伤害降低31.0%（受速度属性影响），持续1回合",
       "grade": "C",
@@ -13808,6 +14392,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13833,7 +14421,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200628",
       "officialId": 200628,
       "name": "斧钺之利",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "移除敌军群体的有益效果，并使其因为受重伤而动摇，每回合产生逃兵（伤害率120.0%），持续2回合",
       "grade": "B",
@@ -13846,13 +14434,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200652",
       "officialId": 200652,
       "name": "双艳",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体陷入暴走状态，并有100.0%的几率使其攻击距离-1，持续2回合",
       "grade": "A",
@@ -13865,13 +14457,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200629",
       "officialId": 200629,
       "name": "国士",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后前4回合，使自身造成的伤害无视规避，每回合有100.0%的几率进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
       "grade": "B",
@@ -13884,13 +14480,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200050",
       "officialId": 200050,
       "name": "太平异道",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动策略攻击（伤害率124.0%，受谋略属性影响），并窃取其15.4的攻击转化至自身（受谋略属性影响），持续1回合",
       "grade": "B",
@@ -13903,13 +14503,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200655",
       "officialId": 200655,
       "name": "虎步关右",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身首次造成的攻击伤害提高70.0%（受速度属性影响）使自身首次造成的主动战法伤害提高70.0%（受速度属性影响），此效果最多叠加2次",
       "grade": "B",
@@ -13922,13 +14526,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200616",
       "officialId": 200616,
       "name": "苦肉计",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "以一定兵力为代价，普通攻击后使目标陷入混乱状态，持续1回合",
       "grade": "C",
@@ -13941,13 +14549,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200680",
       "officialId": 200680,
       "name": "定军扬威",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率100.0%）并进行挑衅，同时使自身受到攻击的伤害降低25.0%（受防御属性影响）战法距离提升至4，对敌军群体发动一次攻击（伤害率100.0%）并进行挑衅，同时使自身受到攻击和策略攻击时的伤害降低25.0%（受防御属性影响）",
       "grade": "A",
@@ -13960,6 +14572,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -13985,7 +14601,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200805",
       "officialId": 200805,
       "name": "迟智难酬",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次策略攻击（伤害率240.0%，受谋略属性影响），并使友军群体受到下1次策略攻击的伤害大幅度降低",
       "grade": "S",
@@ -13998,6 +14614,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14023,7 +14643,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200770",
       "officialId": 200770,
       "name": "盲侯奋勇",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗中，攻击无视兵种相克，自身受到伤害后有40.0%的几率对有效距离4以内的敌方群体发动一次攻击（伤害率60.0%）",
       "grade": "A",
@@ -14036,6 +14656,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14061,7 +14685,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200771",
       "officialId": 200771,
       "name": "霸王渡江",
-      "type": "自带",
+      "type": "被动",
       "target": "敌军单体",
       "desc": "每回合有40.0%的几率对有效距离5以内的敌军单体发动三次猛烈攻击（伤害率150.0%），每次攻击目标独立判定，本场战斗中，自身无法发动主动战法，每次攻击造成伤害后可使霸王渡江发动率提升3.0%，该效果可叠加5次每回合有40.0%的几率对有效距离5以内的敌军单体发动三次猛烈攻击（伤害率150.0%），每次攻击目标独立判定，本场战斗中，自身无法发动主动战法，每次攻击造成伤害后可使霸王渡江发动率提升5.0%，该效果可叠加5次",
       "grade": "A",
@@ -14074,13 +14698,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200769",
       "officialId": 200769,
       "name": "樊渊泅囚",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "1回合准备，对敌军全体发动一次猛攻（伤害率190.0%），并使其陷入犹豫状态，持续1回合",
       "grade": "S",
@@ -14093,13 +14721,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200772",
       "officialId": 200772,
       "name": "夔吼象踏",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中，使自身进入分兵状态（伤害率60.0%），同时每回合对有效距离4以内的敌军单体发动一次策略攻击（伤害率70.2%，受谋略属性影响）",
       "grade": "S",
@@ -14112,6 +14744,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14137,7 +14773,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200631",
       "officialId": 200631,
       "name": "身佑废皇",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "使友军全体受到攻击的伤害以及发动攻击造成的伤害都降低28.0%（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -14150,13 +14786,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200080",
       "officialId": 200080,
       "name": "破凰",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "立即引发敌军全体由破凰带来的剩余妖术效果，同时对敌军单体发动一次策略攻击（伤害率155.0%，受谋略属性影响），并使其每受到伤害时，额外引发一次妖术伤害（伤害率130.0%，受谋略属性影响），最多生效3次，持续3回合立即引发敌军全体由破凰带来的剩余妖术效果，同时对敌军兵力最低的单体发动一次策略攻击（伤害率155.0%，受谋略属性影响），并使其每受到伤害时，额外引发一次妖术伤害（伤害率130.0%，受谋略属性影响），最多生效3次，持续3回合",
       "grade": "A",
@@ -14169,13 +14809,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200685",
       "officialId": 200685,
       "name": "黄天余音",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "吸取敌军单体26.0的全属性（受谋略属性影响）并附加于自身与友军单体，持续1回合",
       "grade": "A",
@@ -14188,13 +14832,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200689",
       "officialId": 200689,
       "name": "不动如山",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中，行动时会移除所有有害效果，同时防御属性提高100.0，谋略属性提高25.0战斗中，行动时会移除所有有害效果，同时全属性提高100.0",
       "grade": "A",
@@ -14207,6 +14855,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14232,7 +14884,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200692",
       "officialId": 200692,
       "name": "奇佐鬼谋",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使自身和友军单体谋略属性提高22.0%，并使敌军群体随机陷入混乱、暴走、怯战、犹豫状态中的1种，持续2回合",
       "grade": "S",
@@ -14245,6 +14897,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14270,7 +14926,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200693",
       "officialId": 200693,
       "name": "密谋定蜀",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体进行攻击和策略攻击的伤害降低30.0%（受谋略属性影响），并陷入恐慌（伤害率143.0%，受谋略属性影响），每当其试图发动追击战法将额外受到妖术诅咒（伤害率133.0%，受谋略属性影响），持续2回合；每次发动后，自身造成策略攻击伤害提升5.0%（受谋略属性影响），可叠加，持续到战斗结束",
       "grade": "S",
@@ -14283,13 +14939,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200694",
       "officialId": 200694,
       "name": "火势风威",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "1回合准备，对敌军全体发动策略攻击（伤害率111.0%，受谋略属性影响），并使其在受到下一次伤害时，会额外引发一次燃烧（伤害率221.0%，受谋略属性影响）",
       "grade": "S",
@@ -14302,13 +14962,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200012",
       "officialId": 200012,
       "name": "辕门射戟",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动二次无视兵种相克的攻击（伤害率120.0%），并使第一次受击的敌军进行攻击的伤害大幅度降低，持续1回合，每次攻击的目标独立选择",
       "grade": "S",
@@ -14321,6 +14985,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14346,7 +15014,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200014",
       "officialId": 200014,
       "name": "酒池肉林",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后前2回合，使我军全体受到的所有伤害降低32.0%（受防御属性影响），此效果结束后，将在1回合内使我军全体造成的所有伤害大幅度降低，第4回合开始，使自身造成攻击伤害时能够借此恢复相当于伤害值35.0%的兵力，持续直到战斗结束",
       "grade": "S",
@@ -14359,13 +15027,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200700",
       "officialId": 200700,
       "name": "斩将搴旗",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次猛攻（伤害率325.0%），但此后将无法进行普通攻击，持续1回合",
       "grade": "C",
@@ -14378,13 +15050,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200701",
       "officialId": 200701,
       "name": "据凉通叛",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "移除敌军群体有益效果，并使其陷入恐慌（伤害率110.0%，受谋略属性影响），每回合损失一定兵力，持续2回合",
       "grade": "C",
@@ -14397,13 +15073,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200702",
       "officialId": 200702,
       "name": "先登死士",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身谋略属性降低30.0，进入洞察状态，免疫怯战、犹豫、混乱、暴走、挑衅，受到攻击可以进行反击（伤害率175.0%），持续2回合",
       "grade": "C",
@@ -14416,6 +15096,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14441,7 +15125,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200703",
       "officialId": 200703,
       "name": "北疆白马",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后前3回合，使我军全体骑兵攻击属性提高36.0，速度属性提高50.0",
       "grade": "C",
@@ -14454,13 +15138,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200719",
       "officialId": 200719,
       "name": "上将潘凤",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次猛攻（伤害率355.0%），下一回合内，自身将会陷入混乱",
       "grade": "C",
@@ -14473,6 +15161,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14498,7 +15190,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200720",
       "officialId": 200720,
       "name": "师君乐道",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "使友军全体攻击属性、防御属性、谋略属性、速度属性提高22.0，持续2回合，并为其恢复一定兵力（恢复率113.0%，受谋略属性影响）",
       "grade": "C",
@@ -14511,6 +15203,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14536,7 +15232,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200725",
       "officialId": 200725,
       "name": "愚勇",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身攻击属性提高30.0，但受到的所有伤害提高12.0%，持续2回合，并对敌军群体1-2目标发动一次猛攻（伤害率210.0%）",
       "grade": "C",
@@ -14549,6 +15245,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14574,7 +15274,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200727",
       "officialId": 200727,
       "name": "伪刺",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身规避下一次伤害，并在进行攻击时伤害提高65.0%，持续1回合",
       "grade": "C",
@@ -14587,6 +15287,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14612,7 +15316,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200726",
       "officialId": 200726,
       "name": "莽撞",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身防御属性提高35.0，同时随机使自身恢复一定兵力（恢复率150.0%），或进行攻击的伤害提高14.0%（受防御属性影响）",
       "grade": "C",
@@ -14625,13 +15329,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200729",
       "officialId": 200729,
       "name": "顽抗",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "移除自身有害效果，并对敌军单体发动一次攻击（伤害率80.0%）",
       "grade": "",
@@ -14644,13 +15352,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·阿会喃·步】【群·董荼那·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200730",
       "officialId": 200730,
       "name": "火兽冲锋",
-      "type": "自带",
+      "type": "被动",
       "target": "敌军单体",
       "desc": "使自身进行普通攻击时的伤害提高80.0%，每回合有50.0%的几率对敌军单体发动一次攻击（伤害率160.0%），并使自身下一次普通攻击所造成的伤害额外提高160.0%",
       "grade": "A",
@@ -14663,6 +15375,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14688,7 +15404,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200736",
       "officialId": 200736,
       "name": "二夫之勇",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率140.0%），并使其发动主动战法造成的伤害降低50.0%，受到主动战法的伤害提高25.0%，持续2回合",
       "grade": "B",
@@ -14701,6 +15417,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14726,7 +15446,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200737",
       "officialId": 200737,
       "name": "明其虚实",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗中，使敌军全体的谋略降低6.0%，此效果每回合叠加一次，并在前2回合，使敌军群体陷入犹豫状态，无法发动主动战法",
       "grade": "S",
@@ -14739,6 +15459,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14764,7 +15488,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200738",
       "officialId": 200738,
       "name": "中宫追玺",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后，使我军全体受到的所有伤害降低60.0%，每当受到攻击或策略攻击的伤害后，其对此类型伤害的减伤效果将降低1/5",
       "grade": "C",
@@ -14777,13 +15501,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200739",
       "officialId": 200739,
       "name": "虎豹督军",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2-3目标）",
       "desc": "战斗开始后首回合，使我军群体进行攻击的伤害提高50.0%（受攻击属性影响），此效果每回合降低1/8",
       "grade": "A",
@@ -14796,13 +15524,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200740",
       "officialId": 200740,
       "name": "望族不息",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗中，当自身受到策略攻击的伤害后，有90.0%的几率能恢复一定兵力（恢复率136.0%，受谋略属性影响）",
       "grade": "C",
@@ -14815,13 +15547,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200747",
       "officialId": 200747,
       "name": "近攻",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对战法有效距离内最近的敌军发动一次攻击（伤害率200.0%）",
       "grade": "C",
@@ -14834,13 +15570,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·蒯良＆蒯越·步】【群·严白虎·步】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·严白虎·步】【群·蒯良＆蒯越·步】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200741",
       "officialId": 200741,
       "name": "孤城死守",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗中，使敌军群体攻击降低21.0（受谋略属性影响），攻城降低25.0%",
       "grade": "C",
@@ -14853,6 +15593,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14878,7 +15622,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200742",
       "officialId": 200742,
       "name": "白毦亲兵",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "援护我军大营，为其抵挡普通攻击，并使自身受到的所有伤害降低50.0%，持续2回合",
       "grade": "C",
@@ -14891,6 +15635,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14916,7 +15664,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200743",
       "officialId": 200743,
       "name": "陈王求隐",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体造成的所有伤害降低39.0%（受谋略属性影响），在3回合内逐步恢复正常",
       "grade": "B",
@@ -14929,13 +15677,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200744",
       "officialId": 200744,
       "name": "奇士薄寿",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身谋略属性提高50.0，战斗开始后前4回合，使自身防御属性降低50.0%，并处于洞察状态",
       "grade": "B",
@@ -14948,6 +15700,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -14973,7 +15729,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200745",
       "officialId": 200745,
       "name": "固陵杀将",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使自身进行攻击的伤害提高42.0%（受攻击属性影响），持续1回合，并对敌军单体发动一次攻击（伤害率130.0%）",
       "grade": "B",
@@ -14986,13 +15742,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200746",
       "officialId": 200746,
       "name": "拒战言和",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "使友军全体受到的所有伤害降低24.0%（受谋略属性影响），持续2回合，但同时会使自身处于怯战状态",
       "grade": "B",
@@ -15005,13 +15765,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200748",
       "officialId": 200748,
       "name": "远射",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "1回合准备，对战法有效距离内最远的敌军发动一次攻击（伤害率255.0%）",
       "grade": "C",
@@ -15024,13 +15788,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·刘豹·骑】【群·楼班·骑】获得",
       "studyDesc2": "4星武将可促使战法研究进度+10%\n【群·楼班·骑】【群·刘豹·骑】可促使战法研究进度+30%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200236",
       "officialId": 200236,
       "name": "疑兵",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入暴走状态，进行无差别攻击，持续1回合",
       "grade": "C",
@@ -15043,13 +15811,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·张让·骑】【汉·赵忠·骑】【汉·高望·骑】【汉·张恭·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200234",
       "officialId": 200234,
       "name": "陷阱",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入混乱状态，持续1回合",
       "grade": "C",
@@ -15062,13 +15834,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·张让·骑】【汉·赵忠·骑】【汉·高望·骑】【汉·张恭·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200227",
       "officialId": 200227,
       "name": "佯攻",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入怯战状态，无法进行普通攻击，持续2回合",
       "grade": "C",
@@ -15081,13 +15857,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·夏恽·步】【汉·郭胜·步】【汉·毕岚·弓】【汉·段珪·弓】【汉·韩悝·弓】【汉·宋典·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200213",
       "officialId": 200213,
       "name": "反计",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入犹豫状态，无法发动主动战法，持续2回合",
       "grade": "C",
@@ -15100,13 +15880,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·夏恽·步】【汉·郭胜·步】【汉·毕岚·弓】【汉·段珪·弓】【汉·韩悝·弓】【汉·宋典·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200756",
       "officialId": 200756,
       "name": "藤甲突击",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "不受敌方指挥战法的影响，同时每回合首次发动主动战法后，对距离4以内敌军群体发动一次攻击（伤害率100.0%），并使其下一次造成的攻击或策略攻击伤害降低50.0%不受敌方指挥战法的影响，同时每回合发动主动战法时，对距离4以内敌军群体发动一次攻击（伤害率100.0%），并使其下一次造成的攻击或策略攻击伤害降低50.0%",
       "grade": "B",
@@ -15119,13 +15903,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200760",
       "officialId": 200760,
       "name": "花中秀",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动攻击（伤害率255.0%），并使其攻击、谋略降低45.0%（受攻击属性影响），持续2回合",
       "grade": "B",
@@ -15138,13 +15926,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200761",
       "officialId": 200761,
       "name": "疑兵避战",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后前2回合，使自身不攻击也不发动主动战法，受到普通攻击和主动战法的伤害大幅度降低，此效果结束后，将使自身攻击的伤害提高20.0%，直到战斗结束",
       "grade": "B",
@@ -15157,13 +15949,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200762",
       "officialId": 200762,
       "name": "计定山越",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合失去一定兵力（伤害率134.0%，受谋略属性影响），若敌军群体士气一般或低落，则额外使其陷入围困状态，无法恢复兵力，持续2回合。使自身和友军单体恢复一定兵力（恢复率98.0%，受谋略属性影响）。",
       "grade": "B",
@@ -15176,13 +15972,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200763",
       "officialId": 200763,
       "name": "辅臣应势",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率100.0%），并使友军全体发动主动战法所造成的伤害提高28.0%（受防御属性影响），持续1回合",
       "grade": "C",
@@ -15195,13 +15995,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200764",
       "officialId": 200764,
       "name": "落首箭",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "1回合准备，对敌军单体发动一次猛攻（伤害率300.0%），并对敌军大营再度发动一次攻击（伤害率180.0%），同时使敌军大营陷入混乱状态，持续1回合-2回合1回合准备，对敌军单体发动一次猛攻（伤害率300.0%），并对敌军大营再度发动一次攻击（伤害率180.0%），同时使敌军大营陷入混乱状态并且受到所有伤害增加20.0%（受攻击属性影响），持续1回合-2回合",
       "grade": "A",
@@ -15214,6 +16018,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15239,7 +16047,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200765",
       "officialId": 200765,
       "name": "虎贲牙将",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对战法有效距离内最近的敌军发动一次攻击（伤害率125.0%），防御属性减少27.0%（受攻击属性影响），持续1回合，有50.0%的几率对该目标再度发动一次攻击（伤害率125.0%）",
       "grade": "B",
@@ -15252,13 +16060,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200773",
       "officialId": 200773,
       "name": "金匮要略",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后前3回合，使我军全体受到的所有伤害降低20.4%（受谋略属性影响），同时使我军全体受到伤害时，有50.0%的几率能恢复一定兵力（恢复率80.0%，受谋略属性影响）",
       "grade": "S",
@@ -15271,13 +16083,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200780",
       "officialId": 200780,
       "name": "斫方善辞",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2-3个目标）",
       "desc": "移除我军群体的有害效果，并立即恢复其一定兵力（恢复率105.0%，受谋略属性影响）",
       "grade": "C",
@@ -15290,6 +16106,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15315,7 +16135,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200776",
       "officialId": 200776,
       "name": "覆舟不弃",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军单体 ",
       "desc": "战斗中，使我军前锋受到攻击伤害降低20.0%（受防御属性影响），但前锋受到策略伤害后使我军全体发动攻击造成的伤害降低20.0%，持续1回合",
       "grade": "B",
@@ -15328,13 +16148,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200774",
       "officialId": 200774,
       "name": "北狄互伐",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "发动二次猛攻（伤害率170.0%），第一次攻击目标必定为敌军单体，第二次攻击目标会在自身与随机敌军单体中选择，若攻击自身则伤害较小",
       "grade": "B",
@@ -15347,13 +16171,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200768",
       "officialId": 200768,
       "name": "传檄荆襄",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入恐慌状态，每回合损失较多兵力（伤害率137.0%，受谋略属性影响），同时发动主动战法造成的伤害降低25.0%，持续2回合",
       "grade": "B",
@@ -15366,13 +16194,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200779",
       "officialId": 200779,
       "name": "土垒督战",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗中，使我军全体骑兵攻城属性提高15.2（受速度属性影响）",
       "grade": "B",
@@ -15385,13 +16217,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200778",
       "officialId": 200778,
       "name": "衡众",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "对友军群体发动以下两种效果的一种：被攻击时受到的伤害降低12.0%，发动攻击时造成的伤害提高12.0%，持续3回合，并且效果每回合逐渐增强",
       "grade": "B",
@@ -15404,13 +16240,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200785",
       "officialId": 200785,
       "name": "破阵强袭",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率119.0%，受谋略属性影响），并有40.0%的几率使其陷入暴走状态，持续1回合，此战法首次发动后，每次造成伤害时都使自身策略攻击的伤害提高5.0%，可叠加6次",
       "grade": "A",
@@ -15423,13 +16263,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200791",
       "officialId": 200791,
       "name": "西乡武功",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗前2回合，使我军群体每回合都能优先行动，并使其在第2回合行动前对距离4以内的敌军群体2人发动一次策略攻击（伤害率191.0%，受谋略属性影响），且下一次受到的伤害大幅降低",
       "grade": "A",
@@ -15442,6 +16286,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15467,7 +16315,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200795",
       "officialId": 200795,
       "name": "人公将军",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗前4回合，使我军全体的防御属性提高60.0，并使我军前锋、中军受到普通攻击时会进行反击（伤害率75.0%），在此期间，敌方武将存在妖术效果时造成的攻击伤害降低20.0%",
       "grade": "B",
@@ -15480,13 +16328,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200796",
       "officialId": 200796,
       "name": "地公将军",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动策略攻击（伤害率136.0%，受谋略属性影响），并吸取其24.0的防御、谋略属性并附加于友军群体（受谋略属性影响），若有目标存在妖术效果，则额外附加属性至自身，持续2回合",
       "grade": "B",
@@ -15499,13 +16351,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200250",
       "officialId": 200250,
       "name": "龙骧虎步",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "准备1回合，对敌军群体发动一次猛击（伤害率200.0%），并使自身攻击、防御属性提升20.0，持续2回合。",
       "grade": "B",
@@ -15518,13 +16374,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200824",
       "officialId": 200824,
       "name": "西陵克晋",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗中，每回合有50.0%的几率使我军当前攻击属性最高的武将对距离4以内的敌军发动一次攻击（伤害率150.0%），我军当前谋略属性最高的武将对距离4以内的敌军发动一次策略攻击（伤害率150.0%，受谋略属性影响），并各自恢复一定兵力",
       "grade": "S",
@@ -15537,6 +16397,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15562,7 +16426,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200828",
       "officialId": 200828,
       "name": "难知如阴",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军单体",
       "desc": "战斗中，每2回合使友军单体在1回合内主动主战法发动率提高120.0%，如该主战法需要准备，则有75.0%的几率跳过1回合准备时间战斗中，每2回合使友军单体在1回合内主动主战法发动率提高120.0%，如该主战法需要准备，则有75.0%的几率跳过1回合准备时间，第3回合发动时目标调整为友军全体",
       "grade": "S",
@@ -15575,6 +16439,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15600,7 +16468,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200836",
       "officialId": 200836,
       "name": "平壑拒吴",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军防御属性最低及兵力最低的单体分别发动一次攻击（伤害率210.0%），同时使敌军群体陷入怯战状态，无法进行普通攻击，持续2回合",
       "grade": "A",
@@ -15613,6 +16481,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15638,7 +16510,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200837",
       "officialId": 200837,
       "name": "令明负榇",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后前3回合，每回合使我军群体骑兵及步兵攻击造成的伤害提高6.0%，该效果可叠加3次，持续直到战斗结束，第4回合起进入分兵状态（伤害率50.0%，受速度属性影响），持续直到战斗结束",
       "grade": "A",
@@ -15651,13 +16523,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200843",
       "officialId": 200843,
       "name": "疮痍累身",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗开始后，使自身受到的所有伤害降低84.0%，每当受到攻击或策略攻击的伤害后，对此类型伤害的减伤效果将降低1/12，位于前锋及中军时前2回合援护友军全体；同时每次受到伤害后有50.0%几率使攻击属性、防御属性、谋略属性提高20.0，该效果可叠加，持续直到战斗结束",
       "grade": "A",
@@ -15670,13 +16546,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200848",
       "officialId": 200848,
       "name": "未笄难言",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）敌军全体",
       "desc": "使敌军群体陷入妖术诅咒，每回合损失一定兵力（伤害率108.0%，受谋略属性影响），持续2回合；同时使敌军群体进行攻击和策略攻击时的伤害降低18.0%，该效果可叠加，持续直到战斗结束使敌军全体陷入妖术诅咒，每回合损失一定兵力（伤害率108.0%，受谋略属性影响），持续2回合；同时使敌军全体进行攻击和策略攻击时的伤害降低18.0%，该效果可叠加，持续直到战斗结束",
       "grade": "B",
@@ -15689,13 +16569,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200849",
       "officialId": 200849,
       "name": "兵行巧变",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2-3个目标）",
       "desc": "1回合准备，对敌军群体2目标发动一次攻击（伤害率260.0%），使其攻击、防御、谋略属性下降40.0（受攻击属性影响），同时我军群体攻击、防御、谋略属性提升40.0，持续2回合；或对敌军全体3目标发动一次攻击（伤害率200.0%），并使其攻击、防御、谋略属性下降80.0（受攻击属性影响），持续2回合1回合准备，对敌军群体2目标发动一次攻击（伤害率260.0%），使其攻击、防御、谋略属性下降40.0（受攻击属性影响），同时我军群体攻击、防御、谋略属性提升40.0；或对敌军全体3目标发动一次攻击（伤害率200.0%），并使其攻击、防御、谋略属性下降80.0（受攻击属性影响），所有属性变化效果持续3回合",
       "grade": "A",
@@ -15708,6 +16592,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15733,7 +16621,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200121",
       "officialId": 200121,
       "name": "溃堤",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动策略攻击（伤害率79.8%，受谋略属性影响），并使其攻击属性降低10.0（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -15746,6 +16634,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·司马朗·步】【魏·司马孚·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15771,7 +16663,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200115",
       "officialId": 200115,
       "name": "夹攻",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动策略攻击（伤害率89.6%，受谋略属性影响）",
       "grade": "C",
@@ -15784,13 +16676,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·司马恂·骑】【魏·司马敏·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200852",
       "officialId": 200852,
       "name": "俭仪蹈和",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "战斗开始后前3回合，使敌军攻击属性最高的武将攻击属性下降100.0，谋略属性最高武将谋略属性下降100.0，同时敌军群体每次发动主动战法或普通攻击后有50.0%几率使自身在下一回合随机陷入犹豫或怯战状态中的一种",
       "grade": "A",
@@ -15803,13 +16699,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200857",
       "officialId": 200857,
       "name": "计谕废立",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌方单体发动2次策略攻击（伤害率140.0%，受谋略属性影响），并使其分别陷入恐慌和燃烧状态（伤害率156.0%，受谋略属性影响），持续2回合，2次目标独立判定",
       "grade": "A",
@@ -15822,6 +16722,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15847,7 +16751,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200865",
       "officialId": 200865,
       "name": "奉令护蜀",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中，任意友军发动普通攻击、主动战法、追击战法后，马岱的下1次普通攻击造成的伤害提升35.0%（受攻击属性影响），下1次受到的所有伤害降低20.0%（受防御属性影响），以上效果可叠加5次",
       "grade": "A",
@@ -15860,6 +16764,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15885,7 +16793,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200864",
       "officialId": 200864,
       "name": "国士无双",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后前3回合，使自身与友军单体每回合有90.0%的几率进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果，同时自身攻击造成的伤害提升25.0%（受攻击属性影响）",
       "grade": "A",
@@ -15898,13 +16806,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200882",
       "officialId": 200882,
       "name": "谋谟帷幄",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "自身及友军单体每回合首次试图发动主动战法时，有60.0%几率对敌军单体发动一次策略攻击（伤害率171.0%，受谋略属性影响）；同时当我军全体各自低于初始兵力的60%时，其每回合首次试图发动主动战法时会额外对敌军单体发动一次策略攻击（伤害率76.0%，受谋略属性影响）",
       "grade": "S",
@@ -15917,6 +16829,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15942,7 +16858,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200884",
       "officialId": 200884,
       "name": "巧音唤蝶",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次策略攻击（伤害率176.0%，受谋略属性影响）并使其陷入燃烧状态，当目标兵力高于初始兵力50%时受到一次策略伤害（伤害率86.0%，受谋略属性影响），持续1回合；同时使我军群体恢复一定兵力（恢复率161.0%，受谋略属性影响），并使其进入休整状态，当目标兵力低于初始兵力50%时恢复一定兵力（恢复率82.0%，受谋略属性影响），持续1回合",
       "grade": "S",
@@ -15955,6 +16871,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -15980,7 +16900,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200885",
       "officialId": 200885,
       "name": "宣威再战",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标",
       "desc": "战斗开始后前3回合，普通攻击后对攻击目标发动一次攻击（伤害率150.0%）；第4回合起，普通攻击后对敌军单体随机发动1-3次攻击（伤害率150.0%），每次目标独立判定",
       "grade": "A",
@@ -15993,13 +16913,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200898",
       "officialId": 200898,
       "name": "京观垒冢",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "自身造成伤害时，有70.0%几率对目标额外发动一次攻击（伤害率200.0%）或策略攻击（伤害率200.0%）",
       "grade": "S",
@@ -16012,6 +16936,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16037,7 +16965,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200899",
       "officialId": 200899,
       "name": "断首何怒",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中，自身受到伤害后有60.0%的几率使伤害来源的下一次攻击和策略攻击伤害下降42.0%（受防御属性影响）。同时每回合行动时使自身受到的所有伤害降低80.0%，每当受到攻击或策略攻击伤害后，减伤效果将降低1/5",
       "grade": "S",
@@ -16050,13 +16978,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200902",
       "officialId": 200902,
       "name": "缚父临危",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率210.0%），并使自身及友军攻击属性最高的单体下两次攻击造成的伤害提升30.0%。同时使友军中吕布下一次造成的伤害无视规避",
       "grade": "B",
@@ -16069,13 +17001,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200903",
       "officialId": 200903,
       "name": "寇略四州",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，对敌军群体发动一次攻击（伤害率170.0%），使其攻击属性降低30.0，同时自身攻击属性提高60.0，持续2回合",
       "grade": "B",
@@ -16088,6 +17024,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16113,7 +17053,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200904",
       "officialId": 200904,
       "name": "去缚犒军",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "正式回合开始后，前3回合使自身受到的攻击伤害提升20.0%，从第4回合起，每回合自身行动前为我军群体恢复一定兵力（恢复率200.0%）",
       "grade": "B",
@@ -16126,13 +17066,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200905",
       "officialId": 200905,
       "name": "叛羌急袭",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率225.0%），下一回合内，自身将会陷入犹豫状态",
       "grade": "B",
@@ -16145,13 +17089,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200906",
       "officialId": 200906,
       "name": "羌帅衅敌",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使自身和敌军单体互相挑衅，并使目标陷入犹豫状态，持续2回合；2回合后，使其陷入怯战状态，持续1回合；下一回合内，自身将会陷入犹豫状态",
       "grade": "B",
@@ -16164,6 +17112,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16189,7 +17141,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200907",
       "officialId": 200907,
       "name": "岁贡固疆",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "1回合准备，为友军群体恢复一定兵力（恢复率160.0%），并使其在下次行动时对距离3以内敌军单体发动一次攻击（伤害率150.0%）",
       "grade": "B",
@@ -16202,13 +17154,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200908",
       "officialId": 200908,
       "name": "疫箭拦江",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "1回合准备，使敌军群体陷入动摇（伤害率130.0%）和恐慌状态（伤害率130.0%，受谋略属性影响），持续2回合",
       "grade": "B",
@@ -16221,13 +17177,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200909",
       "officialId": 200909,
       "name": "名震敌国",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军单体",
       "desc": "战斗开始后，使自己与随机友军单体在第1、3、5回合自身行动前，分别提高攻击属性30.0，防御属性40.0，谋略属性50.0",
       "grade": "B",
@@ -16240,13 +17200,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200910",
       "officialId": 200910,
       "name": "月偃蛮平",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率190.0%），并使其陷入犹豫状态，持续2回合-3回合",
       "grade": "A",
@@ -16259,13 +17223,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200911",
       "officialId": 200911,
       "name": "勇而无算",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率200.0%），同时使自身受到的谋略攻击伤害提高50.0%，持续1回合",
       "grade": "B",
@@ -16278,13 +17246,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200912",
       "officialId": 200912,
       "name": "万夫之勇",
-      "type": "自带",
+      "type": "追击",
       "target": "敌军单体 ",
       "desc": "普通攻击后，随机对敌军中军或大营发动一次猛攻（伤害率160.0%），并使其陷入动摇状态，每回合损失一定兵力（伤害率80.0%），持续2回合",
       "grade": "B",
@@ -16297,13 +17269,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200915",
       "officialId": 200915,
       "name": "统军畏慎",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后，我军全体每回合有80.0%几率攻击或策略攻击造成的伤害提高25.0%（受谋略属性影响），此几率每回合降低10%；每回合有30.0%几率造成伤害时无视敌方60.0%防御或谋略属性，此几率每回合提升10%。武将获得伤害提高效果与无视目标属性效果的类型由自身攻击与谋略中较高的属性决定战斗开始后，我军全体每回合有100.0%几率攻击或策略攻击造成的伤害提高25.0%（受谋略属性影响），此几率每回合降低10%；每回合有30.0%几率造成伤害时无视敌方60.0%防御或谋略属性，此几率每回合提升10%。武将获得伤害提高效果与无视目标属性效果的类型由自身攻击与谋略中较高的属性决定",
       "grade": "S",
@@ -16316,13 +17292,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200927",
       "officialId": 200927,
       "name": "将出关西",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "对随机敌军单体发动2-4次攻击（伤害率250.0%），每次伤害率减少40.0%。首次攻击造成的伤害无视规避，并使该目标无法恢复兵力，持续2回合对随机敌军单体发动2-5次攻击（伤害率250.0%），每次伤害率减少40.0%。首次攻击造成的伤害无视规避，并使该目标无法恢复兵力，持续2回合",
       "grade": "A",
@@ -16335,6 +17315,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16360,7 +17344,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200928",
       "officialId": 200928,
       "name": "竭忠尽智",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2-3个目标）",
       "desc": "以自身与友军攻击属性最低的武将下一次行动时进入怯战状态为代价，使我军群体受到的攻击伤害降低20.0%（受谋略属性影响），该效果可以叠加1次，持续2回合；并使我军群体下2次造成的策略伤害提高30.0%（受谋略属性影响）",
       "grade": "B",
@@ -16373,13 +17357,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200930",
       "officialId": 200930,
       "name": "奇兵拒北",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "每回合行动时有30.0%几率对敌军大营和中军分别发动一次攻击（伤害率180.0%），同时使速度最高的友军单体对敌军大营及中军分别发动一次攻击（伤害率120.0%-180.0%）。每回合奇兵拒北未生效时可提升其5%的发动率，可叠加，生效后发动率提升效果消失",
       "grade": "S",
@@ -16392,13 +17380,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200934",
       "officialId": 200934,
       "name": "言出必克",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "正式回合开始后，使我军全体受到的策略攻击伤害降低40.0%（受谋略属性影响），每次受到策略攻击伤害后，减伤效果降低1/8。同时，每回合行动时，有60.0%的概率为友军全体分摊一次50%受到的策略伤害",
       "grade": "B",
@@ -16411,6 +17403,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16436,7 +17432,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200933",
       "officialId": 200933,
       "name": "将门有将",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "每回合自身行动时有30.0%的概率获得以下效果：获得连击效果，持续1回合；获得分兵效果（伤害率100.0%），持续1回合。此概率每回合结束时提高10.0%，每个效果独立判断",
       "grade": "A",
@@ -16449,13 +17445,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200937",
       "officialId": 200937,
       "name": "全主诿异",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内3个目标）",
       "desc": "使敌军全体被施加的燃烧、恐慌和妖术诅咒伤害提升20.0%（受谋略属性影响），持续3回合，同时对敌军群体1-2目标额外发动1次策略攻击（伤害率197.0%，受谋略属性影响）",
       "grade": "B",
@@ -16468,6 +17468,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16493,7 +17497,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200940",
       "officialId": 200940,
       "name": "文德椒房",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗中，每回合自身首次发动主动战法后，使我军群体进行策略攻击时的伤害提升10.0%（受谋略属性影响），此效果最多可叠加3次",
       "grade": "C",
@@ -16506,13 +17510,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200939",
       "officialId": 200939,
       "name": "登锋陷阵",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗中使自身处于洞察状态，当自身兵力首次低于初始兵力的90%、70%、50%和30%时，使自身下次行动时所有攻击类主动战法发动率提高120.0%战斗中使自身处于洞察状态，当自身兵力首次低于初始兵力的90%、70%、50%和30%时，进入规避状态，免疫下1次伤害，使自身下次行动时所有攻击类主动战法发动率提高120.0%",
       "grade": "A",
@@ -16525,6 +17533,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16550,7 +17562,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200947",
       "officialId": 200947,
       "name": "威震河朔",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率200.0%），使自身与友军单体的主动战法伤害提升20.0%（受攻击属性影响），持续2回合。此战法每发动一次，其发动率降低10.0%对敌军群体发动一次策略攻击（伤害率240.0%，受谋略属性影响），使自身与友军单体的主动战法伤害提升24.0%（受谋略属性影响），持续2回合。此战法每发动一次，其发动率降低10.0%",
       "grade": "A",
@@ -16563,6 +17575,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16588,7 +17604,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200948",
       "officialId": 200948,
       "name": "怒浪伐敌",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标发动一次袭击（伤害率240.0%）。此战法每发动一次，其发动率提高10.0%，可叠加",
       "grade": "A",
@@ -16601,13 +17617,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200950",
       "officialId": 200950,
       "name": "七步释嫌",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "战斗中，我军全体每次发动普通攻击、试图发动主动战法或试图发动追击战法时，曹植使随机敌军单体下1次造成的伤害降低6.0%（受谋略属性影响），可叠加。我军全体发动普通攻击、试图发动主动战法或试图发动追击战法每累计7次时，曹植对我军群体恢复一定兵力（恢复率135.0%，受谋略属性影响）",
       "grade": "A",
@@ -16620,13 +17640,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200952",
       "officialId": 200952,
       "name": "抚民励德",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "第2、4、6回合自身行动时，使我军全体谋略、防御属性提升80.0，并且受到的所有伤害减少20.0%（受谋略属性影响），持续2回合。武将每次造成伤害时，自身该效果降低1/4。每次施加可刷新由抚民励德带来的属性与减伤效果",
       "grade": "S",
@@ -16639,6 +17663,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16664,7 +17692,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200954",
       "officialId": 200954,
       "name": "汉韵旷野",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军全体",
       "desc": "战斗开始后，使敌军全体进行攻击或策略攻击时，有40.0%几率使伤害降低30.0%（受谋略属性影响）。每回合王昭君行动时，使敌军全体伤害降低几率提升3.0%，非汉阵营武将伤害降低几率每回合额外提升3.0%",
       "grade": "B",
@@ -16677,6 +17705,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16702,7 +17734,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200955",
       "officialId": 200955,
       "name": "动如雷震",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2-3个目标）",
       "desc": "使我军群体追击战法发动率提升100.0%，追击战法伤害提升40.0%（受速度属性影响），持续1回合",
       "grade": "S",
@@ -16715,13 +17747,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200957",
       "officialId": 200957,
       "name": "五兵之烈",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次猛烈的攻击（伤害率300.0%）。当授予曹彰不同种类宝物时，将额外获得以下效果。剑：先移除目标的有益效果再发动攻击；刀：使自身造成的攻击伤害提升15.0%，可叠加并持续直至战斗结束；长兵：使目标攻击距离-1，持续2回合；弓：有60.0%几率该战法目标数+1；其余宝物或未授予：使目标防御属性降低36.0%（受攻击属性影响），持续2回合",
       "grade": "S",
@@ -16734,6 +17770,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16759,7 +17799,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200958",
       "officialId": 200958,
       "name": "鏖兵卫主",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "使我军群体每回合有45.0%几率增加50.0点防御属性（受防御属性影响），持续1回合。同时当自身位于中军及前锋时，大营兵力首次低于初始兵力的90%、70%、50%时，自身必定援护友军群体1回合，且自身下2次受到的伤害大幅度降低",
       "grade": "A",
@@ -16772,13 +17812,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200961",
       "officialId": 200961,
       "name": "奋疾先登",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "每回合行动时使自身攻击伤害提升8.0%，自身速度每高于一名武将，则有70.0%几率使攻击伤害额外提升8.0%，自身速度每低于或等于一名武将，则有30.0%几率使自身攻击伤害额外提升8.0%。当本战法造成的攻击伤害提升效果达到40%时，将对距离3以内的敌军群体发动一次攻击（伤害率190.0%），发动后攻击伤害提升效果消失，同时使目标速度属性降低20.0，该效果可叠加并持续直到战斗结束",
       "grade": "S",
@@ -16791,13 +17835,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200960",
       "officialId": 200960,
       "name": "鸾凤和鸣",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "战斗中，自身每回合首次发动主动战法后，使我军群体2目标恢复一定兵力（恢复率85.0%，受谋略属性影响）；每回合自身行动时，使我军全体3目标造成的下一次随机目标的控制效果（混乱、犹豫、暴走、怯战）额外对一个目标生效",
       "grade": "A",
@@ -16810,13 +17858,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200962",
       "officialId": 200962,
       "name": "赐剑长驱",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军全体",
       "desc": "战斗中自身无法释放主动战法或进行普通攻击，令友军全体每回合首次成功释放主动战法后，有40.0%几率（受谋略属性影响）再次发动（跳过所有准备回合），造成原战法50.0%的伤害和恢复效果",
       "grade": "A",
@@ -16829,6 +17881,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16854,7 +17910,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200963",
       "officialId": 200963,
       "name": "绮阁飘香",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体",
       "desc": "战斗中，每回合以损失自身一定兵力为代价，令敌军当前兵力最高的单体武将攻击、谋略、防御属性下降6.0%（受谋略属性影响），该效果可叠加，持续至战斗结束；当该武将谋略属性低于自身时，令其下一次造成的攻击或策略伤害大幅度降低",
       "grade": "A",
@@ -16867,13 +17923,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200965",
       "officialId": 200965,
       "name": "持刀从武",
-      "type": "自带",
+      "type": "被动",
       "target": "敌军单体",
       "desc": "自身每回合行动时，每次有75.0%概率对友军大营上次行动阶段造成伤害的目标发动一次攻击（伤害率100.0%），重复三次，每次目标独立判定。当该攻击目标处于控制状态时，对同一目标的伤害率每次递增20.0%",
       "grade": "A",
@@ -16886,6 +17946,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16911,7 +17975,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200966",
       "officialId": 200966,
       "name": "尽言直谏",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军群体",
       "desc": "自身每回合行动时，随机令友方群体2个主动战法在下次行动阶段发动率提升10.0%且造成的伤害增加30.0%，若持续时间内任一战法发动，则下回合可选择3个主动战法",
       "grade": "S",
@@ -16924,13 +17988,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200968",
       "officialId": 200968,
       "name": "连环计",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "对敌军单体施加连环计，依次发动下列战法：对连环计目标发动一次“伐谋”；若连环计目标谋略低于自身，则对随机敌军单体发动一次“迷阵”；若连环计目标处于暴走状态，则对随机敌军单体发动一次“落雷”。每个战法的效果与原战法在同等级下效果相同",
       "grade": "A",
@@ -16943,13 +18011,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200969",
       "officialId": 200969,
       "name": "赈穷救急",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "恢复友军单体一定兵力（恢复率160.0%，受谋略属性影响），并使其下1次攻击造成的伤害提高20.0%",
       "grade": "B",
@@ -16962,6 +18034,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -16987,7 +18063,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200970",
       "officialId": 200970,
       "name": "勇追穷寇",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，使攻击目标陷入动摇状态，每回合产生逃兵（伤害率75.0%），并使自身攻击属性提升20.0，持续2回合",
       "grade": "B",
@@ -17000,13 +18076,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200971",
       "officialId": 200971,
       "name": "名士在朝",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "使自身和友军单体进入规避状态，免疫接下来受到的1次伤害",
       "grade": "B",
@@ -17019,6 +18099,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17044,7 +18128,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200972",
       "officialId": 200972,
       "name": "三让徐州",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军单体",
       "desc": "第2、3、4回合自身行动时，恢复友军兵力最低单体大量兵力（恢复率168.0%，受谋略属性影响），并使其攻击、谋略与防御属性提升25.0，持续至战斗结束，可叠加",
       "grade": "A",
@@ -17057,13 +18141,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200973",
       "officialId": 200973,
       "name": "游议定益",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率98.0%，受谋略属性影响），当其每次进行普通攻击后，将额外受到一次策略伤害（伤害率112.0%，受谋略属性影响），持续2回合",
       "grade": "A",
@@ -17076,6 +18164,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17101,7 +18193,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200974",
       "officialId": 200974,
       "name": "登坛相仪",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次策略攻击（伤害率120.0%，受谋略属性影响），并使其每次受到普通攻击时额外引发一次恐慌效果（伤害率43.0%，受谋略属性影响），持续1回合",
       "grade": "A",
@@ -17114,13 +18206,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200975",
       "officialId": 200975,
       "name": "忧勤王事",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身受到的普通攻击伤害和追击战法伤害降低15.0%，每回合自身行动时额外叠加一次，此效果最多叠加3次，持续至战斗结束；当自身处于前锋时，第3、4、5回合每回合援护友军兵力最低武将",
       "grade": "A",
@@ -17133,13 +18229,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200983",
       "officialId": 200983,
       "name": "运筹决胜",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体",
       "desc": "自身每次试图发动主动战法时，有30.0%几率令敌军单体陷入暴走状态，持续1回合，有50.0%几率对敌军全体处于混乱、暴走状态的目标发动一次策略攻击（伤害率220.0%，受谋略属性影响)",
       "grade": "S",
@@ -17152,6 +18252,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17177,7 +18281,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200984",
       "officialId": 200984,
       "name": "怀德畏威",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体",
       "desc": "令谋略最低的友军单体对敌军随机单体发动一次攻击（伤害率160.0%）；自身对敌军群体2目标发动一次策略攻击（伤害率160.0%，受谋略属性影响）。若2次目标均为同一武将，则使其陷入混乱状态，持续1回合",
       "grade": "S",
@@ -17190,13 +18294,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200985",
       "officialId": 200985,
       "name": "谋议宏图",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗开始后首回合，我军全体受到伤害降低30.0%（受谋略属性影响），该效果每回合开始时减少1/8；我军全体每回合开始时士气提升8.0",
       "grade": "S",
@@ -17209,13 +18317,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200986",
       "officialId": 200986,
       "name": "盛气横凌",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率260.0%）。若攻击目标士气高昂，则使其陷入混乱状态，持续1回合；若攻击目标士气一般或低落，则额外对其发动一次攻击（伤害率80.0%-160.0%）",
       "grade": "S",
@@ -17228,6 +18340,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17253,7 +18369,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200987",
       "officialId": 200987,
       "name": "三军夺帅",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "自身每成功发动普通攻击、主动及追击战法后，自身对距离5以内敌军单体发动一次攻击（伤害率180.0%）并使自身攻击属性提高10.0，或对敌军群体2目标发动一次策略攻击（伤害率100.0%，受谋略属性影响）并使目标谋略属性降低5.0，属性变化可叠加，持续到战斗结束",
       "grade": "S",
@@ -17266,13 +18382,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200988",
       "officialId": 200988,
       "name": "明慧通透",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体",
       "desc": "移除友军单体有害效果，恢复其大量兵力（恢复率168.0%，受谋略属性影响），并使其在下回合有50.0%概率进入洞察状态",
       "grade": "B",
@@ -17285,6 +18405,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17310,7 +18434,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200989",
       "officialId": 200989,
       "name": "持节镇西",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军全体",
       "desc": "使友军全体在每次造成攻击伤害前，攻击提高22.0（受攻击属性影响），可叠加4次，持续1回合；每次造成策略攻击伤害前，谋略提高22.0（受谋略属性影响），可叠加4次，持续1回合；每次受到伤害前，防御提高22.0（受防御属性影响），可叠加4次，持续1回合",
       "grade": "A",
@@ -17323,13 +18447,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200990",
       "officialId": 200990,
       "name": "赏顺伐逆",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "受到恢复效果时，有75.0%几率为友军全体恢复一定兵力（恢复率65.0%，受谋略属性影响）；受到策略伤害时，有75.0%几率对伤害来源发动一次策略攻击（伤害率180.0%，受谋略属性影响）",
       "grade": "A",
@@ -17342,6 +18470,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17367,7 +18499,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200991",
       "officialId": 200991,
       "name": "潜谋远计",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗中前4回合自身受到伤害时，有60.0%几率使自身恢复一定兵力（恢复率100.0%，受谋略属性影响）并使谋略属性和防御属性提高15.0，可叠加，持续至战斗结束；第5回合起，每回合行动时，对谋略低于自身的敌军全体有60.0%几率造成一次策略攻击（伤害率140.0%，受谋略属性影响）。仅对自身处于前锋或中军位置时生效",
       "grade": "S",
@@ -17380,13 +18512,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200997",
       "officialId": 200997,
       "name": "广陵绝唱",
-      "type": "自带",
+      "type": "主动",
       "target": "友军全体",
       "desc": "为友军全体恢复一定兵力（恢复率172.0%，受谋略属性影响），并使随机友军单体士气提升5.0",
       "grade": "A",
@@ -17399,6 +18535,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17424,7 +18564,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200998",
       "officialId": 200998,
       "name": "幕天席地",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体",
       "desc": "每回合自身行动时使敌军兵力最高单体下一次造成的伤害降低30.0%（受谋略属性影响），我军兵力最低单体下一次受到的伤害降低30.0%（受谋略属性影响）",
       "grade": "A",
@@ -17437,13 +18577,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200999",
       "officialId": 200999,
       "name": "青白分明",
-      "type": "自带",
+      "type": "主动",
       "target": "敌友单体",
       "desc": "1回合准备，选择自身以外随机单体，若为敌军，则造成一次策略攻击（伤害率175.0%，受谋略属性影响），若为友军，则造成一次恢复（恢复率175.0%，受谋略属性影响），重复三次，每次目标独立判定",
       "grade": "A",
@@ -17456,13 +18600,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-201000",
       "officialId": 201000,
       "name": "缮甲厉兵",
-      "type": "自带",
+      "type": "主动",
       "target": "友军全体",
       "desc": "令友军全体免疫怯战效果，并使其攻击伤害提升12.0%（受到谋略属性影响），持续2回合",
       "grade": "B",
@@ -17475,6 +18623,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17500,7 +18652,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-201001",
       "officialId": 201001,
       "name": "推己及人",
-      "type": "自带",
+      "type": "被动",
       "target": "友军全体",
       "desc": "当友军全体受到伤害后，自身有100.0%概率进入洞察状态，持续1回合",
       "grade": "C",
@@ -17513,13 +18665,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-201002",
       "officialId": 201002,
       "name": "神解音律",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "令我军群体恢复一定兵力（恢复率80.0%，受谋略属性影响），并使我军群体谋略属性提高20.0，持续1回合",
       "grade": "B",
@@ -17532,6 +18688,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17557,7 +18717,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-201003",
       "officialId": 201003,
       "name": "卿卿我我",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "我方出战武将有女性武将时，战斗中，女性武将每回合行动时有30.0%几率恢复一定兵力（恢复率80.0%，受谋略属性影响），同时自身每回合有30.0%几率使自身受到的攻击伤害和策略伤害降低20.0%（受谋略属性影响)，持续1回合",
       "grade": "B",
@@ -17570,13 +18730,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-201004",
       "officialId": 201004,
       "name": "明德至亲",
-      "type": "自带",
+      "type": "主动",
       "target": "友军全体",
       "desc": "对友军全体发动以下两种效果的一种：攻击、谋略属性提升40.0，持续2回合；受到攻击和策略伤害降低30.0%，持续2回合",
       "grade": "B",
@@ -17589,6 +18753,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17614,7 +18782,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-201005",
       "officialId": 201005,
       "name": "唯瞻父兄",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率150.0%），使我军大营进行攻击和策略攻击时的伤害提升10.0%，持续1回合",
       "grade": "B",
@@ -17627,13 +18795,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200245",
       "officialId": 200245,
       "name": "强军猛进",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "以自身士气下降5为代价，对敌军群体发动一次猛攻（伤害率150.0%）",
       "grade": "B",
@@ -17646,13 +18818,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200108",
       "officialId": 200108,
       "name": "重伤",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动攻击（伤害率115.0%），并使其攻击属性降低15.0，持续2回合",
       "grade": "",
@@ -17665,13 +18841,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【晋·田续·骑】【汉·曹豹·弓】【吴·贺齐·步】【汉·侍卫·弓】【汉·侍卫·步】【汉·侍卫·骑】【魏·侍卫·弓】【魏·侍卫·步】【魏·侍卫·骑】【蜀·侍卫·弓】【蜀·侍卫·步】【蜀·侍卫·骑】【吴·侍卫·弓】【吴·侍卫·步】【吴·侍卫·骑】【群·侍卫·弓】【群·侍卫·步】【群·侍卫·骑】【晋·侍卫·弓】【晋·侍卫·步】【晋·侍卫·骑】【汉·侍卫·弓】【汉·侍卫·步】【汉·侍卫·骑】【魏·侍卫·弓】【魏·侍卫·步】【魏·侍卫·骑】【蜀·侍卫·弓】【蜀·侍卫·步】【蜀·侍卫·骑】【吴·侍卫·弓】【吴·侍卫·步】【吴·侍卫·骑】【群·侍卫·弓】【群·侍卫·步】【群·侍卫·骑】【晋·侍卫·弓】【晋·侍卫·步】【晋·侍卫·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200189",
       "officialId": 200189,
       "name": "投石轰击",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "在本场战斗中使我军弓兵全体攻城属性提高13.0（受谋略属性影响）",
       "grade": "",
@@ -17684,13 +18864,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【晋·田续·骑】【汉·曹豹·弓】【吴·贺齐·步】【汉·侍卫·弓】【汉·侍卫·步】【汉·侍卫·骑】【魏·侍卫·弓】【魏·侍卫·步】【魏·侍卫·骑】【蜀·侍卫·弓】【蜀·侍卫·步】【蜀·侍卫·骑】【吴·侍卫·弓】【吴·侍卫·步】【吴·侍卫·骑】【群·侍卫·弓】【群·侍卫·步】【群·侍卫·骑】【晋·侍卫·弓】【晋·侍卫·步】【晋·侍卫·骑】【汉·侍卫·弓】【汉·侍卫·步】【汉·侍卫·骑】【魏·侍卫·弓】【魏·侍卫·步】【魏·侍卫·骑】【蜀·侍卫·弓】【蜀·侍卫·步】【蜀·侍卫·骑】【吴·侍卫·弓】【吴·侍卫·步】【吴·侍卫·骑】【群·侍卫·弓】【群·侍卫·步】【群·侍卫·骑】【晋·侍卫·弓】【晋·侍卫·步】【晋·侍卫·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200128",
       "officialId": 200128,
       "name": "狼烟",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率47.6%，受谋略属性影响），持续2回合",
       "grade": "C",
@@ -17703,6 +18887,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【晋·王业·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+20%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17728,7 +18916,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-201006",
       "officialId": 201006,
       "name": "同仇敌忾",
-      "type": "自带",
+      "type": "被动",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "我军全体每次受到伤害后，其距离1以内的友军全体受到的伤害降低2.0%（受谋略属性影响）且造成所有伤害提升2.0%（受谋略属性影响），最多可叠加8次，持续至战斗结束",
       "grade": "S",
@@ -17741,6 +18929,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -17766,7 +18958,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-201007",
       "officialId": 201007,
       "name": "辞后定朝",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "战斗前3回合，自身行动时有90.0%几率移除自身受到的由指挥、主动、追击战法带来的有害和有益效果；第4回合开始，使友军全体中男性武将攻击和防御属性提升40.0（受谋略属性影响），女性武将谋略和防御属性提升40.0（受谋略属性影响）",
       "grade": "A",
@@ -17779,13 +18971,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200670",
       "officialId": 200670,
       "name": "谨言",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内2个目标）",
       "desc": "使友军全体受到策略攻击的伤害降低16.0%（受谋略属性影响），持续2回合",
       "grade": "",
@@ -17798,13 +18994,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·王子服·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200186",
       "officialId": 200186,
       "name": "援军秘策",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内2个目标）",
       "desc": "战斗开始后第5回合起，每回合恢复我军群体一定兵力（恢复率103.0%，受谋略属性影响）",
       "grade": "B",
@@ -17817,13 +19017,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·郑泰·步】【吴·孙静·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200197",
       "officialId": 200197,
       "name": "犒劳",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身进行策略攻击时的伤害提高35.0%，持续2回合",
       "grade": "",
@@ -17836,13 +19040,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·郑泰·步】【吴·孙静·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200138",
       "officialId": 200138,
       "name": "包扎",
-      "type": "自带",
+      "type": "主动",
       "target": "我军群体（有效距离内1-2个目标）",
       "desc": "恢复我军群体一定兵力（恢复率98.0%，受谋略属性影响）",
       "grade": "C",
@@ -17855,13 +19063,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·杨彪·骑】【蜀·廖立·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200193",
       "officialId": 200193,
       "name": "固阵",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身受到策略攻击的伤害降低35.0%，持续2回合",
       "grade": "",
@@ -17874,13 +19086,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【汉·杨彪·骑】【蜀·廖立·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200195",
       "officialId": 200195,
       "name": "奋起",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身进行攻击时的伤害提高35.0%，持续2回合",
       "grade": "",
@@ -17893,13 +19109,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·朱灵·弓】【蜀·士仁·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200192",
       "officialId": 200192,
       "name": "铁壁",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身受到攻击和策略攻击时的伤害降低18.0%",
       "grade": "",
@@ -17912,13 +19132,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【魏·朱灵·弓】【蜀·士仁·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200101",
       "officialId": 200101,
       "name": "齐射",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率90.0%），并使其攻击属性降低16.0，持续2回合",
       "grade": "C",
@@ -17931,13 +19155,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·吕范·弓】【群·程远志·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200179",
       "officialId": 200179,
       "name": "疾风突击",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身攻击属性、速度属性提高24.0",
       "grade": "",
@@ -17950,13 +19178,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·吕范·弓】【群·程远志·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200129",
       "officialId": 200129,
       "name": "毒泉",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失一定兵力（伤害率85.0%，受谋略属性影响），持续2回合",
       "grade": "C",
@@ -17969,13 +19201,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·孙瑜·弓】【群·郭图·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200200",
       "officialId": 200200,
       "name": "乱阵",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "使敌军群体进行策略攻击时的伤害降低15.0%（受谋略属性影响），持续2回合",
       "grade": "",
@@ -17988,13 +19224,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·孙瑜·弓】【群·郭图·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200118",
       "officialId": 200118,
       "name": "火辎",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，对敌军群体发动策略攻击（伤害率75.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率75.0%，受谋略属性影响），持续1回合",
       "grade": "C",
@@ -18007,13 +19247,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·骆统·弓】【群·马元义·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200182",
       "officialId": 200182,
       "name": "文韬武略",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身攻击属性、谋略属性提高24.0",
       "grade": "",
@@ -18026,13 +19270,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【吴·骆统·弓】【群·马元义·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200104",
       "officialId": 200104,
       "name": "乱击",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "1回合准备，对敌军群体发动一次攻击（伤害率120.0%），并使其防御属性降低15.0，持续2回合",
       "grade": "",
@@ -18045,13 +19293,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·裴元绍·骑】【晋·王衍·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200180",
       "officialId": 200180,
       "name": "速战坚守",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "使自身防御属性、速度属性提高24.0",
       "grade": "",
@@ -18064,13 +19316,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·裴元绍·骑】【晋·王衍·弓】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200134",
       "officialId": 200134,
       "name": "休整",
-      "type": "自带",
+      "type": "主动",
       "target": "友军群体（有效距离内1-2个目标）",
       "desc": "使友军群体进入休整状态，每回合恢复一定兵力（恢复率87.0%，受谋略属性影响），持续2回合",
       "grade": "",
@@ -18083,13 +19339,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·波才·骑】【蜀·麋芳·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200191",
       "officialId": 200191,
       "name": "坚守",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身受到攻击的伤害降低35.0%，持续2回合",
       "grade": "",
@@ -18102,13 +19362,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·波才·骑】【蜀·麋芳·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200124",
       "officialId": 200124,
       "name": "绝道",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "对敌军群体发动策略攻击（伤害率105.0%，受谋略属性影响），并使其防御属性降低6.0（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -18121,13 +19385,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·许攸·弓】【蜀·黄皓·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200203",
       "officialId": 200203,
       "name": "劫粮",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内1-2个目标）",
       "desc": "使敌军群体受到策略攻击时的伤害提高13.0%（受谋略属性影响），持续2回合",
       "grade": "",
@@ -18140,13 +19408,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【群·许攸·弓】【蜀·黄皓·骑】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200666",
       "officialId": 200666,
       "name": "游击",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体陷入动摇，每回合产生逃兵（伤害率125.0%），持续2回合",
       "grade": "C",
@@ -18159,13 +19431,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "该战法可通过拆解武将【晋·荣晦·步】获得",
       "studyDesc2": "3星武将可促使战法研究进度+10%",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200993",
       "officialId": 200993,
       "name": "舍身卫主",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "战斗开始后，受到2距离以内敌军的伤害时，有60.0%几率对伤害来源发动一次攻击（伤害率120.0%）。位于前锋或中军时，战斗开始后前3回合，敌军对友军全体造成的攻击伤害由典韦承担。",
       "grade": "S",
@@ -18178,6 +19454,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18203,7 +19483,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200242",
       "officialId": 200242,
       "name": "举抑臧否",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌友单体",
       "desc": "每回合自身行动时随机选取攻击、防御、谋略三种属性之一， 使该属性最低的敌军单体对应属性降低20.0（受谋略属性影响），并有60.0%几率获得犹豫、怯战、围困中的1种效果，持续1回合；使该属性最高的友军单体对应属性提升20.0（受谋略属性影响），并有60.0%几率获得先手、洞察、无视规避中的1种效果，持续1回合",
       "grade": "A",
@@ -18216,13 +19496,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200246",
       "officialId": 200246,
       "name": "缓师徐持",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗中每回合，已行动的敌军群体受到伤害后，沮授有50.0%几率（受谋略属性影响）令目标的攻击、防御、谋略、速度属性下降20.0点，重复两次，每次概率独立判定，可叠加至战斗结束",
       "grade": "S",
@@ -18235,13 +19519,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200247",
       "officialId": 200247,
       "name": "计焚乌巢",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "1回合准备，对敌军单体发动一次策略攻击（伤害率160.0%,受谋略属性影响），使有效距离内最远的敌军受到主动战法伤害提升15.0%（受谋略属性影响），并有50.0%几率使其陷入燃烧状态（伤害率120.0%，受谋略属性影响），持续2回合。",
       "grade": "A",
@@ -18254,13 +19542,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200251",
       "officialId": 200251,
       "name": "烈火焚舟",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标",
       "desc": "普通攻击后，使攻击目标陷入燃烧状态（伤害率150.0%，受谋略属性影响），持续2回合；若目标已处于烈火焚舟的燃烧状态，则立即引发目标剩余的燃烧伤害，并使其和相邻的敌军士气降低10.0，并陷入燃烧状态（伤害率270.0%，受谋略属性影响），持续1回合",
       "grade": "S",
@@ -18273,6 +19565,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18298,7 +19594,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200254",
       "officialId": 200254,
       "name": "衔命建功",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军全体",
       "desc": "敌军全体每回合首次受到持续性伤害时，周瑜有50.0%几率对其发动一次策略攻击（伤害率140.0%，受谋略属性影响）；第3回合起，敌军武将陷入持续性伤害时，立即额外引发一次该持续性伤害",
       "grade": "S",
@@ -18311,13 +19607,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200255",
       "officialId": 200255,
       "name": "伏波扬砂",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "使我军全体普通攻击伤害提升25.0%（受攻击属性影响）。当友军全体发动普通攻击时，造成的伤害共计提升幅度每达到40%，马腾获得1层【扬砂】效果，最多叠加20层；马腾发动普通攻击后，将消耗4层【扬砂】效果进入连击状态，额外发动一次普通攻击，此效果将重复触发直到【扬砂】效果不足4层",
       "grade": "S",
@@ -18330,13 +19630,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200256",
       "officialId": 200256,
       "name": "持玺兴兵",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军全体",
       "desc": "在友军全体受到伤害后，若其兵力低于初始兵力的50%，为其恢复一定兵力（恢复率200.0%，受谋略属性影响）并提升其30.0的攻击、谋略属性，同时自身攻击、谋略属性下降30.0，持续至战斗结束。该效果共可触发3次",
       "grade": "A",
@@ -18349,13 +19653,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200257",
       "officialId": 200257,
       "name": "审时定计",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军全体",
       "desc": "战斗开始后，敌军全体被施加特殊负面效果前，程昱有50.0%概率使其本回合受到所有伤害提升30.0%（受谋略属性影响）并恢复我军单体一定兵力（恢复率65.0%，受谋略属性影响）；战斗开始后，我军全体被施加挑衅、围困以及控制效果时，有50.0%概率抵御该负面效果，使其无法施加",
       "grade": "S",
@@ -18368,6 +19676,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18393,7 +19705,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200258",
       "officialId": 200258,
       "name": "雪奋短兵",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "自身受到伤害时有50.0%概率进入规避状态，每回合结束时使自身攻击距离-1。攻击距离小于等于1时，不再触发攻击距离下降及规避效果，同时每回合自身行动时，对攻击距离内的敌军单体造成2次攻击伤害（伤害率60.0%）,有70.0%几率使攻击距离外的敌军群体进入动摇状态，行动时损失一定兵力（伤害率180.0%），持续1回合",
       "grade": "A",
@@ -18406,13 +19718,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200266",
       "officialId": 200266,
       "name": "怀橘遗亲",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内5个目标）",
       "desc": "每回合开始时，降低自身和我军除大营外友军单体10.0点攻击、防御、谋略属性，并提升我军大营20.0点攻击、防御、谋略属性，持续至该回合结束",
       "grade": "C",
@@ -18425,13 +19741,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200262",
       "officialId": 200262,
       "name": "僭号天子",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "战斗开始后获得玉玺：我军全体受到的所有伤害的32.0%（受防御属性影响）由玉玺承担；第二回合起，每回合开始时玉玺对袁术造成其上一回合承担所有伤害，袁术仅受到来自玉玺伤害的50%，该比例每回合上升10%",
       "grade": "S",
@@ -18444,6 +19764,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18469,7 +19793,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200264",
       "officialId": 200264,
       "name": "疲兵沮意",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体",
       "desc": "每回合开始时，为我军群体叠加2层避锐效果，在其受到伤害前，消耗1层避锐效果令该次伤害降低10.0%（受谋略属性影响），避锐效果生效后有50%几率令敌军单体陷入燃烧状态（伤害率150.0%，受谋略属性影响），持续1回合，并使其后续受到疲兵沮意的燃烧伤害伤害率提升80.0%，可叠加至战斗结束",
       "grade": "S",
@@ -18482,6 +19806,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18507,7 +19835,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200265",
       "officialId": 200265,
       "name": "雅虑适时",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "第3、5、7回合开始时，令我军全体受到所有伤害降低24.0%（受谋略属性影响）并进入同心状态，同心状态下任一武将受到伤害时，其余处于同心状态下武将为其分摊15%受到的伤害，持续1回合",
       "grade": "A",
@@ -18520,13 +19848,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200268",
       "officialId": 200268,
       "name": "忠克猛烈",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体",
       "desc": "本战法造成的伤害无视兵种相克及目标的防御属性；对敌军单体发动1次攻击（伤害率280.0%），并使其陷入犹豫状态，持续1回合；直到陈到下回合行动前，目标每受到1次攻击伤害，陈到对其发动1次攻击(伤害率80.0%)，期间最多可触发3次",
       "grade": "S",
@@ -18539,13 +19871,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200269",
       "officialId": 200269,
       "name": "举贤决机",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌我全体",
       "desc": "首回合起，我军全体在被成功施加属性提升效果前，有40.0%几率使其恢复一定兵力（恢复率60.0%，受谋略属性影响），敌军全体在被成功施加属性下降效果前，有40.0%几率对其造成一次策略伤害（伤害率100.0%，受谋略属性影响），每种属性单独计算",
       "grade": "S",
@@ -18558,6 +19894,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18583,7 +19923,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200270",
       "officialId": 200270,
       "name": "天子诏令",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体",
       "desc": "每回合开始时，随机选择一名敌军单体，使其受到所有伤害提升16.0%（受谋略属性影响），可叠加，持续至战斗结束，同时使友军全体本回合内主动战法的首次伤害或首次普通攻击，有100.0%几率选中该目标，无视距离；若回合结束前该敌军单体受到3次或以上伤害，则使其受到伤害提升效果额外叠加一次，并使其全属性下降12.0（受谋略属性影响），可叠加，持续至战斗结束每回合开始时，随机选择一名敌军单体，使其受到所有伤害提升16.0%（受谋略属性影响），可叠加，持续至战斗结束，同时使友军全体本回合内主动战法的首次伤害或首次普通攻击，有100.0%几率选中该目标，无视距离；若回合结束前该敌军单体受到2次或以上伤害，则使其受到伤害提升效果额外叠加一次，并使其全属性下降12.0（受谋略属性影响），可叠加，持续至战斗结束",
       "grade": "S",
@@ -18596,13 +19936,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200272",
       "officialId": 200272,
       "name": "当敌制决",
-      "type": "自带",
+      "type": "指挥",
       "target": "自己 ",
       "desc": "战斗开始后，使自身受到的伤害降低50.0%；受到伤害后，使伤害来源受到的伤害提升8.0%（受防御属性影响），可叠加，持续至战斗结束",
       "grade": "S",
@@ -18615,6 +19959,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18640,7 +19988,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200273",
       "officialId": 200273,
       "name": "率尔方雅",
-      "type": "自带",
+      "type": "主动",
       "target": "敌我群体（有效距离内3个目标）",
       "desc": "对自身以外的随机3名武将造成一次攻击伤害（伤害率10.0%），若目标为友军，则使其造成的所有伤害提升22.0%（受谋略属性影响），持续1回合，并使其立即对敌军群体发动一次攻击（伤害率160.0%）；若目标为敌军，则使其随机陷入犹豫、混乱、暴走、怯战状态中的一种，持续1回合",
       "grade": "A",
@@ -18653,13 +20001,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200275",
       "officialId": 200275,
       "name": "心战为上",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "使我军全体每对敌军造成一次伤害时，伤害目标士气降低5点，我军全体累计可触发9次；使我军全体对敌军造成攻击伤害后，借此恢复相当于伤害值50.0%（受谋略属性影响）的兵力",
       "grade": "A",
@@ -18672,6 +20024,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18697,7 +20053,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200277",
       "officialId": 200277,
       "name": "守静却敌",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "使我军全体受到的恢复效果提升10.0%（受谋略属性影响）；在第六回合、第八回合开始时，使我军全体对随机敌军单体造成一次策略伤害（伤害率100.0%，受谋略属性影响），每当我军武将受到一次恢复效果，使受到恢复的武将造成【守静却敌】的策略伤害时，伤害提升10.0%（受谋略属性影响），伤害提升效果至多可叠加15次",
       "grade": "A",
@@ -18710,13 +20066,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200278",
       "officialId": 200278,
       "name": "佐命晋武",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "战斗开始后，我军全体士气提升时，造成的所有伤害提升4.8%（受谋略属性影响），持续至战斗结束，此效果最多叠加8次；每回合结束时，为我军兵力最低单体恢复2次兵力（恢复率100.0%，受谋略属性影响），每次目标独立判定",
       "grade": "A",
@@ -18729,13 +20089,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200279",
       "officialId": 200279,
       "name": "奇门遁甲",
-      "type": "自带",
+      "type": "主动",
       "target": "自己",
       "desc": "使自身随机发动除自身外的敌我全体所有主动战法中的1个，跳过全部准备回合",
       "grade": "A",
@@ -18748,6 +20112,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18773,7 +20141,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200286",
       "officialId": 200286,
       "name": "知人待士",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军单体",
       "desc": "每回合行动时，有45.0%几率触发以下两种效果，两者独立判断：可使我军兵力最低单体恢复一定兵力（恢复率120.0%，受谋略属性影响）并使其受到所有伤害减少15.0%（受谋略属性影响），持续1回合；可使自身对敌军兵力最低单体发动一次策略攻击（伤害率120.0%，受谋略属性影响），并使我军攻击属性最高单体对敌军单体发动一次攻击（伤害率100.0%）",
       "grade": "A",
@@ -18786,6 +20154,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18811,7 +20183,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200287",
       "officialId": 200287,
       "name": "举义诛暴",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "对敌军群体发动一次攻击（伤害率150.0%），并使其全属性下降5.0%（受攻击属性影响），敌军群体受到下2次伤害时，都有50.0%几率陷入怯战、犹豫、混乱、暴走状态之一，持续1回合",
       "grade": "A",
@@ -18824,13 +20196,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200288",
       "officialId": 200288,
       "name": "勇挚刚毅",
-      "type": "自带",
+      "type": "被动",
       "target": "自己 ",
       "desc": "自身受到攻击伤害后，有60.0%几率对敌军单体发动一次攻击（伤害率100.0%），自身受到策略攻击伤害后，有40.0%几率对敌军群体发动一次攻击（伤害率80.0%）；当自身兵力首次低于初始兵力的90%、80%、70%和60%时，造成的攻击伤害提升5.0%（受攻击属性影响），受到恢复效果提升5.0%（受防御属性影响），此效果最多叠加4次；",
       "grade": "S",
@@ -18843,13 +20219,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200290",
       "officialId": 200290,
       "name": "九伐中原",
-      "type": "自带",
+      "type": "被动",
       "target": "敌军群体",
       "desc": "自身发动主动战法后会对敌军群体发动一次攻击（伤害率90.0%）和策略攻击（伤害率90.0%，受谋略属性影响），本场战斗共计可发动九次；每回合开始时，自身造成所有伤害提升5.0%（受谋略属性影响），可叠加，持续至战斗结束",
       "grade": "A",
@@ -18862,6 +20242,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
@@ -18887,7 +20271,7 @@ window.STZB_OFFICIAL_DATA = {
       "id": "official-skill-200282",
       "officialId": 200282,
       "name": "其徐如林",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军全体",
       "desc": "我军全体在正式回合后施加的策略伤害，在生效时会对目标相邻的敌军额外造成一次策略伤害（伤害率为原伤害率的15.0%，受谋略属性影响），此比例每回合结束时额外提升5.0%（受谋略属性影响），可叠加，持续至战斗结束",
       "grade": "S",
@@ -18900,13 +20284,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200283",
       "officialId": 200283,
       "name": "自擅江表",
-      "type": "自带",
+      "type": "主动",
       "target": "敌我群体",
       "desc": "对友军群体发动一次攻击（伤害率60.0%）并恢复自身一定兵力（恢复率120.0%，受谋略属性影响），随后对敌军群体发动一次猛烈的策略攻击（伤害率160.0%，受谋略属性影响），每次发动后，此策略攻击的伤害率增加30.0%（受谋略属性影响），可叠加，持续至战斗结束",
       "grade": "S",
@@ -18919,13 +20307,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200292",
       "officialId": 200292,
       "name": "万军取首",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动猛烈攻击（伤害率160.0%），第四回合起，会额外对5距离内敌军单体发动一次攻击（伤害率100.0%），同时有50.0%几率额外对敌方大营再发动一次猛烈攻击（伤害率160.0%）",
       "grade": "S",
@@ -18938,13 +20330,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200294",
       "officialId": 200294,
       "name": "徽言龙凤",
-      "type": "自带",
+      "type": "指挥",
       "target": "友军全体",
       "desc": "友军全体共计造成6次伤害后，使友军全体获得以下效果：士气提升10.0（受谋略属性影响）；每回合行动时造成的所有伤害提升7.0%（受谋略属性影响），可叠加；每回合行动时有60.0%的几率对随机敌军单体造成1次攻击伤害（伤害率150.0%）或策略攻击伤害（伤害率120.0%，受谋略属性影响），由攻击或谋略属性中较高的属性决定",
       "grade": "S",
@@ -18957,13 +20353,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200295",
       "officialId": 200295,
       "name": "锦车持节",
-      "type": "自带",
+      "type": "指挥",
       "target": "敌军单体",
       "desc": "每回合开始前有50.0%几率（受谋略属性影响）使敌军单体本回合内陷入以下两种状态之一：造成所有伤害大幅降低；陷入暴走状态，且攻击距离与主动战法距离-2。以上效果触发后，在回合结束时额外恢复我军兵力最低单体一定兵力（恢复率150.0%，受谋略属性影响）",
       "grade": "S",
@@ -18976,13 +20376,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200704",
       "officialId": 200704,
       "name": "银龙孤胆",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "1回合准备，对随机敌军单体发动7次攻击（首次伤害率80.0%），每次目标独立判定，每次伤害率都递增7%",
       "grade": "A",
@@ -18995,13 +20399,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200705",
       "officialId": 200705,
       "name": "定军绝战",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "对敌军单体发动一次攻击（伤害率140.0%）",
       "grade": "B",
@@ -19014,13 +20422,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200706",
       "officialId": 200706,
       "name": "方阵掩杀",
-      "type": "自带",
+      "type": "追击",
       "target": "攻击目标 ",
       "desc": "普通攻击后，对攻击目标再次发动猛攻（伤害率235.0%），并使其进行下一次攻击的伤害大幅度降低",
       "grade": "A",
@@ -19033,13 +20445,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200707",
       "officialId": 200707,
       "name": "中郎尽瘁",
-      "type": "自带",
+      "type": "主动",
       "target": "自己 ",
       "desc": "使自身进行攻击造成的伤害大幅度降低，受到主动、追击战法的伤害降低46.0%（受防御属性影响），并援护友军全体为其抵挡攻击，若自身处于士气高昂时，使自身进入休整状态，恢复一定兵力（恢复率152.0%，受防御属性影响）持续2回合",
       "grade": "B",
@@ -19052,13 +20468,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200708",
       "officialId": 200708,
       "name": "幽兰洛神",
-      "type": "自带",
+      "type": "主动",
       "target": "友军单体 ",
       "desc": "恢复友军单体一定兵力（恢复率105.0%，受谋略属性影响），并使其受到普通攻击的伤害降低33.0%（受谋略属性影响）",
       "grade": "A",
@@ -19071,13 +20491,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200709",
       "officialId": 200709,
       "name": "麦城追殇",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "以一定兵力为代价，使自身发动主动战法的伤害提高50.0%，并对敌军群体发动一次猛攻（伤害率100.0%），持续1回合",
       "grade": "C",
@@ -19090,13 +20514,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200710",
       "officialId": 200710,
       "name": "恶来当道",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "1回合准备，使自身进行攻击的伤害提高21.0%（受防御属性影响），对敌军群体发动一次攻击（伤害率120.0%），并对敌军弓兵额外发动一次攻击（伤害率100.0%）",
       "grade": "B",
@@ -19109,13 +20537,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200711",
       "officialId": 200711,
       "name": "阻挠",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军单体 ",
       "desc": "使敌军单体的随机1种属性降低20.0%（受谋略属性影响），持续2回合",
       "grade": "C",
@@ -19128,13 +20560,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200712",
       "officialId": 200712,
       "name": "智取仁守",
-      "type": "自带",
+      "type": "主动",
       "target": "敌军群体（有效距离内2个目标）",
       "desc": "使敌军群体发动追击战法的伤害降低33.0%（受谋略属性影响），并使其陷入犹豫状态，持续2回合",
       "grade": "A",
@@ -19147,13 +20583,17 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {
       "id": "official-skill-200713",
       "officialId": 200713,
       "name": "众叛亲离",
-      "type": "自带",
+      "type": "指挥",
       "target": "我军群体（有效距离内3个目标）",
       "desc": "战斗中使我军全体无法恢复兵力，谋略属性降低90.0%，进行攻击的伤害提高23.0%（受防御属性影响），每回合有45.0%的几率使其受到普通攻击时进行反击（伤害率50.0%）",
       "grade": "B",
@@ -19166,6 +20606,10 @@ window.STZB_OFFICIAL_DATA = {
       "studyDesc": "无",
       "studyDesc2": "无",
       "source": "official-hero-base",
+      "tags": [
+        "自带"
+      ],
+      "isInnate": true,
       "trigger": "official"
     },
     {

@@ -55,6 +55,8 @@ const skillIcon = (type = "") => {
     : "";
 };
 
+const NON_TYPE_TAGS = new Set(["自带", "可拆"]);
+
 const toNumber = (value, fallback = 60) => {
   const number = Number.parseFloat(value);
   return Number.isFinite(number) ? Math.round(number) : fallback;
@@ -126,11 +128,18 @@ function upsertSkill(map, raw) {
   if (!raw?.name) return null;
   const id = raw.id || skillId(raw.name, raw.methodId);
   const existing = map.get(id) || {};
+  const tags = new Set(existing.tags || []);
+  (raw.tags || []).forEach((tag) => {
+    if (tag) tags.add(tag);
+  });
+  if (NON_TYPE_TAGS.has(raw.type)) tags.add(raw.type);
+  const incomingType = raw.type && !NON_TYPE_TAGS.has(raw.type) ? raw.type : "";
+  const type = incomingType || existing.type || "未知";
   map.set(id, {
     id,
     officialId: raw.officialId || existing.officialId || raw.methodId || null,
     name: raw.name,
-    type: raw.type || existing.type || "未知",
+    type,
     target: raw.target || existing.target || "",
     desc: raw.desc || existing.desc || "",
     grade: skillGrade(raw.grade || raw.quality || raw.rank || existing.grade),
@@ -138,11 +147,13 @@ function upsertSkill(map, raw) {
     distance: raw.distance ?? existing.distance ?? null,
     probability: raw.probability || existing.probability || "",
     effect: raw.effect || existing.effect || "",
-    icon: raw.icon || existing.icon || skillIcon(raw.type || existing.type),
+    icon: raw.icon || existing.icon || skillIcon(type),
     skillCount: raw.skillCount ?? existing.skillCount ?? null,
     studyDesc: raw.studyDesc || existing.studyDesc || "",
     studyDesc2: raw.studyDesc2 || existing.studyDesc2 || "",
     source: raw.source || existing.source || "official",
+    ...(tags.size ? { tags: [...tags] } : {}),
+    ...(raw.isInnate || existing.isInnate || tags.has("自带") ? { isInnate: true } : {}),
     trigger: "official",
   });
   return id;
@@ -200,7 +211,8 @@ const heroes = heroesRaw.map((hero) => {
     officialId: hero.methodId || hero.methodId1 || null,
     name: baseSkill?.name,
     desc: baseSkill?.desc,
-    type: "自带",
+    tags: ["自带"],
+    isInnate: true,
     source: "official-hero-base",
   });
 

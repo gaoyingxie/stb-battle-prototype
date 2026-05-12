@@ -15,7 +15,9 @@ const {
 
 mergeOfficialData();
 
-const EQUIPPABLE_SKILLS = SKILLS;
+const INNATE_SKILL_IDS = new Set();
+let EQUIPPABLE_SKILLS = [];
+refreshSkillMetadata();
 const STARTER_SKILL_GRADES = new Set(["B", "C"]);
 const LEGACY_FREE_SKILL_IDS = new Set([
   "grand-reward",
@@ -250,7 +252,44 @@ function officialSkillFields(skill) {
     studyDesc: skill.studyDesc || "",
     studyDesc2: skill.studyDesc2 || "",
     source: skill.source || "official",
+    tags: skill.tags || [],
+    isInnate: Boolean(skill.isInnate),
   };
+}
+
+function refreshSkillMetadata() {
+  INNATE_SKILL_IDS.clear();
+  HEROES.forEach((hero) => {
+    if (hero?.innate) INNATE_SKILL_IDS.add(hero.innate);
+  });
+  SKILLS.forEach((skill) => {
+    if (!skill?.id) return;
+    const tags = skillTags(skill);
+    if (INNATE_SKILL_IDS.has(skill.id)) {
+      skill.isInnate = true;
+      if (!tags.includes("自带")) tags.push("自带");
+    }
+    skill.tags = tags;
+  });
+  EQUIPPABLE_SKILLS = SKILLS.filter(isEquippableSkill);
+}
+
+function skillTags(skill) {
+  const tags = Array.isArray(skill?.tags) ? [...skill.tags] : [];
+  if (skill?.isInnate && !tags.includes("自带")) tags.push("自带");
+  return [...new Set(tags.filter(Boolean))];
+}
+
+function isInnateSkill(skill) {
+  return Boolean(skill?.id && (
+    skill.isInnate
+    || INNATE_SKILL_IDS.has(skill.id)
+    || skillTags(skill).includes("自带")
+  ));
+}
+
+function isEquippableSkill(skill) {
+  return Boolean(skill?.id && !isInnateSkill(skill));
 }
 
 function chanceFromProbability(value, fallback) {
@@ -354,6 +393,7 @@ function showSkillModal(skillId) {
   els.skillModalMeta.textContent = [
     skill.grade ? `战法品质：${skill.grade}` : skillGradeText(skill),
     skill.type ? `战法类型：${skill.type}` : "",
+    skillTags(skill).length ? `标签：${skillTags(skill).join("、")}` : "",
     skill.soldierType ? `兵种类型：${skill.soldierType}` : "",
     skill.distance ? `有效距离：${skill.distance}` : "",
   ]
@@ -404,7 +444,7 @@ function fillHeroSkillButton(button, label, skills) {
   const skill = list[0];
   button.hidden = false;
   button.dataset.skillId = skill.id;
-  button.innerHTML = `<span>${label}</span><strong>${list.map((item) => item.name).join(" / ")}</strong><em>${[skillGradeText(skill), skill.type || "战法"].filter(Boolean).join(" · ")}</em>`;
+  button.innerHTML = `<span>${label}</span><strong>${list.map((item) => item.name).join(" / ")}</strong><em>${[skillGradeText(skill), skill.type || "战法", ...skillTags(skill)].filter(Boolean).join(" · ")}</em>`;
 }
 
 function skillDetailHtml(skill) {
@@ -429,6 +469,7 @@ function conciseSkillRows(skill) {
   return [
     ["战法品质", skill.grade || "暂无"],
     ["战法类型", skill.type || "未知"],
+    ["标签", skillTags(skill).join("、") || "无"],
     ["兵种类型", skill.soldierType || "未知"],
     ["有效距离", skill.distance ? String(skill.distance) : "按描述"],
     ["目标群体", skill.target || inferTargetText(desc)],
@@ -554,7 +595,7 @@ function dismantleSkillsForHero(hero) {
     hero?.dismantle,
     reference?.dismantle,
   ].filter(Boolean);
-  return [...new Set(ids)].map(skillById).filter(Boolean);
+  return [...new Set(ids)].map(skillById).filter(isEquippableSkill);
 }
 
 function showGacha(pulls) {
@@ -887,7 +928,8 @@ function normalizeFormationSkills() {
     slot.skills ||= [];
     slot.skills = [slot.skills[0] || null, slot.skills[1] || null].map((skillId) => {
       if (!skillId) return null;
-      if (!isSkillUnlocked(skillById(skillId))) return null;
+      const skill = skillById(skillId);
+      if (!isEquippableSkill(skill) || !isSkillUnlocked(skill)) return null;
       if (used.has(skillId)) return null;
       used.add(skillId);
       return skillId;
@@ -931,6 +973,7 @@ function renderSkillCodex() {
     const meta = [
       skill.grade ? `${skill.grade}级` : "",
       skill.type || "",
+      ...skillTags(skill),
       skill.soldierType || "",
       skill.distance ? `距${skill.distance}` : "",
       skill.probability && skill.probability !== "--" ? skill.probability : "",
@@ -950,7 +993,7 @@ function renderSkillCodex() {
 
 function skillCodexList() {
   const gradeOrder = { S: 0, A: 1, B: 2, C: 3 };
-  const typeOrder = { 指挥: 0, 主动: 1, 追击: 2, 被动: 3, 自带: 4 };
+  const typeOrder = { 指挥: 0, 主动: 1, 追击: 2, 被动: 3 };
   const byName = new Map();
   SKILLS.filter(isSkillUnlocked).forEach((skill) => {
     const existing = byName.get(skill.name);
@@ -1089,6 +1132,7 @@ function isStarterUnlockedSkill(skill) {
 
 function isSkillUnlocked(skill) {
   if (!skill) return false;
+  if (!isEquippableSkill(skill)) return false;
   if (isStarterUnlockedSkill(skill)) return true;
   if ((Number(state.skills[skill.id]) || 0) > 0) return true;
   return SKILLS.some((candidate) => (
