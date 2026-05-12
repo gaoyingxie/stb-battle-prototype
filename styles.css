@@ -623,12 +623,16 @@ select {
   flex-direction: column;
   min-width: 0;
   background:
-    linear-gradient(180deg, rgba(30, 30, 30, 0.98), rgba(24, 22, 20, 0.98)),
-    var(--panel);
+    radial-gradient(circle at 16% 10%, rgba(85, 161, 205, 0.15), transparent 24rem),
+    radial-gradient(circle at 84% 92%, rgba(216, 86, 76, 0.13), transparent 24rem),
+    linear-gradient(180deg, rgba(25, 28, 27, 0.96), rgba(17, 18, 17, 0.98));
+  border-color: rgba(245, 223, 170, 0.18);
 }
 
 .battlefield .battle-header {
-  padding: 9px 12px;
+  padding: 11px 14px;
+  border-bottom-color: rgba(245, 223, 170, 0.1);
+  background: rgba(11, 13, 13, 0.28);
 }
 
 .battlefield .battle-header p {
@@ -636,46 +640,82 @@ select {
 }
 
 .war-map {
-  --battle-card-width: clamp(176px, 13vw, 190px);
+  --battle-card-width: clamp(172px, 13vw, 196px);
   display: grid;
-  grid-template-rows: auto minmax(58px, auto) auto;
-  gap: 12px;
+  grid-template-rows: auto minmax(46px, auto) auto;
+  gap: 10px;
   min-height: auto;
-  padding: 12px 14px 14px;
+  padding: 14px;
   background:
-    radial-gradient(circle at 50% 44%, rgba(244, 207, 120, 0.14), transparent 20rem),
-    linear-gradient(90deg, rgba(245, 223, 170, 0.035) 1px, transparent 1px),
-    linear-gradient(rgba(245, 223, 170, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(45, 65, 75, 0.34) 0%, rgba(25, 23, 22, 0.98) 46%, rgba(88, 30, 29, 0.36) 100%);
-  background-size: auto, 34px 34px, 34px 34px, auto;
+    radial-gradient(circle at 50% 48%, rgba(244, 207, 120, 0.12), transparent 17rem),
+    linear-gradient(90deg, rgba(245, 223, 170, 0.028) 1px, transparent 1px),
+    linear-gradient(rgba(245, 223, 170, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(35, 58, 69, 0.28) 0%, rgba(18, 20, 20, 0.94) 48%, rgba(74, 27, 29, 0.28) 100%);
+  background-size: auto, 32px 32px, 32px 32px, auto;
 }
 
 .army-block {
   display: grid;
-  gap: 6px;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(245, 223, 170, 0.09);
+  border-radius: 8px;
+  background: rgba(8, 11, 12, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.player-block {
+  background:
+    linear-gradient(90deg, rgba(59, 137, 183, 0.15), transparent 44%),
+    rgba(8, 11, 12, 0.3);
+}
+
+.enemy-block {
+  background:
+    linear-gradient(90deg, rgba(183, 65, 58, 0.16), transparent 44%),
+    rgba(11, 8, 8, 0.3);
 }
 
 .army-title {
   display: grid;
-  grid-template-columns: minmax(80px, auto) 1fr;
-  gap: 10px;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
   align-items: center;
-  min-height: 32px;
-  padding: 5px 10px;
-  color: #f0f0d0;
+  min-height: 38px;
+  padding: 0;
+  color: #f6edd5;
 }
 
 .player-block .army-title {
-  background: rgba(48, 96, 126, 0.62);
+  background: transparent;
 }
 
 .enemy-block .army-title {
-  background: rgba(119, 36, 36, 0.68);
+  background: transparent;
 }
 
 .army-title span {
-  font-size: 17px;
+  display: inline-grid;
+  min-width: 74px;
+  min-height: 30px;
+  place-items: center;
+  border: 1px solid rgba(245, 223, 170, 0.15);
+  border-radius: 999px;
+  background: rgba(15, 16, 15, 0.56);
+  font-size: 14px;
   font-weight: 900;
+}
+
+.player-block .army-title > span {
+  color: #bfe9ff;
+  border-color: rgba(93, 182, 233, 0.3);
+  background: rgba(35, 94, 128, 0.3);
+}
+
+.enemy-block .army-title > span {
+  color: #ffd2c7;
+  border-color: rgba(235, 113, 100, 0.32);
+  background: rgba(112, 38, 34, 0.3);
 }
 
 .army-title strong {
@@ -693,31 +733,28 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 18px;
+  gap: 14px;
   padding: 0;
-  color: rgba(228, 220, 196, 0.76);
-  font-size: 13px;
+  color: rgba(239, 232, 212, 0.72);
+  font-size: 12px;
   font-weight: 900;
   text-align: center;
 }
 
 .position-row span {
   display: grid;
-  min-height: 23px;
+  min-height: 24px;
   place-items: center;
-  border: 1px solid rgba(245, 223, 170, 0.12);
-  background:
-    linear-gradient(90deg, transparent 0 8%, rgba(19, 19, 18, 0.92) 8% 92%, transparent 92%),
-    linear-gradient(180deg, rgba(244, 236, 216, 0.08), rgba(0, 0, 0, 0.28));
-  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.86);
+  border-bottom: 1px solid rgba(245, 223, 170, 0.16);
+  background: rgba(255, 255, 255, 0.025);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.64);
 }
 
 .line {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 18px;
+  gap: 14px;
   align-items: stretch;
 }
 
@@ -729,15 +766,19 @@ select {
   min-height: 0;
   padding: 0;
   isolation: isolate;
-  border: 1px solid rgba(245, 208, 128, 0.5);
+  border: 1px solid rgba(245, 223, 170, 0.18);
   background:
-    linear-gradient(180deg, rgba(43, 34, 22, 0.98), rgba(8, 8, 7, 0.98)),
-    #0d0b09;
-  border-radius: 4px;
+    linear-gradient(180deg, rgba(30, 31, 28, 0.84), rgba(10, 11, 10, 0.92)),
+    #0d100f;
+  border-radius: 8px;
   box-shadow:
-    0 16px 30px rgba(0, 0, 0, 0.26),
-    inset 0 0 0 1px rgba(255, 242, 190, 0.08);
+    0 12px 26px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
   cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .unit-card::before {
@@ -745,10 +786,18 @@ select {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(255, 235, 178, 0.06), transparent 42%, rgba(0, 0, 0, 0.46) 100%),
-    radial-gradient(circle at 74% 28%, rgba(255, 226, 150, 0.2), transparent 36%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 36%, rgba(0, 0, 0, 0.28) 100%),
+    radial-gradient(circle at 74% 22%, rgba(255, 226, 150, 0.12), transparent 34%);
   pointer-events: none;
   content: "";
+}
+
+.unit-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 223, 170, 0.34);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .unit-content {
@@ -757,15 +806,15 @@ select {
 }
 
 .unit-card.camp {
-  border-color: rgba(188, 60, 165, 0.76);
+  border-color: rgba(198, 121, 210, 0.38);
   box-shadow:
-    0 16px 30px rgba(0, 0, 0, 0.26),
-    0 0 18px rgba(188, 60, 165, 0.18),
-    inset 0 0 0 1px rgba(188, 60, 165, 0.18);
+    0 12px 26px rgba(0, 0, 0, 0.22),
+    0 0 18px rgba(188, 60, 165, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
 }
 
 .unit-card.front {
-  border-color: rgba(104, 188, 150, 0.58);
+  border-color: rgba(104, 188, 150, 0.34);
 }
 
 .unit-card.fallen {
@@ -775,14 +824,14 @@ select {
 
 .unit-portrait {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1.04;
   height: auto;
   min-height: 0;
   overflow: hidden;
-  border-bottom: 1px solid rgba(245, 223, 170, 0.24);
+  border-bottom: 1px solid rgba(245, 223, 170, 0.12);
   background:
-    radial-gradient(circle at 50% 18%, rgba(255, 237, 190, 0.12), transparent 46%),
-    #15110d;
+    radial-gradient(circle at 50% 18%, rgba(255, 237, 190, 0.1), transparent 46%),
+    #121614;
 }
 
 .unit-portrait::before,
@@ -800,17 +849,17 @@ select {
   background-position: center 24%;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: scale(1.08);
+  transform: scale(1.06);
   transform-origin: center 22%;
-  filter: saturate(1.08) contrast(1.04);
+  filter: saturate(1.08) contrast(1.03);
 }
 
 .unit-portrait::after {
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 20%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0 52%, rgba(0, 0, 0, 0.18) 75%, rgba(0, 0, 0, 0.38) 100%),
-    radial-gradient(circle at 52% 22%, transparent 0 48%, rgba(0, 0, 0, 0.24) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 18%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0 50%, rgba(0, 0, 0, 0.18) 75%, rgba(0, 0, 0, 0.48) 100%),
+    radial-gradient(circle at 52% 22%, transparent 0 50%, rgba(0, 0, 0, 0.18) 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
@@ -821,83 +870,86 @@ select {
   top: 6px;
   left: 8px;
   z-index: 3;
-  color: #ffd15c;
-  font-size: 13px;
+  color: #ffe08a;
+  font-size: 12px;
   font-weight: 900;
   line-height: 1;
   text-shadow:
-    0 1px 1px #3a1207,
-    0 0 5px rgba(244, 75, 33, 0.85),
-    0 0 8px rgba(0, 0, 0, 0.9);
+    0 1px 1px #301507,
+    0 0 5px rgba(245, 184, 68, 0.72),
+    0 0 8px rgba(0, 0, 0, 0.72);
 }
 
 .unit-nameplate {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto auto;
   justify-self: stretch;
-  gap: 3px;
+  gap: 4px;
   align-items: center;
   width: 100%;
-  min-height: 21px;
-  padding: 1px 5px;
-  border-block: 1px solid rgba(255, 225, 168, 0.16);
+  min-height: 27px;
+  padding: 4px 7px;
+  border-block: 0;
   border-inline: 0;
   border-radius: 0;
   background:
-    linear-gradient(90deg, rgba(18, 15, 11, 0.62), rgba(34, 27, 18, 0.44)),
-    linear-gradient(180deg, rgba(255, 238, 192, 0.12), transparent 58%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 245, 206, 0.08),
-    0 1px 5px rgba(0, 0, 0, 0.2);
+    linear-gradient(90deg, rgba(14, 16, 15, 0.84), rgba(20, 22, 20, 0.64)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 58%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
 }
 
 .unit-card.player .unit-nameplate {
   background:
-    linear-gradient(90deg, rgba(11, 54, 83, 0.72), rgba(13, 39, 54, 0.48)),
-    linear-gradient(180deg, rgba(172, 222, 255, 0.16), transparent 58%);
+    linear-gradient(90deg, rgba(13, 73, 109, 0.7), rgba(14, 36, 47, 0.5)),
+    linear-gradient(180deg, rgba(172, 222, 255, 0.13), transparent 58%);
 }
 
 .unit-card.enemy .unit-nameplate {
   background:
-    linear-gradient(90deg, rgba(91, 24, 21, 0.7), rgba(47, 21, 18, 0.46)),
-    linear-gradient(180deg, rgba(255, 194, 160, 0.15), transparent 58%);
+    linear-gradient(90deg, rgba(103, 31, 28, 0.66), rgba(47, 21, 18, 0.48)),
+    linear-gradient(180deg, rgba(255, 194, 160, 0.12), transparent 58%);
 }
 
 .unit-faction {
   display: grid;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   place-items: center;
-  border: 1px solid rgba(245, 223, 170, 0.42);
-  background: rgba(0, 0, 0, 0.3);
-  color: #f6ddb2;
+  border: 1px solid rgba(245, 223, 170, 0.22);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.22);
+  color: #ffe7b4;
   font-size: 10px;
   font-weight: 900;
   line-height: 1;
-  transform: translateY(-1px);
 }
 
 .unit-range {
-  display: inline;
-  color: rgba(246, 227, 185, 0.68);
-  font-size: 9px;
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid rgba(245, 223, 170, 0.16);
+  border-radius: 50%;
+  color: rgba(246, 227, 185, 0.72);
+  font-size: 10px;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .unit-arm {
   color: rgba(246, 227, 185, 0.72);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .unit-troops {
   align-self: stretch;
-  padding: 5px 6px 7px;
+  padding: 6px 7px 8px;
   background:
-    linear-gradient(180deg, rgba(40, 32, 23, 0.86), rgba(8, 8, 7, 0.96)),
-    radial-gradient(circle at 50% 0, rgba(215, 170, 71, 0.1), transparent 54%);
+    linear-gradient(180deg, rgba(22, 24, 22, 0.82), rgba(8, 9, 8, 0.94)),
+    radial-gradient(circle at 50% 0, rgba(245, 223, 170, 0.07), transparent 56%);
 }
 
 .role-tag {
@@ -911,11 +963,11 @@ select {
 
 .troop-bar {
   position: relative;
-  height: 8px;
-  margin-top: 3px;
+  height: 7px;
+  margin-top: 5px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  border-radius: 999px;
   background: rgba(0, 0, 0, 0.64);
 }
 
@@ -945,7 +997,9 @@ select {
 
 .unit-card.player .troop-fill,
 .player-block .team-troop-bar .troop-fill {
-  background: linear-gradient(90deg, #0d5590, #2c98da);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 48%),
+    linear-gradient(90deg, #2f86c4, #5dc7f2);
 }
 
 .unit-card.player .wounded-fill,
@@ -957,9 +1011,9 @@ select {
 .unit-card.enemy .troop-fill,
 .enemy-block .team-troop-bar .troop-fill {
   background:
-    linear-gradient(180deg, rgba(255, 164, 139, 0.22), transparent 45%),
-    linear-gradient(90deg, #581514 0%, #7a1d1b 58%, #9f2d29 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 224, 199, 0.18), inset 0 -1px 0 rgba(40, 0, 0, 0.72);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 48%),
+    linear-gradient(90deg, #8b2a29 0%, #c64941 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 224, 199, 0.16);
 }
 
 .unit-card.enemy .wounded-fill,
@@ -990,7 +1044,7 @@ select {
 
 .skill-list {
   display: grid;
-  gap: 2px;
+  gap: 3px;
   margin-top: 4px;
 }
 
@@ -1005,13 +1059,13 @@ select {
   left: 0;
   z-index: 3;
   grid-template-columns: 1fr;
-  gap: 2px;
+  gap: 3px;
   margin: 0;
-  padding: 24px 7px 6px;
+  padding: 26px 8px 7px;
   background:
-    linear-gradient(180deg, transparent 0%, rgba(8, 7, 6, 0.24) 40%, rgba(8, 7, 6, 0.54) 100%),
-    linear-gradient(90deg, rgba(255, 224, 156, 0.1), transparent 22%, transparent 78%, rgba(255, 224, 156, 0.08));
-  backdrop-filter: blur(1px);
+    linear-gradient(180deg, transparent 0%, rgba(8, 9, 8, 0.18) 38%, rgba(8, 9, 8, 0.5) 100%),
+    linear-gradient(90deg, rgba(255, 224, 156, 0.06), transparent 22%, transparent 78%, rgba(255, 224, 156, 0.05));
+  backdrop-filter: blur(1.5px);
 }
 
 .skill-chip {
@@ -1028,25 +1082,26 @@ select {
 }
 
 .unit-portrait .skill-chip {
-  min-height: 18px;
-  padding: 2px 6px;
-  border-color: rgba(255, 226, 170, 0.28);
+  min-height: 19px;
+  padding: 3px 7px;
+  border-color: rgba(255, 226, 170, 0.18);
+  border-radius: 999px;
   background:
-    linear-gradient(180deg, rgba(43, 35, 22, 0.42), rgba(11, 10, 8, 0.34));
+    linear-gradient(180deg, rgba(38, 35, 28, 0.48), rgba(8, 9, 8, 0.36));
   color: #ffe4a8;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   line-height: 1.1;
   box-shadow:
-    inset 0 1px 0 rgba(255, 243, 206, 0.08),
-    0 1px 5px rgba(0, 0, 0, 0.18);
+    inset 0 1px 0 rgba(255, 243, 206, 0.07),
+    0 1px 4px rgba(0, 0, 0, 0.14);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
 }
 
 .unit-card.enemy .unit-portrait .skill-chip {
-  border-color: rgba(255, 190, 160, 0.3);
+  border-color: rgba(255, 190, 160, 0.18);
   background:
-    linear-gradient(180deg, rgba(71, 30, 23, 0.4), rgba(16, 9, 8, 0.32));
+    linear-gradient(180deg, rgba(71, 30, 23, 0.42), rgba(16, 9, 8, 0.34));
   color: #ffd2b7;
 }
 
@@ -1401,13 +1456,33 @@ select {
 .clash-band {
   display: grid;
   place-items: center;
-  min-height: 44px;
+  min-height: 42px;
   padding: 4px 12px;
   border: 1px solid rgba(245, 223, 170, 0.08);
+  border-radius: 8px;
   background:
-    radial-gradient(circle at 50% 52%, rgba(215, 170, 71, 0.14), transparent 44%),
-    linear-gradient(180deg, rgba(34, 34, 34, 0.92), rgba(20, 20, 18, 0.95));
+    radial-gradient(circle at 50% 52%, rgba(245, 207, 120, 0.1), transparent 42%),
+    linear-gradient(90deg, rgba(64, 142, 188, 0.1), rgba(245, 223, 170, 0.055), rgba(194, 70, 63, 0.1)),
+    rgba(12, 13, 12, 0.54);
   color: #ded9bd;
+}
+
+.clash-band::before,
+.clash-band::after {
+  grid-area: 1 / 1;
+  width: min(32%, 180px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 223, 170, 0.28));
+  content: "";
+}
+
+.clash-band::before {
+  justify-self: start;
+}
+
+.clash-band::after {
+  justify-self: end;
+  transform: scaleX(-1);
 }
 
 .round-count {
@@ -1432,17 +1507,18 @@ select {
 }
 
 .clash-band .result-chip {
-  min-width: 136px;
-  min-height: 36px;
-  border: 0;
-  border-radius: 0;
+  min-width: 118px;
+  min-height: 32px;
+  border: 1px solid rgba(245, 223, 170, 0.18);
+  border-radius: 999px;
   background:
-    linear-gradient(135deg, transparent 12%, rgba(215, 170, 71, 0.08) 12% 88%, transparent 88%),
-    transparent;
-  color: #d7aa47;
-  font-size: 28px;
-  font-family: "STKaiti", "KaiTi", "Microsoft YaHei", serif;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6), 0 0 18px rgba(215, 170, 71, 0.26);
+    linear-gradient(180deg, rgba(245, 223, 170, 0.12), rgba(245, 223, 170, 0.04)),
+    rgba(9, 10, 9, 0.72);
+  color: #f0c86a;
+  font-size: 20px;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  letter-spacing: 0;
+  text-shadow: 0 1px 8px rgba(215, 170, 71, 0.22);
 }
 
 .clash-band .result-chip[data-result="player"] {
@@ -1640,24 +1716,24 @@ select {
 
 .troop-summary-text {
   display: block;
-  color: #f5dfaa;
-  font-size: 20px;
+  color: #fff0c2;
+  font-size: 18px;
   line-height: 1.1;
 }
 
 .troop-summary-text small {
   color: rgba(244, 236, 216, 0.54);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .team-troop-bar {
   position: relative;
   display: block;
   width: min(100%, 420px);
-  height: 8px;
+  height: 7px;
   overflow: hidden;
   border: 1px solid rgba(244, 236, 216, 0.18);
-  border-radius: 2px;
+  border-radius: 999px;
   background: rgba(0, 0, 0, 0.54);
 }
 
@@ -1857,7 +1933,7 @@ select {
   line-height: 1.55;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1520px) {
   .layout {
     grid-template-columns: 300px 1fr;
   }
