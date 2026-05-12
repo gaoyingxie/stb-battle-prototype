@@ -461,7 +461,7 @@ function showHeroModal(heroId) {
     ["速", hero.stats.speed],
   ].map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join("");
   fillHeroSkillButton(els.heroModalInnate, "自带战法", innate);
-  fillHeroSkillButton(els.heroModalDismantle, "可拆战法", dismantles);
+  fillHeroSkillList(els.heroModalDismantle, "可拆战法", dismantles);
   els.heroModalDesc.textContent = hero.desc || reference?.desc || "暂无武将传记。";
   els.heroModal.showModal();
 }
@@ -478,6 +478,23 @@ function fillHeroSkillButton(button, label, skills) {
   button.hidden = false;
   button.dataset.skillId = skill.id;
   button.innerHTML = `<span>${label}</span><strong>${list.map((item) => item.name).join(" / ")}</strong><em>${[skillGradeText(skill), skill.type || "战法", ...skillTags(skill)].filter(Boolean).join(" · ")}</em>`;
+}
+
+function fillHeroSkillList(container, label, skills) {
+  const list = Array.isArray(skills) ? skills.filter(Boolean) : [skills].filter(Boolean);
+  if (!list.length) {
+    container.hidden = true;
+    container.innerHTML = "";
+    return;
+  }
+  container.hidden = false;
+  container.innerHTML = list.map((skill, index) => `
+    <button class="detail-skill" data-skill-id="${escapeHtml(skill.id)}" type="button">
+      <span>${list.length > 1 ? `${label} ${index + 1}` : label}</span>
+      <strong>${escapeHtml(skill.name)}</strong>
+      <em>${escapeHtml([skillGradeText(skill), skill.type || "战法", ...skillTags(skill)].filter(Boolean).join(" · "))}</em>
+    </button>
+  `).join("");
 }
 
 function skillDetailHtml(skill) {
@@ -675,17 +692,21 @@ function portraitForHero(hero) {
 
 function heroReference(hero) {
   if (!hero) return null;
-  return HEROES.find((candidate) =>
+  const exact = HEROES.find((candidate) =>
     candidate !== hero
     && candidate.officialId
     && candidate.name === hero.name
     && candidate.faction === hero.faction
     && candidate.arm === hero.arm
-  ) || HEROES.find((candidate) =>
+    && (!hero.rarity || candidate.rarity === hero.rarity)
+  );
+  if (exact || hero.officialId) return exact || null;
+  const sameName = HEROES.filter((candidate) =>
     candidate !== hero
     && candidate.officialId
     && candidate.name === hero.name
-  ) || null;
+  );
+  return sameName.length === 1 ? sameName[0] : null;
 }
 
 function ensureStarterRoster() {
