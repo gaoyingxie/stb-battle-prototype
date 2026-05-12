@@ -144,7 +144,7 @@
         arm: hero.arm,
         rarity: hero.rarity,
         portrait: portraitForHero(hero),
-        distance: Number(hero.distance) || defaultAttackDistance(hero.arm),
+        distance: Number(hero.distance) || defaultAttackDistance(),
         stats: { ...hero.stats },
         baseStats: { ...hero.stats },
         statBonus: { attack: 0, strategy: 0, defense: 0, speed: 0 },
@@ -442,12 +442,12 @@
     return ARM_COUNTERS[arm] ? `${arm}克${ARM_COUNTERS[arm]}` : "";
   }
 
-  function defaultAttackDistance(arm) {
-    return DEFAULT_ATTACK_DISTANCE[arm] || 2;
+  function defaultAttackDistance() {
+    return DEFAULT_ATTACK_DISTANCE;
   }
 
   function baseAttackRange(unit) {
-    return Number(unit?.distance) || defaultAttackDistance(unit?.arm);
+    return Number(unit?.distance) || defaultAttackDistance();
   }
 
   function getAttackRange(unit) {

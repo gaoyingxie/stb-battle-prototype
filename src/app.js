@@ -794,7 +794,7 @@ function renderFormationEditor() {
           <span>${slot.heroId ? heroById(slot.heroId).name : "空位"}</span>
         </div>
         <select data-kind="hero" data-index="${index}" aria-label="${position.label}武将">
-          ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance(hero.arm)}</option>`).join("")}
+          ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance()}</option>`).join("")}
         </select>
         <select data-kind="skill" data-skill-index="0" data-index="${index}" aria-label="${position.label}战法一">
           ${skillOptions(slot.skills?.[0], index, 0)}

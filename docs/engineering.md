@@ -93,6 +93,7 @@ npm run smoke:browser
 ## 迭代约定
 
 - 新增通用状态时，先在 `battle-rules.js` 的 `STATUS_DEFINITIONS` 登记标签、分类和说明，再在 `battle-engine.js` 接入行为。
+- 武将攻击距离应优先来自官方/武将自身 `distance` 字段；不要按兵种推导攻击距离。`DEFAULT_ATTACK_DISTANCE` 只是缺失字段时的原型兜底。
 - 新增公式常量时，放进 `DAMAGE_MODEL`，不要把魔法数字散落在引擎函数里。
 - 新增手写战法时放进 `seed-data.js`，尽量写清 `type`、`trigger`、`chance`、`desc` 和行为函数。
 - 新增 UI 功能时优先只改 `app.js` 和 `styles.css`，避免把 DOM 操作写进战斗引擎。

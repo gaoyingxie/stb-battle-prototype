@@ -21,11 +21,7 @@
     enemy: { front: 3, middle: 4, camp: 5 },
   };
 
-  const DEFAULT_ATTACK_DISTANCE = {
-    骑: 2,
-    步: 2,
-    弓: 3,
-  };
+  const DEFAULT_ATTACK_DISTANCE = 2;
 
   const FACTION_BONUS_STATS = ["attack", "strategy", "defense", "speed"];
   const ARM_BONUS_STATS = {
