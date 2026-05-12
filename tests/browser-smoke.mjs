@@ -1,9 +1,9 @@
 import { chromium } from "playwright";
-import { pathToFileURL } from "node:url";
-import path from "node:path";
+import { startStaticServer } from "../scripts/dev-server.mjs";
 
 const root = process.cwd();
-const entryUrl = pathToFileURL(path.join(root, "index.html")).href;
+const localServer = await startStaticServer({ root, port: 0 });
+const entryUrl = localServer.url;
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1366, height: 900 } });
 
@@ -66,4 +66,5 @@ try {
   }
 } finally {
   await browser.close();
+  await localServer.close();
 }
