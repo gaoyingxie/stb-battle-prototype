@@ -768,6 +768,7 @@ select {
 .unit-portrait::after {
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   content: "";
 }
@@ -786,7 +787,7 @@ select {
   position: absolute;
   top: 6px;
   left: 8px;
-  z-index: 1;
+  z-index: 2;
   color: #ffd15c;
   font-size: 13px;
   font-weight: 900;
@@ -953,6 +954,19 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.unit-portrait .skill-list {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  margin: 0;
+  padding: 18px 5px 5px;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 7, 6, 0.72) 34%, rgba(8, 7, 6, 0.9) 100%);
+}
+
 .skill-chip {
   overflow: hidden;
   padding: 1px 5px;
@@ -964,6 +978,22 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: left;
+}
+
+.unit-portrait .skill-chip {
+  min-height: 18px;
+  padding: 2px 5px;
+  border-color: rgba(245, 223, 170, 0.26);
+  background: rgba(13, 11, 9, 0.62);
+  color: #ffe4a8;
+  font-size: 11px;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.unit-card.enemy .unit-portrait .skill-chip {
+  border-color: rgba(255, 190, 160, 0.28);
+  color: #ffd2b7;
 }
 
 .skill-chip:hover,

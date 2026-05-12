@@ -987,8 +987,11 @@ function unitTemplate(unit) {
   const portrait = portraitForHero(unit);
   return `
     <article class="unit-card ${unit.side} ${unit.position} ${unit.troops <= 0 ? "fallen" : ""}" data-hero-id="${unit.heroId}" ${portrait ? `style="--unit-portrait: url('${portrait}')"` : ""}>
-      <div class="unit-portrait" aria-hidden="true">
+      <div class="unit-portrait">
         <span class="unit-stars">${"★".repeat(unit.rarity)}</span>
+        <div class="skill-list">
+          ${unit.skills.map((skill) => `<button class="skill-chip" data-skill-id="${skill.id}" type="button">${skillNameWithGrade(skill)}</button>`).join("")}
+        </div>
       </div>
       <div class="unit-nameplate">
         <span class="unit-faction">${unit.faction}</span>
@@ -1005,9 +1008,6 @@ function unitTemplate(unit) {
         <div class="troop-bar" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%; --wounded-pct: ${woundedPct}%">
           <div class="troop-fill"></div>
           <div class="wounded-fill"></div>
-        </div>
-        <div class="skill-list">
-          ${unit.skills.map((skill) => `<button class="skill-chip" data-skill-id="${skill.id}" type="button">${skillNameWithGrade(skill)}</button>`).join("")}
         </div>
       </div>
     </article>
