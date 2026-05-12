@@ -8,6 +8,7 @@
     "serve": "node ./scripts/dev-server.mjs",
     "start": "node ./scripts/dev-server.mjs --open",
     "test:data": "node ./tests/data-integrity.mjs",
+    "test:skills": "node ./tests/official-skill-behavior.mjs",
     "smoke:browser": "node ./tests/browser-smoke.mjs",
     "playwright:install": "playwright install chromium"
   },

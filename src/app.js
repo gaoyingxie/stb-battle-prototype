@@ -334,10 +334,13 @@ function attachOfficialSkillBehavior(skill) {
     if (/自身.*洞察|进入洞察/.test(desc)) addStatus(unit, "insight", durationFromText(desc, 2), 1);
     if (/自身.*援护|进入援护/.test(desc)) addStatus(unit, "guard", durationFromText(desc, 2), 1);
     const targetText = `${skill.target || ""} ${desc}`;
+    const selfTarget = /自身|自己/.test(skill.target || "");
+    const selfBuffApplied = selfTarget ? applySelfTargetActiveBuffs(ctx, unit, skill, desc) : false;
+    if (selfBuffApplied && !pursuedTarget) return true;
     const distance = Number(skill.distance) || skillDistanceFromText(targetText);
     const hostile = /敌军|敌方|攻击目标/.test(targetText);
     const healing = /恢复|休整|急救/.test(desc);
-    const damaging = /伤害|攻击|恐慌|妖术|燃烧|灼烧|火攻/.test(desc);
+    const damaging = !selfTarget && /伤害|攻击|恐慌|妖术|燃烧|灼烧|火攻/.test(desc);
     const count = targetCountFromText(targetText);
     const targetPool = hostile && hasStatus(unit, "berserk")
       ? [...unit.enemyUnits, ...unit.sideUnits.filter((ally) => ally.id !== unit.id)]
@@ -365,6 +368,36 @@ function attachOfficialSkillBehavior(skill) {
     return true;
   };
   return skill;
+}
+
+function applySelfTargetActiveBuffs(ctx, unit, skill, desc) {
+  let applied = false;
+  const duration = durationFromText(desc, 1);
+  if (/伤害.*提高|造成.*提高/.test(desc)) {
+    addStatus(unit, "damageUp", duration, activeDamageBoostFromText(desc, 0.1));
+    applied = true;
+  }
+  if (/攻击属性.*提高/.test(desc)) {
+    addStatus(unit, "attackUp", duration, 10);
+    applied = true;
+  }
+  if (/谋略属性.*提高|谋略.*提高/.test(desc)) {
+    addStatus(unit, "strategyUp", duration, 10);
+    applied = true;
+  }
+  if (/防御.*提高|规避|减伤|伤害降低/.test(desc)) {
+    addStatus(unit, "damageDown", duration, 0.1);
+    applied = true;
+  }
+  if (applied) log(ctx, "system", `${unit.name}发动【${skill.name}】：${summarizeDesc(desc)}`);
+  return applied;
+}
+
+function activeDamageBoostFromText(text = "", fallback = 0.1) {
+  const values = String(text).match(/提高\s*(\d+(?:\.\d+)?)%/g)
+    ?.map((part) => Number(part.match(/\d+(?:\.\d+)?/)?.[0]))
+    .filter(Number.isFinite) || [];
+  return values.length ? Math.max(...values) / 100 : fallback;
 }
 
 function handleBodyClick(event) {
