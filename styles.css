@@ -190,10 +190,26 @@ h2 {
   flex-direction: column;
 }
 
-.report-panel {
+.side-column {
   display: flex;
   flex-direction: column;
+  gap: 16px;
   max-height: min(760px, calc(100vh - 124px));
+}
+
+.report-panel,
+.system-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.report-panel {
+  flex: 1 1 500px;
+}
+
+.system-panel {
+  flex: 0 0 230px;
 }
 
 .panel-heading,
@@ -1649,8 +1665,9 @@ select {
   display: flex;
   flex-direction: column;
   gap: 0;
+  flex: 1;
   overflow: auto;
-  min-height: 560px;
+  min-height: 0;
   padding: 0 12px 12px;
   background:
     radial-gradient(circle at 75% 18%, rgba(209, 167, 77, 0.1), transparent 28%),
@@ -1679,6 +1696,13 @@ select {
   border-radius: 999px;
   color: var(--gold);
   font-size: 12px;
+}
+
+.empty-report {
+  padding: 16px 14px;
+  color: rgba(244, 236, 216, 0.58);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .log-line {
@@ -1796,12 +1820,51 @@ select {
   line-height: 1.35;
 }
 
+.system-messages {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+  min-height: 0;
+  padding: 12px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(107, 141, 197, 0.1), transparent 26%),
+    linear-gradient(180deg, rgba(15, 15, 13, 0.26), rgba(10, 10, 9, 0.72));
+}
+
+.system-message {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid rgba(215, 170, 71, 0.14);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.5);
+  box-shadow: inset 3px 0 0 rgba(234, 213, 164, 0.7);
+}
+
+.system-message span {
+  color: rgba(244, 236, 216, 0.52);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.system-message p {
+  color: #e9dec2;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 @media (max-width: 1180px) {
   .layout {
     grid-template-columns: 300px 1fr;
   }
 
-  .report-panel {
+  .side-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
     grid-column: 1 / -1;
     max-height: 360px;
   }
@@ -1848,8 +1911,12 @@ select {
   }
 
   .roster-panel,
-  .report-panel {
+  .side-column {
     max-height: none;
+  }
+
+  .side-column {
+    grid-template-columns: 1fr;
   }
 
   .war-map {

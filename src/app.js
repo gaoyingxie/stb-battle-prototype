@@ -20,6 +20,7 @@ const LEGACY_FREE_SKILL_IDS = new Set([
   "golden-lock",
 ]);
 const STARTER_SKILL_MIGRATION = "starter-bc-only";
+const SYSTEM_MESSAGE_LIMIT = 24;
 const state = {
   roster: {},
   skills: {},
@@ -27,6 +28,7 @@ const state = {
   fodder: 0,
   formation: starterFormation(),
   enemy: [],
+  systemMessages: [],
   lastBattle: null,
   activeBattle: null,
 };
@@ -73,6 +75,7 @@ const els = {
   enemyTroops: document.querySelector("#enemyTroops"),
   roundCount: document.querySelector("#roundCount"),
   report: document.querySelector("#report"),
+  systemMessages: document.querySelector("#systemMessages"),
   battleTitle: document.querySelector("#battleTitle"),
   battleSubtitle: document.querySelector("#battleSubtitle"),
   battleResult: document.querySelector("#battleResult"),
@@ -114,7 +117,7 @@ function bindEvents() {
     state.enemy = randomEnemyTeam();
     state.lastBattle = null;
     state.activeBattle = null;
-    writeReport([{ type: "system", text: "斥候回报：新的郊野守军已经出现。" }]);
+    writeSystemMessage("斥候回报：新的郊野守军已经出现。");
     saveState();
     renderAll();
   });
@@ -123,6 +126,11 @@ function bindEvents() {
   document.querySelector("#autoTeam").addEventListener("click", autoTeam);
   document.querySelector("#clearReport").addEventListener("click", () => {
     els.report.innerHTML = "";
+  });
+  document.querySelector("#clearSystemMessages").addEventListener("click", () => {
+    state.systemMessages = [];
+    saveState();
+    renderSystemMessages();
   });
   document.body.addEventListener("click", handleBodyClick);
   els.skillModalClose.addEventListener("click", () => els.skillModal.close());
@@ -496,7 +504,7 @@ function dismantleHero(heroId) {
   unlockDismantleSkills(hero);
   state.activeBattle = null;
   state.lastBattle = null;
-  writeReport([{ type: "system", text: `拆解${hero.name}，获得战法【${skills.map((skill) => skill.name).join("】、【")}】。` }]);
+  writeSystemMessage(`拆解${hero.name}，获得战法【${skills.map((skill) => skill.name).join("】、【")}】。`);
   saveState();
   renderAll();
 }
@@ -639,8 +647,8 @@ function resetAll() {
   ensureStarterRoster();
   state.enemy = randomEnemyTeam();
   normalizeFormationSkills();
+  writeSystemMessage("已重置所有记录，回到初始阵容。");
   saveState();
-  writeReport([{ type: "system", text: "已重置所有记录，回到初始阵容。" }]);
   renderAll();
 }
 
@@ -651,6 +659,7 @@ function resetRuntimeState() {
   state.fodder = 0;
   state.formation = starterFormation();
   state.enemy = [];
+  state.systemMessages = [];
   state.lastBattle = null;
   state.activeBattle = null;
 }
@@ -670,6 +679,7 @@ function loadState() {
     state.fodder = Number(state.fodder) || 0;
     state.skills ||= {};
     state.migrations ||= {};
+    state.systemMessages = Array.isArray(state.systemMessages) ? state.systemMessages.slice(-SYSTEM_MESSAGE_LIMIT) : [];
   } catch {
     localStorage.removeItem("heluozhanzhen");
   }
@@ -683,6 +693,7 @@ function saveState() {
     fodder: state.fodder,
     formation: state.formation,
     enemy: state.enemy,
+    systemMessages: state.systemMessages,
   }));
 }
 
@@ -705,7 +716,7 @@ function drawHeroes(count) {
     return `${hero.name}${"★".repeat(hero.rarity)}${converted ? `→狗粮${skillText}` : ""}`;
   }).join("、");
   const convertedCount = pulls.filter((pull) => pull.converted).length;
-  writeReport([{ type: "system", text: `招募结果：${names}${convertedCount ? `。狗粮 +${convertedCount}，当前 ${state.fodder}` : ""}` }]);
+  writeSystemMessage(`招募结果：${names}${convertedCount ? `。狗粮 +${convertedCount}，当前 ${state.fodder}` : ""}`);
   showGacha(pulls);
   saveState();
   renderAll();
@@ -726,7 +737,7 @@ function autoTeam() {
   normalizeFormationSkills();
   state.activeBattle = null;
   state.lastBattle = null;
-  writeReport([{ type: "system", text: "军师完成整备：已按星级与战力自动上阵。" }]);
+  writeSystemMessage("军师完成整备：已按星级与战力自动上阵。");
   saveState();
   renderAll();
 }
@@ -759,6 +770,7 @@ function renderAll() {
   renderRoster();
   renderSkillCodex();
   renderBattle(currentBattle());
+  renderSystemMessages();
 }
 
 function currentBattle() {
@@ -950,6 +962,7 @@ function renderBattle(result) {
   els.battleSubtitle.textContent = result ? result.subtitle : "双方列阵，尚未交锋";
   els.battleResult.textContent = result ? result.label : "未交锋";
   els.battleResult.dataset.result = result?.winner || "pending";
+  if (!result) writeEmptyReport();
   updateBattleButton(result);
 }
 
@@ -1094,6 +1107,54 @@ function writeReport(entries) {
     ${entries.map(reportLineHtml).join("")}
   `;
   els.report.scrollTop = els.report.scrollHeight || 0;
+}
+
+function writeEmptyReport() {
+  els.report.innerHTML = `
+    <div class="report-detail-title">
+      <span>战报详情</span>
+      <b>未开战</b>
+    </div>
+    <div class="empty-report">暂无战斗记录。开战后这里会按回合记录伤害、治疗和控制。</div>
+  `;
+}
+
+function writeSystemMessage(text, type = "system") {
+  state.systemMessages = [
+    ...(state.systemMessages || []),
+    {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      type,
+      text,
+      createdAt: Date.now(),
+    },
+  ].slice(-SYSTEM_MESSAGE_LIMIT);
+}
+
+function renderSystemMessages() {
+  const messages = [...(state.systemMessages || [])].reverse();
+  if (!messages.length) {
+    els.systemMessages.innerHTML = `<div class="empty-report">暂无系统消息。</div>`;
+    return;
+  }
+  els.systemMessages.innerHTML = messages.map(systemMessageHtml).join("");
+}
+
+function systemMessageHtml(message) {
+  const time = new Date(message.createdAt || Date.now()).toLocaleTimeString("zh-CN", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return `
+    <article class="system-message ${message.type || "system"}">
+      <span>${escapeHtml(time)}</span>
+      <p>${decorateSystemMessageText(message.text)}</p>
+    </article>
+  `;
+}
+
+function decorateSystemMessageText(text) {
+  return escapeHtml(text).replace(/【([^】]+)】/g, '<b class="report-skill">【$1】</b>');
 }
 
 function reportLineHtml(entry) {

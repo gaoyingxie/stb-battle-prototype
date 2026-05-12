@@ -35,6 +35,8 @@ try {
     title: document.querySelector("#battleTitle")?.textContent?.trim(),
     round: document.querySelector("#roundCount")?.textContent?.trim(),
     reportLines: document.querySelectorAll("#report .log-line").length,
+    systemMessages: document.querySelectorAll("#systemMessages .system-message").length,
+    reportIncludesRecruit: document.querySelector("#report")?.textContent?.includes("招募结果") || false,
     battleLogEntries: globalThis.STZB_DEBUG?.state?.activeBattle?.log?.length || 0,
     skillModalTitle: document.querySelector("#skillModalTitle")?.textContent?.trim(),
   }));
@@ -44,6 +46,12 @@ try {
   }
   if (summary.battleLogEntries < 3) {
     throw new Error(`战斗日志记录过少：${summary.battleLogEntries}`);
+  }
+  if (!summary.systemMessages) {
+    throw new Error("系统消息没有渲染抽卡记录");
+  }
+  if (summary.reportIncludesRecruit) {
+    throw new Error("招募结果不应渲染到战报里");
   }
   if (!summary.skillModalTitle) {
     throw new Error("战法详情弹窗没有渲染标题");
