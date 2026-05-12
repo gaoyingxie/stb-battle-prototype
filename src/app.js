@@ -981,7 +981,7 @@ function unitTemplate(unit) {
   const woundedPct = percentOf(unit.wounded, unit.maxTroops);
   const baseRange = baseAttackRange(unit);
   const attackRange = getAttackRange(unit);
-  const rangeText = attackRange === baseRange ? `攻距 ${attackRange}` : `攻距 ${baseRange}→${attackRange}`;
+  const rangeText = String(attackRange);
   const troopText = `${formatNumber(Math.max(0, Math.round(unit.troops)))}/${formatNumber(unit.maxTroops)}`;
   const woundedText = unit.wounded ? `伤${formatNumber(unit.wounded)}` : `${troopPct}%`;
   const portrait = portraitForHero(unit);

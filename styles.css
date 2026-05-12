@@ -512,7 +512,7 @@ select {
 .unit-nameplate .unit-name {
   overflow: hidden;
   color: #fff2d2;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1.1;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -619,13 +619,14 @@ select {
 }
 
 .war-map {
+  --battle-card-width: clamp(176px, 13vw, 190px);
   display: grid;
-  grid-template-rows: auto minmax(52px, auto) auto;
-  gap: 6px;
+  grid-template-rows: auto minmax(58px, auto) auto;
+  gap: 12px;
   min-height: auto;
-  padding: 10px;
+  padding: 12px 14px 14px;
   background:
-    radial-gradient(circle at 50% 44%, rgba(215, 170, 71, 0.12), transparent 18rem),
+    radial-gradient(circle at 50% 44%, rgba(244, 207, 120, 0.14), transparent 20rem),
     linear-gradient(90deg, rgba(245, 223, 170, 0.035) 1px, transparent 1px),
     linear-gradient(rgba(245, 223, 170, 0.035) 1px, transparent 1px),
     linear-gradient(180deg, rgba(45, 65, 75, 0.34) 0%, rgba(25, 23, 22, 0.98) 46%, rgba(88, 30, 29, 0.36) 100%);
@@ -673,9 +674,9 @@ select {
 
 .position-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 122px));
+  grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 8px;
+  gap: 18px;
   padding: 0;
   color: rgba(228, 220, 196, 0.76);
   font-size: 13px;
@@ -697,9 +698,9 @@ select {
 
 .line {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 122px));
+  grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 8px;
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -711,9 +712,14 @@ select {
   min-height: 0;
   padding: 0;
   isolation: isolate;
-  border: 1px solid rgba(215, 170, 71, 0.34);
-  background: linear-gradient(180deg, rgba(27, 23, 18, 0.98), rgba(7, 7, 6, 0.98));
-  border-radius: 3px;
+  border: 1px solid rgba(245, 208, 128, 0.5);
+  background:
+    linear-gradient(180deg, rgba(43, 34, 22, 0.98), rgba(8, 8, 7, 0.98)),
+    #0d0b09;
+  border-radius: 4px;
+  box-shadow:
+    0 16px 30px rgba(0, 0, 0, 0.26),
+    inset 0 0 0 1px rgba(255, 242, 190, 0.08);
   cursor: pointer;
 }
 
@@ -722,8 +728,8 @@ select {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, transparent 0 55%, rgba(0, 0, 0, 0.5) 100%),
-    radial-gradient(circle at 74% 28%, rgba(245, 223, 170, 0.12), transparent 32%);
+    linear-gradient(180deg, rgba(255, 235, 178, 0.06), transparent 42%, rgba(0, 0, 0, 0.46) 100%),
+    radial-gradient(circle at 74% 28%, rgba(255, 226, 150, 0.2), transparent 36%);
   pointer-events: none;
   content: "";
 }
@@ -743,11 +749,14 @@ select {
 
 .unit-card.camp {
   border-color: rgba(188, 60, 165, 0.76);
-  box-shadow: inset 0 0 0 1px rgba(188, 60, 165, 0.16);
+  box-shadow:
+    0 16px 30px rgba(0, 0, 0, 0.26),
+    0 0 18px rgba(188, 60, 165, 0.18),
+    inset 0 0 0 1px rgba(188, 60, 165, 0.18);
 }
 
 .unit-card.front {
-  border-color: rgba(90, 161, 132, 0.48);
+  border-color: rgba(104, 188, 150, 0.58);
 }
 
 .unit-card.fallen {
@@ -757,37 +766,52 @@ select {
 
 .unit-portrait {
   position: relative;
-  aspect-ratio: 24 / 35;
+  aspect-ratio: 1 / 1;
   height: auto;
   min-height: 0;
   overflow: hidden;
-  border-bottom: 1px solid rgba(245, 223, 170, 0.16);
-  background: #15110d;
+  border-bottom: 1px solid rgba(245, 223, 170, 0.24);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 237, 190, 0.12), transparent 46%),
+    #15110d;
 }
 
+.unit-portrait::before,
 .unit-portrait::after {
   position: absolute;
   inset: 0;
-  z-index: 0;
   pointer-events: none;
   content: "";
 }
 
-.unit-portrait::after {
+.unit-portrait::before {
+  z-index: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
-    linear-gradient(180deg, transparent 0 52%, rgba(0, 0, 0, 0.64) 100%),
-    var(--unit-portrait, linear-gradient(135deg, rgba(244, 236, 216, 0.07), transparent 45%));
-  background-position: center, center, center 28%;
+    var(--unit-portrait, linear-gradient(135deg, rgba(244, 236, 216, 0.08), transparent 45%));
+  background-position: center 24%;
   background-repeat: no-repeat;
-  background-size: auto, auto, cover;
+  background-size: cover;
+  transform: scale(1.08);
+  transform-origin: center 22%;
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.unit-portrait::after {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 20%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0 52%, rgba(0, 0, 0, 0.18) 75%, rgba(0, 0, 0, 0.38) 100%),
+    radial-gradient(circle at 52% 22%, transparent 0 48%, rgba(0, 0, 0, 0.24) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .unit-stars {
   position: absolute;
   top: 6px;
   left: 8px;
-  z-index: 2;
+  z-index: 3;
   color: #ffd15c;
   font-size: 13px;
   font-weight: 900;
@@ -800,57 +824,67 @@ select {
 
 .unit-nameplate {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 4px;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  justify-self: stretch;
+  gap: 3px;
   align-items: center;
-  min-height: 24px;
-  padding: 2px 5px;
-  border-top: 1px solid rgba(255, 225, 168, 0.11);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  width: 100%;
+  min-height: 21px;
+  padding: 1px 5px;
+  border-block: 1px solid rgba(255, 225, 168, 0.16);
+  border-inline: 0;
+  border-radius: 0;
   background:
-    linear-gradient(90deg, rgba(20, 17, 13, 0.82), rgba(35, 29, 21, 0.64)),
-    linear-gradient(180deg, rgba(255, 238, 192, 0.1), transparent 54%);
+    linear-gradient(90deg, rgba(18, 15, 11, 0.62), rgba(34, 27, 18, 0.44)),
+    linear-gradient(180deg, rgba(255, 238, 192, 0.12), transparent 58%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 245, 206, 0.08),
+    0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .unit-card.player .unit-nameplate {
   background:
-    linear-gradient(90deg, rgba(9, 54, 87, 0.9), rgba(17, 42, 55, 0.72)),
-    linear-gradient(180deg, rgba(172, 222, 255, 0.14), transparent 58%);
+    linear-gradient(90deg, rgba(11, 54, 83, 0.72), rgba(13, 39, 54, 0.48)),
+    linear-gradient(180deg, rgba(172, 222, 255, 0.16), transparent 58%);
 }
 
 .unit-card.enemy .unit-nameplate {
   background:
-    linear-gradient(90deg, rgba(91, 20, 19, 0.92), rgba(42, 21, 18, 0.74)),
-    linear-gradient(180deg, rgba(255, 194, 160, 0.14), transparent 58%);
+    linear-gradient(90deg, rgba(91, 24, 21, 0.7), rgba(47, 21, 18, 0.46)),
+    linear-gradient(180deg, rgba(255, 194, 160, 0.15), transparent 58%);
 }
 
 .unit-faction {
   display: grid;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   place-items: center;
-  border: 1px solid rgba(245, 223, 170, 0.5);
-  background: rgba(0, 0, 0, 0.42);
+  border: 1px solid rgba(245, 223, 170, 0.42);
+  background: rgba(0, 0, 0, 0.3);
   color: #f6ddb2;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 900;
   line-height: 1;
 }
 
 .unit-range {
-  display: none;
+  display: inline;
+  color: rgba(246, 227, 185, 0.68);
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .unit-arm {
-  color: rgba(246, 227, 185, 0.82);
-  font-size: 11px;
+  color: rgba(246, 227, 185, 0.72);
+  font-size: 9px;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .unit-troops {
   align-self: stretch;
-  padding: 4px 5px 6px;
+  padding: 5px 6px 7px;
   background:
     linear-gradient(180deg, rgba(40, 32, 23, 0.86), rgba(8, 8, 7, 0.96)),
     radial-gradient(circle at 50% 0, rgba(215, 170, 71, 0.1), transparent 54%);
@@ -959,12 +993,15 @@ select {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   grid-template-columns: 1fr;
   gap: 2px;
   margin: 0;
-  padding: 18px 5px 5px;
-  background: linear-gradient(180deg, transparent 0%, rgba(8, 7, 6, 0.72) 34%, rgba(8, 7, 6, 0.9) 100%);
+  padding: 24px 7px 6px;
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(8, 7, 6, 0.24) 40%, rgba(8, 7, 6, 0.54) 100%),
+    linear-gradient(90deg, rgba(255, 224, 156, 0.1), transparent 22%, transparent 78%, rgba(255, 224, 156, 0.08));
+  backdrop-filter: blur(1px);
 }
 
 .skill-chip {
@@ -982,17 +1019,24 @@ select {
 
 .unit-portrait .skill-chip {
   min-height: 18px;
-  padding: 2px 5px;
-  border-color: rgba(245, 223, 170, 0.26);
-  background: rgba(13, 11, 9, 0.62);
+  padding: 2px 6px;
+  border-color: rgba(255, 226, 170, 0.28);
+  background:
+    linear-gradient(180deg, rgba(43, 35, 22, 0.42), rgba(11, 10, 8, 0.34));
   color: #ffe4a8;
   font-size: 11px;
+  font-weight: 800;
   line-height: 1.1;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 243, 206, 0.08),
+    0 1px 5px rgba(0, 0, 0, 0.18);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
 }
 
 .unit-card.enemy .unit-portrait .skill-chip {
-  border-color: rgba(255, 190, 160, 0.28);
+  border-color: rgba(255, 190, 160, 0.3);
+  background:
+    linear-gradient(180deg, rgba(71, 30, 23, 0.4), rgba(16, 9, 8, 0.32));
   color: #ffd2b7;
 }
 
@@ -1403,6 +1447,160 @@ select {
   color: #c9c1a6;
 }
 
+@media (max-height: 900px) and (min-width: 821px) {
+  .app-shell {
+    padding: 12px 16px 18px;
+  }
+
+  .topbar {
+    min-height: 70px;
+    padding: 10px 14px;
+  }
+
+  .layout {
+    margin-top: 12px;
+  }
+}
+
+@media (max-height: 840px) and (min-width: 821px) {
+  .battlefield .battle-header {
+    padding-block: 7px;
+  }
+
+  .war-map {
+    --battle-card-width: 128px;
+    grid-template-rows: auto minmax(42px, auto) auto;
+    gap: 6px;
+    padding: 9px 12px 10px;
+  }
+
+  .army-title {
+    min-height: 28px;
+    padding-block: 3px;
+  }
+
+  .army-title span {
+    font-size: 16px;
+  }
+
+  .position-row {
+    gap: 8px;
+  }
+
+  .position-row span {
+    min-height: 20px;
+    font-size: 12px;
+  }
+
+  .line {
+    gap: 8px;
+  }
+
+  .unit-portrait {
+    aspect-ratio: 5 / 6;
+  }
+
+  .unit-portrait::before {
+    transform: scale(1.05);
+  }
+
+  .unit-nameplate {
+    min-height: 20px;
+    padding-block: 2px;
+  }
+
+  .unit-troops {
+    padding: 3px 5px 5px;
+  }
+
+  .unit-troop-row {
+    font-size: 11px;
+  }
+
+  .unit-portrait .skill-list {
+    gap: 2px;
+    padding: 18px 5px 5px;
+  }
+
+  .unit-portrait .skill-chip {
+    min-height: 17px;
+    padding: 2px 5px;
+    font-size: 10px;
+  }
+
+  .clash-band {
+    min-height: 36px;
+    padding-block: 3px;
+  }
+
+  .clash-band .result-chip {
+    min-height: 30px;
+    font-size: 24px;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 821px) {
+  .war-map {
+    --battle-card-width: 120px;
+    grid-template-rows: auto minmax(34px, auto) auto;
+    gap: 5px;
+    padding-block: 7px 8px;
+  }
+
+  .army-title {
+    min-height: 25px;
+    padding-block: 2px;
+  }
+
+  .army-title span {
+    font-size: 15px;
+  }
+
+  .position-row span {
+    min-height: 18px;
+  }
+
+  .unit-stars {
+    top: 5px;
+    left: 6px;
+    font-size: 12px;
+  }
+
+  .unit-nameplate {
+    width: 100%;
+    min-height: 19px;
+  }
+
+  .unit-nameplate .unit-name,
+  .unit-arm {
+    font-size: 10px;
+  }
+
+  .unit-troops {
+    padding-bottom: 4px;
+  }
+
+  .unit-portrait .skill-list {
+    padding: 15px 4px 4px;
+  }
+
+  .unit-portrait .skill-chip {
+    min-height: 16px;
+    padding: 1px 4px;
+    font-size: 9px;
+  }
+
+  .clash-band {
+    min-height: 30px;
+    padding-block: 2px;
+  }
+
+  .clash-band .result-chip {
+    min-height: 26px;
+    font-size: 22px;
+  }
+}
+
 .stats-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1689,7 +1887,7 @@ select {
   }
 
   .unit-nameplate {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
     gap: 5px;
   }
 
