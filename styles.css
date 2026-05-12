@@ -999,7 +999,7 @@ select {
   box-shadow: inset 0 0 8px rgba(190, 232, 255, 0.28);
 }
 
-.wounded-fill::before {
+.has-wounded-separator .wounded-fill::before {
   content: "";
   position: absolute;
   inset-block: -1px;
@@ -1017,7 +1017,7 @@ select {
     -2px 0 10px var(--wounded-separator-aura);
 }
 
-.wounded-fill::after {
+.has-wounded-separator .wounded-fill::after {
   content: "";
   position: absolute;
   inset-block: 0;

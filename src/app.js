@@ -992,6 +992,7 @@ function updateBattleButton(result) {
 function unitTemplate(unit) {
   const troopPct = percentOf(unit.troops, unit.maxTroops);
   const woundedPct = percentOf(unit.wounded, unit.maxTroops);
+  const showWoundedSeparator = unit.troops > 0 && unit.wounded > 0 && woundedPct > 0;
   const baseRange = baseAttackRange(unit);
   const attackRange = getAttackRange(unit);
   const rangeText = String(attackRange);
@@ -1018,7 +1019,7 @@ function unitTemplate(unit) {
           <strong>${troopText}</strong>
           <span class="unit-wounded">${woundedText}</span>
         </div>
-        <div class="troop-bar" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%; --wounded-pct: ${woundedPct}%">
+        <div class="troop-bar ${showWoundedSeparator ? "has-wounded-separator" : ""}" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%; --wounded-pct: ${woundedPct}%">
           <div class="troop-fill"></div>
           <div class="wounded-fill"></div>
         </div>
@@ -1033,12 +1034,13 @@ function troopSummaryTemplate(units) {
   const max = totalMaxTroops(units);
   const activePct = percentOf(active, max);
   const woundedPct = percentOf(wounded, max);
+  const showWoundedSeparator = active > 0 && wounded > 0 && woundedPct > 0;
   return `
     <span class="troop-summary-text">
       ${formatNumber(active)}
       <small>/ ${formatNumber(max)}${wounded ? ` · 伤${formatNumber(wounded)}` : ""}</small>
     </span>
-    <span class="team-troop-bar" aria-hidden="true" style="--active-pct: ${activePct}%; --wounded-pct: ${woundedPct}%">
+    <span class="team-troop-bar ${showWoundedSeparator ? "has-wounded-separator" : ""}" aria-hidden="true" style="--active-pct: ${activePct}%; --wounded-pct: ${woundedPct}%">
       <i class="troop-fill"></i>
       <i class="wounded-fill"></i>
     </span>
