@@ -15,6 +15,7 @@ scripts/download-stzb-portraits.mjs
 assets/portraits/          本地武将头像
 docs/battle-rules.md       战斗规则文档
 docs/engineering.md        工程文档
+docs/team-ai.md            AI 配将推荐逻辑文档
 ```
 
 ## 模块边界
@@ -22,10 +23,11 @@ docs/engineering.md        工程文档
 - `battle-rules.js` 不访问 DOM，不读写存档，只保存可调规则和纯公式。
 - `seed-data.js` 放本地兜底内容：早期种子武将、手写战法、官方名称别名。
 - `battle-engine.js` 拥有战斗模拟状态：单位、回合、行动、伤害、治疗、状态生命周期。
+- `team-ai.js` 拥有配将推荐逻辑：候选池、选将评分、战法评分和队伍组装策略。
 - `app.js` 拥有浏览器应用状态：localStorage、按钮事件、编队表单、弹窗、战报渲染。
 - `official-data.js` 是生成物，不手工维护；需要刷新时重新运行抓取脚本。
 
-这个拆法的目标是让后续迭代有明确落点：调公式改 `battle-rules.js`，加原型战法改 `seed-data.js`，改战斗行为改 `battle-engine.js`，改界面体验改 `app.js`。
+这个拆法的目标是让后续迭代有明确落点：调公式改 `battle-rules.js`，加原型战法改 `seed-data.js`，改战斗行为改 `battle-engine.js`，改配将推荐改 `team-ai.js`，改界面体验改 `app.js`。
 
 ## 数据刷新
 
