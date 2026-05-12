@@ -969,6 +969,8 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.64);
+  --wounded-separator: rgba(255, 255, 255, 0.82);
+  --wounded-separator-glow: rgba(255, 255, 255, 0.42);
 }
 
 .troop-fill,
@@ -995,6 +997,17 @@ select {
   box-shadow: inset 0 0 8px rgba(190, 232, 255, 0.28);
 }
 
+.wounded-fill::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 2px;
+  border-radius: 999px;
+  background: var(--wounded-separator);
+  box-shadow: 0 0 8px var(--wounded-separator-glow);
+}
+
 .unit-card.player .troop-fill,
 .player-block .team-troop-bar .troop-fill {
   background:
@@ -1006,6 +1019,12 @@ select {
 .player-block .team-troop-bar .wounded-fill {
   background: linear-gradient(90deg, rgba(78, 173, 224, 0.88), rgba(155, 219, 248, 0.94));
   box-shadow: inset 0 0 8px rgba(194, 237, 255, 0.3);
+}
+
+.unit-card.player .troop-bar,
+.player-block .team-troop-bar {
+  --wounded-separator: #59e9ff;
+  --wounded-separator-glow: rgba(80, 225, 255, 0.9);
 }
 
 .unit-card.enemy .troop-fill,
@@ -1022,8 +1041,13 @@ select {
     linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 48%),
     linear-gradient(90deg, rgba(234, 111, 98, 0.96), rgba(255, 187, 171, 0.98));
   box-shadow:
-    inset 2px 0 0 rgba(255, 235, 218, 0.82),
     inset 0 0 8px rgba(255, 219, 200, 0.34);
+}
+
+.unit-card.enemy .troop-bar,
+.enemy-block .team-troop-bar {
+  --wounded-separator: #ff3f35;
+  --wounded-separator-glow: rgba(255, 58, 47, 0.88);
 }
 
 .unit-stats {
@@ -1735,6 +1759,8 @@ select {
   border: 1px solid rgba(244, 236, 216, 0.18);
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.54);
+  --wounded-separator: rgba(255, 255, 255, 0.82);
+  --wounded-separator-glow: rgba(255, 255, 255, 0.42);
 }
 
 .report {
