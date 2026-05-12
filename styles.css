@@ -498,17 +498,21 @@ select {
 
 .unit-troop-row {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 7px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px;
   margin-top: 0;
   color: #e8ddb9;
   font-weight: 800;
 }
 
+.unit-troop-row > span:first-child {
+  display: none;
+}
+
 .unit-nameplate .unit-name {
   overflow: hidden;
   color: #fff2d2;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.1;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -518,7 +522,7 @@ select {
 .unit-troop-row strong {
   overflow: hidden;
   color: #fff4cf;
-  font-size: 13px;
+  font-size: 10px;
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -606,12 +610,20 @@ select {
     var(--panel);
 }
 
+.battlefield .battle-header {
+  padding: 9px 12px;
+}
+
+.battlefield .battle-header p {
+  display: none;
+}
+
 .war-map {
   display: grid;
-  grid-template-rows: auto minmax(72px, auto) auto;
-  gap: 8px;
-  min-height: 660px;
-  padding: 12px;
+  grid-template-rows: auto minmax(52px, auto) auto;
+  gap: 6px;
+  min-height: auto;
+  padding: 10px;
   background:
     radial-gradient(circle at 50% 44%, rgba(215, 170, 71, 0.12), transparent 18rem),
     linear-gradient(90deg, rgba(245, 223, 170, 0.035) 1px, transparent 1px),
@@ -622,16 +634,16 @@ select {
 
 .army-block {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .army-title {
   display: grid;
   grid-template-columns: minmax(80px, auto) 1fr;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
-  min-height: 38px;
-  padding: 7px 12px;
+  min-height: 32px;
+  padding: 5px 10px;
   color: #f0f0d0;
 }
 
@@ -644,7 +656,7 @@ select {
 }
 
 .army-title span {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 900;
 }
 
@@ -661,18 +673,19 @@ select {
 
 .position-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 0 10px;
+  grid-template-columns: repeat(3, minmax(0, 122px));
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
   color: rgba(228, 220, 196, 0.76);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   text-align: center;
 }
 
 .position-row span {
   display: grid;
-  min-height: 27px;
+  min-height: 23px;
   place-items: center;
   border: 1px solid rgba(245, 223, 170, 0.12);
   background:
@@ -684,8 +697,9 @@ select {
 
 .line {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 122px));
+  justify-content: center;
+  gap: 8px;
   align-items: stretch;
 }
 
@@ -694,7 +708,7 @@ select {
   position: relative;
   overflow: hidden;
   grid-template-rows: auto auto 1fr;
-  min-height: 322px;
+  min-height: 0;
   padding: 0;
   isolation: isolate;
   border: 1px solid rgba(215, 170, 71, 0.34);
@@ -770,11 +784,11 @@ select {
 
 .unit-stars {
   position: absolute;
-  top: 7px;
-  left: 10px;
+  top: 6px;
+  left: 8px;
   z-index: 1;
   color: #ffd15c;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   line-height: 1;
   text-shadow:
@@ -785,11 +799,11 @@ select {
 
 .unit-nameplate {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto auto;
-  gap: 6px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 4px;
   align-items: center;
-  min-height: 30px;
-  padding: 4px 8px;
+  min-height: 24px;
+  padding: 2px 5px;
   border-top: 1px solid rgba(255, 225, 168, 0.11);
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   background:
@@ -811,28 +825,31 @@ select {
 
 .unit-faction {
   display: grid;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   place-items: center;
   border: 1px solid rgba(245, 223, 170, 0.5);
   background: rgba(0, 0, 0, 0.42);
   color: #f6ddb2;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
   line-height: 1;
 }
 
-.unit-arm,
 .unit-range {
+  display: none;
+}
+
+.unit-arm {
   color: rgba(246, 227, 185, 0.82);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .unit-troops {
   align-self: stretch;
-  padding: 6px 8px 9px;
+  padding: 4px 5px 6px;
   background:
     linear-gradient(180deg, rgba(40, 32, 23, 0.86), rgba(8, 8, 7, 0.96)),
     radial-gradient(circle at 50% 0, rgba(215, 170, 71, 0.1), transparent 54%);
@@ -849,8 +866,8 @@ select {
 
 .troop-bar {
   position: relative;
-  height: 12px;
-  margin-top: 5px;
+  height: 8px;
+  margin-top: 3px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2px;
@@ -928,18 +945,22 @@ select {
 
 .skill-list {
   display: grid;
-  gap: 4px;
-  margin-top: 7px;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.unit-card .skill-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .skill-chip {
   overflow: hidden;
-  padding: 4px 7px;
+  padding: 1px 5px;
   border: 1px solid rgba(215, 170, 71, 0.16);
   border-radius: 6px;
   background: rgba(20, 19, 15, 0.34);
   color: #e8d5a8;
-  font-size: 12px;
+  font-size: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: left;
@@ -1296,8 +1317,8 @@ select {
 .clash-band {
   display: grid;
   place-items: center;
-  min-height: 72px;
-  padding: 8px 14px;
+  min-height: 44px;
+  padding: 4px 12px;
   border: 1px solid rgba(245, 223, 170, 0.08);
   background:
     radial-gradient(circle at 50% 52%, rgba(215, 170, 71, 0.14), transparent 44%),
@@ -1328,14 +1349,14 @@ select {
 
 .clash-band .result-chip {
   min-width: 136px;
-  min-height: 46px;
+  min-height: 36px;
   border: 0;
   border-radius: 0;
   background:
     linear-gradient(135deg, transparent 12%, rgba(215, 170, 71, 0.08) 12% 88%, transparent 88%),
     transparent;
   color: #d7aa47;
-  font-size: 34px;
+  font-size: 28px;
   font-family: "STKaiti", "KaiTi", "Microsoft YaHei", serif;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6), 0 0 18px rgba(215, 170, 71, 0.26);
 }
@@ -1382,20 +1403,20 @@ select {
 .troop-summary-text {
   display: block;
   color: #f5dfaa;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.1;
 }
 
 .troop-summary-text small {
   color: rgba(244, 236, 216, 0.54);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .team-troop-bar {
   position: relative;
   display: block;
   width: min(100%, 420px);
-  height: 10px;
+  height: 8px;
   overflow: hidden;
   border: 1px solid rgba(244, 236, 216, 0.18);
   border-radius: 2px;
@@ -1625,11 +1646,12 @@ select {
 
   .position-row,
   .line {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
   }
 
   .unit-card {
-    min-height: 306px;
+    min-height: 0;
   }
 
   .unit-portrait {
