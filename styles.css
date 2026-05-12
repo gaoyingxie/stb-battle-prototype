@@ -523,13 +523,14 @@ select {
   overflow: hidden;
   color: #fff4cf;
   font-size: 10px;
-  text-align: right;
+  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .unit-wounded {
   color: #bfe8ff;
+  text-align: right;
   white-space: nowrap;
 }
 
@@ -734,14 +735,6 @@ select {
   content: "";
 }
 
-.unit-card::after {
-  position: absolute;
-  inset: 5px;
-  border: 1px solid rgba(245, 223, 170, 0.09);
-  pointer-events: none;
-  content: "";
-}
-
 .unit-content {
   position: relative;
   z-index: 1;
@@ -865,6 +858,7 @@ select {
   font-size: 10px;
   font-weight: 900;
   line-height: 1;
+  transform: translateY(-1px);
 }
 
 .unit-range {
