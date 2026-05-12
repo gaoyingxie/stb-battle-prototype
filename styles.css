@@ -652,7 +652,8 @@ select {
 }
 
 .war-map {
-  --battle-card-width: clamp(172px, 10.2vw, 206px);
+  --battle-card-width: clamp(190px, 11.4vw, 238px);
+  --battle-card-gap: 14px;
   display: grid;
   flex: 1;
   grid-template-rows: minmax(max-content, 1fr) minmax(42px, auto) minmax(max-content, 1fr);
@@ -691,9 +692,11 @@ select {
 }
 
 .army-title {
+  position: relative;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
+  justify-content: center;
+  gap: var(--battle-card-gap);
   align-items: center;
   min-height: 32px;
   padding: 0;
@@ -706,6 +709,13 @@ select {
 
 .enemy-block .army-title {
   background: transparent;
+}
+
+.army-title > span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .army-title span {
@@ -734,9 +744,11 @@ select {
 
 .army-title strong {
   display: grid;
-  grid-template-columns: auto minmax(160px, 1fr);
+  grid-column: 1 / -1;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 12px;
   align-items: center;
+  width: 100%;
 }
 
 .army-title .troop-summary-text {
@@ -747,7 +759,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 14px;
+  gap: var(--battle-card-gap);
   padding: 0;
   color: rgba(239, 232, 212, 0.72);
   font-size: 12px;
@@ -768,7 +780,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 14px;
+  gap: var(--battle-card-gap);
   align-items: stretch;
 }
 
@@ -838,7 +850,7 @@ select {
 
 .unit-portrait {
   position: relative;
-  aspect-ratio: 1 / 1.06;
+  aspect-ratio: 1 / 1.08;
   height: auto;
   min-height: 0;
   overflow: hidden;
@@ -1611,6 +1623,14 @@ select {
   .layout {
     margin-top: 12px;
   }
+
+  .war-map {
+    --battle-card-width: 184px;
+  }
+
+  .unit-portrait {
+    aspect-ratio: 1 / 1.02;
+  }
 }
 
 @media (max-height: 840px) and (min-width: 821px) {
@@ -1620,6 +1640,7 @@ select {
 
   .war-map {
     --battle-card-width: 128px;
+    --battle-card-gap: 8px;
     grid-template-rows: minmax(max-content, 1fr) minmax(42px, auto) minmax(max-content, 1fr);
     gap: 6px;
     padding: 9px 12px 10px;
@@ -1693,6 +1714,7 @@ select {
 @media (max-height: 760px) and (min-width: 821px) {
   .war-map {
     --battle-card-width: 120px;
+    --battle-card-gap: 8px;
     grid-template-rows: minmax(max-content, 1fr) minmax(34px, auto) minmax(max-content, 1fr);
     gap: 5px;
     padding-block: 7px 8px;
@@ -1798,7 +1820,7 @@ select {
 .team-troop-bar {
   position: relative;
   display: block;
-  width: min(100%, 420px);
+  width: 100%;
   height: 7px;
   overflow: hidden;
   border: 1px solid rgba(244, 236, 216, 0.18);
@@ -2076,6 +2098,11 @@ select {
   .army-title {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .army-title > span {
+    position: static;
+    transform: none;
   }
 
   .army-title strong {
