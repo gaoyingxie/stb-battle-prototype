@@ -744,19 +744,43 @@ select {
 .unit-portrait {
   position: relative;
   min-height: 176px;
+  overflow: hidden;
   border-bottom: 1px solid rgba(245, 223, 170, 0.16);
+  background: #15110d;
+}
+
+.unit-portrait::before,
+.unit-portrait::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.unit-portrait::before {
+  background: var(--unit-portrait, linear-gradient(135deg, rgba(244, 236, 216, 0.07), transparent 45%));
+  background-position: center 18%;
+  background-size: cover;
+  filter: blur(12px) saturate(0.88);
+  opacity: 0.34;
+  transform: scale(1.08);
+}
+
+.unit-portrait::after {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
     linear-gradient(180deg, transparent 0 52%, rgba(0, 0, 0, 0.64) 100%),
     var(--unit-portrait, linear-gradient(135deg, rgba(244, 236, 216, 0.07), transparent 45%));
-  background-position: center, center, center 14%;
-  background-size: auto, auto, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+  background-size: auto, auto, contain;
 }
 
 .unit-stars {
   position: absolute;
   top: 7px;
   left: 10px;
+  z-index: 1;
   color: #ffd15c;
   font-size: 14px;
   font-weight: 900;
@@ -1377,7 +1401,7 @@ select {
 .team-troop-bar {
   position: relative;
   display: block;
-  width: min(100%, 260px);
+  width: min(100%, 420px);
   height: 10px;
   overflow: hidden;
   border: 1px solid rgba(244, 236, 216, 0.18);
