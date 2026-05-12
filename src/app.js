@@ -8,6 +8,11 @@ const {
   OFFICIAL_SKILL_ALIASES,
 } = globalThis.STZB_SEED_DATA;
 
+const {
+  buildEnemyTeam,
+  recommendTeam,
+} = globalThis.STZB_TEAM_AI;
+
 mergeOfficialData();
 
 const EQUIPPABLE_SKILLS = SKILLS;
@@ -730,9 +735,21 @@ function weightedHero() {
 function autoTeam() {
   const owned = ownedHeroes().sort((a, b) => b.rarity - a.rarity || b.stats.attack + b.stats.strategy - (a.stats.attack + a.stats.strategy));
   const fallback = ["cao-cao", "guan-yu", "liu-bei"];
-  state.formation = POSITIONS.map((_, index) => ({
-    heroId: owned[index]?.id || fallback[index],
-    skills: suggestSkills(index),
+  const fallbackHeroes = fallback.map(heroById).filter(Boolean);
+  const heroPool = owned.length >= POSITIONS.length
+    ? owned
+    : [...owned, ...fallbackHeroes.filter((hero) => !owned.some((ownedHero) => ownedHero.id === hero.id))];
+  const recommended = recommendTeam({
+    heroes: heroPool.slice(0, 24),
+    skills: EQUIPPABLE_SKILLS.filter(isSkillUnlocked),
+    positions: POSITIONS,
+    minHeroRarity: 0,
+    skillGrades: null,
+  });
+  state.formation = POSITIONS.map((position, index) => ({
+    heroId: recommended[index]?.heroId || owned[index]?.id || fallback[index],
+    skills: recommended[index]?.skills?.length ? recommended[index].skills : suggestSkills(index),
+    position: position.id,
   }));
   normalizeFormationSkills();
   state.activeBattle = null;
@@ -752,12 +769,13 @@ function suggestSkills(index) {
 }
 
 function randomEnemyTeam() {
-  const heroes = shuffle([...HEROES]).slice(0, 3);
-  return heroes.map((hero, index) => ({
-    heroId: hero.id,
-    skills: shuffle(EQUIPPABLE_SKILLS.map((skill) => skill.id)).slice(0, 2),
-    position: POSITIONS[index].id,
-  }));
+  return buildEnemyTeam({
+    heroes: HEROES,
+    skills: EQUIPPABLE_SKILLS,
+    positions: POSITIONS,
+    sampleSize: 20,
+    skillGrades: ["S", "A"],
+  });
 }
 
 function getPlayerTeam() {
