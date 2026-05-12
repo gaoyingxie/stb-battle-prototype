@@ -999,15 +999,17 @@ function renderRoster() {
     const dismantles = dismantleSkillsForHero(hero);
     const canDismantle = (state.roster[hero.id] || 0) > 0 && dismantles.length;
     const portrait = portraitForHero(hero);
+    const attackDistance = Number(hero.distance) || defaultAttackDistance();
     return `
       <article class="hero-card" data-hero-id="${hero.id}" ${portrait ? `style="--hero-portrait: url('${portrait}')"` : ""}>
         ${avatarMarkup(hero, "avatar hero-avatar")}
-        <div>
+        <div class="hero-card-main">
           <div class="hero-name-row">
             <span class="hero-name">${hero.name}</span>
             <span class="rarity">${"★".repeat(hero.rarity)}</span>
           </div>
-          <div class="hero-meta">${hero.faction} · ${hero.arm} · 自带 <button class="text-link" data-skill-id="${innate.id}" type="button">${skillNameWithGrade(innate)}</button></div>
+          <div class="hero-meta hero-basic-meta">${hero.faction} · ${hero.arm} · 攻击距离 ${attackDistance}</div>
+          <div class="hero-meta hero-skill-meta"><span>自带</span><button class="text-link" data-skill-id="${innate.id}" type="button">${skillNameWithGrade(innate)}</button></div>
           <div class="hero-meta">可拆 ${dismantles.length ? dismantles.map((skill) => `<button class="text-link" data-skill-id="${skill.id}" type="button">${skillNameWithGrade(skill)}</button>`).join(" / ") : "暂无"}</div>
         </div>
         <div class="hero-actions">

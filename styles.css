@@ -503,6 +503,10 @@ select {
   font-size: 18px;
 }
 
+.hero-card-main {
+  min-width: 0;
+}
+
 .hero-meta,
 .unit-meta,
 .skill-row,
@@ -557,6 +561,32 @@ select {
 .hero-meta {
   color: #d4c39c;
   line-height: 1.45;
+}
+
+.hero-basic-meta {
+  white-space: nowrap;
+}
+
+.hero-skill-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hero-skill-meta > span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.hero-skill-meta .text-link {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rarity {
