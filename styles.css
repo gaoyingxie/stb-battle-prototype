@@ -47,9 +47,9 @@ button {
 
 .app-shell {
   width: 100%;
-  max-width: 1840px;
+  max-width: 1960px;
   margin: 0 auto;
-  padding: 18px 24px 28px;
+  padding: 16px 20px 24px;
 }
 
 .topbar,
@@ -173,7 +173,7 @@ h2 {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(300px, 340px) minmax(760px, 1fr) minmax(360px, 420px);
+  grid-template-columns: minmax(300px, 340px) minmax(780px, 1fr) minmax(380px, 460px);
   gap: 16px;
   align-items: start;
   margin-top: 16px;
@@ -205,11 +205,11 @@ h2 {
 }
 
 .report-panel {
-  flex: 1 1 500px;
+  flex: 1 1 auto;
 }
 
 .system-panel {
-  flex: 0 0 230px;
+  flex: 0 0 clamp(260px, 26vh, 330px);
 }
 
 .panel-heading,
@@ -629,6 +629,18 @@ select {
   border-color: rgba(245, 223, 170, 0.18);
 }
 
+@media (min-width: 1521px) {
+  .layout {
+    align-items: stretch;
+  }
+
+  .battlefield,
+  .side-column {
+    height: min(1040px, calc(100vh - 124px));
+    max-height: none;
+  }
+}
+
 .battlefield .battle-header {
   padding: 11px 14px;
   border-bottom-color: rgba(245, 223, 170, 0.1);
@@ -640,12 +652,13 @@ select {
 }
 
 .war-map {
-  --battle-card-width: clamp(156px, 11.2vw, 176px);
+  --battle-card-width: clamp(172px, 10.2vw, 206px);
   display: grid;
-  grid-template-rows: auto minmax(38px, auto) auto;
-  gap: 8px;
+  flex: 1;
+  grid-template-rows: minmax(max-content, 1fr) minmax(42px, auto) minmax(max-content, 1fr);
+  gap: 10px;
   min-height: auto;
-  padding: 10px 12px 12px;
+  padding: 14px;
   background:
     radial-gradient(circle at 50% 48%, rgba(244, 207, 120, 0.12), transparent 17rem),
     linear-gradient(90deg, rgba(245, 223, 170, 0.028) 1px, transparent 1px),
@@ -656,8 +669,9 @@ select {
 
 .army-block {
   display: grid;
+  align-content: center;
   gap: 6px;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid rgba(245, 223, 170, 0.09);
   border-radius: 8px;
   background: rgba(8, 11, 12, 0.28);
@@ -733,7 +747,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   padding: 0;
   color: rgba(239, 232, 212, 0.72);
   font-size: 12px;
@@ -754,7 +768,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, var(--battle-card-width)));
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   align-items: stretch;
 }
 
@@ -824,7 +838,7 @@ select {
 
 .unit-portrait {
   position: relative;
-  aspect-ratio: 1 / 0.94;
+  aspect-ratio: 1 / 1.06;
   height: auto;
   min-height: 0;
   overflow: hidden;
@@ -1606,7 +1620,7 @@ select {
 
   .war-map {
     --battle-card-width: 128px;
-    grid-template-rows: auto minmax(42px, auto) auto;
+    grid-template-rows: minmax(max-content, 1fr) minmax(42px, auto) minmax(max-content, 1fr);
     gap: 6px;
     padding: 9px 12px 10px;
   }
@@ -1634,7 +1648,7 @@ select {
   }
 
   .unit-portrait {
-    aspect-ratio: 5 / 6;
+    aspect-ratio: 1 / 1;
   }
 
   .unit-portrait::before {
@@ -1679,7 +1693,7 @@ select {
 @media (max-height: 760px) and (min-width: 821px) {
   .war-map {
     --battle-card-width: 120px;
-    grid-template-rows: auto minmax(34px, auto) auto;
+    grid-template-rows: minmax(max-content, 1fr) minmax(34px, auto) minmax(max-content, 1fr);
     gap: 5px;
     padding-block: 7px 8px;
   }
@@ -1706,6 +1720,10 @@ select {
   .unit-nameplate {
     width: 100%;
     min-height: 19px;
+  }
+
+  .unit-portrait {
+    aspect-ratio: 1 / 0.94;
   }
 
   .unit-nameplate .unit-name,
@@ -1988,7 +2006,7 @@ select {
   line-height: 1.55;
 }
 
-@media (max-width: 1520px) {
+@media (max-width: 1560px) {
   .layout {
     grid-template-columns: 300px 1fr;
   }
