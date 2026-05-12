@@ -693,7 +693,7 @@ select {
   display: grid;
   position: relative;
   overflow: hidden;
-  grid-template-rows: minmax(218px, 1fr) auto auto;
+  grid-template-rows: auto auto 1fr;
   min-height: 322px;
   padding: 0;
   isolation: isolate;
@@ -743,7 +743,9 @@ select {
 
 .unit-portrait {
   position: relative;
-  min-height: 218px;
+  aspect-ratio: 24 / 35;
+  height: auto;
+  min-height: 0;
   overflow: hidden;
   border-bottom: 1px solid rgba(245, 223, 170, 0.16);
   background: #15110d;
@@ -829,6 +831,7 @@ select {
 }
 
 .unit-troops {
+  align-self: stretch;
   padding: 6px 8px 9px;
   background:
     linear-gradient(180deg, rgba(40, 32, 23, 0.86), rgba(8, 8, 7, 0.96)),
@@ -1630,7 +1633,7 @@ select {
   }
 
   .unit-portrait {
-    min-height: 168px;
+    height: auto;
   }
 
   .unit-nameplate {
