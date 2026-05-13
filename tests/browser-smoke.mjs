@@ -246,9 +246,14 @@ try {
     const luBuCavalry = heroId("吕布", "群", "骑");
     const luBuBow = heroId("吕布", "群", "弓");
     const caoCao = heroId("曹操", "魏", "骑");
+    const guanYu = heroId("关羽", "蜀", "骑");
+    const liuBei = heroId("刘备", "蜀", "步");
     const calmArmy = skillId("安抚军心");
     state.roster[luBuCavalry] = 1;
     state.roster[luBuBow] = 1;
+    state.roster[caoCao] = 1;
+    state.roster[guanYu] = 1;
+    state.roster[liuBei] = 1;
     state.skills[calmArmy] = 1;
     state.formation = [
       { heroId: luBuCavalry, skills: [calmArmy, null] },
@@ -264,6 +269,18 @@ try {
       .flatMap((select, selectIndex) => [...select.options]
         .filter((option) => option.textContent.includes("吕布"))
         .map((option) => ({ selectIndex, text: option.textContent, disabled: option.disabled, selected: option.selected })));
+    state.formation = [
+      { heroId: caoCao, skills: [calmArmy, null] },
+      { heroId: guanYu, skills: [null, null] },
+      { heroId: liuBei, skills: [null, null] },
+    ];
+    globalThis.renderAll();
+    const campHeroSelect = document.querySelector('select[data-kind="hero"][data-index="0"]');
+    campHeroSelect.value = guanYu;
+    campHeroSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    const swappedHeroIds = state.formation.map((slot) => slot.heroId);
+    const swappedHeroNames = state.formation.map((slot) => globalThis.STZB_SEED_DATA.HEROES.find((hero) => hero.id === slot.heroId)?.name);
+    const swappedSkillIds = state.formation.map((slot) => slot.skills?.[0] || null);
     const calmOptions = [...document.querySelectorAll('select[data-kind="skill"] option')]
       .filter((option) => option.textContent.includes("安抚军心"))
       .map((option) => ({ value: option.value, text: option.textContent, selected: option.selected }));
@@ -280,7 +297,21 @@ try {
       .filter((item) => item.name && !String(item.id).startsWith("official-"))
       .map((item) => item.id);
     const starterHeroIds = state.formation.map((slot) => slot.heroId);
-    return { heroNames, equippedSkillNames, heroOptions, calmOptions, skillGrades, heroRarities, handwrittenCanonicalIds, starterHeroIds };
+    return {
+      heroNames,
+      equippedSkillNames,
+      heroOptions,
+      calmOptions,
+      skillGrades,
+      heroRarities,
+      handwrittenCanonicalIds,
+      starterHeroIds,
+      swapExpectedHeroIds: [guanYu, caoCao, liuBei],
+      swappedHeroIds,
+      swappedHeroNames,
+      swappedSkillIds,
+      swappedSkillExpected: calmArmy,
+    };
   });
 
   const battleLayoutChecks = [];
@@ -343,9 +374,14 @@ try {
   if (formationConstraintCheck.calmOptions.length !== 1 || !formationConstraintCheck.calmOptions[0].value.startsWith("official-skill-")) {
     throw new Error(`安抚军心没有合并为官方代表项：${JSON.stringify(formationConstraintCheck.calmOptions)}`);
   }
-  const selectedHeroOption = formationConstraintCheck.heroOptions.find((option) => option.selected);
-  if (formationConstraintCheck.heroOptions.some((option) => option.selectIndex !== selectedHeroOption?.selectIndex && !option.disabled)) {
-    throw new Error(`已上阵同名武将没有在其他槽位禁用：${JSON.stringify(formationConstraintCheck.heroOptions)}`);
+  if (formationConstraintCheck.heroOptions.some((option) => option.disabled)) {
+    throw new Error(`已上阵武将不应在其他槽位置灰：${JSON.stringify(formationConstraintCheck.heroOptions)}`);
+  }
+  if (formationConstraintCheck.swappedHeroIds.join("|") !== formationConstraintCheck.swapExpectedHeroIds.join("|")) {
+    throw new Error(`选择已上阵武将没有交换站位：${JSON.stringify(formationConstraintCheck)}`);
+  }
+  if (formationConstraintCheck.swappedSkillIds[1] !== formationConstraintCheck.swappedSkillExpected) {
+    throw new Error(`交换站位没有保留原武将战法配置：${JSON.stringify(formationConstraintCheck)}`);
   }
   if (formationConstraintCheck.skillGrades.join("") !== [...formationConstraintCheck.skillGrades].sort((a, b) => "SABC".indexOf(a) - "SABC".indexOf(b)).join("")) {
     throw new Error(`战法下拉没有按 S/A/B/C 排序：${JSON.stringify(formationConstraintCheck.skillGrades)}`);

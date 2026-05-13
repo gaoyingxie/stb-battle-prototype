@@ -21,6 +21,7 @@ refreshSkillMetadata();
 const STARTER_SKILL_GRADES = new Set(["B", "C"]);
 const SKILL_GRADE_ORDER = { S: 0, A: 1, B: 2, C: 3 };
 const SYSTEM_MESSAGE_LIMIT = 24;
+const PRIORITY_SPEED_BONUS = 80;
 const state = {
   roster: {},
   skills: {},
@@ -288,6 +289,10 @@ function attachOfficialSkillBehavior(skill) {
       const rangeUp = attackRangeDelta(desc);
       if (rangeUp > 0) allies.forEach((ally) => addStatus(ally, "rangeUp", 2, rangeUp));
       if (/防御.*提高|规避|减伤|伤害降低/.test(desc)) allies.forEach((ally) => addStatus(ally, "damageDown", 2, 0.1));
+      if (/先手|优先行动/.test(desc)) {
+        const duration = openingDurationFromText(desc, durationFromText(desc, 2));
+        allies.forEach((ally) => addStatus(ally, "priority", duration, PRIORITY_SPEED_BONUS));
+      }
       if (/洞察/.test(desc)) allies.forEach((ally) => addStatus(ally, "insight", durationFromText(desc, 8), 1));
       if (/援护/.test(desc)) allies.forEach((ally) => addStatus(ally, "guard", durationFromText(desc, 2), 1));
       if (/分兵/.test(desc)) allies.forEach((ally) => addStatus(ally, "split", durationFromText(desc, 1), damageRateFromText(desc, 0.35)));
@@ -543,6 +548,11 @@ function prepareRoundsFromText(text = "") {
 
 function durationFromText(text = "", fallback = 1) {
   const match = text.match(/持续\s*(\d+)\s*回合/);
+  return match ? Number(match[1]) : fallback;
+}
+
+function openingDurationFromText(text = "", fallback = 1) {
+  const match = text.match(/(?:战斗开始后)?前\s*(\d+)\s*回合/);
   return match ? Number(match[1]) : fallback;
 }
 
@@ -928,7 +938,6 @@ function renderFormationEditor() {
   const owned = sortedOwnedHeroes();
   els.formationEditor.innerHTML = POSITIONS.map((position, index) => {
     const slot = state.formation[index] || {};
-    const occupied = assignedHeroKeys(index);
     return `
       <div class="slot-editor">
         <div class="slot-title">
@@ -936,7 +945,7 @@ function renderFormationEditor() {
           <span>${slot.heroId ? heroById(slot.heroId).name : "空位"}</span>
         </div>
         <select data-kind="hero" data-index="${index}" aria-label="${position.label}武将">
-          ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""} ${occupied.has(heroKey(hero)) ? "disabled" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance()}</option>`).join("")}
+          ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance()}</option>`).join("")}
         </select>
         <select data-kind="skill" data-skill-index="0" data-index="${index}" aria-label="${position.label}战法一">
           ${skillOptions(slot.skills?.[0], index, 0)}
@@ -953,7 +962,7 @@ function renderFormationEditor() {
       const index = Number(event.target.dataset.index);
       const kind = event.target.dataset.kind;
       state.formation[index] ||= { heroId: owned[0].id, skills: suggestSkills(index) };
-      if (kind === "hero") state.formation[index].heroId = event.target.value;
+      if (kind === "hero") selectFormationHero(index, event.target.value);
       if (kind === "skill") state.formation[index].skills[Number(event.target.dataset.skillIndex)] = event.target.value || null;
       normalizeFormationSkills();
       state.lastBattle = null;
@@ -962,6 +971,33 @@ function renderFormationEditor() {
       renderAll();
     });
   });
+}
+
+function selectFormationHero(index, heroId) {
+  const selectedHero = heroById(heroId);
+  const selectedKey = heroKey(selectedHero);
+  const swapIndex = state.formation.findIndex((slot, slotIndex) => (
+    slotIndex !== index && selectedKey && heroKey(heroById(slot?.heroId)) === selectedKey
+  ));
+
+  if (swapIndex === -1) {
+    state.formation[index].heroId = heroId;
+    return;
+  }
+
+  const currentSlot = {
+    ...state.formation[index],
+    skills: [...(state.formation[index].skills || [])],
+    position: POSITIONS[swapIndex].id,
+  };
+  const swapSlot = {
+    ...state.formation[swapIndex],
+    heroId,
+    skills: [...(state.formation[swapIndex]?.skills || [])],
+    position: POSITIONS[index].id,
+  };
+  state.formation[index] = swapSlot;
+  state.formation[swapIndex] = currentSlot;
 }
 
 function skillOptions(selected, slotIndex, skillIndex) {
