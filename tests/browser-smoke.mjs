@@ -16,6 +16,7 @@ const battleLayoutViewports = [
 
 const consoleMessages = [];
 const pageErrors = [];
+const portraitResponses = [];
 page.on("console", (message) => {
   if (["error", "warning"].includes(message.type())) {
     consoleMessages.push(`${message.type()}: ${message.text()}`);
@@ -23,6 +24,12 @@ page.on("console", (message) => {
 });
 page.on("pageerror", (error) => {
   pageErrors.push(error.message);
+});
+page.on("response", (response) => {
+  const url = response.url();
+  if (url.includes("/assets/portraits/") || url.includes("/styles/assets/portraits/")) {
+    portraitResponses.push({ status: response.status(), url });
+  }
 });
 
 async function measureBattleLayout(viewport) {
@@ -73,6 +80,10 @@ try {
   await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("第一回合"));
   await page.click("#startBattle");
   await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("下一回合"));
+  const battlePortraitCheck = await page.evaluate(() => ({
+    unitPortraitBackground: getComputedStyle(document.querySelector(".unit-portrait"), "::before").backgroundImage,
+    heroCardBackground: getComputedStyle(document.querySelector(".hero-card")).backgroundImage,
+  }));
   await page.click("#drawTen");
   await page.waitForSelector("#gachaModal[open]");
   await page.click("#gachaClose");
@@ -215,6 +226,20 @@ try {
   if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
     throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
   }
+  if (
+    !battlePortraitCheck.unitPortraitBackground.includes("/assets/portraits/")
+    || battlePortraitCheck.unitPortraitBackground.includes("/styles/assets/portraits/")
+    || !battlePortraitCheck.heroCardBackground.includes("/assets/portraits/")
+    || battlePortraitCheck.heroCardBackground.includes("/styles/assets/portraits/")
+  ) {
+    throw new Error(`战场或武将卡头像背景路径错误：${JSON.stringify(battlePortraitCheck)}`);
+  }
+  const brokenStylePortraits = portraitResponses.filter((item) =>
+    item.url.includes("/styles/assets/portraits/") || item.status >= 400
+  );
+  if (brokenStylePortraits.length) {
+    throw new Error(`头像资源请求失败：${JSON.stringify(brokenStylePortraits.slice(0, 6))}`);
+  }
   for (const check of battleLayoutChecks) {
     if (!check.battlefieldFitsViewport || !check.enemyFitsViewport || !check.warMapFitsBattlefield || check.cardClipping) {
       throw new Error(`Battlefield layout overflows or clips at ${check.viewport}: ${JSON.stringify(check)}`);
@@ -228,6 +253,7 @@ try {
     ...summary,
     caoRenDetail,
     reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars },
+    battlePortraitCheck,
     fullPrepReportCheck: {
       includesFullEnding: fullPrepReportCheck.includesFullEnding,
       hasEllipsis: fullPrepReportCheck.hasEllipsis,

@@ -590,6 +590,20 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
+function stylesheetImageUrl(path) {
+  if (!path) return "";
+  if (/^(?:[a-z][a-z0-9+.-]*:|\/)/i.test(path)) return path;
+  const normalized = path.replace(/^\.\//, "");
+  return normalized.startsWith("../") ? normalized : `../${normalized}`;
+}
+
+function cssImageValue(path) {
+  const url = stylesheetImageUrl(path)
+    .replace(/\\/g, "\\\\")
+    .replace(/'/g, "\\'");
+  return `url('${url}')`;
+}
+
 function dismantleHero(heroId) {
   const hero = heroById(heroId);
   const skills = dismantleSkillsForHero(hero);
@@ -1029,7 +1043,7 @@ function renderRoster() {
     const portrait = portraitForHero(hero);
     const attackDistance = Number(hero.distance) || defaultAttackDistance();
     return `
-      <article class="hero-card" data-hero-id="${hero.id}" ${portrait ? `style="--hero-portrait: url('${portrait}')"` : ""}>
+      <article class="hero-card" data-hero-id="${hero.id}" ${portrait ? `style="--hero-portrait: ${escapeHtml(cssImageValue(portrait))}"` : ""}>
         ${avatarMarkup(hero, "avatar hero-avatar")}
         <div class="hero-card-main">
           <div class="hero-name-row">
@@ -1144,7 +1158,7 @@ function unitTemplate(unit) {
   const woundedText = unit.wounded ? `伤${formatNumber(unit.wounded)}` : `${troopPct}%`;
   const portrait = portraitForHero(unit);
   return `
-    <article class="unit-card ${unit.side} ${unit.position} ${unit.troops <= 0 ? "fallen" : ""}" data-hero-id="${unit.heroId}" ${portrait ? `style="--unit-portrait: url('${portrait}')"` : ""}>
+    <article class="unit-card ${unit.side} ${unit.position} ${unit.troops <= 0 ? "fallen" : ""}" data-hero-id="${unit.heroId}" ${portrait ? `style="--unit-portrait: ${escapeHtml(cssImageValue(portrait))}"` : ""}>
       <div class="unit-portrait">
         <span class="unit-stars">${"★".repeat(unit.rarity)}</span>
         <div class="skill-list">
