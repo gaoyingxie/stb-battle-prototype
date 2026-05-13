@@ -259,7 +259,10 @@
         if (!target) return false;
         dealDamage(ctx, unit, target, 0.8, "strategy", "闭月离间");
         addStatus(target, "silence", 1, 1);
-        log(ctx, "control", `${target.name}陷入犹豫，下一次主动战法受阻。`);
+        log(ctx, "control", `${target.name}陷入犹豫，下一次主动战法受阻。`, {
+          target: target.name,
+          targetUnit: target,
+        });
         return true;
       },
     },

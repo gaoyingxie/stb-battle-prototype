@@ -17,10 +17,11 @@
 
   function createBattle(playerTeam, enemyTeam) {
     const logEntries = [];
-    const ctx = { log: logEntries, round: 0 };
+    const ctx = { log: logEntries, round: 0, units: [] };
     const player = createUnits(playerTeam, "player", true);
     const enemy = createUnits(enemyTeam, "enemy", true);
     linkSides(player, enemy);
+    ctx.units = [...player, ...enemy];
     applyFormationBonuses(player, ctx, "我军");
     applyFormationBonuses(enemy, ctx, "守军");
 
@@ -49,9 +50,20 @@
         .forEach((unit) => {
           unit.skills
             .filter((skill) => skill.trigger === trigger)
-            .forEach((skill) => skill.apply?.(ctx, unit));
+            .forEach((skill) => withActionUnit(ctx, unit, () => skill.apply?.(ctx, unit)));
         });
     });
+  }
+
+  function withActionUnit(ctx, unit, action) {
+    if (!ctx) return action();
+    const previous = ctx.actionUnit;
+    ctx.actionUnit = unit;
+    try {
+      return action();
+    } finally {
+      ctx.actionUnit = previous;
+    }
   }
 
   function advanceBattleRound(battle) {
@@ -66,7 +78,7 @@
       const order = [...alive(battle.player), ...alive(battle.enemy)].sort((a, b) => actionSpeed(b) - actionSpeed(a));
       for (const unit of order) {
         if (!unit.troops || campDown(battle.player) || campDown(battle.enemy)) continue;
-        takeAction(battle.ctx, unit);
+        withActionUnit(battle.ctx, unit, () => takeAction(battle.ctx, unit));
         winner = checkCampWinner(battle.player, battle.enemy);
         if (winner) break;
       }
@@ -302,6 +314,7 @@
       const loss = applyTroopLoss(unit, burn);
       log(ctx, "hit", `${unit.name}受到灼烧，损失${Math.round(loss)}兵。`, {
         target: unit.name,
+        targetUnit: unit,
         amount: loss,
         details: troopLossDetails(unit, loss),
       });
@@ -314,7 +327,13 @@
     if (isNormal) defender = guardTarget(ctx, attacker, defender);
     const evade = statusValue(defender, "evade");
     if (evade && Math.random() < evade) {
-      log(ctx, "control", `${defender.name}规避了${attacker.name}的【${source}】。`);
+      log(ctx, "control", `${defender.name}规避了${attacker.name}的【${source}】。`, {
+        actor: attacker.name,
+        actorUnit: attacker,
+        target: defender.name,
+        targetUnit: defender,
+        skill: source,
+      });
       return 0;
     }
     const arm = armCounterModifier(attacker.arm, defender.arm);
@@ -322,7 +341,9 @@
     const damage = applyTroopLoss(defender, result.damage);
     log(ctx, "hit", `${attacker.name}以【${source}】攻击${defender.name}${arm.text ? `（${arm.text}）` : ""}，造成${damage}兵损。`, {
       actor: attacker.name,
+      actorUnit: attacker,
       target: defender.name,
+      targetUnit: defender,
       skill: source,
       amount: damage,
       details: [...result.details, ...troopLossDetails(defender, damage)],
@@ -336,7 +357,13 @@
         if (canReachByAttack(defender, attacker)) {
           dealDamage(ctx, defender, attacker, DAMAGE_MODEL.counterAttackRate, "attack", "回马");
         } else {
-          log(ctx, "control", `${defender.name}触发【回马】，但攻击距离${getAttackRange(defender)}不足，无法反击${attacker.name}。`);
+          log(ctx, "control", `${defender.name}触发【回马】，但攻击距离${getAttackRange(defender)}不足，无法反击${attacker.name}。`, {
+            actor: defender.name,
+            actorUnit: defender,
+            target: attacker.name,
+            targetUnit: attacker,
+            skill: "回马",
+          });
         }
       }
     }
@@ -408,7 +435,13 @@
       .filter((unit) => unit.id !== defender.id && hasStatus(unit, "guard"));
     if (!guards.length) return defender;
     const guard = guards[Math.floor(Math.random() * guards.length)];
-    log(ctx, "control", `${guard.name}发动援护，替${defender.name}承受${attacker.name}的普通攻击。`);
+    log(ctx, "control", `${guard.name}发动援护，替${defender.name}承受${attacker.name}的普通攻击。`, {
+      actor: guard.name,
+      actorUnit: guard,
+      target: defender.name,
+      targetUnit: defender,
+      participants: [unitLogParticipant(guard, "actor"), unitLogParticipant(defender, "target"), unitLogParticipant(attacker, "attacker")],
+    });
     return guard;
   }
 
@@ -520,7 +553,9 @@
     target.wounded = Math.max(0, (target.wounded || 0) - healAmount);
     log(ctx, "heal", `${caster.name}以【${source}】恢复${target.name}${healAmount}兵。`, {
       actor: caster.name,
+      actorUnit: caster,
       target: target.name,
+      targetUnit: target,
       skill: source,
       amount: healAmount,
       details: target.wounded ? [`剩余伤兵${formatNumber(target.wounded)}`] : ["伤兵已恢复完"],
@@ -541,11 +576,19 @@
 
   function addStatus(unit, type, rounds, value, ctx = null, source = "") {
     if (NEGATIVE_STATUS_TYPES.has(type) && hasStatus(unit, "insight")) {
-      if (ctx) log(ctx, "control", `${unit.name}处于洞察，免疫${source ? `【${source}】` : ""}负面状态。`);
+      if (ctx) log(ctx, "control", `${unit.name}处于洞察，免疫${source ? `【${source}】` : ""}负面状态。`, {
+        target: unit.name,
+        targetUnit: unit,
+        skill: source,
+      });
       return false;
     }
     if (CONTROL_STATUS_TYPES.has(type) && hasStatus(unit, type)) {
-      if (ctx) log(ctx, "control", `${unit.name}已有${statusLabel(type)}，后续同类控制未生效。`);
+      if (ctx) log(ctx, "control", `${unit.name}已有${statusLabel(type)}，后续同类控制未生效。`, {
+        target: unit.name,
+        targetUnit: unit,
+        skill: source,
+      });
       return false;
     }
     unit.statuses = unit.statuses.filter((status) => status.type !== type);
@@ -577,6 +620,17 @@
 
   function statusLabel(type) {
     return globalThis.STZB_BATTLE_RULES.statusLabel(type);
+  }
+
+  function unitLogParticipant(unit, role = "unit") {
+    if (!unit) return null;
+    return {
+      id: unit.id,
+      heroId: unit.heroId,
+      name: unit.name,
+      side: unit.side,
+      role,
+    };
   }
 
   function actionSpeed(unit) {
@@ -620,6 +674,7 @@
     applyStatBonuses,
     statNames,
     linkSides,
+    withActionUnit,
     takeAction,
     resolvePreparedSkills,
     applyRoundStart,
@@ -653,6 +708,7 @@
     hasStatus,
     statusValue,
     statusLabel,
+    unitLogParticipant,
     actionSpeed,
     campDown,
     alive,

@@ -682,7 +682,7 @@ select {
 }
 
 .war-map {
-  --battle-card-width: clamp(212px, 13vw, 274px);
+  --battle-card-width: clamp(202px, 12vw, 246px);
   --battle-card-gap: 16px;
   display: grid;
   flex: 1;
@@ -880,7 +880,7 @@ select {
 
 .unit-portrait {
   position: relative;
-  aspect-ratio: 1 / 1.32;
+  aspect-ratio: 1 / 1.16;
   height: auto;
   min-height: 0;
   overflow: hidden;
@@ -1660,11 +1660,22 @@ select {
   }
 
   .war-map {
-    --battle-card-width: 224px;
+    --battle-card-width: 190px;
   }
 
   .unit-portrait {
-    aspect-ratio: 1 / 1.22;
+    aspect-ratio: 1 / 1.02;
+  }
+
+  .unit-portrait .skill-list {
+    gap: 3px;
+    padding: 22px 7px 6px;
+  }
+
+  .unit-portrait .skill-chip {
+    min-height: 20px;
+    padding: 3px 7px;
+    font-size: 11px;
   }
 }
 
@@ -1748,7 +1759,7 @@ select {
 
 @media (max-height: 760px) and (min-width: 821px) {
   .war-map {
-    --battle-card-width: 156px;
+    --battle-card-width: 130px;
     --battle-card-gap: 8px;
     grid-template-rows: minmax(max-content, 1fr) minmax(34px, auto) minmax(max-content, 1fr);
     gap: 5px;
@@ -1780,7 +1791,7 @@ select {
   }
 
   .unit-portrait {
-    aspect-ratio: 1 / 1.04;
+    aspect-ratio: 1 / 0.98;
   }
 
   .unit-nameplate .unit-name,
@@ -1793,13 +1804,13 @@ select {
   }
 
   .unit-portrait .skill-list {
-    padding: 18px 5px 5px;
+    padding: 15px 4px 4px;
   }
 
   .unit-portrait .skill-chip {
-    min-height: 18px;
-    padding: 2px 5px;
-    font-size: 11px;
+    min-height: 16px;
+    padding: 1px 4px;
+    font-size: 10px;
   }
 
   .clash-band {
@@ -1994,6 +2005,20 @@ select {
 .report-skill {
   color: #fff0aa;
   font-weight: 900;
+}
+
+.report-unit {
+  font-weight: 900;
+}
+
+.report-unit-player {
+  color: #69c6ff;
+  text-shadow: 0 0 12px rgba(84, 186, 255, 0.28);
+}
+
+.report-unit-enemy {
+  color: #ff7b6f;
+  text-shadow: 0 0 12px rgba(255, 91, 78, 0.28);
 }
 
 .report-number {

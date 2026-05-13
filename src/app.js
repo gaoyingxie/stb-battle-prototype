@@ -692,21 +692,45 @@ function portraitForHero(hero) {
 
 function heroReference(hero) {
   if (!hero) return null;
-  const exact = HEROES.find((candidate) =>
+  const candidates = HEROES.filter((candidate) =>
     candidate !== hero
     && candidate.officialId
     && candidate.name === hero.name
-    && candidate.faction === hero.faction
+  );
+  const exact = candidates.find((candidate) =>
+    candidate.faction === hero.faction
     && candidate.arm === hero.arm
     && (!hero.rarity || candidate.rarity === hero.rarity)
   );
   if (exact || hero.officialId) return exact || null;
-  const sameName = HEROES.filter((candidate) =>
-    candidate !== hero
-    && candidate.officialId
-    && candidate.name === hero.name
-  );
-  return sameName.length === 1 ? sameName[0] : null;
+  return bestHeroReference(hero, candidates);
+}
+
+function bestHeroReference(hero, candidates) {
+  if (!candidates.length) return null;
+  const ranked = candidates
+    .map((candidate) => ({
+      hero: candidate,
+      score: heroReferenceScore(hero, candidate),
+    }))
+    .sort((a, b) =>
+      b.score - a.score
+      || Number(b.hero.rarity || 0) - Number(a.hero.rarity || 0)
+      || Number(a.hero.officialId || 0) - Number(b.hero.officialId || 0)
+    );
+  return ranked[0]?.score > 0 ? ranked[0].hero : null;
+}
+
+function heroReferenceScore(hero, candidate) {
+  const rarityDelta = Math.abs(Number(hero.rarity || 0) - Number(candidate.rarity || 0));
+  return (candidate.faction === hero.faction ? 40 : 0)
+    + (candidate.rarity === hero.rarity ? 32 : 0)
+    + (candidate.arm === hero.arm ? 24 : 0)
+    + (candidate.innate === hero.innate ? 8 : 0)
+    + (candidate.portrait ? 4 : 0)
+    + (candidate.desc ? 2 : 0)
+    + ((candidate.dismantles?.length || candidate.dismantle) ? 1 : 0)
+    - rarityDelta;
 }
 
 function ensureStarterRoster() {
@@ -1212,7 +1236,56 @@ function formatNumber(number) {
 }
 
 function log(ctx, type, text, meta = {}) {
-  ctx.log.push({ type, text, ...meta });
+  const { actorUnit, targetUnit, ...safeMeta } = meta;
+  ctx.log.push({
+    type,
+    text,
+    ...safeMeta,
+    participants: reportParticipants(ctx, text, { ...safeMeta, actorUnit, targetUnit }),
+  });
+}
+
+function reportParticipants(ctx, text, meta = {}) {
+  const participants = [];
+  const seen = new Set();
+  const add = (participant) => {
+    if (!participant?.name || !participant.side) return;
+    const key = `${participant.role || "unit"}:${participant.id || participant.heroId || participant.name}:${participant.side}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    participants.push({
+      id: participant.id || "",
+      heroId: participant.heroId || "",
+      name: participant.name,
+      side: participant.side,
+      role: participant.role || "unit",
+    });
+  };
+
+  (meta.participants || []).forEach(add);
+  add(unitParticipantFromMeta(meta.actorUnit, "actor"));
+  add(unitParticipantFromMeta(meta.targetUnit, "target"));
+  if (ctx?.actionUnit && String(text).includes(ctx.actionUnit.name)) {
+    add(unitParticipantFromMeta(ctx.actionUnit, "actor"));
+  }
+
+  const units = ctx?.units || [];
+  const nameCounts = units.reduce((counts, unit) => {
+    counts[unit.name] = (counts[unit.name] || 0) + 1;
+    return counts;
+  }, {});
+  units.forEach((unit) => {
+    if (nameCounts[unit.name] === 1 && String(text).includes(unit.name)) {
+      add(unitParticipantFromMeta(unit, "unit"));
+    }
+  });
+  return participants;
+}
+
+function unitParticipantFromMeta(unit, role) {
+  if (!unit) return null;
+  if (typeof unitLogParticipant === "function") return unitLogParticipant(unit, role);
+  return { id: unit.id, heroId: unit.heroId, name: unit.name, side: unit.side, role };
 }
 
 function writeReport(entries) {
@@ -1302,7 +1375,7 @@ function reportGlyph(entry) {
 }
 
 function decorateReportText(entry) {
-  let text = escapeHtml(entry.text);
+  let text = decorateReportUnitNames(entry.text, entry.participants || []);
   text = text.replace(/【([^】]+)】/g, '<b class="report-skill">【$1】</b>');
   if (entry.type === "heal") {
     text = text.replace(/(恢复)(\d[\d,]*)兵/g, '$1<strong class="report-number heal">$2</strong>兵');
@@ -1310,6 +1383,46 @@ function decorateReportText(entry) {
     text = text.replace(/(造成|损失)(\d[\d,]*)兵/g, '$1<strong class="report-number damage">$2</strong>兵');
   }
   return text;
+}
+
+function decorateReportUnitNames(text, participants) {
+  const raw = String(text || "");
+  const namedParticipants = participants
+    .filter((participant) => participant?.name && participant.side)
+    .sort((a, b) => b.name.length - a.name.length);
+  if (!namedParticipants.length) return escapeHtml(raw);
+
+  const participantsByName = namedParticipants.reduce((groups, participant) => {
+    groups[participant.name] ||= [];
+    groups[participant.name].push(participant);
+    return groups;
+  }, {});
+  const names = Object.keys(participantsByName).sort((a, b) => b.length - a.length);
+  const usedCount = {};
+  let html = "";
+  let index = 0;
+
+  while (index < raw.length) {
+    const name = names.find((candidate) => raw.startsWith(candidate, index));
+    if (!name) {
+      html += escapeHtml(raw[index]);
+      index += 1;
+      continue;
+    }
+    const group = participantsByName[name];
+    const occurrence = usedCount[name] || 0;
+    usedCount[name] = occurrence + 1;
+    const participant = group[Math.min(occurrence, group.length - 1)];
+    html += reportUnitNameHtml(name, participant);
+    index += name.length;
+  }
+  return html;
+}
+
+function reportUnitNameHtml(name, participant) {
+  const side = participant.side === "player" ? "player" : "enemy";
+  const label = side === "player" ? "我方" : "敌方";
+  return `<span class="report-unit report-unit-${side}" title="${label}${escapeHtml(name)}">${escapeHtml(name)}</span>`;
 }
 
 init();

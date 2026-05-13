@@ -31,6 +31,17 @@ try {
   await page.click("[data-skill-id]");
   await page.waitForSelector("#skillModal[open]");
 
+  await page.click("#skillModalClose");
+  await page.waitForFunction(() => !document.querySelector("#skillModal")?.open);
+  await page.click('article.hero-card[data-hero-id="cao-ren"] .hero-name');
+  await page.waitForSelector("#heroModal[open]");
+  const caoRenDetail = await page.evaluate(() => ({
+    desc: document.querySelector("#heroModalDesc")?.textContent?.trim() || "",
+    portrait: document.querySelector("#heroModalPortrait img")?.getAttribute("src") || "",
+    dismantleText: document.querySelector("#heroModalDismantle")?.textContent?.trim() || "",
+  }));
+  await page.click("#heroModalClose");
+
   const summary = await page.evaluate(() => ({
     title: document.querySelector("#battleTitle")?.textContent?.trim(),
     round: document.querySelector("#roundCount")?.textContent?.trim(),
@@ -40,6 +51,34 @@ try {
     battleLogEntries: globalThis.STZB_DEBUG?.state?.activeBattle?.log?.length || 0,
     skillModalTitle: document.querySelector("#skillModalTitle")?.textContent?.trim(),
   }));
+
+  const reportColorCheck = await page.evaluate(() => {
+    const playerTeam = [
+      { heroId: "cao-cao", position: "camp", skills: [] },
+      { heroId: "liu-bei", position: "middle", skills: [] },
+      { heroId: "guan-yu", position: "front", skills: [] },
+    ];
+    const enemyTeam = [
+      { heroId: "cao-cao", position: "camp", skills: [] },
+      { heroId: "cao-ren", position: "middle", skills: [] },
+      { heroId: "zhang-liao", position: "front", skills: [] },
+    ];
+    const battle = globalThis.createBattle(playerTeam, enemyTeam);
+    globalThis.dealDamage(battle.ctx, battle.enemy[0], battle.player[0], 0.78, "attack", "测试攻击");
+    globalThis.writeReport(battle.log);
+    const report = document.querySelector("#report");
+    const unitNames = [...report.querySelectorAll(".report-unit")].map((node) => ({
+      text: node.textContent,
+      player: node.classList.contains("report-unit-player"),
+      enemy: node.classList.contains("report-unit-enemy"),
+    }));
+    return {
+      html: report.innerHTML,
+      unitNames,
+      hasPlayerName: unitNames.some((item) => item.text === "曹操" && item.player),
+      hasEnemyName: unitNames.some((item) => item.text === "曹操" && item.enemy),
+    };
+  });
 
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");
@@ -56,11 +95,17 @@ try {
   if (!summary.skillModalTitle) {
     throw new Error("战法详情弹窗没有渲染标题");
   }
+  if (!caoRenDetail.portrait || caoRenDetail.desc.includes("暂无武将传记") || caoRenDetail.dismantleText.includes("暂无")) {
+    throw new Error(`四星曹仁详情没有补全官方引用：${JSON.stringify(caoRenDetail)}`);
+  }
+  if (!reportColorCheck.hasPlayerName || !reportColorCheck.hasEnemyName) {
+    throw new Error(`同名武将战报没有正确区分敌我颜色：${JSON.stringify(reportColorCheck.unitNames)}`);
+  }
   if (pageErrors.length) {
     throw new Error(`页面错误：${pageErrors.join(" | ")}`);
   }
 
-  console.log(JSON.stringify(summary, null, 2));
+  console.log(JSON.stringify({ ...summary, caoRenDetail, reportColorCheck: reportColorCheck.unitNames }, null, 2));
   if (consoleMessages.length) {
     console.warn(consoleMessages.join("\n"));
   }
