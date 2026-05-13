@@ -271,10 +271,14 @@ select {
 }
 
 .unit-nameplate .unit-name {
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+  padding-top: 1px;
   overflow: hidden;
   color: #fff2d2;
   font-size: 11px;
-  line-height: 1.1;
+  line-height: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.88);
@@ -388,4 +392,3 @@ select {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
