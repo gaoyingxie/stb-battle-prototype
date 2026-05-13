@@ -222,6 +222,7 @@ try {
     globalThis.writeReport(battle.log, battle);
     const report = document.querySelector("#report");
     const text = report?.textContent || "";
+    const resultLine = report?.querySelector(".log-line.result");
     return {
       cardCount: report?.querySelectorAll(".battle-stat-card").length || 0,
       hasStats: Boolean(report?.querySelector(".battle-stats")),
@@ -229,6 +230,10 @@ try {
       hasTotalHealing: text.includes("总治疗"),
       hasDamageSkill: text.includes("【测试输出】") && text.includes("伤"),
       hasHealingSkill: text.includes("【测试治疗】") && text.includes("疗"),
+      hasResultLine: Boolean(resultLine),
+      hasResultGlyph: resultLine?.querySelector(".report-avatar")?.textContent.trim() === "终",
+      endIsNotHealing: ![...(report?.querySelectorAll(".log-line.heal .report-text") || [])]
+        .some((line) => line.textContent.includes("战斗结束")),
     };
   });
 
@@ -323,6 +328,9 @@ try {
     || !battleStatsCheck.hasTotalHealing
     || !battleStatsCheck.hasDamageSkill
     || !battleStatsCheck.hasHealingSkill
+    || !battleStatsCheck.hasResultLine
+    || !battleStatsCheck.hasResultGlyph
+    || !battleStatsCheck.endIsNotHealing
   ) {
     throw new Error(`战后统计没有正确渲染武将和技能汇总：${JSON.stringify(battleStatsCheck)}`);
   }

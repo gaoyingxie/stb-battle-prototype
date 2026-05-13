@@ -109,7 +109,7 @@
     battle.finishReason = reason;
     battle.label = winner === "player" ? "胜利" : winner === "enemy" ? "战败" : "平局";
     battle.subtitle = battleEndSubtitle(winner, reason, battle.player, battle.enemy);
-    log(battle.ctx, winner === "player" ? "heal" : winner === "enemy" ? "hit" : "system", `战斗结束：${battle.label}。${battle.subtitle}。`);
+    log(battle.ctx, "result", `战斗结束：${battle.label}。${battle.subtitle}。`);
   }
 
   function battleEndSubtitle(winner, reason, player, enemy) {

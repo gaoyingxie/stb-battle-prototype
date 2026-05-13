@@ -1592,6 +1592,7 @@ function reportGlyph(entry) {
     hit: "伤",
     heal: "疗",
     control: "控",
+    result: "终",
     system: "令",
   }[entry.type] || "记";
 }
