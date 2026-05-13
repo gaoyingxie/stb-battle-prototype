@@ -7,7 +7,7 @@
 ## 核心地图
 
 - `index.html` 负责页面外壳和脚本加载顺序。
-- `styles.css` 负责全部 UI 样式。
+- `styles/` 负责 UI 样式，按基础、外壳、控件、布局、编队、战场、弹窗、战报和响应式拆分。
 - `src/battle-rules.js` 负责规则常量、状态定义和公式工具。
 - `src/battle-engine.js` 负责战斗模拟状态和回合推进。
 - `src/team-ai.js` 负责 AI 阵容和战法推荐。

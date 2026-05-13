@@ -1,0 +1,47 @@
+:root {
+  color-scheme: dark;
+  --bg: #14130f;
+  --panel: #211d18;
+  --panel-soft: #2a251d;
+  --ink: #f4ecd8;
+  --muted: #baa982;
+  --line: #4d4230;
+  --gold: #d7aa47;
+  --red: #b83f35;
+  --red-deep: #6d2522;
+  --jade: #5aa184;
+  --blue: #617da8;
+  --paper: #e6d3a5;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(184, 63, 53, 0.18), transparent 28rem),
+    radial-gradient(circle at 82% 24%, rgba(90, 161, 132, 0.16), transparent 22rem),
+    linear-gradient(135deg, #14130f 0%, #221a16 48%, #14130f 100%);
+  color: var(--ink);
+  font-family:
+    "Microsoft YaHei",
+    "PingFang SC",
+    "Noto Sans SC",
+    system-ui,
+    sans-serif;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+

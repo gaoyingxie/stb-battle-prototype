@@ -1,0 +1,86 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 340px) minmax(780px, 1fr) minmax(380px, 460px);
+  gap: 16px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.panel {
+  min-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.roster-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: min(760px, calc(100vh - 124px));
+}
+
+.report-panel,
+.system-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.report-panel {
+  flex: 1 1 auto;
+}
+
+.system-panel {
+  flex: 0 0 clamp(260px, 26vh, 330px);
+}
+
+.panel-heading,
+.battle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid rgba(215, 170, 71, 0.18);
+  background: rgba(20, 19, 15, 0.34);
+}
+
+.roster-heading {
+  border-top: 1px solid rgba(215, 170, 71, 0.18);
+}
+
+.heading-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.pill,
+.result-chip {
+  display: inline-grid;
+  min-height: 28px;
+  place-items: center;
+  border: 1px solid rgba(215, 170, 71, 0.3);
+  border-radius: 999px;
+  background: rgba(215, 170, 71, 0.1);
+  color: #f5dfaa;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pill {
+  min-width: 36px;
+  padding: 0 10px;
+}
+
+.result-chip {
+  min-width: 76px;
+  padding: 0 12px;
+}
+

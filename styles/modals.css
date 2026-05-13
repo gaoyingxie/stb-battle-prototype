@@ -1,0 +1,347 @@
+.modal {
+  width: min(680px, calc(100vw - 28px));
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.64);
+}
+
+.modal-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(215, 170, 71, 0.42);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(215, 170, 71, 0.08), transparent 46%),
+    #201a15;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(215, 170, 71, 0.2);
+}
+
+.modal-head p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.modal-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.skill-title-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(215, 170, 71, 0.42);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.6);
+  object-fit: cover;
+}
+
+.modal-desc {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  color: #eadfc2;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.skill-detail-block {
+  display: grid;
+  gap: 8px;
+}
+
+.skill-detail-block h3 {
+  margin: 0;
+  color: #f5dfaa;
+  font-size: 14px;
+}
+
+.skill-detail-block p {
+  color: #e8d9b8;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.muted-text {
+  color: var(--muted) !important;
+}
+
+.number-grid,
+.effect-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.number-grid {
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+}
+
+.number-grid span {
+  display: grid;
+  min-height: 34px;
+  place-items: center;
+  border: 1px solid rgba(215, 170, 71, 0.18);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.42);
+  color: #f5dfaa;
+  font-weight: 800;
+}
+
+.effect-grid {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.effect-grid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
+}
+
+.effect-grid div {
+  display: grid;
+  gap: 4px;
+  min-height: 58px;
+  padding: 9px 10px;
+  border: 1px solid rgba(215, 170, 71, 0.18);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.42);
+}
+
+.effect-grid span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.effect-grid strong {
+  color: #f5dfaa;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.hero-modal {
+  width: min(860px, calc(100vw - 28px));
+}
+
+.hero-detail {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.hero-detail-portrait {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(215, 170, 71, 0.28);
+  border-radius: 8px;
+  background: #15110d;
+}
+
+.hero-detail-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.hero-detail-fallback {
+  display: grid;
+  width: 92px;
+  height: 92px;
+  place-items: center;
+  border: 1px solid rgba(215, 170, 71, 0.42);
+  border-radius: 50%;
+  color: #f5dfaa;
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.hero-detail-main {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.hero-detail-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hero-detail-stats div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid rgba(215, 170, 71, 0.18);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.4);
+}
+
+.hero-detail-stats span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hero-detail-stats strong {
+  color: #f5dfaa;
+  font-size: 20px;
+}
+
+.hero-detail-skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.detail-skill {
+  display: grid;
+  gap: 4px;
+  min-height: 76px;
+  padding: 10px;
+  border: 1px solid rgba(215, 170, 71, 0.28);
+  border-radius: 8px;
+  background: rgba(20, 19, 15, 0.46);
+  color: var(--ink);
+  text-align: left;
+}
+
+.detail-skill-list {
+  display: grid;
+  gap: 8px;
+}
+
+.detail-skill span,
+.detail-skill em {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.detail-skill strong {
+  overflow: hidden;
+  color: #f5dfaa;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-detail-desc {
+  max-height: 210px;
+  overflow: auto;
+  margin: 0;
+  color: #e8d9b8;
+  font-size: 14px;
+  line-height: 1.75;
+  white-space: pre-line;
+}
+
+.gacha-modal {
+  width: min(920px, calc(100vw - 28px));
+}
+
+.gacha-card {
+  min-height: 360px;
+}
+
+.gacha-light {
+  position: absolute;
+  inset: -30%;
+  background:
+    conic-gradient(from 0deg, transparent, rgba(215, 170, 71, 0.24), transparent 32%),
+    radial-gradient(circle, rgba(245, 223, 170, 0.16), transparent 52%);
+  animation: rotateLight 2.2s linear infinite;
+  pointer-events: none;
+}
+
+.gacha-results {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(128px, 1fr));
+  gap: 10px;
+  padding: 18px;
+}
+
+.gacha-result {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  min-height: 150px;
+  padding: 14px 10px;
+  border: 1px solid rgba(215, 170, 71, 0.28);
+  border-radius: 8px;
+  background: rgba(20, 19, 15, 0.7);
+  animation: cardReveal 0.42s ease both;
+  animation-delay: var(--delay);
+}
+
+.gacha-result.rarity-5 {
+  border-color: rgba(245, 223, 170, 0.8);
+  box-shadow: 0 0 22px rgba(215, 170, 71, 0.28);
+}
+
+.gacha-result.converted {
+  border-color: rgba(142, 127, 98, 0.42);
+  filter: saturate(0.72);
+}
+
+.gacha-result strong {
+  font-size: 17px;
+}
+
+.gacha-result span,
+.gacha-result small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.gacha-result small {
+  color: #b9d9b7;
+  font-weight: 800;
+}
+
+.gacha-result em {
+  color: var(--gold);
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+@keyframes rotateLight {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gacha-light,
+  .gacha-result {
+    animation: none;
+  }
+}

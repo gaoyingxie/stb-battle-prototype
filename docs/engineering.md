@@ -4,7 +4,7 @@
 
 ```text
 index.html                 页面入口
-styles.css                 UI 样式
+styles/                    UI 样式模块
 official-data.js           官方资料生成结果
 AGENTS.md                  Agent 入口和文档路由
 src/battle-rules.js        规则常量、状态定义、伤害公式
@@ -44,6 +44,23 @@ npm run bootstrap
 - `official-data.js` 是生成物，不手工维护；需要刷新时重新运行抓取脚本。
 
 这个拆法的目标是让后续迭代有明确落点：调公式改 `battle-rules.js`，加原型战法改 `seed-data.js`，改战斗行为改 `battle-engine.js`，改配将推荐改 `team-ai.js`，改界面体验改 `app.js`。
+
+## 样式分层
+
+`index.html` 按顺序加载 `styles/` 下的样式模块。新增或调整 UI 时，优先把样式放进已有责任边界，避免重新堆回单一入口文件：
+
+- `base.css`：变量、全局盒模型、页面字体和背景。
+- `app-shell.css`：应用外壳、顶栏、品牌区和顶部操作区。
+- `controls.css`：通用按钮和图标按钮。
+- `layout.css`：三栏主布局、面板结构、面板标题、徽标和结果标签。
+- `roster.css`：编队编辑器、武将列表、战法集、武将卡和列表内小控件。
+- `battlefield.css`：战场容器、双方阵列、战斗单位卡、头像、兵力条和战斗内战法标签。
+- `modals.css`：战法详情、武将详情、抽卡弹窗和相关动画。
+- `battle-summary.css`：交锋结果带、回合计数、战场统计条和队伍兵力汇总。
+- `logs.css`：战报、战报头像、战报数值、修正项和系统消息。
+- `responsive.css`：宽度和移动端响应式覆盖。
+
+拆分后的 CSS 仍然依赖加载顺序处理少量共享选择器，例如 `.result-chip`、`.skill-chip` 和 `.text-link`。跨模块改动时先确认是否只是共享控件，能放进 `controls.css` 的不要散落到业务模块里；只服务单个页面区域的样式留在对应模块。
 
 ## 数据刷新
 
@@ -114,5 +131,5 @@ npm run smoke:browser
 - 武将攻击距离应优先来自官方/武将自身 `distance` 字段；不要按兵种推导攻击距离。`DEFAULT_ATTACK_DISTANCE` 只是缺失字段时的原型兜底。
 - 新增公式常量时，放进 `DAMAGE_MODEL`，不要把魔法数字散落在引擎函数里。
 - 新增手写战法时放进 `seed-data.js`，尽量写清 `type`、`trigger`、`chance`、`desc` 和行为函数。
-- 新增 UI 功能时优先只改 `app.js` 和 `styles.css`，避免把 DOM 操作写进战斗引擎。
+- 新增 UI 功能时优先只改 `app.js` 和对应的 `styles/*.css` 模块，避免把 DOM 操作写进战斗引擎。
 - `official-data.js` 是生成物；不要在里面做手工修补。

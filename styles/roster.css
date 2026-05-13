@@ -1,0 +1,391 @@
+.formation-editor {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.slot-editor {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(215, 170, 71, 0.2);
+  border-radius: 8px;
+  background: rgba(42, 37, 29, 0.72);
+}
+
+.slot-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+select {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid rgba(215, 170, 71, 0.28);
+  border-radius: 6px;
+  background: #16130f;
+  color: var(--ink);
+  padding: 0 9px;
+}
+
+.roster,
+.skill-codex {
+  display: grid;
+  gap: 12px;
+  overflow: auto;
+  padding: 14px;
+}
+
+.roster {
+  grid-template-columns: 1fr;
+  max-height: 560px;
+}
+
+.skill-codex {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  max-height: 560px;
+  align-content: start;
+}
+
+.codex-panel {
+  margin-top: 16px;
+}
+
+.hero-card,
+.unit-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(215, 170, 71, 0.2);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(244, 236, 216, 0.07), transparent 45%),
+    var(--panel-soft);
+}
+
+.hero-card,
+.unit-card,
+.gacha-result {
+  cursor: pointer;
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 118px;
+  padding: 14px;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(20, 19, 15, 0.98) 0%, rgba(20, 19, 15, 0.84) 48%, rgba(20, 19, 15, 0.34) 100%),
+    linear-gradient(135deg, rgba(244, 236, 216, 0.08), transparent 54%),
+    var(--hero-portrait, var(--panel-soft));
+  background-position: center, center, right 18%;
+  background-size: auto, auto, cover;
+  box-shadow: inset 0 1px rgba(255, 240, 194, 0.05);
+}
+
+.hero-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(245, 223, 170, 0.08), transparent 38%);
+  content: "";
+}
+
+.hero-card:hover {
+  border-color: rgba(245, 223, 170, 0.48);
+  transform: translateY(-1px);
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-codex-card {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  min-height: 86px;
+  padding: 12px;
+  border: 1px solid rgba(215, 170, 71, 0.18);
+  border-radius: 8px;
+  background: rgba(42, 37, 29, 0.58);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.skill-codex-card:hover {
+  border-color: rgba(245, 223, 170, 0.42);
+  background: rgba(62, 52, 35, 0.72);
+}
+
+.skill-codex-card img,
+.skill-codex-mark {
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(215, 170, 71, 0.32);
+  border-radius: 6px;
+  background: rgba(20, 19, 15, 0.52);
+}
+
+.skill-codex-card img {
+  object-fit: cover;
+}
+
+.skill-codex-mark {
+  display: grid;
+  place-items: center;
+  color: #f5dfaa;
+  font-weight: 900;
+}
+
+.skill-codex-card span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.skill-codex-card strong,
+.skill-codex-card em,
+.skill-codex-card small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-codex-card strong {
+  color: var(--paper);
+  font-size: 15px;
+}
+
+.skill-codex-card em {
+  color: #f5dfaa;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.skill-codex-card small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(245, 223, 170, 0.38);
+  border-radius: 50%;
+  background: #191510;
+  color: #f5dfaa;
+  font-weight: 900;
+}
+
+.portrait-avatar {
+  overflow: hidden;
+  background: #21170f;
+}
+
+.portrait-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.hero-avatar {
+  width: 68px;
+  height: 68px;
+  border-color: rgba(245, 223, 170, 0.68);
+  box-shadow: 0 0 0 3px rgba(20, 19, 15, 0.46), 0 12px 26px rgba(0, 0, 0, 0.36);
+}
+
+.hero-name-row,
+.unit-top,
+.skill-row,
+.unit-troop-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.unit-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.unit-avatar {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-color: rgba(245, 223, 170, 0.7);
+  box-shadow: 0 0 0 3px rgba(20, 19, 15, 0.42), 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero-name,
+.unit-name {
+  font-weight: 900;
+}
+
+.hero-name {
+  color: #fff0c2;
+  font-size: 18px;
+}
+
+.hero-card-main {
+  min-width: 0;
+}
+
+.hero-meta,
+.unit-meta,
+.skill-row,
+.unit-troop-row {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.unit-troop-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px;
+  margin-top: 0;
+  color: #e8ddb9;
+  font-weight: 800;
+}
+
+.unit-troop-row > span:first-child {
+  display: none;
+}
+
+.unit-nameplate .unit-name {
+  overflow: hidden;
+  color: #fff2d2;
+  font-size: 11px;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.88);
+}
+
+.unit-troop-row strong {
+  overflow: hidden;
+  color: #fff4cf;
+  font-size: 10px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.unit-wounded {
+  color: #bfe8ff;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.unit-card.enemy .unit-wounded {
+  color: #ffb1a6;
+}
+
+.hero-meta {
+  color: #d4c39c;
+  line-height: 1.45;
+}
+
+.hero-basic-meta {
+  white-space: nowrap;
+}
+
+.hero-skill-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hero-skill-meta > span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.hero-skill-meta .text-link {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rarity {
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.count-badge {
+  display: grid;
+  min-width: 28px;
+  min-height: 26px;
+  place-items: center;
+  border: 1px solid rgba(90, 161, 132, 0.42);
+  border-radius: 999px;
+  background: rgba(90, 161, 132, 0.11);
+  color: #bce7d6;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero-actions {
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+}
+
+.mini-btn,
+.text-link,
+.skill-chip {
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.mini-btn {
+  min-width: 34px;
+  min-height: 26px;
+  border: 1px solid rgba(215, 170, 71, 0.32);
+  border-radius: 999px;
+  background: rgba(215, 170, 71, 0.12);
+  color: #f5dfaa;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mini-btn:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.7);
+  opacity: 0.45;
+}
+
+.text-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #f5dfaa;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+

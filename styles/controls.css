@@ -1,0 +1,50 @@
+.btn,
+.icon-btn {
+  min-height: 38px;
+  border: 1px solid rgba(215, 170, 71, 0.42);
+  border-radius: 6px;
+  color: var(--ink);
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease;
+}
+
+.btn {
+  padding: 0 16px;
+  font-weight: 700;
+}
+
+.btn:hover,
+.icon-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(245, 223, 170, 0.72);
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, #bd4b3c 0%, #782a25 100%);
+}
+
+.btn.secondary,
+.icon-btn {
+  background: linear-gradient(180deg, #352e22 0%, #211d18 100%);
+}
+
+.btn.danger {
+  border-color: rgba(184, 63, 53, 0.55);
+  color: #ffd7ca;
+}
+
+.btn.danger:hover {
+  border-color: rgba(229, 91, 74, 0.82);
+}
+
+.icon-btn {
+  display: grid;
+  width: 34px;
+  min-width: 34px;
+  place-items: center;
+  padding: 0;
+  font-weight: 800;
+}
+
