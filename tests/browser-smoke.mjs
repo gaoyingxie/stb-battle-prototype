@@ -188,6 +188,41 @@ try {
     };
   });
 
+  const formationConstraintCheck = await page.evaluate(() => {
+    const state = globalThis.STZB_DEBUG.state;
+    state.roster["lu-bu"] = 1;
+    state.roster["official-hero-100479"] = 1;
+    state.skills["calm-army"] = 1;
+    state.skills["official-skill-200217"] = 1;
+    state.formation = [
+      { heroId: "lu-bu", skills: ["calm-army", null] },
+      { heroId: "official-hero-100479", skills: ["official-skill-200217", null] },
+      { heroId: "cao-cao", skills: [null, null] },
+    ];
+    globalThis.renderAll();
+    const heroNames = state.formation.map((slot) => globalThis.STZB_SEED_DATA.HEROES.find((hero) => hero.id === slot.heroId)?.name);
+    const equippedSkillNames = state.formation.flatMap((slot) => slot.skills || [])
+      .filter(Boolean)
+      .map((id) => globalThis.STZB_SEED_DATA.SKILLS.find((skill) => skill.id === id)?.name);
+    const heroOptions = [...document.querySelectorAll('select[data-kind="hero"]')]
+      .flatMap((select, selectIndex) => [...select.options]
+        .filter((option) => option.textContent.includes("吕布"))
+        .map((option) => ({ selectIndex, text: option.textContent, disabled: option.disabled, selected: option.selected })));
+    const calmOptions = [...document.querySelectorAll('select[data-kind="skill"] option')]
+      .filter((option) => option.textContent.includes("安抚军心"))
+      .map((option) => ({ value: option.value, text: option.textContent, selected: option.selected }));
+    const skillGrades = [...document.querySelectorAll('select[data-kind="skill"]')][0]
+      ? [...document.querySelectorAll('select[data-kind="skill"]')[0].options]
+        .filter((option) => option.value)
+        .slice(0, 12)
+        .map((option) => option.textContent.match(/· ([SABC])级/)?.[1] || "")
+      : [];
+    const heroRarities = [...document.querySelectorAll('select[data-kind="hero"]')[0].options]
+      .slice(0, 12)
+      .map((option) => Number(option.textContent.match(/· (\d)星/)?.[1] || 0));
+    return { heroNames, equippedSkillNames, heroOptions, calmOptions, skillGrades, heroRarities };
+  });
+
   const battleLayoutChecks = [];
   for (const viewport of battleLayoutViewports) {
     battleLayoutChecks.push(await measureBattleLayout(viewport));
@@ -226,6 +261,25 @@ try {
   if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
     throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
   }
+  if (new Set(formationConstraintCheck.heroNames).size !== formationConstraintCheck.heroNames.length) {
+    throw new Error(`编队仍允许同名武将重复上阵：${JSON.stringify(formationConstraintCheck)}`);
+  }
+  if (new Set(formationConstraintCheck.equippedSkillNames).size !== formationConstraintCheck.equippedSkillNames.length) {
+    throw new Error(`编队仍允许同名战法重复配置：${JSON.stringify(formationConstraintCheck)}`);
+  }
+  if (formationConstraintCheck.calmOptions.length !== 1 || !formationConstraintCheck.calmOptions[0].value.startsWith("official-skill-")) {
+    throw new Error(`安抚军心没有合并为官方代表项：${JSON.stringify(formationConstraintCheck.calmOptions)}`);
+  }
+  const selectedHeroOption = formationConstraintCheck.heroOptions.find((option) => option.selected);
+  if (formationConstraintCheck.heroOptions.some((option) => option.selectIndex !== selectedHeroOption?.selectIndex && !option.disabled)) {
+    throw new Error(`已上阵同名武将没有在其他槽位禁用：${JSON.stringify(formationConstraintCheck.heroOptions)}`);
+  }
+  if (formationConstraintCheck.skillGrades.join("") !== [...formationConstraintCheck.skillGrades].sort((a, b) => "SABC".indexOf(a) - "SABC".indexOf(b)).join("")) {
+    throw new Error(`战法下拉没有按 S/A/B/C 排序：${JSON.stringify(formationConstraintCheck.skillGrades)}`);
+  }
+  if (formationConstraintCheck.heroRarities.some((rarity, index, list) => index > 0 && rarity > list[index - 1])) {
+    throw new Error(`武将下拉没有按星级降序排序：${JSON.stringify(formationConstraintCheck.heroRarities)}`);
+  }
   if (
     !battlePortraitCheck.unitPortraitBackground.includes("/assets/portraits/")
     || battlePortraitCheck.unitPortraitBackground.includes("/styles/assets/portraits/")
@@ -254,6 +308,7 @@ try {
     caoRenDetail,
     reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars },
     battlePortraitCheck,
+    formationConstraintCheck,
     fullPrepReportCheck: {
       includesFullEnding: fullPrepReportCheck.includesFullEnding,
       hasEllipsis: fullPrepReportCheck.hasEllipsis,

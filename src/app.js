@@ -19,6 +19,7 @@ const INNATE_SKILL_IDS = new Set();
 let EQUIPPABLE_SKILLS = [];
 refreshSkillMetadata();
 const STARTER_SKILL_GRADES = new Set(["B", "C"]);
+const SKILL_GRADE_ORDER = { S: 0, A: 1, B: 2, C: 3 };
 const LEGACY_FREE_SKILL_IDS = new Set([
   "grand-reward",
   "avoid-edge",
@@ -112,6 +113,7 @@ function init() {
   loadState();
   ensureStarterRoster();
   if (!state.enemy.length) state.enemy = randomEnemyTeam();
+  normalizeFormationHeroes();
   normalizeFormationSkills();
   saveState();
   bindEvents();
@@ -807,10 +809,16 @@ function resetRuntimeState() {
 
 function starterFormation() {
   return [
-    { heroId: "cao-cao", skills: ["empty-fort", "calm-army"] },
-    { heroId: "guan-yu", skills: ["return-horse", "feint"] },
-    { heroId: "liu-bei", skills: ["moon-snare", "cliff"] },
+    { heroId: "cao-cao", skills: [starterSkillId("空城"), starterSkillId("安抚军心")] },
+    { heroId: "guan-yu", skills: [starterSkillId("回马"), starterSkillId("落雷", "feint")] },
+    { heroId: "liu-bei", skills: [starterSkillId("迷阵", "moon-snare"), starterSkillId("危崖困军", "cliff")] },
   ];
+}
+
+function starterSkillId(name, fallbackId = null) {
+  return bestSkillsByName(
+    EQUIPPABLE_SKILLS.filter((skill) => isStarterUnlockedSkill(skill) && skill.name === name),
+  )[0]?.id || fallbackId;
 }
 
 function loadState() {
@@ -915,10 +923,13 @@ function randomEnemyTeam() {
 }
 
 function getPlayerTeam() {
+  normalizeFormationHeroes();
+  normalizeFormationSkills();
   return state.formation.map((slot, index) => ({ ...slot, position: POSITIONS[index].id }));
 }
 
 function renderAll() {
+  normalizeFormationHeroes();
   normalizeFormationSkills();
   renderFormationEditor();
   renderRoster();
@@ -950,9 +961,10 @@ function advanceBattleFlow() {
 }
 
 function renderFormationEditor() {
-  const owned = ownedHeroes();
+  const owned = sortedOwnedHeroes();
   els.formationEditor.innerHTML = POSITIONS.map((position, index) => {
     const slot = state.formation[index] || {};
+    const occupied = assignedHeroKeys(index);
     return `
       <div class="slot-editor">
         <div class="slot-title">
@@ -960,7 +972,7 @@ function renderFormationEditor() {
           <span>${slot.heroId ? heroById(slot.heroId).name : "空位"}</span>
         </div>
         <select data-kind="hero" data-index="${index}" aria-label="${position.label}武将">
-          ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance()}</option>`).join("")}
+          ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""} ${occupied.has(heroKey(hero)) ? "disabled" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance()}</option>`).join("")}
         </select>
         <select data-kind="skill" data-skill-index="0" data-index="${index}" aria-label="${position.label}战法一">
           ${skillOptions(slot.skills?.[0], index, 0)}
@@ -996,25 +1008,58 @@ function skillOptions(selected, slotIndex, skillIndex) {
 }
 
 function unlockedEquippableSkills(selected, slotIndex = -1, skillIndex = -1) {
-  const occupied = assignedSkillIds(slotIndex, skillIndex);
-  const unlocked = EQUIPPABLE_SKILLS.filter((skill) => isSkillUnlocked(skill) && (!occupied.has(skill.id) || skill.id === selected));
+  const occupied = assignedSkillKeys(slotIndex, skillIndex);
+  const unlocked = bestSkillsByName(
+    EQUIPPABLE_SKILLS.filter((skill) => isSkillUnlocked(skill)),
+    selected,
+  ).filter((skill) => !occupied.has(skillKey(skill)) || skill.id === selected);
   if (selected && !unlocked.some((skill) => skill.id === selected)) {
     const selectedSkill = skillById(selected);
-    if (selectedSkill && isSkillUnlocked(selectedSkill)) unlocked.unshift(selectedSkill);
+    if (selectedSkill && isSkillUnlocked(selectedSkill) && !occupied.has(skillKey(selectedSkill))) unlocked.unshift(selectedSkill);
   }
-  return unlocked.sort((a, b) => a.name.localeCompare(b.name, "zh-Hans-CN"));
+  return unlocked.sort(compareSkillsByGrade);
 }
 
-function assignedSkillIds(exceptSlotIndex = -1, exceptSkillIndex = -1) {
-  const ids = new Set();
+function assignedHeroKeys(exceptSlotIndex = -1) {
+  const keys = new Set();
+  state.formation.forEach((slot, slotIndex) => {
+    if (!slot?.heroId || slotIndex === exceptSlotIndex) return;
+    keys.add(heroKey(heroById(slot.heroId)));
+  });
+  return keys;
+}
+
+function assignedSkillKeys(exceptSlotIndex = -1, exceptSkillIndex = -1) {
+  const keys = new Set();
   state.formation.forEach((slot, slotIndex) => {
     (slot.skills || []).forEach((skillId, skillIndex) => {
       if (!skillId) return;
       if (slotIndex === exceptSlotIndex && skillIndex === exceptSkillIndex) return;
-      ids.add(skillId);
+      keys.add(skillKey(skillById(skillId) || { id: skillId }));
     });
   });
-  return ids;
+  return keys;
+}
+
+function normalizeFormationHeroes() {
+  const owned = sortedOwnedHeroes();
+  const ownedIds = new Set(owned.map((hero) => hero.id));
+  const used = new Set();
+  state.formation.forEach((slot, index) => {
+    state.formation[index] ||= { heroId: null, skills: suggestSkills(index) };
+    const current = state.formation[index].heroId;
+    const currentHero = current ? heroById(current) : null;
+    const currentKey = heroKey(currentHero);
+    if (current && ownedIds.has(current) && !used.has(currentKey)) {
+      used.add(currentKey);
+      return;
+    }
+    const replacement = owned.find((hero) => !used.has(heroKey(hero)));
+    if (replacement) {
+      state.formation[index].heroId = replacement.id;
+      used.add(heroKey(replacement));
+    }
+  });
 }
 
 function normalizeFormationSkills() {
@@ -1025,15 +1070,16 @@ function normalizeFormationSkills() {
       if (!skillId) return null;
       const skill = skillById(skillId);
       if (!isEquippableSkill(skill) || !isSkillUnlocked(skill)) return null;
-      if (used.has(skillId)) return null;
-      used.add(skillId);
-      return skillId;
+      const key = skillKey(skill);
+      if (used.has(key)) return null;
+      used.add(key);
+      return preferredSkillByName(skill.name)?.id || skillId;
     });
   });
 }
 
 function renderRoster() {
-  const owned = ownedHeroes().sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name, "zh-Hans-CN"));
+  const owned = sortedOwnedHeroes();
   els.rosterCount.textContent = owned.length;
   els.fodderCount.textContent = `狗粮 ${state.fodder || 0}`;
   els.roster.innerHTML = owned.map((hero) => {
@@ -1240,6 +1286,56 @@ function isSkillUnlocked(skill) {
 
 function ownedHeroes() {
   return HEROES.filter((hero) => state.roster[hero.id] > 0);
+}
+
+function sortedOwnedHeroes() {
+  return ownedHeroes().sort(compareHeroesByRarity);
+}
+
+function heroKey(hero) {
+  return hero?.name || hero?.id || "";
+}
+
+function compareHeroesByRarity(a, b) {
+  return (Number(b.rarity) || 0) - (Number(a.rarity) || 0)
+    || a.name.localeCompare(b.name, "zh-Hans-CN");
+}
+
+function preferredSkillByName(name) {
+  return bestSkillsByName(EQUIPPABLE_SKILLS.filter((skill) => isSkillUnlocked(skill) && skill.name === name))[0] || null;
+}
+
+function bestSkillsByName(skills, selected = null) {
+  const selectedSkill = selected ? skillById(selected) : null;
+  const byName = new Map();
+  skills.forEach((skill) => {
+    const existing = byName.get(skillKey(skill));
+    if (!existing || compareSkillPreference(skill, existing, selectedSkill) < 0) byName.set(skillKey(skill), skill);
+  });
+  return [...byName.values()];
+}
+
+function compareSkillPreference(a, b, selectedSkill = null) {
+  if (selectedSkill) {
+    if (a.id === selectedSkill.id) return -1;
+    if (b.id === selectedSkill.id) return 1;
+  }
+  return (isOfficialId(a.id) ? 0 : 1) - (isOfficialId(b.id) ? 0 : 1)
+    || skillInfoScore(b) - skillInfoScore(a)
+    || compareSkillsByGrade(a, b);
+}
+
+function isOfficialId(id) {
+  return String(id || "").startsWith("official-");
+}
+
+function skillKey(skill) {
+  return skill?.name || skill?.id || "";
+}
+
+function compareSkillsByGrade(a, b) {
+  return (SKILL_GRADE_ORDER[resolvedSkillGrade(a)] ?? 9) - (SKILL_GRADE_ORDER[resolvedSkillGrade(b)] ?? 9)
+    || a.name.localeCompare(b.name, "zh-Hans-CN");
 }
 
 function shuffle(items) {
