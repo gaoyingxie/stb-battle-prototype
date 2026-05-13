@@ -77,9 +77,28 @@ try {
   await page.click("#autoTeam");
   await page.waitForFunction(() => document.querySelector("#systemMessages")?.textContent?.includes("站位职责"));
   await page.click("#startBattle");
-  await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("第一回合"));
-  await page.click("#startBattle");
-  await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("下一回合"));
+  await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("再战"));
+  const generatedReportCheck = await page.evaluate(() => ({
+    badge: document.querySelector("#reportBadge")?.textContent?.trim(),
+    reports: globalThis.STZB_DEBUG?.state?.battleReports?.length || 0,
+    lastBattleComplete: Boolean(globalThis.STZB_DEBUG?.state?.lastBattle?.complete),
+    activeBattle: Boolean(globalThis.STZB_DEBUG?.state?.activeBattle),
+  }));
+  await page.click("#openBattleReports");
+  await page.waitForSelector("#battleReportModal[open] .battle-report-card");
+  await page.click("#battleReportModal .battle-report-card");
+  await page.waitForSelector("#battleReportModal .battle-report-stage");
+  await page.click('#battleReportModal [data-report-action="log"]');
+  await page.waitForSelector("#battleReportModal .log-line");
+  const generatedReportModalCheck = await page.evaluate(() => ({
+    unreadAfterOpen: document.querySelector("#reportBadge")?.textContent?.trim() || "",
+    badgeHidden: Boolean(document.querySelector("#reportBadge")?.hidden),
+    modalOpen: Boolean(document.querySelector("#battleReportModal")?.open),
+    reportLines: document.querySelectorAll("#battleReportModal .log-line").length,
+    hasStatsButton: Boolean(document.querySelector('#battleReportModal [data-report-action="stats"]')),
+  }));
+  await page.click("#battleReportClose");
+  await page.waitForFunction(() => !document.querySelector("#battleReportModal")?.open);
   const battlePortraitCheck = await page.evaluate(() => ({
     unitPortraitBackground: getComputedStyle(document.querySelector(".unit-portrait"), "::before").backgroundImage,
     heroCardBackground: getComputedStyle(document.querySelector(".hero-card")).backgroundImage,
@@ -110,11 +129,11 @@ try {
   const summary = await page.evaluate(() => ({
     title: document.querySelector("#battleTitle")?.textContent?.trim(),
     round: document.querySelector("#roundCount")?.textContent?.trim(),
-    reportLines: document.querySelectorAll("#report .log-line").length,
+    reportLines: globalThis.STZB_DEBUG?.state?.lastBattle?.log?.length || 0,
     systemMessages: document.querySelectorAll("#systemMessages .system-message").length,
     reportIncludesRecruit: document.querySelector("#report")?.textContent?.includes("招募结果") || false,
     systemIncludesAutoTeam: document.querySelector("#systemMessages")?.textContent?.includes("站位职责") || false,
-    battleLogEntries: globalThis.STZB_DEBUG?.state?.activeBattle?.log?.length || 0,
+    battleLogEntries: globalThis.STZB_DEBUG?.state?.lastBattle?.log?.length || 0,
     skillModalTitle: document.querySelector("#skillModalTitle")?.textContent?.trim(),
   }));
 
@@ -319,6 +338,12 @@ try {
     battleLayoutChecks.push(await measureBattleLayout(viewport));
   }
 
+  if (generatedReportCheck.badge !== "1" || generatedReportCheck.reports !== 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
+    throw new Error(`开战后没有一次性结算并生成未读战报：${JSON.stringify(generatedReportCheck)}`);
+  }
+  if (!generatedReportModalCheck.badgeHidden || !generatedReportModalCheck.modalOpen || !generatedReportModalCheck.reportLines || !generatedReportModalCheck.hasStatsButton) {
+    throw new Error(`战报弹层没有正确打开详情/标记已读：${JSON.stringify(generatedReportModalCheck)}`);
+  }
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");
   }
@@ -417,6 +442,8 @@ try {
 
   console.log(JSON.stringify({
     ...summary,
+    generatedReportCheck,
+    generatedReportModalCheck,
     caoRenDetail,
     reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars },
     battlePortraitCheck,

@@ -21,6 +21,7 @@ refreshSkillMetadata();
 const STARTER_SKILL_GRADES = new Set(["B", "C"]);
 const SKILL_GRADE_ORDER = { S: 0, A: 1, B: 2, C: 3 };
 const SYSTEM_MESSAGE_LIMIT = 24;
+const BATTLE_REPORT_LIMIT = 20;
 const PRIORITY_SPEED_BONUS = 80;
 const state = {
   roster: {},
@@ -29,9 +30,14 @@ const state = {
   formation: starterFormation(),
   enemy: [],
   systemMessages: [],
+  battleReports: [],
   lastBattle: null,
   activeBattle: null,
 };
+
+let selectedBattleReportId = null;
+let battleReportView = "list";
+let battleReportStatsTab = "hero";
 
 globalThis.STZB_DEBUG = { state };
 
@@ -47,7 +53,13 @@ const els = {
   playerTroops: document.querySelector("#playerTroops"),
   enemyTroops: document.querySelector("#enemyTroops"),
   roundCount: document.querySelector("#roundCount"),
-  report: document.querySelector("#report"),
+  openBattleReports: document.querySelector("#openBattleReports"),
+  reportBadge: document.querySelector("#reportBadge"),
+  battleReportModal: document.querySelector("#battleReportModal"),
+  battleReportTitle: document.querySelector("#battleReportTitle"),
+  battleReportEyebrow: document.querySelector("#battleReportEyebrow"),
+  battleReportContent: document.querySelector("#battleReportContent"),
+  battleReportClose: document.querySelector("#battleReportClose"),
   systemMessages: document.querySelector("#systemMessages"),
   battleTitle: document.querySelector("#battleTitle"),
   battleSubtitle: document.querySelector("#battleSubtitle"),
@@ -97,10 +109,8 @@ function bindEvents() {
   });
   document.querySelector("#resetAll").addEventListener("click", resetAll);
   els.startBattle.addEventListener("click", advanceBattleFlow);
+  els.openBattleReports.addEventListener("click", openBattleReportList);
   document.querySelector("#autoTeam").addEventListener("click", autoTeam);
-  document.querySelector("#clearReport").addEventListener("click", () => {
-    els.report.innerHTML = "";
-  });
   document.querySelector("#clearSystemMessages").addEventListener("click", () => {
     state.systemMessages = [];
     saveState();
@@ -110,7 +120,8 @@ function bindEvents() {
   els.skillModalClose.addEventListener("click", () => els.skillModal.close());
   els.heroModalClose.addEventListener("click", () => els.heroModal.close());
   els.gachaClose.addEventListener("click", () => els.gachaModal.close());
-  [els.skillModal, els.heroModal, els.gachaModal].forEach((modal) => {
+  els.battleReportClose.addEventListener("click", () => els.battleReportModal.close());
+  [els.skillModal, els.heroModal, els.gachaModal, els.battleReportModal].forEach((modal) => {
     modal.addEventListener("click", (event) => {
       if (event.target === modal) modal.close();
     });
@@ -376,6 +387,12 @@ function activeDamageBoostFromText(text = "", fallback = 0.1) {
 }
 
 function handleBodyClick(event) {
+  const reportAction = event.target.closest("[data-report-action]");
+  if (reportAction) {
+    handleBattleReportAction(reportAction);
+    return;
+  }
+
   const skillButton = event.target.closest("[data-skill-id]");
   if (skillButton) {
     showSkillModal(skillButton.dataset.skillId);
@@ -762,6 +779,7 @@ function resetRuntimeState() {
   state.formation = starterFormation();
   state.enemy = [];
   state.systemMessages = [];
+  state.battleReports = [];
   state.lastBattle = null;
   state.activeBattle = null;
 }
@@ -799,6 +817,9 @@ function loadState() {
     state.fodder = Number(state.fodder) || 0;
     state.skills ||= {};
     state.systemMessages = Array.isArray(state.systemMessages) ? state.systemMessages.slice(-SYSTEM_MESSAGE_LIMIT) : [];
+    state.battleReports = Array.isArray(state.battleReports) ? state.battleReports.slice(-BATTLE_REPORT_LIMIT) : [];
+    state.lastBattle = state.battleReports.at(-1)?.battle || null;
+    state.activeBattle = null;
   } catch {
     localStorage.removeItem("heluozhanzhen");
   }
@@ -812,6 +833,7 @@ function saveState() {
     formation: state.formation,
     enemy: state.enemy,
     systemMessages: state.systemMessages,
+    battleReports: state.battleReports,
   }));
 }
 
@@ -908,6 +930,7 @@ function renderAll() {
   renderRoster();
   renderSkillCodex();
   renderBattle(currentBattle());
+  renderBattleReportBadge();
   renderSystemMessages();
 }
 
@@ -916,22 +939,13 @@ function currentBattle() {
 }
 
 function advanceBattleFlow() {
-  if (!state.activeBattle) {
-    state.activeBattle = createBattle(getPlayerTeam(), state.enemy);
-    state.lastBattle = null;
-    writeReport(state.activeBattle.log, state.activeBattle);
-    renderBattle(state.activeBattle);
-    return;
-  }
-
-  advanceBattleRound(state.activeBattle);
-  if (state.activeBattle.complete) {
-    state.lastBattle = state.activeBattle;
-    state.activeBattle = null;
-  }
-  const battle = currentBattle();
-  writeReport(battle.log, battle);
-  renderBattle(battle);
+  const battle = createBattle(getPlayerTeam(), state.enemy);
+  while (!battle.complete) advanceBattleRound(battle);
+  state.lastBattle = toBattleSnapshot(battle);
+  state.activeBattle = null;
+  addBattleReport(state.lastBattle);
+  saveState();
+  renderAll();
 }
 
 function renderFormationEditor() {
@@ -1166,7 +1180,6 @@ function renderBattle(result) {
   els.battleSubtitle.textContent = result ? result.subtitle : "双方列阵，尚未交锋";
   els.battleResult.textContent = result ? result.label : "未交锋";
   els.battleResult.dataset.result = result?.winner || "pending";
-  if (!result) writeEmptyReport();
   updateBattleButton(result);
 }
 
@@ -1191,6 +1204,428 @@ function updateBattleButton(result) {
     return;
   }
   els.startBattle.textContent = "开战";
+}
+
+function toBattleSnapshot(battle) {
+  return {
+    winner: battle.winner,
+    label: battle.label,
+    subtitle: battle.subtitle,
+    rounds: battle.rounds,
+    complete: battle.complete,
+    finishReason: battle.finishReason,
+    player: (battle.player || []).map(unitSnapshot),
+    enemy: (battle.enemy || []).map(unitSnapshot),
+    log: (battle.log || []).map(reportEntrySnapshot),
+  };
+}
+
+function unitSnapshot(unit) {
+  return {
+    id: unit.id,
+    heroId: unit.heroId,
+    side: unit.side,
+    position: unit.position,
+    name: unit.name,
+    faction: unit.faction,
+    arm: unit.arm,
+    rarity: unit.rarity,
+    portrait: unit.portrait || portraitForHero(unit),
+    distance: unit.distance,
+    stats: { ...(unit.stats || {}) },
+    bonuses: [...(unit.bonuses || [])],
+    skills: (unit.skills || []).map(skillSnapshot),
+    troops: Math.max(0, Math.round(unit.troops || 0)),
+    wounded: Math.max(0, Math.round(unit.wounded || 0)),
+    maxTroops: unit.maxTroops || 10000,
+    statuses: [...(unit.statuses || [])],
+  };
+}
+
+function skillSnapshot(skill) {
+  return {
+    id: skill.id,
+    name: skill.name,
+    grade: skill.grade,
+    type: skill.type,
+    distance: skill.distance,
+    icon: skill.icon,
+  };
+}
+
+function reportEntrySnapshot(entry) {
+  return {
+    ...entry,
+    participants: (entry.participants || []).map((participant) => ({ ...participant })),
+    details: [...(entry.details || [])],
+  };
+}
+
+function addBattleReport(battle) {
+  const report = {
+    id: `battle-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+    title: battleReportTitle(battle),
+    createdAt: Date.now(),
+    read: false,
+    battle,
+  };
+  state.battleReports = [...(state.battleReports || []), report].slice(-BATTLE_REPORT_LIMIT);
+  selectedBattleReportId = report.id;
+  battleReportView = "summary";
+  battleReportStatsTab = "hero";
+}
+
+function battleReportTitle(battle) {
+  const playerName = battle?.player?.[0]?.name || "我军";
+  const enemyName = battle?.enemy?.[0]?.name || "守军";
+  return `${playerName} 对阵 ${enemyName}`;
+}
+
+function renderBattleReportBadge() {
+  const unread = (state.battleReports || []).filter((report) => !report.read).length;
+  els.reportBadge.textContent = unread;
+  els.reportBadge.hidden = unread <= 0;
+  els.openBattleReports.classList.toggle("has-unread", unread > 0);
+}
+
+function openBattleReportList() {
+  battleReportView = "list";
+  selectedBattleReportId ||= latestBattleReport()?.id || null;
+  renderBattleReportModal();
+  els.battleReportModal.showModal();
+}
+
+function handleBattleReportAction(button) {
+  const action = button.dataset.reportAction;
+  if (action === "open") {
+    selectedBattleReportId = button.dataset.reportId;
+    battleReportView = "summary";
+    battleReportStatsTab = "hero";
+    markBattleReportRead(selectedBattleReportId);
+    saveState();
+    renderBattleReportBadge();
+    renderBattleReportModal();
+    return;
+  }
+  if (action === "back") {
+    battleReportView = "list";
+    renderBattleReportModal();
+    return;
+  }
+  if (action === "summary" || action === "log" || action === "stats") {
+    battleReportView = action;
+    renderBattleReportModal();
+    return;
+  }
+  if (action === "hero-stats" || action === "skill-stats") {
+    battleReportStatsTab = action === "hero-stats" ? "hero" : "skill";
+    battleReportView = "stats";
+    renderBattleReportModal();
+    return;
+  }
+  if (action === "mark-all-read") {
+    (state.battleReports || []).forEach((report) => {
+      report.read = true;
+    });
+    saveState();
+    renderBattleReportBadge();
+    renderBattleReportModal();
+  }
+}
+
+function markBattleReportRead(reportId) {
+  const report = state.battleReports.find((item) => item.id === reportId);
+  if (report) report.read = true;
+}
+
+function latestBattleReport() {
+  return (state.battleReports || []).at(-1) || null;
+}
+
+function selectedBattleReport() {
+  return state.battleReports.find((report) => report.id === selectedBattleReportId) || latestBattleReport();
+}
+
+function renderBattleReportModal() {
+  const report = selectedBattleReport();
+  if (battleReportView === "list" || !report) {
+    els.battleReportEyebrow.textContent = `${state.battleReports.length} 封战报`;
+    els.battleReportTitle.textContent = "个人战报";
+    els.battleReportContent.innerHTML = battleReportListHtml();
+    return;
+  }
+
+  const viewTitle = battleReportView === "stats" ? "统计" : battleReportView === "log" ? "战报详情" : "战斗地点";
+  els.battleReportEyebrow.textContent = `id:${report.id.slice(-8)}`;
+  els.battleReportTitle.textContent = viewTitle;
+  els.battleReportContent.innerHTML = battleReportDetailHtml(report);
+}
+
+function battleReportListHtml() {
+  const reports = [...(state.battleReports || [])].reverse();
+  return `
+    <div class="battle-report-list-view">
+      <div class="battle-report-toolbar">
+        <div class="battle-report-tabs" aria-label="战报分类">
+          <button class="active" type="button">个人</button>
+          <button type="button" disabled>收藏</button>
+        </div>
+        <div class="battle-report-tools">
+          <button class="battle-report-tool" type="button" disabled>搜索</button>
+          <button class="battle-report-tool" data-report-action="mark-all-read" type="button">设为全部已读</button>
+        </div>
+      </div>
+      <div class="battle-report-list">
+        ${reports.length ? reports.map(battleReportListCardHtml).join("") : '<div class="empty-report">暂无战报。点击开战后会生成一封完整战报。</div>'}
+      </div>
+    </div>
+  `;
+}
+
+function battleReportListCardHtml(report) {
+  const battle = report.battle;
+  const playerTroops = totalUnitsTroops(battle.player);
+  const enemyTroops = totalUnitsTroops(battle.enemy);
+  const resultClass = battle.winner || "draw";
+  return `
+    <button class="battle-report-card ${report.read ? "" : "unread"}" data-report-action="open" data-report-id="${escapeHtml(report.id)}" type="button">
+      <span class="battle-report-shield" aria-hidden="true"></span>
+      <div class="battle-report-card-main">
+        <div class="battle-report-card-head">
+          <strong>${escapeHtml(report.title)}</strong>
+          <span>土地 Lv.${Math.max(1, battle.rounds || 1)}</span>
+          <em>${formatBattleReportTime(report.createdAt)}</em>
+        </div>
+        <div class="battle-report-card-body">
+          <div class="battle-report-list-side player">
+            <span>${formatNumber(playerTroops.current)}/${formatNumber(playerTroops.max)}</span>
+            <div class="battle-report-mini-line">${battle.player.map(reportMiniUnitHtml).join("")}</div>
+          </div>
+          <div class="battle-report-result ${resultClass}">${escapeHtml(battle.label)}</div>
+          <div class="battle-report-list-side enemy">
+            <span>${formatNumber(enemyTroops.current)}/${formatNumber(enemyTroops.max)}</span>
+            <div class="battle-report-mini-line">${battle.enemy.map(reportMiniUnitHtml).join("")}</div>
+          </div>
+        </div>
+      </div>
+    </button>
+  `;
+}
+
+function reportMiniUnitHtml(unit) {
+  const portrait = unit.portrait || portraitForHero(unit);
+  return `
+    <span class="battle-report-mini-unit ${unit.troops <= 0 ? "fallen" : ""}" title="${escapeHtml(unit.name)}">
+      ${portrait ? `<img src="${escapeHtml(portrait)}" alt="">` : escapeHtml(unit.name.slice(0, 1))}
+      <b>${"★".repeat(Number(unit.rarity) || 0)}</b>
+    </span>
+  `;
+}
+
+function battleReportDetailHtml(report) {
+  const battle = report.battle;
+  const body = battleReportView === "stats"
+    ? battleReportStatsHtml(battle)
+    : battleReportView === "log"
+      ? visibleReportLogHtml(battle.log, battle)
+      : battleReportSummaryHtml(report);
+  const match = battleReportView === "stats"
+    ? ""
+    : `
+      <div class="battle-report-match">
+        ${battleReportScoreBarHtml(battle.player, "player")}
+        <div class="battle-report-match-result ${battle.winner || "draw"}">${escapeHtml(battleReportResultGlyph(battle))}</div>
+        ${battleReportScoreBarHtml(battle.enemy, "enemy")}
+      </div>
+    `;
+  return `
+    <div class="battle-report-detail-view ${battleReportView === "stats" ? "stats-page" : ""}">
+      <button class="battle-report-back" data-report-action="back" type="button">个人战报</button>
+      ${match}
+      ${body}
+      ${battleReportNavHtml()}
+    </div>
+  `;
+}
+
+function battleReportResultGlyph(battle) {
+  if (battle.winner === "player") return "胜";
+  if (battle.winner === "enemy") return "败";
+  return "平";
+}
+
+function battleReportScoreBarHtml(units, side) {
+  const totals = totalUnitsTroops(units);
+  const pct = percentOf(totals.current, totals.max);
+  const title = side === "player" ? "我方" : "守军";
+  return `
+    <div class="battle-report-score ${side}">
+      <span>${formatNumber(totals.current)}/${formatNumber(totals.max)}</span>
+      <strong>${title}</strong>
+      <div class="battle-report-score-bar" style="--active-pct: ${pct}%"><i></i></div>
+    </div>
+  `;
+}
+
+function battleReportSummaryHtml(report) {
+  const battle = report.battle;
+  return `
+    <div class="battle-report-stage">
+      <div class="battle-report-army player">${battle.player.map(reportUnitCardHtml).join("")}</div>
+      <div class="battle-report-center">
+        <strong>【${battle.winner === "player" ? "我方胜利" : battle.winner === "enemy" ? "守军胜利" : "平局"}】</strong>
+        <span>历经 ${battle.rounds} 回合</span>
+        <span>获得 铜币 1</span>
+        <button class="battle-report-replay" data-report-action="log" type="button">战况回放</button>
+      </div>
+      <div class="battle-report-army enemy">${battle.enemy.map(reportUnitCardHtml).join("")}</div>
+    </div>
+  `;
+}
+
+function reportUnitCardHtml(unit) {
+  const portrait = unit.portrait || portraitForHero(unit);
+  const troopPct = percentOf(unit.troops, unit.maxTroops);
+  return `
+    <article class="battle-report-unit ${unit.side} ${unit.troops <= 0 ? "fallen" : ""}">
+      <div class="battle-report-unit-portrait">
+        ${portrait ? `<img src="${escapeHtml(portrait)}" alt="${escapeHtml(unit.name)}">` : ""}
+        <span>${"★".repeat(Number(unit.rarity) || 0)}</span>
+      </div>
+      <div class="battle-report-unit-name">
+        <small>${escapeHtml(unit.faction || "")}</small>
+        <strong>${escapeHtml(unit.name)}</strong>
+        <em>${Number(unit.distance) || defaultAttackDistance()}</em>
+      </div>
+      <div class="battle-report-unit-troops">
+        <span>兵力${formatNumber(unit.troops)}</span>
+        <b>${formatNumber(unit.wounded || 0)}</b>
+      </div>
+      <div class="battle-report-score-bar" style="--active-pct: ${troopPct}%"><i></i></div>
+    </article>
+  `;
+}
+
+function visibleReportLogHtml(entries, battle) {
+  return `
+    <section class="battle-report-log-panel">
+      ${reportLogInnerHtml(entries, battle, false)}
+    </section>
+  `;
+}
+
+function battleReportStatsHtml(battle) {
+  return `
+    <section class="battle-report-stats-view">
+      <nav class="battle-report-stat-nav" aria-label="统计分类">
+        <button class="${battleReportStatsTab === "hero" ? "active" : ""}" data-report-action="hero-stats" type="button">武将统计</button>
+        <button class="${battleReportStatsTab === "skill" ? "active" : ""}" data-report-action="skill-stats" type="button">战法统计</button>
+      </nav>
+      <div class="battle-report-stat-panel">
+        ${battleReportStatsTab === "hero" ? battleHeroStatsHtml(battle) : battleSkillStatsHtml(battle)}
+      </div>
+    </section>
+  `;
+}
+
+function battleHeroStatsHtml(battle) {
+  const stats = collectBattleStats(battle);
+  return `
+    <div class="battle-hero-stat-table">
+      <div class="battle-hero-stat-head">
+        <span></span>
+        <span>普通杀伤</span>
+        <span>战法杀伤</span>
+        <span>战法释放</span>
+        <span>救援</span>
+        <span>损失</span>
+        <span>本场伤兵</span>
+        <span>总伤兵</span>
+      </div>
+      ${stats.map(heroStatRowHtml).join("")}
+    </div>
+  `;
+}
+
+function heroStatRowHtml(unit) {
+  const totalWounded = Math.max(unit.wounded, unit.loss + unit.wounded);
+  return `
+    <article class="battle-hero-stat-row ${unit.side}">
+      ${statUnitIdentityHtml(unit)}
+      <span>${formatNumber(unit.attackDamage)}</span>
+      <span>${formatNumber(unit.skillDamage)}</span>
+      <span>${formatNumber(unit.skillCasts)}</span>
+      <span>${formatNumber(unit.healing)}</span>
+      <span class="danger">${formatNumber(unit.loss)}</span>
+      <span class="danger">${formatNumber(unit.wounded)}</span>
+      <span class="danger">${formatNumber(totalWounded)}</span>
+    </article>
+  `;
+}
+
+function battleSkillStatsHtml(battle) {
+  const stats = collectBattleStats(battle);
+  return `<div class="battle-skill-stat-list">${stats.map(skillStatRowHtml).join("")}</div>`;
+}
+
+function skillStatRowHtml(unit) {
+  const skills = [...unit.skills.values()]
+    .sort((a, b) => (b.count - a.count) || (b.damage + b.healing) - (a.damage + a.healing) || a.name.localeCompare(b.name, "zh-Hans-CN"));
+  const cells = skills.length ? skills.slice(0, 4).map(skillStatCellHtml).join("") : '<span class="battle-skill-stat-empty">-</span>';
+  return `
+    <article class="battle-skill-stat-row ${unit.side}">
+      ${statUnitIdentityHtml(unit)}
+      <div class="battle-skill-stat-cells">${cells}</div>
+    </article>
+  `;
+}
+
+function skillStatCellHtml(skill) {
+  return `
+    <span class="battle-skill-stat-cell">
+      <strong>${escapeHtml(skill.name)}</strong>
+      <em>${formatNumber(skill.count)}次</em>
+      <small>${skill.healing ? "救援" : "杀伤"} ${formatNumber(skill.damage + skill.healing)}</small>
+    </span>
+  `;
+}
+
+function statUnitIdentityHtml(unit) {
+  const portrait = unit.portrait || portraitForHero(unit);
+  return `
+    <span class="battle-stat-unit">
+      ${portrait ? `<img src="${escapeHtml(portrait)}" alt="">` : ""}
+      <b>${escapeHtml(positionLabel(unit.position))}</b>
+      <strong>${escapeHtml(unit.name)}</strong>
+    </span>
+  `;
+}
+
+function battleReportNavHtml() {
+  const item = (action, label) => `<button class="${battleReportView === action ? "active" : ""}" data-report-action="${action}" type="button">${label}</button>`;
+  return `
+    <nav class="battle-report-bottom-nav" aria-label="战报视图">
+      ${item("log", "战报详情")}
+      ${item("stats", "统计")}
+      <button type="button" disabled>阵容详情</button>
+    </nav>
+  `;
+}
+
+function totalUnitsTroops(units) {
+  return {
+    current: (units || []).reduce((sum, unit) => sum + Math.max(0, Number(unit.troops) || 0), 0),
+    max: (units || []).reduce((sum, unit) => sum + Math.max(0, Number(unit.maxTroops) || 0), 0),
+  };
+}
+
+function formatBattleReportTime(timestamp) {
+  return new Date(timestamp || Date.now()).toLocaleString("zh-CN", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 }
 
 function unitTemplate(unit) {
@@ -1419,17 +1854,33 @@ function reportParticipantPortrait(participant) {
 }
 
 function writeReport(entries, battle = null) {
+  const report = ensureReportRenderTarget();
+  report.innerHTML = reportLogInnerHtml(entries, battle, true);
+  report.scrollTop = report.scrollHeight || 0;
+}
+
+function reportLogInnerHtml(entries, battle = null, includeStats = true) {
   const round = [...entries].reverse().find((entry) => entry.type === "round")?.text
     || "准备回合";
-  els.report.innerHTML = `
+  return `
     <div class="report-detail-title">
       <span>战报详情</span>
       <b>${escapeHtml(round)}</b>
     </div>
-    ${battle?.complete ? battleStatsHtml(battle) : ""}
+    ${includeStats && battle?.complete ? battleStatsHtml(battle) : ""}
     ${entries.map(reportLineHtml).join("")}
   `;
-  els.report.scrollTop = els.report.scrollHeight || 0;
+}
+
+function ensureReportRenderTarget() {
+  let report = document.querySelector("#report");
+  if (report) return report;
+  report = document.createElement("div");
+  report.id = "report";
+  report.className = "report report-test-buffer";
+  report.setAttribute("aria-hidden", "true");
+  document.body.append(report);
+  return report;
 }
 
 function battleStatsHtml(battle) {
@@ -1462,7 +1913,16 @@ function collectBattleStats(battle) {
     name: unit.name,
     side: unit.side,
     position: unit.position,
+    portrait: unit.portrait || portraitForHero(unit),
+    rarity: unit.rarity,
+    troops: Math.max(0, Number(unit.troops) || 0),
+    wounded: Math.max(0, Number(unit.wounded) || 0),
+    maxTroops: Math.max(0, Number(unit.maxTroops) || 0),
+    loss: Math.max(0, (Number(unit.maxTroops) || 0) - (Number(unit.troops) || 0)),
     damage: 0,
+    attackDamage: 0,
+    skillDamage: 0,
+    skillCasts: 0,
     healing: 0,
     skills: new Map(),
   }));
@@ -1474,15 +1934,26 @@ function collectBattleStats(battle) {
     if (!amount || !["hit", "heal"].includes(entry.type)) return;
     const actor = reportEntryActor(entry);
     const unit = actor?.id ? statsById.get(actor.id) : statsBySideAndName.get(`${actor?.side || ""}:${entry.actor || ""}`);
+    const target = reportEntryTarget(entry);
+    const targetUnit = target?.id ? statsById.get(target.id) : statsBySideAndName.get(`${target?.side || ""}:${entry.target || ""}`);
+    if (entry.type === "hit" && targetUnit) targetUnit.received = (targetUnit.received || 0) + amount;
     if (!unit) return;
 
     const skillName = entry.skill || (entry.type === "heal" ? "治疗" : "未标注来源");
-    const skill = unit.skills.get(skillName) || { name: skillName, damage: 0, healing: 0 };
+    const skill = unit.skills.get(skillName) || { name: skillName, count: 0, damage: 0, healing: 0 };
+    skill.count += 1;
     if (entry.type === "heal") {
       unit.healing += amount;
       skill.healing += amount;
     } else {
+      const isNormalAttack = skillName === "普通攻击";
       unit.damage += amount;
+      if (isNormalAttack) {
+        unit.attackDamage += amount;
+      } else {
+        unit.skillDamage += amount;
+        unit.skillCasts += 1;
+      }
       skill.damage += amount;
     }
     unit.skills.set(skillName, skill);
@@ -1495,6 +1966,13 @@ function reportEntryActor(entry) {
   const participants = entry.participants || [];
   return participants.find((participant) => participant.role === "actor")
     || participants.find((participant) => participant.name === entry.actor)
+    || null;
+}
+
+function reportEntryTarget(entry) {
+  const participants = entry.participants || [];
+  return participants.find((participant) => participant.role === "target")
+    || participants.find((participant) => participant.name === entry.target)
     || null;
 }
 
@@ -1535,7 +2013,7 @@ function positionLabel(position) {
 }
 
 function writeEmptyReport() {
-  els.report.innerHTML = `
+  ensureReportRenderTarget().innerHTML = `
     <div class="report-detail-title">
       <span>战报详情</span>
       <b>未开战</b>

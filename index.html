@@ -30,6 +30,10 @@
           <button id="rerollEnemy" class="btn secondary" type="button">换守军</button>
           <button id="resetAll" class="btn secondary danger" type="button">重置</button>
           <button id="startBattle" class="btn primary" type="button">开战</button>
+          <button id="openBattleReports" class="btn report-entry" type="button">
+            战报
+            <span id="reportBadge" class="report-badge" hidden>0</span>
+          </button>
         </div>
       </section>
 
@@ -93,14 +97,6 @@
         </section>
 
         <div class="side-column">
-          <aside class="panel report-panel" aria-label="战报">
-            <div class="panel-heading">
-              <h2>战报</h2>
-              <button id="clearReport" class="icon-btn" type="button" title="清空战报">清</button>
-            </div>
-            <div id="report" class="report"></div>
-          </aside>
-
           <aside class="panel system-panel" aria-label="系统消息">
             <div class="panel-heading">
               <h2>系统消息</h2>
@@ -169,6 +165,19 @@
           <button id="gachaClose" class="icon-btn" type="button" aria-label="关闭">×</button>
         </div>
         <div id="gachaResults" class="gacha-results"></div>
+      </div>
+    </dialog>
+
+    <dialog id="battleReportModal" class="battle-report-modal">
+      <div class="battle-report-shell">
+        <header class="battle-report-top">
+          <div>
+            <p id="battleReportEyebrow">个人战报</p>
+            <h2 id="battleReportTitle">个人战报</h2>
+          </div>
+          <button id="battleReportClose" class="battle-report-close" type="button" aria-label="关闭">×</button>
+        </header>
+        <div id="battleReportContent" class="battle-report-content"></div>
       </div>
     </dialog>
 

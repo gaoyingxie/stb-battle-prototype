@@ -5,7 +5,7 @@
 
   .side-column {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     grid-column: 1 / -1;
     max-height: 360px;
   }
@@ -162,5 +162,86 @@
 
   .report {
     min-height: 280px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .battle-report-card-body,
+  .battle-report-stage,
+  .battle-report-match {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-report-list-side.enemy,
+  .battle-report-score.enemy strong {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .battle-report-list-side.enemy .battle-report-mini-line {
+    justify-content: flex-start;
+  }
+
+  .battle-report-army {
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+  }
+
+  .battle-report-stats-view {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-report-stat-nav {
+    display: flex;
+    overflow: auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(245, 223, 170, 0.12);
+  }
+
+  .battle-report-stat-nav button {
+    min-height: 40px;
+    writing-mode: horizontal-tb;
+  }
+}
+
+@media (max-width: 680px) {
+  .battle-report-top {
+    padding: 16px 14px 8px;
+  }
+
+  .battle-report-content {
+    padding: 0 10px 16px;
+  }
+
+  .battle-report-toolbar,
+  .battle-report-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .battle-report-card {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .battle-report-card-head {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .battle-report-mini-unit {
+    width: 74px;
+    height: 88px;
+  }
+
+  .battle-report-army {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-report-bottom-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .battle-report-bottom-nav button {
+    width: 100%;
   }
 }

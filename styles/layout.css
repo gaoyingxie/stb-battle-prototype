@@ -24,19 +24,15 @@
   max-height: min(760px, calc(100vh - 124px));
 }
 
-.report-panel,
 .system-panel {
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
 
-.report-panel {
-  flex: 1 1 auto;
-}
-
 .system-panel {
-  flex: 0 0 clamp(260px, 26vh, 330px);
+  flex: 1 1 auto;
+  height: 100%;
 }
 
 .panel-heading,
@@ -83,4 +79,3 @@
   min-width: 76px;
   padding: 0 12px;
 }
-
