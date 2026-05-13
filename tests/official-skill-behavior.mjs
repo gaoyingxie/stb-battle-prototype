@@ -69,7 +69,58 @@ try {
     throw new Error("虎步关右应记录为自身增益发动");
   }
 
-  console.log(JSON.stringify(result, null, 2));
+  const priorityResult = await page.evaluate(() => {
+    const originalRandom = Math.random;
+    Math.random = () => 0;
+    try {
+      const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+        hero.name === name && hero.faction === faction && hero.arm === arm
+      )?.id;
+      const skillId = (name) => globalThis.STZB_SEED_DATA.SKILLS.find((skill) => skill.name === name)?.id;
+      const xixiangWugong = skillId("西乡武功");
+      const playerTeam = [
+        { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [xixiangWugong] },
+        { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+        { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
+      ];
+      const enemyTeam = [
+        { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+        { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+        { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
+      ];
+      const battle = createBattle(playerTeam, enemyTeam);
+      const order = [...alive(battle.player), ...alive(battle.enemy)].sort((a, b) => actionSpeed(b) - actionSpeed(a));
+      return {
+        xixiangWugong,
+        priorityStatuses: battle.player.map((unit) => ({
+          name: unit.name,
+          priority: statusValue(unit, "priority"),
+          rounds: unit.statuses.find((status) => status.type === "priority")?.rounds || 0,
+        })),
+        firstActor: {
+          name: order[0]?.name,
+          side: order[0]?.side,
+        },
+        order: order.map((unit) => `${unit.side}:${unit.name}`),
+      };
+    } finally {
+      Math.random = originalRandom;
+    }
+  });
+
+  if (!priorityResult.xixiangWugong) {
+    throw new Error("应能找到官方战法【西乡武功】");
+  }
+
+  if (!priorityResult.priorityStatuses.some((status) => status.priority > 0 && status.rounds === 2)) {
+    throw new Error(`西乡武功应在战斗前2回合赋予我军先手：${JSON.stringify(priorityResult.priorityStatuses)}`);
+  }
+
+  if (priorityResult.firstActor.side !== "player") {
+    throw new Error(`西乡武功生效后第一行动方应为我军，实际顺序：${priorityResult.order.join(" -> ")}`);
+  }
+
+  console.log(JSON.stringify({ result, priorityResult }, null, 2));
 } finally {
   await browser.close();
   await localServer.close();
