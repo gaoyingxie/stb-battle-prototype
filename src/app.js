@@ -1259,6 +1259,7 @@ function reportParticipants(ctx, text, meta = {}) {
       name: participant.name,
       side: participant.side,
       role: participant.role || "unit",
+      portrait: participant.portrait || reportParticipantPortrait(participant),
     });
   };
 
@@ -1286,6 +1287,17 @@ function unitParticipantFromMeta(unit, role) {
   if (!unit) return null;
   if (typeof unitLogParticipant === "function") return unitLogParticipant(unit, role);
   return { id: unit.id, heroId: unit.heroId, name: unit.name, side: unit.side, role };
+}
+
+function reportParticipantPortrait(participant) {
+  if (!participant) return "";
+  if (participant.portrait) return participant.portrait;
+  const hero = HEROES.find((candidate) => (
+    candidate.id === participant.heroId
+    || candidate.id === participant.id
+    || candidate.name === participant.name
+  ));
+  return portraitForHero(hero);
 }
 
 function writeReport(entries) {
@@ -1358,10 +1370,35 @@ function reportLineHtml(entry) {
     : "";
   return `
     <div class="log-line ${entry.type}">
-      <span class="report-avatar">${escapeHtml(reportGlyph(entry))}</span>
+      ${reportAvatarHtml(entry)}
       <span class="report-text">${decorateReportText(entry)}${details}</span>
     </div>
   `;
+}
+
+function reportAvatarHtml(entry) {
+  const participant = reportAvatarParticipant(entry);
+  const side = participant?.side === "player" ? "player" : participant?.side === "enemy" ? "enemy" : "";
+  const portrait = reportParticipantPortrait(participant);
+  const classes = [
+    "report-avatar",
+    side ? `report-avatar-${side}` : "",
+    portrait ? "report-avatar-portrait" : "",
+  ].filter(Boolean).join(" ");
+  const label = participant?.name || reportGlyph(entry);
+  const content = portrait
+    ? `<img src="${escapeHtml(portrait)}" alt="${escapeHtml(label)}画像" loading="lazy">`
+    : escapeHtml(reportGlyph(entry));
+  return `<span class="${classes}" title="${escapeHtml(label)}">${content}</span>`;
+}
+
+function reportAvatarParticipant(entry) {
+  const participants = entry.participants || [];
+  if (!participants.length) return null;
+  return participants.find((participant) => participant.role === "actor")
+    || participants.find((participant) => participant.name === entry.actor)
+    || participants.find((participant) => participant.role === "target")
+    || participants[0];
 }
 
 function reportGlyph(entry) {

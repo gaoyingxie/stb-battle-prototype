@@ -65,6 +65,7 @@ try {
     ];
     const battle = globalThis.createBattle(playerTeam, enemyTeam);
     globalThis.dealDamage(battle.ctx, battle.enemy[0], battle.player[0], 0.78, "attack", "测试攻击");
+    globalThis.dealDamage(battle.ctx, battle.player[0], battle.enemy[0], 0.78, "attack", "测试反击");
     globalThis.writeReport(battle.log);
     const report = document.querySelector("#report");
     const unitNames = [...report.querySelectorAll(".report-unit")].map((node) => ({
@@ -72,9 +73,19 @@ try {
       player: node.classList.contains("report-unit-player"),
       enemy: node.classList.contains("report-unit-enemy"),
     }));
+    const avatars = [...report.querySelectorAll(".log-line.hit .report-avatar")].map((node) => ({
+      title: node.getAttribute("title"),
+      player: node.classList.contains("report-avatar-player"),
+      enemy: node.classList.contains("report-avatar-enemy"),
+      portrait: node.classList.contains("report-avatar-portrait"),
+      src: node.querySelector("img")?.getAttribute("src") || "",
+    }));
     return {
       html: report.innerHTML,
       unitNames,
+      avatars,
+      hasPlayerAvatar: avatars.some((item) => item.player && item.portrait && item.src.includes("assets/portraits/")),
+      hasEnemyAvatar: avatars.some((item) => item.enemy && item.portrait && item.src.includes("assets/portraits/")),
       hasPlayerName: unitNames.some((item) => item.text === "曹操" && item.player),
       hasEnemyName: unitNames.some((item) => item.text === "曹操" && item.enemy),
     };
@@ -101,11 +112,14 @@ try {
   if (!reportColorCheck.hasPlayerName || !reportColorCheck.hasEnemyName) {
     throw new Error(`同名武将战报没有正确区分敌我颜色：${JSON.stringify(reportColorCheck.unitNames)}`);
   }
+  if (!reportColorCheck.hasPlayerAvatar || !reportColorCheck.hasEnemyAvatar) {
+    throw new Error(`Report avatars did not render portraits with player/enemy side colors: ${JSON.stringify(reportColorCheck.avatars)}`);
+  }
   if (pageErrors.length) {
     throw new Error(`页面错误：${pageErrors.join(" | ")}`);
   }
 
-  console.log(JSON.stringify({ ...summary, caoRenDetail, reportColorCheck: reportColorCheck.unitNames }, null, 2));
+  console.log(JSON.stringify({ ...summary, caoRenDetail, reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars } }, null, 2));
   if (consoleMessages.length) {
     console.warn(consoleMessages.join("\n"));
   }

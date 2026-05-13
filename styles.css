@@ -1976,10 +1976,12 @@ select {
 }
 
 .report-avatar {
+  position: relative;
   display: grid;
   place-items: center;
   width: 34px;
   height: 34px;
+  overflow: hidden;
   border: 2px solid rgba(215, 170, 71, 0.38);
   border-radius: 6px;
   background:
@@ -1988,6 +1990,23 @@ select {
   color: #fff3c5;
   font-size: 15px;
   font-weight: 900;
+}
+
+.report-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.report-avatar-portrait::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 248, 220, 0.14), transparent 42%),
+    radial-gradient(circle at 50% 18%, transparent 0 52%, rgba(0, 0, 0, 0.22) 100%);
+  pointer-events: none;
+  content: "";
 }
 
 .log-line.hit .report-avatar {
@@ -2000,6 +2019,26 @@ select {
 
 .log-line.control .report-avatar {
   border-color: rgba(107, 141, 197, 0.88);
+}
+
+.report-avatar-player {
+  border-color: rgba(93, 182, 233, 0.92);
+  background:
+    linear-gradient(135deg, rgba(126, 218, 255, 0.18), transparent),
+    rgba(8, 18, 24, 0.86);
+  box-shadow:
+    0 0 0 1px rgba(35, 94, 128, 0.68),
+    0 0 12px rgba(84, 186, 255, 0.18);
+}
+
+.report-avatar-enemy {
+  border-color: rgba(235, 113, 100, 0.92);
+  background:
+    linear-gradient(135deg, rgba(255, 166, 132, 0.18), transparent),
+    rgba(28, 10, 8, 0.86);
+  box-shadow:
+    0 0 0 1px rgba(112, 38, 34, 0.72),
+    0 0 12px rgba(255, 91, 78, 0.18);
 }
 
 .report-skill {
