@@ -1,0 +1,124 @@
+globalThis.window = globalThis;
+
+await import("../src/team-ai.js");
+
+const {
+  chooseLineup,
+  recommendTeam,
+  scoreHeroForPosition,
+  scoreSkillForHero,
+} = globalThis.STZB_TEAM_AI;
+
+const positions = [{ id: "camp" }, { id: "middle" }, { id: "front" }];
+const fixedRng = () => 0.5;
+
+function hero(id, overrides = {}) {
+  return {
+    id,
+    name: id,
+    faction: "测",
+    arm: "骑",
+    rarity: 5,
+    innate: `${id}-innate`,
+    cost: 3,
+    distance: 3,
+    stats: { attack: 80, strategy: 80, defense: 80, speed: 80 },
+    ...overrides,
+  };
+}
+
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+const lowCostCarry = hero("low-cost-carry", {
+  cost: 2,
+  distance: 4,
+  stats: { attack: 105, strategy: 91, defense: 84, speed: 88 },
+});
+const highCostBench = hero("high-cost-bench", {
+  cost: 5.5,
+  distance: 4,
+  stats: { attack: 68, strategy: 64, defense: 70, speed: 52 },
+});
+
+assert(
+  scoreHeroForPosition(lowCostCarry, { id: "camp" }) > scoreHeroForPosition(highCostBench, { id: "camp" }),
+  "AI 不应把高 cost 弱将判得比低 cost 强将更强",
+);
+
+const lineup = chooseLineup([
+  hero("duplicate-a", {
+    name: "卢植",
+    faction: "汉",
+    arm: "骑",
+    distance: 4,
+    stats: { attack: 108, strategy: 123, defense: 132, speed: 89 },
+  }),
+  hero("duplicate-b", {
+    name: "卢植",
+    faction: "汉",
+    arm: "骑",
+    distance: 1,
+    stats: { attack: 108, strategy: 123, defense: 132, speed: 89 },
+  }),
+  hero("backline", {
+    name: "后排",
+    distance: 5,
+    stats: { attack: 98, strategy: 112, defense: 72, speed: 76 },
+  }),
+  hero("middle", {
+    name: "中军",
+    distance: 3,
+    stats: { attack: 92, strategy: 94, defense: 88, speed: 86 },
+  }),
+  hero("frontline", {
+    name: "前锋",
+    distance: 1,
+    stats: { attack: 78, strategy: 65, defense: 118, speed: 93 },
+  }),
+], positions, fixedRng);
+const identityKeys = lineup.map((item) => `${item.name}|${item.faction}|${item.arm}`);
+assert(new Set(identityKeys).size === identityKeys.length, "AI 不应把同名同阵营同兵种的重复卡同时上阵");
+assert(lineup[2].id === "frontline", "前锋应优先选择高防御高速度的承伤位");
+
+const attackSkill = {
+  id: "attack-skill",
+  name: "强攻",
+  type: "主动",
+  trigger: "active",
+  chance: 0.45,
+  grade: "S",
+  distance: 4,
+  soldierType: "骑",
+  desc: "对敌军群体发动一次攻击伤害",
+};
+const wrongArmSkill = {
+  ...attackSkill,
+  id: "wrong-arm",
+  soldierType: "弓",
+};
+assert(
+  scoreSkillForHero(attackSkill, lowCostCarry, { id: "camp" }) > scoreSkillForHero(wrongArmSkill, lowCostCarry, { id: "camp" }),
+  "战法评分应惩罚兵种不适配",
+);
+
+const team = recommendTeam({
+  heroes: [highCostBench, lowCostCarry, hero("tank", {
+    distance: 1,
+    stats: { attack: 74, strategy: 70, defense: 116, speed: 92 },
+  })],
+  skills: [attackSkill, wrongArmSkill],
+  positions,
+  minHeroRarity: 0,
+  skillGrades: null,
+  rng: fixedRng,
+});
+assert(team.some((slot) => slot.heroId === lowCostCarry.id), "自动推荐应保留低 cost 强将");
+
+console.log(JSON.stringify({
+  lowCostCarryCampScore: scoreHeroForPosition(lowCostCarry, { id: "camp" }),
+  highCostBenchCampScore: scoreHeroForPosition(highCostBench, { id: "camp" }),
+  lineup: lineup.map((item) => item.id),
+  recommended: team.map((slot) => slot.heroId),
+}, null, 2));

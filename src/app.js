@@ -862,7 +862,7 @@ function autoTeam() {
     ? owned
     : [...owned, ...fallbackHeroes.filter((hero) => !owned.some((ownedHero) => ownedHero.id === hero.id))];
   const recommended = recommendTeam({
-    heroes: heroPool.slice(0, 24),
+    heroes: heroPool,
     skills: EQUIPPABLE_SKILLS.filter(isSkillUnlocked),
     positions: POSITIONS,
     minHeroRarity: 0,
@@ -876,7 +876,7 @@ function autoTeam() {
   normalizeFormationSkills();
   state.activeBattle = null;
   state.lastBattle = null;
-  writeSystemMessage("军师完成整备：已按星级与战力自动上阵。");
+  writeSystemMessage("军师完成整备：已按站位职责、属性互补和战法适配自动上阵。");
   saveState();
   renderAll();
 }

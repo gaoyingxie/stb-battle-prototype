@@ -21,6 +21,8 @@ page.on("pageerror", (error) => {
 try {
   await page.goto(entryUrl);
   await page.waitForSelector("#startBattle");
+  await page.click("#autoTeam");
+  await page.waitForFunction(() => document.querySelector("#systemMessages")?.textContent?.includes("站位职责"));
   await page.click("#startBattle");
   await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("第一回合"));
   await page.click("#startBattle");
@@ -48,6 +50,7 @@ try {
     reportLines: document.querySelectorAll("#report .log-line").length,
     systemMessages: document.querySelectorAll("#systemMessages .system-message").length,
     reportIncludesRecruit: document.querySelector("#report")?.textContent?.includes("招募结果") || false,
+    systemIncludesAutoTeam: document.querySelector("#systemMessages")?.textContent?.includes("站位职责") || false,
     battleLogEntries: globalThis.STZB_DEBUG?.state?.activeBattle?.log?.length || 0,
     skillModalTitle: document.querySelector("#skillModalTitle")?.textContent?.trim(),
   }));
@@ -124,6 +127,9 @@ try {
   }
   if (!summary.systemMessages) {
     throw new Error("系统消息没有渲染抽卡记录");
+  }
+  if (!summary.systemIncludesAutoTeam) {
+    throw new Error("自动整备系统消息没有渲染新评分说明");
   }
   if (summary.reportIncludesRecruit) {
     throw new Error("招募结果不应渲染到战报里");
