@@ -664,7 +664,12 @@ select {
     align-items: stretch;
   }
 
-  .battlefield,
+  .battlefield {
+    align-self: start;
+    min-height: min(1040px, calc(100vh - 124px));
+    max-height: none;
+  }
+
   .side-column {
     height: min(1040px, calc(100vh - 124px));
     max-height: none;
