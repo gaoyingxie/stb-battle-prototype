@@ -22,7 +22,11 @@
 
 ## 快速开始
 
-直接用浏览器打开 `index.html` 即可运行，无需安装依赖或构建。
+直接用浏览器打开 `index.html` 即可运行，无需构建。首次做本地开发或自动化验证时，建议先运行稳定进场脚本：
+
+```bash
+npm run bootstrap
+```
 
 如需本地开发服务器（支持热更新）：
 
@@ -48,6 +52,7 @@ npm run serve
 | [战斗规则说明](docs/battle-rules.md) | 状态效果、行动顺序、距离规则、伤害公式、伤兵规则、当前近似点与待校准项 |
 | [AI 配将策略](docs/team-ai.md) | 选将评分算法、战法评分逻辑、郊野守军生成规则、扩展建议 |
 | [工程说明](docs/engineering.md) | 模块职责与边界、数据刷新脚本、素材路径、验证建议、迭代约定 |
+| [设计决策记录](docs/decisions/0001-agent-knowledge-layering.md) | Agent 入口、系统事实、决策记录和 bootstrap 脚本的分层约定 |
 
 ## 技术栈
 
@@ -60,6 +65,9 @@ npm run serve
 ## 测试
 
 ```bash
+# 首次本地开发/自动化验证准备
+npm run bootstrap
+
 # 语法检查
 npm run check
 

@@ -6,16 +6,32 @@
 index.html                 页面入口
 styles.css                 UI 样式
 official-data.js           官方资料生成结果
+AGENTS.md                  Agent 入口和文档路由
 src/battle-rules.js        规则常量、状态定义、伤害公式
 src/seed-data.js           本地种子武将、战法和官方别名
 src/battle-engine.js       战斗模拟引擎
 src/app.js                 DOM、存档、编队、抽卡、渲染
+scripts/bootstrap.mjs      本地依赖、浏览器和最小检查入口
 scripts/scrape-stzb-official.mjs
 scripts/download-stzb-portraits.mjs
 assets/portraits/          本地武将头像
 docs/battle-rules.md       战斗规则文档
 docs/engineering.md        工程文档
 docs/team-ai.md            AI 配将推荐逻辑文档
+docs/decisions/            设计决策记录
+```
+
+## 知识分层
+
+- `AGENTS.md` 只做入口和路由，避免堆积系统细节。
+- `docs/` 记录可复用的系统事实，包括工程边界、战斗规则、AI 配将和验证路径。
+- `docs/decisions/` 记录关键设计决策，解释为什么某些实现不应被随意“优化”。
+- `scripts/bootstrap.mjs` 提供稳定进场协议，减少对依赖安装、浏览器安装和最小验证命令的猜测。
+
+首次进入仓库或重建本地环境时运行：
+
+```powershell
+npm run bootstrap
 ```
 
 ## 模块边界
