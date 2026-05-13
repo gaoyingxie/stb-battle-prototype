@@ -2033,7 +2033,7 @@ select {
   border-color: rgba(107, 141, 197, 0.88);
 }
 
-.report-avatar-player {
+.log-line .report-avatar.report-avatar-player {
   border-color: rgba(93, 182, 233, 0.92);
   background:
     linear-gradient(135deg, rgba(126, 218, 255, 0.18), transparent),
@@ -2043,7 +2043,7 @@ select {
     0 0 12px rgba(84, 186, 255, 0.18);
 }
 
-.report-avatar-enemy {
+.log-line .report-avatar.report-avatar-enemy {
   border-color: rgba(235, 113, 100, 0.92);
   background:
     linear-gradient(135deg, rgba(255, 166, 132, 0.18), transparent),

@@ -127,14 +127,26 @@ try {
       player: node.classList.contains("report-avatar-player"),
       enemy: node.classList.contains("report-avatar-enemy"),
       portrait: node.classList.contains("report-avatar-portrait"),
+      borderColor: getComputedStyle(node).borderTopColor,
       src: node.querySelector("img")?.getAttribute("src") || "",
     }));
+    const colorChannels = (color) => (color.match(/\d+(\.\d+)?/g) || []).slice(0, 3).map(Number);
+    const isPlayerBlue = (color) => {
+      const [red, green, blue] = colorChannels(color);
+      return blue > red && blue > green;
+    };
+    const isEnemyRed = (color) => {
+      const [red, green, blue] = colorChannels(color);
+      return red > green && red > blue;
+    };
     return {
       html: report.innerHTML,
       unitNames,
       avatars,
       hasPlayerAvatar: avatars.some((item) => item.player && item.portrait && item.src.includes("assets/portraits/")),
       hasEnemyAvatar: avatars.some((item) => item.enemy && item.portrait && item.src.includes("assets/portraits/")),
+      hasPlayerBlueAvatar: avatars.some((item) => item.player && isPlayerBlue(item.borderColor)),
+      hasEnemyRedAvatar: avatars.some((item) => item.enemy && isEnemyRed(item.borderColor)),
       hasPlayerName: unitNames.some((item) => item.text === "曹操" && item.player),
       hasEnemyName: unitNames.some((item) => item.text === "曹操" && item.enemy),
     };
@@ -196,6 +208,9 @@ try {
   }
   if (!reportColorCheck.hasPlayerAvatar || !reportColorCheck.hasEnemyAvatar) {
     throw new Error(`Report avatars did not render portraits with player/enemy side colors: ${JSON.stringify(reportColorCheck.avatars)}`);
+  }
+  if (!reportColorCheck.hasPlayerBlueAvatar || !reportColorCheck.hasEnemyRedAvatar) {
+    throw new Error(`Report avatar computed border colors do not match player/enemy sides: ${JSON.stringify(reportColorCheck.avatars)}`);
   }
   if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
     throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
