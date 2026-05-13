@@ -2060,6 +2060,11 @@ select {
   text-shadow: 0 0 12px rgba(255, 91, 78, 0.28);
 }
 
+.report-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .report-number {
   padding: 0 2px;
   font-weight: 900;

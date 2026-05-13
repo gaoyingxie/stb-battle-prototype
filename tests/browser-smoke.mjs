@@ -91,6 +91,31 @@ try {
     };
   });
 
+  const fullPrepReportCheck = await page.evaluate(() => {
+    const playerTeam = [
+      { heroId: "cao-cao", position: "camp", skills: ["official-skill-200853"] },
+      { heroId: "liu-bei", position: "middle", skills: [] },
+      { heroId: "guan-yu", position: "front", skills: [] },
+    ];
+    const enemyTeam = [
+      { heroId: "zhang-liao", position: "camp", skills: [] },
+      { heroId: "cao-ren", position: "middle", skills: [] },
+      { heroId: "sun-quan", position: "front", skills: [] },
+    ];
+    const battle = globalThis.createBattle(playerTeam, enemyTeam);
+    globalThis.writeReport(battle.log);
+    const report = document.querySelector("#report");
+    const text = report?.textContent || "";
+    const reportText = [...(report?.querySelectorAll(".log-line.system .report-text") || [])]
+      .find((node) => node.textContent.includes("美人计"));
+    return {
+      includesFullEnding: text.includes("免疫该次伤害"),
+      hasEllipsis: text.includes("…"),
+      wrapsLongText: reportText ? reportText.getBoundingClientRect().height > 24 : false,
+      text,
+    };
+  });
+
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");
   }
@@ -115,11 +140,23 @@ try {
   if (!reportColorCheck.hasPlayerAvatar || !reportColorCheck.hasEnemyAvatar) {
     throw new Error(`Report avatars did not render portraits with player/enemy side colors: ${JSON.stringify(reportColorCheck.avatars)}`);
   }
+  if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
+    throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
+  }
   if (pageErrors.length) {
     throw new Error(`页面错误：${pageErrors.join(" | ")}`);
   }
 
-  console.log(JSON.stringify({ ...summary, caoRenDetail, reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars } }, null, 2));
+  console.log(JSON.stringify({
+    ...summary,
+    caoRenDetail,
+    reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars },
+    fullPrepReportCheck: {
+      includesFullEnding: fullPrepReportCheck.includesFullEnding,
+      hasEllipsis: fullPrepReportCheck.hasEllipsis,
+      wrapsLongText: fullPrepReportCheck.wrapsLongText,
+    },
+  }, null, 2));
   if (consoleMessages.length) {
     console.warn(consoleMessages.join("\n"));
   }

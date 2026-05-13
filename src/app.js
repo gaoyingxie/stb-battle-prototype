@@ -321,7 +321,7 @@ function attachOfficialSkillBehavior(skill) {
       if (/洞察/.test(desc)) allies.forEach((ally) => addStatus(ally, "insight", durationFromText(desc, 8), 1));
       if (/援护/.test(desc)) allies.forEach((ally) => addStatus(ally, "guard", durationFromText(desc, 2), 1));
       if (/分兵/.test(desc)) allies.forEach((ally) => addStatus(ally, "split", durationFromText(desc, 1), damageRateFromText(desc, 0.35)));
-      log(ctx, "system", `${unit.name}发动【${skill.name}】：${summarizeDesc(desc)}`);
+      log(ctx, "system", `${unit.name}发动【${skill.name}】：${reportDesc(desc)}`);
     };
     return skill;
   }
@@ -389,7 +389,7 @@ function applySelfTargetActiveBuffs(ctx, unit, skill, desc) {
     addStatus(unit, "damageDown", duration, 0.1);
     applied = true;
   }
-  if (applied) log(ctx, "system", `${unit.name}发动【${skill.name}】：${summarizeDesc(desc)}`);
+  if (applied) log(ctx, "system", `${unit.name}发动【${skill.name}】：${reportDesc(desc)}`);
   return applied;
 }
 
@@ -675,6 +675,10 @@ function showGacha(pulls) {
 
 function summarizeDesc(desc) {
   return desc ? `${desc.slice(0, 42)}${desc.length > 42 ? "…" : ""}` : "效果已生效";
+}
+
+function reportDesc(desc) {
+  return desc?.trim() || "效果已生效";
 }
 
 function avatarMarkup(hero, className = "avatar") {
