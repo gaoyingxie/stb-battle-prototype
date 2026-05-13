@@ -6,6 +6,13 @@ const localServer = await startStaticServer({ root, port: 0 });
 const entryUrl = localServer.url;
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1366, height: 900 } });
+const battleLayoutViewports = [
+  { width: 1920, height: 900 },
+  { width: 1920, height: 919 },
+  { width: 1600, height: 820 },
+  { width: 1366, height: 768 },
+  { width: 1290, height: 854 },
+];
 
 const consoleMessages = [];
 const pageErrors = [];
@@ -17,6 +24,45 @@ page.on("console", (message) => {
 page.on("pageerror", (error) => {
   pageErrors.push(error.message);
 });
+
+async function measureBattleLayout(viewport) {
+  await page.setViewportSize(viewport);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForFunction(() => document.querySelectorAll(".war-map .unit-card").length === 6);
+  return page.evaluate(() => {
+    const rect = (selector) => {
+      const element = document.querySelector(selector);
+      const bounds = element.getBoundingClientRect();
+      return {
+        bottom: Math.round(bounds.bottom),
+        clientHeight: Math.round(element.clientHeight),
+        height: Math.round(bounds.height),
+        scrollHeight: Math.round(element.scrollHeight),
+        top: Math.round(bounds.top),
+      };
+    };
+    const battlefield = rect(".battlefield");
+    const enemyBlock = rect(".enemy-block");
+    const warMap = rect(".war-map");
+    const cardClipping = [...document.querySelectorAll(".army-block")].some((block) => {
+      const blockBounds = block.getBoundingClientRect();
+      return [...block.querySelectorAll(".unit-card")].some((card) => {
+        const cardBounds = card.getBoundingClientRect();
+        return cardBounds.top < blockBounds.top - 1 || cardBounds.bottom > blockBounds.bottom + 1;
+      });
+    });
+    return {
+      battlefield,
+      battlefieldFitsViewport: battlefield.bottom <= window.innerHeight + 1,
+      cardClipping,
+      enemyBlock,
+      enemyFitsViewport: enemyBlock.bottom <= window.innerHeight + 1,
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      warMap,
+      warMapFitsBattlefield: warMap.bottom <= battlefield.bottom + 1 && warMap.scrollHeight <= warMap.clientHeight + 1,
+    };
+  });
+}
 
 try {
   await page.goto(entryUrl);
@@ -119,6 +165,11 @@ try {
     };
   });
 
+  const battleLayoutChecks = [];
+  for (const viewport of battleLayoutViewports) {
+    battleLayoutChecks.push(await measureBattleLayout(viewport));
+  }
+
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");
   }
@@ -149,6 +200,11 @@ try {
   if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
     throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
   }
+  for (const check of battleLayoutChecks) {
+    if (!check.battlefieldFitsViewport || !check.enemyFitsViewport || !check.warMapFitsBattlefield || check.cardClipping) {
+      throw new Error(`Battlefield layout overflows or clips at ${check.viewport}: ${JSON.stringify(check)}`);
+    }
+  }
   if (pageErrors.length) {
     throw new Error(`页面错误：${pageErrors.join(" | ")}`);
   }
@@ -162,6 +218,7 @@ try {
       hasEllipsis: fullPrepReportCheck.hasEllipsis,
       wrapsLongText: fullPrepReportCheck.wrapsLongText,
     },
+    battleLayoutChecks,
   }, null, 2));
   if (consoleMessages.length) {
     console.warn(consoleMessages.join("\n"));
