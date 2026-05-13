@@ -92,7 +92,13 @@ try {
 
   await page.click("#skillModalClose");
   await page.waitForFunction(() => !document.querySelector("#skillModal")?.open);
-  await page.click('article.hero-card[data-hero-id="cao-ren"] .hero-name');
+  const caoRenId = await page.evaluate(() => (
+    [...document.querySelectorAll("article.hero-card")]
+      .find((card) => card.querySelector(".hero-name")?.textContent?.trim() === "曹仁")
+      ?.dataset.heroId
+  ));
+  if (!caoRenId) throw new Error("武将册没有找到曹仁卡片");
+  await page.click(`article.hero-card[data-hero-id="${caoRenId}"] .hero-name`);
   await page.waitForSelector("#heroModal[open]");
   const caoRenDetail = await page.evaluate(() => ({
     desc: document.querySelector("#heroModalDesc")?.textContent?.trim() || "",
@@ -113,15 +119,18 @@ try {
   }));
 
   const reportColorCheck = await page.evaluate(() => {
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
     const playerTeam = [
-      { heroId: "cao-cao", position: "camp", skills: [] },
-      { heroId: "liu-bei", position: "middle", skills: [] },
-      { heroId: "guan-yu", position: "front", skills: [] },
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
     ];
     const enemyTeam = [
-      { heroId: "cao-cao", position: "camp", skills: [] },
-      { heroId: "cao-ren", position: "middle", skills: [] },
-      { heroId: "zhang-liao", position: "front", skills: [] },
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("曹仁", "魏", "步"), position: "middle", skills: [] },
+      { heroId: heroId("张辽", "魏", "骑"), position: "front", skills: [] },
     ];
     const battle = globalThis.createBattle(playerTeam, enemyTeam);
     globalThis.dealDamage(battle.ctx, battle.enemy[0], battle.player[0], 0.78, "attack", "测试攻击");
@@ -164,15 +173,18 @@ try {
   });
 
   const fullPrepReportCheck = await page.evaluate(() => {
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
     const playerTeam = [
-      { heroId: "cao-cao", position: "camp", skills: ["official-skill-200853"] },
-      { heroId: "liu-bei", position: "middle", skills: [] },
-      { heroId: "guan-yu", position: "front", skills: [] },
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: ["official-skill-200853"] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
     ];
     const enemyTeam = [
-      { heroId: "zhang-liao", position: "camp", skills: [] },
-      { heroId: "cao-ren", position: "middle", skills: [] },
-      { heroId: "sun-quan", position: "front", skills: [] },
+      { heroId: heroId("张辽", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("曹仁", "魏", "步"), position: "middle", skills: [] },
+      { heroId: heroId("孙权", "吴", "弓"), position: "front", skills: [] },
     ];
     const battle = globalThis.createBattle(playerTeam, enemyTeam);
     globalThis.writeReport(battle.log);
@@ -188,16 +200,55 @@ try {
     };
   });
 
+  const battleStatsCheck = await page.evaluate(() => {
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
+    const playerTeam = [
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
+    ];
+    const enemyTeam = [
+      { heroId: heroId("张辽", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("曹仁", "魏", "步"), position: "middle", skills: [] },
+      { heroId: heroId("孙权", "吴", "弓"), position: "front", skills: [] },
+    ];
+    const battle = globalThis.createBattle(playerTeam, enemyTeam);
+    globalThis.dealDamage(battle.ctx, battle.player[0], battle.enemy[0], 0.78, "attack", "测试输出");
+    globalThis.dealDamage(battle.ctx, battle.enemy[0], battle.player[1], 0.78, "attack", "测试受击");
+    globalThis.heal(battle.ctx, battle.player[2], battle.player[1], 500, "测试治疗");
+    globalThis.finishBattle(battle, "player", "roundLimit");
+    globalThis.writeReport(battle.log, battle);
+    const report = document.querySelector("#report");
+    const text = report?.textContent || "";
+    return {
+      cardCount: report?.querySelectorAll(".battle-stat-card").length || 0,
+      hasStats: Boolean(report?.querySelector(".battle-stats")),
+      hasTotalDamage: text.includes("总输出"),
+      hasTotalHealing: text.includes("总治疗"),
+      hasDamageSkill: text.includes("【测试输出】") && text.includes("伤"),
+      hasHealingSkill: text.includes("【测试治疗】") && text.includes("疗"),
+    };
+  });
+
   const formationConstraintCheck = await page.evaluate(() => {
     const state = globalThis.STZB_DEBUG.state;
-    state.roster["lu-bu"] = 1;
-    state.roster["official-hero-100479"] = 1;
-    state.skills["calm-army"] = 1;
-    state.skills["official-skill-200217"] = 1;
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
+    const skillId = (name) => globalThis.STZB_SEED_DATA.SKILLS.find((skill) => skill.name === name)?.id;
+    const luBuCavalry = heroId("吕布", "群", "骑");
+    const luBuBow = heroId("吕布", "群", "弓");
+    const caoCao = heroId("曹操", "魏", "骑");
+    const calmArmy = skillId("安抚军心");
+    state.roster[luBuCavalry] = 1;
+    state.roster[luBuBow] = 1;
+    state.skills[calmArmy] = 1;
     state.formation = [
-      { heroId: "lu-bu", skills: ["calm-army", null] },
-      { heroId: "official-hero-100479", skills: ["official-skill-200217", null] },
-      { heroId: "cao-cao", skills: [null, null] },
+      { heroId: luBuCavalry, skills: [calmArmy, null] },
+      { heroId: luBuBow, skills: [calmArmy, null] },
+      { heroId: caoCao, skills: [null, null] },
     ];
     globalThis.renderAll();
     const heroNames = state.formation.map((slot) => globalThis.STZB_SEED_DATA.HEROES.find((hero) => hero.id === slot.heroId)?.name);
@@ -220,7 +271,11 @@ try {
     const heroRarities = [...document.querySelectorAll('select[data-kind="hero"]')[0].options]
       .slice(0, 12)
       .map((option) => Number(option.textContent.match(/· (\d)星/)?.[1] || 0));
-    return { heroNames, equippedSkillNames, heroOptions, calmOptions, skillGrades, heroRarities };
+    const handwrittenCanonicalIds = [...globalThis.STZB_SEED_DATA.HEROES, ...globalThis.STZB_SEED_DATA.SKILLS]
+      .filter((item) => item.name && !String(item.id).startsWith("official-"))
+      .map((item) => item.id);
+    const starterHeroIds = state.formation.map((slot) => slot.heroId);
+    return { heroNames, equippedSkillNames, heroOptions, calmOptions, skillGrades, heroRarities, handwrittenCanonicalIds, starterHeroIds };
   });
 
   const battleLayoutChecks = [];
@@ -261,6 +316,16 @@ try {
   if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
     throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
   }
+  if (
+    !battleStatsCheck.hasStats
+    || battleStatsCheck.cardCount !== 6
+    || !battleStatsCheck.hasTotalDamage
+    || !battleStatsCheck.hasTotalHealing
+    || !battleStatsCheck.hasDamageSkill
+    || !battleStatsCheck.hasHealingSkill
+  ) {
+    throw new Error(`战后统计没有正确渲染武将和技能汇总：${JSON.stringify(battleStatsCheck)}`);
+  }
   if (new Set(formationConstraintCheck.heroNames).size !== formationConstraintCheck.heroNames.length) {
     throw new Error(`编队仍允许同名武将重复上阵：${JSON.stringify(formationConstraintCheck)}`);
   }
@@ -279,6 +344,9 @@ try {
   }
   if (formationConstraintCheck.heroRarities.some((rarity, index, list) => index > 0 && rarity > list[index - 1])) {
     throw new Error(`武将下拉没有按星级降序排序：${JSON.stringify(formationConstraintCheck.heroRarities)}`);
+  }
+  if (formationConstraintCheck.starterHeroIds.some((id) => !id?.startsWith("official-"))) {
+    throw new Error(`编队运行态仍在使用手写武将 id：${JSON.stringify(formationConstraintCheck.starterHeroIds)}`);
   }
   if (
     !battlePortraitCheck.unitPortraitBackground.includes("/assets/portraits/")
@@ -314,6 +382,7 @@ try {
       hasEllipsis: fullPrepReportCheck.hasEllipsis,
       wrapsLongText: fullPrepReportCheck.wrapsLongText,
     },
+    battleStatsCheck,
     battleLayoutChecks,
   }, null, 2));
   if (consoleMessages.length) {

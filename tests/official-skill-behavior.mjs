@@ -15,15 +15,18 @@ try {
   ));
 
   const result = await page.evaluate(() => {
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
     const playerTeam = [
-      { heroId: "cao-cao", position: "camp", skills: [] },
-      { heroId: "guan-yu", position: "middle", skills: [] },
-      { heroId: "liu-bei", position: "front", skills: [] },
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "middle", skills: [] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "front", skills: [] },
     ];
     const enemyTeam = [
       { heroId: "official-hero-100435", position: "camp", skills: [] },
-      { heroId: "cao-cao", position: "middle", skills: [] },
-      { heroId: "guan-yu", position: "front", skills: [] },
+      { heroId: heroId("曹操", "魏", "骑"), position: "middle", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
     ];
     const battle = createBattle(playerTeam, enemyTeam);
     const xiahouyuan = battle.enemy.find((unit) => unit.heroId === "official-hero-100435");

@@ -20,19 +20,10 @@ let EQUIPPABLE_SKILLS = [];
 refreshSkillMetadata();
 const STARTER_SKILL_GRADES = new Set(["B", "C"]);
 const SKILL_GRADE_ORDER = { S: 0, A: 1, B: 2, C: 3 };
-const LEGACY_FREE_SKILL_IDS = new Set([
-  "grand-reward",
-  "avoid-edge",
-  "one-rider",
-  "counter-plan",
-  "golden-lock",
-]);
-const STARTER_SKILL_MIGRATION = "starter-bc-only";
 const SYSTEM_MESSAGE_LIMIT = 24;
 const state = {
   roster: {},
   skills: {},
-  migrations: {},
   fodder: 0,
   formation: starterFormation(),
   enemy: [],
@@ -42,33 +33,6 @@ const state = {
 };
 
 globalThis.STZB_DEBUG = { state };
-
-const CUSTOM_SKILL_DETAILS = {
-  "wei-command": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "我军全体伤害 +12%"]],
-  benevolence: [["触发", "主动"], ["发动率", "45%"], ["目标", "我军兵力最低2人"], ["治疗", "860 + 谋略 × 6"]],
-  "royal-cover": [["触发", "战斗开始"], ["持续", "前2回合"], ["效果", "我军全体规避 22%，防御 +14"]],
-  "green-dragon": [["触发", "普通攻击后"], ["发动率", "44%"], ["伤害率", "95%攻击伤害"], ["治疗", "自身恢复 460 + 攻击 × 3.4"]],
-  "flying-general": [["触发", "主动"], ["发动率", "35%"], ["目标", "敌军3人"], ["伤害率", "112%攻击伤害"]],
-  "red-cliff": [["触发", "主动"], ["发动率", "42%"], ["目标", "敌军2人"], ["伤害率", "102%策略伤害"], ["灼烧", "2回合，每回合 420 + 谋略 × 2"]],
-  "surprise-raid": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "自身先手 +80，攻击 +16"]],
-  "empty-fort": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "敌军主动战法 24% 概率失效"]],
-  "bow-flurry": [["触发", "普通攻击后"], ["发动率", "50%"], ["主目标", "72%攻击伤害"], ["溅射", "另1名敌军 42%攻击伤害"]],
-  "battle-roar": [["触发", "主动"], ["发动率", "38%"], ["目标", "敌军2人"], ["伤害率", "82%攻击伤害"], ["控制", "42%概率怯战1回合"]],
-  "moon-snare": [["触发", "主动"], ["发动率", "42%"], ["目标", "敌军单体"], ["伤害率", "80%策略伤害"], ["控制", "犹豫1回合"]],
-  "iron-wall": [["触发", "战斗开始"], ["持续", "前2回合"], ["效果", "敌军2人怯战"]],
-  "one-rider": [["触发", "主动"], ["发动率", "30%"], ["目标", "敌军3人"], ["伤害率", "135%攻击伤害"]],
-  "avoid-edge": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "我军全体受伤 -16%"]],
-  "counter-plan": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "敌军主动战法 30% 概率失效"]],
-  "grand-reward": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "我军全体伤害 +16%"]],
-  "golden-lock": [["触发", "战斗开始"], ["持续", "前3回合"], ["效果", "敌军普攻 35% 概率被压制"]],
-  "calm-army": [["触发", "主动"], ["发动率", "36%"], ["目标", "我军兵力最低2人"], ["治疗", "620 + 谋略 × 4.7"], ["附加", "清除负面状态"]],
-  feint: [["触发", "主动"], ["发动率", "45%"], ["目标", "敌军2人"], ["伤害率", "112%策略伤害"]],
-  "return-horse": [["触发", "被动"], ["持续", "整场"], ["效果", "受到普通攻击时 42% 概率反击"], ["反击伤害", "36%攻击伤害"]],
-  rouse: [["触发", "主动"], ["发动率", "34%"], ["持续", "2回合"], ["效果", "自身伤害 +28%"]],
-  cliff: [["触发", "主动"], ["发动率", "44%"], ["目标", "敌军2人"], ["伤害率", "98%策略伤害"], ["附加", "防御 -12，持续2回合"]],
-  "official-skill-远攻秘策": [["触发", "战斗开始"], ["持续", "前3回合"], ["我军全体", "攻击 +20，谋略 +20，攻击距离 +1"]],
-  "official-skill-神兵天降": [["触发", "战斗开始"], ["持续", "前3回合"], ["目标", "敌军2人"], ["效果", "受到伤害 +18%（原型近似）"]],
-};
 
 const els = {
   formationEditor: document.querySelector("#formationEditor"),
@@ -163,12 +127,15 @@ function mergeOfficialData() {
     if (localSkill) {
       Object.assign(localSkill, {
         ...officialFields,
-        id: localSkill.id,
+        id: skill.id,
         trigger: localSkill.trigger,
         chance: chanceFromProbability(officialFields.probability, localSkill.chance),
         apply: localSkill.apply,
         use: localSkill.use,
       });
+      skillIds.add(skill.id);
+      localSkillByName.set(skill.name, localSkill);
+      return;
     }
     if (skillIds.has(skill.id) || !skill.name) return;
     const mergedSkill = attachOfficialSkillBehavior({
@@ -180,6 +147,7 @@ function mergeOfficialData() {
     skillIds.add(skill.id);
     localSkillByName.set(skill.name, mergedSkill);
   });
+  removeNonOfficialEntries(SKILLS);
 
   const heroKeys = new Set(HEROES.map((hero) => `${hero.name}-${hero.faction}-${hero.arm}-${hero.innate}`));
   official.heroes.forEach((hero) => {
@@ -193,7 +161,7 @@ function mergeOfficialData() {
       && candidate.rarity === hero.rarity
     );
     if (localSeed) {
-      applyOfficialHeroFields(localSeed, hero);
+      Object.assign(localSeed, officialHeroToLocal(hero));
       heroKeys.add(key);
       return;
     }
@@ -201,6 +169,13 @@ function mergeOfficialData() {
     HEROES.push(officialHeroToLocal(hero));
     heroKeys.add(key);
   });
+  removeNonOfficialEntries(HEROES);
+}
+
+function removeNonOfficialEntries(items) {
+  for (let index = items.length - 1; index >= 0; index -= 1) {
+    if (!isOfficialId(items[index]?.id)) items.splice(index, 1);
+  }
 }
 
 function officialHeroToLocal(hero) {
@@ -221,13 +196,6 @@ function officialHeroToLocal(hero) {
     stats: hero.stats,
     desc: hero.desc,
   };
-}
-
-function applyOfficialHeroFields(target, hero) {
-  Object.assign(target, {
-    ...officialHeroToLocal(hero),
-    id: target.id,
-  });
 }
 
 function aliasLocalSkill(officialName, skillMap) {
@@ -754,33 +722,15 @@ function heroReferenceScore(hero, candidate) {
 }
 
 function ensureStarterRoster() {
-  ["cao-cao", "guan-yu", "liu-bei", "sun-shangxiang", "cao-ren"].forEach((id) => {
+  [
+    ["曹操", "魏", "骑"],
+    ["关羽", "蜀", "骑"],
+    ["刘备", "蜀", "步"],
+    ["孙尚香", "吴", "弓"],
+    ["曹仁", "魏", "步"],
+  ].map(([name, faction, arm]) => starterHeroId(name, faction, arm)).forEach((id) => {
     state.roster[id] = Math.max(1, state.roster[id] || 0);
   });
-  migrateLegacyFreeSkills();
-}
-
-function migrateLegacyFreeSkills() {
-  if (state.migrations?.[STARTER_SKILL_MIGRATION]) return;
-  LEGACY_FREE_SKILL_IDS.forEach((id) => {
-    const skill = skillById(id);
-    if (!skill || isStarterUnlockedSkill(skill)) return;
-    const count = Number(state.skills[id]) || 0;
-    if (count <= 1) {
-      delete state.skills[id];
-      return;
-    }
-    state.skills[id] = count - 1;
-  });
-  state.formation?.forEach((slot, index) => {
-    const legacyLocked = (slot.skills || []).some((skillId) => (
-      LEGACY_FREE_SKILL_IDS.has(skillId)
-      && !isSkillUnlocked(skillById(skillId))
-    ));
-    if (legacyLocked) slot.skills = suggestSkills(index);
-  });
-  state.migrations ||= {};
-  state.migrations[STARTER_SKILL_MIGRATION] = true;
 }
 
 function resetAll() {
@@ -798,7 +748,6 @@ function resetAll() {
 function resetRuntimeState() {
   state.roster = {};
   state.skills = {};
-  state.migrations = {};
   state.fodder = 0;
   state.formation = starterFormation();
   state.enemy = [];
@@ -809,16 +758,28 @@ function resetRuntimeState() {
 
 function starterFormation() {
   return [
-    { heroId: "cao-cao", skills: [starterSkillId("空城"), starterSkillId("安抚军心")] },
-    { heroId: "guan-yu", skills: [starterSkillId("回马"), starterSkillId("落雷", "feint")] },
-    { heroId: "liu-bei", skills: [starterSkillId("迷阵", "moon-snare"), starterSkillId("危崖困军", "cliff")] },
+    { heroId: starterHeroId("曹操", "魏", "骑"), skills: [starterSkillId("空城"), starterSkillId("安抚军心")] },
+    { heroId: starterHeroId("关羽", "蜀", "骑"), skills: [starterSkillId("回马"), starterSkillId("车悬")] },
+    { heroId: starterHeroId("刘备", "蜀", "步"), skills: [starterSkillId("美人计"), starterSkillId("危崖困军")] },
   ];
 }
 
-function starterSkillId(name, fallbackId = null) {
-  return bestSkillsByName(
+function starterHeroId(name, faction, arm) {
+  const hero = sortedHeroesByRarity(HEROES).find((candidate) =>
+    candidate.name === name
+    && candidate.faction === faction
+    && candidate.arm === arm
+  );
+  if (!hero) throw new Error(`缺少初始武将：${name}`);
+  return hero.id;
+}
+
+function starterSkillId(name) {
+  const skill = bestSkillsByName(
     EQUIPPABLE_SKILLS.filter((skill) => isStarterUnlockedSkill(skill) && skill.name === name),
-  )[0]?.id || fallbackId;
+  )[0];
+  if (!skill) throw new Error(`缺少初始战法：${name}`);
+  return skill.id;
 }
 
 function loadState() {
@@ -827,7 +788,6 @@ function loadState() {
     Object.assign(state, saved);
     state.fodder = Number(state.fodder) || 0;
     state.skills ||= {};
-    state.migrations ||= {};
     state.systemMessages = Array.isArray(state.systemMessages) ? state.systemMessages.slice(-SYSTEM_MESSAGE_LIMIT) : [];
   } catch {
     localStorage.removeItem("heluozhanzhen");
@@ -838,7 +798,6 @@ function saveState() {
   localStorage.setItem("heluozhanzhen", JSON.stringify({
     roster: state.roster,
     skills: state.skills,
-    migrations: state.migrations,
     fodder: state.fodder,
     formation: state.formation,
     enemy: state.enemy,
@@ -878,7 +837,11 @@ function weightedHero() {
 
 function autoTeam() {
   const owned = ownedHeroes().sort((a, b) => b.rarity - a.rarity || b.stats.attack + b.stats.strategy - (a.stats.attack + a.stats.strategy));
-  const fallback = ["cao-cao", "guan-yu", "liu-bei"];
+  const fallback = [
+    starterHeroId("曹操", "魏", "骑"),
+    starterHeroId("关羽", "蜀", "骑"),
+    starterHeroId("刘备", "蜀", "步"),
+  ];
   const fallbackHeroes = fallback.map(heroById).filter(Boolean);
   const heroPool = owned.length >= POSITIONS.length
     ? owned
@@ -905,11 +868,11 @@ function autoTeam() {
 
 function suggestSkills(index) {
   const sets = [
-    ["empty-fort", "calm-army"],
-    ["return-horse", "feint"],
-    ["moon-snare", "cliff"],
+    ["空城", "安抚军心"],
+    ["回马", "车悬"],
+    ["美人计", "危崖困军"],
   ];
-  return sets[index];
+  return (sets[index] || []).map(starterSkillId);
 }
 
 function randomEnemyTeam() {
@@ -946,7 +909,7 @@ function advanceBattleFlow() {
   if (!state.activeBattle) {
     state.activeBattle = createBattle(getPlayerTeam(), state.enemy);
     state.lastBattle = null;
-    writeReport(state.activeBattle.log);
+    writeReport(state.activeBattle.log, state.activeBattle);
     renderBattle(state.activeBattle);
     return;
   }
@@ -956,8 +919,9 @@ function advanceBattleFlow() {
     state.lastBattle = state.activeBattle;
     state.activeBattle = null;
   }
-  writeReport(currentBattle().log);
-  renderBattle(currentBattle());
+  const battle = currentBattle();
+  writeReport(battle.log, battle);
+  renderBattle(battle);
 }
 
 function renderFormationEditor() {
@@ -1289,7 +1253,11 @@ function ownedHeroes() {
 }
 
 function sortedOwnedHeroes() {
-  return ownedHeroes().sort(compareHeroesByRarity);
+  return sortedHeroesByRarity(ownedHeroes());
+}
+
+function sortedHeroesByRarity(heroes) {
+  return [...heroes].sort(compareHeroesByRarity);
 }
 
 function heroKey(hero) {
@@ -1414,7 +1382,7 @@ function reportParticipantPortrait(participant) {
   return portraitForHero(hero);
 }
 
-function writeReport(entries) {
+function writeReport(entries, battle = null) {
   const round = [...entries].reverse().find((entry) => entry.type === "round")?.text
     || "准备回合";
   els.report.innerHTML = `
@@ -1422,9 +1390,112 @@ function writeReport(entries) {
       <span>战报详情</span>
       <b>${escapeHtml(round)}</b>
     </div>
+    ${battle?.complete ? battleStatsHtml(battle) : ""}
     ${entries.map(reportLineHtml).join("")}
   `;
   els.report.scrollTop = els.report.scrollHeight || 0;
+}
+
+function battleStatsHtml(battle) {
+  const stats = collectBattleStats(battle);
+  const totalDamage = stats.reduce((sum, unit) => sum + unit.damage, 0);
+  const totalHealing = stats.reduce((sum, unit) => sum + unit.healing, 0);
+  return `
+    <section class="battle-stats" aria-label="战后数据统计">
+      <div class="battle-stats-head">
+        <div>
+          <strong>战后统计</strong>
+          <span>只统计已产生数值的伤害和治疗</span>
+        </div>
+        <div class="battle-stats-total">
+          <span>总输出 <b>${formatNumber(totalDamage)}</b></span>
+          <span>总治疗 <b>${formatNumber(totalHealing)}</b></span>
+        </div>
+      </div>
+      <div class="battle-stats-grid">
+        ${stats.map(battleStatCardHtml).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function collectBattleStats(battle) {
+  const unitStats = [...(battle?.player || []), ...(battle?.enemy || [])].map((unit) => ({
+    id: unit.id,
+    heroId: unit.heroId,
+    name: unit.name,
+    side: unit.side,
+    position: unit.position,
+    damage: 0,
+    healing: 0,
+    skills: new Map(),
+  }));
+  const statsById = new Map(unitStats.map((unit) => [unit.id, unit]));
+  const statsBySideAndName = new Map(unitStats.map((unit) => [`${unit.side}:${unit.name}`, unit]));
+
+  (battle?.log || []).forEach((entry) => {
+    const amount = Math.max(0, Number(entry.amount) || 0);
+    if (!amount || !["hit", "heal"].includes(entry.type)) return;
+    const actor = reportEntryActor(entry);
+    const unit = actor?.id ? statsById.get(actor.id) : statsBySideAndName.get(`${actor?.side || ""}:${entry.actor || ""}`);
+    if (!unit) return;
+
+    const skillName = entry.skill || (entry.type === "heal" ? "治疗" : "未标注来源");
+    const skill = unit.skills.get(skillName) || { name: skillName, damage: 0, healing: 0 };
+    if (entry.type === "heal") {
+      unit.healing += amount;
+      skill.healing += amount;
+    } else {
+      unit.damage += amount;
+      skill.damage += amount;
+    }
+    unit.skills.set(skillName, skill);
+  });
+
+  return unitStats;
+}
+
+function reportEntryActor(entry) {
+  const participants = entry.participants || [];
+  return participants.find((participant) => participant.role === "actor")
+    || participants.find((participant) => participant.name === entry.actor)
+    || null;
+}
+
+function battleStatCardHtml(unit) {
+  const side = unit.side === "player" ? "我方" : "敌方";
+  const skills = [...unit.skills.values()]
+    .filter((skill) => skill.damage || skill.healing)
+    .sort((a, b) => (b.damage + b.healing) - (a.damage + a.healing) || a.name.localeCompare(b.name, "zh-Hans-CN"));
+  return `
+    <article class="battle-stat-card battle-stat-${unit.side}">
+      <div class="battle-stat-title">
+        <span>${escapeHtml(side)} · ${escapeHtml(positionLabel(unit.position))}</span>
+        <strong>${escapeHtml(unit.name)}</strong>
+      </div>
+      <div class="battle-stat-values">
+        <span><small>总输出</small><b class="damage">${formatNumber(unit.damage)}</b></span>
+        <span><small>总治疗</small><b class="heal">${formatNumber(unit.healing)}</b></span>
+      </div>
+      <div class="battle-skill-totals">
+        ${skills.length ? skills.map(battleSkillStatHtml).join("") : '<span class="battle-stat-empty">本场暂无输出/治疗</span>'}
+      </div>
+    </article>
+  `;
+}
+
+function battleSkillStatHtml(skill) {
+  return `
+    <span class="battle-skill-total">
+      <b>【${escapeHtml(skill.name)}】</b>
+      ${skill.damage ? `<em class="damage">伤 ${formatNumber(skill.damage)}</em>` : ""}
+      ${skill.healing ? `<em class="heal">疗 ${formatNumber(skill.healing)}</em>` : ""}
+    </span>
+  `;
+}
+
+function positionLabel(position) {
+  return POSITIONS.find((item) => item.id === position)?.label || "位置";
 }
 
 function writeEmptyReport() {
