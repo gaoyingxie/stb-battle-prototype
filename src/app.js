@@ -123,7 +123,7 @@ function bindEvents() {
   els.skillModalClose.addEventListener("click", () => els.skillModal.close());
   els.heroModalClose.addEventListener("click", () => els.heroModal.close());
   els.gachaClose.addEventListener("click", () => els.gachaModal.close());
-  els.battleReportClose.addEventListener("click", () => els.battleReportModal.close());
+  els.battleReportClose.addEventListener("click", handleBattleReportClose);
   [els.skillModal, els.heroModal, els.gachaModal, els.battleReportModal].forEach((modal) => {
     modal.addEventListener("click", (event) => {
       if (event.target === modal) modal.close();
@@ -1387,6 +1387,15 @@ function handleBattleReportAction(button) {
   }
 }
 
+function handleBattleReportClose() {
+  if (battleReportView === "log" || battleReportView === "stats" || battleReportView === "formation") {
+    battleReportView = "summary";
+    renderBattleReportModal();
+    return;
+  }
+  els.battleReportModal.close();
+}
+
 function markBattleReportRead(reportId) {
   const report = state.battleReports.find((item) => item.id === reportId);
   if (report) report.read = true;
@@ -1523,12 +1532,9 @@ function battleReportScoreBarHtml(units, side) {
 
 function battleReportTroopBarHtml(totals, side, className = "battle-report-score-bar") {
   const activePct = percentOf(totals.current, totals.max);
-  const woundedPct = percentOf(totals.wounded, totals.max);
-  const showWoundedSeparator = totals.current > 0 && totals.wounded > 0 && woundedPct > 0;
   return `
-    <div class="${className} ${side} ${showWoundedSeparator ? "has-wounded-separator" : ""}" style="--active-pct: ${activePct}%; --wounded-pct: ${woundedPct}%">
+    <div class="${className} ${side}" style="--active-pct: ${activePct}%">
       <span class="troop-fill"></span>
-      <span class="wounded-fill"></span>
     </div>
   `;
 }
@@ -1758,8 +1764,6 @@ function formatBattleReportTime(timestamp) {
 
 function unitTemplate(unit) {
   const troopPct = percentOf(unit.troops, unit.maxTroops);
-  const woundedPct = percentOf(unit.wounded, unit.maxTroops);
-  const showWoundedSeparator = unit.troops > 0 && unit.wounded > 0 && woundedPct > 0;
   const baseRange = baseAttackRange(unit);
   const attackRange = getAttackRange(unit);
   const rangeText = String(attackRange);
@@ -1786,9 +1790,8 @@ function unitTemplate(unit) {
           <strong>${troopText}</strong>
           <span class="unit-wounded">${woundedText}</span>
         </div>
-        <div class="troop-bar ${showWoundedSeparator ? "has-wounded-separator" : ""}" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%; --wounded-pct: ${woundedPct}%">
+        <div class="troop-bar" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%">
           <div class="troop-fill"></div>
-          <div class="wounded-fill"></div>
         </div>
       </div>
     </article>
@@ -1800,16 +1803,13 @@ function troopSummaryTemplate(units) {
   const wounded = totalWounded(units);
   const max = totalMaxTroops(units);
   const activePct = percentOf(active, max);
-  const woundedPct = percentOf(wounded, max);
-  const showWoundedSeparator = active > 0 && wounded > 0 && woundedPct > 0;
   return `
     <span class="troop-summary-text">
       ${formatNumber(active)}
       <small>/ ${formatNumber(max)}${wounded ? ` · 伤${formatNumber(wounded)}` : ""}</small>
     </span>
-    <span class="team-troop-bar ${showWoundedSeparator ? "has-wounded-separator" : ""}" aria-hidden="true" style="--active-pct: ${activePct}%; --wounded-pct: ${woundedPct}%">
+    <span class="team-troop-bar" aria-hidden="true" style="--active-pct: ${activePct}%">
       <i class="troop-fill"></i>
-      <i class="wounded-fill"></i>
     </span>
   `;
 }
