@@ -690,13 +690,14 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(116px, 180px) minmax(0, 1fr);
   gap: 26px;
-  align-items: center;
-  padding: 18px 24px 22px;
+  align-items: start;
+  padding: 6px 24px 8px;
 }
 
 .battle-report-list-side {
   display: grid;
-  gap: 10px;
+  gap: 8px;
+  align-self: start;
 }
 
 .battle-report-list-side > span {
@@ -751,6 +752,7 @@
 
 .battle-report-result {
   display: grid;
+  align-self: center;
   place-items: center;
   color: #efd27d;
   font-size: clamp(48px, 6vw, 86px);
