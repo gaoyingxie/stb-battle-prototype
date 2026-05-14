@@ -78,29 +78,9 @@
   line-height: 1.75;
 }
 
-.muted-text {
-  color: var(--muted) !important;
-}
-
-.number-grid,
 .effect-grid {
   display: grid;
   gap: 8px;
-}
-
-.number-grid {
-  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
-}
-
-.number-grid span {
-  display: grid;
-  min-height: 34px;
-  place-items: center;
-  border: 1px solid rgba(215, 170, 71, 0.18);
-  border-radius: 6px;
-  background: rgba(20, 19, 15, 0.42);
-  color: #f5dfaa;
-  font-weight: 800;
 }
 
 .effect-grid {

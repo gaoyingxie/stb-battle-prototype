@@ -210,11 +210,6 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
-.unit-content {
-  position: relative;
-  z-index: 1;
-}
-
 .unit-card.camp {
   border-color: rgba(198, 121, 210, 0.38);
   box-shadow:
@@ -364,15 +359,6 @@
     radial-gradient(circle at 50% 0, rgba(245, 223, 170, 0.07), transparent 56%);
 }
 
-.role-tag {
-  padding: 3px 7px;
-  border: 1px solid rgba(245, 223, 170, 0.2);
-  border-radius: 999px;
-  color: var(--paper);
-  font-size: 11px;
-  white-space: nowrap;
-}
-
 .troop-bar {
   position: relative;
   height: 6px;
@@ -459,22 +445,6 @@
 .enemy-block .team-troop-bar {
   background: #352928;
   border-color: rgba(197, 104, 95, 0.44);
-}
-
-.unit-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px 7px;
-  margin-top: 7px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.unit-stats span {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  min-width: 0;
 }
 
 .skill-list {

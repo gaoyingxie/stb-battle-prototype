@@ -264,33 +264,6 @@
   }
 }
 
-.stats-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(215, 170, 71, 0.18);
-}
-
-.stats-strip div {
-  display: grid;
-  gap: 4px;
-  padding: 13px 16px;
-  border-right: 1px solid rgba(215, 170, 71, 0.14);
-}
-
-.stats-strip div:last-child {
-  border-right: 0;
-}
-
-.stats-strip span {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.stats-strip strong {
-  color: #f5dfaa;
-  font-size: 20px;
-}
-
 .troop-summary-text {
   display: block;
   color: #fff0c2;

@@ -580,6 +580,13 @@
       .slice(0, count);
   }
 
+  function shuffle(items) {
+    return items
+      .map((item) => ({ item, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ item }) => item);
+  }
+
   function positionDistanceFromFront(unit) {
     return ["front", "middle", "camp"].indexOf(unit.position);
   }
