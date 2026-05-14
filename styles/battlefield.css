@@ -378,13 +378,15 @@
   height: 6px;
   margin-top: 4px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(222, 218, 194, 0.24);
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.64);
+  background: #303432;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 0, 0, 0.22);
   --wounded-separator: rgba(255, 255, 255, 0.82);
   --wounded-separator-core: rgba(255, 255, 255, 0.96);
   --wounded-separator-glow: rgba(255, 255, 255, 0.42);
-  --wounded-separator-aura: rgba(255, 255, 255, 0.18);
 }
 
 .troop-fill,
@@ -399,16 +401,13 @@
 .troop-fill {
   left: 0;
   width: var(--active-pct, 100%);
-  background: linear-gradient(90deg, var(--red), var(--gold));
+  background: #d7c06b;
 }
 
 .wounded-fill {
   left: var(--active-pct, 100%);
   width: var(--wounded-pct, 0%);
-  background:
-    linear-gradient(90deg, rgba(40, 134, 198, 0.88), rgba(124, 198, 232, 0.9)),
-    rgba(52, 146, 204, 0.8);
-  box-shadow: inset 0 0 8px rgba(190, 232, 255, 0.28);
+  background: #9dd3de;
 }
 
 .has-wounded-separator .wounded-fill::before {
@@ -419,74 +418,52 @@
   z-index: 2;
   width: 3px;
   border-radius: 999px;
-  background:
-    linear-gradient(180deg, transparent 0%, var(--wounded-separator) 18%, var(--wounded-separator-core) 50%, var(--wounded-separator) 82%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, var(--wounded-separator-core) 52%, transparent 100%);
+  background: var(--wounded-separator-core);
   box-shadow:
-    0 0 6px var(--wounded-separator-glow),
-    0 0 14px var(--wounded-separator-glow),
-    2px 0 12px var(--wounded-separator-aura),
-    -2px 0 10px var(--wounded-separator-aura);
+    0 0 5px var(--wounded-separator-glow),
+    0 0 10px var(--wounded-separator);
 }
 
 .has-wounded-separator .wounded-fill::after {
-  content: "";
-  position: absolute;
-  inset-block: 0;
-  left: -10px;
-  z-index: 1;
-  width: 24px;
-  background:
-    radial-gradient(ellipse at 45% 50%, var(--wounded-separator-glow) 0%, var(--wounded-separator-aura) 36%, transparent 72%),
-    linear-gradient(90deg, transparent 0%, var(--wounded-separator-aura) 45%, transparent 100%);
-  opacity: 0.92;
-  pointer-events: none;
+  content: none;
 }
 
 .unit-card.player .troop-fill,
 .player-block .team-troop-bar .troop-fill {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 48%),
-    linear-gradient(90deg, #2f86c4, #5dc7f2);
+  background: #5db7e6;
 }
 
 .unit-card.player .wounded-fill,
 .player-block .team-troop-bar .wounded-fill {
-  background: linear-gradient(90deg, rgba(78, 173, 224, 0.88), rgba(155, 219, 248, 0.94));
-  box-shadow: inset 0 0 8px rgba(194, 237, 255, 0.3);
+  background: #b9e4ea;
 }
 
 .unit-card.player .troop-bar,
 .player-block .team-troop-bar {
-  --wounded-separator: #65f1ff;
+  background: #263235;
+  border-color: rgba(126, 190, 208, 0.42);
+  --wounded-separator: #78e8f6;
   --wounded-separator-core: #f1feff;
-  --wounded-separator-glow: rgba(93, 235, 255, 0.96);
-  --wounded-separator-aura: rgba(54, 203, 255, 0.42);
+  --wounded-separator-glow: rgba(91, 232, 255, 0.82);
 }
 
 .unit-card.enemy .troop-fill,
 .enemy-block .team-troop-bar .troop-fill {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 48%),
-    linear-gradient(90deg, #8b2a29 0%, #c64941 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 224, 199, 0.16);
+  background: #b44942;
 }
 
 .unit-card.enemy .wounded-fill,
 .enemy-block .team-troop-bar .wounded-fill {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 48%),
-    linear-gradient(90deg, rgba(234, 111, 98, 0.96), rgba(255, 187, 171, 0.98));
-  box-shadow:
-    inset 0 0 8px rgba(255, 219, 200, 0.34);
+  background: #e8a79b;
 }
 
 .unit-card.enemy .troop-bar,
 .enemy-block .team-troop-bar {
-  --wounded-separator: #ff4b3f;
+  background: #352928;
+  border-color: rgba(197, 104, 95, 0.44);
+  --wounded-separator: #ff7569;
   --wounded-separator-core: #fff5ef;
-  --wounded-separator-glow: rgba(255, 70, 56, 0.98);
-  --wounded-separator-aura: rgba(255, 92, 72, 0.5);
+  --wounded-separator-glow: rgba(255, 100, 88, 0.86);
 }
 
 .unit-stats {

@@ -309,12 +309,13 @@
   width: 100%;
   height: 7px;
   overflow: hidden;
-  border: 1px solid rgba(244, 236, 216, 0.18);
+  border: 1px solid rgba(222, 218, 194, 0.24);
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.54);
+  background: #303432;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 0, 0, 0.2);
   --wounded-separator: rgba(255, 255, 255, 0.82);
   --wounded-separator-core: rgba(255, 255, 255, 0.96);
   --wounded-separator-glow: rgba(255, 255, 255, 0.42);
-  --wounded-separator-aura: rgba(255, 255, 255, 0.18);
 }
-

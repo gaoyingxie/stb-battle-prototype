@@ -817,55 +817,55 @@
   position: relative;
   height: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.66);
-  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(222, 218, 194, 0.24);
+  background: #303432;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.62),
+    0 0 0 1px rgba(0, 0, 0, 0.18);
   --wounded-separator: rgba(255, 255, 255, 0.82);
   --wounded-separator-core: rgba(255, 255, 255, 0.96);
   --wounded-separator-glow: rgba(255, 255, 255, 0.42);
-  --wounded-separator-aura: rgba(255, 255, 255, 0.18);
 }
 
 .battle-report-score-bar > .troop-fill {
   width: var(--active-pct, 0%);
-  background: linear-gradient(90deg, #67d3ff, #3486d3);
+  background: #5db7e6;
 }
 
 .battle-report-score-bar > .wounded-fill {
   left: var(--active-pct, 0%);
   width: var(--wounded-pct, 0%);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 48%),
-    linear-gradient(90deg, rgba(101, 195, 239, 0.9), rgba(171, 228, 252, 0.96));
+  background: #b9e4ea;
 }
 
 .enemy .battle-report-score-bar > .troop-fill,
 .battle-report-score.enemy .battle-report-score-bar > .troop-fill,
 .battle-report-score-bar.enemy > .troop-fill {
-  background: linear-gradient(90deg, #aa3032, #dd5a58);
+  background: #b44942;
 }
 
 .enemy .battle-report-score-bar > .wounded-fill,
 .battle-report-score.enemy .battle-report-score-bar > .wounded-fill,
 .battle-report-score-bar.enemy > .wounded-fill {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent 48%),
-    linear-gradient(90deg, rgba(231, 105, 96, 0.94), rgba(255, 181, 165, 0.98));
+  background: #e8a79b;
 }
 
 .battle-report-score.player .battle-report-score-bar,
 .battle-report-score-bar.player {
-  --wounded-separator: #65f1ff;
+  background: #263235;
+  border-color: rgba(126, 190, 208, 0.42);
+  --wounded-separator: #78e8f6;
   --wounded-separator-core: #f1feff;
-  --wounded-separator-glow: rgba(93, 235, 255, 0.96);
-  --wounded-separator-aura: rgba(54, 203, 255, 0.42);
+  --wounded-separator-glow: rgba(91, 232, 255, 0.82);
 }
 
 .battle-report-score.enemy .battle-report-score-bar,
 .battle-report-score-bar.enemy {
-  --wounded-separator: #ff4b3f;
+  background: #352928;
+  border-color: rgba(197, 104, 95, 0.44);
+  --wounded-separator: #ff7569;
   --wounded-separator-core: #fff5ef;
-  --wounded-separator-glow: rgba(255, 70, 56, 0.98);
-  --wounded-separator-aura: rgba(255, 92, 72, 0.5);
+  --wounded-separator-glow: rgba(255, 100, 88, 0.86);
 }
 
 .battle-report-match-result {
