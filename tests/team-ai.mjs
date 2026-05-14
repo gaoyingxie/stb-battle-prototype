@@ -103,6 +103,83 @@ assert(
   "战法评分应惩罚兵种不适配",
 );
 
+const pureAttacker = hero("pure-attacker", {
+  distance: 4,
+  stats: { attack: 124, strategy: 55, defense: 80, speed: 84 },
+});
+const strategist = hero("strategist", {
+  distance: 3,
+  stats: { attack: 58, strategy: 122, defense: 82, speed: 76 },
+});
+const physicalBurst = {
+  id: "physical-burst",
+  name: "Physical Burst",
+  type: "active",
+  trigger: "active",
+  chance: 0.45,
+  grade: "S",
+  distance: 4,
+  soldierType: "骑",
+  desc: "heavy attack damage to enemy group",
+};
+const groupHeal = {
+  id: "group-heal",
+  name: "Group Heal",
+  type: "active",
+  trigger: "active",
+  chance: 0.42,
+  grade: "A",
+  distance: 3,
+  desc: "heal recover two allies",
+};
+
+assert(
+  scoreSkillForHero(physicalBurst, pureAttacker, { id: "camp" }) > scoreSkillForHero(physicalBurst, strategist, { id: "camp" }),
+  "攻击型战法应更偏好高攻击武将",
+);
+assert(
+  scoreSkillForHero(groupHeal, strategist, { id: "middle" }) > scoreSkillForHero(groupHeal, pureAttacker, { id: "middle" }),
+  "治疗型战法应更偏好高谋略武将",
+);
+
+const carry = hero("carry", {
+  innate: "carry-innate",
+  distance: 5,
+  stats: { attack: 126, strategy: 62, defense: 72, speed: 88 },
+});
+const support = hero("support", {
+  innate: "team-boost",
+  distance: 3,
+  stats: { attack: 70, strategy: 104, defense: 82, speed: 84 },
+});
+const rawFlex = hero("raw-flex", {
+  innate: "raw-flex-innate",
+  distance: 3,
+  stats: { attack: 92, strategy: 88, defense: 88, speed: 82 },
+});
+const tank = hero("tank-synergy", {
+  innate: "tank-innate",
+  distance: 1,
+  stats: { attack: 70, strategy: 62, defense: 124, speed: 78 },
+});
+const synergyTeam = recommendTeam({
+  heroes: [carry, support, rawFlex, tank],
+  skills: [
+    { id: "carry-innate", isInnate: true, type: "active", chance: 0.45, desc: "attack damage group" },
+    { id: "team-boost", isInnate: true, type: "command", desc: "damage up buff support all allies" },
+    { id: "raw-flex-innate", isInnate: true, type: "active", chance: 0.35, desc: "attack damage" },
+    { id: "tank-innate", isInnate: true, type: "passive", desc: "guard defense mitigation" },
+  ],
+  positions,
+  minHeroRarity: 0,
+  skillGrades: null,
+  rng: fixedRng,
+});
+assert(
+  synergyTeam.some((slot) => slot.heroId === "support") && !synergyTeam.some((slot) => slot.heroId === "raw-flex"),
+  "阵容评分应能为了输出核心选择增伤辅助，而不是只选单体面板更高的泛用武将",
+);
+
 const team = recommendTeam({
   heroes: [highCostBench, lowCostCarry, hero("tank", {
     distance: 1,
