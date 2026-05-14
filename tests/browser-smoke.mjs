@@ -109,9 +109,23 @@ try {
     badgeHidden: Boolean(document.querySelector("#reportBadge")?.hidden),
     modalOpen: Boolean(document.querySelector("#battleReportModal")?.open),
     reportLines: document.querySelectorAll("#battleReportModal .log-line").length,
+    actionGroups: document.querySelectorAll("#battleReportModal .report-action-group").length,
+    turnJumps: document.querySelectorAll("#battleReportModal .report-turn-jump").length,
+    hasTroopAfter: Boolean(document.querySelector("#battleReportModal .report-troop-after")),
+    hasActionTroops: [...document.querySelectorAll("#battleReportModal .report-action-head b")]
+      .some((node) => node.textContent.includes("兵力")),
     hasStatsButton: Boolean(document.querySelector('#battleReportModal [data-report-action="stats"]')),
     hasFormationButton: Boolean(document.querySelector('#battleReportModal [data-report-action="formation"]')),
   }));
+  await page.click("#battleReportModal .report-turn-jump");
+  const battleReportJumpCheck = await page.evaluate(() => {
+    const hash = window.location.hash;
+    return {
+      hash,
+      targetExists: Boolean(hash && document.querySelector(hash)),
+      targetIsActionGroup: Boolean(hash && document.querySelector(hash)?.classList.contains("report-action-group")),
+    };
+  });
   const expectedUnreadAfterOpen = Math.max((generatedReportCheck.reports || 0) - 1, 0);
   await page.click('#battleReportModal .battle-report-bottom-nav [data-report-action="formation"]');
   await page.waitForSelector("#battleReportModal .battle-report-formation-row");
@@ -416,10 +430,17 @@ try {
     || generatedReportModalCheck.badgeHidden !== (expectedUnreadAfterOpen <= 0)
     || !generatedReportModalCheck.modalOpen
     || !generatedReportModalCheck.reportLines
+    || !generatedReportModalCheck.actionGroups
+    || !generatedReportModalCheck.turnJumps
+    || !generatedReportModalCheck.hasTroopAfter
+    || !generatedReportModalCheck.hasActionTroops
     || !generatedReportModalCheck.hasStatsButton
     || !generatedReportModalCheck.hasFormationButton
   ) {
     throw new Error(`战报弹层没有正确打开详情/标记已读：${JSON.stringify(generatedReportModalCheck)}`);
+  }
+  if (!battleReportJumpCheck.targetExists || !battleReportJumpCheck.targetIsActionGroup) {
+    throw new Error(`战报左侧行动头像没有跳转到对应动作组：${JSON.stringify(battleReportJumpCheck)}`);
   }
   if (formationReportCheck.rows !== 3 || !formationReportCheck.hasPlayerTab || !formationReportCheck.hasEnemyTab) {
     throw new Error(`阵容详情没有正确渲染战报快照：${JSON.stringify(formationReportCheck)}`);

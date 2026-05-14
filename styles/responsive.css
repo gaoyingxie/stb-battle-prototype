@@ -190,6 +190,22 @@
     grid-template-columns: 1fr;
   }
 
+  .report-round-block {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .report-turn-avatar {
+    width: 50px;
+  }
+
+  .report-action-portrait {
+    width: 104px;
+  }
+
+  .report-action-events .log-line {
+    padding-left: 126px;
+  }
+
   .battle-report-formation-panel {
     padding: 18px;
   }
@@ -243,6 +259,55 @@
   .battle-report-mini-unit {
     width: 74px;
     height: 88px;
+  }
+
+  .report-round-block {
+    grid-template-columns: 1fr;
+  }
+
+  .report-turn-rail {
+    position: static;
+    max-height: none;
+    border-right: 0;
+    border-bottom: 1px solid rgba(245, 223, 170, 0.14);
+  }
+
+  .report-turn-rail strong {
+    text-align: left;
+  }
+
+  .report-turn-list {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .report-turn-jump {
+    flex: 0 0 62px;
+  }
+
+  .report-action-head {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 0 10px 10px;
+  }
+
+  .report-action-hero {
+    width: 100%;
+  }
+
+  .report-action-portrait {
+    width: 92px;
+    height: 58px;
+  }
+
+  .report-action-head b {
+    align-self: flex-end;
+    font-size: 15px;
+  }
+
+  .report-action-events .log-line {
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: 8px 10px;
   }
 
   .battle-report-army {

@@ -1942,12 +1942,35 @@ function formatNumber(number) {
 
 function log(ctx, type, text, meta = {}) {
   const { actorUnit, targetUnit, ...safeMeta } = meta;
+  const implicitActor = ctx?.actionUnit && String(text).includes(ctx.actionUnit.name)
+    ? ctx.actionUnit
+    : null;
+  const actorState = reportUnitState(actorUnit || implicitActor);
+  const targetState = reportUnitState(targetUnit);
   ctx.log.push({
     type,
     text,
     ...safeMeta,
+    ...(actorState ? { actorState } : {}),
+    ...(targetState ? { targetState } : {}),
+    round: Number(ctx?.round) || 0,
     participants: reportParticipants(ctx, text, { ...safeMeta, actorUnit, targetUnit }),
   });
+}
+
+function reportUnitState(unit) {
+  if (!unit) return null;
+  return {
+    id: unit.id || "",
+    heroId: unit.heroId || "",
+    name: unit.name || "",
+    side: unit.side || "",
+    position: unit.position || "",
+    portrait: unit.portrait || reportParticipantPortrait(unit),
+    troops: Math.max(0, Math.round(Number(unit.troops) || 0)),
+    wounded: Math.max(0, Math.round(Number(unit.wounded) || 0)),
+    maxTroops: Math.max(0, Math.round(Number(unit.maxTroops) || 0)),
+  };
 }
 
 function reportParticipants(ctx, text, meta = {}) {
@@ -2020,8 +2043,143 @@ function reportLogInnerHtml(entries, battle = null, includeStats = true) {
       <b>${escapeHtml(round)}</b>
     </div>
     ${includeStats && battle?.complete ? battleStatsHtml(battle) : ""}
-    ${entries.map(reportLineHtml).join("")}
+    ${reportRoundsHtml(entries)}
   `;
+}
+
+function reportRoundsHtml(entries) {
+  const rounds = groupReportRounds(entries || []);
+  if (!rounds.length) return '<div class="empty-report">暂无战斗记录。</div>';
+  return `<div class="report-rounds">${rounds.map(reportRoundHtml).join("")}</div>`;
+}
+
+function groupReportRounds(entries) {
+  const rounds = [];
+  let current = null;
+  entries.forEach((entry, index) => {
+    if (entry.type === "round" || !current) {
+      current = {
+        id: `report-round-${rounds.length + 1}`,
+        title: entry.type === "round" ? entry.text : "准备阶段",
+        roundEntry: entry.type === "round" ? entry : null,
+        groups: [],
+      };
+      rounds.push(current);
+      if (entry.type === "round") return;
+    }
+
+    const actor = reportEntryActionUnit(entry);
+    const actorKey = actor ? `${actor.side}:${actor.id || actor.heroId || actor.name}` : `system:${entry.type}`;
+    const previous = current.groups.at(-1);
+    if (previous && previous.actorKey === actorKey) {
+      previous.entries.push(entry);
+      previous.actor = previous.actor || actor;
+      previous.lastEntryIndex = index;
+      return;
+    }
+    current.groups.push({
+      id: `${current.id}-action-${current.groups.length + 1}`,
+      actorKey,
+      actor,
+      entries: [entry],
+      firstEntryIndex: index,
+      lastEntryIndex: index,
+    });
+  });
+  return rounds;
+}
+
+function reportRoundHtml(round, roundIndex) {
+  const actions = round.groups.filter((group) => group.entries.length);
+  const jumps = actions.filter((group) => group.actor);
+  return `
+    <section class="report-round-block" aria-labelledby="${escapeHtml(round.id)}-title">
+      <aside class="report-turn-rail" aria-label="${escapeHtml(round.title)}行动顺序">
+        <strong id="${escapeHtml(round.id)}-title">${escapeHtml(round.title)}</strong>
+        <div class="report-turn-list">
+          ${jumps.length ? jumps.map((group, index) => reportTurnJumpHtml(group, roundIndex, index)).join("") : '<span class="report-turn-empty">无武将行动</span>'}
+        </div>
+      </aside>
+      <div class="report-round-actions">
+        <div class="log-line round"><span>${escapeHtml(round.title)}</span><em>行动阶段</em></div>
+        ${actions.map((group, index) => reportActionGroupHtml(group, roundIndex, index)).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function reportTurnJumpHtml(group, roundIndex, groupIndex) {
+  const actor = group.actor;
+  const side = actor?.side === "enemy" ? "enemy" : actor?.side === "player" ? "player" : "system";
+  const portrait = actor?.portrait || reportParticipantPortrait(actor);
+  const label = actor?.name || reportActionTypeLabel(group.entries[0]);
+  const troopText = actor?.troops !== undefined ? `兵力 ${formatNumber(actor.troops)}` : "行动";
+  return `
+    <a class="report-turn-jump ${side}" href="#${escapeHtml(group.id)}" title="${escapeHtml(label)} ${escapeHtml(troopText)}">
+      <span class="report-turn-order">${roundIndex + 1}.${groupIndex + 1}</span>
+      <span class="report-turn-avatar">
+        ${portrait ? `<img src="${escapeHtml(portrait)}" alt="${escapeHtml(label)}头像" loading="lazy">` : escapeHtml(label.slice(0, 1))}
+      </span>
+    </a>
+  `;
+}
+
+function reportActionGroupHtml(group, roundIndex, groupIndex) {
+  const actor = group.actor;
+  const side = actor?.side === "enemy" ? "enemy" : actor?.side === "player" ? "player" : "system";
+  const portrait = actor?.portrait || reportParticipantPortrait(actor);
+  const label = actor?.name || reportActionTypeLabel(group.entries[0]);
+  const troopText = actor?.troops !== undefined ? `兵力 ${formatNumber(actor.troops)}` : "战况";
+  const stepText = actor ? `第 ${roundIndex + 1} 回合 · 第 ${groupIndex + 1} 次行动` : "战斗记录";
+  return `
+    <article id="${escapeHtml(group.id)}" class="report-action-group ${side}">
+      <header class="report-action-head">
+        <div class="report-action-hero">
+          <span class="report-action-portrait">
+            ${portrait ? `<img src="${escapeHtml(portrait)}" alt="${escapeHtml(label)}头像" loading="lazy">` : escapeHtml(label.slice(0, 1))}
+          </span>
+          <div>
+            <strong>${escapeHtml(label)}</strong>
+            <small>${escapeHtml(stepText)}</small>
+          </div>
+        </div>
+        <b>${escapeHtml(troopText)}</b>
+      </header>
+      <div class="report-action-events">
+        ${group.entries.map(reportLineHtml).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function reportEntryActionUnit(entry) {
+  return entry.actorState
+    || reportParticipantState(entry, "actor")
+    || reportParticipantState(entry, "attacker")
+    || reportParticipantState(entry, "target")
+    || null;
+}
+
+function reportParticipantState(entry, role) {
+  const participant = (entry.participants || []).find((item) => item.role === role);
+  if (!participant) return null;
+  return {
+    id: participant.id || "",
+    heroId: participant.heroId || "",
+    name: participant.name || "",
+    side: participant.side || "",
+    portrait: participant.portrait || reportParticipantPortrait(participant),
+  };
+}
+
+function reportActionTypeLabel(entry) {
+  return {
+    hit: "攻击",
+    heal: "恢复",
+    control: "状态",
+    result: "终",
+    system: "令",
+  }[entry?.type] || "战";
 }
 
 function ensureReportRenderTarget() {
@@ -2222,9 +2380,19 @@ function reportLineHtml(entry) {
   return `
     <div class="log-line ${entry.type}">
       ${reportAvatarHtml(entry)}
-      <span class="report-text">${decorateReportText(entry)}${details}</span>
+      <span class="report-text">${decorateReportText(entry)}${reportTroopAfterHtml(entry)}${details}</span>
     </div>
   `;
+}
+
+function reportTroopAfterHtml(entry) {
+  if (entry.type === "hit" && entry.targetState) {
+    return `<em class="report-troop-after">（余兵${formatNumber(entry.targetState.troops)}）</em>`;
+  }
+  if (entry.type === "heal" && entry.targetState) {
+    return `<em class="report-troop-after heal">（兵力${formatNumber(entry.targetState.troops)}）</em>`;
+  }
+  return "";
 }
 
 function reportAvatarHtml(entry) {
