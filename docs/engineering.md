@@ -1,5 +1,11 @@
 # 工程说明
 
+## 战况回放实现边界
+
+- 单封战报的 `initialPlayer` / `initialEnemy` 是战况回放的起点；平局后的继战作为下一封战报单独保存和播放。
+- `src/report-ui.js` 负责回放时间轴、播放控制和 DOM 表现；它只读取战报快照与 `battle.log`，不重新运行战斗模拟。
+- `src/battle-engine.js` 仍只负责战斗状态、日志和结算，不接入 DOM、定时器或动画状态。
+
 ## 目录结构
 
 ```text

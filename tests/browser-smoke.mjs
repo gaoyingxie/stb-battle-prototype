@@ -102,6 +102,36 @@ try {
       return Math.abs(fillRect.left - barRect.left) <= 1.5;
     })(),
   }));
+  await page.click('#battleReportModal [data-report-action="replay"]');
+  await page.waitForSelector("#battleReportModal .battle-replay");
+  const replayInitialCheck = await page.evaluate(() => ({
+    replayOpen: Boolean(document.querySelector("#battleReportModal .battle-replay")),
+    units: document.querySelectorAll("#battleReportModal .battle-replay-unit").length,
+    hasControls: Boolean(document.querySelector('#battleReportModal [data-report-action="replay-toggle"]')),
+    hasScrubber: Boolean(document.querySelector("#battleReportModal .battle-replay-progress")),
+    hasSpeedButtons: document.querySelectorAll('#battleReportModal [data-report-action="replay-speed"]').length,
+    step: Number(document.querySelector("#battleReportModal .battle-replay")?.dataset.step || 0),
+    total: Number(document.querySelector("#battleReportModal .battle-replay")?.dataset.total || 0),
+    persistedInitialSnapshots: Boolean(
+      globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.initialPlayer?.length
+      && globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.initialEnemy?.length
+    ),
+  }));
+  await page.click('#battleReportModal [data-report-action="replay-toggle"]');
+  await page.waitForFunction(() => {
+    const step = Number(document.querySelector("#battleReportModal .battle-replay")?.dataset.step || 0);
+    return step > 0 && Boolean(document.querySelector("#battleReportModal .battle-replay-unit.active, #battleReportModal .battle-replay-unit.target"));
+  });
+  const replayAdvancedCheck = await page.evaluate(() => ({
+    step: Number(document.querySelector("#battleReportModal .battle-replay")?.dataset.step || 0),
+    hasActiveOrTarget: Boolean(document.querySelector("#battleReportModal .battle-replay-unit.active, #battleReportModal .battle-replay-unit.target")),
+    hasCaption: Boolean(document.querySelector("#battleReportModal .battle-replay-caption p")?.textContent?.trim()),
+    hasEffect: Boolean(document.querySelector("#battleReportModal .battle-replay-float")),
+  }));
+  await page.click('#battleReportModal [data-report-action="replay-speed"][data-speed="2"]');
+  const replaySpeedCheck = await page.evaluate(() => ({
+    activeSpeed: document.querySelector('#battleReportModal [data-report-action="replay-speed"].active')?.dataset.speed || "",
+  }));
   await page.click('#battleReportModal [data-report-action="log"]');
   await page.waitForSelector("#battleReportModal .log-line");
   const generatedReportModalCheck = await page.evaluate(() => ({
@@ -367,6 +397,62 @@ try {
     };
   });
 
+  const drawChainReplayCheck = await page.evaluate(() => {
+    const state = globalThis.STZB_DEBUG.state;
+    const basePlayer = state.formation.map((slot, index) => ({
+      ...slot,
+      position: globalThis.STZB_BATTLE_RULES.POSITIONS[index].id,
+      skills: [],
+      troops: index === 0 ? 7200 : 0,
+      wounded: index === 0 ? 1800 : 0,
+    }));
+    const baseEnemy = state.enemy.map((slot, index) => ({
+      ...slot,
+      position: globalThis.STZB_BATTLE_RULES.POSITIONS[index].id,
+      skills: [],
+      troops: index === 0 ? 8100 : 0,
+      wounded: index === 0 ? 900 : 0,
+    }));
+    const makeDrawBattle = (playerSlots, enemySlots, encounter) => {
+      const battle = globalThis.createBattle(playerSlots, enemySlots, {
+        freshTroops: false,
+        encounter,
+        maxEncounters: 2,
+      });
+      battle.initialPlayer = battle.player.map(globalThis.unitSnapshot);
+      battle.initialEnemy = battle.enemy.map(globalThis.unitSnapshot);
+      battle.rounds = globalThis.STZB_BATTLE_RULES.DAMAGE_MODEL.maxRounds - 1;
+      battle.ctx.round = battle.rounds;
+      [...battle.player, ...battle.enemy].forEach((unit) => {
+        unit.skills = [];
+        unit.stats.attack = 0;
+        unit.stats.strategy = 0;
+        unit.stats.defense = 9999;
+        if (unit.position !== "camp") {
+          unit.troops = 0;
+          unit.wounded = 0;
+        }
+      });
+      globalThis.advanceBattleRound(battle);
+      return battle;
+    };
+    const first = makeDrawBattle(basePlayer, baseEnemy, 1);
+    const secondPlayer = globalThis.carryTeamForward(basePlayer, first.player);
+    const secondEnemy = globalThis.carryTeamForward(baseEnemy, first.enemy);
+    const second = makeDrawBattle(secondPlayer, secondEnemy, 2);
+    const reports = [first, second].map(globalThis.toBattleSnapshot);
+    return {
+      reportCount: reports.length,
+      allDraws: reports.every((report) => report.winner === "draw" && report.finishReason === "roundLimit"),
+      encounters: reports.map((report) => report.encounter),
+      firstInitialTroops: reports[0].initialPlayer.map((unit) => unit.troops),
+      firstFinalTroops: reports[0].player.map((unit) => unit.troops),
+      secondInitialTroops: reports[1].initialPlayer.map((unit) => unit.troops),
+      secondLogLength: reports[1].log.length,
+      secondInitialMatchesFirstFinal: reports[1].initialPlayer.every((unit, index) => unit.troops === reports[0].player[index].troops),
+    };
+  });
+
   const formationConstraintCheck = await page.evaluate(() => {
     const state = globalThis.STZB_DEBUG.state;
     const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
@@ -456,6 +542,24 @@ try {
     throw new Error(`战斗地点兵力条没有按死亡/伤兵/剩余三段显示：${JSON.stringify(battlePlaceReportCheck)}`);
   }
   if (
+    !replayInitialCheck.replayOpen
+    || replayInitialCheck.units !== 6
+    || !replayInitialCheck.hasControls
+    || !replayInitialCheck.hasScrubber
+    || replayInitialCheck.hasSpeedButtons !== 3
+    || replayInitialCheck.step !== 0
+    || replayInitialCheck.total < 3
+    || !replayInitialCheck.persistedInitialSnapshots
+  ) {
+    throw new Error(`Battle replay did not render from a persisted initial snapshot: ${JSON.stringify(replayInitialCheck)}`);
+  }
+  if (!replayAdvancedCheck.step || !replayAdvancedCheck.hasActiveOrTarget || !replayAdvancedCheck.hasCaption) {
+    throw new Error(`Battle replay did not advance or highlight the current event: ${JSON.stringify(replayAdvancedCheck)}`);
+  }
+  if (replaySpeedCheck.activeSpeed !== "2") {
+    throw new Error(`Battle replay speed control did not switch to x2: ${JSON.stringify(replaySpeedCheck)}`);
+  }
+  if (
     generatedReportModalCheck.unreadAfterOpen !== String(expectedUnreadAfterOpen)
     || generatedReportModalCheck.badgeHidden !== (expectedUnreadAfterOpen <= 0)
     || !generatedReportModalCheck.modalOpen
@@ -543,6 +647,15 @@ try {
     || !roundLimitDrawCheck.subtitle.includes("第2轮交战")
   ) {
     throw new Error(`八回合大营未破没有判定为平局续战：${JSON.stringify(roundLimitDrawCheck)}`);
+  }
+  if (
+    drawChainReplayCheck.reportCount !== 2
+    || !drawChainReplayCheck.allDraws
+    || drawChainReplayCheck.encounters.join(",") !== "1,2"
+    || !drawChainReplayCheck.secondLogLength
+    || !drawChainReplayCheck.secondInitialMatchesFirstFinal
+  ) {
+    throw new Error(`Draw-chain battle reports do not keep separate replay starting snapshots: ${JSON.stringify(drawChainReplayCheck)}`);
   }
   if (new Set(formationConstraintCheck.heroNames).size !== formationConstraintCheck.heroNames.length) {
     throw new Error(`编队仍允许同名武将重复上阵：${JSON.stringify(formationConstraintCheck)}`);

@@ -129,6 +129,7 @@ function bindEvents() {
       if (event.target === modal) modal.close();
     });
   });
+  els.battleReportModal.addEventListener("close", stopBattleReplay);
 }
 
 function mergeOfficialData() {
@@ -940,6 +941,8 @@ function runBattleEncounters(playerTeam, enemyTeam) {
       encounter,
       maxEncounters: BATTLE_MAX_ENCOUNTERS,
     });
+    battle.initialPlayer = battle.player.map(unitSnapshot);
+    battle.initialEnemy = battle.enemy.map(unitSnapshot);
     while (!battle.complete) advanceBattleRound(battle);
     battles.push(battle);
 
