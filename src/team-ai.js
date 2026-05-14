@@ -7,7 +7,21 @@
   const POSITION_CANDIDATE_LIMIT = 18;
   const TOTAL_CANDIDATE_LIMIT = 54;
   const GRADE_SCORE = { S: 180, A: 135, B: 85, C: 45 };
-  const PROFILE_KEYS = ["damage", "sustain", "control", "support", "defense", "range"];
+  const PROFILE_KEYS = [
+    "damage",
+    "sustain",
+    "control",
+    "support",
+    "defense",
+    "range",
+    "tempo",
+    "deny",
+    "debuff",
+    "cleanse",
+    "combo",
+    "taunt",
+    "splash",
+  ];
   const TEAM_ROLE_TARGETS = {
     damage: 2,
     sustain: 1,
@@ -336,16 +350,21 @@
     const sameArm = Math.max(0, ...Object.values(armCounts));
     const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
     const damageThreat = sum(profiles, (profile) => profile.damageThreat);
-    const supportPressure = sum(profiles, (profile) => profile.support + profile.amplify);
+    const supportPressure = sum(profiles, (profile) =>
+      profile.support + profile.amplify + profile.debuff * 0.5 + profile.tempo * 0.34
+    );
     const rangeSupport = sum(profiles, (profile) => profile.range);
+    const tempoPressure = sum(profiles, (profile) => profile.tempo);
     const shortRangeBackline = heroes.some((hero, index) => index < 2 && Number(hero.distance) <= 2);
     const hasCarry = profiles.some((profile) => profile.damageThreat >= 130);
     const supportCarryLink = hasCarry ? Math.min(72, supportPressure * 0.34) : 0;
     const rangeLink = shortRangeBackline ? Math.min(38, rangeSupport * 0.42) : 0;
+    const tempoLink = hasCarry ? Math.min(34, tempoPressure * 0.26) : 0;
     return Math.max(0, sameFaction - 1) * 58
       + Math.max(0, sameArm - 1) * 32
       + supportCarryLink
       + rangeLink
+      + tempoLink
       + Math.min(34, damageThreat * supportPressure * 0.0009);
   }
 
@@ -364,8 +383,10 @@
     const hasFastUnit = heroes.some((hero) => Number(hero.stats?.speed) >= 85);
     const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
     const hasSustain = profiles.some((profile) => profile.sustain >= 44);
-    const hasControl = profiles.some((profile) => profile.control >= 36);
+    const hasControl = profiles.some((profile) => profile.control + profile.deny >= 36);
     const hasProtection = profiles.some((profile) => profile.protection >= 40);
+    const hasTempo = profiles.some((profile) => profile.tempo >= 34);
+    const hasDebuff = profiles.some((profile) => profile.debuff >= 40);
 
     return offenseBalance * 46
       + Math.min(42, defense / heroes.length * 0.22)
@@ -375,7 +396,9 @@
       + (hasFastUnit ? 18 : 0)
       + (hasSustain ? 24 : 0)
       + (hasControl ? 18 : 0)
-      + (hasProtection ? 16 : 0);
+      + (hasProtection ? 16 : 0)
+      + (hasTempo ? 12 : 0)
+      + (hasDebuff ? 12 : 0);
   }
 
   function countBy(items, key) {
@@ -429,12 +452,14 @@
     const totals = profiles.reduce((acc, profile) => {
       acc.damage += profile.damageThreat;
       acc.sustain += profile.sustain;
-      acc.control += profile.control;
-      acc.support += profile.support + profile.amplify;
+      acc.control += profile.control + profile.deny * 0.62;
+      acc.support += profile.support + profile.amplify + profile.debuff * 0.5 + profile.tempo * 0.35 + profile.cleanse * 0.32;
       acc.defense += profile.protection;
       acc.range += profile.range;
+      acc.tempo += profile.tempo;
+      acc.debuff += profile.debuff;
       return acc;
-    }, { damage: 0, sustain: 0, control: 0, support: 0, defense: 0, range: 0 });
+    }, { damage: 0, sustain: 0, control: 0, support: 0, defense: 0, range: 0, tempo: 0, debuff: 0 });
     const roleCoverage = roleCoverageScore(profiles);
     const campIndex = slots.findIndex((slot) => slot?.id === "camp");
     const frontIndex = slots.findIndex((slot) => slot?.id === "front");
@@ -442,13 +467,15 @@
     const frontProfile = profiles[frontIndex >= 0 ? frontIndex : profiles.length - 1] || {};
     const hasHighCeilingCarry = profiles.some((profile) => profile.damageThreat >= 150);
     const hasTeamSustain = totals.sustain >= 58;
-    const hasOpeningPlan = totals.support + totals.control + totals.defense >= 116;
+    const hasOpeningPlan = totals.support + totals.control + totals.defense + totals.tempo + totals.debuff >= 116;
 
     return roleCoverage
       + Math.min(92, totals.damage * 0.18)
       + Math.min(54, totals.sustain * 0.22)
       + Math.min(48, totals.control * 0.24)
       + Math.min(50, totals.support * 0.18)
+      + Math.min(36, totals.tempo * 0.16)
+      + Math.min(34, totals.debuff * 0.15)
       + (campProfile.damageThreat >= 118 ? 28 : -Math.max(0, 90 - (campProfile.damageThreat || 0)) * 0.22)
       + (frontProfile.protection >= 48 || frontProfile.sustain >= 44 ? 24 : -18)
       + (hasHighCeilingCarry && totals.support >= 55 ? 36 : 0)
@@ -460,9 +487,11 @@
     const counts = {
       damage: profiles.filter((profile) => profile.damageThreat >= 90).length,
       sustain: profiles.filter((profile) => profile.sustain >= 44).length,
-      control: profiles.filter((profile) => profile.control >= 36).length,
-      support: profiles.filter((profile) => profile.support + profile.amplify >= 44).length,
-      defense: profiles.filter((profile) => profile.protection >= 42).length,
+      control: profiles.filter((profile) => profile.control + profile.deny >= 36).length,
+      support: profiles.filter((profile) =>
+        profile.support + profile.amplify + profile.debuff + profile.tempo + profile.cleanse >= 44
+      ).length,
+      defense: profiles.filter((profile) => profile.protection + profile.cleanse * 0.36 >= 42).length,
     };
     return Object.entries(TEAM_ROLE_TARGETS).reduce((score, [role, target]) => {
       const have = counts[role] || 0;
@@ -492,13 +521,17 @@
       + innateExpectation.protection * 0.56;
 
     return {
-      damageThreat: baseDamage + innateExpectation.damage * 0.44,
+      damageThreat: baseDamage + innateExpectation.damage * 0.44 + innateExpectation.splash * 0.34 + innateExpectation.tempo * 0.22,
       sustain: innateExpectation.healing * 0.5,
-      control: innateExpectation.control,
-      support: innateExpectation.support,
-      amplify: innateExpectation.amplify,
-      protection,
+      control: innateExpectation.control + innateExpectation.deny * 0.56,
+      support: innateExpectation.support + innateExpectation.tempo * 0.42 + innateExpectation.cleanse * 0.36,
+      amplify: innateExpectation.amplify + innateExpectation.debuff * 0.52,
+      protection: protection + innateExpectation.cleanse * 0.38,
       range: innateExpectation.range + (distance >= 4 ? 16 : 0),
+      tempo: innateExpectation.tempo,
+      deny: innateExpectation.deny,
+      debuff: innateExpectation.debuff,
+      cleanse: innateExpectation.cleanse,
     };
   }
 
@@ -507,6 +540,7 @@
     const attack = Number(stats.attack) || 0;
     const strategy = Number(stats.strategy) || 0;
     const defense = Number(stats.defense) || 0;
+    const speed = Number(stats.speed) || 0;
     const trigger = normalizedTrigger(skill);
     const reliability = triggerReliability(skill, trigger);
     const targetCount = estimatedTargetCount(skill, profile);
@@ -523,12 +557,30 @@
     const protection = profile.defense ? reliability * targetCount * (44 + defense * 0.32) : 0;
     const amplify = profile.amplify ? reliability * targetCount * (70 + strategy * 0.22) : 0;
     const range = profile.range ? reliability * targetCount * 42 : 0;
+    const tempo = profile.tempo ? reliability * targetCount * (42 + speed * 0.24 + (profile.combo ? attack * 0.16 : 0)) : 0;
+    const deny = profile.deny ? reliability * targetCount * (62 + strategy * 0.16) : 0;
+    const debuff = profile.debuff ? reliability * targetCount * (52 + strategy * 0.22) : 0;
+    const cleanse = profile.cleanse ? reliability * targetCount * (48 + strategy * 0.16) : 0;
+    const splash = profile.splash ? reliability * Math.max(1.4, targetCount) * Math.max(0.36, damageRate) * Math.max(strategy, offense * 0.72) * 0.5 : 0;
 
-    return { damage, healing, control, support, protection, amplify, range };
+    return { damage, healing, control, support, protection, amplify, range, tempo, deny, debuff, cleanse, splash };
   }
 
   function emptyExpectation() {
-    return { damage: 0, healing: 0, control: 0, support: 0, protection: 0, amplify: 0, range: 0 };
+    return {
+      damage: 0,
+      healing: 0,
+      control: 0,
+      support: 0,
+      protection: 0,
+      amplify: 0,
+      range: 0,
+      tempo: 0,
+      deny: 0,
+      debuff: 0,
+      cleanse: 0,
+      splash: 0,
+    };
   }
 
   function skillExpectationScore(expectation) {
@@ -538,7 +590,12 @@
       + expectation.support * 0.46
       + expectation.protection * 0.48
       + expectation.amplify * 0.58
-      + expectation.range * 0.36;
+      + expectation.range * 0.36
+      + expectation.tempo * 0.42
+      + expectation.deny * 0.56
+      + expectation.debuff * 0.5
+      + expectation.cleanse * 0.44
+      + expectation.splash * 0.28;
   }
 
   function positionedExpectationScore(expectation, positionId) {
@@ -549,7 +606,12 @@
         + expectation.support * 0.34
         + expectation.protection * 0.16
         + expectation.amplify * 0.62
-        + expectation.range * 0.42;
+        + expectation.range * 0.42
+        + expectation.tempo * 0.36
+        + expectation.deny * 0.42
+        + expectation.debuff * 0.56
+        + expectation.cleanse * 0.18
+        + expectation.splash * 0.4;
     }
     if (positionId === "front") {
       return expectation.damage * 0.18
@@ -558,7 +620,12 @@
         + expectation.support * 0.3
         + expectation.protection * 0.62
         + expectation.amplify * 0.36
-        + expectation.range * 0.18;
+        + expectation.range * 0.18
+        + expectation.tempo * 0.44
+        + expectation.deny * 0.62
+        + expectation.debuff * 0.38
+        + expectation.cleanse * 0.54
+        + expectation.splash * 0.18;
     }
     return skillExpectationScore(expectation);
   }
@@ -573,9 +640,15 @@
     const heroProfileCounts = skillProfileCounts(currentHeroSkills);
     const teamProfiles = heroes.map((item) => heroCombatProfile(item, context));
     const alliedDamage = sum(teamProfiles, (item, index) => index === heroIndex ? 0 : item.damageThreat);
+    const alliedTempo = sum(teamProfiles, (item, index) => index === heroIndex ? 0 : item.tempo);
     const frontIndex = (context.positions || []).findIndex((slot) => slot?.id === "front");
     const frontHero = heroes[frontIndex >= 0 ? frontIndex : heroes.length - 1];
     const frontDefense = Number(frontHero?.stats?.defense) || 0;
+    const stats = hero.stats || {};
+    const attack = Number(stats.attack) || 0;
+    const strategy = Number(stats.strategy) || 0;
+    const defense = Number(stats.defense) || 0;
+    const speed = Number(stats.speed) || 0;
     const hasShortRangeBackline = heroes.some((item, index) => index < 2 && Number(item.distance) <= 2);
     const roleNeed = (role) => Math.max(0, (TEAM_ROLE_TARGETS[role] || 1) - (teamProfileCounts[role] || 0));
     let score = 0;
@@ -587,28 +660,42 @@
     if (profile.defense) score += roleNeed("defense") * 18 + (position?.id === "front" ? 14 : 0);
     if (profile.range && hasShortRangeBackline) score += 24;
     if (profile.amplify && alliedDamage >= 160) score += 34;
+    if (profile.tempo) score += (teamProfileCounts.tempo ? -6 : 14) + Math.min(30, (speed + (profile.combo ? attack : 0)) * 0.12);
+    if (profile.combo) score += Math.min(34, attack * 0.18) + (position?.id === "front" ? 8 : 0);
+    if (profile.taunt) score += (position?.id === "front" ? 24 : -8) + Math.min(28, defense * 0.18);
+    if (profile.deny) score += Math.max(roleNeed("control"), roleNeed("deny")) * 16 + (alliedDamage >= 160 ? 12 : 0);
+    if (profile.debuff) score += roleNeed("support") * 14 + Math.min(34, alliedDamage * 0.07) + (strategy >= 100 ? 10 : 0);
+    if (profile.cleanse) score += roleNeed("defense") * 12 + (frontDefense < 88 ? 16 : 0);
+    if (profile.splash) score += Math.min(36, (strategy + alliedDamage + alliedTempo) * 0.06);
     if (profile.sustain && heroProfileCounts.sustain) score -= 28;
     if ((profile.support || profile.defense || profile.control) && heroProfileCounts.support + heroProfileCounts.defense + heroProfileCounts.control >= 2) score -= 18;
     if (profile.damage && heroProfileCounts.damage >= 2) score -= 12;
+    if ((profile.deny || profile.debuff || profile.cleanse) && heroProfileCounts.deny + heroProfileCounts.debuff + heroProfileCounts.cleanse >= 2) score -= 12;
     if (skill.id === hero.innate) score -= 120;
 
     return score;
   }
 
   function skillProfileCounts(skills) {
+    const initialCounts = PROFILE_KEYS.reduce((counts, key) => {
+      counts[key] = 0;
+      return counts;
+    }, {});
     return skills.reduce((counts, skill) => {
       const profile = skillProfile(skill);
       PROFILE_KEYS.forEach((key) => {
         if (profile[key]) counts[key] = (counts[key] || 0) + 1;
       });
       return counts;
-    }, { damage: 0, sustain: 0, control: 0, support: 0, defense: 0, range: 0 });
+    }, initialCounts);
   }
 
   function scoreSkillForHero(skill, hero, position, context = buildScoringContext()) {
     const stats = hero.stats || {};
     const attack = Number(stats.attack) || 0;
     const strategy = Number(stats.strategy) || 0;
+    const defense = Number(stats.defense) || 0;
+    const speed = Number(stats.speed) || 0;
     const heroDistance = Number(hero.distance) || 0;
     const grade = GRADE_SCORE[normalizeGrade(skill.grade)] || 60;
     const chance = Number(skill.chance) || chanceFromText(skill.probability) || 0;
@@ -616,7 +703,7 @@
     const profile = skillProfile(skill);
     const expectation = skillExpectedValues(skill, hero, profile);
     const triggerScore = scoreTrigger(trigger, chance, profile);
-    const statFit = skillStatFit(profile, { attack, strategy });
+    const statFit = skillStatFit(profile, { attack, strategy, defense, speed });
     const rangeFit = skillRangeFit(skill, heroDistance, position?.id);
     const roleFit = skillRoleFit(profile, trigger, position?.id);
     const armFit = skillArmFit(skill, hero);
@@ -639,27 +726,42 @@
   }
 
   function scoreTrigger(trigger, chance, profile) {
-    if (trigger === "command") return 58 + (profile.control || profile.support ? 12 : 0);
-    if (trigger === "passive") return 52 + (profile.defense ? 10 : 0);
-    if (trigger === "pursuit") return 34 + (profile.attack ? 10 : 0);
+    if (trigger === "command") return 58 + (profile.control || profile.support || profile.debuff || profile.deny || profile.tempo || profile.range ? 12 : 0);
+    if (trigger === "passive") return 52 + (profile.defense || profile.taunt || profile.combo ? 10 : 0);
+    if (trigger === "pursuit") return 34 + (profile.attack || profile.combo ? 10 : 0);
     if (trigger === "active") return 26 + Math.min(34, chance * 68);
     return 18;
   }
 
   function skillProfile(skill) {
     const text = skillText(skill);
+    const combo = /连击|再次普通攻击|普通攻击.*再次|combo/i.test(text);
+    const taunt = /挑衅|taunt/i.test(text);
+    const deny = /禁疗|不可回复|无法回复|无法恢复|不能恢复|heal.?block|anti.?heal/i.test(text);
+    const debuff = /属性降低|降低.{0,8}(?:攻击|防御|谋略|速度|属性)|(?:攻击|防御|谋略|速度|属性).{0,8}降低|削弱|受到.*伤害.*提高|伤害.*提高.*受到|易伤|vulnerable|debuff/i.test(text);
+    const cleanse = /净化|镇静|看破|清除.{0,6}有害|移除.{0,6}有害|解除.{0,6}有害|cleanse|purify|dispel/i.test(text);
+    const tempo = combo || /先手|优先行动|发动率提高|再次发动|跳过.*准备|准备.{0,4}(?:减少|缩短)|无需准备|tempo|initiative/i.test(text);
+    const splash = /策略溅射|溅射|相邻|额外造成一次策略伤害|splash/i.test(text);
+    const attack = /兵刃|追击|分兵|连击|反击|普通攻击|攻击伤害|发动(?![^，。；,.;]*策略)[^，。；,.;]*攻击|attack damage|physical|strike|assault|counter/i.test(text);
     const profile = {
-      attack: /攻击|兵刃|追击|分兵|连击|反击|physical|attack|strike|assault|counter/i.test(text),
+      attack,
       strategy: /策略|谋略|火攻|妖术|恐慌|燃烧|灼烧|strategy|tactic|spell|burn/i.test(text),
-      control: /犹豫|怯战|混乱|暴走|动摇|封锁|控制|disarm|silence|confusion|control|seal/i.test(text),
-      defense: /规避|减伤|防御|援护|免疫|洞察|guard|evade|defense|mitigation|protect/i.test(text),
-      support: /提高|提升|增益|攻击属性|谋略属性|速度属性|先手|净化|buff|boost|support|cleanse/i.test(text),
+      control: /犹豫|怯战|混乱|暴走|动摇|封锁|控制|挑衅|disarm|silence|confusion|control|seal|taunt/i.test(text),
+      defense: /规避|减伤|防御|援护|免疫|洞察|镇静|看破|净化|清除.{0,6}有害|移除.{0,6}有害|guard|evade|defense|mitigation|protect/i.test(text),
+      support: /提高|提升|增益|攻击属性|谋略属性|速度属性|先手|净化|镇静|看破|buff|boost|support|cleanse/i.test(text),
       sustain: /恢复|治疗|休整|急救|援军|heal|recover|sustain/i.test(text),
-      range: /距离|射程|远攻|range|distance/i.test(text),
+      range: /距离|射程|远攻|战法有效距离|攻击距离|range|distance/i.test(text),
       area: /群体|全体|敌军.{0,3}体|我军.{0,3}体|multi|group|all/i.test(text),
       amplify: /伤害提高|造成.*提高|受到.*伤害.*提高|易伤|增伤|amplify|vulnerable|damage up/i.test(text),
+      tempo,
+      deny,
+      debuff,
+      cleanse,
+      combo,
+      taunt,
+      splash,
     };
-    profile.damage = profile.attack || profile.strategy;
+    profile.damage = profile.attack || profile.strategy || profile.splash;
     return profile;
   }
 
@@ -747,14 +849,16 @@
   }
 
   function skillStatFit(profile, stats) {
-    const attackFit = profile.attack ? stats.attack * 0.18 : stats.attack * 0.04;
-    const strategyFit = (profile.strategy || profile.control || profile.sustain || profile.support)
+    const attackFit = (profile.attack || profile.combo || profile.taunt) ? stats.attack * 0.18 : stats.attack * 0.04;
+    const strategyFit = (profile.strategy || profile.control || profile.sustain || profile.support || profile.debuff || profile.deny || profile.cleanse || profile.splash)
       ? stats.strategy * 0.18
       : stats.strategy * 0.04;
-    const hybrid = profile.attack && (profile.strategy || profile.control)
+    const defenseFit = (profile.defense || profile.taunt) ? (stats.defense || 0) * 0.1 : 0;
+    const speedFit = profile.tempo ? (stats.speed || 0) * 0.11 : 0;
+    const hybrid = profile.attack && (profile.strategy || profile.control || profile.debuff || profile.deny)
       ? Math.min(stats.attack, stats.strategy) * 0.06
       : 0;
-    return attackFit + strategyFit + hybrid;
+    return attackFit + strategyFit + defenseFit + speedFit + hybrid;
   }
 
   function skillRangeFit(skill, heroDistance, positionId) {
@@ -773,15 +877,21 @@
     if (positionId === "camp") {
       return (profile.attack || profile.strategy ? 18 : 0)
         + (profile.area ? 12 : 0)
+        + (profile.splash ? 14 : 0)
+        + (profile.debuff || profile.amplify ? 10 : 0)
+        + (profile.range ? 8 : 0)
         + (profile.defense ? -8 : 0);
     }
     if (positionId === "front") {
       return (profile.defense || profile.control ? 20 : 0)
         + (profile.sustain ? 12 : 0)
+        + (profile.taunt || profile.deny ? 14 : 0)
+        + (profile.combo ? 10 : 0)
         + (trigger === "pursuit" ? 8 : 0)
         + (profile.range ? -8 : 0);
     }
     return (profile.support || profile.control ? 14 : 0)
+      + (profile.tempo || profile.debuff || profile.cleanse ? 10 : 0)
       + (profile.attack || profile.strategy ? 8 : 0);
   }
 
