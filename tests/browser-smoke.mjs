@@ -104,12 +104,21 @@ try {
     hasStatsButton: Boolean(document.querySelector('#battleReportModal [data-report-action="stats"]')),
     hasFormationButton: Boolean(document.querySelector('#battleReportModal [data-report-action="formation"]')),
   }));
+  const expectedUnreadAfterOpen = Math.max((generatedReportCheck.reports || 0) - 1, 0);
   await page.click('#battleReportModal .battle-report-bottom-nav [data-report-action="formation"]');
   await page.waitForSelector("#battleReportModal .battle-report-formation-row");
   const formationReportCheck = await page.evaluate(() => ({
     rows: document.querySelectorAll("#battleReportModal .battle-report-formation-row").length,
     hasPlayerTab: Boolean(document.querySelector('#battleReportModal [data-report-action="formation-side"][data-side="player"]')),
     hasEnemyTab: Boolean(document.querySelector('#battleReportModal [data-report-action="formation-side"][data-side="enemy"]')),
+  }));
+  await page.click("#battleReportClose");
+  await page.waitForSelector("#battleReportModal .battle-report-stage");
+  const battleReportCloseBackCheck = await page.evaluate(() => ({
+    modalOpen: Boolean(document.querySelector("#battleReportModal")?.open),
+    title: document.querySelector("#battleReportTitle")?.textContent?.trim() || "",
+    hasBattleStage: Boolean(document.querySelector("#battleReportModal .battle-report-stage")),
+    hasFormationRows: Boolean(document.querySelector("#battleReportModal .battle-report-formation-row")),
   }));
   await page.click("#battleReportClose");
   await page.waitForFunction(() => !document.querySelector("#battleReportModal")?.open);
@@ -394,11 +403,21 @@ try {
   if (!battlePlaceReportCheck.activeBars || battlePlaceReportCheck.woundedBars || battlePlaceReportCheck.hasWoundedSeparator || !battlePlaceReportCheck.hasWoundedText) {
     throw new Error(`战斗地点兵力条没有保持当前兵力单段显示：${JSON.stringify(battlePlaceReportCheck)}`);
   }
-  if (!generatedReportModalCheck.badgeHidden || !generatedReportModalCheck.modalOpen || !generatedReportModalCheck.reportLines || !generatedReportModalCheck.hasStatsButton || !generatedReportModalCheck.hasFormationButton) {
+  if (
+    generatedReportModalCheck.unreadAfterOpen !== String(expectedUnreadAfterOpen)
+    || generatedReportModalCheck.badgeHidden !== (expectedUnreadAfterOpen <= 0)
+    || !generatedReportModalCheck.modalOpen
+    || !generatedReportModalCheck.reportLines
+    || !generatedReportModalCheck.hasStatsButton
+    || !generatedReportModalCheck.hasFormationButton
+  ) {
     throw new Error(`战报弹层没有正确打开详情/标记已读：${JSON.stringify(generatedReportModalCheck)}`);
   }
   if (formationReportCheck.rows !== 3 || !formationReportCheck.hasPlayerTab || !formationReportCheck.hasEnemyTab) {
     throw new Error(`阵容详情没有正确渲染战报快照：${JSON.stringify(formationReportCheck)}`);
+  }
+  if (!battleReportCloseBackCheck.modalOpen || !battleReportCloseBackCheck.hasBattleStage || battleReportCloseBackCheck.hasFormationRows) {
+    throw new Error(`阵容详情关闭按钮没有返回战斗地点：${JSON.stringify(battleReportCloseBackCheck)}`);
   }
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");
@@ -513,6 +532,7 @@ try {
     battlePlaceReportCheck,
     generatedReportModalCheck,
     formationReportCheck,
+    battleReportCloseBackCheck,
     caoRenDetail,
     reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars },
     battlePortraitCheck,
