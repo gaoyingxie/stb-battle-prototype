@@ -65,7 +65,8 @@
 
   const DAMAGE_MODEL = {
     maxRounds: 8,
-    drawTroopDiffThreshold: 1200,
+    maxDrawEncounters: 4,
+    drawWaitMinutes: 5,
     normalAttackRate: 0.62,
     counterAttackRate: 0.36,
     woundedRate: 0.95,

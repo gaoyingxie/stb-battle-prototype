@@ -15,11 +15,15 @@
     calculateDamageFormula,
   } = global.STZB_BATTLE_RULES;
 
-  function createBattle(playerTeam, enemyTeam) {
+  function createBattle(playerTeam, enemyTeam, options = {}) {
+    const config = typeof options === "boolean" ? { freshTroops: options } : options;
+    const freshTroops = config.freshTroops !== false;
+    const encounter = Math.max(1, Number(config.encounter) || 1);
+    const maxEncounters = Math.max(encounter, Number(config.maxEncounters) || encounter);
     const logEntries = [];
     const ctx = { log: logEntries, round: 0, units: [] };
-    const player = createUnits(playerTeam, "player", true);
-    const enemy = createUnits(enemyTeam, "enemy", true);
+    const player = createUnits(playerTeam, "player", freshTroops);
+    const enemy = createUnits(enemyTeam, "enemy", freshTroops);
     linkSides(player, enemy);
     ctx.units = [...player, ...enemy];
     applyFormationBonuses(player, ctx, "我军");
@@ -40,6 +44,8 @@
       log: logEntries,
       complete: false,
       finishReason: null,
+      encounter,
+      maxEncounters,
     };
   }
 
@@ -92,9 +98,7 @@
     }
 
     if (battle.rounds >= DAMAGE_MODEL.maxRounds) {
-      const diff = totalTroops(battle.player) - totalTroops(battle.enemy);
-      const endWinner = Math.abs(diff) < DAMAGE_MODEL.drawTroopDiffThreshold ? "draw" : diff > 0 ? "player" : "enemy";
-      finishBattle(battle, endWinner, "roundLimit");
+      finishBattle(battle, "draw", "roundLimit");
       return battle;
     }
 
@@ -108,17 +112,23 @@
     battle.complete = true;
     battle.finishReason = reason;
     battle.label = winner === "player" ? "胜利" : winner === "enemy" ? "战败" : "平局";
-    battle.subtitle = battleEndSubtitle(winner, reason, battle.player, battle.enemy);
+    battle.subtitle = battleEndSubtitle(winner, reason, battle.player, battle.enemy, battle);
     log(battle.ctx, "result", `战斗结束：${battle.label}。${battle.subtitle}。`);
   }
 
-  function battleEndSubtitle(winner, reason, player, enemy) {
+  function battleEndSubtitle(winner, reason, player, enemy, battle = null) {
     if (reason === "enemyCampDown") return "敌方大营溃散，我军取胜";
     if (reason === "playerCampDown") return "我方大营溃散，守军获胜";
-    if (reason === "bothCampDown") return "双方大营同时溃散，按战损判定";
-    if (winner === "draw") return "八回合未破大营，双方战损接近，进入平局";
+    if (reason === "bothCampDown") return "双方大营同时溃散，判定平局";
     const playerTroops = totalTroops(player);
     const enemyTroops = totalTroops(enemy);
+    if (reason === "roundLimit") {
+      const nextEncounter = battle && battle.encounter < battle.maxEncounters
+        ? `；${DAMAGE_MODEL.drawWaitMinutes}分钟后进入第${battle.encounter + 1}轮交战`
+        : "";
+      return `八回合结束双方大营仍在，判定平局。我军剩余${formatNumber(playerTroops)}兵，守军剩余${formatNumber(enemyTroops)}兵${nextEncounter}`;
+    }
+    if (winner === "draw") return "双方未击溃大营，判定平局";
     if (winner === "player") return `八回合结束，我军剩余${formatNumber(playerTroops)}兵，守军剩余${formatNumber(enemyTroops)}兵，按战损取胜`;
     return `八回合结束，我军剩余${formatNumber(playerTroops)}兵，守军剩余${formatNumber(enemyTroops)}兵，按战损战败`;
   }
@@ -162,8 +172,8 @@
         statBonus: { attack: 0, strategy: 0, defense: 0, speed: 0 },
         bonuses: [],
         skills,
-        troops: freshTroops ? 10000 : slot.troops || 10000,
-        wounded: freshTroops ? 0 : slot.wounded || 0,
+        troops: freshTroops ? 10000 : Number.isFinite(Number(slot.troops)) ? Number(slot.troops) : 10000,
+        wounded: freshTroops ? 0 : Number.isFinite(Number(slot.wounded)) ? Number(slot.wounded) : 0,
         maxTroops: 10000,
         statuses: [],
         pendingSkills: [],

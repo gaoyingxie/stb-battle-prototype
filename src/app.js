@@ -1,5 +1,6 @@
 const {
   POSITIONS,
+  DAMAGE_MODEL,
 } = globalThis.STZB_BATTLE_RULES;
 
 const {
@@ -22,6 +23,7 @@ const STARTER_SKILL_GRADES = new Set(["B", "C"]);
 const SKILL_GRADE_ORDER = { S: 0, A: 1, B: 2, C: 3 };
 const SYSTEM_MESSAGE_LIMIT = 24;
 const BATTLE_REPORT_LIMIT = 20;
+const BATTLE_MAX_ENCOUNTERS = DAMAGE_MODEL.maxDrawEncounters || 4;
 const PRIORITY_SPEED_BONUS = 80;
 const state = {
   roster: {},
@@ -940,13 +942,53 @@ function currentBattle() {
 }
 
 function advanceBattleFlow() {
-  const battle = createBattle(getPlayerTeam(), state.enemy);
-  while (!battle.complete) advanceBattleRound(battle);
-  state.lastBattle = toBattleSnapshot(battle);
+  const battles = runBattleEncounters(getPlayerTeam(), state.enemy);
+  const snapshots = battles.map(toBattleSnapshot);
+  state.lastBattle = snapshots.at(-1);
   state.activeBattle = null;
-  addBattleReport(state.lastBattle);
+  snapshots.forEach(addBattleReport);
   saveState();
   renderAll();
+}
+
+function runBattleEncounters(playerTeam, enemyTeam) {
+  let playerSlots = cloneTeamForEncounter(playerTeam);
+  let enemySlots = cloneTeamForEncounter(enemyTeam);
+  const battles = [];
+
+  for (let encounter = 1; encounter <= BATTLE_MAX_ENCOUNTERS; encounter += 1) {
+    const battle = createBattle(playerSlots, enemySlots, {
+      freshTroops: encounter === 1,
+      encounter,
+      maxEncounters: BATTLE_MAX_ENCOUNTERS,
+    });
+    while (!battle.complete) advanceBattleRound(battle);
+    battles.push(battle);
+
+    if (battle.winner !== "draw" || battle.finishReason !== "roundLimit" || encounter >= BATTLE_MAX_ENCOUNTERS) {
+      break;
+    }
+
+    playerSlots = carryTeamForward(playerSlots, battle.player);
+    enemySlots = carryTeamForward(enemySlots, battle.enemy);
+  }
+
+  return battles;
+}
+
+function cloneTeamForEncounter(team) {
+  return (team || []).map((slot) => ({
+    ...slot,
+    skills: [...(slot.skills || [])],
+  }));
+}
+
+function carryTeamForward(team, units) {
+  return (team || []).map((slot, index) => ({
+    ...slot,
+    troops: Math.max(0, Math.round(units[index]?.troops || 0)),
+    wounded: Math.max(0, Math.round(units[index]?.wounded || 0)),
+  }));
 }
 
 function renderFormationEditor() {
@@ -1177,7 +1219,8 @@ function renderBattle(result) {
   els.playerTroops.innerHTML = troopSummaryTemplate(playerUnits);
   els.enemyTroops.innerHTML = troopSummaryTemplate(enemyUnits);
   const shownRound = Math.max(1, result?.rounds || 1);
-  els.roundCount.innerHTML = `<span>第 <b>${shownRound}</b> 封战报${result && !result.complete ? "（当前）" : ""}</span><small>共 1 封战报</small>`;
+  const reportIndex = Math.max(1, Number(result?.encounter) || 1);
+  els.roundCount.innerHTML = `<span>第 <b>${shownRound}</b> 回合${result && !result.complete ? "（当前）" : ""}</span><small>第 ${reportIndex} / ${reportIndex} 封战报</small>`;
   els.battleSubtitle.textContent = result ? result.subtitle : "双方列阵，尚未交锋";
   els.battleResult.textContent = result ? result.label : "未交锋";
   els.battleResult.dataset.result = result?.winner || "pending";
@@ -1215,6 +1258,8 @@ function toBattleSnapshot(battle) {
     rounds: battle.rounds,
     complete: battle.complete,
     finishReason: battle.finishReason,
+    encounter: battle.encounter || 1,
+    maxEncounters: battle.maxEncounters || 1,
     player: (battle.player || []).map(unitSnapshot),
     enemy: (battle.enemy || []).map(unitSnapshot),
     log: (battle.log || []).map(reportEntrySnapshot),
@@ -1279,7 +1324,8 @@ function addBattleReport(battle) {
 function battleReportTitle(battle) {
   const playerName = battle?.player?.[0]?.name || "我军";
   const enemyName = battle?.enemy?.[0]?.name || "守军";
-  return `${playerName} 对阵 ${enemyName}`;
+  const encounter = Number(battle?.encounter) || 1;
+  return `${playerName} 对阵 ${enemyName}${encounter > 1 ? `（第${encounter}轮）` : ""}`;
 }
 
 function renderBattleReportBadge() {

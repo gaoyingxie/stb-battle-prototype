@@ -249,7 +249,7 @@ try {
     globalThis.dealDamage(battle.ctx, battle.player[0], battle.enemy[0], 0.78, "attack", "测试输出");
     globalThis.dealDamage(battle.ctx, battle.enemy[0], battle.player[1], 0.78, "attack", "测试受击");
     globalThis.heal(battle.ctx, battle.player[2], battle.player[1], 500, "测试治疗");
-    globalThis.finishBattle(battle, "player", "roundLimit");
+    globalThis.finishBattle(battle, "player", "enemyCampDown");
     globalThis.writeReport(battle.log, battle);
     const report = document.querySelector("#report");
     const text = report?.textContent || "";
@@ -265,6 +265,42 @@ try {
       hasResultGlyph: resultLine?.querySelector(".report-avatar")?.textContent.trim() === "终",
       endIsNotHealing: ![...(report?.querySelectorAll(".log-line.heal .report-text") || [])]
         .some((line) => line.textContent.includes("战斗结束")),
+    };
+  });
+
+  const roundLimitDrawCheck = await page.evaluate(() => {
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
+    const playerTeam = [
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
+    ];
+    const enemyTeam = [
+      { heroId: heroId("张辽", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("曹仁", "魏", "步"), position: "middle", skills: [] },
+      { heroId: heroId("孙权", "吴", "弓"), position: "front", skills: [] },
+    ];
+    const battle = globalThis.createBattle(playerTeam, enemyTeam, { encounter: 1, maxEncounters: 4 });
+    battle.rounds = globalThis.STZB_BATTLE_RULES.DAMAGE_MODEL.maxRounds - 1;
+    [...battle.player, ...battle.enemy].forEach((unit) => {
+      unit.skills = [];
+      unit.stats.attack = 0;
+      unit.stats.strategy = 0;
+      unit.stats.defense = 9999;
+      unit.troops = unit.position === "camp" ? (unit.side === "player" ? 5321 : 16531) : 0;
+      unit.wounded = 0;
+    });
+    globalThis.advanceBattleRound(battle);
+    return {
+      winner: battle.winner,
+      label: battle.label,
+      finishReason: battle.finishReason,
+      subtitle: battle.subtitle,
+      logText: battle.log.at(-1)?.text || "",
+      playerCampAlive: battle.player.find((unit) => unit.position === "camp")?.troops > 0,
+      enemyCampAlive: battle.enemy.find((unit) => unit.position === "camp")?.troops > 0,
     };
   });
 
@@ -350,7 +386,7 @@ try {
     battleLayoutChecks.push(await measureBattleLayout(viewport));
   }
 
-  if (generatedReportCheck.badge !== "1" || generatedReportCheck.reports !== 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
+  if (generatedReportCheck.badge !== String(generatedReportCheck.reports) || generatedReportCheck.reports < 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
     throw new Error(`开战后没有一次性结算并生成未读战报：${JSON.stringify(generatedReportCheck)}`);
   }
   if (!battlePlaceReportCheck.woundedBars || !battlePlaceReportCheck.hasWoundedSeparator) {
@@ -407,6 +443,17 @@ try {
     || !battleStatsCheck.endIsNotHealing
   ) {
     throw new Error(`战后统计没有正确渲染武将和技能汇总：${JSON.stringify(battleStatsCheck)}`);
+  }
+  if (
+    roundLimitDrawCheck.winner !== "draw"
+    || roundLimitDrawCheck.label !== "平局"
+    || roundLimitDrawCheck.finishReason !== "roundLimit"
+    || !roundLimitDrawCheck.playerCampAlive
+    || !roundLimitDrawCheck.enemyCampAlive
+    || roundLimitDrawCheck.subtitle.includes("按战损")
+    || !roundLimitDrawCheck.subtitle.includes("第2轮交战")
+  ) {
+    throw new Error(`八回合大营未破没有判定为平局续战：${JSON.stringify(roundLimitDrawCheck)}`);
   }
   if (new Set(formationConstraintCheck.heroNames).size !== formationConstraintCheck.heroNames.length) {
     throw new Error(`编队仍允许同名武将重复上阵：${JSON.stringify(formationConstraintCheck)}`);
@@ -474,6 +521,7 @@ try {
       wrapsLongText: fullPrepReportCheck.wrapsLongText,
     },
     battleStatsCheck,
+    roundLimitDrawCheck,
     battleLayoutChecks,
   }, null, 2));
   if (consoleMessages.length) {
