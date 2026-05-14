@@ -414,6 +414,21 @@
   background: #d7c06b;
 }
 
+.war-map .troop-bar .troop-fill,
+.war-map .team-troop-bar .troop-fill {
+  left: 0;
+}
+
+.war-map .troop-bar .wounded-fill,
+.war-map .team-troop-bar .wounded-fill {
+  left: var(--active-pct, 0%);
+}
+
+.war-map .troop-bar .death-fill,
+.war-map .team-troop-bar .death-fill {
+  left: calc(var(--active-pct, 0%) + var(--wounded-pct, 0%));
+}
+
 .unit-card.player .troop-fill,
 .player-block .team-troop-bar .troop-fill {
   background: #5db7e6;
