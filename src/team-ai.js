@@ -172,7 +172,10 @@
   function chooseTeamSkills(heroes, positions, skills, options = {}) {
     const count = options.count || DEFAULT_SKILLS_PER_HERO;
     const rng = options.rng || Math.random;
-    const context = options.context || buildScoringContext(skills);
+    const context = {
+      ...(options.context || buildScoringContext(skills)),
+      availableSkills: skills,
+    };
     const assignments = heroes.map(() => []);
     const usedSkillIds = new Set();
     const maxSlots = heroes.length * count;
@@ -205,11 +208,15 @@
   function chooseSkillsForHero(hero, position, skills, usedSkillIds, options = {}) {
     const count = options.count || DEFAULT_SKILLS_PER_HERO;
     const rng = options.rng || Math.random;
+    const context = {
+      ...buildScoringContext(skills),
+      availableSkills: skills,
+    };
     const ranked = skills
       .filter((skill) => skill?.id && skill.id !== hero.innate && !usedSkillIds.has(skill.id))
       .map((skill) => ({
         skill,
-        score: scoreSkillForHero(skill, hero, position) + randomTie(rng) * 0.01,
+        score: scoreSkillForHero(skill, hero, position, context) + randomTie(rng) * 0.01,
       }))
       .sort((a, b) => b.score - a.score);
     const picked = ranked.slice(0, count).map((entry) => entry.skill);
@@ -615,8 +622,9 @@
     const armFit = skillArmFit(skill, hero);
     const expectationScore = skillExpectationScore(expectation);
     const teamFit = skillTeamFitBonus(skill, hero, position, profile, expectation, context);
+    const conditionalFit = conditionalSkillFitBonus(skill, context);
 
-    return grade + triggerScore + statFit + rangeFit + roleFit + armFit + expectationScore + teamFit;
+    return grade + triggerScore + statFit + rangeFit + roleFit + armFit + expectationScore + teamFit + conditionalFit;
   }
 
   function normalizedTrigger(skill) {
@@ -653,6 +661,45 @@
     };
     profile.damage = profile.attack || profile.strategy;
     return profile;
+  }
+
+  function conditionalSkillFitBonus(skill, context) {
+    const requiredNames = conditionalRequiredSkillNames(skill);
+    if (!requiredNames.length) return 0;
+    const activeNames = activeTeamSkillNames(context);
+    if (requiredNames.some((name) => activeNames.has(name))) return 76;
+    const availableNames = new Set((context.availableSkills || []).map((item) => item?.name).filter(Boolean));
+    const hasAvailablePrerequisite = requiredNames.some((name) => availableNames.has(name));
+    return hasAvailablePrerequisite ? -180 : -360;
+  }
+
+  function conditionalRequiredSkillNames(skill) {
+    const text = skillText(skill);
+    const names = [];
+    const collect = (segment) => {
+      const matched = segment.match(/【([^】]+)】/g) || [];
+      matched.forEach((item) => {
+        const name = item.slice(1, -1).trim();
+        if (name) names.push(name);
+      });
+    };
+    for (const match of text.matchAll(/发动((?:【[^】]+】)+)(?:时|后)/g)) {
+      collect(match[1]);
+    }
+    for (const match of text.matchAll(/((?:【[^】]+】)+)发动(?:率|后|时)/g)) {
+      collect(match[1]);
+    }
+    return [...new Set(names)];
+  }
+
+  function activeTeamSkillNames(context) {
+    const names = new Set();
+    const addSkillName = (skill) => {
+      if (skill?.name) names.add(skill.name);
+    };
+    (context.assignments || []).flat().forEach(addSkillName);
+    (context.heroes || []).forEach((hero) => addSkillName(context.skillById?.get(hero?.innate)));
+    return names;
   }
 
   function skillText(skill) {

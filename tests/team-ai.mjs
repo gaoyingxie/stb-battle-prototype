@@ -193,6 +193,39 @@ const team = recommendTeam({
 });
 assert(team.some((slot) => slot.heroId === lowCostCarry.id), "自动推荐应保留低 cost 强将");
 
+const deadComboTeam = recommendTeam({
+  heroes: [strategist],
+  skills: [
+    {
+      id: "dead-combo",
+      name: "Combo Booster",
+      type: "passive",
+      trigger: "passive",
+      grade: "A",
+      desc: "我军全体发动【落雷】【迷阵】时，额外发动一次策略攻击",
+    },
+    {
+      id: "plain-strategy",
+      name: "Plain Strategy",
+      type: "active",
+      trigger: "active",
+      chance: 0.42,
+      grade: "A",
+      distance: 4,
+      desc: "strategy damage to enemy group",
+    },
+  ],
+  positions,
+  minHeroRarity: 0,
+  skillGrades: null,
+  skillsPerHero: 1,
+  rng: fixedRng,
+});
+assert(
+  deadComboTeam[0]?.skills?.[0] === "plain-strategy",
+  "没有前置战法时，条件联动战法不应挤掉可直接生效的战法",
+);
+
 console.log(JSON.stringify({
   lowCostCarryCampScore: scoreHeroForPosition(lowCostCarry, { id: "camp" }),
   highCostBenchCampScore: scoreHeroForPosition(highCostBench, { id: "camp" }),
