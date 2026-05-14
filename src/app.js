@@ -2092,23 +2092,35 @@ function groupReportRounds(entries) {
 function reportRoundHtml(round, roundIndex) {
   const actions = round.groups.filter((group) => group.entries.length);
   const jumps = actions.filter((group) => group.actor);
+  const roundNumber = reportRoundNumber(round.title, roundIndex);
+  let actionIndex = 0;
   return `
     <section class="report-round-block" aria-labelledby="${escapeHtml(round.id)}-title">
       <aside class="report-turn-rail" aria-label="${escapeHtml(round.title)}行动顺序">
         <strong id="${escapeHtml(round.id)}-title">${escapeHtml(round.title)}</strong>
         <div class="report-turn-list">
-          ${jumps.length ? jumps.map((group, index) => reportTurnJumpHtml(group, roundIndex, index)).join("") : '<span class="report-turn-empty">无武将行动</span>'}
+          ${jumps.length ? jumps.map((group, index) => reportTurnJumpHtml(group, roundNumber, index + 1)).join("") : '<span class="report-turn-empty">无武将行动</span>'}
         </div>
       </aside>
       <div class="report-round-actions">
         <div class="log-line round"><span>${escapeHtml(round.title)}</span><em>行动阶段</em></div>
-        ${actions.map((group, index) => reportActionGroupHtml(group, roundIndex, index)).join("")}
+        ${actions.map((group) => reportActionGroupHtml(group, roundNumber, group.actor ? ++actionIndex : 0)).join("")}
       </div>
     </section>
   `;
 }
 
-function reportTurnJumpHtml(group, roundIndex, groupIndex) {
+function reportRoundNumber(title, roundIndex) {
+  const match = String(title || "").match(/第\s*(\d+)\s*回合/);
+  if (match) return match[1];
+  return String(title || "").includes("准备") ? "准" : String(roundIndex + 1);
+}
+
+function reportRoundStepLabel(roundNumber) {
+  return roundNumber === "准" ? "准备回合" : `第 ${roundNumber} 回合`;
+}
+
+function reportTurnJumpHtml(group, roundNumber, groupIndex) {
   const actor = group.actor;
   const side = actor?.side === "enemy" ? "enemy" : actor?.side === "player" ? "player" : "system";
   const portrait = actor?.portrait || reportParticipantPortrait(actor);
@@ -2116,7 +2128,7 @@ function reportTurnJumpHtml(group, roundIndex, groupIndex) {
   const troopText = actor?.troops !== undefined ? `兵力 ${formatNumber(actor.troops)}` : "行动";
   return `
     <a class="report-turn-jump ${side}" href="#${escapeHtml(group.id)}" title="${escapeHtml(label)} ${escapeHtml(troopText)}">
-      <span class="report-turn-order">${roundIndex + 1}.${groupIndex + 1}</span>
+      <span class="report-turn-order">${escapeHtml(roundNumber)}.${groupIndex}</span>
       <span class="report-turn-avatar">
         ${portrait ? `<img src="${escapeHtml(portrait)}" alt="${escapeHtml(label)}头像" loading="lazy">` : escapeHtml(label.slice(0, 1))}
       </span>
@@ -2124,13 +2136,13 @@ function reportTurnJumpHtml(group, roundIndex, groupIndex) {
   `;
 }
 
-function reportActionGroupHtml(group, roundIndex, groupIndex) {
+function reportActionGroupHtml(group, roundNumber, groupIndex) {
   const actor = group.actor;
   const side = actor?.side === "enemy" ? "enemy" : actor?.side === "player" ? "player" : "system";
   const portrait = actor?.portrait || reportParticipantPortrait(actor);
   const label = actor?.name || reportActionTypeLabel(group.entries[0]);
   const troopText = actor?.troops !== undefined ? `兵力 ${formatNumber(actor.troops)}` : "战况";
-  const stepText = actor ? `第 ${roundIndex + 1} 回合 · 第 ${groupIndex + 1} 次行动` : "战斗记录";
+  const stepText = actor ? `${reportRoundStepLabel(roundNumber)} · 第 ${groupIndex} 次行动` : "战斗记录";
   return `
     <article id="${escapeHtml(group.id)}" class="report-action-group ${side}">
       <header class="report-action-head">

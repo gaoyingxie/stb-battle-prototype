@@ -114,6 +114,17 @@ try {
     hasTroopAfter: Boolean(document.querySelector("#battleReportModal .report-troop-after")),
     hasActionTroops: [...document.querySelectorAll("#battleReportModal .report-action-head b")]
       .some((node) => node.textContent.includes("兵力")),
+    firstJumpMatchesRound: (() => {
+      const round = [...document.querySelectorAll("#battleReportModal .report-round-block")]
+        .find((block) => block.querySelector(".report-turn-jump"));
+      const title = round?.querySelector(".log-line.round span")?.textContent || "";
+      const order = round?.querySelector(".report-turn-order")?.textContent || "";
+      const match = title.match(/第\s*(\d+)\s*回合/);
+      const expected = match ? `${match[1]}.` : title.includes("准备") ? "准." : "";
+      return Boolean(expected && order.startsWith(expected));
+    })(),
+    actionPortraitFitsFull: [...document.querySelectorAll("#battleReportModal .report-action-portrait img")]
+      .every((node) => getComputedStyle(node).objectFit === "contain"),
     hasStatsButton: Boolean(document.querySelector('#battleReportModal [data-report-action="stats"]')),
     hasFormationButton: Boolean(document.querySelector('#battleReportModal [data-report-action="formation"]')),
   }));
@@ -434,6 +445,8 @@ try {
     || !generatedReportModalCheck.turnJumps
     || !generatedReportModalCheck.hasTroopAfter
     || !generatedReportModalCheck.hasActionTroops
+    || !generatedReportModalCheck.firstJumpMatchesRound
+    || !generatedReportModalCheck.actionPortraitFitsFull
     || !generatedReportModalCheck.hasStatsButton
     || !generatedReportModalCheck.hasFormationButton
   ) {

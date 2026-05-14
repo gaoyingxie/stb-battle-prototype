@@ -199,11 +199,11 @@
   }
 
   .report-action-portrait {
-    width: 104px;
+    width: 112px;
   }
 
   .report-action-events .log-line {
-    padding-left: 126px;
+    padding-left: 136px;
   }
 
   .battle-report-formation-panel {
@@ -297,7 +297,7 @@
 
   .report-action-portrait {
     width: 92px;
-    height: 58px;
+    height: 78px;
   }
 
   .report-action-head b {

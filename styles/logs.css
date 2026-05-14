@@ -1161,7 +1161,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 62px;
+  min-height: 94px;
   padding: 0 14px 0 0;
   background: rgba(13, 20, 25, 0.7);
 }
@@ -1179,8 +1179,8 @@
 .report-action-portrait {
   display: grid;
   place-items: center;
-  width: 128px;
-  height: 62px;
+  width: 132px;
+  height: 94px;
   overflow: hidden;
   margin-right: 12px;
   background: rgba(0, 0, 0, 0.42);
@@ -1192,8 +1192,8 @@
 .report-action-portrait img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 18%;
+  object-fit: contain;
+  object-position: 50% 50%;
 }
 
 .report-action-hero strong {
@@ -1231,7 +1231,7 @@
 .report-action-events .log-line {
   grid-template-columns: 26px minmax(0, 1fr);
   min-height: 38px;
-  padding: 7px 14px 7px 164px;
+  padding: 7px 14px 7px 168px;
   border-bottom-color: rgba(245, 223, 170, 0.06);
   background: rgba(9, 10, 10, 0.32);
   box-shadow: none;
