@@ -824,7 +824,19 @@
     0 0 0 1px rgba(0, 0, 0, 0.18);
 }
 
+.battle-report-score-bar > .death-fill {
+  width: var(--dead-pct, 0%);
+  background: #050708;
+}
+
+.battle-report-score-bar > .wounded-fill {
+  left: var(--wounded-left, 0%);
+  width: var(--wounded-pct, 0%);
+  background: #1e5462;
+}
+
 .battle-report-score-bar > .troop-fill {
+  left: var(--active-left, 0%);
   width: var(--active-pct, 0%);
   background: #5db7e6;
 }
@@ -833,6 +845,12 @@
 .battle-report-score.enemy .battle-report-score-bar > .troop-fill,
 .battle-report-score-bar.enemy > .troop-fill {
   background: #b44942;
+}
+
+.enemy .battle-report-score-bar > .wounded-fill,
+.battle-report-score.enemy .battle-report-score-bar > .wounded-fill,
+.battle-report-score-bar.enemy > .wounded-fill {
+  background: #5e231f;
 }
 
 .battle-report-score.player .battle-report-score-bar,

@@ -386,6 +386,8 @@
     0 0 0 1px rgba(0, 0, 0, 0.22);
 }
 
+.death-fill,
+.wounded-fill,
 .troop-fill {
   position: absolute;
   inset-block: 0;
@@ -394,8 +396,20 @@
   transition: width 0.2s ease, left 0.2s ease;
 }
 
-.troop-fill {
+.death-fill {
   left: 0;
+  width: var(--dead-pct, 0%);
+  background: #050708;
+}
+
+.wounded-fill {
+  left: var(--wounded-left, 0%);
+  width: var(--wounded-pct, 0%);
+  background: #1f5565;
+}
+
+.troop-fill {
+  left: var(--active-left, 0%);
   width: var(--active-pct, 100%);
   background: #d7c06b;
 }
@@ -403,6 +417,11 @@
 .unit-card.player .troop-fill,
 .player-block .team-troop-bar .troop-fill {
   background: #5db7e6;
+}
+
+.unit-card.player .wounded-fill,
+.player-block .team-troop-bar .wounded-fill {
+  background: #1e5462;
 }
 
 .unit-card.player .troop-bar,
@@ -414,6 +433,11 @@
 .unit-card.enemy .troop-fill,
 .enemy-block .team-troop-bar .troop-fill {
   background: #b44942;
+}
+
+.unit-card.enemy .wounded-fill,
+.enemy-block .team-troop-bar .wounded-fill {
+  background: #5e231f;
 }
 
 .unit-card.enemy .troop-bar,

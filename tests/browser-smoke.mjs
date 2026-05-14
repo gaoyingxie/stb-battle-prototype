@@ -91,7 +91,7 @@ try {
   const battlePlaceReportCheck = await page.evaluate(() => ({
     activeBars: document.querySelectorAll("#battleReportModal .battle-report-score-bar .troop-fill").length,
     woundedBars: document.querySelectorAll("#battleReportModal .battle-report-score-bar .wounded-fill").length,
-    hasWoundedSeparator: Boolean(document.querySelector("#battleReportModal .battle-report-score-bar.has-wounded-separator")),
+    deathBars: document.querySelectorAll("#battleReportModal .battle-report-score-bar .death-fill").length,
     hasWoundedText: document.querySelector("#battleReportModal")?.textContent?.includes("伤"),
   }));
   await page.click('#battleReportModal [data-report-action="log"]');
@@ -400,8 +400,8 @@ try {
   if (generatedReportCheck.badge !== String(generatedReportCheck.reports) || generatedReportCheck.reports < 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
     throw new Error(`开战后没有一次性结算并生成未读战报：${JSON.stringify(generatedReportCheck)}`);
   }
-  if (!battlePlaceReportCheck.activeBars || battlePlaceReportCheck.woundedBars || battlePlaceReportCheck.hasWoundedSeparator || !battlePlaceReportCheck.hasWoundedText) {
-    throw new Error(`战斗地点兵力条没有保持当前兵力单段显示：${JSON.stringify(battlePlaceReportCheck)}`);
+  if (!battlePlaceReportCheck.activeBars || !battlePlaceReportCheck.woundedBars || !battlePlaceReportCheck.deathBars || !battlePlaceReportCheck.hasWoundedText) {
+    throw new Error(`战斗地点兵力条没有按死亡/伤兵/剩余三段显示：${JSON.stringify(battlePlaceReportCheck)}`);
   }
   if (
     generatedReportModalCheck.unreadAfterOpen !== String(expectedUnreadAfterOpen)

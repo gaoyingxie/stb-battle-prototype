@@ -1531,9 +1531,10 @@ function battleReportScoreBarHtml(units, side) {
 }
 
 function battleReportTroopBarHtml(totals, side, className = "battle-report-score-bar") {
-  const activePct = percentOf(totals.current, totals.max);
   return `
-    <div class="${className} ${side}" style="--active-pct: ${activePct}%">
+    <div class="${className} ${side}" style="${troopBarStyle(totals.current, totals.wounded, totals.max)}">
+      <span class="death-fill"></span>
+      <span class="wounded-fill"></span>
       <span class="troop-fill"></span>
     </div>
   `;
@@ -1790,7 +1791,9 @@ function unitTemplate(unit) {
           <strong>${troopText}</strong>
           <span class="unit-wounded">${woundedText}</span>
         </div>
-        <div class="troop-bar" aria-label="${unit.name}兵力" style="--active-pct: ${troopPct}%">
+        <div class="troop-bar" aria-label="${unit.name}兵力" style="${troopBarStyle(unit.troops, unit.wounded, unit.maxTroops)}">
+          <div class="death-fill"></div>
+          <div class="wounded-fill"></div>
           <div class="troop-fill"></div>
         </div>
       </div>
@@ -1802,16 +1805,37 @@ function troopSummaryTemplate(units) {
   const active = totalTroops(units);
   const wounded = totalWounded(units);
   const max = totalMaxTroops(units);
-  const activePct = percentOf(active, max);
   return `
     <span class="troop-summary-text">
       ${formatNumber(active)}
       <small>/ ${formatNumber(max)}${wounded ? ` · 伤${formatNumber(wounded)}` : ""}</small>
     </span>
-    <span class="team-troop-bar" aria-hidden="true" style="--active-pct: ${activePct}%">
+    <span class="team-troop-bar" aria-hidden="true" style="${troopBarStyle(active, wounded, max)}">
+      <i class="death-fill"></i>
+      <i class="wounded-fill"></i>
       <i class="troop-fill"></i>
     </span>
   `;
+}
+
+function troopBarStyle(current, wounded, max) {
+  const safeMax = Math.max(0, Number(max) || 0);
+  const active = Math.max(0, Math.min(safeMax, Number(current) || 0));
+  const injured = Math.max(0, Math.min(safeMax - active, Number(wounded) || 0));
+  const dead = Math.max(0, safeMax - active - injured);
+  return [
+    `--dead-pct: ${barPercent(dead, safeMax)}`,
+    `--wounded-left: ${barPercent(dead, safeMax)}`,
+    `--wounded-pct: ${barPercent(injured, safeMax)}`,
+    `--active-left: ${barPercent(dead + injured, safeMax)}`,
+    `--active-pct: ${barPercent(active, safeMax)}`,
+  ].join("; ");
+}
+
+function barPercent(value, max) {
+  if (!max) return "0%";
+  const percent = Math.max(0, Math.min(100, (value / max) * 100));
+  return `${percent.toFixed(2).replace(/\.?0+$/, "")}%`;
 }
 
 function percentOf(value, max) {
