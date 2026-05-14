@@ -88,6 +88,10 @@ try {
   await page.waitForSelector("#battleReportModal[open] .battle-report-card");
   await page.click("#battleReportModal .battle-report-card");
   await page.waitForSelector("#battleReportModal .battle-report-stage");
+  const battlePlaceReportCheck = await page.evaluate(() => ({
+    woundedBars: document.querySelectorAll("#battleReportModal .battle-report-score-bar .wounded-fill").length,
+    hasWoundedSeparator: Boolean(document.querySelector("#battleReportModal .battle-report-score-bar.has-wounded-separator")),
+  }));
   await page.click('#battleReportModal [data-report-action="log"]');
   await page.waitForSelector("#battleReportModal .log-line");
   const generatedReportModalCheck = await page.evaluate(() => ({
@@ -96,6 +100,14 @@ try {
     modalOpen: Boolean(document.querySelector("#battleReportModal")?.open),
     reportLines: document.querySelectorAll("#battleReportModal .log-line").length,
     hasStatsButton: Boolean(document.querySelector('#battleReportModal [data-report-action="stats"]')),
+    hasFormationButton: Boolean(document.querySelector('#battleReportModal [data-report-action="formation"]')),
+  }));
+  await page.click('#battleReportModal .battle-report-bottom-nav [data-report-action="formation"]');
+  await page.waitForSelector("#battleReportModal .battle-report-formation-row");
+  const formationReportCheck = await page.evaluate(() => ({
+    rows: document.querySelectorAll("#battleReportModal .battle-report-formation-row").length,
+    hasPlayerTab: Boolean(document.querySelector('#battleReportModal [data-report-action="formation-side"][data-side="player"]')),
+    hasEnemyTab: Boolean(document.querySelector('#battleReportModal [data-report-action="formation-side"][data-side="enemy"]')),
   }));
   await page.click("#battleReportClose");
   await page.waitForFunction(() => !document.querySelector("#battleReportModal")?.open);
@@ -341,8 +353,14 @@ try {
   if (generatedReportCheck.badge !== "1" || generatedReportCheck.reports !== 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
     throw new Error(`开战后没有一次性结算并生成未读战报：${JSON.stringify(generatedReportCheck)}`);
   }
-  if (!generatedReportModalCheck.badgeHidden || !generatedReportModalCheck.modalOpen || !generatedReportModalCheck.reportLines || !generatedReportModalCheck.hasStatsButton) {
+  if (!battlePlaceReportCheck.woundedBars || !battlePlaceReportCheck.hasWoundedSeparator) {
+    throw new Error(`战斗地点没有渲染伤兵分段条：${JSON.stringify(battlePlaceReportCheck)}`);
+  }
+  if (!generatedReportModalCheck.badgeHidden || !generatedReportModalCheck.modalOpen || !generatedReportModalCheck.reportLines || !generatedReportModalCheck.hasStatsButton || !generatedReportModalCheck.hasFormationButton) {
     throw new Error(`战报弹层没有正确打开详情/标记已读：${JSON.stringify(generatedReportModalCheck)}`);
+  }
+  if (formationReportCheck.rows !== 3 || !formationReportCheck.hasPlayerTab || !formationReportCheck.hasEnemyTab) {
+    throw new Error(`阵容详情没有正确渲染战报快照：${JSON.stringify(formationReportCheck)}`);
   }
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");
@@ -443,7 +461,9 @@ try {
   console.log(JSON.stringify({
     ...summary,
     generatedReportCheck,
+    battlePlaceReportCheck,
     generatedReportModalCheck,
+    formationReportCheck,
     caoRenDetail,
     reportColorCheck: { unitNames: reportColorCheck.unitNames, avatars: reportColorCheck.avatars },
     battlePortraitCheck,

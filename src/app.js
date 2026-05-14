@@ -38,6 +38,7 @@ const state = {
 let selectedBattleReportId = null;
 let battleReportView = "list";
 let battleReportStatsTab = "hero";
+let battleReportFormationSide = "player";
 
 globalThis.STZB_DEBUG = { state };
 
@@ -1301,6 +1302,7 @@ function handleBattleReportAction(button) {
     selectedBattleReportId = button.dataset.reportId;
     battleReportView = "summary";
     battleReportStatsTab = "hero";
+    battleReportFormationSide = "player";
     markBattleReportRead(selectedBattleReportId);
     saveState();
     renderBattleReportBadge();
@@ -1312,8 +1314,14 @@ function handleBattleReportAction(button) {
     renderBattleReportModal();
     return;
   }
-  if (action === "summary" || action === "log" || action === "stats") {
+  if (action === "summary" || action === "log" || action === "stats" || action === "formation") {
     battleReportView = action;
+    renderBattleReportModal();
+    return;
+  }
+  if (action === "formation-side") {
+    battleReportFormationSide = button.dataset.side === "enemy" ? "enemy" : "player";
+    battleReportView = "formation";
     renderBattleReportModal();
     return;
   }
@@ -1355,7 +1363,7 @@ function renderBattleReportModal() {
     return;
   }
 
-  const viewTitle = battleReportView === "stats" ? "统计" : battleReportView === "log" ? "战报详情" : "战斗地点";
+  const viewTitle = battleReportView === "stats" ? "统计" : battleReportView === "log" ? "战报详情" : battleReportView === "formation" ? "阵容详情" : "战斗地点";
   els.battleReportEyebrow.textContent = `id:${report.id.slice(-8)}`;
   els.battleReportTitle.textContent = viewTitle;
   els.battleReportContent.innerHTML = battleReportDetailHtml(report);
@@ -1426,20 +1434,22 @@ function battleReportDetailHtml(report) {
   const battle = report.battle;
   const body = battleReportView === "stats"
     ? battleReportStatsHtml(battle)
-    : battleReportView === "log"
-      ? visibleReportLogHtml(battle.log, battle)
-      : battleReportSummaryHtml(report);
-  const match = battleReportView === "stats"
-    ? ""
-    : `
+    : battleReportView === "formation"
+      ? battleReportFormationHtml(battle)
+      : battleReportView === "log"
+        ? visibleReportLogHtml(battle.log, battle)
+        : battleReportSummaryHtml(report);
+  const match = battleReportView === "summary"
+    ? `
       <div class="battle-report-match">
         ${battleReportScoreBarHtml(battle.player, "player")}
         <div class="battle-report-match-result ${battle.winner || "draw"}">${escapeHtml(battleReportResultGlyph(battle))}</div>
         ${battleReportScoreBarHtml(battle.enemy, "enemy")}
       </div>
-    `;
+    `
+    : "";
   return `
-    <div class="battle-report-detail-view ${battleReportView === "stats" ? "stats-page" : ""}">
+    <div class="battle-report-detail-view ${battleReportView}-page">
       <button class="battle-report-back" data-report-action="back" type="button">个人战报</button>
       ${match}
       ${body}
@@ -1447,7 +1457,6 @@ function battleReportDetailHtml(report) {
     </div>
   `;
 }
-
 function battleReportResultGlyph(battle) {
   if (battle.winner === "player") return "胜";
   if (battle.winner === "enemy") return "败";
@@ -1456,13 +1465,24 @@ function battleReportResultGlyph(battle) {
 
 function battleReportScoreBarHtml(units, side) {
   const totals = totalUnitsTroops(units);
-  const pct = percentOf(totals.current, totals.max);
   const title = side === "player" ? "我方" : "守军";
   return `
     <div class="battle-report-score ${side}">
       <span>${formatNumber(totals.current)}/${formatNumber(totals.max)}</span>
       <strong>${title}</strong>
-      <div class="battle-report-score-bar" style="--active-pct: ${pct}%"><i></i></div>
+      ${battleReportTroopBarHtml(totals, side)}
+    </div>
+  `;
+}
+
+function battleReportTroopBarHtml(totals, side, className = "battle-report-score-bar") {
+  const activePct = percentOf(totals.current, totals.max);
+  const woundedPct = percentOf(totals.wounded, totals.max);
+  const showWoundedSeparator = totals.current > 0 && totals.wounded > 0 && woundedPct > 0;
+  return `
+    <div class="${className} ${side} ${showWoundedSeparator ? "has-wounded-separator" : ""}" style="--active-pct: ${activePct}%; --wounded-pct: ${woundedPct}%">
+      <span class="troop-fill"></span>
+      <span class="wounded-fill"></span>
     </div>
   `;
 }
@@ -1485,7 +1505,11 @@ function battleReportSummaryHtml(report) {
 
 function reportUnitCardHtml(unit) {
   const portrait = unit.portrait || portraitForHero(unit);
-  const troopPct = percentOf(unit.troops, unit.maxTroops);
+  const totals = {
+    current: Math.max(0, Number(unit.troops) || 0),
+    wounded: Math.max(0, Number(unit.wounded) || 0),
+    max: Math.max(0, Number(unit.maxTroops) || 0),
+  };
   return `
     <article class="battle-report-unit ${unit.side} ${unit.troops <= 0 ? "fallen" : ""}">
       <div class="battle-report-unit-portrait">
@@ -1499,10 +1523,67 @@ function reportUnitCardHtml(unit) {
       </div>
       <div class="battle-report-unit-troops">
         <span>兵力${formatNumber(unit.troops)}</span>
-        <b>${formatNumber(unit.wounded || 0)}</b>
+        <b>伤${formatNumber(unit.wounded || 0)}</b>
       </div>
-      <div class="battle-report-score-bar" style="--active-pct: ${troopPct}%"><i></i></div>
+      ${battleReportTroopBarHtml(totals, unit.side)}
     </article>
+  `;
+}
+
+function battleReportFormationHtml(battle) {
+  const side = battleReportFormationSide === "enemy" ? "enemy" : "player";
+  const units = visualLineUnits(battle[side] || []);
+  return `
+    <section class="battle-report-formation-view">
+      <div class="battle-report-formation-tabs" aria-label="阵容方">
+        <button class="${side === "player" ? "active" : ""}" data-report-action="formation-side" data-side="player" type="button">我方</button>
+        <button class="${side === "enemy" ? "active" : ""}" data-report-action="formation-side" data-side="enemy" type="button">敌方</button>
+      </div>
+      <div class="battle-report-formation-panel ${side}">
+        ${POSITIONS.map((position) => battleReportFormationRowHtml(units.find((unit) => unit.position === position.id), position, side)).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function battleReportFormationRowHtml(unit, position, side) {
+  const empty = !unit;
+  const portrait = unit ? unit.portrait || portraitForHero(unit) : "";
+  const skills = unit ? unit.skills || [] : [];
+  return `
+    <article class="battle-report-formation-row ${side} ${empty ? "empty" : ""}">
+      <div class="battle-report-formation-position">${escapeHtml(position.label)}</div>
+      <div class="battle-report-formation-hero">
+        ${portrait ? `<img src="${escapeHtml(portrait)}" alt="${escapeHtml(unit.name)}">` : ""}
+        <span>
+          <strong>${empty ? "未配置" : escapeHtml(unit.name)}</strong>
+          <small>${empty ? "" : `Lv.30 · ${escapeHtml(unit.faction || "")}${escapeHtml(unit.arm || "")} · 距${Number(unit.distance) || defaultAttackDistance()}`}</small>
+        </span>
+        ${empty ? "" : `<em>${"★".repeat(Number(unit.rarity) || 0)}</em>`}
+      </div>
+      <div class="battle-report-formation-skills">
+        ${[0, 1, 2].map((index) => battleReportFormationSkillHtml(skills[index], index)).join("")}
+      </div>
+      <div class="battle-report-formation-reserve" aria-hidden="true"></div>
+    </article>
+  `;
+}
+
+function battleReportFormationSkillHtml(skill, index) {
+  if (!skill) {
+    return `
+      <span class="battle-report-formation-skill empty">
+        <i></i>
+        <b>${index === 0 ? "未配置" : "空"}</b>
+      </span>
+    `;
+  }
+  return `
+    <button class="battle-report-formation-skill" data-skill-id="${escapeHtml(skill.id)}" type="button" title="${escapeHtml(skill.name)}">
+      ${skill.icon ? `<img src="${escapeHtml(skill.icon)}" alt="">` : `<i>${escapeHtml(skill.grade || "战")}</i>`}
+      <b>${escapeHtml(skill.name)}</b>
+      ${skill.grade ? `<em>${escapeHtml(skill.grade)}</em>` : ""}
+    </button>
   `;
 }
 
@@ -1607,7 +1688,7 @@ function battleReportNavHtml() {
     <nav class="battle-report-bottom-nav" aria-label="战报视图">
       ${item("log", "战报详情")}
       ${item("stats", "统计")}
-      <button type="button" disabled>阵容详情</button>
+      ${item("formation", "阵容详情")}
     </nav>
   `;
 }
@@ -1615,6 +1696,7 @@ function battleReportNavHtml() {
 function totalUnitsTroops(units) {
   return {
     current: (units || []).reduce((sum, unit) => sum + Math.max(0, Number(unit.troops) || 0), 0),
+    wounded: (units || []).reduce((sum, unit) => sum + Math.max(0, Number(unit.wounded) || 0), 0),
     max: (units || []).reduce((sum, unit) => sum + Math.max(0, Number(unit.maxTroops) || 0), 0),
   };
 }

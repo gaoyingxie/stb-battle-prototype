@@ -190,6 +190,19 @@
     grid-template-columns: 1fr;
   }
 
+  .battle-report-formation-panel {
+    padding: 18px;
+  }
+
+  .battle-report-formation-row {
+    grid-template-columns: 42px minmax(220px, 0.9fr) minmax(300px, 1.3fr) 64px;
+  }
+
+  .battle-report-formation-skills {
+    gap: 12px;
+    padding: 10px 16px;
+  }
+
   .battle-report-stat-nav {
     display: flex;
     overflow: auto;
@@ -234,6 +247,44 @@
 
   .battle-report-army {
     grid-template-columns: 1fr;
+  }
+
+  .battle-report-formation-tabs {
+    padding: 10px 12px 0;
+  }
+
+  .battle-report-formation-panel {
+    padding: 12px;
+  }
+
+  .battle-report-formation-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .battle-report-formation-skills {
+    grid-column: 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 10px;
+  }
+
+  .battle-report-formation-reserve {
+    display: none;
+  }
+
+  .battle-report-formation-hero {
+    grid-template-columns: 86px minmax(0, 1fr);
+    padding: 10px;
+  }
+
+  .battle-report-formation-hero img {
+    width: 86px;
+    height: 72px;
+  }
+
+  .battle-report-formation-skill img,
+  .battle-report-formation-skill i {
+    width: 48px;
+    height: 48px;
   }
 
   .battle-report-bottom-nav {
