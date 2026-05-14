@@ -2013,18 +2013,23 @@ function reportParticipants(ctx, text, meta = {}) {
 
 function unitParticipantFromMeta(unit, role) {
   if (!unit) return null;
-  if (typeof unitLogParticipant === "function") return unitLogParticipant(unit, role);
+  if (typeof unitLogParticipant === "function") {
+    const participant = unitLogParticipant(unit, role);
+    return participant ? {
+      ...participant,
+      portrait: participant.portrait || unit.portrait || reportParticipantPortrait(unit),
+    } : null;
+  }
   return { id: unit.id, heroId: unit.heroId, name: unit.name, side: unit.side, role };
 }
 
 function reportParticipantPortrait(participant) {
   if (!participant) return "";
   if (participant.portrait) return participant.portrait;
-  const hero = HEROES.find((candidate) => (
-    candidate.id === participant.heroId
-    || candidate.id === participant.id
-    || candidate.name === participant.name
-  ));
+  const hasStableId = Boolean(participant.heroId || participant.id);
+  const hero = hasStableId
+    ? HEROES.find((candidate) => candidate.id === participant.heroId || candidate.id === participant.id)
+    : HEROES.find((candidate) => candidate.name === participant.name);
   return portraitForHero(hero);
 }
 
@@ -2424,10 +2429,13 @@ function reportAvatarHtml(entry) {
 }
 
 function reportAvatarParticipant(entry) {
+  if (entry.actorState) return entry.actorState;
+  if (entry.targetState) return entry.targetState;
   const participants = entry.participants || [];
   if (!participants.length) return null;
   return participants.find((participant) => participant.role === "actor")
     || participants.find((participant) => participant.name === entry.actor)
+    || participants.find((participant) => participant.role === "attacker")
     || participants.find((participant) => participant.role === "target")
     || participants[0];
 }

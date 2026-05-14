@@ -234,16 +234,35 @@ try {
       const [red, green, blue] = colorChannels(color);
       return red > green && red > blue;
     };
+    const weiCaoCao = globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === "\u66f9\u64cd" && hero.faction === "\u9b4f" && hero.arm === "\u9a91"
+    );
+    const hanCaoCao = globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === "\u66f9\u64cd" && hero.faction === "\u6c49" && hero.arm === "\u9a91"
+    );
+    const sameNameBattle = globalThis.createBattle(
+      [{ heroId: weiCaoCao.id, position: "camp", skills: [] }],
+      [{ heroId: hanCaoCao.id, position: "camp", skills: [] }],
+    );
+    globalThis.dealDamage(sameNameBattle.ctx, sameNameBattle.enemy[0], sameNameBattle.player[0], 0.78, "attack", "同名头像测试");
+    globalThis.writeReport(sameNameBattle.log);
+    const sameNameHit = document.querySelector("#report .log-line.hit");
+    const sameNameAvatarSrc = sameNameHit?.querySelector(".report-avatar img")?.getAttribute("src") || "";
+    const sameNameActorPortrait = sameNameBattle.log.find((entry) => entry.type === "hit")?.actorState?.portrait || "";
     return {
       html: report.innerHTML,
       unitNames,
       avatars,
+      sameNameAvatarSrc,
+      sameNameActorPortrait,
+      sameNameExpectedPortrait: hanCaoCao.portrait,
       hasPlayerAvatar: avatars.some((item) => item.player && item.portrait && item.src.includes("assets/portraits/")),
       hasEnemyAvatar: avatars.some((item) => item.enemy && item.portrait && item.src.includes("assets/portraits/")),
       hasPlayerBlueAvatar: avatars.some((item) => item.player && isPlayerBlue(item.borderColor)),
       hasEnemyRedAvatar: avatars.some((item) => item.enemy && isEnemyRed(item.borderColor)),
       hasPlayerName: unitNames.some((item) => item.text === "曹操" && item.player),
       hasEnemyName: unitNames.some((item) => item.text === "曹操" && item.enemy),
+      sameNameAvatarMatchesActor: sameNameAvatarSrc === sameNameActorPortrait && sameNameAvatarSrc === hanCaoCao.portrait,
     };
   });
 
@@ -490,6 +509,13 @@ try {
   }
   if (!reportColorCheck.hasPlayerBlueAvatar || !reportColorCheck.hasEnemyRedAvatar) {
     throw new Error(`Report avatar computed border colors do not match player/enemy sides: ${JSON.stringify(reportColorCheck.avatars)}`);
+  }
+  if (!reportColorCheck.sameNameAvatarMatchesActor) {
+    throw new Error(`同名不同版本武将的小头像没有使用日志里的武将快照：${JSON.stringify({
+      sameNameAvatarSrc: reportColorCheck.sameNameAvatarSrc,
+      sameNameActorPortrait: reportColorCheck.sameNameActorPortrait,
+      sameNameExpectedPortrait: reportColorCheck.sameNameExpectedPortrait,
+    })}`);
   }
   if (!fullPrepReportCheck.includesFullEnding || fullPrepReportCheck.hasEllipsis || !fullPrepReportCheck.wrapsLongText) {
     throw new Error(`准备回合长战法战报没有完整换行显示：${JSON.stringify(fullPrepReportCheck)}`);
