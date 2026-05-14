@@ -359,6 +359,8 @@
       details: [...result.details, ...troopLossDetails(defender, damage)],
     });
 
+    if (damage > 0 && mode === "strategy") applyStrategySplash(ctx, attacker, defender, rate, source);
+
     if (isNormal) applySplitDamage(ctx, attacker, originalDefender, source);
 
     if (isNormal && defender.troops > 0 && hasStatus(defender, "counter")) {
@@ -378,6 +380,32 @@
       }
     }
     return damage;
+  }
+
+  function applyStrategySplash(ctx, attacker, defender, baseRate, source) {
+    if (!ctx || ctx.round <= 0 || ctx.strategySplashing || !attacker?.statuses?.length || !defender?.sideUnits) return;
+    const splashStatuses = attacker.statuses.filter((status) =>
+      status.type === "strategySplash" && Number(status.value) > 0
+    );
+    if (!splashStatuses.length) return;
+    const targets = adjacentUnits(defender);
+    if (!targets.length) return;
+
+    splashStatuses.forEach((status) => {
+      const splashSource = status.source || "策略溅射";
+      if (source === splashSource) return;
+      const splashRate = Math.max(0, Number(baseRate) || 0) * Number(status.value);
+      if (splashRate <= 0) return;
+      const previousSplashing = ctx.strategySplashing;
+      ctx.strategySplashing = true;
+      try {
+        targets.forEach((target) => {
+          dealDamage(ctx, attacker, target, splashRate, "strategy", splashSource);
+        });
+      } finally {
+        ctx.strategySplashing = previousSplashing;
+      }
+    });
   }
 
   function applyTroopLoss(unit, amount, woundedRate = DAMAGE_MODEL.woundedRate) {
@@ -591,7 +619,7 @@
     return ["front", "middle", "camp"].indexOf(unit.position);
   }
 
-  function addStatus(unit, type, rounds, value, ctx = null, source = "") {
+  function addStatus(unit, type, rounds, value, ctx = null, source = "", metadata = null) {
     if (NEGATIVE_STATUS_TYPES.has(type) && hasStatus(unit, "insight")) {
       if (ctx) log(ctx, "control", `${unit.name}处于洞察，免疫${source ? `【${source}】` : ""}负面状态。`, {
         target: unit.name,
@@ -609,12 +637,17 @@
       return false;
     }
     unit.statuses = unit.statuses.filter((status) => status.type !== type);
-    unit.statuses.push({ type, rounds, value });
+    const nextStatus = { type, rounds, value };
+    if (metadata && typeof metadata === "object") Object.assign(nextStatus, metadata);
+    unit.statuses.push(nextStatus);
     return true;
   }
 
   function tickStatuses(unit) {
     unit.statuses.forEach((status) => {
+      if (status.type === "strategySplash") {
+        status.value += Number(status.growth) || 0;
+      }
       status.rounds -= 1;
     });
     unit.statuses = unit.statuses.filter((status) => status.rounds > 0);
@@ -696,6 +729,7 @@
     resolvePreparedSkills,
     applyRoundStart,
     dealDamage,
+    applyStrategySplash,
     applyTroopLoss,
     troopLossDetails,
     calculateDamage,

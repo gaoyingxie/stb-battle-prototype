@@ -120,7 +120,76 @@ try {
     throw new Error(`西乡武功生效后第一行动方应为我军，实际顺序：${priorityResult.order.join(" -> ")}`);
   }
 
-  console.log(JSON.stringify({ result, priorityResult }, null, 2));
+  const qixuRulinResult = await page.evaluate(() => {
+    const heroId = (name, faction, arm) => globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === name && hero.faction === faction && hero.arm === arm
+    )?.id;
+    const qixuRulin = globalThis.STZB_SEED_DATA.SKILLS.find((skill) => skill.name === "其徐如林");
+    const simaYi = globalThis.STZB_SEED_DATA.HEROES.find((hero) =>
+      hero.name === "司马懿" && hero.innate === qixuRulin?.id
+    );
+    const playerTeam = [
+      { heroId: simaYi?.id, position: "camp", skills: [] },
+      { heroId: heroId("诸葛亮", "蜀", "弓"), position: "middle", skills: [] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "front", skills: [] },
+    ];
+    const enemyTeam = [
+      { heroId: heroId("曹操", "魏", "骑"), position: "camp", skills: [] },
+      { heroId: heroId("刘备", "蜀", "步"), position: "middle", skills: [] },
+      { heroId: heroId("关羽", "蜀", "骑"), position: "front", skills: [] },
+    ];
+    const battle = createBattle(playerTeam, enemyTeam);
+    const caster = battle.player.find((unit) => unit.position === "middle");
+    const target = battle.enemy.find((unit) => unit.position === "middle");
+    const adjacentEnemies = battle.enemy.filter((unit) => unit.position !== "middle");
+    const before = adjacentEnemies.map((unit) => ({ name: unit.name, troops: unit.troops }));
+    const beforeValue = caster.statuses.find((status) => status.type === "strategySplash")?.value || 0;
+    battle.ctx.round = 1;
+    dealDamage(battle.ctx, caster, target, 1, "strategy", "测试策略");
+    battle.player.forEach(tickStatuses);
+    const afterValue = caster.statuses.find((status) => status.type === "strategySplash")?.value || 0;
+    return {
+      qixuRulinId: qixuRulin?.id,
+      simaYiId: simaYi?.id,
+      statuses: battle.player.map((unit) => ({
+        name: unit.name,
+        splash: unit.statuses.find((status) => status.type === "strategySplash")?.value || 0,
+      })),
+      before,
+      after: adjacentEnemies.map((unit) => ({ name: unit.name, troops: unit.troops })),
+      beforeValue,
+      afterValue,
+      splashLogs: battle.log.filter((entry) => entry.skill === "其徐如林").map(({ text, amount, actor, target, skill }) => ({
+        text,
+        amount,
+        actor,
+        target,
+        skill,
+      })),
+    };
+  });
+
+  if (!qixuRulinResult.qixuRulinId || !qixuRulinResult.simaYiId) {
+    throw new Error(`应能找到司马懿自带战法【其徐如林】：${JSON.stringify(qixuRulinResult)}`);
+  }
+
+  if (!qixuRulinResult.statuses.every((status) => status.splash > 0)) {
+    throw new Error(`其徐如林应给我军全体挂接策略溅射：${JSON.stringify(qixuRulinResult.statuses)}`);
+  }
+
+  if (qixuRulinResult.splashLogs.length < 2) {
+    throw new Error(`策略伤害命中中军时，其徐如林应波及相邻敌军：${JSON.stringify(qixuRulinResult.splashLogs)}`);
+  }
+
+  if (!qixuRulinResult.after.some((unit, index) => unit.troops < qixuRulinResult.before[index].troops)) {
+    throw new Error(`其徐如林没有造成相邻目标兵损：${JSON.stringify(qixuRulinResult)}`);
+  }
+
+  if (qixuRulinResult.afterValue <= qixuRulinResult.beforeValue) {
+    throw new Error(`其徐如林比例应在回合结束后提升：${JSON.stringify(qixuRulinResult)}`);
+  }
+
+  console.log(JSON.stringify({ result, priorityResult, qixuRulinResult }, null, 2));
 } finally {
   await browser.close();
   await localServer.close();

@@ -294,6 +294,7 @@ function probabilityText(skill) {
 
 function attachOfficialSkillBehavior(skill) {
   const desc = skill.desc || "";
+  if (isQixuRulinSkill(skill, desc)) return attachQixuRulinBehavior(skill, desc);
   if (/指挥|被动/.test(skill.type)) {
     skill.trigger = /被动/.test(skill.type) ? "passive" : "command";
     skill.apply = (ctx, unit) => {
@@ -360,6 +361,27 @@ function attachOfficialSkillBehavior(skill) {
   return skill;
 }
 
+function isQixuRulinSkill(skill, desc = "") {
+  return skill.name === "其徐如林" || /目标相邻的敌军额外造成一次策略伤害/.test(desc);
+}
+
+function attachQixuRulinBehavior(skill, desc = "") {
+  skill.trigger = "command";
+  skill.apply = (ctx, unit) => {
+    const splashRate = strategySplashRateFromText(desc, 0.15);
+    const growth = strategySplashGrowthFromText(desc, 0.05);
+    const rounds = DAMAGE_MODEL.maxRounds + 1;
+    unit.sideUnits.forEach((ally) => {
+      addStatus(ally, "strategySplash", rounds, splashRate, null, skill.name, {
+        source: skill.name,
+        growth,
+      });
+    });
+    log(ctx, "system", `${unit.name}发动【${skill.name}】，我军策略伤害会波及目标相邻敌军，比例每回合提升。`);
+  };
+  return skill;
+}
+
 function applySelfTargetActiveBuffs(ctx, unit, skill, desc) {
   let applied = false;
   const duration = durationFromText(desc, 1);
@@ -388,6 +410,16 @@ function activeDamageBoostFromText(text = "", fallback = 0.1) {
     ?.map((part) => Number(part.match(/\d+(?:\.\d+)?/)?.[0]))
     .filter(Number.isFinite) || [];
   return values.length ? Math.max(...values) / 100 : fallback;
+}
+
+function strategySplashRateFromText(text = "", fallback = 0.15) {
+  const match = String(text).match(/原伤害率的\s*(\d+(?:\.\d+)?)%/);
+  return match ? Number(match[1]) / 100 : fallback;
+}
+
+function strategySplashGrowthFromText(text = "", fallback = 0.05) {
+  const match = String(text).match(/每回合结束时额外提升\s*(\d+(?:\.\d+)?)%/);
+  return match ? Number(match[1]) / 100 : fallback;
 }
 
 function handleBodyClick(event) {

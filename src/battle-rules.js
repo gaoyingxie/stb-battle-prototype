@@ -50,6 +50,7 @@
     insight: { label: "洞察", category: "immunity", summary: "免疫负面状态。" },
     guard: { label: "援护", category: "defense", summary: "替友军承受普通攻击。" },
     split: { label: "分兵", category: "attack", summary: "普通攻击后对原目标相邻存活单位造成额外攻击伤害。" },
+    strategySplash: { label: "策略溅射", category: "attack", summary: "策略伤害生效后，对原目标相邻敌军追加策略伤害。" },
     counter: { label: "反击", category: "attack", summary: "受到普通攻击后按概率反击，仍需满足攻击距离。" },
     activeSealAura: { label: "主动封锁", category: "control-aura", negative: true, summary: "行动时按概率使主动战法发动失败。" },
     disarmAura: { label: "怯战光环", category: "control-aura", negative: true, summary: "行动时按概率使普通攻击失败。" },
