@@ -12,6 +12,8 @@
 - `src/battle-engine.js` 负责战斗模拟状态和回合推进。
 - `src/team-ai.js` 负责 AI 阵容和战法推荐。
 - `src/seed-data.js` 负责手工维护的种子武将、战法和官方别名映射。
+- `src/report-ui.js` 负责战报弹窗、战报快照、系统消息和日志渲染。
+- `src/battle-replay-ui.js` 负责战况回放时间轴、播放状态和 2.5D 表现层。
 - `src/app.js` 负责浏览器状态、localStorage、DOM 事件、弹窗、抽卡、编队和渲染。
 - `official-data.js` 是生成的官方资料，不要手工修改。
 - `assets/portraits/` 保存下载的武将头像。
