@@ -149,6 +149,7 @@ function mergeOfficialData() {
         apply: localSkill.apply,
         use: localSkill.use,
       });
+      attachSpecificOfficialSkillBehavior(localSkill);
       skillIds.add(skill.id);
       localSkillByName.set(skill.name, localSkill);
       return;
@@ -294,24 +295,41 @@ function probabilityText(skill) {
 
 function attachOfficialSkillBehavior(skill) {
   const desc = skill.desc || "";
-  if (isQixuRulinSkill(skill, desc)) return attachQixuRulinBehavior(skill, desc);
+  if (attachSpecificOfficialSkillBehavior(skill)) return skill;
   if (/指挥|被动/.test(skill.type)) {
     skill.trigger = /被动/.test(skill.type) ? "passive" : "command";
     skill.apply = (ctx, unit) => {
-      const allies = /我军|友军|自身/.test(desc) ? unit.sideUnits : [unit];
-      if (/伤害.*提高|造成.*提高/.test(desc)) allies.forEach((ally) => addStatus(ally, "damageUp", 2, 0.1));
-      if (/攻击属性.*提高/.test(desc)) allies.forEach((ally) => addStatus(ally, "attackUp", 2, 10));
-      if (/谋略属性.*提高|谋略.*提高/.test(desc)) allies.forEach((ally) => addStatus(ally, "strategyUp", 2, 10));
-      const rangeUp = attackRangeDelta(desc);
-      if (rangeUp > 0) allies.forEach((ally) => addStatus(ally, "rangeUp", 2, rangeUp));
-      if (/防御.*提高|规避|减伤|伤害降低/.test(desc)) allies.forEach((ally) => addStatus(ally, "damageDown", 2, 0.1));
-      if (/先手|优先行动/.test(desc)) {
+      const targetText = `${skill.target || ""} ${skill.effect || ""} ${desc}`;
+      const allies = officialFriendlyTargets(unit, targetText);
+      const enemies = officialEnemyTargets(unit, targetText);
+      const hasFriendlyScope = /我军|友军|自身|自己/.test(targetText) || !/敌军|敌方/.test(targetText);
+      if (hasFriendlyScope && /造成.*伤害.*提高|进行.*伤害.*提高|攻击伤害提高|策略攻击伤害提高/.test(targetText)) allies.forEach((ally) => addStatus(ally, "damageUp", durationFromText(desc, 2), 0.1));
+      if (/受到.*伤害.*提高/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "damageTakenUp", durationFromText(desc, 2), 0.12, ctx, skill.name));
+      if (hasFriendlyScope && /攻击属性.*提高/.test(targetText)) allies.forEach((ally) => addStatus(ally, "attackUp", durationFromText(desc, 2), 10));
+      if (hasFriendlyScope && /谋略属性.*提高|谋略.*提高/.test(targetText)) allies.forEach((ally) => addStatus(ally, "strategyUp", durationFromText(desc, 2), 10));
+      if (/攻击属性.*降低/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "attackDown", durationFromText(desc, 2), 10, ctx, skill.name));
+      if (/谋略属性.*降低/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "strategyDown", durationFromText(desc, 2), 10, ctx, skill.name));
+      if (/速度属性.*降低/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "speedDown", durationFromText(desc, 2), 10, ctx, skill.name));
+      if (/防御属性.*降低/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "defenseDown", durationFromText(desc, 2), 10, ctx, skill.name));
+      const rangeUp = attackRangeDelta(targetText);
+      if (hasFriendlyScope && rangeUp > 0) allies.forEach((ally) => addStatus(ally, "rangeUp", 2, rangeUp));
+      if (hasFriendlyScope && /战法有效距离提高|战法距离提升/.test(targetText)) allies.forEach((ally) => addStatus(ally, "skillRangeUp", durationFromText(desc, 2), 1));
+      if (hasFriendlyScope && /防御.*提高|规避|减伤|伤害降低|受到.*伤害.*降低/.test(targetText)) allies.forEach((ally) => addStatus(ally, "damageDown", durationFromText(desc, 2), 0.1));
+      if (hasFriendlyScope && /先手|优先行动/.test(targetText)) {
         const duration = openingDurationFromText(desc, durationFromText(desc, 2));
         allies.forEach((ally) => addStatus(ally, "priority", duration, PRIORITY_SPEED_BONUS));
       }
-      if (/洞察/.test(desc)) allies.forEach((ally) => addStatus(ally, "insight", durationFromText(desc, 8), 1));
-      if (/援护/.test(desc)) allies.forEach((ally) => addStatus(ally, "guard", durationFromText(desc, 2), 1));
-      if (/分兵/.test(desc)) allies.forEach((ally) => addStatus(ally, "split", durationFromText(desc, 1), damageRateFromText(desc, 0.35)));
+      if (hasFriendlyScope && /洞察/.test(targetText)) allies.forEach((ally) => addStatus(ally, "insight", durationFromText(desc, 8), 1));
+      if (hasFriendlyScope && /援护/.test(targetText)) allies.forEach((ally) => addStatus(ally, "guard", durationFromText(desc, 2), 1));
+      if (hasFriendlyScope && /分兵/.test(targetText)) allies.forEach((ally) => addStatus(ally, "split", durationFromText(desc, 1), damageRateFromText(desc, 0.35)));
+      if (hasFriendlyScope && /连击/.test(targetText)) allies.forEach((ally) => addStatus(ally, "combo", durationFromText(desc, 2), 1));
+      if (hasFriendlyScope && /急救|休整/.test(targetText)) allies.forEach((ally) => addStatus(ally, "emergencyHeal", durationFromText(desc, 2), 0.35, null, skill.name, { source: skill.name, strategy: unit.stats.strategy }));
+      if (/不可回复兵力/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "healBlocked", durationFromText(desc, 1), 1, ctx, skill.name));
+      if (/怯战|无法进行普通攻击/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "disarm", durationFromText(desc, 1), 1, ctx, skill.name));
+      if (/犹豫|无法发动主动/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "silence", durationFromText(desc, 1), 1, ctx, skill.name));
+      if (/混乱/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "confusion", durationFromText(desc, 1), 1, ctx, skill.name));
+      if (/暴走/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "berserk", durationFromText(desc, 1), 1, ctx, skill.name));
+      if (/动摇/.test(targetText)) enemies.forEach((enemy) => addStatus(enemy, "defenseDown", durationFromText(desc, 2), 12, ctx, skill.name));
       log(ctx, "system", `${unit.name}发动【${skill.name}】：${reportDesc(desc)}`);
     };
     return skill;
@@ -355,18 +373,199 @@ function attachOfficialSkillBehavior(skill) {
       if (/暴走/.test(desc)) addStatus(target, "berserk", durationFromText(desc, 1), 1, ctx, skill.name);
       if (/燃烧|灼烧|火攻/.test(desc)) addStatus(target, "burn", 2, 360 + unit.stats.strategy * 2);
       if (/防御.*降低/.test(desc)) addStatus(target, "defenseDown", 2, 10);
+      if (/攻击属性.*降低/.test(desc)) addStatus(target, "attackDown", durationFromText(desc, 2), 10, ctx, skill.name);
+      if (/谋略属性.*降低/.test(desc)) addStatus(target, "strategyDown", durationFromText(desc, 2), 10, ctx, skill.name);
+      if (/速度属性.*降低/.test(desc)) addStatus(target, "speedDown", durationFromText(desc, 2), 10, ctx, skill.name);
+      if (/攻击距离.*降低/.test(desc)) addStatus(target, "rangeDown", durationFromText(desc, 2), 1, ctx, skill.name);
+      if (/受到.*伤害.*提高/.test(desc)) addStatus(target, "damageTakenUp", durationFromText(desc, 2), 0.12, ctx, skill.name);
+      if (/不可回复兵力/.test(desc)) addStatus(target, "healBlocked", durationFromText(desc, 1), 1, ctx, skill.name);
+      if (/动摇/.test(desc)) addStatus(target, "defenseDown", durationFromText(desc, 2), 12, ctx, skill.name);
+      if (/镇静|看破/.test(desc)) clearBadStatuses(target);
+      if (/规避/.test(desc)) addStatus(target, "evade", durationFromText(desc, 1), 1);
     });
     return true;
   };
   return skill;
 }
 
+function attachSpecificOfficialSkillBehavior(skill) {
+  const desc = skill.desc || "";
+  const specificHandlers = {
+    魏武之世: attachWeiWuZhiShiBehavior,
+    皇裔流离: attachHuangyiLiuliBehavior,
+    九锡黄龙: attachJiuxiHuanglongBehavior,
+    天下无双: attachTianxiaWushuangBehavior,
+    天妒英才XP: attachTianduYingcaiBehavior,
+    先驱突击: attachXianquTujiBehavior,
+    当阳桥: attachDangyangqiaoBehavior,
+    八门金锁: attachBamenJinsuoBehavior,
+    一骑当千: attachYiqiDangqianBehavior,
+    其徐如林: attachQixuRulinBehavior,
+  };
+  const handler = specificHandlers[skill.name];
+  if (!handler && !isQixuRulinSkill(skill, desc)) return false;
+  (handler || attachQixuRulinBehavior)(skill, desc);
+  return true;
+}
+
+function officialFriendlyTargets(unit, text = "") {
+  const count = targetCountFromText(text);
+  if (/自身|自己/.test(text) && !/我军|友军/.test(text)) return [unit];
+  if (/我军|友军/.test(text)) return pickSkillTargets(unit, unit.sideUnits, count, text);
+  return [unit];
+}
+
+function officialEnemyTargets(unit, text = "") {
+  if (!/敌军|敌方/.test(text)) return [];
+  return pickSkillTargets(unit, unit.enemyUnits, targetCountFromText(text), text);
+}
+
 function isQixuRulinSkill(skill, desc = "") {
   return skill.name === "其徐如林" || /目标相邻的敌军额外造成一次策略伤害/.test(desc);
 }
 
+function attachWeiWuZhiShiBehavior(skill) {
+  skill.trigger = "command";
+  delete skill.use;
+  delete skill.chance;
+  skill.apply = (ctx, unit) => {
+    unit.enemyUnits.forEach((enemy) => {
+      addStatus(enemy, "attackDown", DAMAGE_MODEL.maxRounds + 1, Math.round(enemy.baseStats.attack * 0.15), ctx, skill.name);
+      addStatus(enemy, "defenseDown", DAMAGE_MODEL.maxRounds + 1, Math.round(enemy.baseStats.defense * 0.15), ctx, skill.name);
+      addStatus(enemy, "strategyDown", DAMAGE_MODEL.maxRounds + 1, Math.round(enemy.baseStats.strategy * 0.15), ctx, skill.name);
+      addStatus(enemy, "speedDown", DAMAGE_MODEL.maxRounds + 1, Math.round(enemy.baseStats.speed * 0.15), ctx, skill.name);
+    });
+    unit.sideUnits.forEach((ally) => {
+      addStatus(ally, "rangeUp", DAMAGE_MODEL.maxRounds + 1, 1);
+      addStatus(ally, "skillRangeUp", DAMAGE_MODEL.maxRounds + 1, 1);
+    });
+    log(ctx, "system", `${unit.name}发动【${skill.name}】，敌军全属性下降，我军攻击与主动战法距离提升。`);
+  };
+  return skill;
+}
+
+function attachHuangyiLiuliBehavior(skill) {
+  skill.trigger = "command";
+  delete skill.use;
+  delete skill.chance;
+  skill.apply = (ctx, unit) => {
+    unit.sideUnits.forEach((ally) => {
+      addStatus(ally, "emergencyHeal", DAMAGE_MODEL.maxRounds + 1, 0.5, null, skill.name, {
+        source: skill.name,
+        rate: 0.68,
+        strategy: unit.stats.strategy,
+        growth: 0.05,
+        growthInterval: 3,
+      });
+    });
+    log(ctx, "system", `${unit.name}发动【${skill.name}】，我军受伤时有几率急救，触发数次后几率提升。`);
+  };
+  return skill;
+}
+
+function attachJiuxiHuanglongBehavior(skill) {
+  skill.trigger = "active";
+  delete skill.apply;
+  skill.chance = chanceFromProbability(skill.probability, 0.35);
+  skill.use = (ctx, unit) => {
+    alive(unit.sideUnits).forEach((ally) => {
+      clearBadStatuses(ally);
+      addStatus(ally, "evade", 2, 1);
+    });
+    log(ctx, "system", `${unit.name}发动【${skill.name}】，移除我军有害效果并施加规避。`);
+    return true;
+  };
+  return skill;
+}
+
+function attachTianxiaWushuangBehavior(skill) {
+  skill.trigger = "passive";
+  delete skill.use;
+  delete skill.chance;
+  skill.apply = (ctx, unit) => {
+    addStatus(unit, "attackUp", 4, 45);
+    addStatus(unit, "rangeUp", 4, 2);
+    addStatus(unit, "insight", 4, 1);
+    addStatus(unit, "counter", 4, 1, null, skill.name, { source: skill.name, rate: 2 });
+    unit.enemyUnits.forEach((enemy) => addStatus(enemy, "taunt", 4, 1, ctx, skill.name, { sourceUnitId: unit.id }));
+    log(ctx, "system", `${unit.name}发动【${skill.name}】，前四回合获得攻击距离、洞察、反击，并挑衅敌军。`);
+  };
+  return skill;
+}
+
+function attachTianduYingcaiBehavior(skill) {
+  skill.trigger = "active";
+  delete skill.apply;
+  skill.chance = chanceFromProbability(skill.probability, 0.3);
+  skill.use = (ctx, unit) => {
+    [...unit.sideUnits, ...unit.enemyUnits].forEach((target) => addStatus(target, "healBlocked", 1, 1, ctx, skill.name));
+    pickSkillTargets(unit, unit.enemyUnits, 2, `${skill.target || ""} ${skill.desc || ""}`, Number(skill.distance)).forEach((target) => {
+      dealDamage(ctx, unit, target, 1.5, "strategy", skill.name);
+    });
+    return true;
+  };
+  return skill;
+}
+
+function attachXianquTujiBehavior(skill) {
+  skill.trigger = "command";
+  delete skill.use;
+  delete skill.chance;
+  skill.apply = (ctx, unit) => {
+    addStatus(unit, "priority", 3, PRIORITY_SPEED_BONUS);
+    addStatus(unit, "attackUp", 3, 30);
+    addStatus(unit, "combo", 3, 1);
+    log(ctx, "system", `${unit.name}发动【${skill.name}】，前三回合获得先手、攻击提高和连击。`);
+  };
+  return skill;
+}
+
+function attachDangyangqiaoBehavior(skill) {
+  skill.trigger = "active";
+  delete skill.apply;
+  skill.chance = chanceFromProbability(skill.probability, 0.4);
+  skill.prepareRounds = 1;
+  skill.use = (ctx, unit) => {
+    const primary = pickSkillTargets(unit, unit.enemyUnits, 1, `${skill.target || ""} ${skill.desc || ""}`, Number(skill.distance))[0];
+    if (primary) addStatus(primary, "confusion", Math.random() < 0.5 ? 1 : 2, 1, ctx, skill.name);
+    pickTargets(unit.enemyUnits, 2).forEach((enemy) => addStatus(enemy, "silence", 1, 1, ctx, skill.name));
+    pickTargets(unit.enemyUnits, 2).forEach((enemy) => addStatus(enemy, "disarm", 1, 1, ctx, skill.name));
+    if (unit.name === "张飞") addStatus(unit, "damageUp", 3, 0.1);
+    log(ctx, "control", `${unit.name}发动【${skill.name}】，敌军陷入混乱、犹豫和怯战。`);
+    return true;
+  };
+  return skill;
+}
+
+function attachBamenJinsuoBehavior(skill) {
+  skill.trigger = "active";
+  delete skill.apply;
+  skill.chance = chanceFromProbability(skill.probability, 0.36);
+  skill.use = (ctx, unit) => {
+    const targets = pickSkillTargets(unit, unit.enemyUnits, 2, `${skill.target || ""} ${skill.desc || ""}`, Number(skill.distance));
+    targets.forEach((enemy) => addStatus(enemy, "disarm", 2, 1, ctx, skill.name));
+    return targets.length > 0;
+  };
+  return skill;
+}
+
+function attachYiqiDangqianBehavior(skill) {
+  skill.trigger = "active";
+  delete skill.apply;
+  skill.chance = chanceFromProbability(skill.probability, 0.3);
+  skill.prepareRounds = 1;
+  skill.use = (ctx, unit) => {
+    const targets = pickSkillTargets(unit, unit.enemyUnits, 3, `${skill.target || ""} ${skill.desc || ""}`, Number(skill.distance));
+    targets.forEach((target) => dealDamage(ctx, unit, target, 2.8, "attack", skill.name));
+    return targets.length > 0;
+  };
+  return skill;
+}
+
 function attachQixuRulinBehavior(skill, desc = "") {
   skill.trigger = "command";
+  delete skill.use;
+  delete skill.chance;
   skill.apply = (ctx, unit) => {
     const splashRate = strategySplashRateFromText(desc, 0.15);
     const growth = strategySplashGrowthFromText(desc, 0.05);

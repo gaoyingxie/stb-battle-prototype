@@ -264,7 +264,7 @@
     resolvePreparedSkills(ctx, unit, activeBlocked);
     if (campDown(unit.enemyUnits)) return;
 
-    const activeSkills = unit.skills.filter((skill) => skill.use && skill.trigger !== "pursuit");
+    const activeSkills = unit.skills.filter((skill) => skill.use && !["pursuit", "command", "passive"].includes(skill.trigger));
     for (const skill of activeSkills) {
       if (activeBlocked) {
         log(ctx, "control", `${unit.name}受到犹豫/封锁，【${skill.name}】未能发动。`);
@@ -292,15 +292,27 @@
       return;
     }
 
+    performNormalAttack(ctx, unit);
+    if (hasStatus(unit, "combo") && Math.random() < Math.max(0, statusValue(unit, "combo"))) {
+      log(ctx, "system", `${unit.name}触发连击，追加一次普通攻击。`, {
+        actor: unit.name,
+        actorUnit: unit,
+      });
+      performNormalAttack(ctx, unit);
+    }
+  }
+
+  function performNormalAttack(ctx, unit) {
     const target = pickNormalAttackTarget(unit);
     if (!target) {
       log(ctx, "control", `${unit.name}攻击距离${getAttackRange(unit)}，没有可普通攻击的目标。`);
-      return;
+      return false;
     }
     dealDamage(ctx, unit, target, DAMAGE_MODEL.normalAttackRate, "attack", "普通攻击", true);
     unit.skills.filter((skill) => skill.trigger === "pursuit").forEach((skill) => {
       if (target.troops > 0 && Math.random() < (skill.chance || 0)) skill.use(ctx, unit, target);
     });
+    return true;
   }
 
   function resolvePreparedSkills(ctx, unit, activeBlocked) {
@@ -364,10 +376,11 @@
     if (isNormal) applySplitDamage(ctx, attacker, originalDefender, source);
 
     if (isNormal && defender.troops > 0 && hasStatus(defender, "counter")) {
-      const counterRate = statusValue(defender, "counter");
+      const counterStatus = statusEntry(defender, "counter");
+      const counterRate = Number(counterStatus?.value) || statusValue(defender, "counter");
       if (Math.random() < counterRate) {
         if (canReachByAttack(defender, attacker)) {
-          dealDamage(ctx, defender, attacker, DAMAGE_MODEL.counterAttackRate, "attack", "回马");
+          dealDamage(ctx, defender, attacker, Number(counterStatus?.rate) || DAMAGE_MODEL.counterAttackRate, "attack", counterStatus?.source || "回马");
         } else {
           log(ctx, "control", `${defender.name}触发【回马】，但攻击距离${getAttackRange(defender)}不足，无法反击${attacker.name}。`, {
             actor: defender.name,
@@ -379,6 +392,7 @@
         }
       }
     }
+    applyDamageTriggeredEffects(ctx, attacker, defender, damage);
     return damage;
   }
 
@@ -429,10 +443,12 @@
 
   function calculateDamage(attacker, defender, rate, mode, arm) {
     const attackUp = statusValue(attacker, "attackUp");
+    const attackDown = statusValue(attacker, "attackDown");
     const strategyUp = statusValue(attacker, "strategyUp");
+    const strategyDown = statusValue(attacker, "strategyDown");
     const offense = mode === "strategy"
-      ? attacker.stats.strategy + strategyUp
-      : attacker.stats.attack + attackUp;
+      ? attacker.stats.strategy + strategyUp - strategyDown
+      : attacker.stats.attack + attackUp - attackDown;
     const attackerBonus = statusValue(attacker, "damageUp");
     const takenBonus = statusValue(defender, "damageTakenUp");
     const defenderReduction = statusValue(defender, "damageDown");
@@ -440,7 +456,7 @@
       attackerTroops: attacker.troops,
       offense,
       defenderDefense: defender.stats.defense + statusValue(defender, "defenseUp") - statusValue(defender, "defenseDown"),
-      defenderStrategy: defender.stats.strategy,
+      defenderStrategy: defender.stats.strategy + statusValue(defender, "strategyUp") - statusValue(defender, "strategyDown"),
       rate,
       mode,
       armMultiplier: arm.multiplier,
@@ -555,6 +571,11 @@
     const targetPool = hasStatus(unit, "berserk")
       ? [...unit.enemyUnits, ...unit.sideUnits.filter((ally) => ally.id !== unit.id)]
       : unit.enemyUnits;
+    const taunt = statusEntry(unit, "taunt");
+    const taunter = taunt?.sourceUnitId
+      ? targetPool.find((target) => target.id === taunt.sourceUnitId && target.troops > 0 && canReachByAttack(unit, target))
+      : null;
+    if (taunter) return taunter;
     const targets = alive(targetPool).filter((target) => canReachByAttack(unit, target));
     return targets[Math.floor(Math.random() * targets.length)];
   }
@@ -577,7 +598,8 @@
   }
 
   function filterSkillTargets(unit, units, text = "", explicitDistance = null) {
-    const distance = Number(explicitDistance) || skillDistanceFromText(text);
+    const baseDistance = Number(explicitDistance) || skillDistanceFromText(text);
+    const distance = baseDistance ? baseDistance + statusValue(unit, "skillRangeUp") : null;
     return distance
       ? units.filter((target) => positionDistance(unit, target) <= distance)
       : units;
@@ -585,6 +607,16 @@
 
   function heal(ctx, caster, target, amount, source) {
     if (!target?.troops) return 0;
+    if (hasStatus(target, "healBlocked")) {
+      log(ctx, "control", `${target.name}处于禁疗状态，无法通过【${source}】恢复兵力。`, {
+        actor: caster?.name,
+        actorUnit: caster,
+        target: target.name,
+        targetUnit: target,
+        skill: source,
+      });
+      return 0;
+    }
     const healAmount = Math.min(target.wounded || 0, target.maxTroops - target.troops, Math.round(amount));
     if (healAmount <= 0) return 0;
     target.troops += healAmount;
@@ -668,6 +700,10 @@
     return unit.statuses.filter((status) => status.type === type).reduce((sum, status) => sum + status.value, 0);
   }
 
+  function statusEntry(unit, type) {
+    return unit.statuses.find((status) => status.type === type);
+  }
+
   function statusLabel(type) {
     return globalThis.STZB_BATTLE_RULES.statusLabel(type);
   }
@@ -684,7 +720,7 @@
   }
 
   function actionSpeed(unit) {
-    return unit.stats.speed + statusValue(unit, "priority") + Math.random() * 8;
+    return unit.stats.speed - statusValue(unit, "speedDown") + statusValue(unit, "priority") + Math.random() * 8;
   }
 
   function campDown(units) {
@@ -707,6 +743,24 @@
     return units.reduce((sum, unit) => sum + Math.max(0, unit.maxTroops || 0), 0);
   }
 
+  function applyDamageTriggeredEffects(ctx, attacker, defender, damage) {
+    if (!damage || !defender?.troops) return;
+    defender.statuses
+      .filter((status) => status.type === "emergencyHeal" && Number(status.value) > 0)
+      .forEach((status) => {
+        if (Math.random() >= Number(status.value)) return;
+        const strategy = Number(status.strategy) || defender.stats.strategy;
+        const rate = Number(status.rate) || 0.68;
+        const recovered = heal(ctx, defender, defender, 360 + strategy * rate * 3.2, status.source || "急救");
+        if (!recovered) return;
+        status.procs = (Number(status.procs) || 0) + 1;
+        const interval = Number(status.growthInterval) || 0;
+        if (interval && status.procs % interval === 0) {
+          status.value += Number(status.growth) || 0;
+        }
+      });
+  }
+
   Object.assign(global, {
     createBattle,
     applyPrepRoundSkills,
@@ -726,6 +780,7 @@
     linkSides,
     withActionUnit,
     takeAction,
+    performNormalAttack,
     resolvePreparedSkills,
     applyRoundStart,
     dealDamage,
@@ -758,6 +813,7 @@
     clearBadStatuses,
     hasStatus,
     statusValue,
+    statusEntry,
     statusLabel,
     unitLogParticipant,
     actionSpeed,
@@ -766,5 +822,6 @@
     totalTroops,
     totalWounded,
     totalMaxTroops,
+    applyDamageTriggeredEffects,
   });
 })(globalThis);
