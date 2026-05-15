@@ -7,6 +7,7 @@
   const POSITION_CANDIDATE_LIMIT = 18;
   const TOTAL_CANDIDATE_LIMIT = 54;
   const GRADE_SCORE = { S: 180, A: 135, B: 85, C: 45 };
+  const DEFAULT_WEIGHTS = global.STZB_TEAM_AI_WEIGHTS;
   const PROFILE_KEYS = [
     "damage",
     "sustain",
@@ -22,42 +23,37 @@
     "taunt",
     "splash",
   ];
-  const TEAM_ROLE_TARGETS = {
-    damage: 2,
-    sustain: 1,
-    control: 1,
-    support: 1,
-    defense: 1,
-  };
-  const POSITION_WEIGHTS = {
-    camp: {
-      attack: 0.82,
-      strategy: 1.12,
-      defense: 0.38,
-      speed: 0.48,
-      distance: 30,
-      shortRangePenalty: 46,
-      role: "backline",
-    },
-    middle: {
-      attack: 0.92,
-      strategy: 0.98,
-      defense: 0.78,
-      speed: 0.82,
-      distance: 16,
-      shortRangePenalty: 18,
-      role: "flex",
-    },
-    front: {
-      attack: 0.72,
-      strategy: 0.58,
-      defense: 1.48,
-      speed: 1.02,
-      distance: 5,
-      shortRangePenalty: 0,
-      role: "vanguard",
-    },
-  };
+  if (!DEFAULT_WEIGHTS) {
+    throw new Error("STZB_TEAM_AI_WEIGHTS must be loaded before team-ai.js");
+  }
+
+  function resolveWeights(overrides = null) {
+    return mergeWeights(DEFAULT_WEIGHTS, overrides);
+  }
+
+  function mergeWeights(base, overrides) {
+    if (!overrides || typeof overrides !== "object") return base;
+    if (!base || typeof base !== "object") return cloneWeight(overrides);
+    const merged = Array.isArray(base) ? [...base] : { ...base };
+    Object.entries(overrides).forEach(([key, value]) => {
+      if (value && typeof value === "object" && !Array.isArray(value)) {
+        merged[key] = mergeWeights(base[key] || {}, value);
+      } else {
+        merged[key] = value;
+      }
+    });
+    return merged;
+  }
+
+  function cloneWeight(value) {
+    if (!value || typeof value !== "object") return value;
+    if (Array.isArray(value)) return value.map(cloneWeight);
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, cloneWeight(item)]));
+  }
+
+  function scoringWeights(context) {
+    return context?.weights || DEFAULT_WEIGHTS;
+  }
 
   function buildEnemyTeam(options = {}) {
     const heroes = options.heroes || [];
@@ -79,13 +75,14 @@
       minHeroRarity: 5,
       skillGrades: options.skillGrades || DEFAULT_SKILL_GRADES,
       skillsPerHero: options.skillsPerHero || DEFAULT_SKILLS_PER_HERO,
+      weights: options.weights,
     });
   }
 
   function recommendTeam(options = {}) {
     const positions = options.positions || defaultPositions();
     const rng = options.rng || Math.random;
-    const context = buildScoringContext(options.skills || []);
+    const context = buildScoringContext(options.skills || [], { weights: options.weights });
     const heroes = usableHeroes(options.heroes || [], {
       minRarity: options.minHeroRarity ?? 5,
     });
@@ -148,11 +145,11 @@
         .forEach((hero) => ranked.set(hero.id, hero));
     });
     [...heroes]
-      .sort((a, b) => heroTotalScore(b) - heroTotalScore(a) || randomTie(rng))
+      .sort((a, b) => heroTotalScore(b, context) - heroTotalScore(a, context) || randomTie(rng))
       .slice(0, POSITION_CANDIDATE_LIMIT)
       .forEach((hero) => ranked.set(hero.id, hero));
     return [...ranked.values()]
-      .sort((a, b) => heroTotalScore(b) - heroTotalScore(a) || randomTie(rng))
+      .sort((a, b) => heroTotalScore(b, context) - heroTotalScore(a, context) || randomTie(rng))
       .slice(0, TOTAL_CANDIDATE_LIMIT);
   }
 
@@ -223,7 +220,7 @@
     const count = options.count || DEFAULT_SKILLS_PER_HERO;
     const rng = options.rng || Math.random;
     const context = {
-      ...buildScoringContext(skills),
+      ...buildScoringContext(skills, { weights: options.weights }),
       availableSkills: skills,
     };
     const ranked = skills
@@ -283,7 +280,9 @@
   }
 
   function scoreHeroForPosition(hero, position, context = buildScoringContext()) {
-    const weights = POSITION_WEIGHTS[position?.id] || POSITION_WEIGHTS.middle;
+    const allWeights = scoringWeights(context);
+    const weights = allWeights.positionWeights[position?.id] || allWeights.positionWeights.middle;
+    const heroWeights = allWeights.hero;
     const stats = hero.stats || {};
     const attack = Number(stats.attack) || 0;
     const strategy = Number(stats.strategy) || 0;
@@ -293,12 +292,12 @@
     const rarity = Number(hero.rarity) || 0;
     const primaryOffense = Math.max(attack, strategy);
     const secondaryOffense = Math.min(attack, strategy);
-    const hybridValue = primaryOffense * 0.22 + secondaryOffense * 0.1;
-    const roleBonus = roleFitBonus({ attack, strategy, defense, speed, distance }, weights.role);
-    const distanceScore = rangeFitScore(distance, position?.id, weights);
+    const hybridValue = primaryOffense * heroWeights.hybridPrimary + secondaryOffense * heroWeights.hybridSecondary;
+    const roleBonus = roleFitBonus({ attack, strategy, defense, speed, distance }, weights.role, heroWeights);
+    const distanceScore = rangeFitScore(distance, position?.id, weights, heroWeights);
     const innateFit = heroInnateFitBonus(hero, position, context);
 
-    return rarity * 42
+    return rarity * heroWeights.rarity
       + attack * weights.attack
       + strategy * weights.strategy
       + defense * weights.defense
@@ -309,41 +308,43 @@
       + innateFit;
   }
 
-  function roleFitBonus(stats, role) {
+  function roleFitBonus(stats, role, heroWeights) {
+    const weights = heroWeights.roleFit;
     if (role === "backline") {
       const damageCeiling = Math.max(stats.attack, stats.strategy);
-      return Math.max(0, damageCeiling - 82) * 0.9
-        + Math.max(0, stats.distance - 3) * 28
-        - Math.max(0, 3 - stats.distance) * 34;
+      return Math.max(0, damageCeiling - weights.backlineDamageThreshold) * weights.backlineDamageScale
+        + Math.max(0, stats.distance - 3) * weights.backlineLongDistance
+        - Math.max(0, 3 - stats.distance) * weights.backlineShortDistancePenalty;
     }
     if (role === "vanguard") {
-      return Math.max(0, stats.defense - 85) * 1.05
-        + Math.max(0, stats.speed - 70) * 0.42
-        - Math.max(0, 78 - stats.defense) * 1.35;
+      return Math.max(0, stats.defense - weights.vanguardDefenseThreshold) * weights.vanguardDefenseScale
+        + Math.max(0, stats.speed - weights.vanguardSpeedThreshold) * weights.vanguardSpeedScale
+        - Math.max(0, weights.vanguardLowDefenseThreshold - stats.defense) * weights.vanguardLowDefensePenalty;
     }
-    return Math.max(0, stats.attack - 78) * 0.28
-      + Math.max(0, stats.strategy - 78) * 0.28
-      + Math.max(0, stats.defense - 78) * 0.22
-      + Math.max(0, stats.speed - 68) * 0.24;
+    return Math.max(0, stats.attack - weights.flexAttackThreshold) * weights.flexAttackScale
+      + Math.max(0, stats.strategy - weights.flexStrategyThreshold) * weights.flexStrategyScale
+      + Math.max(0, stats.defense - weights.flexDefenseThreshold) * weights.flexDefenseScale
+      + Math.max(0, stats.speed - weights.flexSpeedThreshold) * weights.flexSpeedScale;
   }
 
-  function rangeFitScore(distance, positionId, weights) {
-    if (!distance) return -24;
+  function rangeFitScore(distance, positionId, weights, heroWeights) {
+    if (!distance) return heroWeights.missingDistancePenalty;
     const weighted = distance * weights.distance;
     if (positionId === "camp") return weighted - Math.max(0, 4 - distance) * weights.shortRangePenalty;
     if (positionId === "middle") return weighted - Math.max(0, 3 - distance) * weights.shortRangePenalty;
-    return weighted + (distance <= 2 ? 12 : 0);
+    return weighted + (distance <= 2 ? heroWeights.frontShortDistanceBonus : 0);
   }
 
-  function heroTotalScore(hero) {
+  function heroTotalScore(hero, context = buildScoringContext()) {
     return Math.max(
-      scoreHeroForPosition(hero, { id: "camp" }),
-      scoreHeroForPosition(hero, { id: "middle" }),
-      scoreHeroForPosition(hero, { id: "front" }),
+      scoreHeroForPosition(hero, { id: "camp" }, context),
+      scoreHeroForPosition(hero, { id: "middle" }, context),
+      scoreHeroForPosition(hero, { id: "front" }, context),
     );
   }
 
   function synergyScore(heroes, context = buildScoringContext()) {
+    const weights = scoringWeights(context).synergy;
     const factionCounts = countBy(heroes, "faction");
     const armCounts = countBy(heroes, "arm");
     const sameFaction = Math.max(0, ...Object.values(factionCounts));
@@ -351,25 +352,26 @@
     const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
     const damageThreat = sum(profiles, (profile) => profile.damageThreat);
     const supportPressure = sum(profiles, (profile) =>
-      profile.support + profile.amplify + profile.debuff * 0.5 + profile.tempo * 0.34
+      profile.support + profile.amplify + profile.debuff * weights.supportDebuff + profile.tempo * weights.supportTempo
     );
     const rangeSupport = sum(profiles, (profile) => profile.range);
     const tempoPressure = sum(profiles, (profile) => profile.tempo);
     const shortRangeBackline = heroes.some((hero, index) => index < 2 && Number(hero.distance) <= 2);
-    const hasCarry = profiles.some((profile) => profile.damageThreat >= 130);
-    const supportCarryLink = hasCarry ? Math.min(72, supportPressure * 0.34) : 0;
-    const rangeLink = shortRangeBackline ? Math.min(38, rangeSupport * 0.42) : 0;
-    const tempoLink = hasCarry ? Math.min(34, tempoPressure * 0.26) : 0;
-    return Math.max(0, sameFaction - 1) * 58
-      + Math.max(0, sameArm - 1) * 32
+    const hasCarry = profiles.some((profile) => profile.damageThreat >= weights.carryThreshold);
+    const supportCarryLink = hasCarry ? Math.min(weights.supportCarryCap, supportPressure * weights.supportCarryScale) : 0;
+    const rangeLink = shortRangeBackline ? Math.min(weights.rangeCap, rangeSupport * weights.rangeScale) : 0;
+    const tempoLink = hasCarry ? Math.min(weights.tempoCap, tempoPressure * weights.tempoScale) : 0;
+    return Math.max(0, sameFaction - 1) * weights.sameFaction
+      + Math.max(0, sameArm - 1) * weights.sameArm
       + supportCarryLink
       + rangeLink
       + tempoLink
-      + Math.min(34, damageThreat * supportPressure * 0.0009);
+      + Math.min(weights.pressureCap, damageThreat * supportPressure * weights.pressureScale);
   }
 
   function teamBalanceScore(heroes, slots, context = buildScoringContext()) {
     if (!heroes.length) return 0;
+    const weights = scoringWeights(context).balance;
     const attack = sum(heroes, (hero) => Number(hero.stats?.attack) || 0);
     const strategy = sum(heroes, (hero) => Number(hero.stats?.strategy) || 0);
     const defense = sum(heroes, (hero) => Number(hero.stats?.defense) || 0);
@@ -380,25 +382,25 @@
     const campHero = heroes[slots.findIndex((slot) => slot?.id === "camp")] || heroes[0];
     const frontDefense = Number(frontHero?.stats?.defense) || 0;
     const campDistance = Number(campHero?.distance) || 0;
-    const hasFastUnit = heroes.some((hero) => Number(hero.stats?.speed) >= 85);
+    const hasFastUnit = heroes.some((hero) => Number(hero.stats?.speed) >= weights.fastSpeedThreshold);
     const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
-    const hasSustain = profiles.some((profile) => profile.sustain >= 44);
-    const hasControl = profiles.some((profile) => profile.control + profile.deny >= 36);
-    const hasProtection = profiles.some((profile) => profile.protection >= 40);
-    const hasTempo = profiles.some((profile) => profile.tempo >= 34);
-    const hasDebuff = profiles.some((profile) => profile.debuff >= 40);
+    const hasSustain = profiles.some((profile) => profile.sustain >= weights.sustainThreshold);
+    const hasControl = profiles.some((profile) => profile.control + profile.deny >= weights.controlThreshold);
+    const hasProtection = profiles.some((profile) => profile.protection >= weights.protectionThreshold);
+    const hasTempo = profiles.some((profile) => profile.tempo >= weights.tempoThreshold);
+    const hasDebuff = profiles.some((profile) => profile.debuff >= weights.debuffThreshold);
 
-    return offenseBalance * 46
-      + Math.min(42, defense / heroes.length * 0.22)
-      + Math.min(26, speed / heroes.length * 0.13)
-      + (frontDefense >= 88 ? 36 : -Math.max(0, 82 - frontDefense) * 1.6)
-      + (campDistance >= 4 ? 26 : -Math.max(0, 3 - campDistance) * 28)
-      + (hasFastUnit ? 18 : 0)
-      + (hasSustain ? 24 : 0)
-      + (hasControl ? 18 : 0)
-      + (hasProtection ? 16 : 0)
-      + (hasTempo ? 12 : 0)
-      + (hasDebuff ? 12 : 0);
+    return offenseBalance * weights.offenseBalance
+      + Math.min(weights.defenseCap, defense / heroes.length * weights.defenseScale)
+      + Math.min(weights.speedCap, speed / heroes.length * weights.speedScale)
+      + (frontDefense >= weights.frontDefenseThreshold ? weights.frontDefenseBonus : -Math.max(0, weights.frontLowDefenseThreshold - frontDefense) * weights.frontLowDefensePenalty)
+      + (campDistance >= weights.campDistanceThreshold ? weights.campDistanceBonus : -Math.max(0, weights.campShortDistanceThreshold - campDistance) * weights.campShortDistancePenalty)
+      + (hasFastUnit ? weights.fastBonus : 0)
+      + (hasSustain ? weights.sustainBonus : 0)
+      + (hasControl ? weights.controlBonus : 0)
+      + (hasProtection ? weights.protectionBonus : 0)
+      + (hasTempo ? weights.tempoBonus : 0)
+      + (hasDebuff ? weights.debuffBonus : 0);
   }
 
   function countBy(items, key) {
@@ -427,27 +429,32 @@
     return [hero?.name || hero?.id, hero?.faction || "", hero?.arm || ""].join("|");
   }
 
-  function buildScoringContext(sourceSkills = []) {
+  function buildScoringContext(sourceSkills = [], options = {}) {
     const skillById = new Map();
     const addSkill = (skill) => {
       if (skill?.id && !skillById.has(skill.id)) skillById.set(skill.id, skill);
     };
     (global.STZB_SEED_DATA?.SKILLS || []).forEach(addSkill);
     sourceSkills.forEach(addSkill);
-    return { skillById };
+    return {
+      skillById,
+      weights: resolveWeights(options.weights),
+    };
   }
 
   function heroInnateFitBonus(hero, position, context) {
+    const weights = scoringWeights(context).innateFit;
     const innate = context.skillById?.get(hero?.innate);
     if (!innate) return 0;
     const profile = skillProfile(innate);
-    const expectation = skillExpectedValues(innate, hero, profile);
-    return skillRoleFit(profile, normalizedTrigger(innate), position?.id) * 0.72
-      + positionedExpectationScore(expectation, position?.id) * 0.56
-      + skillTeamFitBonus(innate, hero, position, profile, expectation, context) * 0.44;
+    const expectation = skillExpectedValues(innate, hero, profile, context);
+    return skillRoleFit(profile, normalizedTrigger(innate), position?.id) * weights.role
+      + positionedExpectationScore(expectation, position?.id, context) * weights.positionedExpectation
+      + skillTeamFitBonus(innate, hero, position, profile, expectation, context) * weights.teamFit;
   }
 
   function lineupCombatPlanScore(heroes, slots, context) {
+    const weights = scoringWeights(context).plan;
     const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
     const totals = profiles.reduce((acc, profile) => {
       acc.damage += profile.damageThreat;
@@ -460,30 +467,33 @@
       acc.debuff += profile.debuff;
       return acc;
     }, { damage: 0, sustain: 0, control: 0, support: 0, defense: 0, range: 0, tempo: 0, debuff: 0 });
-    const roleCoverage = roleCoverageScore(profiles);
+    const roleCoverage = roleCoverageScore(profiles, context);
     const campIndex = slots.findIndex((slot) => slot?.id === "camp");
     const frontIndex = slots.findIndex((slot) => slot?.id === "front");
     const campProfile = profiles[campIndex >= 0 ? campIndex : 0] || {};
     const frontProfile = profiles[frontIndex >= 0 ? frontIndex : profiles.length - 1] || {};
-    const hasHighCeilingCarry = profiles.some((profile) => profile.damageThreat >= 150);
-    const hasTeamSustain = totals.sustain >= 58;
-    const hasOpeningPlan = totals.support + totals.control + totals.defense + totals.tempo + totals.debuff >= 116;
+    const hasHighCeilingCarry = profiles.some((profile) => profile.damageThreat >= weights.highCarryThreshold);
+    const hasTeamSustain = totals.sustain >= weights.teamSustainThreshold;
+    const hasOpeningPlan = totals.support + totals.control + totals.defense + totals.tempo + totals.debuff >= weights.openingPlanThreshold;
 
     return roleCoverage
-      + Math.min(92, totals.damage * 0.18)
-      + Math.min(54, totals.sustain * 0.22)
-      + Math.min(48, totals.control * 0.24)
-      + Math.min(50, totals.support * 0.18)
-      + Math.min(36, totals.tempo * 0.16)
-      + Math.min(34, totals.debuff * 0.15)
-      + (campProfile.damageThreat >= 118 ? 28 : -Math.max(0, 90 - (campProfile.damageThreat || 0)) * 0.22)
-      + (frontProfile.protection >= 48 || frontProfile.sustain >= 44 ? 24 : -18)
-      + (hasHighCeilingCarry && totals.support >= 55 ? 36 : 0)
-      + (hasTeamSustain && totals.defense >= 54 ? 24 : 0)
-      + (hasOpeningPlan ? 22 : 0);
+      + Math.min(weights.totalDamageCap, totals.damage * weights.totalDamageScale)
+      + Math.min(weights.sustainCap, totals.sustain * weights.sustainScale)
+      + Math.min(weights.controlCap, totals.control * weights.controlScale)
+      + Math.min(weights.supportCap, totals.support * weights.supportScale)
+      + Math.min(weights.tempoCap, totals.tempo * weights.tempoScale)
+      + Math.min(weights.debuffCap, totals.debuff * weights.debuffScale)
+      + (campProfile.damageThreat >= weights.campDamageThreshold ? weights.campDamageBonus : -Math.max(0, weights.campLowDamageThreshold - (campProfile.damageThreat || 0)) * weights.campLowDamagePenalty)
+      + (frontProfile.protection >= weights.frontProtectionThreshold || frontProfile.sustain >= weights.frontSustainThreshold ? weights.frontPlanBonus : -weights.frontPlanPenalty)
+      + (hasHighCeilingCarry && totals.support >= weights.carrySupportThreshold ? weights.carrySupportBonus : 0)
+      + (hasTeamSustain && totals.defense >= weights.teamDefenseThreshold ? weights.teamSustainDefenseBonus : 0)
+      + (hasOpeningPlan ? weights.openingPlanBonus : 0);
   }
 
-  function roleCoverageScore(profiles) {
+  function roleCoverageScore(profiles, context) {
+    const weights = scoringWeights(context);
+    const roleTargets = weights.roleTargets;
+    const planWeights = weights.plan;
     const counts = {
       damage: profiles.filter((profile) => profile.damageThreat >= 90).length,
       sustain: profiles.filter((profile) => profile.sustain >= 44).length,
@@ -493,15 +503,16 @@
       ).length,
       defense: profiles.filter((profile) => profile.protection + profile.cleanse * 0.36 >= 42).length,
     };
-    return Object.entries(TEAM_ROLE_TARGETS).reduce((score, [role, target]) => {
+    return Object.entries(roleTargets).reduce((score, [role, target]) => {
       const have = counts[role] || 0;
       const missing = Math.max(0, target - have);
       const excess = Math.max(0, have - target);
-      return score + Math.min(have, target) * 24 - missing * 18 - excess * 6;
+      return score + Math.min(have, target) * planWeights.roleCoverageHit - missing * planWeights.roleCoverageMissingPenalty - excess * planWeights.roleCoverageExcessPenalty;
     }, 0);
   }
 
   function heroCombatProfile(hero, context) {
+    const weights = scoringWeights(context).combatProfile;
     const stats = hero.stats || {};
     const attack = Number(stats.attack) || 0;
     const strategy = Number(stats.strategy) || 0;
@@ -510,24 +521,24 @@
     const distance = Number(hero.distance) || 0;
     const innate = context.skillById?.get(hero.innate);
     const innateProfile = innate ? skillProfile(innate) : {};
-    const innateExpectation = innate ? skillExpectedValues(innate, hero, innateProfile) : emptyExpectation();
-    const baseDamage = Math.max(attack, strategy) * 0.72
-      + Math.min(attack, strategy) * 0.18
-      + Math.max(0, distance - 2) * 18
-      + speed * 0.08;
-    const protection = defense * 0.42
-      + speed * 0.1
-      + (distance <= 2 ? 18 : 0)
-      + innateExpectation.protection * 0.56;
+    const innateExpectation = innate ? skillExpectedValues(innate, hero, innateProfile, context) : emptyExpectation();
+    const baseDamage = Math.max(attack, strategy) * weights.damagePrimary
+      + Math.min(attack, strategy) * weights.damageSecondary
+      + Math.max(0, distance - 2) * weights.distanceScale
+      + speed * weights.speedDamage;
+    const protection = defense * weights.defenseProtection
+      + speed * weights.speedProtection
+      + (distance <= 2 ? weights.shortDistanceProtection : 0)
+      + innateExpectation.protection * weights.innateProtection;
 
     return {
-      damageThreat: baseDamage + innateExpectation.damage * 0.44 + innateExpectation.splash * 0.34 + innateExpectation.tempo * 0.22,
-      sustain: innateExpectation.healing * 0.5,
-      control: innateExpectation.control + innateExpectation.deny * 0.56,
-      support: innateExpectation.support + innateExpectation.tempo * 0.42 + innateExpectation.cleanse * 0.36,
-      amplify: innateExpectation.amplify + innateExpectation.debuff * 0.52,
-      protection: protection + innateExpectation.cleanse * 0.38,
-      range: innateExpectation.range + (distance >= 4 ? 16 : 0),
+      damageThreat: baseDamage + innateExpectation.damage * weights.innateDamage + innateExpectation.splash * weights.innateSplash + innateExpectation.tempo * weights.innateTempoDamage,
+      sustain: innateExpectation.healing * weights.innateHealing,
+      control: innateExpectation.control + innateExpectation.deny * weights.innateDenyControl,
+      support: innateExpectation.support + innateExpectation.tempo * weights.innateTempoSupport + innateExpectation.cleanse * weights.innateCleanseSupport,
+      amplify: innateExpectation.amplify + innateExpectation.debuff * weights.innateDebuffAmplify,
+      protection: protection + innateExpectation.cleanse * weights.innateCleanseProtection,
+      range: innateExpectation.range + (distance >= 4 ? weights.longRangeSupport : 0),
       tempo: innateExpectation.tempo,
       deny: innateExpectation.deny,
       debuff: innateExpectation.debuff,
@@ -535,7 +546,7 @@
     };
   }
 
-  function skillExpectedValues(skill, hero, profile = skillProfile(skill)) {
+  function skillExpectedValues(skill, hero, profile = skillProfile(skill), context = buildScoringContext()) {
     const stats = hero.stats || {};
     const attack = Number(stats.attack) || 0;
     const strategy = Number(stats.strategy) || 0;
@@ -583,54 +594,60 @@
     };
   }
 
-  function skillExpectationScore(expectation) {
-    return expectation.damage * 0.34
-      + expectation.healing * 0.3
-      + expectation.control * 0.72
-      + expectation.support * 0.46
-      + expectation.protection * 0.48
-      + expectation.amplify * 0.58
-      + expectation.range * 0.36
-      + expectation.tempo * 0.42
-      + expectation.deny * 0.56
-      + expectation.debuff * 0.5
-      + expectation.cleanse * 0.44
-      + expectation.splash * 0.28;
+  function skillExpectationScore(expectation, context = buildScoringContext()) {
+    const weights = scoringWeights(context).skillExpectation;
+    return expectation.damage * weights.damage
+      + expectation.healing * weights.healing
+      + expectation.control * weights.control
+      + expectation.support * weights.support
+      + expectation.protection * weights.protection
+      + expectation.amplify * weights.amplify
+      + expectation.range * weights.range
+      + expectation.tempo * weights.tempo
+      + expectation.deny * weights.deny
+      + expectation.debuff * weights.debuff
+      + expectation.cleanse * weights.cleanse
+      + expectation.splash * weights.splash;
   }
 
-  function positionedExpectationScore(expectation, positionId) {
+  function positionedExpectationScore(expectation, positionId, context = buildScoringContext()) {
+    const positionedWeights = scoringWeights(context).positionedExpectation;
     if (positionId === "camp") {
-      return expectation.damage * 0.42
-        + expectation.healing * 0.14
-        + expectation.control * 0.46
-        + expectation.support * 0.34
-        + expectation.protection * 0.16
-        + expectation.amplify * 0.62
-        + expectation.range * 0.42
-        + expectation.tempo * 0.36
-        + expectation.deny * 0.42
-        + expectation.debuff * 0.56
-        + expectation.cleanse * 0.18
-        + expectation.splash * 0.4;
+      const weights = positionedWeights.camp;
+      return expectation.damage * weights.damage
+        + expectation.healing * weights.healing
+        + expectation.control * weights.control
+        + expectation.support * weights.support
+        + expectation.protection * weights.protection
+        + expectation.amplify * weights.amplify
+        + expectation.range * weights.range
+        + expectation.tempo * weights.tempo
+        + expectation.deny * weights.deny
+        + expectation.debuff * weights.debuff
+        + expectation.cleanse * weights.cleanse
+        + expectation.splash * weights.splash;
     }
     if (positionId === "front") {
-      return expectation.damage * 0.18
-        + expectation.healing * 0.34
-        + expectation.control * 0.64
-        + expectation.support * 0.3
-        + expectation.protection * 0.62
-        + expectation.amplify * 0.36
-        + expectation.range * 0.18
-        + expectation.tempo * 0.44
-        + expectation.deny * 0.62
-        + expectation.debuff * 0.38
-        + expectation.cleanse * 0.54
-        + expectation.splash * 0.18;
+      const weights = positionedWeights.front;
+      return expectation.damage * weights.damage
+        + expectation.healing * weights.healing
+        + expectation.control * weights.control
+        + expectation.support * weights.support
+        + expectation.protection * weights.protection
+        + expectation.amplify * weights.amplify
+        + expectation.range * weights.range
+        + expectation.tempo * weights.tempo
+        + expectation.deny * weights.deny
+        + expectation.debuff * weights.debuff
+        + expectation.cleanse * weights.cleanse
+        + expectation.splash * weights.splash;
     }
-    return skillExpectationScore(expectation);
+    return skillExpectationScore(expectation, context);
   }
 
   function skillTeamFitBonus(skill, hero, position, profile, expectation, context) {
+    const weights = scoringWeights(context).skillTeamFit;
+    const roleTargets = scoringWeights(context).roleTargets;
     const heroes = context.heroes || [];
     const assignments = context.assignments || [];
     const heroIndex = Number.isInteger(context.heroIndex) ? context.heroIndex : heroes.indexOf(hero);
@@ -650,28 +667,28 @@
     const defense = Number(stats.defense) || 0;
     const speed = Number(stats.speed) || 0;
     const hasShortRangeBackline = heroes.some((item, index) => index < 2 && Number(item.distance) <= 2);
-    const roleNeed = (role) => Math.max(0, (TEAM_ROLE_TARGETS[role] || 1) - (teamProfileCounts[role] || 0));
+    const roleNeed = (role) => Math.max(0, (roleTargets[role] || 1) - (teamProfileCounts[role] || 0));
     let score = 0;
 
-    if (profile.damage) score += roleNeed("damage") * 16 + Math.min(38, expectation.damage * 0.08);
-    if (profile.sustain) score += roleNeed("sustain") * 30 + (frontDefense < 88 ? 18 : 0);
-    if (profile.control) score += roleNeed("control") * 24;
-    if (profile.support) score += roleNeed("support") * 20 + Math.min(42, alliedDamage * 0.08);
-    if (profile.defense) score += roleNeed("defense") * 18 + (position?.id === "front" ? 14 : 0);
-    if (profile.range && hasShortRangeBackline) score += 24;
-    if (profile.amplify && alliedDamage >= 160) score += 34;
-    if (profile.tempo) score += (teamProfileCounts.tempo ? -6 : 14) + Math.min(30, (speed + (profile.combo ? attack : 0)) * 0.12);
-    if (profile.combo) score += Math.min(34, attack * 0.18) + (position?.id === "front" ? 8 : 0);
-    if (profile.taunt) score += (position?.id === "front" ? 24 : -8) + Math.min(28, defense * 0.18);
-    if (profile.deny) score += Math.max(roleNeed("control"), roleNeed("deny")) * 16 + (alliedDamage >= 160 ? 12 : 0);
-    if (profile.debuff) score += roleNeed("support") * 14 + Math.min(34, alliedDamage * 0.07) + (strategy >= 100 ? 10 : 0);
-    if (profile.cleanse) score += roleNeed("defense") * 12 + (frontDefense < 88 ? 16 : 0);
-    if (profile.splash) score += Math.min(36, (strategy + alliedDamage + alliedTempo) * 0.06);
-    if (profile.sustain && heroProfileCounts.sustain) score -= 28;
-    if ((profile.support || profile.defense || profile.control) && heroProfileCounts.support + heroProfileCounts.defense + heroProfileCounts.control >= 2) score -= 18;
-    if (profile.damage && heroProfileCounts.damage >= 2) score -= 12;
-    if ((profile.deny || profile.debuff || profile.cleanse) && heroProfileCounts.deny + heroProfileCounts.debuff + heroProfileCounts.cleanse >= 2) score -= 12;
-    if (skill.id === hero.innate) score -= 120;
+    if (profile.damage) score += roleNeed("damage") * weights.damageNeed + Math.min(weights.damageCap, expectation.damage * weights.damageExpectationScale);
+    if (profile.sustain) score += roleNeed("sustain") * weights.sustainNeed + (frontDefense < weights.sustainLowFrontDefenseThreshold ? weights.sustainLowFrontDefenseBonus : 0);
+    if (profile.control) score += roleNeed("control") * weights.controlNeed;
+    if (profile.support) score += roleNeed("support") * weights.supportNeed + Math.min(weights.supportAlliedDamageCap, alliedDamage * weights.supportAlliedDamageScale);
+    if (profile.defense) score += roleNeed("defense") * weights.defenseNeed + (position?.id === "front" ? weights.defenseFrontBonus : 0);
+    if (profile.range && hasShortRangeBackline) score += weights.rangeShortBacklineBonus;
+    if (profile.amplify && alliedDamage >= weights.amplifyAlliedDamageThreshold) score += weights.amplifyBonus;
+    if (profile.tempo) score += (teamProfileCounts.tempo ? -weights.tempoDuplicatePenalty : weights.tempoFirstBonus) + Math.min(weights.tempoStatCap, (speed + (profile.combo ? attack : 0)) * weights.tempoStatScale);
+    if (profile.combo) score += Math.min(weights.comboAttackCap, attack * weights.comboAttackScale) + (position?.id === "front" ? weights.comboFrontBonus : 0);
+    if (profile.taunt) score += (position?.id === "front" ? weights.tauntFrontBonus : -weights.tauntBacklinePenalty) + Math.min(weights.tauntDefenseCap, defense * weights.tauntDefenseScale);
+    if (profile.deny) score += Math.max(roleNeed("control"), roleNeed("deny")) * weights.denyNeed + (alliedDamage >= weights.denyAlliedDamageThreshold ? weights.denyAlliedDamageBonus : 0);
+    if (profile.debuff) score += roleNeed("support") * weights.debuffSupportNeed + Math.min(weights.debuffAlliedDamageCap, alliedDamage * weights.debuffAlliedDamageScale) + (strategy >= weights.debuffHighStrategyThreshold ? weights.debuffHighStrategyBonus : 0);
+    if (profile.cleanse) score += roleNeed("defense") * weights.cleanseDefenseNeed + (frontDefense < weights.cleanseLowFrontDefenseThreshold ? weights.cleanseLowFrontDefenseBonus : 0);
+    if (profile.splash) score += Math.min(weights.splashCap, (strategy + alliedDamage + alliedTempo) * weights.splashScale);
+    if (profile.sustain && heroProfileCounts.sustain) score -= weights.duplicateSustainPenalty;
+    if ((profile.support || profile.defense || profile.control) && heroProfileCounts.support + heroProfileCounts.defense + heroProfileCounts.control >= 2) score -= weights.crowdedUtilityPenalty;
+    if (profile.damage && heroProfileCounts.damage >= 2) score -= weights.duplicateDamagePenalty;
+    if ((profile.deny || profile.debuff || profile.cleanse) && heroProfileCounts.deny + heroProfileCounts.debuff + heroProfileCounts.cleanse >= 2) score -= weights.crowdedDebuffPenalty;
+    if (skill.id === hero.innate) score -= weights.innateDuplicatePenalty;
 
     return score;
   }
@@ -701,13 +718,13 @@
     const chance = Number(skill.chance) || chanceFromText(skill.probability) || 0;
     const trigger = normalizedTrigger(skill);
     const profile = skillProfile(skill);
-    const expectation = skillExpectedValues(skill, hero, profile);
+    const expectation = skillExpectedValues(skill, hero, profile, context);
     const triggerScore = scoreTrigger(trigger, chance, profile);
     const statFit = skillStatFit(profile, { attack, strategy, defense, speed });
     const rangeFit = skillRangeFit(skill, heroDistance, position?.id);
     const roleFit = skillRoleFit(profile, trigger, position?.id);
     const armFit = skillArmFit(skill, hero);
-    const expectationScore = skillExpectationScore(expectation);
+    const expectationScore = skillExpectationScore(expectation, context);
     const teamFit = skillTeamFitBonus(skill, hero, position, profile, expectation, context);
     const conditionalFit = conditionalSkillFitBonus(skill, context);
 
@@ -970,6 +987,8 @@
     chooseSkillsForHero,
     scoreHeroForPosition,
     scoreSkillForHero,
+    defaultWeights: DEFAULT_WEIGHTS,
+    resolveWeights,
     usableHeroes,
     usableSkills,
     samplePool,

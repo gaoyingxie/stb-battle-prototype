@@ -1,11 +1,13 @@
 globalThis.window = globalThis;
 
 await import("../src/skill-taxonomy.js");
+await import("../src/team-ai-weights.js");
 await import("../src/team-ai.js");
 
 const {
   chooseLineup,
   recommendTeam,
+  resolveWeights,
   scoreHeroForPosition,
   scoreSkillForHero,
 } = globalThis.STZB_TEAM_AI;
@@ -82,6 +84,33 @@ const lineup = chooseLineup([
 const identityKeys = lineup.map((item) => `${item.name}|${item.faction}|${item.arm}`);
 assert(new Set(identityKeys).size === identityKeys.length, "AI 不应把同名同阵营同兵种的重复卡同时上阵");
 assert(lineup[2].id === "frontline", "前锋应优先选择高防御高速度的承伤位");
+
+const sturdyFront = hero("sturdy-front", {
+  distance: 1,
+  stats: { attack: 60, strategy: 58, defense: 150, speed: 80 },
+});
+const recklessFront = hero("reckless-front", {
+  distance: 1,
+  stats: { attack: 130, strategy: 50, defense: 45, speed: 80 },
+});
+const attackHeavyWeights = resolveWeights({
+  positionWeights: { front: { attack: 5, defense: 0.1, speed: 1 } },
+  hero: {
+    roleFit: {
+      vanguardDefenseScale: 0,
+      vanguardLowDefensePenalty: 0,
+      vanguardSpeedScale: 0,
+    },
+  },
+});
+assert(
+  scoreHeroForPosition(sturdyFront, { id: "front" }) > scoreHeroForPosition(recklessFront, { id: "front" }),
+  "默认前锋权重应偏好高防承伤位",
+);
+assert(
+  scoreHeroForPosition(recklessFront, { id: "front" }, { weights: attackHeavyWeights }) > scoreHeroForPosition(sturdyFront, { id: "front" }, { weights: attackHeavyWeights }),
+  "候选权重应能改变站位评分，供离线 benchmark 调权",
+);
 
 const attackSkill = {
   id: "attack-skill",
