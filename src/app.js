@@ -251,6 +251,7 @@ function refreshSkillMetadata() {
   });
   SKILLS.forEach((skill) => {
     if (!skill?.id) return;
+    globalThis.STZB_SKILL_TAXONOMY?.enrichSkill?.(skill);
     const tags = skillTags(skill);
     if (INNATE_SKILL_IDS.has(skill.id)) {
       skill.isInnate = true;
@@ -262,7 +263,10 @@ function refreshSkillMetadata() {
 }
 
 function skillTags(skill) {
-  const tags = Array.isArray(skill?.tags) ? [...skill.tags] : [];
+  const tags = [
+    ...(Array.isArray(skill?.tags) ? skill.tags : []),
+    ...(Array.isArray(skill?.aiTaxonomy?.tags) ? skill.aiTaxonomy.tags : []),
+  ];
   if (skill?.isInnate && !tags.includes("自带")) tags.push("自带");
   return [...new Set(tags.filter(Boolean))];
 }

@@ -1,5 +1,6 @@
 globalThis.window = globalThis;
 
+await import("../src/skill-taxonomy.js");
 await import("../src/team-ai.js");
 
 const {
@@ -140,6 +141,22 @@ assert(
 assert(
   scoreSkillForHero(groupHeal, strategist, { id: "middle" }) > scoreSkillForHero(groupHeal, pureAttacker, { id: "middle" }),
   "治疗型战法应更偏好高谋略武将",
+);
+
+const structuredHeal = {
+  id: "structured-heal",
+  name: "Structured Heal",
+  type: "active",
+  trigger: "active",
+  chance: 0.42,
+  grade: "A",
+  distance: 3,
+  desc: "attack damage placeholder text",
+  aiProfile: { attack: false, damage: false, sustain: true },
+};
+assert(
+  scoreSkillForHero(structuredHeal, strategist, { id: "middle" }) > scoreSkillForHero(structuredHeal, pureAttacker, { id: "middle" }),
+  "AI 应优先使用结构化战法画像，而不是被描述文本误导",
 );
 
 const tempoStrike = {

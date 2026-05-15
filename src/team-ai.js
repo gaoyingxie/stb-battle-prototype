@@ -715,6 +715,9 @@
   }
 
   function normalizedTrigger(skill) {
+    const taxonomy = skillTaxonomy(skill);
+    if (taxonomy?.trigger) return taxonomy.trigger;
+
     const trigger = String(skill.trigger || "").toLowerCase();
     const type = String(skill.type || "");
     if (trigger && trigger !== "official") return trigger;
@@ -733,7 +736,30 @@
     return 18;
   }
 
+  function skillTaxonomy(skill) {
+    const taxonomy = global.STZB_SKILL_TAXONOMY;
+    if (taxonomy?.profileFor) return taxonomy.profileFor(skill);
+    if (skill?.aiTaxonomy || skill?.aiProfile) {
+      return {
+        profile: skill.aiProfile || {},
+        targetCount: skill.aiTaxonomy?.targetCount,
+        damageRate: skill.aiTaxonomy?.damageRate,
+        requiredSkillNames: skill.aiTaxonomy?.requiredSkillNames || [],
+        trigger: skill.aiTaxonomy?.trigger,
+        reliability: skill.aiTaxonomy?.reliability,
+      };
+    }
+    return null;
+  }
+
   function skillProfile(skill) {
+    const taxonomy = skillTaxonomy(skill);
+    if (taxonomy?.profile) {
+      const profile = { ...taxonomy.profile };
+      profile.damage = Boolean(profile.damage || profile.attack || profile.strategy || profile.splash);
+      return profile;
+    }
+
     const text = skillText(skill);
     const combo = /连击|再次普通攻击|普通攻击.*再次|combo/i.test(text);
     const taunt = /挑衅|taunt/i.test(text);
@@ -776,6 +802,9 @@
   }
 
   function conditionalRequiredSkillNames(skill) {
+    const taxonomy = skillTaxonomy(skill);
+    if (Array.isArray(taxonomy?.requiredSkillNames)) return [...taxonomy.requiredSkillNames];
+
     const text = skillText(skill);
     const names = [];
     const collect = (segment) => {
@@ -809,6 +838,9 @@
   }
 
   function triggerReliability(skill, trigger) {
+    const taxonomy = skillTaxonomy(skill);
+    if (Number.isFinite(Number(taxonomy?.reliability))) return Number(taxonomy.reliability);
+
     const chance = Number(skill.chance) || chanceFromText(skill.probability) || 0;
     if (trigger === "command" || trigger === "passive") return 1;
     if (trigger === "pursuit") return Math.max(0.18, chance || 0.4) * 0.88;
@@ -820,6 +852,9 @@
   }
 
   function estimatedTargetCount(skill, profile) {
+    const taxonomy = skillTaxonomy(skill);
+    if (Number.isFinite(Number(taxonomy?.targetCount))) return Number(taxonomy.targetCount);
+
     const text = skillText(skill);
     const explicit = text.match(/(?:敌军|我军|友军|目标|targets?)\D{0,6}([123一二三])(?:个|名|体|人)?/i)?.[1];
     if (explicit) return numberFromToken(explicit);
@@ -829,6 +864,9 @@
   }
 
   function estimatedDamageRate(skill, profile) {
+    const taxonomy = skillTaxonomy(skill);
+    if (Number.isFinite(Number(taxonomy?.damageRate))) return Number(taxonomy.damageRate);
+
     const text = skillText(skill);
     const percentValues = text.match(/\d+(?:\.\d+)?%/g)
       ?.map((part) => Number(part.replace("%", "")))
