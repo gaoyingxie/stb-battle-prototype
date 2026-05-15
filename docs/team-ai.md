@@ -81,4 +81,16 @@ npm run benchmark:ai
 npm run benchmark:ai:tune
 ```
 
-调权脚本使用固定 seed 的随机搜索生成候选权重，只有当候选综合分超过当前默认权重达到阈值时，才会直接写回 `src/team-ai-weights.js`。这条路径只用于离线迭代；不要把多轮模拟接入玩家点击“自动整备”的实时路径。
+调权脚本使用固定 seed 的随机搜索生成候选权重，只有当候选综合分超过当前默认权重达到阈值时，才会直接写回 `src/team-ai-weights.js`。需要降低单次抽样过拟合时，使用多 seed 聚合评估：
+
+```powershell
+npm run benchmark:ai:tune:robust
+```
+
+也可以直接传入自定义 seed 组：
+
+```powershell
+node ./scripts/ai-benchmark.mjs --tune --seed-list=20260515,20260516,20260517,20260518
+```
+
+这条路径只用于离线迭代；不要把多轮模拟接入玩家点击“自动整备”的实时路径。

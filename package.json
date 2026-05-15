@@ -13,6 +13,7 @@
     "test:team-ai": "node ./tests/skill-taxonomy.mjs && node ./tests/team-ai.mjs",
     "benchmark:ai": "node ./scripts/ai-benchmark.mjs --samples=4 --battle-seeds=2",
     "benchmark:ai:tune": "node ./scripts/ai-benchmark.mjs --tune",
+    "benchmark:ai:tune:robust": "node ./scripts/ai-benchmark.mjs --tune --seed-list=20260515,20260516,20260517,20260518 --samples=4 --battle-seeds=2 --candidates=12",
     "smoke:browser": "node ./tests/browser-smoke.mjs",
     "playwright:install": "playwright install chromium"
   },

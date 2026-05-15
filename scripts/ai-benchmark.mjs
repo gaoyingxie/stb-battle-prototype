@@ -12,6 +12,7 @@ const DEFAULT_CONFIG = {
   playerPoolSize: 24,
   samples: 4,
   seed: 20260515,
+  seedList: null,
   tune: false,
 };
 
@@ -70,6 +71,8 @@ function parseArgs(argv) {
     if (arg.startsWith("--candidates=")) config.candidates = positiveInt(arg, "candidates", config.candidates);
     if (arg.startsWith("--battle-seeds=")) config.battleSeeds = positiveInt(arg, "battle-seeds", config.battleSeeds);
     if (arg.startsWith("--seed=")) config.seed = positiveInt(arg, "seed", config.seed);
+    if (arg.startsWith("--seed-list=")) config.seedList = positiveIntList(arg.slice("--seed-list=".length), config.seedList);
+    if (arg.startsWith("--seeds=")) config.seedList = positiveIntList(arg.slice("--seeds=".length), config.seedList);
     if (arg.startsWith("--player-pool-size=")) config.playerPoolSize = positiveInt(arg, "player-pool-size", config.playerPoolSize);
     if (arg.startsWith("--enemy-pool-size=")) config.enemyPoolSize = positiveInt(arg, "enemy-pool-size", config.enemyPoolSize);
     if (arg.startsWith("--threshold=")) config.improvementThreshold = nonNegativeNumber(arg, "threshold", config.improvementThreshold);
@@ -87,6 +90,15 @@ function positiveInt(arg, label, fallback) {
 function nonNegativeNumber(arg, label, fallback) {
   const value = Number(arg.slice(`--${label}=`.length));
   return Number.isFinite(value) && value >= 0 ? value : fallback;
+}
+
+function positiveIntList(value, fallback) {
+  const seeds = value
+    .split(",")
+    .map((item) => Number(item.trim()))
+    .filter((item) => Number.isFinite(item) && item > 0)
+    .map((item) => Math.floor(item));
+  return seeds.length ? [...new Set(seeds)] : fallback;
 }
 
 function makeRng(seed) {
@@ -115,6 +127,10 @@ function setPath(object, segments, value) {
     current = current[segment];
   });
   current[segments.at(-1)] = value;
+}
+
+function sum(items, selector) {
+  return items.reduce((total, item) => total + selector(item), 0);
 }
 
 function candidateWeights(baseWeights, rng, index) {
@@ -289,6 +305,56 @@ async function evaluateWeights(page, weights, config, label) {
   }, { weights, config, label });
 }
 
+function evaluationSeeds(config) {
+  return Array.isArray(config.seedList) && config.seedList.length ? config.seedList : [config.seed];
+}
+
+async function evaluateWeightSet(page, weights, config, label) {
+  const seeds = evaluationSeeds(config);
+  if (seeds.length === 1) return evaluateWeights(page, weights, config, label);
+
+  const seedResults = [];
+  for (const seed of seeds) {
+    seedResults.push(await evaluateWeights(page, weights, { ...config, seed }, `${label}@${seed}`));
+  }
+  return aggregateSeedResults(label, seedResults);
+}
+
+function aggregateSeedResults(label, seedResults) {
+  const battles = Math.max(1, sum(seedResults, (result) => result.battles));
+  const weighted = (key, digits = 3) => Number((sum(seedResults, (result) => result[key] * result.battles) / battles).toFixed(digits));
+  const examples = seedResults
+    .flatMap((result) => result.examples.map((example) => ({
+      ...example,
+      evaluationSeed: Number(result.label.split("@").at(-1)),
+    })))
+    .slice(0, 4);
+
+  return {
+    label,
+    score: weighted("score"),
+    winRate: weighted("winRate"),
+    drawRate: weighted("drawRate"),
+    lossRate: weighted("lossRate"),
+    averageRounds: weighted("averageRounds", 2),
+    averagePlayerTroops: Math.round(sum(seedResults, (result) => result.averagePlayerTroops * result.battles) / battles),
+    averageEnemyTroops: Math.round(sum(seedResults, (result) => result.averageEnemyTroops * result.battles) / battles),
+    battles,
+    examples,
+    heroPoolSize: seedResults[0]?.heroPoolSize || 0,
+    skillPoolSize: seedResults[0]?.skillPoolSize || 0,
+    seedResults: seedResults.map((result) => ({
+      label: result.label,
+      score: result.score,
+      winRate: result.winRate,
+      drawRate: result.drawRate,
+      lossRate: result.lossRate,
+      averageRounds: result.averageRounds,
+      battles: result.battles,
+    })),
+  };
+}
+
 function formatSummary(result) {
   return `${result.label}: score=${result.score}, win=${Math.round(result.winRate * 100)}%, draw=${Math.round(result.drawRate * 100)}%, rounds=${result.averageRounds}`;
 }
@@ -338,15 +404,15 @@ async function main() {
     ));
 
     const baseWeights = await page.evaluate(() => globalThis.STZB_TEAM_AI_WEIGHTS);
-    const baseline = await evaluateWeights(page, null, config, "baseline");
+    const baseline = await evaluateWeightSet(page, null, config, "baseline");
     let best = { id: "baseline", result: baseline, weights: baseWeights, changes: [] };
     const candidates = [];
 
     if (config.tune) {
-      const rng = makeRng(config.seed + 7001);
+      const rng = makeRng(evaluationSeeds(config)[0] + 7001);
       for (let index = 1; index <= config.candidates; index += 1) {
         const candidate = candidateWeights(baseWeights, rng, index);
-        const result = await evaluateWeights(page, candidate.weights, config, candidate.id);
+        const result = await evaluateWeightSet(page, candidate.weights, config, candidate.id);
         const entry = { ...candidate, result };
         candidates.push({
           id: entry.id,
