@@ -185,6 +185,114 @@ try {
   }));
   await page.click("#battleReportClose");
   await page.waitForFunction(() => !document.querySelector("#battleReportModal")?.open);
+  const foldedSeriesSeed = await page.evaluate(() => {
+    const state = globalThis.STZB_DEBUG.state;
+    globalThis.__smokeOriginalReports = state.battleReports;
+    const basePlayer = state.formation.map((slot, index) => ({
+      ...slot,
+      position: globalThis.STZB_BATTLE_RULES.POSITIONS[index].id,
+      skills: [],
+      troops: index === 0 ? 7200 : 0,
+      wounded: index === 0 ? 1800 : 0,
+    }));
+    const baseEnemy = state.enemy.map((slot, index) => ({
+      ...slot,
+      position: globalThis.STZB_BATTLE_RULES.POSITIONS[index].id,
+      skills: [],
+      troops: index === 0 ? 8100 : 0,
+      wounded: index === 0 ? 900 : 0,
+    }));
+    const makeDrawBattle = (playerSlots, enemySlots, encounter) => {
+      const battle = globalThis.createBattle(playerSlots, enemySlots, {
+        freshTroops: false,
+        encounter,
+        maxEncounters: 2,
+      });
+      battle.initialPlayer = battle.player.map(globalThis.unitSnapshot);
+      battle.initialEnemy = battle.enemy.map(globalThis.unitSnapshot);
+      battle.rounds = globalThis.STZB_BATTLE_RULES.DAMAGE_MODEL.maxRounds - 1;
+      battle.ctx.round = battle.rounds;
+      [...battle.player, ...battle.enemy].forEach((unit) => {
+        unit.skills = [];
+        unit.stats.attack = 0;
+        unit.stats.strategy = 0;
+        unit.stats.defense = 9999;
+        if (unit.position !== "camp") {
+          unit.troops = 0;
+          unit.wounded = 0;
+        }
+      });
+      globalThis.advanceBattleRound(battle);
+      return battle;
+    };
+    const makeWinBattle = (playerSlots, enemySlots, encounter) => {
+      const battle = globalThis.createBattle(playerSlots, enemySlots, {
+        freshTroops: false,
+        encounter,
+        maxEncounters: 2,
+      });
+      battle.initialPlayer = battle.player.map(globalThis.unitSnapshot);
+      battle.initialEnemy = battle.enemy.map(globalThis.unitSnapshot);
+      const enemyCamp = battle.enemy.find((unit) => unit.position === "camp") || battle.enemy[0];
+      enemyCamp.troops = 0;
+      globalThis.finishBattle(battle, "player", "enemyCampDown");
+      return battle;
+    };
+    const drawBattle = makeDrawBattle(basePlayer, baseEnemy, 1);
+    const winBattle = makeWinBattle(
+      globalThis.carryTeamForward(basePlayer, drawBattle.player),
+      globalThis.carryTeamForward(baseEnemy, drawBattle.enemy),
+      2,
+    );
+    const seriesId = "smoke-folded-draw-series";
+    state.battleReports = [];
+    globalThis.addBattleReport(globalThis.toBattleSnapshot(drawBattle), { seriesId, seriesIndex: 1, seriesSize: 2 });
+    globalThis.addBattleReport(globalThis.toBattleSnapshot(winBattle), { seriesId, seriesIndex: 2, seriesSize: 2 });
+    globalThis.renderBattleReportBadge();
+    return {
+      drawId: state.battleReports[0].id,
+      winId: state.battleReports[1].id,
+      seriesId,
+    };
+  });
+  await page.click("#openBattleReports");
+  await page.waitForSelector("#battleReportModal[open] .battle-report-series-toggle");
+  const foldedSeriesCollapsedCheck = await page.evaluate(() => ({
+    cardIds: [...document.querySelectorAll("#battleReportModal .battle-report-card")].map((node) => node.dataset.reportId),
+    childCount: document.querySelectorAll("#battleReportModal .battle-report-card.series-child").length,
+    count: document.querySelector("#battleReportModal .battle-report-series-count")?.textContent?.trim() || "",
+    expanded: document.querySelector("#battleReportModal .battle-report-series-toggle")?.getAttribute("aria-expanded") || "",
+  }));
+  await page.click("#battleReportModal .battle-report-series-toggle");
+  await page.waitForSelector("#battleReportModal .battle-report-card.series-child");
+  const foldedSeriesExpandedCheck = await page.evaluate(() => ({
+    cardIds: [...document.querySelectorAll("#battleReportModal .battle-report-card")].map((node) => node.dataset.reportId),
+    childIds: [...document.querySelectorAll("#battleReportModal .battle-report-card.series-child")].map((node) => node.dataset.reportId),
+    expanded: document.querySelector("#battleReportModal .battle-report-series-toggle")?.getAttribute("aria-expanded") || "",
+  }));
+  await page.click(`#battleReportModal .battle-report-card.series-child[data-report-id="${foldedSeriesSeed.drawId}"]`);
+  await page.waitForSelector("#battleReportModal .battle-report-stage");
+  const foldedSeriesDrawOpenCheck = await page.evaluate((drawId) => ({
+    idMatches: document.querySelector("#battleReportEyebrow")?.textContent?.includes(drawId.slice(-8)) || false,
+    hasStage: Boolean(document.querySelector("#battleReportModal .battle-report-stage")),
+  }), foldedSeriesSeed.drawId);
+  await page.click("#battleReportModal .battle-report-back");
+  await page.waitForSelector("#battleReportModal .battle-report-series-toggle");
+  await page.click(`#battleReportModal .battle-report-series-row .battle-report-card[data-report-id="${foldedSeriesSeed.winId}"]`);
+  await page.waitForSelector("#battleReportModal .battle-report-stage");
+  const foldedSeriesWinOpenCheck = await page.evaluate((winId) => ({
+    idMatches: document.querySelector("#battleReportEyebrow")?.textContent?.includes(winId.slice(-8)) || false,
+    hasStage: Boolean(document.querySelector("#battleReportModal .battle-report-stage")),
+  }), foldedSeriesSeed.winId);
+  await page.click("#battleReportClose");
+  await page.waitForFunction(() => !document.querySelector("#battleReportModal")?.open);
+  await page.evaluate(() => {
+    const state = globalThis.STZB_DEBUG.state;
+    state.battleReports = globalThis.__smokeOriginalReports || state.battleReports;
+    delete globalThis.__smokeOriginalReports;
+    globalThis.renderBattleReportBadge();
+    globalThis.saveState();
+  });
   const battlePortraitCheck = await page.evaluate(() => ({
     unitPortraitBackground: getComputedStyle(document.querySelector(".unit-portrait"), "::before").backgroundImage,
     heroCardBackground: getComputedStyle(document.querySelector(".hero-card")).backgroundImage,
@@ -583,6 +691,28 @@ try {
   }
   if (!battleReportCloseBackCheck.modalOpen || !battleReportCloseBackCheck.hasBattleStage || battleReportCloseBackCheck.hasFormationRows) {
     throw new Error(`阵容详情关闭按钮没有返回战斗地点：${JSON.stringify(battleReportCloseBackCheck)}`);
+  }
+  if (
+    foldedSeriesCollapsedCheck.count !== "1"
+    || foldedSeriesCollapsedCheck.expanded !== "false"
+    || foldedSeriesCollapsedCheck.cardIds.length !== 1
+    || foldedSeriesCollapsedCheck.cardIds[0] !== foldedSeriesSeed.winId
+    || foldedSeriesCollapsedCheck.childCount !== 0
+  ) {
+    throw new Error(`平局继战战报默认折叠状态不正确：${JSON.stringify(foldedSeriesCollapsedCheck)}`);
+  }
+  if (
+    foldedSeriesExpandedCheck.expanded !== "true"
+    || !foldedSeriesExpandedCheck.cardIds.includes(foldedSeriesSeed.winId)
+    || !foldedSeriesExpandedCheck.childIds.includes(foldedSeriesSeed.drawId)
+  ) {
+    throw new Error(`平局继战战报展开状态不正确：${JSON.stringify(foldedSeriesExpandedCheck)}`);
+  }
+  if (!foldedSeriesDrawOpenCheck.idMatches || !foldedSeriesDrawOpenCheck.hasStage) {
+    throw new Error(`展开后的平局子战报无法打开详情：${JSON.stringify(foldedSeriesDrawOpenCheck)}`);
+  }
+  if (!foldedSeriesWinOpenCheck.idMatches || !foldedSeriesWinOpenCheck.hasStage) {
+    throw new Error(`折叠组主战报无法打开详情：${JSON.stringify(foldedSeriesWinOpenCheck)}`);
   }
   if (!summary.reportLines) {
     throw new Error("战报没有渲染任何记录");

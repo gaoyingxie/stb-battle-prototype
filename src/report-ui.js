@@ -59,12 +59,15 @@ function reportEntrySnapshot(entry) {
   };
 }
 
-function addBattleReport(battle) {
+function addBattleReport(battle, series = {}) {
   const report = {
     id: `battle-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
     title: battleReportTitle(battle),
     createdAt: Date.now(),
     read: false,
+    seriesId: series.seriesId || null,
+    seriesIndex: Math.max(1, Number(series.seriesIndex) || Number(battle?.encounter) || 1),
+    seriesSize: Math.max(1, Number(series.seriesSize) || Number(battle?.maxEncounters) || 1),
     battle,
   };
   state.battleReports = [...(state.battleReports || []), report].slice(-BATTLE_REPORT_LIMIT);
@@ -97,6 +100,17 @@ function openBattleReportList() {
 
 function handleBattleReportAction(button) {
   const action = button.dataset.reportAction;
+  if (action === "toggle-series") {
+    const seriesId = button.dataset.reportSeriesId;
+    if (!seriesId) return;
+    if (expandedBattleReportSeriesIds.has(seriesId)) {
+      expandedBattleReportSeriesIds.delete(seriesId);
+    } else {
+      expandedBattleReportSeriesIds.add(seriesId);
+    }
+    renderBattleReportModal();
+    return;
+  }
   if (action === "open") {
     stopBattleReplay();
     selectedBattleReportId = button.dataset.reportId;
@@ -228,7 +242,7 @@ function renderBattleReportModal() {
 }
 
 function battleReportListHtml() {
-  const reports = [...(state.battleReports || [])].reverse();
+  const reportGroups = battleReportListGroups();
   return `
     <div class="battle-report-list-view">
       <div class="battle-report-toolbar">
@@ -242,19 +256,131 @@ function battleReportListHtml() {
         </div>
       </div>
       <div class="battle-report-list">
-        ${reports.length ? reports.map(battleReportListCardHtml).join("") : '<div class="empty-report">暂无战报。点击开战后会生成一封完整战报。</div>'}
+        ${reportGroups.length ? reportGroups.map(battleReportListGroupHtml).join("") : '<div class="empty-report">暂无战报。点击开战后会生成一封完整战报。</div>'}
       </div>
     </div>
   `;
 }
 
-function battleReportListCardHtml(report) {
+function battleReportListGroups() {
+  const groups = [];
+  let currentGroup = null;
+  (state.battleReports || []).forEach((report) => {
+    const explicitSeriesId = report.seriesId || "";
+    if (explicitSeriesId) {
+      if (currentGroup?.explicit && currentGroup.id === explicitSeriesId) {
+        currentGroup.reports.push(report);
+      } else {
+        currentGroup = {
+          id: explicitSeriesId,
+          explicit: true,
+          reports: [report],
+        };
+        groups.push(currentGroup);
+      }
+      return;
+    }
+
+    if (currentGroup && !currentGroup.explicit && battleReportCanInferSameSeries(currentGroup.reports.at(-1), report)) {
+      currentGroup.reports.push(report);
+      currentGroup.id = `legacy-${currentGroup.reports[0].id}-${report.id}`;
+      return;
+    }
+
+    currentGroup = {
+      id: `legacy-${report.id}`,
+      explicit: false,
+      reports: [report],
+    };
+    groups.push(currentGroup);
+  });
+
+  return groups
+    .map((group) => ({
+      ...group,
+      primary: group.reports.at(-1),
+    }))
+    .reverse();
+}
+
+function battleReportListGroupHtml(group) {
+  const foldedReports = battleReportFoldedReports(group);
+  if (!foldedReports.length) {
+    return [...group.reports].reverse().map((report) => battleReportListCardHtml(report)).join("");
+  }
+
+  const expanded = expandedBattleReportSeriesIds.has(group.id);
+  const hasUnread = group.reports.some((report) => !report.read);
+  const children = expanded
+    ? `
+      <div class="battle-report-series-children">
+        ${[...foldedReports].reverse().map((report) => battleReportListCardHtml(report, { variant: "child" })).join("")}
+      </div>
+    `
+    : "";
+  const toggleLabel = expanded ? `收起${foldedReports.length}封平局战报` : `展开${foldedReports.length}封平局战报`;
+
+  return `
+    <section class="battle-report-series ${expanded ? "expanded" : ""} ${hasUnread ? "unread" : ""}" data-report-series-id="${escapeHtml(group.id)}">
+      <div class="battle-report-series-row">
+        ${battleReportListCardHtml(group.primary, { forceUnread: hasUnread })}
+        <button class="battle-report-series-toggle" data-report-action="toggle-series" data-report-series-id="${escapeHtml(group.id)}" type="button" aria-label="${escapeHtml(toggleLabel)}" aria-expanded="${expanded ? "true" : "false"}">
+          <span class="battle-report-series-count">${foldedReports.length}</span>
+          <span class="battle-report-series-arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+      ${children}
+    </section>
+  `;
+}
+
+function battleReportFoldedReports(group) {
+  const candidates = (group.reports || []).slice(0, -1);
+  return candidates.length && candidates.every(isFoldableDrawReport) ? candidates : [];
+}
+
+function isFoldableDrawReport(report) {
+  const battle = report?.battle || {};
+  return battle.winner === "draw" && battle.finishReason === "roundLimit";
+}
+
+function battleReportCanInferSameSeries(previousReport, report) {
+  if (!isFoldableDrawReport(previousReport)) return false;
+  const previousBattle = previousReport?.battle || {};
+  const battle = report?.battle || {};
+  const previousEncounter = Math.max(1, Number(previousBattle.encounter) || 1);
+  const encounter = Math.max(1, Number(battle.encounter) || 1);
+  if (encounter !== previousEncounter + 1) return false;
+  return battleReportCarriedUnitsMatch(previousBattle.player, battle.initialPlayer)
+    && battleReportCarriedUnitsMatch(previousBattle.enemy, battle.initialEnemy);
+}
+
+function battleReportCarriedUnitsMatch(previousUnits = [], nextInitialUnits = []) {
+  if (!previousUnits.length || previousUnits.length !== nextInitialUnits.length) return false;
+  return previousUnits.every((unit) => {
+    const next = nextInitialUnits.find((candidate) => battleReportUnitKey(candidate) === battleReportUnitKey(unit));
+    if (!next) return false;
+    return Math.round(unit.troops || 0) === Math.round(next.troops || 0)
+      && Math.round(unit.wounded || 0) === Math.round(next.wounded || 0);
+  });
+}
+
+function battleReportUnitKey(unit = {}) {
+  return [unit.side, unit.position, unit.heroId || unit.id || unit.name].join(":");
+}
+
+function battleReportListCardHtml(report, options = {}) {
   const battle = report.battle;
   const playerTroops = totalUnitsTroops(battle.player);
   const enemyTroops = totalUnitsTroops(battle.enemy);
   const resultClass = battle.winner || "draw";
+  const classes = [
+    "battle-report-card",
+    options.variant === "child" ? "series-child" : "",
+    options.forceUnread || !report.read ? "unread" : "",
+  ].filter(Boolean).join(" ");
   return `
-    <button class="battle-report-card ${report.read ? "" : "unread"}" data-report-action="open" data-report-id="${escapeHtml(report.id)}" type="button">
+    <button class="${classes}" data-report-action="open" data-report-id="${escapeHtml(report.id)}" type="button">
       <span class="battle-report-shield" aria-hidden="true"></span>
       <div class="battle-report-card-main">
         <div class="battle-report-card-head">

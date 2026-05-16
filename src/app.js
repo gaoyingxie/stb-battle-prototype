@@ -41,6 +41,7 @@ let selectedBattleReportId = null;
 let battleReportView = "list";
 let battleReportStatsTab = "hero";
 let battleReportFormationSide = "player";
+let expandedBattleReportSeriesIds = new Set();
 
 globalThis.STZB_DEBUG = { state };
 
@@ -999,6 +1000,7 @@ function resetRuntimeState() {
   state.battleReports = [];
   state.lastBattle = null;
   state.activeBattle = null;
+  expandedBattleReportSeriesIds = new Set();
 }
 
 function starterFormation() {
@@ -1158,9 +1160,17 @@ function currentBattle() {
 function advanceBattleFlow() {
   const battles = runBattleEncounters(getPlayerTeam(), state.enemy);
   const snapshots = battles.map(toBattleSnapshot);
+  const seriesId = `battle-series-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+  const seriesSize = snapshots.length;
   state.lastBattle = snapshots.at(-1);
   state.activeBattle = null;
-  snapshots.forEach(addBattleReport);
+  snapshots.forEach((snapshot, index) => {
+    addBattleReport(snapshot, {
+      seriesId,
+      seriesIndex: index + 1,
+      seriesSize,
+    });
+  });
   saveState();
   renderAll();
 }
