@@ -1269,6 +1269,7 @@ function slgEventMessage(event) {
     return `${faction?.label || "势力"}主城升至 ${event.level} 级。`;
   }
   if (event.type === "battle") return event.text;
+  if (event.type === "occupy") return event.text;
   if (event.type === "capitalCaptured") return event.text;
   return "";
 }

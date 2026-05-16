@@ -250,7 +250,7 @@
         } : null,
       };
       if (normalized.type === TILE_TYPES.EMPTY) {
-        normalized.ownerId = null;
+        normalized.ownerId = isFactionId(normalized.ownerId) ? normalized.ownerId : null;
         normalized.resourceType = null;
         normalized.level = 0;
         normalized.cityFactionId = null;
@@ -378,6 +378,12 @@
     const validation = validateAttack(state, attackerId, tile, options);
     if (!validation.ok) return validation;
 
+    if (tile.type === TILE_TYPES.EMPTY) {
+      const payload = captureTileInPlace(state, attackerId, tile.id, events);
+      checkVictoryStateInPlace(state);
+      return { ok: true, ...payload };
+    }
+
     const defenderId = tile.ownerId && tile.ownerId !== attackerId ? tile.ownerId : NEUTRAL_FACTION_ID;
     const defenderTroopsBefore = defenderTroopsForTile(state, tile);
     const attackerTroopsBefore = attacker.armyTroops;
@@ -490,6 +496,19 @@
       return { ok: true, ...event };
     }
 
+    if (tile.type === TILE_TYPES.EMPTY) {
+      tile.ownerId = factionId;
+      const event = {
+        type: "occupy",
+        factionId,
+        oldOwnerId,
+        tileId: tile.id,
+        text: `${faction.label}占领空地${tile.x},${tile.y}`,
+      };
+      events.push(event);
+      return { ok: true, ...event };
+    }
+
     if (tile.type === TILE_TYPES.MAIN_CITY && tile.cityPart === CITY_PARTS.CENTER) {
       const defeatedFactionId = tile.cityFactionId || oldOwnerId;
       state.tiles
@@ -543,10 +562,11 @@
     if (!tile) return { ok: false, reason: "missingTile" };
     if (tile.ownerId === attackerId) return { ok: false, reason: "alreadyOwned" };
     if (attacker.armyTroops <= 0) return { ok: false, reason: "noTroops" };
+    const isEmpty = tile.type === TILE_TYPES.EMPTY;
     const isResource = tile.type === TILE_TYPES.RESOURCE;
     const isCapital = tile.type === TILE_TYPES.MAIN_CITY && tile.cityPart === CITY_PARTS.CENTER;
-    if (!isResource && !isCapital) return { ok: false, reason: "notAttackable" };
-    if (!options.ignoreAdjacency && !isAdjacentToFaction(state, tile, attackerId)) {
+    if (!isEmpty && !isResource && !isCapital) return { ok: false, reason: "notAttackable" };
+    if (!options.ignoreAdjacency && !canReachAttackTarget(state, tile, attackerId)) {
       return { ok: false, reason: "notAdjacent" };
     }
     return { ok: true };
@@ -566,6 +586,7 @@
   }
 
   function aiTargetScore(state, factionId, tile) {
+    if (tile.type === TILE_TYPES.EMPTY) return 6;
     const defenderTroops = defenderTroopsForTile(state, tile);
     const faction = state.factions[factionId];
     const troopRatio = faction.armyTroops / Math.max(1, defenderTroops);
@@ -656,6 +677,15 @@
     return adjacentTiles(state, tile).some((candidate) => candidate.ownerId === factionId);
   }
 
+  function canReachAttackTarget(state, tile, factionId) {
+    if (isAdjacentToFaction(state, tile, factionId)) return true;
+    if (tile?.type !== TILE_TYPES.MAIN_CITY || tile.cityPart !== CITY_PARTS.CENTER) return false;
+    const cityFactionId = tile.cityFactionId || tile.ownerId;
+    return state.tiles
+      .filter((candidate) => candidate.type === TILE_TYPES.MAIN_CITY && candidate.cityFactionId === cityFactionId)
+      .some((candidate) => adjacentTiles(state, candidate).some((neighbor) => neighbor.ownerId === factionId));
+  }
+
   function adjacentTiles(state, tile) {
     if (!tile) return [];
     return [
@@ -677,6 +707,10 @@
 
   function tileId(x, y) {
     return `${x}-${y}`;
+  }
+
+  function isFactionId(ownerId) {
+    return FACTIONS.some((faction) => faction.id === ownerId);
   }
 
   function cloneState(value) {

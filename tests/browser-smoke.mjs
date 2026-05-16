@@ -100,6 +100,24 @@ try {
   await page.waitForFunction(() =>
     globalThis.STZB_DEBUG?.state?.slg?.tiles?.find((tile) => tile.id === "5-3")?.ownerId === "player"
   );
+  const emptyRoadTarget = await page.evaluate(() => {
+    const slg = globalThis.STZB_DEBUG?.state?.slg;
+    const world = globalThis.STZB_SLG_WORLD;
+    const rules = globalThis.STZB_SLG_RULES;
+    return slg?.tiles?.find((tile) =>
+      tile.type === rules.TILE_TYPES.EMPTY
+      && !tile.ownerId
+      && world.isAttackableTile(slg, rules.PLAYER_FACTION_ID, tile.id)
+    )?.id;
+  });
+  if (!emptyRoadTarget) throw new Error("SLG world should expose an adjacent empty tile for road expansion after first capture");
+  await page.click(`#worldMap [data-world-tile-id="${emptyRoadTarget}"]`);
+  await page.waitForSelector('#worldDetail [data-world-action="attack"]');
+  await page.click('#worldDetail [data-world-action="attack"]');
+  await page.waitForFunction((tileId) =>
+    globalThis.STZB_DEBUG?.state?.slg?.tiles?.find((tile) => tile.id === tileId)?.ownerId === "player",
+    emptyRoadTarget
+  );
   await page.click('#worldSummary [data-world-action="end-turn"]');
   await page.waitForFunction((turn) => globalThis.STZB_DEBUG?.state?.slg?.turn > turn, worldBeforeAttack.turn);
   const worldFlowCheck = await page.evaluate(() => {
@@ -111,6 +129,7 @@ try {
       playerFood: slg?.factions?.player?.resources?.food,
       playerArmy: slg?.factions?.player?.armyTroops,
       reports: globalThis.STZB_DEBUG?.state?.battleReports?.length || 0,
+      ownedEmptyTiles: slg?.tiles?.filter((item) => item.type === "empty" && item.ownerId === "player").length || 0,
       detailHasAttackable: Boolean(document.querySelector("#worldMap .world-tile.attackable")),
     };
   });
@@ -719,6 +738,7 @@ try {
     || worldFlowCheck.capturedOwner !== "player"
     || worldFlowCheck.turn <= worldBeforeAttack.turn
     || worldFlowCheck.reports < 1
+    || worldFlowCheck.ownedEmptyTiles < 1
   ) {
     throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck })}`);
   }
