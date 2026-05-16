@@ -54,7 +54,39 @@
   const INITIAL_RESOURCES = Object.freeze({ food: 1200, wood: 800, stone: 800 });
   const INITIAL_ARMY_TROOPS = 9000;
   const TEAM_TROOP_CAP = 30000;
+  const ARMY_SLOT_TROOP_CAP = 10000;
   const TROOPS_PER_FOOD = 10;
+  const ARMY_LIMIT_BY_CITY_LEVEL = Object.freeze({
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+  });
+  const ARMY_STAMINA_MAX = 100;
+  const ARMY_STAMINA_COSTS = Object.freeze({
+    occupy: 20,
+    march: 20,
+    return: 20,
+    garrison: 20,
+    attack: 25,
+    buildFort: 20,
+  });
+  const ARMY_STAMINA_RECOVERY = Object.freeze({
+    supply: 20,
+    field: 10,
+  });
+  const ARMY_WOUNDED_RECOVERY_RATE = 0.35;
+  const FORT_BUILD_COST = Object.freeze({ wood: 600, stone: 500 });
+  const FORT_BUILD_TURNS = 2;
+  const COMMAND_TYPES = Object.freeze({
+    OCCUPY: "occupy",
+    ATTACK: "attack",
+    MARCH: "march",
+    RETURN: "return",
+    GARRISON: "garrison",
+    BUILD_FORT: "buildFort",
+  });
 
   const CITY_PRODUCTION_BY_LEVEL = Object.freeze({
     1: Object.freeze({ food: 120, wood: 80, stone: 80 }),
@@ -116,7 +148,16 @@
     INITIAL_RESOURCES,
     INITIAL_ARMY_TROOPS,
     TEAM_TROOP_CAP,
+    ARMY_SLOT_TROOP_CAP,
     TROOPS_PER_FOOD,
+    ARMY_LIMIT_BY_CITY_LEVEL,
+    ARMY_STAMINA_MAX,
+    ARMY_STAMINA_COSTS,
+    ARMY_STAMINA_RECOVERY,
+    ARMY_WOUNDED_RECOVERY_RATE,
+    FORT_BUILD_COST,
+    FORT_BUILD_TURNS,
+    COMMAND_TYPES,
     CITY_PRODUCTION_BY_LEVEL,
     CITY_UPGRADE_COSTS,
     RESOURCE_POINT_COUNTS,

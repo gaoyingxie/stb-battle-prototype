@@ -17,6 +17,8 @@
     CITY_PARTS,
     TEAM_TROOP_CAP,
     TROOPS_PER_FOOD,
+    COMMAND_TYPES,
+    FORT_BUILD_COST,
   } = rules;
 
   function createWorldUi({ mapEl, detailEl, summaryEl, callbacks = {} }) {
@@ -37,14 +39,15 @@
         if (action === "end-turn") callbacks.onEndTurn?.();
         if (action === "reports") callbacks.onOpenReports?.();
         if (action === "reset-world") callbacks.onResetWorld?.();
+        if (action === "command") callbacks.onIssueCommand?.(button.dataset.worldCommand, button.dataset.worldTarget);
       });
     });
 
     return {
       render(state, selectedTileId, uiState = {}) {
         renderWorldSummary(summaryEl, state, uiState);
-        renderWorldMap(mapEl, state, selectedTileId);
-        renderWorldDetail(detailEl, state, selectedTileId);
+        renderWorldMap(mapEl, state, selectedTileId, uiState);
+        renderWorldDetail(detailEl, state, selectedTileId, uiState);
       },
     };
   }
@@ -68,9 +71,9 @@
         ${resourcePill("木材", player.resources.wood, "wood", income.wood)}
         ${resourcePill("石料", player.resources.stone, "stone", income.stone)}
         <span class="world-resource-pill army">
-          <b>势力兵力</b>
+          <b>预备兵</b>
           <span class="world-resource-value">${formatNumber(player.armyTroops)}</span>
-          <em class="world-resource-income">${escapeHtml(armyReadinessText(player))}</em>
+          <em class="world-resource-income">${escapeHtml(armyReadinessText(state))}</em>
         </span>
       </div>
       <div class="world-summary-actions">
@@ -114,16 +117,18 @@
     `;
   }
 
-  function renderWorldMap(container, state, selectedTileId) {
+  function renderWorldMap(container, state, selectedTileId, uiState = {}) {
     if (!container) return;
     container.style.setProperty("--world-size", String(state.map.width));
-    container.innerHTML = state.tiles.map((tile) => tileHtml(state, tile, selectedTileId)).join("");
+    container.innerHTML = state.tiles.map((tile) => tileHtml(state, tile, selectedTileId, uiState)).join("");
   }
 
-  function tileHtml(state, tile, selectedTileId) {
+  function tileHtml(state, tile, selectedTileId, uiState = {}) {
     const faction = state.factions[tile.ownerId];
     const selected = tile.id === selectedTileId;
-    const attackable = world.isAttackableTile(state, PLAYER_FACTION_ID, tile.id);
+    const attackable = world.isAttackableTile(state, PLAYER_FACTION_ID, tile.id, uiState.selectedArmyId);
+    const armies = Object.values(state.armies || {}).filter((army) => army.locationTileId === tile.id && world.armyTotalTroops(army) > 0);
+    const commandTarget = (state.commands || []).some((command) => command.targetTileId === tile.id);
     const owned = tile.ownerId && tile.ownerId !== NEUTRAL_FACTION_ID;
     const classes = [
       "world-tile",
@@ -136,6 +141,9 @@
       tile.cityPart === CITY_PARTS.CENTER ? "city-center" : "",
       selected ? "selected" : "",
       attackable ? "attackable" : "",
+      tile.fort ? "has-fort" : "",
+      armies.length ? "has-army" : "",
+      commandTarget ? "has-command" : "",
     ].filter(Boolean).join(" ");
     return `
       <button
@@ -151,6 +159,10 @@
         <span class="world-tile-glyph">${escapeHtml(tileGlyph(state, tile))}</span>
         ${tileLevelBadge(tile)}
         ${attackable ? `<span class="world-tile-action">${escapeHtml(tileActionLabel(tile))}</span>` : ""}
+        ${tile.fort ? `<span class="world-tile-marker fort">塞</span>` : ""}
+        ${tile.garrisonArmyIds?.length ? `<span class="world-tile-marker garrison">驻</span>` : ""}
+        ${armies.length ? `<span class="world-tile-marker army">军</span>` : ""}
+        ${commandTarget ? `<span class="world-tile-marker command">令</span>` : ""}
       </button>
     `;
   }
@@ -190,11 +202,12 @@
     return `${tile.x},${tile.y} 空地 归属：${owner}`;
   }
 
-  function renderWorldDetail(container, state, selectedTileId) {
+  function renderWorldDetail(container, state, selectedTileId, uiState = {}) {
     if (!container) return;
     const selected = world.tileById(state, selectedTileId) || playerHomeTile(state);
     const player = state.factions[PLAYER_FACTION_ID];
-    const canAttack = selected && world.isAttackableTile(state, PLAYER_FACTION_ID, selected.id);
+    const selectedArmy = state.armies?.[uiState.selectedArmyId] || null;
+    const canAttack = selected && world.isAttackableTile(state, PLAYER_FACTION_ID, selected.id, selectedArmy?.id);
     const selectedIsPlayerCenter = selected?.type === TILE_TYPES.MAIN_CITY
       && selected.ownerId === PLAYER_FACTION_ID
       && selected.cityPart === CITY_PARTS.CENTER;
@@ -224,7 +237,7 @@
         </div>
         ${resourceYieldHtml(state, selected)}
         ${selectedIsPlayerCenter ? playerCityActionsHtml(player, upgradeCost, canUpgrade, recruitDisabled) : ""}
-        ${canAttack ? `<button class="btn primary world-wide-action" data-world-action="attack" type="button">${escapeHtml(attackButtonLabel(selected))}</button>` : ""}
+        ${armyCommandActionsHtml(state, selected, selectedArmy)}
         ${state.gameStatus !== "playing" ? `<p class="world-end-state">${escapeHtml(endStateText(state))}</p>` : ""}
       </div>
       <div class="world-factions">
@@ -283,6 +296,48 @@
         <em>${escapeHtml(ownerText)}</em>
       </div>
     `;
+  }
+
+  function armyCommandActionsHtml(state, tile, army) {
+    if (state.gameStatus !== "playing") return "";
+    if (!army) {
+      return `<p class="world-command-empty">先在军团栏选择一支部队，再对地块下令。</p>`;
+    }
+    const command = (state.commands || []).find((item) => item.id === army.currentCommandId);
+    if (command) {
+      return `<p class="world-command-empty">${escapeHtml(army.name)}正在执行${escapeHtml(commandLabel(command.type))}，剩余 ${formatNumber(command.remainingTurns)} 回合。</p>`;
+    }
+    const actions = [];
+    const addCommand = (type, label, variant = "secondary") => {
+      const validation = world.canIssueArmyCommand(state, PLAYER_FACTION_ID, army.id, type, tile.id);
+      if (!validation.ok) return;
+      actions.push(`<button class="btn ${variant} world-command-btn" data-world-action="command" data-world-command="${escapeHtml(type)}" data-world-target="${escapeHtml(tile.id)}" type="button">${escapeHtml(label)}</button>`);
+    };
+
+    if (tile.type === TILE_TYPES.EMPTY && tile.ownerId !== PLAYER_FACTION_ID) {
+      addCommand(COMMAND_TYPES.OCCUPY, "占领空地", "primary");
+    }
+    if (
+      tile.ownerId !== PLAYER_FACTION_ID
+      && (tile.type === TILE_TYPES.RESOURCE || (tile.type === TILE_TYPES.MAIN_CITY && tile.cityPart === CITY_PARTS.CENTER))
+    ) {
+      addCommand(COMMAND_TYPES.ATTACK, attackButtonLabel(tile), "primary");
+    }
+    if (tile.ownerId === PLAYER_FACTION_ID || tile.fort?.factionId === PLAYER_FACTION_ID) {
+      if (tile.id !== army.locationTileId) addCommand(COMMAND_TYPES.MARCH, "调动至此");
+      addCommand(COMMAND_TYPES.GARRISON, tile.id === army.locationTileId ? "就地驻守" : "调动驻守");
+      if (world.isSupplyTileForFaction(state, tile, PLAYER_FACTION_ID) && tile.id !== army.locationTileId) {
+        addCommand(COMMAND_TYPES.RETURN, "返回补给");
+      }
+      if (tile.type === TILE_TYPES.EMPTY && !tile.fort) {
+        addCommand(COMMAND_TYPES.BUILD_FORT, `建要塞（木${formatNumber(FORT_BUILD_COST.wood)} 石${formatNumber(FORT_BUILD_COST.stone)}）`);
+      }
+    }
+    if (!actions.length) {
+      const location = world.tileById(state, army.locationTileId);
+      return `<p class="world-command-empty">${escapeHtml(army.name)}位于 ${location ? `${location.x},${location.y}` : "未知"}，当前地块暂无可执行命令。</p>`;
+    }
+    return `<div class="world-command-actions">${actions.join("")}</div>`;
   }
 
   function factionHtml(state, faction) {
@@ -369,8 +424,11 @@
     };
   }
 
-  function armyReadinessText(player) {
-    return `单队可出 ${formatNumber(deployableTeamTroops(player.armyTroops))}/${formatNumber(TEAM_TROOP_CAP)}`;
+  function armyReadinessText(state) {
+    const armies = world.armiesForFaction(state, PLAYER_FACTION_ID);
+    const ready = armies.filter((army) => !army.currentCommandId).length;
+    const troops = armies.reduce((sum, army) => sum + world.armyTotalTroops(army), 0);
+    return `${formatNumber(ready)}支待命 / 军团${formatNumber(troops)}`;
   }
 
   function attackButtonLabel(tile) {
@@ -383,9 +441,10 @@
   function worldNextStepText(state, player) {
     if (state.gameStatus !== "playing") return endStateText(state);
     const recruit = recruitPreview(player);
-    const deployableTroops = deployableTeamTroops(player.armyTroops);
-    if (recruit.recruited > 0 && deployableTroops < Math.ceil(TEAM_TROOP_CAP * 0.82)) {
-      return `当前单队只能出 ${formatNumber(deployableTroops)}，可征兵新增 ${formatNumber(recruit.recruited)}。`;
+    const armies = world.armiesForFaction(state, PLAYER_FACTION_ID);
+    const weakest = armies.sort((a, b) => world.armyTotalTroops(a) - world.armyTotalTroops(b))[0];
+    if (recruit.recruited > 0 && weakest && world.armyTotalTroops(weakest) < Math.ceil(TEAM_TROOP_CAP * 0.82)) {
+      return `${weakest.name}兵力 ${formatNumber(world.armyTotalTroops(weakest))}，可征兵新增 ${formatNumber(recruit.recruited)} 预备兵。`;
     }
     if (world.canUpgradeMainCity(state, PLAYER_FACTION_ID)) {
       return `资源已够，升级主城可提升基础产量。`;
@@ -402,6 +461,17 @@
       return `附近有 ${attackable.length} 个地块可扩张，先铺路打开资源点。`;
     }
     return "当前没有接壤目标，结束回合观察敌我边界变化。";
+  }
+
+  function commandLabel(type) {
+    return ({
+      occupy: "占领",
+      attack: "出征",
+      march: "调动",
+      return: "返回",
+      garrison: "驻守",
+      buildFort: "建要塞",
+    })[type] || "命令";
   }
 
   function deployableTeamTroops(totalTroops) {

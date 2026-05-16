@@ -91,24 +91,35 @@ try {
       nextStepText: document.querySelector("#worldSummary .world-next-step")?.textContent?.trim() || "",
       cityEconomyText: document.querySelector("#worldDetail .world-city-economy")?.textContent?.trim() || "",
       recruitPreviewText: document.querySelector("#worldDetail .world-recruit-preview")?.textContent?.trim() || "",
+      armyCards: document.querySelectorAll("#armyPanel .army-card").length,
+      selectedArmyText: document.querySelector("#armyPanel .army-card.selected")?.textContent?.trim().replace(/\s+/g, " ") || "",
       turn: slg?.turn,
       playerFood: slg?.factions?.player?.resources?.food,
       playerArmy: slg?.factions?.player?.armyTroops,
+      playerArmyTroops: globalThis.STZB_SLG_WORLD?.armyTotalTroops(globalThis.STZB_SLG_WORLD?.armiesForFaction(slg, "player")?.[0]),
       adjacentOwner: slg?.tiles?.find((tile) => tile.id === "5-3")?.ownerId,
     };
   });
   await page.click('#worldMap [data-world-tile-id="3-3"]');
   await page.click('#worldDetail [data-world-action="recruit"]');
   await page.click('#worldMap [data-world-tile-id="5-3"]');
-  await page.waitForSelector('#worldDetail [data-world-action="attack"]');
+  await page.waitForSelector('#worldDetail [data-world-action="command"][data-world-command="attack"]');
   const worldBeforeAttack = await page.evaluate(() => ({
     turn: globalThis.STZB_DEBUG?.state?.slg?.turn,
     playerFood: globalThis.STZB_DEBUG?.state?.slg?.factions?.player?.resources?.food,
     playerArmy: globalThis.STZB_DEBUG?.state?.slg?.factions?.player?.armyTroops,
+    commands: globalThis.STZB_DEBUG?.state?.slg?.commands?.length || 0,
     resourceYieldText: document.querySelector("#worldDetail .world-yield")?.textContent?.trim() || "",
-    attackButtonText: document.querySelector('#worldDetail [data-world-action="attack"]')?.textContent?.trim() || "",
+    attackButtonText: document.querySelector('#worldDetail [data-world-action="command"][data-world-command="attack"]')?.textContent?.trim() || "",
   }));
-  await page.click('#worldDetail [data-world-action="attack"]');
+  await page.click('#worldDetail [data-world-action="command"][data-world-command="attack"]');
+  await page.waitForFunction(() => globalThis.STZB_DEBUG?.state?.slg?.commands?.some((command) => command.factionId === "player"));
+  const worldQueuedAttackCheck = await page.evaluate(() => ({
+    commands: globalThis.STZB_DEBUG?.state?.slg?.commands?.length || 0,
+    selectedArmyBusy: Boolean(globalThis.STZB_DEBUG?.state?.slg?.armies?.["player-1"]?.currentCommandId),
+    commandMarkers: document.querySelectorAll("#worldMap .world-tile.has-command").length,
+  }));
+  await page.click('#worldSummary [data-world-action="end-turn"]');
   await page.waitForFunction(() =>
     globalThis.STZB_DEBUG?.state?.slg?.tiles?.find((tile) => tile.id === "5-3")?.ownerId === "player"
   );
@@ -124,8 +135,10 @@ try {
   });
   if (!emptyRoadTarget) throw new Error("SLG world should expose an adjacent empty tile for road expansion after first capture");
   await page.click(`#worldMap [data-world-tile-id="${emptyRoadTarget}"]`);
-  await page.waitForSelector('#worldDetail [data-world-action="attack"]');
-  await page.click('#worldDetail [data-world-action="attack"]');
+  await page.waitForSelector('#worldDetail [data-world-action="command"][data-world-command="occupy"]');
+  await page.click('#worldDetail [data-world-action="command"][data-world-command="occupy"]');
+  await page.waitForFunction(() => globalThis.STZB_DEBUG?.state?.slg?.commands?.some((command) => command.factionId === "player"));
+  await page.click('#worldSummary [data-world-action="end-turn"]');
   await page.waitForFunction((tileId) =>
     globalThis.STZB_DEBUG?.state?.slg?.tiles?.find((tile) => tile.id === tileId)?.ownerId === "player",
     emptyRoadTarget
@@ -721,6 +734,7 @@ try {
         .map((option) => option.textContent.match(/· ([SABC])级/)?.[1] || "")
       : [];
     const heroRarities = [...document.querySelectorAll('select[data-kind="hero"]')[0].options]
+      .filter((option) => option.value)
       .slice(0, 12)
       .map((option) => Number(option.textContent.match(/· (\d)星/)?.[1] || 0));
     const handwrittenCanonicalIds = [...globalThis.STZB_SEED_DATA.HEROES, ...globalThis.STZB_SEED_DATA.SKILLS]
@@ -756,8 +770,10 @@ try {
     || !worldInitialCheck.foodIncomeText.includes("+120 / 回合")
     || !worldInitialCheck.woodIncomeText.includes("+80 / 回合")
     || !worldInitialCheck.stoneIncomeText.includes("+80 / 回合")
-    || !worldInitialCheck.armyText.includes("势力兵力 9,000")
-    || !worldInitialCheck.armyText.includes("单队可出 9,000/30,000")
+    || !worldInitialCheck.armyText.includes("预备兵 0")
+    || !worldInitialCheck.armyText.includes("1支待命")
+    || worldInitialCheck.armyCards !== 1
+    || !worldInitialCheck.selectedArmyText.includes("9,000")
     || !worldInitialCheck.nextStepText.includes("军务")
     || !worldInitialCheck.cityEconomyText.includes("主城产量")
     || !worldInitialCheck.recruitPreviewText.includes("征兵可新增")
@@ -770,6 +786,9 @@ try {
     || worldBeforeAttack.playerArmy <= worldInitialCheck.playerArmy
     || !worldBeforeAttack.resourceYieldText.includes("+45 粮草 / 回合")
     || !worldBeforeAttack.attackButtonText.includes("+45粮草/回合")
+    || worldQueuedAttackCheck.commands !== 1
+    || !worldQueuedAttackCheck.selectedArmyBusy
+    || worldQueuedAttackCheck.commandMarkers < 1
     || worldFlowCheck.capturedOwner !== "player"
     || worldFlowCheck.turn <= worldBeforeAttack.turn
     || worldFlowCheck.reports < 1
@@ -781,7 +800,7 @@ try {
     || worldTileVisualCheck.ownerData !== "player"
     || !worldFlowCheck.foodIncomeText.includes("+165 / 回合")
   ) {
-    throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck, worldTileVisualCheck })}`);
+    throw new Error(`SLG world recruit, command, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldQueuedAttackCheck, worldFlowCheck, worldTileVisualCheck })}`);
   }
   if (
     generatedReportCheck.badge !== String(generatedReportCheck.reports)

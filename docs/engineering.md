@@ -19,6 +19,9 @@ src/seed-data.js           本地种子武将、战法和官方别名
 src/battle-engine.js       战斗模拟引擎
 src/report-ui.js           战报弹窗、战报快照、系统消息和日志渲染
 src/battle-replay-ui.js    战况回放时间轴、播放控制和 2.5D 表现
+src/slg-world.js           SLG 地图、军团、命令队列、要塞和 AI 纯模拟
+src/world-ui.js            天下地图、地块详情和地块命令 DOM 渲染
+src/army-ui.js             军团列表、选中军团和补员入口 DOM 渲染
 src/app.js                 DOM 入口、存档、编队、抽卡和战斗流程
 scripts/bootstrap.mjs      本地依赖、浏览器和最小检查入口
 scripts/scrape-stzb-official.mjs
@@ -51,6 +54,9 @@ npm run bootstrap
 - `team-ai.js` 拥有配将推荐逻辑：候选池、选将评分、战法评分和队伍组装策略。
 - `report-ui.js` 拥有战报 UI、战报快照、系统消息和日志渲染；它只读写浏览器应用状态，不接入战斗规则。
 - `battle-replay-ui.js` 拥有单封战报回放：时间轴、播放状态、进度控制、行动高亮和 2.5D DOM 表现。
+- `slg-world.js` 拥有 SLG 纯模拟状态：地图、势力资源、军团、体力、伤兵、命令队列、要塞、驻守和 AI 行动。
+- `world-ui.js` 拥有天下地图 DOM：地块格子、资源栏、地块详情和地块命令按钮；它只派发事件，不直接改状态。
+- `army-ui.js` 拥有军团管理 DOM：军团卡、选中军团、体力/兵力/伤兵摘要和补员按钮；它只派发事件，不直接改状态。
 - `app.js` 拥有浏览器应用状态：localStorage、按钮事件、编队表单、弹窗、抽卡和战斗流程。
 - `official-data.js` 是生成物，不手工维护；需要刷新时重新运行抓取脚本。
 
@@ -64,6 +70,8 @@ npm run bootstrap
 - `app-shell.css`：应用外壳、顶栏、品牌区和顶部操作区。
 - `controls.css`：通用按钮和图标按钮。
 - `layout.css`：三栏主布局、面板结构、面板标题、徽标和结果标签。
+- `world.css`：天下地图、资源栏、地块详情、地块标记和命令按钮。
+- `army.css`：军团管理区、军团卡、军团状态条和补员入口。
 - `roster.css`：编队编辑器、武将列表、战法集、武将卡和列表内小控件。
 - `battlefield.css`：战场容器、双方阵列、战斗单位卡、头像、兵力条和战斗内战法标签。
 - `modals.css`：战法详情、武将详情、抽卡弹窗和相关动画。

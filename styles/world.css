@@ -353,7 +353,8 @@
 }
 
 .world-tile-level,
-.world-tile-action {
+.world-tile-action,
+.world-tile-marker {
   position: absolute;
   z-index: 2;
   display: grid;
@@ -380,6 +381,40 @@
   border: 1px solid rgba(255, 245, 210, 0.66);
   background: rgba(155, 47, 35, 0.9);
   color: #fff5d2;
+}
+
+.world-tile-marker {
+  min-width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255, 245, 210, 0.46);
+  background: rgba(9, 11, 10, 0.68);
+  color: #fff5d2;
+}
+
+.world-tile-marker.fort {
+  left: 1px;
+  bottom: 1px;
+  background: rgba(70, 88, 116, 0.86);
+}
+
+.world-tile-marker.garrison {
+  left: 1px;
+  top: 1px;
+  background: rgba(76, 142, 255, 0.82);
+}
+
+.world-tile-marker.army {
+  left: 50%;
+  bottom: 1px;
+  transform: translateX(-50%);
+  background: rgba(49, 133, 91, 0.9);
+}
+
+.world-tile-marker.command {
+  left: 50%;
+  top: 1px;
+  transform: translateX(-50%);
+  background: rgba(183, 106, 38, 0.92);
 }
 
 .world-detail {
@@ -509,6 +544,27 @@
   width: 100%;
 }
 
+.world-command-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.world-command-btn {
+  min-width: 0;
+}
+
+.world-command-empty {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(244, 236, 216, 0.1);
+  border-radius: 6px;
+  background: rgba(9, 11, 10, 0.22);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
 .world-factions {
   display: grid;
   gap: 8px;
@@ -583,9 +639,14 @@
   }
 
   .world-tile-action,
-  .world-tile-level {
+  .world-tile-level,
+  .world-tile-marker {
     min-width: 12px;
     height: 12px;
     font-size: 8px;
+  }
+
+  .world-command-actions {
+    grid-template-columns: 1fr;
   }
 }

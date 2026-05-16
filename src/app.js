@@ -18,6 +18,7 @@ const {
   PLAYER_FACTION_ID,
   NEUTRAL_FACTION_ID,
   TEAM_TROOP_CAP,
+  COMMAND_TYPES,
 } = globalThis.STZB_SLG_RULES;
 
 const {
@@ -26,13 +27,21 @@ const {
   advanceSlgTurn,
   recruitFactionArmy,
   upgradeMainCity,
-  attackTile,
+  issueArmyCommand,
+  replenishArmy,
+  updateArmyFormation,
+  armiesForFaction,
+  armyTotalTroops,
   tileById,
 } = globalThis.STZB_SLG_WORLD;
 
 const {
   createWorldUi,
 } = globalThis.STZB_WORLD_UI;
+
+const {
+  createArmyUi,
+} = globalThis.STZB_ARMY_UI;
 
 mergeOfficialData();
 
@@ -64,7 +73,9 @@ let battleReportStatsTab = "hero";
 let battleReportFormationSide = "player";
 let expandedBattleReportSeriesIds = new Set();
 let selectedWorldTileId = null;
+let selectedArmyId = null;
 let worldUi = null;
+let armyUi = null;
 
 globalThis.STZB_DEBUG = { state };
 
@@ -91,6 +102,7 @@ const els = {
   worldMap: document.querySelector("#worldMap"),
   worldDetail: document.querySelector("#worldDetail"),
   worldSummary: document.querySelector("#worldSummary"),
+  armyPanel: document.querySelector("#armyPanel"),
   battleTitle: document.querySelector("#battleTitle"),
   battleSubtitle: document.querySelector("#battleSubtitle"),
   battleResult: document.querySelector("#battleResult"),
@@ -174,9 +186,17 @@ function bindWorldUi() {
       onRecruit: recruitPlayerArmy,
       onUpgrade: upgradePlayerCity,
       onAttack: attackSelectedWorldTile,
+      onIssueCommand: issueSelectedArmyCommand,
       onEndTurn: endSlgTurn,
       onResetWorld: resetSlgWorld,
       onOpenReports: openBattleReportList,
+    },
+  });
+  armyUi = createArmyUi({
+    container: els.armyPanel,
+    callbacks: {
+      onSelectArmy: selectPlayerArmy,
+      onReplenishArmy: replenishPlayerArmy,
     },
   });
 }
@@ -877,12 +897,28 @@ function dismantleHero(heroId) {
   if (!hero || !skills.length || (state.roster[hero.id] || 0) <= 0) return;
   state.roster[hero.id] -= 1;
   removeHeroFromFormation(hero.id);
+  removeHeroFromArmies(hero.id);
   unlockDismantleSkills(hero);
   state.activeBattle = null;
   state.lastBattle = null;
   writeSystemMessage(`拆解${hero.name}，获得战法【${skills.map((skill) => skill.name).join("】、【")}】。`);
   saveState();
   renderAll();
+}
+
+function removeHeroFromArmies(heroId) {
+  if (!state.slg?.armies) return;
+  Object.values(state.slg.armies).forEach((army) => {
+    if (army.factionId !== PLAYER_FACTION_ID) return;
+    let changed = false;
+    army.formation.forEach((slot) => {
+      if (slot.heroId !== heroId) return;
+      slot.heroId = null;
+      slot.skills = [null, null];
+      changed = true;
+    });
+    if (changed && army.id === selectedArmyId) state.formation = formationFromArmy(army);
+  });
 }
 
 function unlockDismantleSkills(hero) {
@@ -1050,12 +1086,62 @@ function resetRuntimeState() {
   state.activeBattle = null;
   state.slg = createInitialSlgState();
   selectedWorldTileId = null;
+  selectedArmyId = null;
   expandedBattleReportSeriesIds = new Set();
 }
 
 function ensureSlgState() {
   state.slg = state.slg ? normalizeSlgState(state.slg) : createInitialSlgState();
   selectedWorldTileId ||= playerHomeTileId();
+  ensureSelectedArmy();
+}
+
+function ensureSelectedArmy() {
+  const armies = armiesForFaction(state.slg, PLAYER_FACTION_ID);
+  if (!armies.length) return null;
+  if (!selectedArmyId || !state.slg.armies[selectedArmyId] || state.slg.armies[selectedArmyId].factionId !== PLAYER_FACTION_ID) {
+    selectedArmyId = armies[0].id;
+  }
+  const army = state.slg.armies[selectedArmyId];
+  if (army && !army.formation.some((slot) => slot.heroId)) {
+    const outcome = updateArmyFormation(state.slg, PLAYER_FACTION_ID, selectedArmyId, state.formation);
+    state.slg = outcome.state;
+  } else if (army) {
+    state.formation = formationFromArmy(army);
+  }
+  return selectedArmyId;
+}
+
+function selectPlayerArmy(armyId) {
+  if (!state.slg?.armies?.[armyId] || state.slg.armies[armyId].factionId !== PLAYER_FACTION_ID) return;
+  saveFormationToSelectedArmy();
+  selectedArmyId = armyId;
+  state.formation = formationFromArmy(state.slg.armies[armyId]);
+  normalizeFormationHeroes();
+  normalizeFormationSkills();
+  saveFormationToSelectedArmy();
+  saveState();
+  renderAll();
+}
+
+function saveFormationToSelectedArmy() {
+  if (!state.slg || !selectedArmyId || !state.slg.armies?.[selectedArmyId]) return;
+  const outcome = updateArmyFormation(state.slg, PLAYER_FACTION_ID, selectedArmyId, state.formation);
+  if (outcome.ok) state.slg = outcome.state;
+}
+
+function formationFromArmy(army) {
+  return POSITIONS.map((position, index) => {
+    const slot = army?.formation?.find((item) => item.position === position.id) || army?.formation?.[index] || {};
+    return {
+      heroId: slot.heroId || null,
+      skills: [slot.skills?.[0] || null, slot.skills?.[1] || null],
+      position: position.id,
+      troops: Math.max(0, Math.round(Number(slot.troops) || 0)),
+      wounded: Math.max(0, Math.round(Number(slot.wounded) || 0)),
+      maxTroops: Math.max(0, Math.round(Number(slot.maxTroops) || 10000)),
+    };
+  });
 }
 
 function playerHomeTileId() {
@@ -1106,7 +1192,10 @@ function loadState() {
 }
 
 function saveState() {
+  normalizeFormationSkills();
+  saveFormationToSelectedArmy();
   ensureSlgState();
+  saveFormationToSelectedArmy();
   localStorage.setItem("heluozhanzhen", JSON.stringify({
     roster: state.roster,
     skills: state.skills,
@@ -1172,7 +1261,9 @@ function autoTeam() {
     skills: recommended[index]?.skills?.length ? recommended[index].skills : suggestSkills(index),
     position: position.id,
   }));
+  normalizeFormationHeroes();
   normalizeFormationSkills();
+  saveFormationToSelectedArmy();
   state.activeBattle = null;
   state.lastBattle = null;
   writeSystemMessage("军师完成整备：已按站位职责、属性互补和战法适配自动上阵。");
@@ -1203,6 +1294,8 @@ function resetSlgWorld() {
   if (typeof confirm === "function" && !confirm("确定重置天下地图、资源、主城和势力进度吗？")) return;
   state.slg = createInitialSlgState();
   selectedWorldTileId = playerHomeTileId();
+  selectedArmyId = null;
+  ensureSelectedArmy();
   writeSystemMessage("天下局势已重置，四方势力重新开局。");
   saveState();
   renderAll();
@@ -1227,19 +1320,39 @@ function upgradePlayerCity() {
 }
 
 function attackSelectedWorldTile() {
-  const target = tileById(state.slg, selectedWorldTileId);
-  if (!target) return;
-  const outcome = attackTile(state.slg, PLAYER_FACTION_ID, target.id, {
+  issueSelectedArmyCommand(null, selectedWorldTileId);
+}
+
+function issueSelectedArmyCommand(commandType, targetTileId) {
+  ensureSlgState();
+  saveFormationToSelectedArmy();
+  const target = tileById(state.slg, targetTileId || selectedWorldTileId);
+  const army = state.slg.armies[selectedArmyId];
+  if (!target || !army) return;
+  const inferredType = commandType || globalThis.STZB_SLG_WORLD.commandTypeForTarget(target);
+  const outcome = issueArmyCommand(state.slg, PLAYER_FACTION_ID, army.id, inferredType, targetTileId || target.id, {
     resolveBattle: resolveSlgBattle,
   });
   state.slg = outcome.state;
   writeSlgEvents(outcome.events);
-  if (!outcome.ok) writeSystemMessage("只能攻打与己方领地相邻的资源点或主城中心。");
+  if (!outcome.ok) writeSystemMessage(slgCommandFailureText(outcome.reason), "warning");
+  saveState();
+  renderAll();
+}
+
+function replenishPlayerArmy(armyId = selectedArmyId) {
+  ensureSlgState();
+  saveFormationToSelectedArmy();
+  const outcome = replenishArmy(state.slg, PLAYER_FACTION_ID, armyId);
+  state.slg = outcome.state;
+  writeSlgEvents(outcome.events);
+  if (!outcome.ok) writeSystemMessage("只能在己方主城或要塞补员，且需要粮草和预备兵。", "warning");
   saveState();
   renderAll();
 }
 
 function endSlgTurn() {
+  saveFormationToSelectedArmy();
   const outcome = advanceSlgTurn(state.slg, {
     resolveBattle: resolveSlgBattle,
   });
@@ -1271,14 +1384,38 @@ function slgEventMessage(event) {
     return `${faction?.label || "势力"}主城升至 ${event.level} 级。`;
   }
   if (event.type === "battle") return event.text;
+  if (event.type === "commandIssued") return event.text;
+  if (event.type === "armyMarched") return event.text;
+  if (event.type === "armyReturned") return event.text;
+  if (event.type === "armyGarrisoned") return event.text;
+  if (event.type === "fortBuilt") return event.text;
+  if (event.type === "armyReplenished" && event.factionId === PLAYER_FACTION_ID) {
+    return `${state.slg.armies[event.armyId]?.name || "军团"}补员 ${formatNumber(event.filled || 0)}，恢复 ${formatNumber(event.recovered || 0)}。`;
+  }
+  if (event.type === "armyRecovered" && event.factionId === PLAYER_FACTION_ID && event.recovered > 0) {
+    return `${state.slg.armies[event.armyId]?.name || "军团"}休整恢复 ${formatNumber(event.recovered)}。`;
+  }
   if (event.type === "occupy") return event.text;
   if (event.type === "capitalCaptured") return event.text;
   return "";
 }
 
-function resolveSlgBattle({ state: slgState, attackerId, defenderId, tile, attackerTroops, defenderTroops }) {
-  const attackerTeam = teamWithTroops(buildSlgFactionTeam(attackerId), attackerTroops);
-  const defenderTeam = teamWithTroops(buildSlgDefenderTeam(slgState, defenderId, tile), defenderTroops);
+function slgCommandFailureText(reason) {
+  return ({
+    stamina: "军团体力不足，先返回主城或要塞休整。",
+    armyBusy: "这支军团正在执行命令。",
+    notAdjacent: "军团当前位置无法直接抵达目标，先调动或铺路。",
+    notOwned: "只能调动到己方领地或要塞。",
+    notSupply: "返回目标必须是己方主城或要塞。",
+    fortCost: "木材或石料不足，暂时无法建造要塞。",
+    noTroops: "军团兵力不足，先补员后再出征。",
+    noReadyArmy: "没有可执行命令的军团。",
+  })[reason] || "当前地块暂时不能执行该军令。";
+}
+
+function resolveSlgBattle({ state: slgState, attackerId, defenderId, tile, army, defenderArmy, attackerTroops, defenderTroops }) {
+  const attackerTeam = teamWithTroops(buildSlgFactionTeam(attackerId, army), attackerTroops);
+  const defenderTeam = teamWithTroops(buildSlgDefenderTeam(slgState, defenderId, tile, defenderArmy), defenderTroops);
   const battles = runBattleEncounters(attackerTeam, defenderTeam, { freshFirstEncounter: false });
   const finalBattle = battles.at(-1);
   const snapshots = addSlgBattleReports(battles, attackerId, defenderId, tile);
@@ -1286,6 +1423,8 @@ function resolveSlgBattle({ state: slgState, attackerId, defenderId, tile, attac
     winner: finalBattle?.winner === "player" ? "attacker" : "defender",
     attackerTroops: sumBattleTroops(finalBattle?.player),
     defenderTroops: sumBattleTroops(finalBattle?.enemy),
+    attackerUnits: (finalBattle?.player || []).map(unitSnapshot),
+    defenderUnits: (finalBattle?.enemy || []).map(unitSnapshot),
     battle: snapshots.at(-1) || null,
   };
 }
@@ -1314,7 +1453,8 @@ function addSlgBattleReports(battles, attackerId, defenderId, tile) {
   return snapshots;
 }
 
-function buildSlgFactionTeam(factionId) {
+function buildSlgFactionTeam(factionId, army = null) {
+  if (army?.formation?.some((slot) => slot.heroId)) return army.formation.map((slot, index) => ({ ...slot, position: POSITIONS[index].id }));
   if (factionId === PLAYER_FACTION_ID) return getPlayerTeam();
   return buildEnemyTeam({
     heroes: HEROES,
@@ -1325,7 +1465,8 @@ function buildSlgFactionTeam(factionId) {
   });
 }
 
-function buildSlgDefenderTeam(slgState, defenderId, tile) {
+function buildSlgDefenderTeam(slgState, defenderId, tile, defenderArmy = null) {
+  if (defenderArmy?.formation?.some((slot) => slot.heroId)) return defenderArmy.formation.map((slot, index) => ({ ...slot, position: POSITIONS[index].id }));
   if (defenderId && defenderId !== NEUTRAL_FACTION_ID && slgState.factions[defenderId]?.alive) {
     return buildSlgFactionTeam(defenderId);
   }
@@ -1342,6 +1483,14 @@ function buildSlgDefenderTeam(slgState, defenderId, tile) {
 function teamWithTroops(team, totalTroops) {
   const slots = (team || []).filter((slot) => slot?.heroId);
   const total = Math.max(0, Math.min(TEAM_TROOP_CAP, Math.round(Number(totalTroops) || 0)));
+  if (slots.some((slot) => Number.isFinite(Number(slot.troops)))) {
+    return slots.map((slot) => ({
+      ...slot,
+      troops: Math.max(0, Math.min(10000, Math.round(Number(slot.troops) || 0))),
+      wounded: Math.max(0, Math.round(Number(slot.wounded) || 0)),
+      maxTroops: Math.max(1, Math.round(Number(slot.maxTroops) || 10000)),
+    }));
+  }
   let remaining = total;
   return slots.map((slot, index) => {
     const slotsLeft = Math.max(1, slots.length - index);
@@ -1367,10 +1516,13 @@ function getPlayerTeam() {
 }
 
 function renderAll() {
+  saveFormationToSelectedArmy();
+  ensureSlgState();
   normalizeFormationHeroes();
   normalizeFormationSkills();
-  ensureSlgState();
+  saveFormationToSelectedArmy();
   renderWorld();
+  renderArmyPanel();
   renderFormationEditor();
   renderRoster();
   renderSkillCodex();
@@ -1384,7 +1536,13 @@ function renderWorld() {
   worldUi?.render(state.slg, selectedWorldTileId, {
     reportCount: state.battleReports?.length || 0,
     unreadReports: (state.battleReports || []).filter((report) => !report.read).length,
+    selectedArmyId,
   });
+}
+
+function renderArmyPanel() {
+  ensureSlgState();
+  armyUi?.render(state.slg, selectedArmyId);
 }
 
 function currentBattle() {
@@ -1478,6 +1636,7 @@ function renderFormationEditor() {
           <span>${slot.heroId ? heroById(slot.heroId).name : "空位"}</span>
         </div>
         <select data-kind="hero" data-index="${index}" aria-label="${position.label}武将">
+          <option value="" ${slot.heroId ? "" : "selected"}>空位</option>
           ${owned.map((hero) => `<option value="${hero.id}" ${hero.id === slot.heroId ? "selected" : ""}>${hero.name} · ${hero.faction}${hero.arm} · ${hero.rarity}星 · 攻距${Number(hero.distance) || defaultAttackDistance()}</option>`).join("")}
         </select>
         <select data-kind="skill" data-skill-index="0" data-index="${index}" aria-label="${position.label}战法一">
@@ -1494,10 +1653,11 @@ function renderFormationEditor() {
     select.addEventListener("change", (event) => {
       const index = Number(event.target.dataset.index);
       const kind = event.target.dataset.kind;
-      state.formation[index] ||= { heroId: owned[0].id, skills: suggestSkills(index) };
+      state.formation[index] ||= { heroId: null, skills: suggestSkills(index) };
       if (kind === "hero") selectFormationHero(index, event.target.value);
       if (kind === "skill") state.formation[index].skills[Number(event.target.dataset.skillIndex)] = event.target.value || null;
       normalizeFormationSkills();
+      saveFormationToSelectedArmy();
       state.lastBattle = null;
       state.activeBattle = null;
       saveState();
@@ -1507,6 +1667,11 @@ function renderFormationEditor() {
 }
 
 function selectFormationHero(index, heroId) {
+  if (!heroId) {
+    state.formation[index].heroId = null;
+    state.formation[index].skills = [null, null];
+    return;
+  }
   const selectedHero = heroById(heroId);
   const selectedKey = heroKey(selectedHero);
   const swapIndex = state.formation.findIndex((slot, slotIndex) => (
@@ -1568,22 +1733,39 @@ function assignedSkillKeys(exceptSlotIndex = -1, exceptSkillIndex = -1) {
 function normalizeFormationHeroes() {
   const owned = sortedOwnedHeroes();
   const ownedIds = new Set(owned.map((hero) => hero.id));
+  const reserved = slgArmyHeroKeysExcept(selectedArmyId);
   const used = new Set();
   state.formation.forEach((slot, index) => {
     state.formation[index] ||= { heroId: null, skills: suggestSkills(index) };
     const current = state.formation[index].heroId;
     const currentHero = current ? heroById(current) : null;
     const currentKey = heroKey(currentHero);
-    if (current && ownedIds.has(current) && !used.has(currentKey)) {
+    if (current && ownedIds.has(current) && !used.has(currentKey) && !reserved.has(currentKey)) {
       used.add(currentKey);
       return;
     }
-    const replacement = owned.find((hero) => !used.has(heroKey(hero)));
+    const replacement = owned.find((hero) => !used.has(heroKey(hero)) && !reserved.has(heroKey(hero)));
     if (replacement) {
       state.formation[index].heroId = replacement.id;
       used.add(heroKey(replacement));
+    } else {
+      state.formation[index].heroId = null;
+      state.formation[index].skills = [null, null];
     }
   });
+}
+
+function slgArmyHeroKeysExcept(armyId) {
+  const keys = new Set();
+  if (!state.slg?.armies) return keys;
+  Object.values(state.slg.armies).forEach((army) => {
+    if (army.factionId !== PLAYER_FACTION_ID || army.id === armyId) return;
+    (army.formation || []).forEach((slot) => {
+      const key = heroKey(heroById(slot.heroId));
+      if (key) keys.add(key);
+    });
+  });
+  return keys;
 }
 
 function normalizeFormationSkills() {
