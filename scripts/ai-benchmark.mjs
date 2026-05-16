@@ -258,6 +258,7 @@ async function evaluateWeights(page, weights, config, label) {
         sampleSize: Math.min(benchmarkConfig.enemyPoolSize, enemyPool.length),
         skillGrades: ["S", "A"],
         rng,
+        weights: candidateWeightsValue || undefined,
       }));
 
       for (let seedIndex = 0; seedIndex < benchmarkConfig.battleSeeds; seedIndex += 1) {
