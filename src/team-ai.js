@@ -109,8 +109,9 @@
   function chooseLineup(heroes, positions, rng, context = buildScoringContext()) {
     const slots = positions.slice(0, 3);
     if (!heroes.length) return [];
-    const candidates = lineupCandidates(heroes, slots, rng, context);
-    const fallback = bestDistinctHeroes(candidates, slots, rng, context);
+    const plan = buildLineupScorePlan(heroes, slots, context);
+    const candidates = lineupCandidates(heroes, slots, rng, context, plan);
+    const fallback = bestDistinctHeroes(candidates, slots, rng, context, plan);
     let best = fallback;
     let bestScore = -Infinity;
 
@@ -120,8 +121,9 @@
         for (let c = 0; c < candidates.length; c += 1) {
           if (c === a || c === b) continue;
           const candidate = [candidates[a], candidates[b], candidates[c]].slice(0, slots.length);
-          if (hasDuplicateIdentity(candidate)) continue;
-          const score = scoreLineup(candidate, slots, context);
+          const entries = candidate.map((hero) => plan.entries.get(hero));
+          if (hasDuplicateIdentity(candidate, entries)) continue;
+          const score = scoreLineup(candidate, slots, context, entries);
           if (score > bestScore || (score === bestScore && randomTie(rng) > 0)) {
             best = candidate;
             bestScore = score;
@@ -133,51 +135,90 @@
     return best;
   }
 
-  function lineupCandidates(heroes, slots, rng, context) {
+  function buildLineupScorePlan(heroes, slots, context) {
+    const positionKeys = new Map();
+    [...slots, { id: "camp" }, { id: "middle" }, { id: "front" }].forEach((position) => {
+      positionKeys.set(positionKey(position), position);
+    });
+    const entries = new Map();
+    heroes.forEach((hero) => {
+      const positionScores = new Map();
+      positionKeys.forEach((position, key) => {
+        positionScores.set(key, scoreHeroForPosition(hero, position, context));
+      });
+      entries.set(hero, {
+        hero,
+        identityKey: heroIdentityKey(hero),
+        combatProfile: heroCombatProfile(hero, context),
+        positionScores,
+        totalScore: Math.max(
+          positionScores.get("camp") ?? scoreHeroForPosition(hero, { id: "camp" }, context),
+          positionScores.get("middle") ?? scoreHeroForPosition(hero, { id: "middle" }, context),
+          positionScores.get("front") ?? scoreHeroForPosition(hero, { id: "front" }, context),
+        ),
+      });
+    });
+    return { entries };
+  }
+
+  function positionKey(position) {
+    return position?.id || "";
+  }
+
+  function lineupEntryPositionScore(entry, hero, position, context) {
+    if (entry?.positionScores?.has(positionKey(position))) return entry.positionScores.get(positionKey(position));
+    return scoreHeroForPosition(entry?.hero || hero, position, context);
+  }
+
+  function rankedHeroes(heroes, scoreForHero, rng) {
+    return heroes
+      .map((hero) => ({ hero, score: scoreForHero(hero) }))
+      .sort((a, b) => b.score - a.score || randomTie(rng))
+      .map((entry) => entry.hero);
+  }
+
+  function lineupCandidates(heroes, slots, rng, context, plan = buildLineupScorePlan(heroes, slots, context)) {
     const ranked = new Map();
     slots.forEach((position) => {
-      [...heroes]
-        .sort((a, b) =>
-          scoreHeroForPosition(b, position, context) - scoreHeroForPosition(a, position, context)
-          || randomTie(rng)
-        )
+      rankedHeroes(heroes, (hero) => lineupEntryPositionScore(plan.entries.get(hero), hero, position, context), rng)
         .slice(0, POSITION_CANDIDATE_LIMIT)
         .forEach((hero) => ranked.set(hero.id, hero));
     });
-    [...heroes]
-      .sort((a, b) => heroTotalScore(b, context) - heroTotalScore(a, context) || randomTie(rng))
+    rankedHeroes(heroes, (hero) => plan.entries.get(hero)?.totalScore ?? heroTotalScore(hero, context), rng)
       .slice(0, POSITION_CANDIDATE_LIMIT)
       .forEach((hero) => ranked.set(hero.id, hero));
-    return [...ranked.values()]
-      .sort((a, b) => heroTotalScore(b, context) - heroTotalScore(a, context) || randomTie(rng))
+    return rankedHeroes([...ranked.values()], (hero) => plan.entries.get(hero)?.totalScore ?? heroTotalScore(hero, context), rng)
       .slice(0, TOTAL_CANDIDATE_LIMIT);
   }
 
-  function bestDistinctHeroes(heroes, slots, rng, context) {
+  function bestDistinctHeroes(heroes, slots, rng, context, plan = buildLineupScorePlan(heroes, slots, context)) {
     const picked = [];
     const used = new Set();
     slots.forEach((position) => {
-      const hero = [...heroes]
-        .filter((candidate) => !used.has(heroIdentityKey(candidate)))
-        .sort((a, b) =>
-          scoreHeroForPosition(b, position, context) - scoreHeroForPosition(a, position, context)
-          || randomTie(rng)
-        )[0];
+      const hero = rankedHeroes(
+        heroes.filter((candidate) => !used.has(plan.entries.get(candidate)?.identityKey || heroIdentityKey(candidate))),
+        (candidate) => lineupEntryPositionScore(plan.entries.get(candidate), candidate, position, context),
+        rng,
+      )[0];
       if (hero) {
         picked.push(hero);
-        used.add(heroIdentityKey(hero));
+        used.add(plan.entries.get(hero)?.identityKey || heroIdentityKey(hero));
       }
     });
     return picked;
   }
 
-  function scoreLineup(heroes, slots, context) {
-    const positionScore = heroes.reduce((sum, hero, index) =>
-      sum + scoreHeroForPosition(hero, slots[index], context), 0);
+  function scoreLineup(heroes, slots, context, entries = null) {
+    const positionScore = heroes.reduce((sum, hero, index) => {
+      const score = entries
+        ? lineupEntryPositionScore(entries[index], hero, slots[index], context)
+        : scoreHeroForPosition(hero, slots[index], context);
+      return sum + score;
+    }, 0);
     return positionScore
-      + synergyScore(heroes, context)
-      + teamBalanceScore(heroes, slots, context)
-      + lineupCombatPlanScore(heroes, slots, context);
+      + synergyScore(heroes, context, entries)
+      + teamBalanceScore(heroes, slots, context, entries)
+      + lineupCombatPlanScore(heroes, slots, context, entries);
   }
 
   function chooseTeamSkills(heroes, positions, skills, options = {}) {
@@ -187,6 +228,7 @@
       ...(options.context || buildScoringContext(skills)),
       availableSkills: skills,
     };
+    context.heroProfiles = heroes.map((hero) => heroCombatProfile(hero, context));
     const assignments = heroes.map(() => []);
     const usedSkillIds = new Set();
     const maxSlots = heroes.length * count;
@@ -343,13 +385,19 @@
     );
   }
 
-  function synergyScore(heroes, context = buildScoringContext()) {
+  function preparedCombatProfiles(heroes, context, entries = null) {
+    return entries
+      ? entries.map((entry, index) => entry?.combatProfile || heroCombatProfile(heroes[index], context))
+      : heroes.map((hero) => heroCombatProfile(hero, context));
+  }
+
+  function synergyScore(heroes, context = buildScoringContext(), entries = null) {
     const weights = scoringWeights(context).synergy;
     const factionCounts = countBy(heroes, "faction");
     const armCounts = countBy(heroes, "arm");
     const sameFaction = Math.max(0, ...Object.values(factionCounts));
     const sameArm = Math.max(0, ...Object.values(armCounts));
-    const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
+    const profiles = preparedCombatProfiles(heroes, context, entries);
     const damageThreat = sum(profiles, (profile) => profile.damageThreat);
     const supportPressure = sum(profiles, (profile) =>
       profile.support + profile.amplify + profile.debuff * weights.supportDebuff + profile.tempo * weights.supportTempo
@@ -369,7 +417,7 @@
       + Math.min(weights.pressureCap, damageThreat * supportPressure * weights.pressureScale);
   }
 
-  function teamBalanceScore(heroes, slots, context = buildScoringContext()) {
+  function teamBalanceScore(heroes, slots, context = buildScoringContext(), entries = null) {
     if (!heroes.length) return 0;
     const weights = scoringWeights(context).balance;
     const attack = sum(heroes, (hero) => Number(hero.stats?.attack) || 0);
@@ -383,7 +431,7 @@
     const frontDefense = Number(frontHero?.stats?.defense) || 0;
     const campDistance = Number(campHero?.distance) || 0;
     const hasFastUnit = heroes.some((hero) => Number(hero.stats?.speed) >= weights.fastSpeedThreshold);
-    const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
+    const profiles = preparedCombatProfiles(heroes, context, entries);
     const hasSustain = profiles.some((profile) => profile.sustain >= weights.sustainThreshold);
     const hasControl = profiles.some((profile) => profile.control + profile.deny >= weights.controlThreshold);
     const hasProtection = profiles.some((profile) => profile.protection >= weights.protectionThreshold);
@@ -415,10 +463,10 @@
     return items.reduce((total, item) => total + getter(item), 0);
   }
 
-  function hasDuplicateIdentity(heroes) {
+  function hasDuplicateIdentity(heroes, entries = null) {
     const seen = new Set();
-    return heroes.some((hero) => {
-      const key = heroIdentityKey(hero);
+    return heroes.some((hero, index) => {
+      const key = entries?.[index]?.identityKey || heroIdentityKey(hero);
       if (seen.has(key)) return true;
       seen.add(key);
       return false;
@@ -453,9 +501,9 @@
       + skillTeamFitBonus(innate, hero, position, profile, expectation, context) * weights.teamFit;
   }
 
-  function lineupCombatPlanScore(heroes, slots, context) {
+  function lineupCombatPlanScore(heroes, slots, context, entries = null) {
     const weights = scoringWeights(context).plan;
-    const profiles = heroes.map((hero) => heroCombatProfile(hero, context));
+    const profiles = preparedCombatProfiles(heroes, context, entries);
     const totals = profiles.reduce((acc, profile) => {
       acc.damage += profile.damageThreat;
       acc.sustain += profile.sustain;
@@ -655,7 +703,7 @@
     const teamSkills = assignments.flat();
     const teamProfileCounts = skillProfileCounts(teamSkills);
     const heroProfileCounts = skillProfileCounts(currentHeroSkills);
-    const teamProfiles = heroes.map((item) => heroCombatProfile(item, context));
+    const teamProfiles = context.heroProfiles || heroes.map((item) => heroCombatProfile(item, context));
     const alliedDamage = sum(teamProfiles, (item, index) => index === heroIndex ? 0 : item.damageThreat);
     const alliedTempo = sum(teamProfiles, (item, index) => index === heroIndex ? 0 : item.tempo);
     const frontIndex = (context.positions || []).findIndex((slot) => slot?.id === "front");
