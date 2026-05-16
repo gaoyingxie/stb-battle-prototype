@@ -9,10 +9,13 @@
     NEUTRAL_FACTION_ID,
     RESOURCE_LABELS,
     RESOURCE_SHORT_LABELS,
+    CITY_PRODUCTION_BY_LEVEL,
     CITY_UPGRADE_COSTS,
     MAX_CITY_LEVEL,
+    RESOURCE_POINT_PRODUCTION,
     TILE_TYPES,
     CITY_PARTS,
+    TROOPS_PER_FOOD,
   } = rules;
 
   function createWorldUi({ mapEl, detailEl, summaryEl, callbacks = {} }) {
@@ -50,6 +53,7 @@
     const player = state.factions[PLAYER_FACTION_ID];
     const unreadReports = Math.max(0, Number(uiState.unreadReports) || 0);
     const reportCount = Math.max(0, Number(uiState.reportCount) || 0);
+    const income = world.factionIncome(state, PLAYER_FACTION_ID);
     const statusText = state.gameStatus === "victory"
       ? "天下归一"
       : state.gameStatus === "defeat" ? "主城陷落" : `第 ${state.turn} 回合`;
@@ -59,10 +63,14 @@
         <strong>${escapeHtml(statusText)}</strong>
       </div>
       <div class="world-resource-bar">
-        ${resourcePill("粮草", player.resources.food, "food")}
-        ${resourcePill("木材", player.resources.wood, "wood")}
-        ${resourcePill("石料", player.resources.stone, "stone")}
-        <span class="world-resource-pill army"><b>兵力</b>${formatNumber(player.armyTroops)}/${formatNumber(player.maxArmyTroops)}</span>
+        ${resourcePill("粮草", player.resources.food, "food", income.food)}
+        ${resourcePill("木材", player.resources.wood, "wood", income.wood)}
+        ${resourcePill("石料", player.resources.stone, "stone", income.stone)}
+        <span class="world-resource-pill army">
+          <b>兵力</b>
+          <span class="world-resource-value">${formatNumber(player.armyTroops)}/${formatNumber(player.maxArmyTroops)}</span>
+          <em class="world-resource-income">${escapeHtml(armyReadinessText(player))}</em>
+        </span>
       </div>
       <div class="world-summary-actions">
         <button class="btn secondary world-report-entry" data-world-action="reports" type="button">
@@ -73,14 +81,24 @@
         <button class="btn secondary" data-world-action="reset-world" type="button">重置天下</button>
         <button class="btn primary" data-world-action="end-turn" type="button" ${state.gameStatus === "playing" ? "" : "disabled"}>结束回合</button>
       </div>
+      <div class="world-next-step">
+        <b>军务</b>
+        <span>${escapeHtml(worldNextStepText(state, player))}</span>
+      </div>
       <div class="world-faction-strip" aria-label="势力领地概览">
         ${Object.values(state.factions).map((faction) => factionChipHtml(state, faction)).join("")}
       </div>
     `;
   }
 
-  function resourcePill(label, value, type) {
-    return `<span class="world-resource-pill resource-${escapeHtml(type)}"><b>${escapeHtml(label)}</b>${formatNumber(value)}</span>`;
+  function resourcePill(label, value, type, income = 0) {
+    return `
+      <span class="world-resource-pill resource-${escapeHtml(type)}" title="${escapeHtml(`${label}每回合 +${formatNumber(income)}`)}">
+        <b>${escapeHtml(label)}</b>
+        <span class="world-resource-value">${formatNumber(value)}</span>
+        <em class="world-resource-income">+${formatNumber(income)} / 回合</em>
+      </span>
+    `;
   }
 
   function factionChipHtml(state, faction) {
@@ -185,6 +203,7 @@
     const owner = state.factions[selected.ownerId];
     const ownerStyle = owner?.color ? ` style="--owner-color:${escapeHtml(owner.color)}"` : "";
     const ownerName = ownerLabel(state, selected.ownerId);
+    const defenderTroops = world.defenderTroopsForTile(state, selected);
 
     container.innerHTML = `
       <div class="world-detail-card">
@@ -200,11 +219,11 @@
           <span>坐标</span><b>${selected.x}, ${selected.y}</b>
           <span>归属</span><b>${escapeHtml(ownerLabel(state, selected.ownerId))}</b>
           <span>等级</span><b>${selected.level || "-"}</b>
-          <span>守军</span><b>${formatNumber(world.defenderTroopsForTile(state, selected))}</b>
+          <span>守军</span><b>${defenderTroops > 0 ? formatNumber(defenderTroops) : "无"}</b>
         </div>
-        ${resourceYieldHtml(selected)}
+        ${resourceYieldHtml(state, selected)}
         ${selectedIsPlayerCenter ? playerCityActionsHtml(player, upgradeCost, canUpgrade, recruitDisabled) : ""}
-        ${canAttack ? `<button class="btn primary world-wide-action" data-world-action="attack" type="button">出征占领</button>` : ""}
+        ${canAttack ? `<button class="btn primary world-wide-action" data-world-action="attack" type="button">${escapeHtml(attackButtonLabel(selected))}</button>` : ""}
         ${state.gameStatus !== "playing" ? `<p class="world-end-state">${escapeHtml(endStateText(state))}</p>` : ""}
       </div>
       <div class="world-factions">
@@ -219,23 +238,50 @@
   }
 
   function playerCityActionsHtml(player, upgradeCost, canUpgrade, recruitDisabled) {
+    const currentProduction = cityProductionForLevel(player.cityLevel);
+    const nextProduction = cityProductionForLevel(player.cityLevel + 1);
+    const recruit = recruitPreview(player);
     const costText = upgradeCost
       ? `木材${formatNumber(upgradeCost.wood)} / 石料${formatNumber(upgradeCost.stone)}`
       : "已满级";
+    const upgradeText = upgradeCost
+      ? `${canUpgrade ? "可升级" : "升级"}：${costText}；下级主城产量 ${resourceLine(nextProduction)}`
+      : "主城已满级，主城基础产量已到上限。";
+    const recruitText = recruit.recruited > 0
+      ? `征兵可补 ${formatNumber(recruit.recruited)}，消耗粮草 ${formatNumber(recruit.foodCost)}`
+      : player.armyTroops >= player.maxArmyTroops ? "兵力已满，无需征兵。" : "粮草不足，结束回合后再征兵。";
     return `
+      <div class="world-city-economy">
+        <span>主城产量</span>
+        <strong>${escapeHtml(resourceLine(currentProduction))} / 回合</strong>
+      </div>
       <div class="world-city-actions">
         <button class="btn secondary" data-world-action="recruit" type="button" ${recruitDisabled ? "disabled" : ""}>征兵</button>
         <button class="btn secondary" data-world-action="upgrade" type="button" ${canUpgrade ? "" : "disabled"}>
           升级主城
         </button>
-        <small>下级消耗：${escapeHtml(costText)}</small>
+        <small class="world-recruit-preview">${escapeHtml(recruitText)}</small>
+        <small>${escapeHtml(upgradeText)}</small>
       </div>
     `;
   }
 
-  function resourceYieldHtml(tile) {
+  function resourceYieldHtml(state, tile) {
     if (tile.type !== TILE_TYPES.RESOURCE) return "";
-    return `<p class="world-yield">${escapeHtml(RESOURCE_LABELS[tile.resourceType])}资源点，每回合产出随等级提升。</p>`;
+    const label = RESOURCE_LABELS[tile.resourceType] || "资源";
+    const amount = resourcePointYield(tile);
+    const ownerText = tile.ownerId === PLAYER_FACTION_ID
+      ? "已计入上方每回合产量。"
+      : tile.ownerId === NEUTRAL_FACTION_ID
+        ? "占领后从下个结束回合开始结算。"
+        : `${ownerLabel(state, tile.ownerId)}正在获得这块地产量。`;
+    return `
+      <div class="world-yield">
+        <span>地块产量</span>
+        <strong>+${formatNumber(amount)} ${escapeHtml(label)} / 回合</strong>
+        <em>${escapeHtml(ownerText)}</em>
+      </div>
+    `;
   }
 
   function factionHtml(state, faction) {
@@ -254,11 +300,22 @@
 
   function tileActionHint(state, tile, canAttack) {
     if (state.gameStatus !== "playing") return endStateText(state);
+    if (tile.ownerId === PLAYER_FACTION_ID && tile.type === TILE_TYPES.RESOURCE) {
+      return `己方资源点：每回合 +${formatNumber(resourcePointYield(tile))} ${RESOURCE_LABELS[tile.resourceType]}。`;
+    }
+    if (tile.ownerId === PLAYER_FACTION_ID && tile.type === TILE_TYPES.MAIN_CITY && tile.cityPart === CITY_PARTS.CENTER) {
+      return `主城中心：当前基础产量 ${resourceLine(cityProductionForLevel(state.factions[PLAYER_FACTION_ID].cityLevel))}。`;
+    }
     if (tile.ownerId === PLAYER_FACTION_ID) return "己方领地：可作为后续出征跳板。";
     if (canAttack && tile.type === TILE_TYPES.EMPTY) return "可占领空地：铺开领地边界。";
-    if (canAttack && tile.type === TILE_TYPES.RESOURCE) return "可出征资源点：战胜后获得产出。";
+    if (canAttack && tile.type === TILE_TYPES.RESOURCE) {
+      return `可出征资源点：战胜后每回合 +${formatNumber(resourcePointYield(tile))} ${RESOURCE_LABELS[tile.resourceType]}。`;
+    }
     if (canAttack && tile.type === TILE_TYPES.MAIN_CITY) return "可攻城：胜利后该势力覆灭。";
     if (tile.ownerId && tile.ownerId !== NEUTRAL_FACTION_ID) return "敌方领地：先铺路贴近后再攻打。";
+    if (tile.type === TILE_TYPES.RESOURCE) {
+      return `尚未接壤：先铺路靠近，再争夺每回合 +${formatNumber(resourcePointYield(tile))} 的产量。`;
+    }
     return "尚未接壤：从己方相邻地块向外扩张。";
   }
 
@@ -289,6 +346,63 @@
 
   function resourceCount(state, factionId) {
     return Array.isArray(state.tiles) ? state.tiles.filter((tile) => tile.ownerId === factionId && tile.type === TILE_TYPES.RESOURCE).length : 0;
+  }
+
+  function resourcePointYield(tile) {
+    return RESOURCE_POINT_PRODUCTION[tile.level] || RESOURCE_POINT_PRODUCTION[1] || 0;
+  }
+
+  function cityProductionForLevel(level) {
+    return CITY_PRODUCTION_BY_LEVEL[level] || CITY_PRODUCTION_BY_LEVEL[MAX_CITY_LEVEL] || CITY_PRODUCTION_BY_LEVEL[1];
+  }
+
+  function resourceLine(values = {}) {
+    return `粮草+${formatNumber(values.food)} / 木材+${formatNumber(values.wood)} / 石料+${formatNumber(values.stone)}`;
+  }
+
+  function recruitPreview(player) {
+    const missingTroops = Math.max(0, player.maxArmyTroops - player.armyTroops);
+    const foodCost = Math.min(player.resources.food, Math.ceil(missingTroops / TROOPS_PER_FOOD));
+    return {
+      foodCost,
+      recruited: Math.min(missingTroops, foodCost * TROOPS_PER_FOOD),
+    };
+  }
+
+  function armyReadinessText(player) {
+    const missingTroops = Math.max(0, player.maxArmyTroops - player.armyTroops);
+    if (!missingTroops) return "兵力已满";
+    return `待补 ${formatNumber(missingTroops)}`;
+  }
+
+  function attackButtonLabel(tile) {
+    if (tile.type === TILE_TYPES.EMPTY) return "占领空地";
+    if (tile.type === TILE_TYPES.MAIN_CITY) return "攻打主城";
+    const label = RESOURCE_LABELS[tile.resourceType] || "资源";
+    return `出征占领（+${formatNumber(resourcePointYield(tile))}${label}/回合）`;
+  }
+
+  function worldNextStepText(state, player) {
+    if (state.gameStatus !== "playing") return endStateText(state);
+    const recruit = recruitPreview(player);
+    if (recruit.recruited > 0 && player.armyTroops < Math.ceil(player.maxArmyTroops * 0.82)) {
+      return `兵力偏低，可在主城征兵补 ${formatNumber(recruit.recruited)}。`;
+    }
+    if (world.canUpgradeMainCity(state, PLAYER_FACTION_ID)) {
+      return `资源已够，升级主城可提升基础产量。`;
+    }
+    const attackable = state.tiles.filter((tile) => world.isAttackableTile(state, PLAYER_FACTION_ID, tile.id));
+    const resourceTargets = attackable.filter((tile) => tile.type === TILE_TYPES.RESOURCE);
+    if (resourceTargets.length) {
+      const best = resourceTargets
+        .map((tile) => ({ tile, amount: resourcePointYield(tile) }))
+        .sort((a, b) => b.amount - a.amount)[0];
+      return `附近有 ${resourceTargets.length} 个资源点可争夺，最高每回合 +${formatNumber(best.amount)} ${RESOURCE_LABELS[best.tile.resourceType]}。`;
+    }
+    if (attackable.length) {
+      return `附近有 ${attackable.length} 个地块可扩张，先铺路打开资源点。`;
+    }
+    return "当前没有接壤目标，结束回合观察敌我边界变化。";
   }
 
   function endStateText(state) {

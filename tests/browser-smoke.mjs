@@ -85,6 +85,12 @@ try {
       hasWorld: Boolean(document.querySelector("#worldMap .world-tile")),
       tileCount: document.querySelectorAll("#worldMap .world-tile").length,
       detailHasActions: Boolean(document.querySelector("#worldDetail [data-world-action='recruit']")),
+      foodIncomeText: document.querySelector("#worldSummary .resource-food .world-resource-income")?.textContent?.trim() || "",
+      woodIncomeText: document.querySelector("#worldSummary .resource-wood .world-resource-income")?.textContent?.trim() || "",
+      stoneIncomeText: document.querySelector("#worldSummary .resource-stone .world-resource-income")?.textContent?.trim() || "",
+      nextStepText: document.querySelector("#worldSummary .world-next-step")?.textContent?.trim() || "",
+      cityEconomyText: document.querySelector("#worldDetail .world-city-economy")?.textContent?.trim() || "",
+      recruitPreviewText: document.querySelector("#worldDetail .world-recruit-preview")?.textContent?.trim() || "",
       turn: slg?.turn,
       playerFood: slg?.factions?.player?.resources?.food,
       playerArmy: slg?.factions?.player?.armyTroops,
@@ -99,6 +105,8 @@ try {
     turn: globalThis.STZB_DEBUG?.state?.slg?.turn,
     playerFood: globalThis.STZB_DEBUG?.state?.slg?.factions?.player?.resources?.food,
     playerArmy: globalThis.STZB_DEBUG?.state?.slg?.factions?.player?.armyTroops,
+    resourceYieldText: document.querySelector("#worldDetail .world-yield")?.textContent?.trim() || "",
+    attackButtonText: document.querySelector('#worldDetail [data-world-action="attack"]')?.textContent?.trim() || "",
   }));
   await page.click('#worldDetail [data-world-action="attack"]');
   await page.waitForFunction(() =>
@@ -147,6 +155,7 @@ try {
       reports: globalThis.STZB_DEBUG?.state?.battleReports?.length || 0,
       ownedEmptyTiles: slg?.tiles?.filter((item) => item.type === "empty" && item.ownerId === "player").length || 0,
       detailHasAttackable: Boolean(document.querySelector("#worldMap .world-tile.attackable")),
+      foodIncomeText: document.querySelector("#worldSummary .resource-food .world-resource-income")?.textContent?.trim() || "",
     };
   });
   await page.evaluate(() => globalThis.autoTeam());
@@ -744,6 +753,12 @@ try {
     !worldInitialCheck.hasWorld
     || worldInitialCheck.tileCount !== 625
     || !worldInitialCheck.detailHasActions
+    || !worldInitialCheck.foodIncomeText.includes("+120 / 回合")
+    || !worldInitialCheck.woodIncomeText.includes("+80 / 回合")
+    || !worldInitialCheck.stoneIncomeText.includes("+80 / 回合")
+    || !worldInitialCheck.nextStepText.includes("军务")
+    || !worldInitialCheck.cityEconomyText.includes("主城产量")
+    || !worldInitialCheck.recruitPreviewText.includes("征兵可补")
     || worldInitialCheck.adjacentOwner !== "neutral"
   ) {
     throw new Error(`SLG world did not initialize correctly: ${JSON.stringify(worldInitialCheck)}`);
@@ -751,6 +766,8 @@ try {
   if (
     worldBeforeAttack.playerFood >= worldInitialCheck.playerFood
     || worldBeforeAttack.playerArmy <= worldInitialCheck.playerArmy
+    || !worldBeforeAttack.resourceYieldText.includes("+45 粮草 / 回合")
+    || !worldBeforeAttack.attackButtonText.includes("+45粮草/回合")
     || worldFlowCheck.capturedOwner !== "player"
     || worldFlowCheck.turn <= worldBeforeAttack.turn
     || worldFlowCheck.reports < 1
@@ -760,6 +777,7 @@ try {
     || !worldTileVisualCheck.ownedClass
     || !worldTileVisualCheck.ownerPlayerClass
     || worldTileVisualCheck.ownerData !== "player"
+    || !worldFlowCheck.foodIncomeText.includes("+165 / 回合")
   ) {
     throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck, worldTileVisualCheck })}`);
   }

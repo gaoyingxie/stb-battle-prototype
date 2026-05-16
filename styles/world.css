@@ -36,7 +36,7 @@
 .world-resource-pill {
   display: grid;
   gap: 2px;
-  min-height: 46px;
+  min-height: 58px;
   padding: 8px 10px;
   border: 1px solid rgba(244, 236, 216, 0.12);
   border-radius: 6px;
@@ -45,6 +45,7 @@
 
 .world-status span,
 .world-resource-pill b,
+.world-resource-pill em,
 .world-detail-grid span,
 .world-city-actions small,
 .world-faction small,
@@ -70,6 +71,20 @@
   font-weight: 800;
 }
 
+.world-resource-value {
+  color: #fff2c4;
+  font-size: 17px;
+  line-height: 1.1;
+}
+
+.world-resource-income {
+  color: #a8c7a1;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
 .world-resource-pill.resource-food {
   border-color: rgba(214, 180, 91, 0.36);
 }
@@ -85,6 +100,10 @@
 .world-resource-pill.army {
   border-color: rgba(97, 125, 168, 0.42);
   background: rgba(97, 125, 168, 0.15);
+}
+
+.world-resource-pill.army .world-resource-income {
+  color: #a9c2ef;
 }
 
 .world-summary-actions {
@@ -116,6 +135,32 @@
 .world-report-count {
   background: rgba(245, 223, 170, 0.16);
   color: #f5dfaa;
+}
+
+.world-next-step {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(245, 223, 170, 0.14);
+  border-radius: 6px;
+  background: rgba(9, 11, 10, 0.22);
+  color: #d9cba6;
+  font-size: 13px;
+}
+
+.world-next-step b {
+  flex: 0 0 auto;
+  color: #f5dfaa;
+}
+
+.world-next-step span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .world-faction-strip {
@@ -422,6 +467,33 @@
   color: #f6e6bd;
 }
 
+.world-yield,
+.world-city-economy {
+  display: grid;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(244, 236, 216, 0.1);
+}
+
+.world-yield span,
+.world-city-economy span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.world-yield strong,
+.world-city-economy strong {
+  color: #f5dfaa;
+  font-size: 14px;
+}
+
+.world-yield em {
+  color: #a8c7a1;
+  font-size: 12px;
+  font-style: normal;
+}
+
 .world-city-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -430,6 +502,7 @@
 
 .world-city-actions small {
   grid-column: 1 / -1;
+  line-height: 1.45;
 }
 
 .world-wide-action {
