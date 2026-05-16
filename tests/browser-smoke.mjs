@@ -122,6 +122,18 @@ try {
     globalThis.STZB_DEBUG?.state?.slg?.tiles?.find((tile) => tile.id === tileId)?.ownerId === "player",
     emptyRoadTarget
   );
+  const worldTileVisualCheck = await page.evaluate((tileId) => {
+    const tile = document.querySelector(`#worldMap [data-world-tile-id="${tileId}"]`);
+    const chipCount = document.querySelectorAll(".world-faction-chip").length;
+    return {
+      chipCount,
+      hasFactionStrip: Boolean(document.querySelector(".world-faction-strip")),
+      ownedClass: tile?.classList.contains("owned") || false,
+      ownerPlayerClass: tile?.classList.contains("owner-player") || false,
+      ownerData: tile?.getAttribute("data-owner"),
+      actionHint: document.querySelector(".world-action-hint")?.textContent?.trim() || "",
+    };
+  }, emptyRoadTarget);
   await page.click('#worldSummary [data-world-action="end-turn"]');
   await page.waitForFunction((turn) => globalThis.STZB_DEBUG?.state?.slg?.turn > turn, worldBeforeAttack.turn);
   const worldFlowCheck = await page.evaluate(() => {
@@ -743,8 +755,13 @@ try {
     || worldFlowCheck.turn <= worldBeforeAttack.turn
     || worldFlowCheck.reports < 1
     || worldFlowCheck.ownedEmptyTiles < 1
+    || !worldTileVisualCheck.hasFactionStrip
+    || worldTileVisualCheck.chipCount !== 4
+    || !worldTileVisualCheck.ownedClass
+    || !worldTileVisualCheck.ownerPlayerClass
+    || worldTileVisualCheck.ownerData !== "player"
   ) {
-    throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck })}`);
+    throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck, worldTileVisualCheck })}`);
   }
   if (
     generatedReportCheck.badge !== String(generatedReportCheck.reports)
