@@ -1210,12 +1210,26 @@ function cloneTeamForEncounter(team) {
 }
 
 function carryTeamForward(team, units) {
-  return (team || []).map((slot, index) => ({
-    ...slot,
-    troops: Math.max(0, Math.round(units[index]?.troops || 0)),
-    wounded: Math.max(0, Math.round(units[index]?.wounded || 0)),
-    maxTroops: Math.max(0, Math.round((units[index]?.troops || 0) + (units[index]?.wounded || 0))),
-  }));
+  return (team || []).map((slot, index) => {
+    const position = slot.position || POSITIONS[index]?.id;
+    const unit = (units || []).find((candidate) => candidate.position === position);
+    if (!unit || unit.troops <= 0) {
+      return {
+        ...slot,
+        troops: 0,
+        wounded: 0,
+        maxTroops: 0,
+      };
+    }
+    const troops = Math.max(0, Math.round(unit.troops || 0));
+    const wounded = Math.max(0, Math.round(unit.wounded || 0));
+    return {
+      ...slot,
+      troops,
+      wounded,
+      maxTroops: troops + wounded,
+    };
+  });
 }
 
 function renderFormationEditor() {

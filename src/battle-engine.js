@@ -29,7 +29,7 @@
     applyFormationBonuses(player, ctx, "我军");
     applyFormationBonuses(enemy, ctx, "守军");
 
-    log(ctx, "system", "战斗开始：双方大营、中军、前锋各领一万兵。");
+    log(ctx, "system", battleStartText(player, enemy));
     log(ctx, "round", "准备回合");
     applyPrepRoundSkills(ctx, [...player, ...enemy]);
 
@@ -47,6 +47,18 @@
       encounter,
       maxEncounters,
     };
+  }
+
+  function battleStartText(player, enemy) {
+    return `战斗开始：${battleStartSideText("我军", player)}；${battleStartSideText("守军", enemy)}。`;
+  }
+
+  function battleStartSideText(label, units) {
+    const unitByPosition = new Map((units || []).map((unit) => [unit.position, unit]));
+    return `${label}${POSITIONS.map((position) => {
+      const unit = unitByPosition.get(position.id);
+      return unit ? `${position.label}${formatNumber(unit.troops)}兵` : `${position.label}缺阵`;
+    }).join("、")}`;
   }
 
   function applyPrepRoundSkills(ctx, units) {
@@ -154,10 +166,12 @@
 
   function createUnits(team, side, freshTroops) {
     return team.map((slot, index) => {
+      if (!slot?.heroId) return null;
       const hero = heroById(slot.heroId);
       const skills = [hero.innate, ...(slot.skills || [])].map(skillById).filter(Boolean);
       const carriedTroops = Math.max(0, Math.round(Number.isFinite(Number(slot.troops)) ? Number(slot.troops) : 10000));
       const carriedWounded = Math.max(0, Math.round(Number.isFinite(Number(slot.wounded)) ? Number(slot.wounded) : 0));
+      if (!freshTroops && carriedTroops <= 0) return null;
       const maxTroops = freshTroops ? 10000 : carriedTroops + carriedWounded;
       const troops = freshTroops ? 10000 : Math.min(carriedTroops, maxTroops);
       const wounded = freshTroops ? 0 : Math.min(carriedWounded, Math.max(0, maxTroops - troops));
@@ -185,7 +199,7 @@
         sideUnits: [],
         enemyUnits: [],
       };
-    });
+    }).filter(Boolean);
   }
 
   function applyFormationBonuses(units, ctx, sideLabel) {
@@ -729,7 +743,8 @@
   }
 
   function campDown(units) {
-    return units.find((unit) => unit.position === "camp")?.troops <= 0;
+    const camp = units.find((unit) => unit.position === "camp");
+    return !camp || camp.troops <= 0;
   }
 
   function alive(units) {

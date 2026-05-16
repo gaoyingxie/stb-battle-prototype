@@ -107,6 +107,10 @@ try {
   const replayInitialCheck = await page.evaluate(() => ({
     replayOpen: Boolean(document.querySelector("#battleReportModal .battle-replay")),
     units: document.querySelectorAll("#battleReportModal .battle-replay-unit").length,
+    expectedUnits: (
+      (globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.initialPlayer?.length || 0)
+      + (globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.initialEnemy?.length || 0)
+    ),
     hasControls: Boolean(document.querySelector('#battleReportModal [data-report-action="replay-toggle"]')),
     hasScrubber: Boolean(document.querySelector("#battleReportModal .battle-replay-progress")),
     hasSpeedButtons: document.querySelectorAll('#battleReportModal [data-report-action="replay-speed"]').length,
@@ -192,15 +196,15 @@ try {
       ...slot,
       position: globalThis.STZB_BATTLE_RULES.POSITIONS[index].id,
       skills: [],
-      troops: index === 0 ? 7200 : 0,
-      wounded: index === 0 ? 1800 : 0,
+      troops: index === 0 ? 7200 : 1600,
+      wounded: index === 0 ? 1800 : 300,
     }));
     const baseEnemy = state.enemy.map((slot, index) => ({
       ...slot,
       position: globalThis.STZB_BATTLE_RULES.POSITIONS[index].id,
       skills: [],
-      troops: index === 0 ? 8100 : 0,
-      wounded: index === 0 ? 900 : 0,
+      troops: index === 0 ? 8100 : 1700,
+      wounded: index === 0 ? 900 : 300,
     }));
     const makeDrawBattle = (playerSlots, enemySlots, encounter) => {
       const battle = globalThis.createBattle(playerSlots, enemySlots, {
@@ -219,7 +223,7 @@ try {
         unit.stats.defense = 9999;
         if (unit.position !== "camp") {
           unit.troops = 0;
-          unit.wounded = 0;
+          unit.wounded = 600;
         }
       });
       globalThis.advanceBattleRound(battle);
@@ -549,20 +553,33 @@ try {
     const secondEnemy = globalThis.carryTeamForward(baseEnemy, first.enemy);
     const second = makeDrawBattle(secondPlayer, secondEnemy, 2);
     const reports = [first, second].map(globalThis.toBattleSnapshot);
+    const playerUnitByPosition = (position) => reports[0].player.find((unit) => unit.position === position);
+    const enemyUnitByPosition = (position) => reports[0].enemy.find((unit) => unit.position === position);
     return {
       reportCount: reports.length,
       allDraws: reports.every((report) => report.winner === "draw" && report.finishReason === "roundLimit"),
       encounters: reports.map((report) => report.encounter),
+      firstInitialPositions: reports[0].initialPlayer.map((unit) => unit.position),
+      secondInitialPositions: reports[1].initialPlayer.map((unit) => unit.position),
+      secondEnemyInitialPositions: reports[1].initialEnemy.map((unit) => unit.position),
       firstInitialTroops: reports[0].initialPlayer.map((unit) => unit.troops),
       firstFinalTroops: reports[0].player.map((unit) => unit.troops),
       firstFinalWounded: reports[0].player.map((unit) => unit.wounded),
       secondInitialTroops: reports[1].initialPlayer.map((unit) => unit.troops),
       secondInitialMaxTroops: reports[1].initialPlayer.map((unit) => unit.maxTroops),
       secondLogLength: reports[1].log.length,
-      secondInitialMatchesFirstFinal: reports[1].initialPlayer.every((unit, index) => unit.troops === reports[0].player[index].troops),
+      secondInitialMatchesFirstFinal: reports[1].initialPlayer.every((unit) => unit.troops === playerUnitByPosition(unit.position)?.troops),
       secondInitialUsesCarriedCapacity: reports[1].initialPlayer.every((unit, index) =>
-        unit.maxTroops === reports[0].player[index].troops + reports[0].player[index].wounded
+        unit.maxTroops === playerUnitByPosition(unit.position).troops + playerUnitByPosition(unit.position).wounded
       ),
+      secondInitialSkipsRouted:
+        reports[1].initialPlayer.every((unit) => playerUnitByPosition(unit.position)?.troops > 0)
+        && reports[1].initialEnemy.every((unit) => enemyUnitByPosition(unit.position)?.troops > 0)
+        && reports[1].initialPlayer.length === reports[0].player.filter((unit) => unit.troops > 0).length
+        && reports[1].initialEnemy.length === reports[0].enemy.filter((unit) => unit.troops > 0).length,
+      secondStartLogShowsMissing: reports[1].log
+        .find((entry) => entry.text?.includes("战斗开始"))
+        ?.text.includes("缺阵") || false,
     };
   });
 
@@ -656,7 +673,8 @@ try {
   }
   if (
     !replayInitialCheck.replayOpen
-    || replayInitialCheck.units !== 6
+    || replayInitialCheck.units !== replayInitialCheck.expectedUnits
+    || replayInitialCheck.units < 2
     || !replayInitialCheck.hasControls
     || !replayInitialCheck.hasScrubber
     || replayInitialCheck.hasSpeedButtons !== 3
@@ -790,6 +808,8 @@ try {
     || !drawChainReplayCheck.secondLogLength
     || !drawChainReplayCheck.secondInitialMatchesFirstFinal
     || !drawChainReplayCheck.secondInitialUsesCarriedCapacity
+    || !drawChainReplayCheck.secondInitialSkipsRouted
+    || !drawChainReplayCheck.secondStartLogShowsMissing
   ) {
     throw new Error(`Draw-chain battle reports do not keep separate replay starting snapshots: ${JSON.stringify(drawChainReplayCheck)}`);
   }
