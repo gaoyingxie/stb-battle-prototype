@@ -6,12 +6,13 @@ const localServer = await startStaticServer({ root, port: 0 });
 const entryUrl = localServer.url;
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1366, height: 900 } });
-const battleLayoutViewports = [
+const mainViewViewports = [
   { width: 1920, height: 900 },
   { width: 1920, height: 919 },
   { width: 1600, height: 820 },
   { width: 1366, height: 768 },
   { width: 1290, height: 854 },
+  { width: 390, height: 844 },
 ];
 
 const consoleMessages = [];
@@ -32,13 +33,14 @@ page.on("response", (response) => {
   }
 });
 
-async function measureBattleLayout(viewport) {
+async function measureMainViewLayout(viewport) {
   await page.setViewportSize(viewport);
-  await page.evaluate(() => document.querySelector(".battlefield")?.scrollIntoView({ block: "start" }));
-  await page.waitForFunction(() => document.querySelectorAll(".war-map .unit-card").length === 6);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForSelector("#worldMap .world-tile");
   return page.evaluate(() => {
     const rect = (selector) => {
       const element = document.querySelector(selector);
+      if (!element) return null;
       const bounds = element.getBoundingClientRect();
       return {
         bottom: Math.round(bounds.bottom),
@@ -46,34 +48,36 @@ async function measureBattleLayout(viewport) {
         height: Math.round(bounds.height),
         scrollHeight: Math.round(element.scrollHeight),
         top: Math.round(bounds.top),
+        width: Math.round(bounds.width),
       };
     };
-    const battlefield = rect(".battlefield");
-    const enemyBlock = rect(".enemy-block");
-    const warMap = rect(".war-map");
-    const cardClipping = [...document.querySelectorAll(".army-block")].some((block) => {
-      const blockBounds = block.getBoundingClientRect();
-      return [...block.querySelectorAll(".unit-card")].some((card) => {
-        const cardBounds = card.getBoundingClientRect();
-        return cardBounds.top < blockBounds.top - 1 || cardBounds.bottom > blockBounds.bottom + 1;
-      });
-    });
+    const visible = (selector) => {
+      const element = document.querySelector(selector);
+      if (!element) return false;
+      const style = getComputedStyle(element);
+      return style.display !== "none" && style.visibility !== "hidden" && element.getClientRects().length > 0;
+    };
+    const worldPanel = rect(".world-panel");
+    const worldMap = rect("#worldMap");
+    const worldDetail = rect("#worldDetail");
     return {
-      battlefield,
-      battlefieldFitsViewport: battlefield.bottom <= window.innerHeight + 1,
-      cardClipping,
-      enemyBlock,
-      enemyFitsViewport: enemyBlock.bottom <= window.innerHeight + 1,
+      battlefieldHidden: !visible(".battlefield"),
+      detailVisible: visible("#worldDetail"),
+      mapHasTiles: document.querySelectorAll("#worldMap .world-tile").length === 625,
+      topbarHidden: !visible(".topbar"),
       viewport: `${window.innerWidth}x${window.innerHeight}`,
-      warMap,
-      warMapFitsBattlefield: warMap.bottom <= battlefield.bottom + 1 && warMap.scrollHeight <= warMap.clientHeight + 1,
+      worldMap,
+      worldMapInsidePanel: worldMap && worldPanel && worldMap.top >= worldPanel.top && worldMap.width <= worldPanel.width + 1,
+      worldPanel,
+      worldPanelVisible: visible(".world-panel"),
+      worldStartsNearTop: worldPanel && worldPanel.top <= 18,
+      worldDetail,
     };
   });
 }
 
 try {
   await page.goto(entryUrl);
-  await page.waitForSelector("#startBattle");
   await page.waitForSelector("#worldMap .world-tile");
   const worldInitialCheck = await page.evaluate(() => {
     const slg = globalThis.STZB_DEBUG?.state?.slg;
@@ -133,17 +137,17 @@ try {
       detailHasAttackable: Boolean(document.querySelector("#worldMap .world-tile.attackable")),
     };
   });
-  await page.click("#autoTeam");
+  await page.evaluate(() => globalThis.autoTeam());
   await page.waitForFunction(() => document.querySelector("#systemMessages")?.textContent?.includes("站位职责"));
-  await page.click("#startBattle");
-  await page.waitForFunction(() => document.querySelector("#startBattle")?.textContent?.includes("再战"));
+  await page.waitForSelector('#worldSummary [data-world-action="reports"]');
   const generatedReportCheck = await page.evaluate(() => ({
     badge: document.querySelector("#reportBadge")?.textContent?.trim(),
+    worldReportText: document.querySelector('#worldSummary [data-world-action="reports"]')?.textContent?.trim() || "",
     reports: globalThis.STZB_DEBUG?.state?.battleReports?.length || 0,
-    lastBattleComplete: Boolean(globalThis.STZB_DEBUG?.state?.lastBattle?.complete),
+    lastReportComplete: Boolean(globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.complete),
     activeBattle: Boolean(globalThis.STZB_DEBUG?.state?.activeBattle),
   }));
-  await page.click("#openBattleReports");
+  await page.click('#worldSummary [data-world-action="reports"]');
   await page.waitForSelector("#battleReportModal[open] .battle-report-card");
   await page.click("#battleReportModal .battle-report-card");
   await page.waitForSelector("#battleReportModal .battle-report-stage");
@@ -318,7 +322,7 @@ try {
       seriesId,
     };
   });
-  await page.click("#openBattleReports");
+  await page.click('#worldSummary [data-world-action="reports"]');
   await page.waitForSelector("#battleReportModal[open] .battle-report-series-toggle");
   const foldedSeriesCollapsedCheck = await page.evaluate(() => ({
     cardIds: [...document.querySelectorAll("#battleReportModal .battle-report-card")].map((node) => node.dataset.reportId),
@@ -360,7 +364,7 @@ try {
     unitPortraitBackground: getComputedStyle(document.querySelector(".unit-portrait"), "::before").backgroundImage,
     heroCardBackground: getComputedStyle(document.querySelector(".hero-card")).backgroundImage,
   }));
-  await page.click("#drawTen");
+  await page.evaluate(() => globalThis.drawHeroes(10));
   await page.waitForSelector("#gachaModal[open]");
   await page.click("#gachaClose");
   await page.click("[data-skill-id]");
@@ -386,11 +390,11 @@ try {
   const summary = await page.evaluate(() => ({
     title: document.querySelector("#battleTitle")?.textContent?.trim(),
     round: document.querySelector("#roundCount")?.textContent?.trim(),
-    reportLines: globalThis.STZB_DEBUG?.state?.lastBattle?.log?.length || 0,
+    reportLines: globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.log?.length || 0,
     systemMessages: document.querySelectorAll("#systemMessages .system-message").length,
     reportIncludesRecruit: document.querySelector("#report")?.textContent?.includes("招募结果") || false,
     systemIncludesAutoTeam: document.querySelector("#systemMessages")?.textContent?.includes("站位职责") || false,
-    battleLogEntries: globalThis.STZB_DEBUG?.state?.lastBattle?.log?.length || 0,
+    battleLogEntries: globalThis.STZB_DEBUG?.state?.battleReports?.at(-1)?.battle?.log?.length || 0,
     skillModalTitle: document.querySelector("#skillModalTitle")?.textContent?.trim(),
   }));
 
@@ -719,9 +723,9 @@ try {
     };
   });
 
-  const battleLayoutChecks = [];
-  for (const viewport of battleLayoutViewports) {
-    battleLayoutChecks.push(await measureBattleLayout(viewport));
+  const mainViewLayoutChecks = [];
+  for (const viewport of mainViewViewports) {
+    mainViewLayoutChecks.push(await measureMainViewLayout(viewport));
   }
 
   if (
@@ -742,8 +746,14 @@ try {
   ) {
     throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck })}`);
   }
-  if (generatedReportCheck.badge !== String(generatedReportCheck.reports) || generatedReportCheck.reports < 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
-    throw new Error(`开战后没有一次性结算并生成未读战报：${JSON.stringify(generatedReportCheck)}`);
+  if (
+    generatedReportCheck.badge !== String(generatedReportCheck.reports)
+    || generatedReportCheck.reports < 1
+    || !generatedReportCheck.lastReportComplete
+    || generatedReportCheck.activeBattle
+    || !generatedReportCheck.worldReportText.includes("战报")
+  ) {
+    throw new Error(`SLG 出征后没有生成可从天下主视图打开的未读战报：${JSON.stringify(generatedReportCheck)}`);
   }
   if (!battlePlaceReportCheck.activeBars || !battlePlaceReportCheck.woundedBars || !battlePlaceReportCheck.deathBars || !battlePlaceReportCheck.hasWoundedText || !battlePlaceReportCheck.enemyActiveStartsAtLeft) {
     throw new Error(`战斗地点兵力条没有按死亡/伤兵/剩余三段显示：${JSON.stringify(battlePlaceReportCheck)}`);
@@ -931,9 +941,17 @@ try {
   if (brokenStylePortraits.length) {
     throw new Error(`头像资源请求失败：${JSON.stringify(brokenStylePortraits.slice(0, 6))}`);
   }
-  for (const check of battleLayoutChecks) {
-    if (!check.battlefieldFitsViewport || !check.enemyFitsViewport || !check.warMapFitsBattlefield || check.cardClipping) {
-      throw new Error(`Battlefield layout overflows or clips at ${check.viewport}: ${JSON.stringify(check)}`);
+  for (const check of mainViewLayoutChecks) {
+    if (
+      !check.worldPanelVisible
+      || !check.worldStartsNearTop
+      || !check.mapHasTiles
+      || !check.worldMapInsidePanel
+      || !check.detailVisible
+      || !check.topbarHidden
+      || !check.battlefieldHidden
+    ) {
+      throw new Error(`SLG main view layout failed at ${check.viewport}: ${JSON.stringify(check)}`);
     }
   }
   if (pageErrors.length) {
@@ -960,7 +978,7 @@ try {
     },
     battleStatsCheck,
     roundLimitDrawCheck,
-    battleLayoutChecks,
+    mainViewLayoutChecks,
   }, null, 2));
   if (consoleMessages.length) {
     console.warn(consoleMessages.join("\n"));

@@ -74,3 +74,19 @@ h2 {
   gap: 10px;
 }
 
+.slg-main {
+  background:
+    linear-gradient(180deg, rgba(24, 35, 22, 0.98), rgba(15, 23, 16, 0.98)),
+    #111710;
+}
+
+.slg-main .app-shell {
+  max-width: none;
+  min-height: 100vh;
+  padding: 16px 0 0;
+}
+
+.slg-main .topbar,
+.slg-main .battlefield {
+  display: none;
+}

@@ -31,22 +31,25 @@
         if (action === "upgrade") callbacks.onUpgrade?.();
         if (action === "attack") callbacks.onAttack?.();
         if (action === "end-turn") callbacks.onEndTurn?.();
+        if (action === "reports") callbacks.onOpenReports?.();
         if (action === "reset-world") callbacks.onResetWorld?.();
       });
     });
 
     return {
-      render(state, selectedTileId) {
-        renderWorldSummary(summaryEl, state);
+      render(state, selectedTileId, uiState = {}) {
+        renderWorldSummary(summaryEl, state, uiState);
         renderWorldMap(mapEl, state, selectedTileId);
         renderWorldDetail(detailEl, state, selectedTileId);
       },
     };
   }
 
-  function renderWorldSummary(container, state) {
+  function renderWorldSummary(container, state, uiState = {}) {
     if (!container) return;
     const player = state.factions[PLAYER_FACTION_ID];
+    const unreadReports = Math.max(0, Number(uiState.unreadReports) || 0);
+    const reportCount = Math.max(0, Number(uiState.reportCount) || 0);
     const statusText = state.gameStatus === "victory"
       ? "天下归一"
       : state.gameStatus === "defeat" ? "主城陷落" : `第 ${state.turn} 回合`;
@@ -62,6 +65,11 @@
         <span class="world-resource-pill army"><b>兵力</b>${formatNumber(player.armyTroops)}/${formatNumber(player.maxArmyTroops)}</span>
       </div>
       <div class="world-summary-actions">
+        <button class="btn secondary world-report-entry" data-world-action="reports" type="button">
+          战报
+          ${unreadReports > 0 ? `<span class="world-report-badge">${formatNumber(unreadReports)}</span>` : ""}
+          ${unreadReports <= 0 && reportCount > 0 ? `<span class="world-report-count">${formatNumber(reportCount)}</span>` : ""}
+        </button>
         <button class="btn secondary" data-world-action="reset-world" type="button">重置天下</button>
         <button class="btn primary" data-world-action="end-turn" type="button" ${state.gameStatus === "playing" ? "" : "disabled"}>结束回合</button>
       </div>

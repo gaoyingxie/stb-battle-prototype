@@ -7,6 +7,14 @@
   box-shadow: var(--shadow);
 }
 
+.slg-main .world-panel {
+  margin-top: 0;
+  min-height: calc(100vh - 16px);
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
 .world-heading p {
   margin: 4px 0 0;
   color: var(--muted);
@@ -68,6 +76,32 @@
 .world-summary-actions {
   display: flex;
   gap: 8px;
+}
+
+.world-report-entry {
+  position: relative;
+}
+
+.world-report-badge,
+.world-report-count {
+  display: inline-grid;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  place-items: center;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.world-report-badge {
+  background: var(--red);
+  color: #fff5d2;
+}
+
+.world-report-count {
+  background: rgba(245, 223, 170, 0.16);
+  color: #f5dfaa;
 }
 
 .world-body {
@@ -265,6 +299,7 @@
   }
 
   .world-map {
+    grid-template-columns: repeat(var(--world-size), minmax(11px, 1fr));
     gap: 2px;
     padding: 8px;
   }

@@ -175,6 +175,7 @@ function bindWorldUi() {
       onAttack: attackSelectedWorldTile,
       onEndTurn: endSlgTurn,
       onResetWorld: resetSlgWorld,
+      onOpenReports: openBattleReportList,
     },
   });
 }
@@ -1307,6 +1308,8 @@ function addSlgBattleReports(battles, attackerId, defenderId, tile) {
       seriesSize: snapshots.length,
     });
   });
+  state.lastBattle = snapshots.at(-1) || state.lastBattle;
+  state.activeBattle = null;
   return snapshots;
 }
 
@@ -1377,7 +1380,10 @@ function renderAll() {
 
 function renderWorld() {
   ensureSlgState();
-  worldUi?.render(state.slg, selectedWorldTileId);
+  worldUi?.render(state.slg, selectedWorldTileId, {
+    reportCount: state.battleReports?.length || 0,
+    unreadReports: (state.battleReports || []).filter((report) => !report.read).length,
+  });
 }
 
 function currentBattle() {

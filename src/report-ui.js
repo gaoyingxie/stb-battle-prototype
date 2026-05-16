@@ -88,6 +88,7 @@ function renderBattleReportBadge() {
   els.reportBadge.textContent = unread;
   els.reportBadge.hidden = unread <= 0;
   els.openBattleReports.classList.toggle("has-unread", unread > 0);
+  if (typeof renderWorld === "function") renderWorld();
 }
 
 function openBattleReportList() {
