@@ -1214,6 +1214,7 @@ function carryTeamForward(team, units) {
     ...slot,
     troops: Math.max(0, Math.round(units[index]?.troops || 0)),
     wounded: Math.max(0, Math.round(units[index]?.wounded || 0)),
+    maxTroops: Math.max(0, Math.round((units[index]?.troops || 0) + (units[index]?.wounded || 0))),
   }));
 }
 

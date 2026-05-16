@@ -555,9 +555,14 @@ try {
       encounters: reports.map((report) => report.encounter),
       firstInitialTroops: reports[0].initialPlayer.map((unit) => unit.troops),
       firstFinalTroops: reports[0].player.map((unit) => unit.troops),
+      firstFinalWounded: reports[0].player.map((unit) => unit.wounded),
       secondInitialTroops: reports[1].initialPlayer.map((unit) => unit.troops),
+      secondInitialMaxTroops: reports[1].initialPlayer.map((unit) => unit.maxTroops),
       secondLogLength: reports[1].log.length,
       secondInitialMatchesFirstFinal: reports[1].initialPlayer.every((unit, index) => unit.troops === reports[0].player[index].troops),
+      secondInitialUsesCarriedCapacity: reports[1].initialPlayer.every((unit, index) =>
+        unit.maxTroops === reports[0].player[index].troops + reports[0].player[index].wounded
+      ),
     };
   });
 
@@ -784,6 +789,7 @@ try {
     || drawChainReplayCheck.encounters.join(",") !== "1,2"
     || !drawChainReplayCheck.secondLogLength
     || !drawChainReplayCheck.secondInitialMatchesFirstFinal
+    || !drawChainReplayCheck.secondInitialUsesCarriedCapacity
   ) {
     throw new Error(`Draw-chain battle reports do not keep separate replay starting snapshots: ${JSON.stringify(drawChainReplayCheck)}`);
   }

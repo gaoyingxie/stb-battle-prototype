@@ -156,6 +156,11 @@
     return team.map((slot, index) => {
       const hero = heroById(slot.heroId);
       const skills = [hero.innate, ...(slot.skills || [])].map(skillById).filter(Boolean);
+      const carriedTroops = Math.max(0, Math.round(Number.isFinite(Number(slot.troops)) ? Number(slot.troops) : 10000));
+      const carriedWounded = Math.max(0, Math.round(Number.isFinite(Number(slot.wounded)) ? Number(slot.wounded) : 0));
+      const maxTroops = freshTroops ? 10000 : carriedTroops + carriedWounded;
+      const troops = freshTroops ? 10000 : Math.min(carriedTroops, maxTroops);
+      const wounded = freshTroops ? 0 : Math.min(carriedWounded, Math.max(0, maxTroops - troops));
       return {
         id: `${side}-${index}-${hero.id}`,
         heroId: hero.id,
@@ -172,9 +177,9 @@
         statBonus: { attack: 0, strategy: 0, defense: 0, speed: 0 },
         bonuses: [],
         skills,
-        troops: freshTroops ? 10000 : Number.isFinite(Number(slot.troops)) ? Number(slot.troops) : 10000,
-        wounded: freshTroops ? 0 : Number.isFinite(Number(slot.wounded)) ? Number(slot.wounded) : 0,
-        maxTroops: 10000,
+        troops,
+        wounded,
+        maxTroops,
         statuses: [],
         pendingSkills: [],
         sideUnits: [],

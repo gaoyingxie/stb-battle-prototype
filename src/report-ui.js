@@ -35,7 +35,7 @@ function unitSnapshot(unit) {
     skills: (unit.skills || []).map(skillSnapshot),
     troops: Math.max(0, Math.round(unit.troops || 0)),
     wounded: Math.max(0, Math.round(unit.wounded || 0)),
-    maxTroops: unit.maxTroops || 10000,
+    maxTroops: Number.isFinite(Number(unit.maxTroops)) ? Math.max(0, Math.round(Number(unit.maxTroops))) : 10000,
     statuses: [...(unit.statuses || [])],
   };
 }
