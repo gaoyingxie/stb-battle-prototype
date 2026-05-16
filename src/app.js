@@ -17,6 +17,7 @@ const {
 const {
   PLAYER_FACTION_ID,
   NEUTRAL_FACTION_ID,
+  TEAM_TROOP_CAP,
 } = globalThis.STZB_SLG_RULES;
 
 const {
@@ -1211,7 +1212,7 @@ function recruitPlayerArmy() {
   const outcome = recruitFactionArmy(state.slg, PLAYER_FACTION_ID);
   state.slg = outcome.state;
   writeSlgEvents(outcome.events);
-  if (!outcome.ok) writeSystemMessage("粮草不足或兵力已满，暂时无法征兵。");
+  if (!outcome.ok) writeSystemMessage("粮草不足，暂时无法征兵。");
   saveState();
   renderAll();
 }
@@ -1340,7 +1341,7 @@ function buildSlgDefenderTeam(slgState, defenderId, tile) {
 
 function teamWithTroops(team, totalTroops) {
   const slots = (team || []).filter((slot) => slot?.heroId);
-  const total = Math.max(0, Math.min(30000, Math.round(Number(totalTroops) || 0)));
+  const total = Math.max(0, Math.min(TEAM_TROOP_CAP, Math.round(Number(totalTroops) || 0)));
   let remaining = total;
   return slots.map((slot, index) => {
     const slotsLeft = Math.max(1, slots.length - index);

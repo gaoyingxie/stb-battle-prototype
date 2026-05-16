@@ -12,7 +12,6 @@ const mainViewViewports = [
   { width: 1600, height: 820 },
   { width: 1366, height: 768 },
   { width: 1290, height: 854 },
-  { width: 390, height: 844 },
 ];
 
 const consoleMessages = [];
@@ -88,6 +87,7 @@ try {
       foodIncomeText: document.querySelector("#worldSummary .resource-food .world-resource-income")?.textContent?.trim() || "",
       woodIncomeText: document.querySelector("#worldSummary .resource-wood .world-resource-income")?.textContent?.trim() || "",
       stoneIncomeText: document.querySelector("#worldSummary .resource-stone .world-resource-income")?.textContent?.trim() || "",
+      armyText: document.querySelector("#worldSummary .army")?.textContent?.trim().replace(/\s+/g, " ") || "",
       nextStepText: document.querySelector("#worldSummary .world-next-step")?.textContent?.trim() || "",
       cityEconomyText: document.querySelector("#worldDetail .world-city-economy")?.textContent?.trim() || "",
       recruitPreviewText: document.querySelector("#worldDetail .world-recruit-preview")?.textContent?.trim() || "",
@@ -756,9 +756,11 @@ try {
     || !worldInitialCheck.foodIncomeText.includes("+120 / 回合")
     || !worldInitialCheck.woodIncomeText.includes("+80 / 回合")
     || !worldInitialCheck.stoneIncomeText.includes("+80 / 回合")
+    || !worldInitialCheck.armyText.includes("势力兵力 9,000")
+    || !worldInitialCheck.armyText.includes("单队可出 9,000/30,000")
     || !worldInitialCheck.nextStepText.includes("军务")
     || !worldInitialCheck.cityEconomyText.includes("主城产量")
-    || !worldInitialCheck.recruitPreviewText.includes("征兵可补")
+    || !worldInitialCheck.recruitPreviewText.includes("征兵可新增")
     || worldInitialCheck.adjacentOwner !== "neutral"
   ) {
     throw new Error(`SLG world did not initialize correctly: ${JSON.stringify(worldInitialCheck)}`);

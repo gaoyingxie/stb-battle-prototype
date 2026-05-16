@@ -49,6 +49,14 @@ assert(recruited.ok, "玩家初始粮草应足够征兵");
 assert(player(recruited.state).resources.food < player(state).resources.food, "征兵应消耗粮草");
 assert(player(recruited.state).armyTroops > player(state).armyTroops, "征兵应增加兵力");
 
+const reserveBase = world.createInitialSlgState({ seed: 20260516 });
+player(reserveBase).armyTroops = 52000;
+player(reserveBase).resources.food = 1000;
+const reserveRecruit = world.recruitFactionArmy(reserveBase, rules.PLAYER_FACTION_ID);
+assert(reserveRecruit.ok, "势力兵力超过单队上限后仍应允许继续征兵");
+assert(player(reserveRecruit.state).armyTroops === 62000, "征兵应增加势力总兵力，不受 3 万单队上限限制");
+assert(world.deployableTeamTroops(player(reserveRecruit.state).armyTroops) === rules.TEAM_TROOP_CAP, "单次出征可投入兵力应封顶为一队 3 万");
+
 const upgraded = world.upgradeMainCity(state, rules.PLAYER_FACTION_ID);
 assert(upgraded.ok, "玩家初始木石应足够升级到 2 级");
 assert(player(upgraded.state).cityLevel === 2, "升级后主城应为 2 级");
@@ -70,6 +78,19 @@ const captured = world.attackTile(recruited.state, rules.PLAYER_FACTION_ID, adja
 assert(captured.ok, "战胜守军后应完成出征结算");
 assert(world.tileById(captured.state, adjacentFood.id).ownerId === rules.PLAYER_FACTION_ID, "胜利后资源点应归属玩家");
 assert(player(captured.state).armyTroops === 8200, "战后玩家兵力应写回长期状态");
+
+const reserveAttack = world.attackTile(reserveRecruit.state, rules.PLAYER_FACTION_ID, adjacentFood.id, {
+  resolveBattle: ({ attackerTroops }) => {
+    assert(attackerTroops === rules.TEAM_TROOP_CAP, "出征战斗只能抽调单队 3 万兵力");
+    return {
+      winner: "attacker",
+      attackerTroops: 18000,
+      defenderTroops: 0,
+    };
+  },
+});
+assert(reserveAttack.ok, "有预备兵时仍应正常出征");
+assert(player(reserveAttack.state).armyTroops === 50000, "战后只扣除参战队伍损失，未出征的势力预备兵应保留");
 
 let siegeState = world.captureTile(state, rules.PLAYER_FACTION_ID, "19-3").state;
 const northCenter = world.tileById(siegeState, "21-3");

@@ -15,6 +15,7 @@
     RESOURCE_POINT_PRODUCTION,
     TILE_TYPES,
     CITY_PARTS,
+    TEAM_TROOP_CAP,
     TROOPS_PER_FOOD,
   } = rules;
 
@@ -67,8 +68,8 @@
         ${resourcePill("木材", player.resources.wood, "wood", income.wood)}
         ${resourcePill("石料", player.resources.stone, "stone", income.stone)}
         <span class="world-resource-pill army">
-          <b>兵力</b>
-          <span class="world-resource-value">${formatNumber(player.armyTroops)}/${formatNumber(player.maxArmyTroops)}</span>
+          <b>势力兵力</b>
+          <span class="world-resource-value">${formatNumber(player.armyTroops)}</span>
           <em class="world-resource-income">${escapeHtml(armyReadinessText(player))}</em>
         </span>
       </div>
@@ -199,7 +200,7 @@
       && selected.cityPart === CITY_PARTS.CENTER;
     const upgradeCost = CITY_UPGRADE_COSTS[player.cityLevel + 1] || null;
     const canUpgrade = world.canUpgradeMainCity(state, PLAYER_FACTION_ID);
-    const recruitDisabled = player.resources.food <= 0 || player.armyTroops >= player.maxArmyTroops || state.gameStatus !== "playing";
+    const recruitDisabled = player.resources.food <= 0 || state.gameStatus !== "playing";
     const owner = state.factions[selected.ownerId];
     const ownerStyle = owner?.color ? ` style="--owner-color:${escapeHtml(owner.color)}"` : "";
     const ownerName = ownerLabel(state, selected.ownerId);
@@ -248,8 +249,8 @@
       ? `${canUpgrade ? "可升级" : "升级"}：${costText}；下级主城产量 ${resourceLine(nextProduction)}`
       : "主城已满级，主城基础产量已到上限。";
     const recruitText = recruit.recruited > 0
-      ? `征兵可补 ${formatNumber(recruit.recruited)}，消耗粮草 ${formatNumber(recruit.foodCost)}`
-      : player.armyTroops >= player.maxArmyTroops ? "兵力已满，无需征兵。" : "粮草不足，结束回合后再征兵。";
+      ? `征兵可新增 ${formatNumber(recruit.recruited)}，消耗粮草 ${formatNumber(recruit.foodCost)}`
+      : "粮草不足，结束回合后再征兵。";
     return `
       <div class="world-city-economy">
         <span>主城产量</span>
@@ -361,18 +362,15 @@
   }
 
   function recruitPreview(player) {
-    const missingTroops = Math.max(0, player.maxArmyTroops - player.armyTroops);
-    const foodCost = Math.min(player.resources.food, Math.ceil(missingTroops / TROOPS_PER_FOOD));
+    const foodCost = Math.max(0, Math.floor(Number(player.resources.food) || 0));
     return {
       foodCost,
-      recruited: Math.min(missingTroops, foodCost * TROOPS_PER_FOOD),
+      recruited: foodCost * TROOPS_PER_FOOD,
     };
   }
 
   function armyReadinessText(player) {
-    const missingTroops = Math.max(0, player.maxArmyTroops - player.armyTroops);
-    if (!missingTroops) return "兵力已满";
-    return `待补 ${formatNumber(missingTroops)}`;
+    return `单队可出 ${formatNumber(deployableTeamTroops(player.armyTroops))}/${formatNumber(TEAM_TROOP_CAP)}`;
   }
 
   function attackButtonLabel(tile) {
@@ -385,8 +383,9 @@
   function worldNextStepText(state, player) {
     if (state.gameStatus !== "playing") return endStateText(state);
     const recruit = recruitPreview(player);
-    if (recruit.recruited > 0 && player.armyTroops < Math.ceil(player.maxArmyTroops * 0.82)) {
-      return `兵力偏低，可在主城征兵补 ${formatNumber(recruit.recruited)}。`;
+    const deployableTroops = deployableTeamTroops(player.armyTroops);
+    if (recruit.recruited > 0 && deployableTroops < Math.ceil(TEAM_TROOP_CAP * 0.82)) {
+      return `当前单队只能出 ${formatNumber(deployableTroops)}，可征兵新增 ${formatNumber(recruit.recruited)}。`;
     }
     if (world.canUpgradeMainCity(state, PLAYER_FACTION_ID)) {
       return `资源已够，升级主城可提升基础产量。`;
@@ -403,6 +402,10 @@
       return `附近有 ${attackable.length} 个地块可扩张，先铺路打开资源点。`;
     }
     return "当前没有接壤目标，结束回合观察敌我边界变化。";
+  }
+
+  function deployableTeamTroops(totalTroops) {
+    return Math.max(0, Math.min(TEAM_TROOP_CAP, Math.round(Number(totalTroops) || 0)));
   }
 
   function endStateText(state) {

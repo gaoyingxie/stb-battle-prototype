@@ -14,7 +14,7 @@
     FACTIONS,
     INITIAL_RESOURCES,
     INITIAL_ARMY_TROOPS,
-    MAX_ARMY_TROOPS,
+    TEAM_TROOP_CAP,
     TROOPS_PER_FOOD,
     CITY_PRODUCTION_BY_LEVEL,
     CITY_UPGRADE_COSTS,
@@ -25,7 +25,7 @@
     CITY_PARTS,
   } = rules;
 
-  const VERSION = 1;
+  const VERSION = 2;
   const DEFAULT_SEED = 20260516;
 
   function createInitialSlgState(options = {}) {
@@ -61,7 +61,6 @@
       resources: { ...INITIAL_RESOURCES },
       cityLevel: 1,
       armyTroops: INITIAL_ARMY_TROOPS,
-      maxArmyTroops: MAX_ARMY_TROOPS,
       alive: true,
       eliminatedTurn: null,
     };
@@ -199,24 +198,28 @@
     for (const factionTemplate of FACTIONS) {
       const fallback = createFaction(factionTemplate);
       const faction = rawFactions[factionTemplate.id] || {};
+      const { maxArmyTroops, ...savedFaction } = faction;
       normalized[factionTemplate.id] = {
         ...fallback,
-        ...faction,
+        ...savedFaction,
         id: factionTemplate.id,
         label: factionTemplate.label,
         shortLabel: factionTemplate.shortLabel,
         kind: factionTemplate.kind,
         color: factionTemplate.color,
         homeCenter: { ...factionTemplate.homeCenter },
-        resources: normalizeResources(faction.resources),
-        cityLevel: clampInt(faction.cityLevel, 1, MAX_CITY_LEVEL),
-        armyTroops: clampInt(faction.armyTroops, 0, MAX_ARMY_TROOPS),
-        maxArmyTroops: MAX_ARMY_TROOPS,
+        resources: normalizeResources(savedFaction.resources),
+        cityLevel: clampInt(savedFaction.cityLevel, 1, MAX_CITY_LEVEL),
+        armyTroops: normalizeTroops(savedFaction.armyTroops),
         alive: faction.alive !== false,
-        eliminatedTurn: faction.eliminatedTurn || null,
+        eliminatedTurn: savedFaction.eliminatedTurn || null,
       };
     }
     return normalized;
+  }
+
+  function normalizeTroops(value) {
+    return clampInt(value, 0, Number.MAX_SAFE_INTEGER);
   }
 
   function normalizeResources(resources = {}) {
@@ -308,17 +311,16 @@
   function recruitFactionArmyInPlace(state, factionId, options = {}, events = []) {
     const faction = state.factions[factionId];
     if (!faction?.alive) return { ok: false, reason: "factionInactive", recruited: 0 };
-    const missingTroops = Math.max(0, faction.maxArmyTroops - faction.armyTroops);
     const wantedFood = Number.isFinite(Number(options.foodAmount))
       ? Math.max(0, Math.floor(Number(options.foodAmount)))
       : faction.resources.food;
-    const foodCost = Math.min(faction.resources.food, wantedFood, Math.ceil(missingTroops / TROOPS_PER_FOOD));
-    const recruited = Math.min(missingTroops, foodCost * TROOPS_PER_FOOD);
+    const foodCost = Math.min(faction.resources.food, wantedFood);
+    const recruited = foodCost * TROOPS_PER_FOOD;
     if (foodCost <= 0 || recruited <= 0) {
-      return { ok: false, reason: "noRecruitCapacity", recruited: 0 };
+      return { ok: false, reason: "noFood", recruited: 0 };
     }
     faction.resources.food -= foodCost;
-    faction.armyTroops += recruited;
+    faction.armyTroops = normalizeTroops(faction.armyTroops + recruited);
     const event = {
       type: "recruit",
       factionId,
@@ -385,8 +387,9 @@
     }
 
     const defenderId = tile.ownerId && tile.ownerId !== attackerId ? tile.ownerId : NEUTRAL_FACTION_ID;
+    const attackerArmyBefore = attacker.armyTroops;
+    const attackerTroopsBefore = deployableTeamTroops(attackerArmyBefore);
     const defenderTroopsBefore = defenderTroopsForTile(state, tile);
-    const attackerTroopsBefore = attacker.armyTroops;
     const resolver = typeof options.resolveBattle === "function" ? options.resolveBattle : defaultResolveBattle;
     const outcome = resolver({
       state: cloneState(state),
@@ -401,21 +404,21 @@
     const attackerTroopsAfter = clampInt(
       outcome.attackerTroops,
       0,
-      attacker.maxArmyTroops,
+      attackerTroopsBefore,
       attackerWon ? Math.max(1, attackerTroopsBefore - Math.ceil(defenderTroopsBefore * 0.35)) : Math.max(0, attackerTroopsBefore - Math.ceil(defenderTroopsBefore * 0.45)),
     );
     const defenderTroopsAfter = clampInt(
       outcome.defenderTroops,
       0,
-      Math.max(defenderTroopsBefore, MAX_ARMY_TROOPS),
+      defenderTroopsBefore,
       attackerWon ? 0 : Math.max(1, defenderTroopsBefore - Math.ceil(attackerTroopsBefore * 0.25)),
     );
 
-    attacker.armyTroops = attackerTroopsAfter;
+    attacker.armyTroops = normalizeTroops(attackerArmyBefore - attackerTroopsBefore + attackerTroopsAfter);
     if (attackerWon) {
       captureTileInPlace(state, attackerId, tile.id, events);
     } else {
-      updateDefenderTroopsInPlace(state, tile, defenderId, defenderTroopsAfter);
+      updateDefenderTroopsInPlace(state, tile, defenderId, defenderTroopsAfter, defenderTroopsBefore);
     }
 
     checkVictoryStateInPlace(state);
@@ -544,14 +547,15 @@
       });
   }
 
-  function updateDefenderTroopsInPlace(state, tile, defenderId, troops) {
+  function updateDefenderTroopsInPlace(state, tile, defenderId, troops, committedTroops = troops) {
     if (tile.type === TILE_TYPES.RESOURCE) {
       tile.garrison ||= { troops, maxTroops: Math.max(troops, RESOURCE_GARRISON_TROOPS[tile.level] || troops) };
       tile.garrison.troops = troops;
       return;
     }
     if (state.factions[defenderId]) {
-      state.factions[defenderId].armyTroops = clampInt(troops, 0, MAX_ARMY_TROOPS);
+      const faction = state.factions[defenderId];
+      faction.armyTroops = normalizeTroops(faction.armyTroops - committedTroops + troops);
     }
   }
 
@@ -589,7 +593,7 @@
     if (tile.type === TILE_TYPES.EMPTY) return 6;
     const defenderTroops = defenderTroopsForTile(state, tile);
     const faction = state.factions[factionId];
-    const troopRatio = faction.armyTroops / Math.max(1, defenderTroops);
+    const troopRatio = deployableTeamTroops(faction.armyTroops) / Math.max(1, defenderTroops);
     let score = troopRatio * 35 - defenderTroops / 700;
     if (tile.type === TILE_TYPES.RESOURCE) {
       score += tile.level * 18;
@@ -608,10 +612,17 @@
     if (tile.type === TILE_TYPES.RESOURCE) {
       const base = RESOURCE_GARRISON_TROOPS[tile.level] || RESOURCE_GARRISON_TROOPS[1];
       if (!tile.ownerId || tile.ownerId === NEUTRAL_FACTION_ID) return Math.max(1, tile.garrison?.troops || base);
-      return Math.max(1, Math.round((tile.garrison?.troops || base) + (state.factions[tile.ownerId]?.armyTroops || 0) * 0.18));
+      return deployableTeamTroops(Math.max(1, Math.round((tile.garrison?.troops || base) + (state.factions[tile.ownerId]?.armyTroops || 0) * 0.18)));
     }
-    if (tile.type === TILE_TYPES.MAIN_CITY) return Math.max(1, state.factions[tile.ownerId]?.armyTroops || INITIAL_ARMY_TROOPS);
+    if (tile.type === TILE_TYPES.MAIN_CITY) {
+      const armyTroops = state.factions[tile.ownerId]?.armyTroops;
+      return deployableTeamTroops(Number.isFinite(Number(armyTroops)) ? armyTroops : INITIAL_ARMY_TROOPS);
+    }
     return 0;
+  }
+
+  function deployableTeamTroops(totalTroops) {
+    return Math.max(0, Math.min(TEAM_TROOP_CAP, normalizeTroops(totalTroops)));
   }
 
   function factionIncome(state, factionId) {
@@ -751,6 +762,7 @@
     factionIncome,
     canUpgradeMainCity,
     defenderTroopsForTile,
+    deployableTeamTroops,
     adjacentTiles,
     isAdjacentToFaction,
     tileAt,
