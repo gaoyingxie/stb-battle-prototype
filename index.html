@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/app-shell.css" />
     <link rel="stylesheet" href="./styles/controls.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/world.css" />
     <link rel="stylesheet" href="./styles/roster.css" />
     <link rel="stylesheet" href="./styles/battlefield.css" />
     <link rel="stylesheet" href="./styles/modals.css" />
@@ -35,6 +36,20 @@
             战报
             <span id="reportBadge" class="report-badge" hidden>0</span>
           </button>
+        </div>
+      </section>
+
+      <section class="world-panel panel" aria-label="天下地图">
+        <div class="panel-heading world-heading">
+          <div>
+            <h2>天下</h2>
+            <p>四方势力争夺资源，发展主城，统一全国</p>
+          </div>
+        </div>
+        <div id="worldSummary" class="world-summary"></div>
+        <div class="world-body">
+          <div id="worldMap" class="world-map" aria-label="世界方格地图"></div>
+          <aside id="worldDetail" class="world-detail" aria-label="地块详情"></aside>
         </div>
       </section>
 
@@ -183,6 +198,7 @@
     </dialog>
 
     <script src="./src/battle-rules.js"></script>
+    <script src="./src/slg-rules.js"></script>
     <script src="./official-data.js"></script>
     <script src="./src/seed-data.js"></script>
     <script src="./src/skill-taxonomy.js"></script>
@@ -191,6 +207,8 @@
     <script src="./src/team-ai.js"></script>
     <script src="./src/report-ui.js"></script>
     <script src="./src/battle-replay-ui.js"></script>
+    <script src="./src/slg-world.js"></script>
+    <script src="./src/world-ui.js"></script>
     <script src="./src/app.js"></script>
   </body>
 </html>

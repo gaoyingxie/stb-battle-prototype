@@ -34,7 +34,7 @@ page.on("response", (response) => {
 
 async function measureBattleLayout(viewport) {
   await page.setViewportSize(viewport);
-  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => document.querySelector(".battlefield")?.scrollIntoView({ block: "start" }));
   await page.waitForFunction(() => document.querySelectorAll(".war-map .unit-card").length === 6);
   return page.evaluate(() => {
     const rect = (selector) => {
@@ -74,6 +74,46 @@ async function measureBattleLayout(viewport) {
 try {
   await page.goto(entryUrl);
   await page.waitForSelector("#startBattle");
+  await page.waitForSelector("#worldMap .world-tile");
+  const worldInitialCheck = await page.evaluate(() => {
+    const slg = globalThis.STZB_DEBUG?.state?.slg;
+    return {
+      hasWorld: Boolean(document.querySelector("#worldMap .world-tile")),
+      tileCount: document.querySelectorAll("#worldMap .world-tile").length,
+      detailHasActions: Boolean(document.querySelector("#worldDetail [data-world-action='recruit']")),
+      turn: slg?.turn,
+      playerFood: slg?.factions?.player?.resources?.food,
+      playerArmy: slg?.factions?.player?.armyTroops,
+      adjacentOwner: slg?.tiles?.find((tile) => tile.id === "5-3")?.ownerId,
+    };
+  });
+  await page.click('#worldMap [data-world-tile-id="3-3"]');
+  await page.click('#worldDetail [data-world-action="recruit"]');
+  await page.click('#worldMap [data-world-tile-id="5-3"]');
+  await page.waitForSelector('#worldDetail [data-world-action="attack"]');
+  const worldBeforeAttack = await page.evaluate(() => ({
+    turn: globalThis.STZB_DEBUG?.state?.slg?.turn,
+    playerFood: globalThis.STZB_DEBUG?.state?.slg?.factions?.player?.resources?.food,
+    playerArmy: globalThis.STZB_DEBUG?.state?.slg?.factions?.player?.armyTroops,
+  }));
+  await page.click('#worldDetail [data-world-action="attack"]');
+  await page.waitForFunction(() =>
+    globalThis.STZB_DEBUG?.state?.slg?.tiles?.find((tile) => tile.id === "5-3")?.ownerId === "player"
+  );
+  await page.click('#worldSummary [data-world-action="end-turn"]');
+  await page.waitForFunction((turn) => globalThis.STZB_DEBUG?.state?.slg?.turn > turn, worldBeforeAttack.turn);
+  const worldFlowCheck = await page.evaluate(() => {
+    const slg = globalThis.STZB_DEBUG?.state?.slg;
+    const tile = slg?.tiles?.find((item) => item.id === "5-3");
+    return {
+      turn: slg?.turn,
+      capturedOwner: tile?.ownerId,
+      playerFood: slg?.factions?.player?.resources?.food,
+      playerArmy: slg?.factions?.player?.armyTroops,
+      reports: globalThis.STZB_DEBUG?.state?.battleReports?.length || 0,
+      detailHasAttackable: Boolean(document.querySelector("#worldMap .world-tile.attackable")),
+    };
+  });
   await page.click("#autoTeam");
   await page.waitForFunction(() => document.querySelector("#systemMessages")?.textContent?.includes("站位职责"));
   await page.click("#startBattle");
@@ -665,6 +705,23 @@ try {
     battleLayoutChecks.push(await measureBattleLayout(viewport));
   }
 
+  if (
+    !worldInitialCheck.hasWorld
+    || worldInitialCheck.tileCount !== 625
+    || !worldInitialCheck.detailHasActions
+    || worldInitialCheck.adjacentOwner !== "neutral"
+  ) {
+    throw new Error(`SLG world did not initialize correctly: ${JSON.stringify(worldInitialCheck)}`);
+  }
+  if (
+    worldBeforeAttack.playerFood >= worldInitialCheck.playerFood
+    || worldBeforeAttack.playerArmy <= worldInitialCheck.playerArmy
+    || worldFlowCheck.capturedOwner !== "player"
+    || worldFlowCheck.turn <= worldBeforeAttack.turn
+    || worldFlowCheck.reports < 1
+  ) {
+    throw new Error(`SLG world recruit, capture, or end-turn flow failed: ${JSON.stringify({ worldBeforeAttack, worldFlowCheck })}`);
+  }
   if (generatedReportCheck.badge !== String(generatedReportCheck.reports) || generatedReportCheck.reports < 1 || !generatedReportCheck.lastBattleComplete || generatedReportCheck.activeBattle) {
     throw new Error(`开战后没有一次性结算并生成未读战报：${JSON.stringify(generatedReportCheck)}`);
   }
@@ -865,6 +922,8 @@ try {
 
   console.log(JSON.stringify({
     ...summary,
+    worldInitialCheck,
+    worldFlowCheck,
     generatedReportCheck,
     battlePlaceReportCheck,
     generatedReportModalCheck,

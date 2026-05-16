@@ -1,0 +1,277 @@
+.world-panel {
+  margin-top: 16px;
+  background:
+    linear-gradient(180deg, rgba(39, 52, 35, 0.88), rgba(27, 30, 24, 0.96)),
+    var(--panel);
+  border: 1px solid rgba(215, 170, 71, 0.16);
+  box-shadow: var(--shadow);
+}
+
+.world-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.world-summary {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(215, 170, 71, 0.16);
+}
+
+.world-status,
+.world-resource-pill {
+  display: grid;
+  gap: 2px;
+  min-height: 46px;
+  padding: 8px 10px;
+  border: 1px solid rgba(244, 236, 216, 0.12);
+  border-radius: 6px;
+  background: rgba(10, 12, 10, 0.24);
+}
+
+.world-status span,
+.world-resource-pill b,
+.world-detail-grid span,
+.world-city-actions small,
+.world-faction small,
+.world-yield,
+.world-end-state {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.world-status strong {
+  color: #f4ecd8;
+  font-size: 18px;
+}
+
+.world-resource-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.world-resource-pill {
+  color: #f6e6bd;
+  font-weight: 800;
+}
+
+.world-resource-pill.army {
+  border-color: rgba(97, 125, 168, 0.42);
+  background: rgba(97, 125, 168, 0.15);
+}
+
+.world-summary-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.world-body {
+  display: grid;
+  grid-template-columns: minmax(560px, 1fr) minmax(300px, 360px);
+  gap: 14px;
+  padding: 14px;
+}
+
+.world-map {
+  display: grid;
+  grid-template-columns: repeat(var(--world-size), minmax(18px, 1fr));
+  gap: 3px;
+  align-self: start;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(244, 236, 216, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(56, 94, 52, 0.28), rgba(69, 91, 58, 0.08)),
+    rgba(11, 18, 12, 0.34);
+}
+
+.world-tile {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  min-width: 0;
+  min-height: 18px;
+  padding: 0;
+  border: 1px solid rgba(244, 236, 216, 0.08);
+  border-radius: 4px;
+  background: rgba(78, 111, 65, 0.32);
+  color: rgba(244, 236, 216, 0.78);
+  font-size: clamp(10px, 1vw, 13px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.world-tile:hover,
+.world-tile.selected {
+  border-color: rgba(245, 223, 170, 0.82);
+  transform: translateY(-1px);
+}
+
+.world-tile.selected {
+  box-shadow: 0 0 0 2px rgba(215, 170, 71, 0.26);
+}
+
+.world-tile.tile-empty {
+  background: rgba(53, 77, 48, 0.28);
+}
+
+.world-tile.tile-resource {
+  background:
+    linear-gradient(180deg, rgba(245, 223, 170, 0.16), rgba(30, 32, 22, 0.18)),
+    rgba(72, 102, 60, 0.62);
+  color: #f5dfaa;
+}
+
+.world-tile.tile-mainCity {
+  border-color: color-mix(in srgb, var(--owner-color, #d7aa47) 70%, #211d18);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--owner-color, #d7aa47) 42%, transparent), rgba(19, 17, 14, 0.52)),
+    rgba(38, 32, 26, 0.82);
+  color: #fff5d2;
+}
+
+.world-tile.city-center {
+  border-width: 2px;
+}
+
+.world-tile.owner-neutral {
+  color: #d8d3c8;
+}
+
+.world-tile.attackable {
+  outline: 2px solid rgba(184, 63, 53, 0.72);
+  outline-offset: 1px;
+}
+
+.world-detail {
+  min-width: 0;
+}
+
+.world-detail-card,
+.world-factions {
+  border: 1px solid rgba(244, 236, 216, 0.14);
+  border-radius: 8px;
+  background: rgba(14, 16, 13, 0.32);
+}
+
+.world-detail-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.world-detail-head {
+  display: grid;
+  gap: 4px;
+}
+
+.world-detail-head span {
+  color: #a8c7a1;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.world-detail-head strong {
+  font-size: 22px;
+}
+
+.world-detail-grid {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(244, 236, 216, 0.1);
+}
+
+.world-detail-grid b {
+  min-width: 0;
+  color: #f6e6bd;
+}
+
+.world-city-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.world-city-actions small {
+  grid-column: 1 / -1;
+}
+
+.world-wide-action {
+  width: 100%;
+}
+
+.world-factions {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px;
+}
+
+.world-faction {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.world-faction > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--owner-color, #d7aa47) 70%, #211d18);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--owner-color, #d7aa47) 24%, transparent);
+  color: #fff5d2;
+  font-weight: 900;
+}
+
+.world-faction div {
+  display: grid;
+  min-width: 0;
+}
+
+.world-faction.fallen {
+  opacity: 0.48;
+}
+
+@media (max-width: 1180px) {
+  .world-summary,
+  .world-body {
+    grid-template-columns: 1fr;
+  }
+
+  .world-resource-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .world-summary-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .world-body {
+    padding: 10px;
+  }
+
+  .world-map {
+    gap: 2px;
+    padding: 8px;
+  }
+
+  .world-resource-bar,
+  .world-city-actions,
+  .world-summary-actions {
+    grid-template-columns: 1fr;
+  }
+}

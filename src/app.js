@@ -14,6 +14,25 @@ const {
   recommendTeam,
 } = globalThis.STZB_TEAM_AI;
 
+const {
+  PLAYER_FACTION_ID,
+  NEUTRAL_FACTION_ID,
+} = globalThis.STZB_SLG_RULES;
+
+const {
+  createInitialSlgState,
+  normalizeSlgState,
+  advanceSlgTurn,
+  recruitFactionArmy,
+  upgradeMainCity,
+  attackTile,
+  tileById,
+} = globalThis.STZB_SLG_WORLD;
+
+const {
+  createWorldUi,
+} = globalThis.STZB_WORLD_UI;
+
 mergeOfficialData();
 
 const INNATE_SKILL_IDS = new Set();
@@ -35,6 +54,7 @@ const state = {
   battleReports: [],
   lastBattle: null,
   activeBattle: null,
+  slg: null,
 };
 
 let selectedBattleReportId = null;
@@ -42,6 +62,8 @@ let battleReportView = "list";
 let battleReportStatsTab = "hero";
 let battleReportFormationSide = "player";
 let expandedBattleReportSeriesIds = new Set();
+let selectedWorldTileId = null;
+let worldUi = null;
 
 globalThis.STZB_DEBUG = { state };
 
@@ -65,6 +87,9 @@ const els = {
   battleReportContent: document.querySelector("#battleReportContent"),
   battleReportClose: document.querySelector("#battleReportClose"),
   systemMessages: document.querySelector("#systemMessages"),
+  worldMap: document.querySelector("#worldMap"),
+  worldDetail: document.querySelector("#worldDetail"),
+  worldSummary: document.querySelector("#worldSummary"),
   battleTitle: document.querySelector("#battleTitle"),
   battleSubtitle: document.querySelector("#battleSubtitle"),
   battleResult: document.querySelector("#battleResult"),
@@ -92,12 +117,14 @@ const els = {
 function init() {
   resetRuntimeState();
   loadState();
+  ensureSlgState();
   ensureStarterRoster();
   if (!state.enemy.length) state.enemy = randomEnemyTeam();
   normalizeFormationHeroes();
   normalizeFormationSkills();
   saveState();
   bindEvents();
+  bindWorldUi();
   renderAll();
 }
 
@@ -131,6 +158,25 @@ function bindEvents() {
     });
   });
   els.battleReportModal.addEventListener("close", stopBattleReplay);
+}
+
+function bindWorldUi() {
+  worldUi = createWorldUi({
+    mapEl: els.worldMap,
+    detailEl: els.worldDetail,
+    summaryEl: els.worldSummary,
+    callbacks: {
+      onSelectTile: (tileId) => {
+        selectedWorldTileId = tileId;
+        renderWorld();
+      },
+      onRecruit: recruitPlayerArmy,
+      onUpgrade: upgradePlayerCity,
+      onAttack: attackSelectedWorldTile,
+      onEndTurn: endSlgTurn,
+      onResetWorld: resetSlgWorld,
+    },
+  });
 }
 
 function mergeOfficialData() {
@@ -1000,7 +1046,19 @@ function resetRuntimeState() {
   state.battleReports = [];
   state.lastBattle = null;
   state.activeBattle = null;
+  state.slg = createInitialSlgState();
+  selectedWorldTileId = null;
   expandedBattleReportSeriesIds = new Set();
+}
+
+function ensureSlgState() {
+  state.slg = state.slg ? normalizeSlgState(state.slg) : createInitialSlgState();
+  selectedWorldTileId ||= playerHomeTileId();
+}
+
+function playerHomeTileId() {
+  const player = state.slg?.factions?.[PLAYER_FACTION_ID];
+  return player ? `${player.homeCenter.x}-${player.homeCenter.y}` : "3-3";
 }
 
 function starterFormation() {
@@ -1039,12 +1097,14 @@ function loadState() {
     state.battleReports = Array.isArray(state.battleReports) ? state.battleReports.slice(-BATTLE_REPORT_LIMIT) : [];
     state.lastBattle = state.battleReports.at(-1)?.battle || null;
     state.activeBattle = null;
+    state.slg = state.slg ? normalizeSlgState(state.slg) : createInitialSlgState();
   } catch {
     localStorage.removeItem("heluozhanzhen");
   }
 }
 
 function saveState() {
+  ensureSlgState();
   localStorage.setItem("heluozhanzhen", JSON.stringify({
     roster: state.roster,
     skills: state.skills,
@@ -1053,6 +1113,7 @@ function saveState() {
     enemy: state.enemy,
     systemMessages: state.systemMessages,
     battleReports: state.battleReports,
+    slg: state.slg,
   }));
 }
 
@@ -1136,6 +1197,164 @@ function randomEnemyTeam() {
   });
 }
 
+function resetSlgWorld() {
+  if (typeof confirm === "function" && !confirm("确定重置天下地图、资源、主城和势力进度吗？")) return;
+  state.slg = createInitialSlgState();
+  selectedWorldTileId = playerHomeTileId();
+  writeSystemMessage("天下局势已重置，四方势力重新开局。");
+  saveState();
+  renderAll();
+}
+
+function recruitPlayerArmy() {
+  const outcome = recruitFactionArmy(state.slg, PLAYER_FACTION_ID);
+  state.slg = outcome.state;
+  writeSlgEvents(outcome.events);
+  if (!outcome.ok) writeSystemMessage("粮草不足或兵力已满，暂时无法征兵。");
+  saveState();
+  renderAll();
+}
+
+function upgradePlayerCity() {
+  const outcome = upgradeMainCity(state.slg, PLAYER_FACTION_ID);
+  state.slg = outcome.state;
+  writeSlgEvents(outcome.events);
+  if (!outcome.ok) writeSystemMessage("木材或石料不足，主城暂时无法升级。");
+  saveState();
+  renderAll();
+}
+
+function attackSelectedWorldTile() {
+  const target = tileById(state.slg, selectedWorldTileId);
+  if (!target) return;
+  const outcome = attackTile(state.slg, PLAYER_FACTION_ID, target.id, {
+    resolveBattle: resolveSlgBattle,
+  });
+  state.slg = outcome.state;
+  writeSlgEvents(outcome.events);
+  if (!outcome.ok) writeSystemMessage("只能攻打与己方领地相邻的资源点或主城中心。");
+  saveState();
+  renderAll();
+}
+
+function endSlgTurn() {
+  const outcome = advanceSlgTurn(state.slg, {
+    resolveBattle: resolveSlgBattle,
+  });
+  state.slg = outcome.state;
+  writeSlgEvents(outcome.events);
+  if (state.slg.gameStatus === "victory") writeSystemMessage("天下归一：你已经攻灭其他三方势力。", "success");
+  if (state.slg.gameStatus === "defeat") writeSystemMessage("主城陷落：玩家势力已经失败。", "danger");
+  saveState();
+  renderAll();
+}
+
+function writeSlgEvents(events = []) {
+  events.forEach((event) => {
+    const message = slgEventMessage(event);
+    if (message) writeSystemMessage(message);
+  });
+}
+
+function slgEventMessage(event) {
+  if (!event) return "";
+  if (event.type === "income" && event.factionId === PLAYER_FACTION_ID) {
+    return `本回合产出：粮草 +${event.amount.food}，木材 +${event.amount.wood}，石料 +${event.amount.stone}。`;
+  }
+  if (event.type === "recruit" && event.factionId === PLAYER_FACTION_ID) {
+    return `主城征兵 ${formatNumber(event.recruited)}，消耗粮草 ${formatNumber(event.foodCost)}。`;
+  }
+  if (event.type === "upgrade") {
+    const faction = state.slg.factions[event.factionId];
+    return `${faction?.label || "势力"}主城升至 ${event.level} 级。`;
+  }
+  if (event.type === "battle") return event.text;
+  if (event.type === "capitalCaptured") return event.text;
+  return "";
+}
+
+function resolveSlgBattle({ state: slgState, attackerId, defenderId, tile, attackerTroops, defenderTroops }) {
+  const attackerTeam = teamWithTroops(buildSlgFactionTeam(attackerId), attackerTroops);
+  const defenderTeam = teamWithTroops(buildSlgDefenderTeam(slgState, defenderId, tile), defenderTroops);
+  const battles = runBattleEncounters(attackerTeam, defenderTeam, { freshFirstEncounter: false });
+  const finalBattle = battles.at(-1);
+  const snapshots = addSlgBattleReports(battles, attackerId, defenderId, tile);
+  return {
+    winner: finalBattle?.winner === "player" ? "attacker" : "defender",
+    attackerTroops: sumBattleTroops(finalBattle?.player),
+    defenderTroops: sumBattleTroops(finalBattle?.enemy),
+    battle: snapshots.at(-1) || null,
+  };
+}
+
+function addSlgBattleReports(battles, attackerId, defenderId, tile) {
+  const snapshots = battles.map((battle) => ({
+    ...toBattleSnapshot(battle),
+    slg: {
+      attackerId,
+      defenderId,
+      tileId: tile.id,
+      tileType: tile.type,
+      resourceType: tile.resourceType,
+    },
+  }));
+  const seriesId = `slg-series-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+  snapshots.forEach((snapshot, index) => {
+    addBattleReport(snapshot, {
+      seriesId,
+      seriesIndex: index + 1,
+      seriesSize: snapshots.length,
+    });
+  });
+  return snapshots;
+}
+
+function buildSlgFactionTeam(factionId) {
+  if (factionId === PLAYER_FACTION_ID) return getPlayerTeam();
+  return buildEnemyTeam({
+    heroes: HEROES,
+    skills: EQUIPPABLE_SKILLS,
+    positions: POSITIONS,
+    sampleSize: 18,
+    skillGrades: ["S", "A"],
+  });
+}
+
+function buildSlgDefenderTeam(slgState, defenderId, tile) {
+  if (defenderId && defenderId !== NEUTRAL_FACTION_ID && slgState.factions[defenderId]?.alive) {
+    return buildSlgFactionTeam(defenderId);
+  }
+  const level = Math.max(1, Number(tile?.level) || 1);
+  return buildEnemyTeam({
+    heroes: HEROES,
+    skills: EQUIPPABLE_SKILLS,
+    positions: POSITIONS,
+    sampleSize: Math.min(20, 8 + level * 3),
+    skillGrades: level >= 3 ? ["S", "A"] : ["A", "B"],
+  });
+}
+
+function teamWithTroops(team, totalTroops) {
+  const slots = (team || []).filter((slot) => slot?.heroId);
+  const total = Math.max(0, Math.min(30000, Math.round(Number(totalTroops) || 0)));
+  let remaining = total;
+  return slots.map((slot, index) => {
+    const slotsLeft = Math.max(1, slots.length - index);
+    const troops = Math.min(10000, Math.ceil(remaining / slotsLeft));
+    remaining = Math.max(0, remaining - troops);
+    return {
+      ...slot,
+      troops,
+      wounded: 0,
+      maxTroops: troops,
+    };
+  });
+}
+
+function sumBattleTroops(units = []) {
+  return (units || []).reduce((sum, unit) => sum + Math.max(0, Math.round(unit.troops || 0)), 0);
+}
+
 function getPlayerTeam() {
   normalizeFormationHeroes();
   normalizeFormationSkills();
@@ -1145,12 +1364,19 @@ function getPlayerTeam() {
 function renderAll() {
   normalizeFormationHeroes();
   normalizeFormationSkills();
+  ensureSlgState();
+  renderWorld();
   renderFormationEditor();
   renderRoster();
   renderSkillCodex();
   renderBattle(currentBattle());
   renderBattleReportBadge();
   renderSystemMessages();
+}
+
+function renderWorld() {
+  ensureSlgState();
+  worldUi?.render(state.slg, selectedWorldTileId);
 }
 
 function currentBattle() {
@@ -1175,14 +1401,15 @@ function advanceBattleFlow() {
   renderAll();
 }
 
-function runBattleEncounters(playerTeam, enemyTeam) {
+function runBattleEncounters(playerTeam, enemyTeam, options = {}) {
   let playerSlots = cloneTeamForEncounter(playerTeam);
   let enemySlots = cloneTeamForEncounter(enemyTeam);
   const battles = [];
+  const freshFirstEncounter = options.freshFirstEncounter !== false;
 
   for (let encounter = 1; encounter <= BATTLE_MAX_ENCOUNTERS; encounter += 1) {
     const battle = createBattle(playerSlots, enemySlots, {
-      freshTroops: encounter === 1,
+      freshTroops: encounter === 1 ? freshFirstEncounter : false,
       encounter,
       maxEncounters: BATTLE_MAX_ENCOUNTERS,
     });
