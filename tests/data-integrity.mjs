@@ -1,12 +1,18 @@
 globalThis.window = globalThis;
 
 await import("../official-data.js");
+await import("../src/seed-data.js");
 await import("../src/skill-taxonomy.js");
 
 const official = globalThis.STZB_OFFICIAL_DATA;
+const seed = globalThis.STZB_SEED_DATA;
 const skills = official?.skills || [];
 const heroes = official?.heroes || [];
 const taxonomy = globalThis.STZB_SKILL_TAXONOMY;
+
+if (seed?.HEROES?.length || seed?.SKILLS?.length) {
+  throw new Error(`seed-data.js 不应再维护手写武将或战法：heroes=${seed.HEROES.length}, skills=${seed.SKILLS.length}`);
+}
 
 const caoWeiwu = skills.find((skill) =>
   String(skill.officialId) === "200023"
@@ -64,6 +70,8 @@ if (!enrichedCaoWeiwu.tags.includes("自带") || !enrichedCaoWeiwu.aiProfile || 
 console.log(JSON.stringify({
   heroes: heroes.length,
   skills: skills.length,
+  seedHeroes: seed?.HEROES?.length || 0,
+  seedSkills: seed?.SKILLS?.length || 0,
   innateSkills: innateIds.size,
   saSkillTaxonomy: saSkills.length,
   caoWeiwuType: caoWeiwu.type,

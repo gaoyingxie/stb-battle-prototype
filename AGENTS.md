@@ -11,7 +11,7 @@
 - `src/battle-rules.js` 负责规则常量、状态定义和公式工具。
 - `src/battle-engine.js` 负责战斗模拟状态和回合推进。
 - `src/team-ai.js` 负责 AI 阵容和战法推荐。
-- `src/seed-data.js` 负责手工维护的种子武将、战法和官方别名映射。
+- `src/seed-data.js` 只提供运行态官方数据容器，不维护手写武将或战法。
 - `src/report-ui.js` 负责战报弹窗、战报快照、系统消息和日志渲染。
 - `src/battle-replay-ui.js` 负责战况回放时间轴、播放状态和 2.5D 表现层。
 - `src/app.js` 负责浏览器状态、localStorage、DOM 事件、弹窗、抽卡、编队和渲染。
@@ -60,6 +60,7 @@ npm run check
 ## 硬约束
 
 - 不要手工修改 `official-data.js`；需要刷新时运行 `scripts/scrape-stzb-official.mjs`。
+- 不要在 `src/seed-data.js` 新增手写武将或战法；运行态武将和战法只来自官方生成数据。
 - 不要按兵种推导武将攻击距离；优先使用官方/武将自身 `distance` 字段，`DEFAULT_ATTACK_DISTANCE` 只做兜底。
 - DOM 工作留在 `src/app.js`；不要给战斗引擎增加浏览器或 UI 依赖。
 - 战斗状态事件进入战报，账号/系统类事件进入系统消息。

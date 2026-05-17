@@ -639,7 +639,7 @@ try {
     const heroRarities = [...document.querySelectorAll('select[data-kind="hero"]')[0].options]
       .slice(0, 12)
       .map((option) => Number(option.textContent.match(/· (\d)星/)?.[1] || 0));
-    const handwrittenCanonicalIds = [...globalThis.STZB_SEED_DATA.HEROES, ...globalThis.STZB_SEED_DATA.SKILLS]
+    const nonOfficialRuntimeIds = [...globalThis.STZB_SEED_DATA.HEROES, ...globalThis.STZB_SEED_DATA.SKILLS]
       .filter((item) => item.name && !String(item.id).startsWith("official-"))
       .map((item) => item.id);
     const starterHeroIds = state.formation.map((slot) => slot.heroId);
@@ -650,7 +650,7 @@ try {
       calmOptions,
       skillGrades,
       heroRarities,
-      handwrittenCanonicalIds,
+      nonOfficialRuntimeIds,
       starterHeroIds,
       swapExpectedHeroIds: [guanYu, caoCao, liuBei],
       swappedHeroIds,
@@ -837,8 +837,11 @@ try {
   if (formationConstraintCheck.heroRarities.some((rarity, index, list) => index > 0 && rarity > list[index - 1])) {
     throw new Error(`武将下拉没有按星级降序排序：${JSON.stringify(formationConstraintCheck.heroRarities)}`);
   }
+  if (formationConstraintCheck.nonOfficialRuntimeIds.length) {
+    throw new Error(`运行态仍保留非官方 id：${JSON.stringify(formationConstraintCheck.nonOfficialRuntimeIds)}`);
+  }
   if (formationConstraintCheck.starterHeroIds.some((id) => !id?.startsWith("official-"))) {
-    throw new Error(`编队运行态仍在使用手写武将 id：${JSON.stringify(formationConstraintCheck.starterHeroIds)}`);
+    throw new Error(`编队运行态仍在使用非官方武将 id：${JSON.stringify(formationConstraintCheck.starterHeroIds)}`);
   }
   if (
     !battlePortraitCheck.unitPortraitBackground.includes("/assets/portraits/")

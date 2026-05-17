@@ -15,7 +15,7 @@ styles/                    UI 样式模块
 official-data.js           官方资料生成结果
 AGENTS.md                  Agent 入口和文档路由
 src/battle-rules.js        规则常量、状态定义、伤害公式
-src/seed-data.js           本地种子武将、战法和官方别名
+src/seed-data.js           运行态官方数据容器
 src/battle-engine.js       战斗模拟引擎
 src/report-ui.js           战报弹窗、战报快照、系统消息和日志渲染
 src/battle-replay-ui.js    战况回放时间轴、播放控制和 2.5D 表现
@@ -46,7 +46,7 @@ npm run bootstrap
 ## 模块边界
 
 - `battle-rules.js` 不访问 DOM，不读写存档，只保存可调规则和纯公式。
-- `seed-data.js` 放本地兜底内容：早期种子武将、手写战法、官方名称别名。
+- `seed-data.js` 只提供运行态 `HEROES` / `SKILLS` 容器；不要在这里维护手写武将或战法。
 - `battle-engine.js` 拥有战斗模拟状态：单位、回合、行动、伤害、治疗、状态生命周期。
 - `team-ai.js` 拥有配将推荐逻辑：候选池、选将评分、战法评分和队伍组装策略。
 - `report-ui.js` 拥有战报 UI、战报快照、系统消息和日志渲染；它只读写浏览器应用状态，不接入战斗规则。
@@ -54,7 +54,7 @@ npm run bootstrap
 - `app.js` 拥有浏览器应用状态：localStorage、按钮事件、编队表单、弹窗、抽卡和战斗流程。
 - `official-data.js` 是生成物，不手工维护；需要刷新时重新运行抓取脚本。
 
-这个拆法的目标是让后续迭代有明确落点：调公式改 `battle-rules.js`，加原型战法改 `seed-data.js`，改战斗行为改 `battle-engine.js`，改配将推荐改 `team-ai.js`，改战报和系统消息改 `report-ui.js`，改战况回放改 `battle-replay-ui.js`，改其他界面体验改 `app.js`。
+这个拆法的目标是让后续迭代有明确落点：调公式改 `battle-rules.js`，刷新官方资料改生成脚本并重新生成 `official-data.js`，改战斗行为改 `battle-engine.js` 或 `app.js` 的官方战法结算推断，改配将推荐改 `team-ai.js`，改战报和系统消息改 `report-ui.js`，改战况回放改 `battle-replay-ui.js`，改其他界面体验改 `app.js`。
 
 ## 样式分层
 
@@ -106,13 +106,13 @@ https://g0.gph.netease.com/ngsocial/community/stzb/cn/cards/cut/card_medium_{ico
 
 ## 官方数据归并
 
-应用启动时会把 `official-data.js` 合并到本地种子数据：
+应用启动时会从 `official-data.js` 重建运行态 `STZB_SEED_DATA.HEROES` 和 `STZB_SEED_DATA.SKILLS`：
 
-- 官方战法会补齐品质、类型、距离、目标、发动率、描述和图标。
-- 与本地手写战法同名或命中别名映射时，保留本地战斗实现，只补官方展示字段。
-- 官方武将会追加到 `HEROES`，但缺少自带战法映射的条目会跳过。
-- 早期种子武将和手写战法只做源码内的战斗行为补充；合并官方数据后，运行态和开局编队都使用官方 id，不保留旧本地 id 兼容分支。
-- 编队配置按武将名称和战法名称去重，避免同名不同 id 的官方/种子记录被同时上阵或配置。
+- `seed-data.js` 的源码数组保持为空，避免重新引入手写武将、手写战法或旧本地 id。
+- 官方战法会复制品质、类型、距离、目标、发动率、描述、图标和学习信息，并在运行态接入官方战法结算推断。
+- 官方武将会在确认自带战法存在后写入 `HEROES`；同名、同阵营、同兵种、同自带战法的官方重复条目会去重。
+- 运行态、存档规范化和开局编队都使用官方 id，不保留旧本地 id 兼容分支。
+- 编队配置按武将名称和战法名称去重，避免同名不同官方 id 的记录被同时上阵或配置。
 
 ## 验证建议
 
@@ -143,6 +143,6 @@ npm run smoke:browser
 - 新增通用状态时，先在 `battle-rules.js` 的 `STATUS_DEFINITIONS` 登记标签、分类和说明，再在 `battle-engine.js` 接入行为。
 - 武将攻击距离应优先来自官方/武将自身 `distance` 字段；不要按兵种推导攻击距离。`DEFAULT_ATTACK_DISTANCE` 只是缺失字段时的原型兜底。
 - 新增公式常量时，放进 `DAMAGE_MODEL`，不要把魔法数字散落在引擎函数里。
-- 新增手写战法时放进 `seed-data.js`，尽量写清 `type`、`trigger`、`chance`、`desc` 和行为函数。
+- 不要新增手写武将或战法；需要扩充资料时刷新官方生成数据，需要扩充结算时改官方战法行为推断或战斗规则。
 - 新增战报或系统消息 UI 时优先改 `report-ui.js`、`styles/logs.css` 或 `styles/battle-report.css`；新增战况回放逻辑时优先改 `battle-replay-ui.js` 和 `styles/battle-report.css`；新增其他 UI 功能时优先只改 `app.js` 和对应的 `styles/*.css` 模块，避免把 DOM 操作写进战斗引擎。
 - `official-data.js` 是生成物；不要在里面做手工修补。

@@ -6,7 +6,6 @@ const {
 const {
   HEROES,
   SKILLS,
-  OFFICIAL_SKILL_ALIASES,
 } = globalThis.STZB_SEED_DATA;
 
 const {
@@ -136,64 +135,28 @@ function bindEvents() {
 function mergeOfficialData() {
   const official = globalThis.STZB_OFFICIAL_DATA;
   if (!official?.heroes?.length || !official?.skills?.length) return;
-  const skillIds = new Set(SKILLS.map((skill) => skill.id));
-  const localSkillByName = new Map(SKILLS.map((skill) => [skill.name, skill]));
+  HEROES.splice(0, HEROES.length);
+  SKILLS.splice(0, SKILLS.length);
+  const skillIds = new Set();
   official.skills.forEach((skill) => {
-    const officialFields = officialSkillFields(skill);
-    const localSkill = localSkillByName.get(skill.name) || aliasLocalSkill(skill.name, localSkillByName);
-    if (localSkill) {
-      Object.assign(localSkill, {
-        ...officialFields,
-        id: skill.id,
-        trigger: localSkill.trigger,
-        chance: chanceFromProbability(officialFields.probability, localSkill.chance),
-        apply: localSkill.apply,
-        use: localSkill.use,
-      });
-      attachSpecificOfficialSkillBehavior(localSkill);
-      skillIds.add(skill.id);
-      localSkillByName.set(skill.name, localSkill);
-      return;
-    }
     if (skillIds.has(skill.id) || !skill.name) return;
     const mergedSkill = attachOfficialSkillBehavior({
       id: skill.id,
       trigger: "official",
-      ...officialFields,
+      ...officialSkillFields(skill),
     });
     SKILLS.push(mergedSkill);
     skillIds.add(skill.id);
-    localSkillByName.set(skill.name, mergedSkill);
   });
-  removeNonOfficialEntries(SKILLS);
 
-  const heroKeys = new Set(HEROES.map((hero) => `${hero.name}-${hero.faction}-${hero.arm}-${hero.innate}`));
+  const heroKeys = new Set();
   official.heroes.forEach((hero) => {
     if (!skillById(hero.innate)) return;
     const key = `${hero.name}-${hero.faction}-${hero.arm}-${hero.innate}`;
-    const localSeed = HEROES.find((candidate) =>
-      !candidate.officialId
-      && candidate.name === hero.name
-      && candidate.faction === hero.faction
-      && candidate.arm === hero.arm
-      && candidate.rarity === hero.rarity
-    );
-    if (localSeed) {
-      Object.assign(localSeed, officialHeroToLocal(hero));
-      heroKeys.add(key);
-      return;
-    }
     if (heroKeys.has(key)) return;
     HEROES.push(officialHeroToLocal(hero));
     heroKeys.add(key);
   });
-  removeNonOfficialEntries(HEROES);
-}
-
-function removeNonOfficialEntries(items) {
-  for (let index = items.length - 1; index >= 0; index -= 1) {
-    if (!isOfficialId(items[index]?.id)) items.splice(index, 1);
-  }
 }
 
 function officialHeroToLocal(hero) {
@@ -214,13 +177,6 @@ function officialHeroToLocal(hero) {
     stats: hero.stats,
     desc: hero.desc,
   };
-}
-
-function aliasLocalSkill(officialName, skillMap) {
-  for (const [localName, mappedOfficialName] of OFFICIAL_SKILL_ALIASES) {
-    if (mappedOfficialName === officialName) return skillMap.get(localName);
-  }
-  return null;
 }
 
 function officialSkillFields(skill) {
