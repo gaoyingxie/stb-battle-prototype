@@ -6,7 +6,7 @@ import { startStaticServer } from "./dev-server.mjs";
 const DEFAULT_CONFIG = {
   battleSeeds: 2,
   candidates: 6,
-  enemyPoolSize: 20,
+  enemyPoolSize: 40,
   improvementThreshold: 1.5,
   output: "reports/ai-benchmark-latest.json",
   playerPoolSize: 24,

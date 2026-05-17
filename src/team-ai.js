@@ -1,7 +1,7 @@
 // Team recommendation helpers. Keep this standalone so guard teams and future
 // roster suggestions can share the same scoring pipeline.
 (function registerTeamAI(global) {
-  const DEFAULT_SAMPLE_SIZE = 20;
+  const DEFAULT_SAMPLE_SIZE = 40;
   const DEFAULT_SKILL_GRADES = ["S", "A"];
   const DEFAULT_SKILLS_PER_HERO = 2;
   const POSITION_CANDIDATE_LIMIT = 18;

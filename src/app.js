@@ -1131,7 +1131,7 @@ function randomEnemyTeam() {
     heroes: HEROES,
     skills: EQUIPPABLE_SKILLS,
     positions: POSITIONS,
-    sampleSize: 20,
+    sampleSize: 40,
     skillGrades: ["S", "A"],
   });
 }
